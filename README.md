@@ -17,8 +17,8 @@ CSV with three columns:
 | Standard German question | question in dialect | answer |
 |---|---|---|
 
-The Standard German questions are evaluated once, as the reference `de`. The two files in
-`data/dialects/` are just 3-question examples.
+The Standard German questions are evaluated once, as the reference `de`. The `example_*` files in
+`data/dialects/` are 3-question examples for testing; delete them once the real files are there.
 
 ## Running
 
