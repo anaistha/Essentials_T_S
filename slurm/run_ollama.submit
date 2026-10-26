@@ -1,0 +1,122 @@
+#!/bin/bash
+#SBATCH --job-name=dialect_math
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=4
+#SBATCH --account=cai_exp
+#SBATCH --partition=gpu
+#SBATCH --output=/cluster/home/thmv/log/%j_%N_dialect_math.out
+#SBATCH --error=/cluster/home/thmv/log/%j_%N_dialect_math.err
+
+set -euo pipefail
+
+# Usage:
+#   sbatch slurm/benchmark.submit [options for main.py run]
+#   e.g. sbatch slurm/benchmark.submit --thinking on off
+#        sbatch slurm/benchmark.submit --models gemma4-12b apertus-8b --thinking off
+# Without --models all models from config.yaml run, one after the other.
+# Submitting the same command again continues an aborted run.
+
+REPO_DIR=/cluster/home/thmv/workspace/classes/Essentials_T_S
+
+############################
+# Setup scratch directories
+############################
+
+SCRATCH_BASE=/scratch/thmv
+JOB_SCRATCH=$SCRATCH_BASE/ollama
+
+mkdir -p "$JOB_SCRATCH"
+cd "$JOB_SCRATCH"
+
+export OLLAMA_MODELS=$JOB_SCRATCH/models
+mkdir -p "$OLLAMA_MODELS"
+
+############################
+# Activate Conda
+############################
+
+# (set -u is switched off here, because the activate script uses unset variables)
+set +u
+source /cluster/home/thmv/miniconda3/etc/profile.d/conda.sh
+conda activate dialect_math
+set -u
+
+############################
+# Get Ollama
+############################
+
+# a fixed version, so every node runs the same Ollama
+OLLAMA_VERSION=v0.40.9
+if [ ! -x "$JOB_SCRATCH/bin/ollama" ] || ! "$JOB_SCRATCH/bin/ollama" --version 2>&1 | grep -q "${OLLAMA_VERSION#v}"; then
+  echo "Downloading Ollama $OLLAMA_VERSION"
+  curl -fsSL "https://github.com/ollama/ollama/releases/download/$OLLAMA_VERSION/ollama-linux-amd64.tar.zst" | tar --zstd -x -C "$JOB_SCRATCH"
+fi
+
+export PATH="$JOB_SCRATCH/bin:$PATH"
+
+############################
+# Ollama server
+############################
+
+# a free port, because other jobs on the same node might run their own Ollama
+export OLLAMA_HOST=127.0.0.1:$(python -c 'import socket; s = socket.socket(); s.bind(("", 0)); print(s.getsockname()[1])')
+export OLLAMA_KEEP_ALIVE=-1
+OLLAMA_PID=""
+
+# $1: how many requests the server handles at the same time
+start_ollama() {
+  echo "Starting Ollama server with $1 parallel requests"
+  OLLAMA_NUM_PARALLEL=$1 ollama serve >> "$JOB_SCRATCH/ollama.log" 2>&1 &
+  OLLAMA_PID=$!
+  until ollama list >/dev/null 2>&1; do
+    kill -0 "$OLLAMA_PID" 2>/dev/null || { echo "Ollama didn't start, see $JOB_SCRATCH/ollama.log"; exit 1; }
+    sleep 2
+  done
+}
+
+stop_ollama() {
+  if [ -n "$OLLAMA_PID" ]; then
+    kill "$OLLAMA_PID" 2>/dev/null || true
+    wait "$OLLAMA_PID" 2>/dev/null || true
+  fi
+}
+trap stop_ollama EXIT
+
+############################
+# Run the models one after the other
+############################
+
+cd "$REPO_DIR"
+export PYTHONUNBUFFERED=1
+MAX_PARALLEL=$(python -c 'import yaml; print(yaml.safe_load(open("config.yaml"))["parallel"])')
+
+MODELS=$(python main.py list "$@" | tail -n 1)
+echo "Models: $MODELS"
+
+for MODEL in $MODELS; do
+  echo "=== $MODEL ==="
+
+  # Every parallel request needs its own GPU memory. Start with the number from the config
+  # and go down until the whole model fits on the GPU.
+  PARALLEL=$MAX_PARALLEL
+  while true; do
+    start_ollama "$PARALLEL"
+    if python main.py fits "$@" --models "$MODEL"; then
+      break
+    elif [ $? -ne 3 ]; then
+      echo "Error while loading $MODEL"
+      exit 1
+    elif [ "$PARALLEL" -eq 1 ]; then
+      echo "Warning: $MODEL doesn't fully fit on the GPU, part of it runs on the CPU (slow)"
+      break
+    fi
+    stop_ollama
+    PARALLEL=$((PARALLEL - 1))
+  done
+
+  # --models comes last, so it replaces a --models given on the command line
+  python main.py run "$@" --parallel "$PARALLEL" --models "$MODEL"
+  stop_ollama
+done
