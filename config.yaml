@@ -19,18 +19,29 @@ ollama_options: {temperature: 0, seed: 0, num_ctx: 16384, num_predict: 12288}
 # All models are 4-bit versions that fit on one 24 GB Tesla P40.
 # The 70B versions of DeepSeek-R1 and Apertus are too big.
 models:
+# Sherif
   gemma4-e2b:       {tag: gemma4:e2b-it-q4_K_M}
+# Sherif
   gemma4-e4b:       {tag: gemma4:e4b-it-q4_K_M}
+# Anais
   gemma4-12b:       {tag: gemma4:12b-it-q4_K_M}
+# Anais
   gemma4-26b-a4b:   {tag: gemma4:26b-a4b-it-q4_K_M}     # mixture of experts, only 4B parameters used per token
+# Anais
   gemma4-31b:       {tag: gemma4:31b-it-q4_K_M}
 
   # DeepSeek recommends temperature 0.6.
   # always_thinks: the model thinks even with thinking off, so we skip thinking off for it.
+# Sherif
   deepseek-r1-1.5b: {tag: deepseek-r1:1.5b-qwen-distill-q4_K_M, options: {temperature: 0.6}, always_thinks: true}
+# Sherif
   deepseek-r1-7b:   {tag: deepseek-r1:7b-qwen-distill-q4_K_M, options: {temperature: 0.6}, always_thinks: true}
+# Sherif
   deepseek-r1-8b:   {tag: deepseek-r1:8b-0528-qwen3-q4_K_M, options: {temperature: 0.6}}
+# Anais
   deepseek-r1-14b:  {tag: deepseek-r1:14b-qwen-distill-q4_K_M, options: {temperature: 0.6}, always_thinks: true}
+# Anais
   deepseek-r1-32b:  {tag: deepseek-r1:32b-qwen-distill-q4_K_M, options: {temperature: 0.6}, always_thinks: true}
 
+# Sherif
   apertus-8b:       {tag: "hf.co/unsloth/Apertus-8B-Instruct-2509-GGUF:Q4_K_M"}   # can't think

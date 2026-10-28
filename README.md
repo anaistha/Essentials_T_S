@@ -45,6 +45,10 @@ Models and settings are in `config.yaml`. The DeepSeek-R1 1.5b, 7b, 14b and 32b 
 they are skipped for `--thinking off` (marked `always_thinks` in the config). Apertus can't think at all,
 so it is skipped for `--thinking on`.
 
+Ollama cloud models are supported as well. Sign in with `ollama signin`, pull the model, and add its
+cloud tag (for example `gpt-oss:120b-cloud`) to the `models` section in `config.yaml`. Cloud models
+are sent through the same Ollama API, but are not checked against local GPU memory.
+
 ## Results
 
 `results/<model>/thinking-<mode>/` has one file per input file (same name and format), plus `de` for

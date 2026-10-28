@@ -20,6 +20,10 @@ class OllamaModel:
             info = self.show()
         self.can_think = "thinking" in info.get("capabilities", [])
 
+    @property
+    def is_cloud(self):
+        return self.tag.endswith("-cloud")
+
     def show(self):
         r = requests.post(f"{self.url}/api/show", json={"model": self.tag}, timeout=60)
         return r.json() if r.ok else None
@@ -30,6 +34,10 @@ class OllamaModel:
         Ollama reserves memory for every parallel request (OLLAMA_NUM_PARALLEL). If that is too much,
         it puts part of the model on the CPU instead, which makes it very slow.
         """
+        if self.is_cloud:
+            print(f"{self.tag}: cloud model, skipping local GPU check")
+            return True
+
         r = requests.post(f"{self.url}/api/generate", json={"model": self.tag, "options": self.options}, timeout=1800)
         r.raise_for_status()
         loaded = requests.get(f"{self.url}/api/ps", timeout=60).json()["models"]
@@ -56,4 +64,3 @@ class OllamaModel:
             raise RuntimeError(f"ollama returned {r.status_code}: {r.text[:300]}")
         message = r.json()["message"]
         return message["content"], message.get("thinking") or None
-
