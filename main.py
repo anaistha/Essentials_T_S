@@ -12,7 +12,7 @@ from dialect_bench.run import run
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["check", "list", "fits", "run"])
+    parser.add_argument("command", choices=["list", "fits", "run"])
     parser.add_argument("--config", default="config.yaml")
     parser.add_argument("--data", nargs="+", help="input files or glob patterns (default: from config)")
     parser.add_argument("--models", nargs="+", default=["*"],
@@ -37,12 +37,6 @@ def main():
 
     # one output file per input file, with the same name; Standard German gets its own file
     file_names = {reference: reference + files[0].suffix} | {f.stem: f.name for f in files}
-
-    if args.command == "check":
-        for dialect in file_names:
-            qs = [q for q in questions if q.dialect == dialect]
-            print(f"\n{dialect}: {len(qs)} questions, e.g. {qs[0].id} (answer {qs[0].answer}):\n  {qs[0].text}")
-        return
 
     models = {name: m for name, m in config["models"].items()
               if any(fnmatch(name, pattern) for pattern in args.models)}

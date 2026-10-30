@@ -25,7 +25,6 @@ The Standard German questions are evaluated once, as the reference `de`. The `ex
 ```bash
 conda env create -f environment.yml     # once; the Slurm job activates it itself
 conda activate dialect_math
-python main.py check                    # check the input files are read correctly
 ```
 
 On the cluster, submit `slurm/run_ollama.submit`. Its options are passed on to `main.py run`:
