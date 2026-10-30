@@ -36,8 +36,9 @@ def main():
         keep = list(dict.fromkeys(q.id for q in questions))[:args.limit]
         questions = [q for q in questions if q.id in keep]
 
-    # one output file per input file, with the same name; Standard German gets its own file
-    file_names = {reference: reference + files[0].suffix} | {f.stem: f.name for f in files}
+    # One output file per input file, with the same name. Standard German always goes to de.tsv, so when
+    # another dialect is run with the same model, its answers are found and not asked a second time.
+    file_names = {reference: reference + ".tsv"} | {f.stem: f.name for f in files}
 
     models = {name: m for name, m in config["models"].items()
               if any(fnmatch(name, pattern) for pattern in args.models)}
