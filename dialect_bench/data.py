@@ -38,13 +38,10 @@ def read_file(path):
     else:
         sample = path.read_text(encoding="utf-8-sig")[:10000]
         sep = csv.Sniffer().sniff(sample, delimiters=",;\t").delimiter
-    df = pd.read_csv(path, sep=sep, header=None, dtype=str, keep_default_na=False, encoding="utf-8-sig")
-    if df.shape[1] != 3:
-        raise ValueError(f"{path}: expected 3 columns, got {df.shape[1]}")
-    df.columns = ["german", "dialect", "answer"]
-    # the first line is a header if its answer doesn't contain a digit
-    if not re.search(r"\d", df.iloc[0]["answer"]):
-        df = df.iloc[1:].reset_index(drop=True)
+    df = pd.read_csv(path, sep=sep, dtype=str, keep_default_na=False, encoding="utf-8-sig")
+    missing = {"question", "dialect_question", "answer"} - set(df.columns)
+    if missing:
+        raise ValueError(f"{path}: missing columns {sorted(missing)}, found {list(df.columns)}")
     return df
 
 
@@ -55,9 +52,9 @@ def load_questions(files, reference="de"):
     for path in files:
         df = read_file(path)
         for _, row in df.iterrows():
-            qid = question_id(row["german"])
-            german.setdefault(qid, Question(qid, reference, row["german"].strip(), row["answer"].strip()))
-            if row["dialect"].strip():
-                questions.append(Question(qid, path.stem, row["dialect"].strip(), row["answer"].strip()))
+            qid = question_id(row["question"])
+            german.setdefault(qid, Question(qid, reference, row["question"].strip(), row["answer"].strip()))
+            if row["dialect_question"].strip():
+                questions.append(Question(qid, path.stem, row["dialect_question"].strip(), row["answer"].strip()))
         print(f"{path.name}: {len(df)} questions")
     return list(german.values()) + questions

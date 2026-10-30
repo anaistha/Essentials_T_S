@@ -11,11 +11,12 @@ version of the MGSM benchmark: 250 grade-school math problems in English and 10 
 German, with fixed translation errors. Each answer is a single number. We use 125 of the German
 questions and translate them into the dialects.
 
-There is one file per dialect in `data/dialects/`, named after the dialect (e.g. `gsw_zh.tsv`), as TSV or
-CSV with three columns:
+There is one file per dialect in `data/dialects/`, named after the dialect (e.g. `mgsm_biel.tsv`), as TSV
+or CSV with a header row and these columns:
 
-| Standard German question | question in dialect | answer |
+| question | dialect_question | answer |
 |---|---|---|
+| question in Standard German | the same question in the dialect | the answer |
 
 The Standard German questions are evaluated once, as the reference `de`. The `example_*` files in
 `data/dialects/` are 3-question examples for testing; delete them once the real files are there.
