@@ -73,7 +73,7 @@ def main():
         if not modes:
             continue
         model = OllamaModel(m["tag"], {**config["ollama_options"], **m.get("options", {})})
-        info = {"limit": args.limit, **run_info.environment(files, base)}
+        info = {"dataset": [f.name for f in files], "limit": args.limit, "gpu": run_info.gpu()}
         run(name, model, questions, modes, config["prompt"], results_dir, file_names, args.parallel, info)
 
 

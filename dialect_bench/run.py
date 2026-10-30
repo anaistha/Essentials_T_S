@@ -35,8 +35,8 @@ def run(name, model, questions, thinking_modes, prompt_template, out_dir, file_n
             continue
 
         run_info.save(out_dir / name / f"thinking-{mode}",
-                      {"model": name, "thinking": mode, "parallel": parallel, "prompt": prompt_template,
-                       **model.describe(), **(info or {})})
+                      {"model": name, **model.describe(), "thinking": mode, "options": model.options,
+                       "prompt": prompt_template, **(info or {})})
 
         for dialect, file_name in file_names.items():
             path = out_dir / name / f"thinking-{mode}" / file_name
