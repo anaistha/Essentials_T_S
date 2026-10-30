@@ -6,6 +6,7 @@ from pathlib import Path
 import yaml
 
 from dialect_bench.data import find_files, load_questions
+from dialect_bench import run_info
 from dialect_bench.models import THINKING, OllamaModel
 from dialect_bench.run import run
 
@@ -71,7 +72,8 @@ def main():
         if not modes:
             continue
         model = OllamaModel(m["tag"], {**config["ollama_options"], **m.get("options", {})})
-        run(name, model, questions, modes, config["prompt"], results_dir, file_names, args.parallel)
+        info = {"limit": args.limit, **run_info.environment(files, base)}
+        run(name, model, questions, modes, config["prompt"], results_dir, file_names, args.parallel, info)
 
 
 if __name__ == "__main__":

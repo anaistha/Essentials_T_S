@@ -3,6 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from tqdm import tqdm
 
+from . import run_info
 from .models import THINKING
 
 COLUMNS = ["id", "prompt", "predicted", "gt_answer", "reasoning"]
@@ -22,15 +23,20 @@ def write_output(path, rows):
         writer.writerows(rows)
 
 
-def run(name, model, questions, thinking_modes, prompt_template, out_dir, file_names, parallel=1):
+def run(name, model, questions, thinking_modes, prompt_template, out_dir, file_names, parallel=1, info=None):
     """Asks the questions, `parallel` of them at the same time.
 
     file_names maps each dialect to the name of its output file, e.g. gsw_zh -> gsw_zh.tsv
+    info is saved to run_info.jsonl together with the model's details.
     """
     for mode in thinking_modes:
         if THINKING[mode] and not model.can_think:
             print(f"{name} can't think, skipping thinking={mode}")
             continue
+
+        run_info.save(out_dir / name / f"thinking-{mode}",
+                      {"model": name, "thinking": mode, "parallel": parallel, "prompt": prompt_template,
+                       **model.describe(), **(info or {})})
 
         for dialect, file_name in file_names.items():
             path = out_dir / name / f"thinking-{mode}" / file_name

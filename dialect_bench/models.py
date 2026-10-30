@@ -18,6 +18,7 @@ class OllamaModel:
             r = requests.post(f"{self.url}/api/pull", json={"model": tag, "stream": False}, timeout=None)
             r.raise_for_status()
             info = self.show()
+        self.info = info
         self.can_think = "thinking" in info.get("capabilities", [])
 
     @property
@@ -44,6 +45,26 @@ class OllamaModel:
         model = next(m for m in loaded if self.tag in (m["name"], m["model"]))
         print(f"{self.tag}: {model['size_vram'] / 1e9:.1f} of {model['size'] / 1e9:.1f} GB on the GPU")
         return model["size_vram"] >= model["size"]
+
+    def describe(self):
+        """The Ollama version and the exact model that was used, for run_info.jsonl."""
+        ollama_version = requests.get(f"{self.url}/api/version", timeout=60).json().get("version")
+        installed = requests.get(f"{self.url}/api/tags", timeout=60).json().get("models", [])
+        loaded = requests.get(f"{self.url}/api/ps", timeout=60).json().get("models", [])
+        installed = next((m for m in installed if self.tag in (m["name"], m["model"])), {})
+        loaded = next((m for m in loaded if self.tag in (m["name"], m["model"])), {})
+        return {
+            "ollama_version": ollama_version,
+            "tag": self.tag,
+            # the digest identifies the exact model download, even if the tag is updated later
+            "digest": installed.get("digest"),
+            "details": self.info.get("details", {}),
+            "capabilities": self.info.get("capabilities", []),
+            "options": self.options,
+            # memory in GB while loaded; gpu < size means part of the model ran on the CPU
+            "memory_gb": {"size": round(loaded["size"] / 1e9, 1),
+                          "gpu": round(loaded["size_vram"] / 1e9, 1)} if loaded else None,
+        }
 
     def ask(self, prompt, thinking=None):
         """Returns the answer and the model's reasoning (None if it didn't think).
