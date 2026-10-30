@@ -31,9 +31,9 @@ python main.py check                    # check the input files are read correct
 On the cluster, submit `slurm/run_ollama.submit`. Its options are passed on to `main.py run`:
 
 ```bash
-sbatch slurm/benchmark.submit --thinking on off                  # all models, one after the other
-sbatch slurm/benchmark.submit --models gemma4-12b apertus-8b --thinking off
-sbatch slurm/benchmark.submit --models gemma4-e2b --limit 3      # quick test
+sbatch slurm/run_ollama.submit --thinking on off                  # all models, one after the other
+sbatch slurm/run_ollama.submit --models gemma4-12b apertus-8b --thinking off
+sbatch slurm/run_ollama.submit --models gemma4-e2b --limit 3      # quick test
 ```
 
 The job downloads [Ollama](https://ollama.com) and the models to `/scratch/thmv/ollama` on its node (only
