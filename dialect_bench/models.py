@@ -57,7 +57,8 @@ class OllamaModel:
         }
 
     def ask(self, prompt, thinking=None):
-        """Returns the answer and the model's reasoning (None if it didn't think).
+        """Returns the answer, the model's reasoning (None if it didn't think) and why the model stopped:
+        "stop" if it finished, "length" if it hit num_predict.
 
         thinking=None means we let the model decide whether to think.
         """
@@ -73,5 +74,6 @@ class OllamaModel:
         r = requests.post(f"{self.url}/api/chat", json=body, timeout=3600)
         if not r.ok:
             raise RuntimeError(f"ollama returned {r.status_code}: {r.text[:300]}")
-        message = r.json()["message"]
-        return message["content"], message.get("thinking") or None
+        result = r.json()
+        message = result["message"]
+        return message["content"], message.get("thinking") or None, result.get("done_reason")

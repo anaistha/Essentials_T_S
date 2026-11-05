@@ -6,7 +6,7 @@ from tqdm import tqdm
 from . import run_info
 from .models import THINKING
 
-COLUMNS = ["id", "prompt", "predicted", "gt_answer", "reasoning"]
+COLUMNS = ["id", "prompt", "predicted", "gt_answer", "reasoning", "done_reason"]
 
 
 def read_output(path):
@@ -43,7 +43,8 @@ def run(name, model, questions, thinking_modes, prompt_template, out_dir, file_n
             path.parent.mkdir(parents=True, exist_ok=True)
             rows = {row["id"]: row for row in read_output(path)}
             order = [q.id for q in questions if q.dialect == dialect]
-            todo = [q for q in questions if q.dialect == dialect and q.id not in rows]
+            # a question is asked again if it has no answer yet, also when only its reasoning was saved
+            todo = [q for q in questions if q.dialect == dialect and not rows.get(q.id, {}).get("predicted", "").strip()]
 
             with ThreadPoolExecutor(parallel) as pool:
                 asked = {}
@@ -56,11 +57,12 @@ def run(name, model, questions, thinking_modes, prompt_template, out_dir, file_n
                                    desc=f"{name} thinking={mode} {dialect}", mininterval=30):
                     q, prompt = asked[future]
                     try:
-                        answer, reasoning = future.result()
+                        answer, reasoning, done_reason = future.result()
                     except Exception as e:
                         print(f"{q.id} failed, will be asked again next time: {e}")
                         continue
                     rows[q.id] = {"id": q.id, "prompt": prompt, "predicted": answer,
-                                  "gt_answer": q.answer, "reasoning": reasoning or ""}
+                                  "gt_answer": q.answer, "reasoning": reasoning or "",
+                                  "done_reason": done_reason or ""}
                     # rewrite the whole file, so it keeps the order of the input file
                     write_output(path, [rows[i] for i in order if i in rows])
