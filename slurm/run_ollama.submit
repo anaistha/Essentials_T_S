@@ -48,7 +48,7 @@ set -u
 ############################
 
 # a fixed version, so every node runs the same Ollama
-OLLAMA_VERSION=${OLLAMA_VERSION:-v0.40.13}
+OLLAMA_VERSION=v0.40.13
 if [ ! -x "$JOB_SCRATCH/bin/ollama" ] || ! "$JOB_SCRATCH/bin/ollama" --version 2>&1 | grep -q "${OLLAMA_VERSION#v}"; then
   echo "Downloading Ollama $OLLAMA_VERSION"
   curl -fsSL "https://github.com/ollama/ollama/releases/download/$OLLAMA_VERSION/ollama-linux-amd64.tar.zst" | tar --zstd -x -C "$JOB_SCRATCH"
