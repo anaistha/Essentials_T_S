@@ -47,3 +47,16 @@ so it is skipped for `--thinking on`.
 Ollama cloud models are supported as well. Sign in with `ollama signin`, pull the model, and add its
 cloud tag (for example `gpt-oss:120b-cloud`) to the `models` section in `config.yaml`. Cloud models
 are sent through the same Ollama API, but are not checked against local GPU memory.
+
+## Running with Codex CLI
+
+Codex runs use `config_codex.yaml` and require the Codex CLI to be installed and signed in with a ChatGPT account. From the repository root, activate the project’s Python environment and run:
+
+```powershell
+conda activate dialect_math
+python main.py run --config config_codex.yaml --data "data/dialects/*.tsv" --models codex-luna --thinking off --parallel 1
+```
+
+This processes all TSV files in `data/dialects/` and their matching Standard German questions. To run only selected dialects, replace the pattern after `--data` with their file paths.
+
+Each question is sent in a separate ephemeral Codex CLI invocation. Results are saved under `results/codex-luna/thinking-off/`, with the complete final response in `predicted`. Run settings are recorded in `run_info.jsonl`. If a run is interrupted, run the same command again; questions with saved answers are skipped.

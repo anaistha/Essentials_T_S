@@ -1,8 +1,62 @@
 import os
+import json
+import shutil
+import subprocess
+import tempfile
+from pathlib import Path
 
 import requests
 
 THINKING = {"on": True, "off": False, "default": None}
+
+
+class CodexModel:
+    """One fresh, read-only Codex CLI invocation per question."""
+
+    def __init__(self, tag):
+        self.tag = tag
+        self.can_think = False  # The Luna benchmark condition has reasoning effort none.
+        self.options = {"sandbox": "read-only", "ephemeral": True, "parallel": 1}
+        self.executable = shutil.which("codex")
+        if not self.executable:
+            raise RuntimeError("codex was not found; install the CLI and open a new terminal")
+        version = subprocess.run([self.executable, "--version"], capture_output=True,
+                                 text=True, encoding="utf-8", errors="replace", check=True)
+        self.version = version.stdout.strip()
+
+    def describe(self):
+        return {"tag": self.tag, "codex_version": self.version, "provider": "chatgpt-cli"}
+
+    def ask(self, prompt, thinking=None):
+        if thinking is True:
+            raise ValueError("This Codex benchmark configuration does not support thinking=on")
+        # Only the prompt enters the isolated working directory. The agent cannot
+        # look up German originals or ground-truth answers in the benchmark repo.
+        with tempfile.TemporaryDirectory(prefix="dialect_codex_") as workspace:
+            output = Path(workspace) / "answer.txt"
+            command = [self.executable, "exec", "--model", self.tag,
+                       "--sandbox", "read-only", "--ephemeral",
+                       "--skip-git-repo-check", "--ignore-user-config",
+                       "--json", "--output-last-message", str(output), prompt]
+            result = subprocess.run(command, cwd=workspace, capture_output=True,
+                                    text=True, encoding="utf-8", errors="replace", timeout=600)
+            if result.returncode:
+                raise RuntimeError(f"codex exited {result.returncode}: {result.stderr[-500:]}")
+            events = []
+            for line in result.stdout.splitlines():
+                try:
+                    events.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+            if any(event.get("type") == "turn.failed" for event in events):
+                raise RuntimeError("codex reported turn.failed")
+            if not output.is_file():
+                raise RuntimeError(f"codex did not write a final answer: {result.stderr[-500:]}")
+            answer = output.read_text(encoding="utf-8-sig").strip()
+            if not answer:
+                raise RuntimeError("codex returned an empty final answer")
+            # CLI reasoning summaries are not comparable to Ollama's thinking field.
+            return answer, None, "stop"
 
 
 class OllamaModel:
