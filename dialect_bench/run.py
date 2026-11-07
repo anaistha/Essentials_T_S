@@ -1,4 +1,5 @@
 import csv
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from tqdm import tqdm
@@ -7,6 +8,9 @@ from . import run_info
 from .models import THINKING
 
 COLUMNS = ["id", "prompt", "predicted", "gt_answer", "reasoning", "done_reason"]
+
+# reasoning fields can be longer than the csv default of 131072 characters
+csv.field_size_limit(min(sys.maxsize, 2**31 - 1))
 
 
 def read_output(path):
