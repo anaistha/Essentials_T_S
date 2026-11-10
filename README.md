@@ -60,3 +60,25 @@ python main.py run --config config_codex.yaml --data "data/dialects/*.tsv" --mod
 This processes all TSV files in `data/dialects/` and their matching Standard German questions. To run only selected dialects, replace the pattern after `--data` with their file paths.
 
 Each question is sent in a separate ephemeral Codex CLI invocation. Results are saved under `results/codex-luna/thinking-off/`, with the complete final response in `predicted`. Run settings are recorded in `run_info.jsonl`. If a run is interrupted, run the same command again; questions with saved answers are skipped.
+
+## Running with Claude Code
+
+Claude models (Opus 5.5, Sonnet 5.5, Haiku 5.5) run through the Claude Code CLI with a Claude subscription,
+using `config_claude.yaml`. Sign in once by running `claude` and `/login`. No GPU is needed, so run it on a
+login node or your own computer, ideally inside `tmux`:
+
+```bash
+conda activate dialect_math
+python main.py run --config config_claude.yaml --models claude-haiku-5.5
+python main.py run --config config_claude.yaml --models "claude-*" --data data/dialects/mgsm_biel.tsv
+```
+
+Each question is a separate `claude -p` call in an empty folder, with no tools, no settings files and an
+empty system prompt. Results go to `results/claude-<model>/thinking-on/`. When the subscription's usage
+limit is reached, the run waits and continues; if it stops, run the same command again.
+
+Differences from the open-weight models:
+- Only thinking on: Claude Code can't reliably turn thinking off.
+- No temperature or seed can be set, so answers can differ between runs.
+- Claude doesn't return its reasoning, so the `reasoning` column stays empty.
+- Claude Code adds a few hundred tokens of its own context to every call, even with an empty system prompt.

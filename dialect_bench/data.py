@@ -23,12 +23,12 @@ def question_id(german_text):
 
 
 def find_files(patterns, base=Path(".")):
+    # a pattern may match nothing (e.g. no .csv files), as long as at least one file is found
     files = []
     for pattern in patterns:
-        matches = sorted(glob.glob(str(base / pattern)))
-        if not matches:
-            raise FileNotFoundError(f"no files match {pattern}")
-        files += [Path(m) for m in matches]
+        files += [Path(m) for m in sorted(glob.glob(str(base / pattern)))]
+    if not files:
+        raise FileNotFoundError(f"no files match {', '.join(patterns)}")
     return files
 
 

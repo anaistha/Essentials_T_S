@@ -1,0 +1,15 @@
+data: [data/dialects/*.tsv, data/dialects/*.csv]
+reference: de
+results_dir: results
+prompt: "{question}"
+thinking: ["on"]
+ollama_options: {}
+
+# Claude models through the Claude Code CLI (claude -p), using the signed-in Claude subscription.
+# Same effort for all three, so they are comparable (the defaults differ per model).
+# Thinking can't be turned off reliably through Claude Code (Haiku and Sonnet still think with it
+# switched off), so all three only run with thinking on.
+models:
+  claude-opus-5.5:   {provider: claude-code, tag: claude-opus-5-5, effort: high, always_thinks: true}
+  claude-sonnet-5.5: {provider: claude-code, tag: claude-sonnet-5-5, effort: high, always_thinks: true}
+  claude-haiku-5.5:  {provider: claude-code, tag: claude-haiku-5-5, effort: high, always_thinks: true}

@@ -3,6 +3,7 @@ import json
 import shutil
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 import requests
@@ -57,6 +58,65 @@ class CodexModel:
                 raise RuntimeError("codex returned an empty final answer")
             # CLI reasoning summaries are not comparable to Ollama's thinking field.
             return answer, None, "stop"
+
+
+class ClaudeCodeModel:
+    """One fresh Claude Code CLI call (claude -p) per question, using the signed-in Claude subscription.
+
+    The call runs in an empty folder with no tools, no MCP servers, no settings files and an empty
+    system prompt, so the model only sees the question.
+    """
+
+    def __init__(self, tag, effort="high"):
+        self.tag = tag
+        self.can_think = True
+        self.options = {"effort": effort, "tools": "none", "system_prompt": ""}
+        self.executable = shutil.which("claude")
+        if not self.executable:
+            raise RuntimeError("claude was not found; install Claude Code and sign in with `claude`")
+        version = subprocess.run([self.executable, "--version"], capture_output=True,
+                                 text=True, encoding="utf-8", errors="replace", check=True)
+        self.version = version.stdout.strip()
+
+    def describe(self):
+        return {"tag": self.tag, "claude_code_version": self.version, "provider": "claude-code"}
+
+    def ask(self, prompt, thinking=None):
+        command = [self.executable, "-p", "--model", self.tag, "--effort", self.options["effort"],
+                   "--output-format", "json", "--tools", "", "--strict-mcp-config",
+                   "--setting-sources", "", "--no-session-persistence", "--system-prompt", ""]
+        # Tested with Claude Code 2.1.322: with alwaysThinkingEnabled=false, Haiku 5.5 still thinks on every
+        # question and Sonnet 5.5 on some, so thinking can't really be turned off through the CLI
+        if thinking is False:
+            raise ValueError("thinking=off is not supported for Claude through Claude Code")
+
+        while True:
+            with tempfile.TemporaryDirectory(prefix="dialect_claude_") as workspace:
+                result = subprocess.run(command, input=prompt, cwd=workspace, capture_output=True,
+                                        text=True, encoding="utf-8", errors="replace", timeout=3600)
+            try:
+                out = json.loads(result.stdout)
+            except json.JSONDecodeError:
+                raise RuntimeError(f"claude exited {result.returncode}: {result.stderr[-500:]}")
+
+            message = str(out.get("result", ""))
+            if out.get("is_error"):
+                # out of usage for now: wait for the limit to reset instead of failing every question
+                if out.get("api_error_status") == 429 or "limit" in message.lower():
+                    print(f"claude usage limit reached ({message[:200]}), waiting 15 minutes")
+                    time.sleep(15 * 60)
+                    continue
+                raise RuntimeError(f"claude returned an error: {message[:500]}")
+            break
+
+        used = set(out.get("modelUsage", {}))
+        if used and self.tag not in used:
+            raise RuntimeError(f"asked for {self.tag}, but claude used {sorted(used)}")
+        answer = message.strip()
+        if not answer:
+            raise RuntimeError("claude returned an empty answer")
+        # Claude never returns its raw reasoning, so there is nothing for the reasoning column
+        return answer, None, "length" if out.get("stop_reason") == "max_tokens" else "stop"
 
 
 class OllamaModel:

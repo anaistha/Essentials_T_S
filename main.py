@@ -7,7 +7,7 @@ import yaml
 
 from dialect_bench.data import find_files, load_questions
 from dialect_bench import run_info
-from dialect_bench.models import THINKING, CodexModel, OllamaModel
+from dialect_bench.models import THINKING, ClaudeCodeModel, CodexModel, OllamaModel
 from dialect_bench.run import run
 
 
@@ -62,8 +62,8 @@ def main():
         # used by the Slurm script: exit code 3 if the model doesn't fit on the GPU with the current
         # OLLAMA_NUM_PARALLEL (any other error exits with 1)
         for m in models.values():
-            if m.get("provider") == "codex":
-                continue  # A hosted Codex model has no local GPU residency.
+            if m.get("provider") in ("codex", "claude-code"):
+                continue  # hosted models don't use the local GPU
             if not OllamaModel(m["tag"], {**config["ollama_options"], **m.get("options", {})}).fits_on_gpu():
                 sys.exit(3)
         return
@@ -74,8 +74,12 @@ def main():
             print(f"{name} always thinks, skipping thinking=off")
         if not modes:
             continue
-        model = (CodexModel(m["tag"]) if m.get("provider") == "codex"
-                 else OllamaModel(m["tag"], {**config["ollama_options"], **m.get("options", {})}))
+        if m.get("provider") == "codex":
+            model = CodexModel(m["tag"])
+        elif m.get("provider") == "claude-code":
+            model = ClaudeCodeModel(m["tag"], m.get("effort", "high"))
+        else:
+            model = OllamaModel(m["tag"], {**config["ollama_options"], **m.get("options", {})})
         if isinstance(model, CodexModel) and args.parallel != 1:
             parser.error("Codex runs require --parallel 1 to limit Plus usage")
         info = {"dataset": [f.name for f in files], "limit": args.limit, "gpu": run_info.gpu()}
