@@ -185,7 +185,7 @@ class OllamaModel:
         # Ollama gives an error if we send "think" to a model that can't think
         if thinking is not None and self.can_think:
             body["think"] = thinking
-        r = requests.post(f"{self.url}/api/chat", json=body, timeout=3600)
+        r = requests.post(f"{self.url}/api/chat", json=body, timeout=14400)
         if not r.ok:
             raise RuntimeError(f"ollama returned {r.status_code}: {r.text[:300]}")
         result = r.json()
