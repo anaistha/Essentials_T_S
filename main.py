@@ -75,7 +75,7 @@ def main():
         if not modes:
             continue
         if m.get("provider") == "codex":
-            model = CodexModel(m["tag"])
+            model = CodexModel(m["tag"], m.get("reasoning_effort"))
         elif m.get("provider") == "claude-code":
             model = ClaudeCodeModel(m["tag"], m.get("effort", "high"))
         else:

@@ -14,8 +14,9 @@ THINKING = {"on": True, "off": False, "default": None}
 class CodexModel:
     """One fresh, read-only Codex CLI invocation per question."""
 
-    def __init__(self, tag):
+    def __init__(self, tag, reasoning_effort=None):
         self.tag = tag
+        self.reasoning_effort = reasoning_effort
         self.can_think = False  # The Luna benchmark condition has reasoning effort none.
         self.options = {"sandbox": "read-only", "ephemeral": True, "parallel": 1}
         self.executable = shutil.which("codex")
@@ -26,7 +27,12 @@ class CodexModel:
         self.version = version.stdout.strip()
 
     def describe(self):
-        return {"tag": self.tag, "codex_version": self.version, "provider": "chatgpt-cli"}
+        return {
+            "tag": self.tag,
+            "codex_version": self.version,
+            "provider": "chatgpt-cli",
+            "reasoning_effort": self.reasoning_effort,
+        }
 
     def ask(self, prompt, thinking=None):
         if thinking is True:
@@ -35,10 +41,18 @@ class CodexModel:
         # look up German originals or ground-truth answers in the benchmark repo.
         with tempfile.TemporaryDirectory(prefix="dialect_codex_") as workspace:
             output = Path(workspace) / "answer.txt"
-            command = [self.executable, "exec", "--model", self.tag,
-                       "--sandbox", "read-only", "--ephemeral",
-                       "--skip-git-repo-check", "--ignore-user-config",
-                       "--json", "--output-last-message", str(output), prompt]
+            command = [
+                self.executable, "exec", "--model", self.tag,
+                "--sandbox", "read-only", "--ephemeral",
+                "--skip-git-repo-check", "--ignore-user-config",
+                "--json", "--output-last-message", str(output),
+            ]
+            if self.reasoning_effort is not None:
+                command.extend([
+                    "--config",
+                    f'model_reasoning_effort="{self.reasoning_effort}"',
+                ])
+            command.append(prompt)
             result = subprocess.run(command, cwd=workspace, capture_output=True,
                                     text=True, encoding="utf-8", errors="replace", timeout=600)
             if result.returncode:
