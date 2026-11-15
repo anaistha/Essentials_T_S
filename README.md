@@ -82,3 +82,35 @@ Differences from the open-weight models:
 - No temperature or seed can be set, so answers can differ between runs.
 - Claude doesn't return its reasoning, so the `reasoning` column stays empty.
 - Claude Code adds a few hundred tokens of its own context to every call, even with an empty system prompt.
+
+## Scoring the results
+
+`dialect_bench/eval.py` extracts the final number from every response in `results/` and scores it against
+`gt_answer`. Run it from the repository root after a benchmark finishes:
+
+```bash
+python -m dialect_bench.eval                 # update results/ in place
+python -m dialect_bench.eval --dry-run       # score only, leave results/ untouched
+python -m dialect_bench.eval --summary out.tsv
+```
+
+Each result TSV gets three columns:
+
+| column | meaning |
+|---|---|
+| `extracted_answer` | the final number in `predicted` (empty if there is none) |
+| `correct` | 1 if it matches `gt_answer`, 0 if not (a missing answer counts as wrong) |
+| `degenerate` | 1 if the model got stuck repeating itself, e.g. `zäma zäma zäma …` |
+
+The answer comes from `predicted`, not `done_reason`: `done_reason` only records why generation stopped
+(`stop`/`length`) and never contains the answer. Number formats such as `1'430`, `7'425,00` and `$20` are
+handled.
+
+The script prints a summary per model and thinking mode and writes two files next to the `--summary` path
+(`answer_summary.tsv` by default):
+
+- `answer_summary.tsv`: rows, answered, scored, correct, accuracy, looping count and percentage.
+- `accuracy_by_dialect.tsv`: one row per model and thinking mode, one column per dialect plus `de` and `overall`.
+
+Looping responses are marked `degenerate=1` but are still scored as wrong, so a model that fails to
+produce an answer is visible in the accuracy instead of being dropped.
