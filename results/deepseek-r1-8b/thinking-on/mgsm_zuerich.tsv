@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	D Änte co de Janet leged 16 Eier pro Tag. Sie isst jede Morge drü zum Zmorge und bacht mit vier jede Tag Muffins für ihri Fründe. De Rescht verchauft sie jede Tag uf em Buuremarkt für 2 US-Dollar pro frischem Änte-Ei. Wie viel Dollar nimmt sie pro Tag uf em Buuremarkt ih?	"
 Janet legt 16 Eier pro Tag. Sie isst 3 Eier zum Frühstück und verwendet 4 Eier, um Muffins für ihre Freunde zu backen. Die restlichen 9 Eier (16 - 3 - 4) verkauft sie auf dem Wochenmarkt für 2 US-Dollar pro Ei.
 
@@ -206,7 +206,7 @@ Also, pro Tag verkauft sie 9 Eier.
 9 * 2 = 18 Dollar.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	18.0	0	1		
 qa55f7050	Für es Chleid bruchts 2 Chnäuel blaui Wulle und halb so viel wiissi Wulle. Wie viel Chnäuel bruchts insgesamt?	"
 Für das Kleid werden 2 blaue Wollzüge und halb so viele weiße Wollzüge benötigt. Also insgesamt:
 
@@ -303,7 +303,7 @@ Aber die Frage ist ""Wie viel Chnäuel bruchts insgesamt?"", was ""Wie viele Chn
 Also, 3.
 
 Ich denke, das ist die logische Schlussfolgerung.
-"	stop
+"	stop	3.0	0	1		
 qde1bef8b	De Josh beschlüsst, es Huus z chaufe und wieder z verchaufe. Er chauft es Huus für $80.000 und steckt denn $50.000 i Reparature. Dur das isch de ursprüngligi Wert vom Huus um 150% gstige. Wie viel Gwünn het er in Dollar gmacht?	"
 Joshua hat das Auto für $80.000 gekauft und $50.000 in Reparaturen investiert. Die Gesamtkosten belaufen sich somit auf $130.000.
 
@@ -383,7 +383,7 @@ Wenn der Wert um 150% gesunken ist, dann wäre der Verkaufspreis 80.000 * (1 - 1
 Ich gehe davon aus, dass der ursprüngliche Wert 80.000 Dollar war, und nach den Reparaturen steigt der Wert um 150% auf 200.000 Dollar. Joshua verkauft es für 200.000 Dollar, nachdem er 80.000 + 50.000 = 130.000 Dollar investiert hat, also Gewinn 70.000 Dollar.
 
 Also, die Antwort ist 70.000 Dollar.
-"	stop
+"	stop	70000.0	0	1		
 q568beb1f	De James beschlüsst, 3-mal pro Wuche 3 Churzstreckeläuf z mache. Pro Churzstreckelauf secklet er 60 Meter. Wie viel Meter secklet er insgesamt pro Wuche?	"
 De James beschließt, 3-mal pro Woche 3 Kurzstreckenläufe zu machen. Jeder Kurzstreckenlauf beträgt 60 Meter.  
 
@@ -742,7 +742,7 @@ Oder, er macht 3-mal pro Woche 3 Kurzstreckenläufe, also insgesamt 9 Läufe pro
 Beides führt zu 540.
 
 Ich glaube, das ist die Antwort.
-"	stop
+"	stop	540.0	0	1		
 q84afe4d6	D Wendi git jedem vo ihrne Hüener jede Tag drü Tasse gmischts Hüenerfueter mit Same, Mählwürm und Gmües, demit sie gsund bliibed. Si füeteret t Hüener i drü separate Mahlziite. Am Morge git sie ihrere Hüenerschar 15 Tasse Fueter. Am Namittag git si de Hüener nomal 25 Tasse Fueter. Wie viel Tasse Fueter brucht sie für di letschti Mahlziit vom Tag, wenn de Wendi ihri Hüenerschar us 20 Hüener bestaht?	"
 Wendi hat 20 Hühner. Jedes Huhn erhält täglich insgesamt drei Tassen gemischten Hühnerfutters (bestehend aus Same, Mählwürm und Gmües) zu sich, um gesund zu bleiben.
 
@@ -1064,7 +1064,7 @@ Aber die Frage ist ""für di letschti Mahlziit"", was das letzte Mahlzeit bedeut
 Vielleicht ist das letzte Mahlzeit nicht unbedingt der Abend, aber in diesem Kontext, da Morgen und Mittag genannt werden, ist der Abend das letzte.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	20.0	0	1		
 qd07ea681	De Kylar isch ines Gschäft gange, zum Gläser für sini noi Wohnig z chaufe. Es Glas choschtet 5 Dollar, aber jedes zweite Glas choschtet nur 60% vom Priis. De Kylar will 16 Gläser chaufe. Wie viel muess er defür zahle?	"
 De Kylar möchte 16 Gläser kaufen, wobei der reguläre Preis 5 Dollar beträgt und jedes zweite Glas nur 60% davon, also 3 Dollar, kostet. Die Gläser werden in einer Sequenz gekauft, wobei die ungeraden Positionen (1, 3, 5, 7, 9, 11, 13, 15) den vollen Preis von 5 Dollar haben, und die geraden Positionen (2, 4, 6, 8, 10, 12, 14, 16) den reduzierten Preis von 3 Dollar. Es gibt 8 ungerade und 8 gerade Positionen.
 
@@ -1491,7 +1491,7 @@ I think it's consistent.
 Perhaps it's a percentage of the total or something, but no, it says ""vom Priis"", from the price, so per unit.
 
 I think I'm good.
-"	stop
+"	stop	64.0	0	1		
 q912b86d0	Toulouse het doppelt so viel Schaaf wie Charleston. Charleston het 4-mal so viel Schaaf wie Seattle. Wie viel Schaaf händ Toulouse, Charleston und Seattle zäme, wenn Seattle 20 Schaaf het?	"
 Toulouse hat doppelt so viel Fluff wie Charleston, und Charleston hat viermal so viel Fluff wie Seattle. Wenn Seattle 20 Fluff hat, dann:
 
@@ -1674,7 +1674,7 @@ Another thought: the word ""händ"" might be a typo for ""haben"" or something, 
 Anyway, I think the math is correct.
 
 So, I'll go with 260.
-"	stop
+"	stop	260.0	0	1		
 q147b7c11	D Carla ladet e Datei mit 200 GB abe. Normalerwiis cha sie 2 GB/Minute abelade, aber nachdem 40 % vom Download fertig sind, zwingt Windows sie zume Neustart für Updates, und das duuret 20 Minute. Danach muess d Carla de Download nomal ganz vo vorne starte. Wie lang duuret s Abelade vo de Datei?	"
 Die gesamte Download-Dauer beträgt 160 Minuten.
 
@@ -2149,7 +2149,7 @@ Perhaps ""zume Neustart"" means that the restart is part of the download, but I 
 I think I'm overthinking.
 
 I'll go with 160 minutes.
-"	stop
+"	stop	40.0	0	0	160	1
 qead07ed2	De John fahrt 3 Stunde lang mit 60 Meile/Stund und chert denn um, will er merkt, dass er öppis ganz Wichtigs dihei vergässe het. Er probiert, innerhalb vo 4 Stunde wieder dihei z sii, verbringt aber die erschte 2 Stunde im Stau. I de nöchste halb Stund fahrt er mit 30 Meile/Stund, bevor er die restlichi Ziit vo de 4 Stunde mit 80 Meile/Stund wiiterfahre chan. Wie wiit vo dihei isch er am Ändi vo dene 4 Stunde?	"
 John starts from point A and drives to point B at 60 miles per hour for 3 hours, covering a distance of 180 miles from A.
 
@@ -2833,7 +2833,7 @@ If the stau period had a speed, say, s mph, but s not given, so we can't.
 I think it's correct.
 
 So, the distance is 45 miles.
-"	stop
+"	stop	45.0	0	1		
 q5cb246e4	D Eliza verdient für die erschte 40 Stunde, wo si pro Wuche schaffed, 10 US-Dollar pro Stund. Überziit wird ihre mit em 1,2-Fache vom normale Stundelohn zahlt. Wie viel verdient d Eliza, wenn sie die Wuche 45 Stunde schafft?	"
 Es scheint, dass die Formulierung der Frage etwas unklar ist, aber basierend auf der gegebenen Information, dass Eliza normal 40 Stunden pro Woche arbeitet und dabei 10 US-Dollar pro Stunde verdient, während Überstunden mit einem 1,2-Fachen des normalen Stundengelds bezahlt werden, kann die Berechnung wie folgt vorgenommen werden:
 
@@ -3009,7 +3009,7 @@ But the question has a typo: ""d Eliza"" should be ""Eliza"" or ""she"", but I'l
 Anyway, I think the calculation is correct.
 
 So, Eliza earns 460 dollars for working 45 hours.
-"	stop
+"	stop	45.0	0	0	460	1
 q3bdd7b1e	Es nois Programm isch im erschte Monet 60-mal abeglade worde. Im zweite Monet isch d Zahl vo de Downloads drümal so höch gsi wie im erschte Monet, isch denn aber im dritte Monet um 30 % ihbroche. Wie oft isch s Programm i dene drü Mönet insgesamt abeglade worde?	"
 Das Programm wurde im ersten Monat 60-mal abgeladen.  
 Im zweiten Monat war die Download-Zahl dreimal so hoch wie im ersten Monat, also 3 × 60 = 180-mal.  
@@ -3354,7 +3354,7 @@ Vielleicht ist ""um 30 % ihbroche"" eine Abkürzung oder ein Fehler.
 Ich denke, für den Zweck der Übung, 366 ist die erwartete Antwort.
 
 Also, ich gehe davon aus, dass es 366 ist.
-"	stop
+"	stop	366.0	0	1		
 q19a4029d	D Toula isch ih d Bäckerei gange und het verschiedeni Sache kauft. Si het 3 Dutzend Donuts kauft, wo 68 US-Dollar pro Dutzend chosted, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wie höch sind d Gsamtchöste gsi?	"
 Die Gesamtkosten für den Einkauf betragen 694 US-Dollar.  
 
@@ -3422,7 +3422,7 @@ Die Frage verwendet ""d Gsamtchöste"" – vielleicht ein Schreibfehler für ""d
 Also, Gesamtkosten sind 694 Dollar.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	694.0	0	1		
 qf0063e65	De Carlos pflanzt en Zitronebaum. De Baum z pflanze choschtet 90 $. Jedes Jahr wachsed am Baum 7 Zitrone, wo er für je 1,5 $ verchaufe chan. S choschtet 3 $ pro Jahr, de Baum z wässere und z dünge. I welläm Jahr fangt er a mit em Zitronebaum Gwünn z mache?	"
 Carlos pflanzt einen Zitronebaum, der 90 $ gekostet hat. Jährlich wächst an dem Baum 7 Zitrone, die er für 1,5 $ jede zu verkaufen plant, sodass er 10,5 $ jährliche Einnahmen generiert. Zudem muss er 3 $ pro Jahr für Wasserung und Düngung ausgeben, was eine jährliche Kostenreduktion bedeutet.
 
@@ -4536,7 +4536,7 @@ Perhaps the cost is for the tree, but the user says ""de Baum z wässere und z d
 So, I think it's fine.
 
 I'll go with that.
-"	stop
+"	stop	14.0	0	0	13	1
 q410b0ab2	D Melanie isch Handelsvertreterin. Sie het es Drittel vo ihre Staubsuuger im grüene Huus verchauft, 2 wiiteri im rote Huus und d Hälfti vo de verblibene im orange Huus. Wenn d Melanie no 5 Staubsuuger übrig het, mit wie viel het si denn agfange?	"
 Melanie hat mit 18 Staubsaugern angefangen.
 
@@ -4646,7 +4646,7 @@ Die Frage ist: ""mit wie viel het si denn agfange?"" Also mit wie vielen hat sie
 Also 18.
 
 Ich glaube, das ist die Lösung.
-"	stop
+"	stop	5.0	0	0	5	0
 qa0520340	Inere Tanzklass mit 20 Schüeler händ sich 20 % für Contemporary Dance ahgmeldet, 25 % vo de übrige für Jazz Dance, und de Rescht het sich für Hip-Hop ahgmeldet. Wie vill Prozent vo allne Schüeler händ sich für Hip-Hop ahgmeldet?	"
 20% der 20 Schüler haben sich für Contemporary Dance angemeldet, was 4 Schüler entspricht.
 
@@ -4811,7 +4811,7 @@ Ja.
 Man könnte es in einer Tabelle darstellen, aber das ist unnötig.
 
 Ich denke, das ist korrekt.
-"	stop
+"	stop	12.0	0	0	60	1
 q9ae19f0a	En Händler will sich zwüsche 2 Kaufoptione entscheide: Schmuck im Wert vo 5.000 US-Dollar oder Elektrogrät im Wert vo 8.000 US-Dollar. Sin Finanzberater rechnet demit, dass de Schmuckmärt um 2,5 % zueleit und de Markt für Elektrogrät um 1,2 % im gliche Monet. Wenn de Händler Endi Monet mit sinere Kaufentscheidig de Gwünn maximieren will, wie höch wär de Gwünn?	"
 En Händler möchte zwischen dem Kauf von Schmuck im Wert von 5.000 US-Dollar und einer Elektrogrätte im Wert von 8.000 US-Dollar entscheiden, um den Gewinn zu maximieren. Der Finanzberater hat berechnet, dass der Schmuckmarkt um 2,5 % und der Markt für Elektrogrätte um 1,2 % im gleichen Monat wächst.
 
@@ -5010,7 +5010,7 @@ Und das ist die beste Entscheidung, um den Gewinn zu maximieren.
 In der Frage steht ""Endi Monet"", was vielleicht ""Ende Monat"" bedeutet, aber das ändert nichts.
 
 Also, ich glaube, das ist es.
-"	stop
+"	stop	125.0	0	1		
 q93563595	Zwei Züg fahred zur gliiche Ziit in San Rafael ab. Sie fahred zerscht Richtig Weste und leged beidi 80 Meilen zrugg. Am nöchschte Tag fahred sie Richtig Norde und leged 150 Meilen zrugg. Wie wiit fahrt jede vo dene Züg i dene zwei Täg insgesamt?	"
 每个火车在第一天向西行驶了80英里，第二天向北行驶了150英里。总行驶距离是路径长度的总和，因此每个火车在两天内总共行驶了80 + 150 = 230英里。
 
@@ -5230,7 +5230,7 @@ q93563595	Zwei Züg fahred zur gliiche Ziit in San Rafael ab. Sie fahred zerscht
 我认为就是这样。
 
 所以，我认为答案是 230 英里。
-"	stop
+"	stop	230.0	0	1		
 q33756eb7	D Jill bechunnt 20 US-Dollar pro Stund fürs Unterrichte als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn sie 50 Wuche pro Jahr schafft, 35 Stund pro Wuche als Lehrerin und 15 Stund pro Wuche als Coach, wie höch isch denn ihre Jahreslohn?	"
 Jill verdient 20 US-Dollar pro Stunde als Lehrerin und 30 US-Dollar pro Stunde als Cheerleader-Coach. Wenn sie 50 Wochen pro Jahr arbeitet und in jeder Woche 35 Stunden Unterricht und 15 Stunden als Coach arbeitet, dann beträgt ihr jährliches Einkommen:
 
@@ -5495,7 +5495,7 @@ Lassen Sie mich es noch einmal mit den Zahlen überprüfen.
 1150 * 50: 1150 * 10 = 11,500; 11,500 * 5 = 57,500. Ja.
 
 Also, ich denke, das ist die Antwort.
-"	stop
+"	stop	57500.0	0	1		
 qfb254292	D Claire macht sich jede Morge zum Zmorge es Omelett us 3 Eier. Wie viel Dutzend Eier isst sie i 4 Wuche?	"
 Die Frage enthält einige Tippfehler, die ich korrigiert habe: ""Claire macht sich jeden Morgen zum Frühstück ein Omelett mit 3 Eiern."" Wie viele Dutzend Eier isst sie in 4 Wochen?
 
@@ -5630,7 +5630,7 @@ For 4 weeks: 21 eggs/week * 4 weeks = 84 eggs
 Yes.
 
 So, the number of dozens is 7.
-"	stop
+"	stop	7.0	0	1		
 qc100123d	D Marissa wandert en 12 Meilen lange Wanderweg. I de 1. Stund macht sie die erschte 4 Meilen, und i de nöchste Stund die nöchte zwei Meilen. Wenn si im Schnitt 4 Meilen pro Stunde wandere will, mit wellere Gschwindigkeit in Meilen pro Stund muess sie de Rescht vom Weg mache?	"
 Marissa wants to average 4 miles per hour for the entire 12-mile trail.
 
@@ -6299,7 +6299,7 @@ Perhaps the average is to be 4 mph, and we need to find the speed for the remain
 I think I'm wasting time.
 
 I'll go with 6 mph.
-"	stop
+"	stop	6.0	0	1		
 q26866cba	Ich han 10 Liter Orangegetränk, wo zu zwei Drittel us Wasser bestaht, und wills zu 15 Liter Ananasgetränk geh, wo zu drü Fünftel us Wasser bestaht. Bim Ihgüsse verschütti aber en Liter vom Orangegetränk. Wie vill Wasser isch i de verbliibende 24 Liter?	"
 Es scheint, dass es in Ihrer Anfrage einen Tippfehler oder eine Verwechslung geben könnte. Sie haben ursprünglich 10 Liter Orangegetränk, das zu zwei Drittel Wasser besteht, und während des Umgießens (zu Deutsch: ""Beim Umgießen"") haben Sie 1 Liter davon vergossen. Das ergibt eine verbleibende Menge von 9 Litern Orangegetränk.
 
@@ -6789,7 +6789,7 @@ I think I have to accept the typo.
 Perhaps ""Bim Ihgüsse"" means that I consumed or something, but ""verschütti"" is spill.
 
 I'll proceed.
-"	stop
+"	stop	6.0	0	0	6	0
 qa856d9dc	De Raymond und d Samantha sind Cousins. De Raymond isch 6 Jahr vor de Samantha uf d Wält cho. De Raymond het mit 23i en Sohn becho. Wenn d Samantha jetzt 31i, vor wie villne Jahr isch denn de Sohn vom Raymond uf d Wält cho?	"
 Der Sohn von Raymond ist jetzt 2 Jahre alt, da Raymond mit 23 Jahren den Sohn gezeugt hat und jetzt 25 Jahre alt ist. Da Samantha jetzt 31 Jahre alt ist und Raymond 6 Jahre jünger, ist Raymond somit 25 Jahre alt.
 
@@ -6929,7 +6929,7 @@ Die Formulierung: ""De Raymond het mit 23i en Sohn becho."" ""mit 23i"" ist das 
 In einigen Sprachen könnte es anders sein, aber hier ist es klar.
 
 Also, ich denke, 2 ist die richtige Antwort.
-"	stop
+"	stop	2.0	0	0	2	0
 q72ea27fb	De Billy verchauft DVDs. Am Ziischtig het er 8 Chunde. Sini erschte 3 Chunde chaufed je ei DVD. Sini nöchste 2 Chunde chaufed je 2 DVDs. Sini letschte 3 Chunde chaufed kei DVD. Wie vill DVDs het de Billy am Ziischtig verchauft?	"
 De Billy hat am Stand 8 Kunden verpasst.  
 - Die ersten 3 Kunden kauften je eine DVD, also 3 DVDs.  
@@ -7022,7 +7022,7 @@ Aber ist es möglich, dass ""Chunde"" etwas anderes bedeutet? Ich denke nicht, i
 Oder vielleicht sind es nicht Kunden, sondern etwas anderes, aber ""verkauft"" und ""DVDs"" deuten auf Käufer hin.
 
 Also, ich bin zuversichtlich.
-"	stop
+"	stop	7.0	0	1		
 qa62b2b0f	E Cherze wird pro Stund, wo si brennt, um 2 Zentimeter chürzer. Um wie vill Zentimeter isch e Cherze chürzer, wenn sie vo 13 Uhr bis 17 Uhr brennt?	"
 Die Kerze wird pro verstrichener brennender Stunde um 2 Zentimeter kürzer. Von 13 Uhr bis 17 Uhr beträgt die Brenndauer 4 Stunden.
 
@@ -7088,7 +7088,7 @@ Aber die Frage ist in einer Sprache mit möglichen Tippfehlern, aber der Sinn is
 Einer anderen Sache: ""chürzer"" ist ""kürzer"", und ""Zentimeter"" ist korrekt.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	8.0	0	1		
 qaadc02d2	De Kyle het de Bestseller vom letschte Jahr für 19,50 US-Dollar kauft. Das isch mit eme Rabatt vo 25 % uf de ursprünglichi Priis. Wie höch isch de ursprünglichi Priis vom Buech gsi?	"
 Der ursprüngliche Preis des Buches war 26,00 US-Dollar.  
 Dies kann berechnet werden, indem man den Rabatt von 25% berücksichtigt und den gezahlten Preis von 19,50 US-Dollar durch 75% (denn 100% - 25% = 75%) teilt:  
@@ -7190,7 +7190,7 @@ Oder 75% von 26: (75/100)*26 = (3/4)*26 = 78/4 = 19.5, perfekt.
 Also, keine Zweifel.
 
 Der ursprüngliche Preis war 26 US-Dollar.
-"	stop
+"	stop	26.0	0	1		
 q4c88eb07	D Marie het es Hüenergricht für 12 US-Dollar bstellt, 5 Packige Milch für je 3 US-Dollar, 4 Öpfel für je 1,50 US-Dollar und es paar Schachtle Pizza. D Marie het insgesamt 50 US-Dollar zahlt. Wie viel Schachtle Pizza het d Marie bstellt, wenn jedi Schachtle 8,50 US-Dollar choschtet?	"
 Marie hat insgesamt 50 US-Dollar bezahlt. Die Kosten für die Bestellung lauten wie folgt:
 
@@ -7360,7 +7360,7 @@ Vielleicht ist es ""Schachtle"" als ""Schale"" oder etwas, aber der Preis ist ge
 Ich denke, wir gehen davon aus, dass es ""Schachtel"" Pizza ist.
 
 Also, Marie hat 2 Schachtel Pizzas bestellt.
-"	stop
+"	stop	2.0	0	1		
 qc76b9ef5	D Mishka het 3 Paar Shorts, 3 Hose und 3 Paar Schueh kauft. Es Paar Shorts choschtet 16,50 US-Dollar. E Hose choschtet 22,50 US-Dollar und es Paar Schueh 42 US-Dollar. Wie viel Dollar het d Mishka insgesamt für d Chleider usgeh?	"
 D Mishka hat 3 Paar Shorts, 3 Hosen und 3 Paar Schuhe gekauft. Die Gesamtkosten werden wie folgt berechnet:
 
@@ -7582,7 +7582,7 @@ Ja.
 Also, der Betrag ist 243 Dollar.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	243.0	0	1		
 qc792d70c	D Cynthia isst jede Abig e Portion Glacé. Si chauft Glacékarton mit 15 Portione Glacé pro Karton für 4,00 US-Dollar pro Karton. Wie viel het si nach 60 Täg für Glacé usgeh?	"
 Cynthia isst jede Abend eine Portion Glacé. In 60 Tagen isst sie also 60 Portionen.
 
@@ -7614,7 +7614,7 @@ Ich stelle sicher, dass die Antwort auf Deutsch ist und die Einheit Dollar verwe
 Ich überprüfe meine Berechnung nochmal. 60 Tage, 1 Portion pro Tag, also 60 Portionen. 60 Portionen / 15 Portionen pro Karton = 4 Kartons. 4 Kartons * 4 Dollar = 16 Dollar. Das scheint korrekt.
 
 Vielleicht sollte ich die Antwort in einer Box präsentieren, wie in der Aufgabenstellung verlangt.
-"	stop
+"	stop	16.0	0	1		
 qb804efac	De Henry het uf enere 60 Meile lange Velotour zwei Stopps gmacht. De erschti Stopp het er nach 20 Meilen gmacht. De zweiti Stopp isch 15 Meile vor em Endi vo de Tour gsi. Wie vill Meile isch er zwüsched em erschte und zweite Stopp gfahre?	"
 Henry hat eine 60 Meilen lange Velotour absolviert. Der erste Stopp fand nach 20 Meilen statt. Der zweite Stopp war 15 Meilen vor dem Ende der Tour, also bei 60 Meilen minus 15 Meilen = 45 Meilen vom Start.
 
@@ -7702,7 +7702,7 @@ Lassen Sie mich die Einheiten prüfen. Die Tour ist 60 Meilen, Stopp sind in Mei
 Und die Frage verwendet ""Meile"" mit akzentuierten Buchstaben, aber das ist nur Schreibweise.
 
 Also, ich denke, das ist korrekt.
-"	stop
+"	stop	25.0	0	1		
 qf837eb68	D Gloria isch go Schueh poschte und findet es Paar Stiefel, wo in ihres Budget passt. Sie muess sich aber zwüsche de Stiefel und zwei Paar High Heels entscheide, wo zäme foif Dollar weniger chosted als d Stiefel. Wenn es Paar High Heels 33 US-Dollar chosted und s andere doppelt so viel, wie vill chosted denn t Stiefel?	"
 Die Stiefel kosten 104 US-Dollar.
 
@@ -7861,7 +7861,7 @@ Die Frage sagt: ""wo zäme foif Dollar weniger chosted als d Stiefel."" – ""we
 Ja.
 
 Also, ich denke, das ist korrekt.
-"	stop
+"	stop	104.0	0	1		
 qa2455bce	S Altersverhältnis vom Darrell und em Allen isch 7:11. Wenn sie jetzt zäme 162 Jahr alt sind, wie alt isch de Allen i 10 Jahr?	"
 Das aktuelle Alter von Darrell und Allen beträgt zusammen 162 Jahre, und ihr Altersverhältnis ist 7:11.  
 Um das aktuelle Alter von Allen zu finden, teilen wir das Gesamtalter durch die Summe des Verhältnis (7 + 11 = 18):  
@@ -7900,7 +7900,7 @@ Vielleicht sollte ich die Frage korrekt lesen: ""wie alt isch de Allen i 10 Jahr
 Ja, das macht Sinn.
 
 Also, Allen wird in 10 Jahren 109 Jahre alt.
-"	stop
+"	stop	109.0	0	1		
 q166f163a	De Gunter probiert, d Gummibärli im Glas z zelle. Er frögt sini Fründe, wie viel Gummibärli sie meined, dass im Glas sind. Eine seit 80. De ander seit 20 meh als d Hälfti vo de erschte Schätzig. En Dritte seit 25 % meh als de Erscht. Wie hoch isch ihri durschnittlichi Schätzig?	"
 Der Durchschnitt ihrer Schätzungen beträgt 80.
 
@@ -8121,7 +8121,7 @@ And ""ihre"" refers to all three.
 So average is 80.
 
 I think that's it.
-"	stop
+"	stop	80.0	0	1		
 q3966df43	De John luegt zu 10 Hünd. Jede Hund brucht pro Tag 0,5 Stunden für en Spaziergang und zum sis Gschäft mache. Wie viel Stunde pro Wuche verbringt er insgesamt mit de Hünd?	"
 John lebt mit 10 Hunden. Jeder Hund braucht 0,5 Stunden pro Tag für einen Spaziergang und zum selben Geschäft (also insgesamt 0,5 Stunden pro Tag pro Hund).
 
@@ -8151,7 +8151,7 @@ Vielleicht ist die Zeit pro Hund, und John verbringt die Zeit mit jedem einzeln.
 Ich sollte sicherstellen, dass das Kind oder der Anfänger die Sprachfehler versteht, aber die mathematische Logik ist klar.
 
 Also, endgültige Antwort: 35 Stunden.
-"	stop
+"	stop	35.0	0	1		
 q28184d6c	D Gretchen het 110 Münze. Si het 30 meh Gold- als Silbermünze. Wie viel Goldmünze het d Gretchen?	"
 Gretchen hat insgesamt 110 Münzen. Sie hat 30 mehr Goldmünzen als Silbermünzen.
 
@@ -8250,7 +8250,7 @@ Gleiches Ergebnis.
 Also, Gretchen hat 70 Goldmünzen.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	70.0	0	1		
 q5f9dc683	D Siobhan het 2 Schmuckstück weniger als de Aaron. De Aaron het 5 Schmuckstück meh als t Hälfti vo de Schmuckstück vom Raymond. Wenn de Raymond 40 Schmuckstück het, wie vill Schmuckstück het denn d Siobhan?	"
 Siobhan heeft 2 minder sierstukken dan Aaron. Aaron heeft 5 meer dan de helft van de sierstukken van Raymond. Sinds Raymond 40 sierstukken heeft, is de helft daarvan 20. Aaron heeft dus 20 + 5 = 25 sierstukken. Siobhan heeft dan 25 - 2 = 23 sierstukken."	23	"
 Helaas, ik kan de vraag van Siobhan niet volledig begrijpen vanwege de ongebruikelijke notatie. Het lijkt erop dat er drie namen zijn: Siobhan, Aaron en Raymond, maar de notatie gebruikt ""de"" en ""t"" wat betekenisloos zijn. Mogelijk is dit een vertaaldocument en er zijn notatiefouten.
@@ -8308,7 +8308,7 @@ Het antwoord is 23.
 Maar de vraag heeft ""d Siobhan"" en ""de Aaron"", dus waarschijnlijk zijn die woorden bedoeld om variabelen aan te geven, net zoals ""d"" voor directie of iets dergelijks in Duits of Nederlands.
 
 Ik denk dat 23 het juiste antwoord is.
-"	stop
+"	stop	23.0	0	1		
 q9501d333	De Mike spielt 40 Minute lang Pingpong. I de erschte 20 Minute macht er 4 Pünkt. I de nöchste 20 Minute macht er 25 % meh Pünkt. Wie viel Pünkt macht er insgesamt?	"
 Mike spielt 40 Minuten lang Pingpong. In den ersten 20 Minuten macht er 4 Punkte. In den nächsten 20 Minuten macht er 25% mehr Punkte, also 4 + (25/100) * 4 = 4 + 1 = 5 Punkte.
 
@@ -8702,7 +8702,7 @@ In der Aufgabenstellung steht ""Wie viel Pünkt macht er insgesamt?"" also ""How
 Also, 9.
 
 Ich denke, das ist es.
-"	stop
+"	stop	9.0	0	1		
 q0e0fa86b	De Terry isst 2 Joghurt am Tag. Im Moment sind 4 Joghurt für 5,00 US-Dollar im Aagebot. Wie vill git er i 30 Täg für Joghurt us?	"
 Der Terry isst 2 Joghurt am Tag.  
 Der aktuelle Preis für 4 Joghurt beträgt 5,00 US-Dollar.  
@@ -8737,7 +8737,7 @@ Die Frage ist, wie viel Terry für Joghurt ausgibt, also die Ausgaben in Dollar.
 Da die Frage mit ""Wie vill"" angefragt wurde, könnte ich auch ""Wie viel"" in der Antwort verwenden, um es einheitlich zu halten.
 
 Zusammenfassend: Terry isst 2 Joghurt pro Tag, was 2,50 Dollar kostet. In 30 Tagen sind das 75,00 Dollar. Also die Antwort sollte 75,00 Dollar sein.
-"	stop
+"	stop	30.0	0	0	75	1
 q126bbbaa	De John plaant, all sis Spillzüg z verchaufe und mit em Geld Videospiel z chaufe. Er het 13 Lego-Sets und het $15 für jedes verchaufte Set becho. Am Schluss chauft er 8 Videospiel für je $20 und het no $5 übrig. Wie viel Lego-Sets het er no?	"
 John hat ursprünglich 13 Lego-Sets. Er verkauft einige Sets für $15 pro Stück. Mit dem Erlös kauft er 8 Video Games zu je $20 und hat noch $5 übrig.
 
@@ -9047,7 +9047,7 @@ Die 2 Lego-Sets sind die, die nicht verkauft wurden.
 Vielleicht ist ""all sis Spillzüg"" was anderes, aber ich denke, das ist klar.
 
 Ich denke, die Antwort ist 2.
-"	stop
+"	stop	2.0	0	1		
 q5c1bd624	De John rennt 60 Meile pro Wuche. Er rennt 3 Täg pro Wuche. Am erschte Tag rennt er 3 Stunde und a de andere zwei Lauftäg je d Hälfti devo. Wie schnell rennt er?	"
 John läuft 60 Meilen pro Woche bei einem konstanten Tempo. Er läuft 3 Tage pro Woche, wobei der erste Tag 3 Stunden dauert und die beiden anderen Tage jeweils 1,5 Stunden (halb der ersten Lauftime) dauern. Die Gesamtlaufzeit beträgt daher 3 + 1,5 + 1,5 = 6 Stunden.
 
@@ -9518,7 +9518,7 @@ I think it's correct.
 Perhaps ""devo"" means something else, but I can't think of anything.
 
 I'll go with that.
-"	stop
+"	stop	10.0	0	1		
 q02f06b34	D Dana cha viermal so schnell renne wie si laufe cha, aber sie chan nur mit de Hälfti vo ihrere Renngschwindigkeit hüpfe. Wenn sie mit 3 Meile pro Stund hüpfe chan, wie vill Meile cha sie denn i sechs Stunde zrugglegge, wenn sie es Drittel vo de Ziit rennt und zwei Drittel vo de Ziit lauft?	"
 Dana kann vier Mal so schnell laufen wie sie springen kann, aber sie kann nur mit der Hälfte ihrer Lauflkraft springen. Wenn sie mit 3 Meilen pro Stunde springt, dann ist ihre Lauflkraft 4 * 3 = 12 Meilen pro Stunde.
 
@@ -10154,7 +10154,7 @@ I'll go with 24 miles.
 So the answer should be 24.
 
 But let's write it properly.
-"	stop
+"	stop	24.0	0	0	24	0
 qd6dd82e1	S iPhone vom Brandon isch viermal so alt wie s iPhone vom Ben. S iPhone vom Ben isch doppelt so alt wie s iPhone vo de Suzy. Wenn s iPhone vo de Suzy 1 Jahr alt isch, wie alt isch denn s iPhone vom Brandon?	"
 Das iPhone von Suzy ist 1 Jahr alt.  
 Dann ist das iPhone von Ben doppelt so alt, also 2 Jahre alt.  
@@ -10304,7 +10304,7 @@ Wenn Suzy 1 ist, Ben 2, Brandon 4*2=8.
 Perfekt.
 
 Ich denke, es ist korrekt.
-"	stop
+"	stop	8.0	0	1		
 q425db7e5	De gross Drache Perg isch höch obe uf em Berg Farbo gsässe und het Füür uf alles gspuckt, wo imene Umchreis vo 1000 Fuss gsi isch. D Polly het de goldig Speer, die einzig bekannt Waffe, mit dere me de Drache het chöne besiege, 400 Fuss wiit chöne werfe, also klar id Riichwiiti vo de Flamme ine. Wenn d Polly aber de Saphir-Edelstei i de Händ gha het, het sie de Speer drümal so wiit chöne werfe wie ohni de Edelstei. Wenn sie de Edelstei i de Händ häbt, wie wiit usserhalb vo de Reichwiiti vo de Flamme chönnt d Polly stah und de Drache trotzdem no mit em goldige Speer träffe?	"
 Wenn die Polly die Saphir-Edelsteine in der Hand hat, kann sie den goldenen Speer dreimal so weit werfen wie ohne die Edelsteine, also 3 × 400 Fuss = 1200 Fuss.
 
@@ -10742,7 +10742,7 @@ Also, die Polly kann 1200 Fuss vom Drachen entfernt stehen und den Drachen trotz
 Die Reichweite des goldenen Speers mit Edelsteinen ist 1200 Fuss, und das Feuer erstreckt sich nur bis 1000 Fuss, also ist 1200 Fuss die Grenze.
 
 Also, die Antwort ist 1200 Fuss.
-"	stop
+"	stop	1200.0	0	0	1200	0
 qedc215ac	D Grossmama Jones het 5 Öpfelchueche fürs Zmittag vo de Füürwehr bache. Sie het jede Chueche i 8 Stück gschnitte und alli foii Chueche uf de Buffettisch gstellt, demit sich d Gäst selber bediene chönd. Am Endi vom Abig, nachdem sich d Gäst bedient und Chueche gässe händ, sind no 14 Chuechestück übrig gsi. Wie vill Stück händ d Gäst gno?	"
 Grandma Jones hatte 5 Apfelstücke (Annahme: ""Öpfelchueche"" ist ein Schreibfehler für ""Apfelstücke""), und jede wurde in 8 Stücke geschnitten. Somit gab es insgesamt 5 * 8 = 40 Stück.
 
@@ -10960,7 +10960,7 @@ Perhaps ""all"" is ""aller Forst,"" but ""Forst"" might be irrelevant or a mista
 I think it's safe to assume.
 
 So, the answer is 26.
-"	stop
+"	stop	26.0	0	1		
 q5d47194e	Luut de Nährwertagabe het e Packig Chips 250 Kalorie pro Portion. Wenn e 300 g-Packig 5 Portione het, wie viel Gramm chasch du esse, wenn dis tägliche Kalorieziil bi 2000 liit und du scho 1800 Kalorie gässe hesch?	"
 Basierend auf der Nährwertangabe, die besagt, dass eine Portion Chips 250 Kalorien hat, und dass eine 300g-Packung 5 Portionen enthält, kann die Kalorienzusammensetzung der Chips berechnet werden. Eine 300g-Packung hat insgesamt 1250 Kalorien (5 * 250 kcal), was einer Kaloriendichte von etwa 4.1667 kcal/g (1250 kcal / 300 g) entspricht.
 
@@ -11269,7 +11269,7 @@ Oder 200/250 * 60 = 0.8 * 60 = 48.
 Perfekt.
 
 Ich glaube, das ist es.
-"	stop
+"	stop	48.0	0	1		
 q255b81c0	De Charlie will Bienenwachscherze verchaufe. Us jedem Pfund Bienenwachs chan er 10 Chegelcherze mache. S Material us eim Pfund Bienenwachs plus Docht chostet 10,00 US-Dollar. Wenn er d Cherze für 2,00 US-Dollar verchauft, wie viel Nettogwünn macht er, wenn er 20 Cherze macht und verchauft?	"
 Charlie kann aus jedem Pfund Bienenwachs 10 Kerzen herstellen. Das Material (Bienenwachs und Docht) für diese 10 Kerzen kostet 10,00 US-Dollar.
 
@@ -11600,7 +11600,7 @@ Und ""plus Docht"" – ""plus Docht"", also zusätzlich Docht.
 Ja.
 
 Also, ich glaube, 20,00 Dollar ist die Antwort.
-"	stop
+"	stop	20.0	0	1		
 q0166ea66	D Meredith isch Freelance-Bloggerin und schribt über Gsundheitstheme und kontaktiert Chunde, das isch ihre Job. Für d Recherche und s Schriibe vomene Blogartikel brucht sie im Schnitt 4 Stunde. Letst Wuche het sie am Mäntig 5 Artikel gschribe und am Ziischtig 2/5 meh Artikel als am Mäntig. Am Mittwuch het sie doppelt so vill Artikel gschribe wie am Ziischtig. Wie vill Stunde het sie i dene drü Täg insgesamt fürs Artikelschriibe brucht?	"
 Meredith hat in den letzten drei Tagen (Montag, Dienstag, Mittwoch) insgesamt 26 Artikel geschrieben. Da für jeden Artikel im Schnitt 4 Stunden für Recherche und Schreiben benötigt werden, beträgt die Gesamtzeit 104 Stunden.
 
@@ -11826,7 +11826,7 @@ Ja.
 Also, insgesamt 104 Stunden.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	104.0	0	1		
 q7bb382f4	D Candice het 80 Post-it-Notizzettel i ihri Handtäsche packt bevor sie zu ihrem Job in Coffee Shop gange isch. Unterwegs het sie en Zwüschestop im Lade ihgleit und ei Packig Post-it-Notizzettel kauft. Bim Schaffe het sie a 220 verschidnigi Tasse Kafi jewiils ein Post-it-Notitzzettel gchlebt. Wen ihre insgesamt 23 Post-it-Notitzzettel übrigblibe sind, wie vill Post-it-Notitzzettel sind i de Packig gsi, wo sie kauft het?	"
 Candice hatte ursprünglich 80 Post-It-Notizzettel in ihrer Handtasche. Sie kauft dann eine Packung mit \(x\) Notizzettel, sodass sie insgesamt \(80 + x\) Notizzettel besitzt. Anschließend klebt sie bei 220 verschiedenen Kaffeetassen jeweils ein Notizzettel, was bedeutet, dass sie 220 Notizzettel verwendet hat.
 
@@ -12083,7 +12083,7 @@ Aber vielleicht ist der Coffee Shop die Stelle, wo sie das Kleben macht, und sie
 Ich denke, das ist korrekt.
 
 Also die Packung hatte 163 Notizzettel.
-"	stop
+"	stop	163.0	0	1		
 q1a64508f	De John chauft doppelt so viel roti wie blaui Grawatte. Di roti Grawatte chosted 50 % meh als die blaui. Er het 200 US-Dollar für blaui Grawatte usgeh, wo pro Stück 40 US-Dollar chosted. Wie vill het er insgesamt für Grawatte usgeh?	"
 De John kauft doppelt so viele blaue Grawattes als rote Grawattes. Die blaue Grawatte kostet 40 US-Dollar pro Stück, und er hat für blaue Grawattes insgesamt 200 US-Dollar ausgegeben. Das ergibt eine Anzahl von 5 Stück blaue Grawattes (200 / 40 = 5).
 
@@ -12187,7 +12187,7 @@ Eine andere Sache: ""Di roti Grawatte chosted 50 % meh als die blaui."" – ""Di
 Und ""usgeh"" ist ""ausgegeben"".
 
 Also, ich denke, 800 ist die korrekte Antwort.
-"	stop
+"	stop	800.0	0	1		
 q9605b4e6	D Tracy het es 4 Fuss langs Stück Draht brucht, zum d Tomatepflanze i ihrem Garte abzstütze. De Draht isch i Stück vo je 6 Inches gschnitte worde. Wie vill Stück Draht het sie gha?	"
 D Tracy benötigt insgesamt 4 Fuß langen Draht.  
 1 Fuß entspricht 12 Zoll, also ist die Gesamtlänge 4 × 12 = 48 Zoll.  
@@ -12438,7 +12438,7 @@ Vielleicht ist ""4 Fuss"" ein Platzhalter oder so, aber nein.
 Eine andere Möglichkeit: ""Fuss"" könnte in einigen Regionen anders verwendet werden, aber ich denke, es ist standard.
 
 Also, ich glaube, ich sollte mit 8 weitermachen.
-"	stop
+"	stop	8.0	0	1		
 qda35e8fb	De Richard wohnt imene Wohnhuus mit 15 Stockwerk. Uf jedem Stock hets 8 Wohnige, und 3/4 vom Gebäude isch bewohnt. Wie vill Wohnige im Gebäude sind insgesamt leer?	"
 De Richard wohnt in einem 15-stockigen Wohnhaus, wobei jeder Stock 8 Wohnungen hat. Die Gesamtzahl der Wohnungen im Gebäude beträgt daher 15 * 8 = 120.
 
@@ -12556,7 +12556,7 @@ Daher muss es sich auf die Wohnungen beziehen.
 Vielleicht ""Bewohnt"" als in die Stockwerke, aber ich denke, das ist unwahrscheinlich.
 
 Also, ich bin fest davon überzeugt, dass 30 die Antwort ist.
-"	stop
+"	stop	30.0	0	1		
 q94fcd6ce	De Lloyd het en Eierhof. Sini Hüener leged 252 Eier pro Tag und er verchauft sie für 2 US-Dollar pro Dutzend. Wie vill verdient de Lloyd pro Wuche mit de Eier?	"
 De Lloyd verdient pro Woche mit den Eiern 294 US-Dollar.  
 
@@ -12626,7 +12626,7 @@ Die Eierproduktion ist 252 pro Tag, Verkaufspreis 2 pro Dutzend.
 Also ja.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	294.0	0	1		
 q1afb1e71	S Schiff vom Tom chan 10 Meile pro Stund fahre. Er seglet vo 13 bis 16 Uhr. Denn fahrt er mit 6 Meile/Stund wieder zrugg. Wie lang brucht er für de Rückwäg?	"
 Das Schiff segelt mit einer Geschwindigkeit von 10 Meilen pro Stunde von 13:00 bis 16:00 Uhr, was einer Distanz von 30 Meilen entspricht.
 
@@ -12818,7 +12818,7 @@ In der Frage steht ""10 Meile pro Stund fahre"", was unklar sein könnte, aber i
 Ich denke, das ist es.
 
 Also, Zeit für den Rückweg: 5 Stunden.
-"	stop
+"	stop	5.0	0	1		
 q0aaae19a	Em Uriah wird sini Büechertäsche z schwer. Er muess 15 Pfund useneh. Sini Comicbüecher wäged 1/4 Pfund pro Stück und sini Spillzüg je 1/2 Pfund. Wenn er 30 Comicbüecher usemimmt, wie viel Spielzüg muess er denn no useneh?	"
 Uriah muss insgesamt 15 Pfund abnehmen. Mit 30 Comicbüchern, die je 1/4 Pfund (0.25 Pfund) wiegen, ergibt das ein Gewicht von 30 × 0.25 = 7.5 Pfund.
 
@@ -13032,7 +13032,7 @@ Ich denke, das ist korrekt.
 Also, er muss noch 15 Spielzüge abnehmen.
 
 Die Antwort ist 15.
-"	stop
+"	stop	15.0	0	1		
 qa5756c69	En Mechaniker verlangt unterschidlichi Priise für d Reparatur vo LKW-Reife und PKW-Reife. Für jede reparierte LKW-Reife verlangt er 60 Dollar und für jede reparierte PKW-Reife 40 Dollar. Am Dunschtig repariert er 6 LKW-Reife und 4 PKW-Reife. Am Fritig repariert er 12 PKW-Reife und kei LKW-Reife. Wie vill Dollar meh Umsatz macht de Mechaniker a dem Tag mit em höhere Umsatz?	"
 Der Mechaniker hat am Donnerstag einen Umsatz von 520 Dollar (6 LKW-Reifen zu 60 Dollar je Reifen und 4 PKW-Reifen zu 40 Dollar je Reifen). Am Freitag beträgt der Umsatz 480 Dollar (12 PKW-Reifen zu 40 Dollar je Reifen und keine LKW-Reparaturen). Der höhere Umsatz ist also am Donnerstag mit 520 Dollar.
 
@@ -13294,7 +13294,7 @@ Vielleicht in einem bestimmten Format.
 Aber einfach 40 Dollar.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	40.0	0	1		
 qd819612e	D Doubtfire-Schwöstere fahred mit 7 Chätzli hei, wo sie im lokale Tierheim adoptiert händ, als ihri Mueter alüütet und seid, dass ihri beide Huuschatze grad Chätzli übercho hend. Sie seid, d Patchy, die erscht Chatz, het drümal so viel Chätzli wie die adoptierte, während d Trixie, die anderi Chatz, 12 uf d Wält bracht het. Wie viel Chätzli händ d Doubtfires jetzt?	"
 Die Doubtfires haben 7 Kinder adoptiert, die sie im lokalen Tierheim geholt haben. Patchy hat dreimal so viele Kinder wie die 7 adoptierten, also 3 × 7 = 21 Kinder. Trixie hat 12 Kinder.
 
@@ -13920,7 +13920,7 @@ Aber ich bin unsicher wegen der Sprachstörung.
 Vielleicht ""die adoptierte"" ist die Anzahl, und ""Chätzli"" sind Kinder.
 
 Ich gehe davon aus, dass die Gesamtzahl 40 ist.
-"	stop
+"	stop	40.0	0	1		
 q7c63d108	D Jean het 30 Lollis. D Jean isst 2 vo de Lollies. Die übrige Lollies will d Jean i Säckli mit je 2 Lollies tue. Wie vill Säckli cha d Jean fülle?	"
 D Jean hat 30 Lollis. Er isst 2 davon, also bleiben 28 Lollis übrig. Diese 28 Lollis werden in Säckli mit je 2 Lollis geteilt.  
 Da 28 geteilt durch 2 gleich 14 ist, kann D Jean 14 Säckli füllen."	14	"
@@ -13957,7 +13957,7 @@ Da 28 geteilt durch 2 gleich 14 ist, kann D Jean 14 Säckli füllen."	14	"
 但让我用英语写出来以确保：Jean has 30 lollipops, eats 2, so 28 left. Then puts 2 per bag, so 28 / 2 = 14 bags.
 
 是的，似乎很直接。
-"	stop
+"	stop	14.0	0	1		
 q93b023e5	De Peter plant, die Wuche is Kino z gah. Er chauft immer es Billet für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für die Wuche 42 US-Dollar zur Verfüegig het, wie oft chan er denn is Kino gah?	"
 Peter möchte jede Woche ins Kino gehen und kauft jedes Mal ein Ticket für 7 US-Dollar und Popcorn für 7 US-Dollar, also insgesamt 14 US-Dollar pro Kinobesuch.
 
@@ -14113,7 +14113,7 @@ Die Frage ist, wie oft er ins Kino gehen kann, mit der Bedingung, dass er jedes 
 Also, ja.
 
 Ich denke, das ist korrekt.
-"	stop
+"	stop	3.0	0	1		
 qdf141d2f	E Holzbrugg chan nöd meh als 5.000 Pfund träge. En Lieferwage mit identische Chischte, wo jedi 15 Pfund wiegt, wird über t Brugg fahre. De Fahrer und de leeri Lastwage wieged zäme 3755 Pfund. Wie vill Chischtene cha de Lastwage maximal lade, ohni s Gwichtslimit vo de Brugg z überschriite?	"
 Die maximale Last, die die Holzbrücke tragen kann, beträgt 5.000 Pfund. Das leere Lastauto mit Fahrer wiegt 3.755 Pfund. Die verfügbare Last für die Chischtene (oder Lastgut) ist daher die Differenz:  
 5.000 Pfund - 3.755 Pfund = 1.245 Pfund.
@@ -14273,7 +14273,7 @@ Aber in der Frage ist ""Chischtene"", also vielleicht ""Chischtene"" ist der Beg
 Vielleicht ist es ""Chischt"" für ""Schich"", aber ich denke, es ist akzeptabel.
 
 Also, ich glaube, das ist die Lösung.
-"	stop
+"	stop	83.0	0	1		
 q1f4f019f	De Stephen het online Läbensmittel bstellt. D Endrechnig isch 40,00 US-Dollar gsi. Will d Liferig vomene Liferdienst gmacht worde isch, händ sie uf de Endrechnig e Gebühr vo 25 % druffgschlage und ihm 3,00 US-Dollar Lifergebühre verrechnet. De Stephen het au no 4,00 US-Dollar Trinkgäld geh. Wie höch isch de Endpriis vo sine Läbensmittel nach all dene Extragebühre gsi?	"
 Der Endpreis für die Lebensmittel beträgt 53,00 US-Dollar.  
 
@@ -14607,7 +14607,7 @@ Aber um es zu bestätigen, Stephen bezahlte ursprünglich 40,00 USD, bekam 25% G
 Ja.
 
 Ich denke, die Antwort ist 53,00 US-Dollar.
-"	stop
+"	stop	4.0	0	0	53	0
 q709e5faa	En Himbeerstruuch het 6 Trüübli mit je 20 Frücht und 67 einzelni Frücht, wo über de Struuch verteilt sind. Wie viel Himbeeri hets insgesamt?	"
 Es gibt 6 Trauben, jede mit 20 Himbeeren, also 6 * 20 = 120 Himbeeren in den Trauben.
 
@@ -14725,7 +14725,7 @@ Ja.
 Also, insgesamt Himbeeren: 187.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	187.0	0	1		
 qb292acaa	Imene Chorb sind 25 Orange, devo isch 1 schlecht, 20 % sind no nöd riif und 2 sind suur, und de Rescht isch guet. Wie viel Orange sind guet?	"
 Es gibt 25 Orange insgesamt.
 
@@ -15491,7 +15491,7 @@ But again, no information, so we assume no overlap.
 Thus, good oranges: 17
 
 So, the final answer is 17.
-"	stop
+"	stop	17.0	0	1		
 qa11cac63	D Janet chauft e Brosche für ihri Tochter. Sie zahlt 500 US-Dollar fürs Material zum sie herstelle und nomal 800 US-Dollar em Juwelier fürs Forme. Denn zahlt sie no 10 % vom Betrag für d Versicherig. Wie vill het sie insgesamt müesse zahle?	"
 Die korrigierte Version der Frage lautet:  
 ""Janet bastelt eine Brosche für ihre Tochter. Sie zahlt 500 US-Dollar für das Material und normal 800 US-Dollar dem Juwelier für die Fertigung. Daher zahlt sie noch 10 % vom Betrag für die Versicherung. Wie viel muss sie insgesamt zahlen?""
@@ -15566,7 +15566,7 @@ Aber der Betrag für die Versicherung ist nicht definiert, also muss es ein Tipp
 Ich gehe davon aus, dass es 10 % von der Fertigungskosten ist, da das Material bereits bezahlt wurde und die Versicherung oft für den Handelsprozess berechnet wird.
 
 Also Antwort: 500 + 800 + 80 = 1380 Dollar.
-"	stop
+"	stop	10.0	0	0	1380	0
 q5a0d641e	Nach 40 Dienstjahr bechunnt en Mitarbeiter i de Firma vo de Marcy e volli Jahresrente vo 50.000 Dollar. Pensionsahsprüch entstönd nach 20 Dienstjahr. Für jedes wiitere volle Dienstjahr nach de 20-Jahr-Grenze verdient de Mitarbeiter 5 % vom volle Rentebetrag. Wenn d Marcy nach genau 30 Dienstjahr ufhört, wie hoch isch ihri jährlichi Rente in Dollar?	"
 Der Pensionsanspruch entsteht nach 20 Dienstjahren, und die volle Jahresrente nach 40 Dienstjahren beträgt 50.000 Dollar. Für jedes weitere volle Dienstjahr nach der 20-Jahr-Grenze wird die jährliche Rente um 5% des vollständigen Rentebetrags (50.000 Dollar) erhöht. Da der Betrag nach 20 Jahren nicht spezifiziert ist, wird angenommen, dass er 0 Dollar beträgt, um die volle Rente nach 40 Jahren zu erreichen.
 
@@ -16326,7 +16326,7 @@ Also, das sollte die Antwort sein.
 Ich denke, das ist es.
 
 Also, nach 30 Jahren: 25.000 Dollar jährliche Rente.
-"	stop
+"	stop	30.0	0	0	25000	1
 q2eb5bb5f	D Aleena het en Streaming-Dienst abonniert, wo 140 US-Dollar pro Monet choschtet. Wenn d Streamingfirma ihr i de erschte Jahreshälfti de ursprüngliche Betrag verrechnet und i de zweite Jahreshälfti denn 10 % weniger, wie viel zahlt si bis Endi Jahr insgesamt für de Streaming-Dienst?	"
 Aleena zahlt im ersten Halbjahr (6 Monate) 140 US-Dollar pro Monat, also insgesamt:  
 6 × 140 = 840 US-Dollar.
@@ -16440,7 +16440,7 @@ Aber ich sollte die Einheit angeben, da es um Geld geht.
 In der Frage ist Dollar angegeben, also kann ich das verwenden.
 
 Ich denke, das ist es.
-"	stop
+"	stop	1596.0	0	1		
 q29ca8e5c	D Sophia überleit sich, mit ihrem Auto e längeri Fahrt z mache, und will wüsse, wie wiit sie mit eme volle Tank chunnt. Siit em letschte Tanke isch sie 100 Meilen gfahre und het 4 Gallone Benzin müesse nahtanke, demit de Tank wieder ganz voll isch. I de Bedienigsahleitig vo ihrem Auto staht, dass 12 Gallone Benzin in Tank passed. Wie viel Meilen chan d Sophia mit einere einzige Tankfüllig fahre?	"
 Sophia hat seit dem letzten Tanken 100 Meilen gefahren und dabei 4 Gallonen Benzin verbraucht, um den Tank wieder aufzufüllen. Dies bedeutet, dass der durchschnittliche Benzinverbrauch ihres Autos 4 Gallonen pro 100 Meilen beträgt, oder 0,04 Gallonen pro Meile.
 
@@ -16737,7 +16737,7 @@ Die Frage ist: ""Wie viel Meilen kann Sophia mit einer einzigen Tankfüllung fah
 Und wir haben es.
 
 Also, ich glaube, 300 ist die Antwort.
-"	stop
+"	stop	300.0	0	1		
 q388ed7a8	De Jim luegt 2 Stunde lang Fernseh und beschlüsst denn, is Bett z gah und halb so lang z läse. Das macht er 3-mal pro Wuche. Wie vill Stunde verbringt er i 4 Wuche insgesamt mit Fernseh luege und Läse?	"
 Jim schaut 2 Stunden Fernsehen und beschließt dann dreimal pro Woche, im Bett zu lesen für eine halbe Stunde (halb so lang wie die Fernsehdauer). 
 
@@ -17041,7 +17041,7 @@ Aber in der Frage steht ""Stunde"", was ""hour"" bedeutet, also eine Einheit.
 Also, 30 Stunden.
 
 Ich denke, ich bin bereit, die Antwort zu geben.
-"	stop
+"	stop	30.0	0	0	30	0
 qe6615147	Vier Schuele träffed i mene Basketballturnier ufenand. Jedi Schuel het es Meitlibasketballteam und es Buebebasketballteam gschickt, und jedes Team het 5 Spiller. Alli Schuele händ au für jedes Team en Trainer mitgschickt. Wie viel Persone händ d Schuele insgesamt gschickt?	"
 Vier Schuele (vier Schulen) haben insgesamt je zwei Teams gesendet: ein Meitlibasketballteam (gemischtes Basketballteam) mit 5 Spielern und ein Buebebasketballteam (Boys-Basketballteam) mit 5 Spielern. Für jedes dieser Teams wurde zudem ein Trainer gesendet.
 
@@ -17398,7 +17398,7 @@ But let's see the last part: ""Wie viel Persone händ d Schuele insgesamt gschic
 Perhaps it's a language issue, but based on context, it's schools.
 
 So, I'll go with 48.
-"	stop
+"	stop	48.0	0	1		
 q1df59a5a	En Schatzsuecher het e vergrabeni Schatzchiste mit Edelstei gfunde. Es sind 175 Diamante dinne gsi, 35 weniger Rubine als Diamante und doppelt so viel Smaragde wie Rubine. Wie viel Edelstei sind i de Schatzchiste gsi?	"
 In der Schatzkiste sind 175 Diamanten, 140 Rubine und 280 Smaragde. Die Gesamtzahl der Edelsteine beträgt daher 175 + 140 + 280 = 595.
 
@@ -17597,7 +17597,7 @@ Also, unter dieser Annahme ist es 595.
 Ich denke, das ist die Absicht.
 
 Also, die Gesamtzahl ist 595.
-"	stop
+"	stop	595.0	0	1		
 q0e3fa635	I de Schuel vom Dr. Wertz hets doppelt so vill Buebe wie Meitli. Wenns 60 Meitli und 5 Schüeler pro Lehrer het, wie vill Lehrer hets denn?	"
 In der Schule von Dr. Wertz gibt es doppelt so viele Jungen wie Mädchen. Wenn es 60 Mädchen gibt, dann sind es 120 Jungen. Die Gesamtzahl der Schüler beträgt also 180.
 
@@ -17623,7 +17623,7 @@ Also L = 180 / 5 = 36.
 Ich sollte das noch einmal überprüfen. Mit 60 Mädchen und 120 Jungen sind es insgesamt 180 Schüler. Bei 5 Schüler pro Lehrer ergibt sich 180 / 5 = 36 Lehrer. Das scheint korrekt.
 
 Der Benutzer hat den Dialekt verwendet, also sollte ich die Antwort in einfachem Deutsch geben, vielleicht mit einer Erklärung, damit es verständlich ist.
-"	stop
+"	stop	36.0	0	1		
 q9c0ce719	D Bailey fangt mit eme bestimmte Gäldbetrag ah. Denn bechunnt sie 8 Wuche lang jedi Wuche 5 US-Dollar. Wenn sie am Endi vo de 8 Wuche insgesamt 100 US-Dollar het, wie viel Gäld het d Bailey am Ahfang gha?	"
 Bailey hat 8 Wochen lang jede Woche 5 US-Dollar ausgegeben. Die Gesamtsumme der Ausgaben beträgt 8 * 5 = 40 US-Dollar.
 
@@ -17897,7 +17897,7 @@ Wenn der Rest 100 Dollar ist, dann Anfang 140.
 Ja.
 
 Ich denke, das ist die Lösung.
-"	stop
+"	stop	140.0	0	0	140	0
 qde446a3d	D Judy unterrichtet a Werktäg täglich 5 Tanzkürs und am Samschtig 8 Kürs. Wenn i jedem Kurs 15 Schüeler sind und sie 15,00 $ pro Schüeler verlangt, wie vill Gäld verdient sie inere Wuche?	"
 Judy unterrichtet an jedem Werktag (Montag bis Freitag) 5 Tankeurse, also 5 Kurse.  
 An einem Werktag verlangt sie 5 Kurse * 15 Schüler/Kurs * 15,00 $/Schüler = 1125,00 $ pro Werktag.  
@@ -18181,7 +18181,7 @@ Aber um es genau zu matchen, die Frage hat ""Gäld"" und ""Werktag"", aber die A
 Ich denke, das ist in Ordnung.
 
 Also, die endgültige Antwort ist 7425 $.
-"	stop
+"	stop	7425.0	0	1		
 qd941251f	De Kelian het zwei Chochrezept, s einte het 20 Ahwiisige und s andere doppelt so viel Ahwiisige wie s erschte. Wie viel Ahwiisige muess de Kelian läse, damit er die beide Rezept cha zubereite?	"
 De Kelian muss insgesamt 60 Ahwiisige lesen, um beide Rezepte zubereiten zu können.  
 Das erste Rezept erfordert 20 Ahwiisige, und das zweite Rezept benötigt doppelt so viele, also 40 Ahwiisige.  
@@ -18205,7 +18205,7 @@ Kelian muss also 60 Ahwiisige lesen, um beide Rezepte zu bereiten. Aber ""lesen"
 Vielleicht ist ""Ahwiisige"" eine Art Menge oder Portion, und Kelian muss diese Menge für beide Rezepte zusammen.
 
 Ich glaube, ich sollte die Antwort als 60 geben.
-"	stop
+"	stop	60.0	0	1		
 q96352811	De Tommy sammlet Gäld für sini Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Stück und Chäschuechestück für 4 US-Dollar pro Stück verchauft. Wenn de Tommy 43 Brownies und 23 Chäschuechestück verchauft, wie vill Gäld sammlet er denn?	"
 Tommy verkauft 43 Brownies zu je 3 US-Dollar, was 43 × 3 = 129 US-Dollar ergibt.
 
@@ -18253,7 +18253,7 @@ Perhaps I should write the answer in a complete sentence.
 The question says ""Gäld"", which is probably a typo for ""Geld"", meaning money. So, I think it's fine.
 
 Therefore, Tommy collects 221 dollars.
-"	stop
+"	stop	221.0	0	1		
 qbf808b59	D Shiela het foif Handys für 150 US-Dollar pro Stück miteme Ratezahligsvertrag vo 3 Monet kauft. Pro Stück werded 2 % Zins verlangt. Wie viel zahlt d Shiela jede Monet während 3 Monet?	"
 D. Sheila kauft fünf Handys zu je 150 US-Dollar. Der Gesamtpreis beträgt 5 × 150 = 750 US-Dollar.
 
@@ -18755,7 +18755,7 @@ Wenn der Zinssatz pro Jahr ist, dann wäre es anders, aber die Formulierung sagt
 Ich denke, 255 USD ist die Antwort.
 
 Also, D. Shiela zahlt jede Monat 255 US-Dollar während 3 Monaten.
-"	stop
+"	stop	3.0	0	0	255	1
 q71d76256	De Artie het en Bluemestand uf em Buuremarkt. Er verchauft drü Sorte Blueme: Studenteblueme, Petunie und Begonie. Normalerwiis verchauft er Studenteblueme für 2,74 Dollar pro Topf, Petunie für 1,87 Dollar pro Topf und Begonie für 2,12 Dollar pro Topf. De Artie het hüt kei Wechselgäld, drum het er beschlosse, alli Priise uf de nöchsti volle Dollar ufzrunde. Wenn de Artie 12 Töpf Studenteblueme, 9 Töpf Petunie und 17 Töpf Begonie verchauft, wie villl Dollar verdient er?	"
 De Artie verkaufte die Blumen mit aufgerundeten Preisen, um keine Wechselgeld zu benötigen. Die ursprünglichen Preise waren:
 
@@ -19281,7 +19281,7 @@ For example, for 2.74, the next dollar could be 3 or 2, but it's ambiguous.
 I think it's best to assume ceiling rounding.
 
 So I'll go with that.
-"	stop
+"	stop	105.0	0	0	105	0
 qd6f9023f	De Luke verbringt Ziit am Strand und baut Sandburge. Irgendwenn merkt er, dass jedi Ebene vonere Sandburg nur halb so villl Quadratmeter het wie d Ebene grad drunder. Wenn er e 4-stöckigi Sandburg baut, mit enere oberste Ebene vo 16 Quadratmeter, wie gross isch denn im Schnitt e Ebeni in Quadratmeter?	"
 De Luke baut eine 4-stöckige Sandburg, wobei jede Ebene halb so viel Quadratmeter hat wie die Ebene genau darunter. Die oberste Ebene hat 16 Quadratmeter.
 
@@ -19889,7 +19889,7 @@ Durchschnitt: 60 m².
 Also, die Antwort sollte 60 sein.
 
 Ich denke, das ist es.
-"	stop
+"	stop	60.0	0	1		
 qcf724c14	D Cecilia het grad en neue Welpe kauft. Luut ihrem Tierarzt muess sie de Welpe i de erschte 180 Täg täglich mit 1 Tasse Hundefueter füetere. Danach muess sie de Welpe für de Rescht vo sim Läbe täglich mit 2 Tasse Hundefueter füetere. Wenn en Sack Hundefueter 110 Tasseportione beinhaltet, wie vill Säck Hundefueter verbruucht d Cecilia denn im erschte Jahr?	"
 Cecilia hat eine neue Welpe und muss ihm laut dem Tierarzt für die ersten 180 Tage des ersten Jahres täglich eine Tasse Hundefutter füttern. Danach, für die restlichen Tage des ersten Jahres, füttert sie ihm täglich zwei Tassen Hundefutter.
 
@@ -20251,7 +20251,7 @@ But the user might have meant ""Hundefutter"" and ""Tasse"" etc., but I think it
 Perhaps in some regions, the year has 365 days, in others 366, but since not specified, 365.
 
 I think I'll go with 5.
-"	stop
+"	stop	5.0	0	1		
 q6330b5ad	Wenn de Raymond halb so vill Wösch wischt wie d Sarah und d Sarah 4-mal so vill Wösch wischt wie de David, wie gross isch de Unterschied zwüsche de Wöschmenge vom Raymond und em David, wenn d Sarah 400 Pfund Wösch wischt?	"
 Der Unterschied zwischen der Wäschemenge von Raymond und David beträgt 100 Pfund.
 
@@ -20435,7 +20435,7 @@ Und ""de Unterschied"" – der Unterschied.
 Also, in der Tat.
 
 Ich denke, das ist korrekt.
-"	stop
+"	stop	100.0	0	1		
 qfb8247db	De Vincent cha Blueme inere 3er-Packige für 2,50 US-Dollar oder inere 2er-Packige für 1 US-Dollar chaufe. Wie vill Gäld spart er, wenn er 18 Blueme zum bessere Priis chauft?	"
 Es scheint, dass ""De Vincent"" ein Tippfehler sein könnte und stattdessen ""Devin"" gemeint ist, und ""Blueme"" wahrscheinlich ""Blume"" oder ""Blumen"" ist, was in diesem Kontext ""Blume"" (Flower) bezeichnet. Die Preise sind in US-Dollar angegeben: der 3er-Pack (3 Blumen) kostet 2,50 USD, und der 2er-Pack (2 Blumen) kostet 1 USD.
 
@@ -21273,7 +21273,7 @@ Prices are in US-Dollar, so saving in USD.
 Also, the user says ""Gäld spart"", probably ""Geld spart"", money saves.
 
 So, I think that's it.
-"	stop
+"	stop	3.0	0	0	6	1
 q4da79a41	De John adoptiert en Hund. Er bringt de Hund zum Hundecoiffeur, und das choschtet 100 US-Dollar. De Hundecoiffeur git ihm 30 % Rabatt, will er en Neukund isch. Wie vill choschtet d Sitzung bim Hundecoiffeur?	"
 Der ursprüngliche Preis für die Sitzung beträgt 100 US-Dollar. Mit einem Rabatt von 30 % kostet die Sitzung jetzt:
 
@@ -21303,7 +21303,7 @@ Ich muss sicherstellen, dass die Antwort korrekt ist. Der ursprüngliche Preis i
 Vielleicht sollte ich die Antwort in einer Box präsentieren.
 
 Zuletzt: Die Frage enthält einige Tippfehler, wie ""De"", ""en"", ""choschtet"", ""git"". Aber ich verstehe den Sinn, also konzentriere ich mich auf die mathematische Berechnung.
-"	stop
+"	stop	70.0	0	1		
 qd3f2e43b	Zwei Meitli händ je 1/6 vo 24 Liter Wasser becho. Denn het en Bueb 6 Liter Wasser becho. Wie viel Liter Wasser sind übrig blibe?	"
 Die Gesamtmenge von 24 Litern Wasser wurde zugeteilt. Zwei Mädchen haben je 1/6 von 24 Litern bekommen, also 4 Liter pro Kopf, was insgesamt 8 Liter ergibt. Dann haben die Buben 6 Liter bekommen. Die Gesamtmenge, die zugeteilt wurde, beträgt also 8 + 6 = 14 Liter. Daher bleiben 24 - 14 = 10 Liter Wasser übrig."	10	"
 Zuerst habe ich die Frage: ""Zwei Meitli händ je 1/6 vo 24 Liter Wasser becho. Denn het en Bueb 6 Liter Wasser becho. Wie viel Liter Wasser sind übrig blibe?""
@@ -21579,7 +21579,7 @@ Aber in der Antwort reicht es, die Gesamtmenge zu nehmen.
 Ich denke, die Antwort ist 10 Liter.
 
 Also, übrig bleibt 10 Liter Wasser.
-"	stop
+"	stop	10.0	0	1		
 qffe70c6a	De Charlie het 10 Sticker gha. Er het 21 Sticker imene Lade im Ihchaufszentrum kauft und 23 Sticker zum Geburtstag gschänkt becho. Denn het de Charlie sinere Schwöster 9 vo de Sticker geh und 28 brucht, zum e Gruesscharte z dekoriere. Wie vill Sticker het de Charlie no übrig?	"
 Charlie hat ursprünglich 10 Sticker.
 
@@ -21991,7 +21991,7 @@ Also, wir nehmen an, dass die 28 aus dem Gesamtpool stammen.
 Daher, 35.
 
 Ich denke, das ist die Lösung.
-"	stop
+"	stop	35.0	0	0	35	0
 q7d0f9963	D Grace wiegt 125 Pfund. De Alex wiegt 2 Pfund weniger als s 4-fache vom Gwicht vo de Grace. Wie vill Pfund wieged sie zäme?	"
 Grace wiegt 125 Pfund.  
 Alex wiegt 2 Pfund weniger als das 4-fache von Grace' Gewicht, also \(4 \times 125 - 2 = 500 - 2 = 498\) Pfund.  
@@ -22119,7 +22119,7 @@ Also, ich bleibe bei 623.
 Die Gesamtzahl ist 623 Pfund.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	623.0	0	1		
 q792b7ea9	De Dan pflanzt 3 Rosebüsch. Jede Rosebusch het 25 Rose. Jedi Rose het 8 Dorne. Wie viel Dorne sind das insgesamt?	"
 De Dan pflanzt 3 Rosebüsch. Jedes Rosebusch hat 25 Rosen, und jede Rose hat 8 Dornen. Um die Gesamtzahl der Dornen zu berechnen, multipliziert man die Anzahl der Rosebüsch mit der Anzahl der Rosen pro Rosebusch und dann mit der Anzahl der Dornen pro Rose:
 
@@ -22306,7 +22306,7 @@ Und ""De Dan pflanzt 3 Rosebüsch"" – vielleicht ""Dee Dan"" oder einfach ""Da
 Nicht relevant.
 
 Also, ich denke, es ist klar.
-"	stop
+"	stop	600.0	0	1		
 q3dfac176	Es Fuessballteam spielt 22 Spiel. Sie händ 8 meh Spiel gwunne als verlore. Wie vill händ sie gwunne?	"
 Das Fußballteam hat 22 Spiele gespielt. Es hat 8 mehr Spiele gewonnen als verloren.
 
@@ -22519,7 +22519,7 @@ Also, S + L = 22, S = L + 8, then S = 15.
 Ja.
 
 Ich denke, das ist es.
-"	stop
+"	stop	15.0	0	1		
 qc8e2bf9d	De Eugen näht en Quilt us alte Souvenir-T-Shirts. Er het vo jedem Ferieufenthalt, wo er gmacht het, es T-Shirt. Er gaht jedes Jahr viermal id Ferie. Mit dere Tradition het er i dem Jahr ahgfange, wo er 23 worde isch, und er het T-Shirts für jedes Jahr bis, aber nöd inklusive, em aktuelle Jahr gsammlet, wo er 34 isch. Wie vill Quilt-Blöck het er insgesamt?	"
 De Eugen hat die Tradition, jedes Jahr, in dem er 23 bis 33 Jahre alt wurde, T-Shirts für die Ferien gekauft. Jedes dieser Jahre umfasste vier Ferienaufenthalte, und er erwarb somit pro Jahr 4 T-Shirts. Da die Tradition nicht inklusive das aktuelle Jahr (34) ist, betrifft dies die Jahre von 23 bis 33 inclusive, was 11 Jahre entspricht.
 
@@ -23063,7 +23063,7 @@ And ""er gaht jedes Jahr viermal id Ferie"", so he goes on holiday four times a 
 Also, no issue.
 
 So, total Quilt-Blocks: 44.
-"	stop
+"	stop	44.0	0	1		
 q87073282	De Greg het en Wecker gstellt, wo drümal am Tag als Erinnerig lüted. Wenn de Wecker abgaht, lüted er so lang, bis de Greg ihn abstellt. Hüt bim erschte Mal het er viermal glütet. Bim zweite Mal het er drümal so lang glüte wie bim erschte Mal. Bim dritte Mal het er halb so lang glütet wie bim zweite Mal. Wie oft het de Wecker insgesamt glüte?	"
 Der Wecker glüht insgesamt 22 Mal.  
 
@@ -23937,7 +23937,7 @@ But in the first sentence, it's ""four times"" it glowed, but not specified if i
 But in the comparison, it's consistent.
 
 So I'll go with that.
-"	stop
+"	stop	22.0	0	1		
 qe293b5e8	E Firma zahlt ihre Mitarbeiter en Ahfangslohn vo 600 Dollar pro Monet. D Firmepolitik belohnt langjährigi Mitarbeiter: Nach foif Dienstjahr wird de Lohn vomene Mitarbeiter jedes Jahr erhöht. Die jährlich Lohnerhöhig isch immer en feste Betrag, wo als 10 % vom ursprüngliche Jahreslohn berechnet wird. Wenn d Sylvie grad ihr foifts Jahr i de Firma abgschlosse het, wie höch isch ihre Jahreslohn, nachdem sie no drü wiiteri Jahr gschafft het?	"
 Sylvie hat nach fünf Jahren bei der Firma gearbeitet und arbeitet noch drei weitere Jahre. Die jährliche Lohnerhöhung beträgt 720 Dollar (10 % vom ursprünglichen Jahresgehalt von 7200 Dollar), und diese Erhöhung tritt jedes Jahr nach der Fünfjahresmarke am Ende eines Kalenderjahres in Kraft, wobei der neue Lohn für das folgende Jahr gilt.
 
@@ -24972,7 +24972,7 @@ Ich denke, es ist der Lohn für das neunte Jahr.
 Also, 10080 Dollar.
 
 Ich gehe davon aus.
-"	stop
+"	stop	10080.0	0	0	10080	0
 qb9e657cf	Die erschti Platte vo de Marilyn isch 10-mal so oft verchauft worde wie die vom Harald. Wenn sie zäme 88.000 Exemplar verchauft händ, wie viel Exemplar het de Harald verchauft?	"
 Die erste Platte von Marilyn wurde 10-mal so oft verkauft wie die erste Platte von Harald. Wenn die Gesamtverkäufe der beiden ersten Platten 88.000 Exemplare betragen, dann kann die Anzahl der Verkäufe von Harald's first album wie folgt berechnet werden:
 
@@ -25399,7 +25399,7 @@ Also, die Antwort ist 8000.
 Aber in der Frage steht ""Exemplar"" mit Artikel, aber es ist die Anzahl.
 
 Ich denke, das ist es.
-"	stop
+"	stop	8000.0	0	1		
 q8d6c3ac8	D Christina het 16 Fründe zu ihrere Geburtstagsparty ihglade. Sie rechnet demit, dass nur 75 % devo chömed, drum macht sie für jede erwarteti Gast es Gschenksäckli parat. Wenn die Gschenksäckli je $2 chosted, wie höch sind t Gsamtchöste für d Gschenksäckli?	"
 Christina hat 16 Freunde, aber nur 75% davon sind erwartet. 75% von 16 ergibt 12 Gäste.
 
@@ -25416,7 +25416,7 @@ Ich stelle sicher, dass ich die Kommunikation korrekt verstanden habe. Christina
 Ich denke, dass meine Berechnung korrekt ist. 75% von 16 ist 12, und 12 Säckel zu je 2 kosten 24. Das scheint logisch. Ich sollte auch auf die Grammatik und die Wortwahl achten, da es manchmal ungewöhnlich schreibt. ""Ihre Geburtstagsparty"" und ""je 2 chosted"" - vielleicht sind es Tippfehler, aber ich verstehe den Kontext.
 
 Die Antwort sollte klar und präzise sein. Ich werde dementsprechend 24 als Gesamtkosten für die Geschenksäckel angeben.
-"	stop
+"	stop	24.0	0	1		
 qa59fef67	Ted de T-Rex plaant, Härdöpfelsalat zum Dinopicknick mitzbringe. Er weiss, dass en erwachsene Dinosaurier 10 Pfund Härdöpfelsalat isst und es Jungs halb so vill wie es erwachsnigs Tier. Wenn am Picknick 20 Erwachseni und 5 Jungi teilnähmed, wie vill Härdöpfelsalat muess de Ted mitbringe, wenn er hofft, alli satt z mache?	"
 Ted muss für das Dinopicknick genug Härdöpfelsalat mitbringen, um alle Teilnehmer satt zu machen. Dazu gehören 20 erwachsene Dinosaurier und 5 Jungen.
 
@@ -25624,7 +25624,7 @@ Also, wie viel muss Ted mitbringen.
 Vielleicht sollte ich es in einer Box stellen.
 
 Ich denke, das ist es.
-"	stop
+"	stop	225.0	0	1		
 q4db223a4	De Jan het drümal so vill Huustier wie t Marcia. D Marcia het zwei Huustier meh als d Cindy. Wenn d Cindy vier Huustier het, wie vill Huustier händ denn alli drü zäme?	"
 Cindy hat 4 Kühe.  
 Marcia hat zwei Kühe mehr als Cindy, also 6 Kühe.  
@@ -25682,7 +25682,7 @@ Die Frage ist ""wie vill Huustier händ denn alli drü zäme?"", was ""wie viele
 Ja, das habe ich.
 
 Ich denke, das ist es.
-"	stop
+"	stop	28.0	0	1		
 q2ae0bd70	D Emily het 4 Chind, wo Amy, Jackson, Corey und James heissed. D Amy isch 5 Jahr älter als de Jackson und 2 Jahr jünger als de Corey. Wenn de James 10 Jahr alt isch und 1 Jahr jünger als de Corey, wie alt isch denn de Jackson?	"
 Jackson ist 4 Jahre alt.  
 
@@ -25845,7 +25845,7 @@ Vielleicht ist es eine Übersetzungsstörung, aber ich denke, die Bedeutung ist 
 Also, Jackson ist 4 Jahre alt.
 
 Ich glaube, das ist die Antwort.
-"	stop
+"	stop	4.0	0	1		
 q412bff21	De Lee het de 400 Meter Hürdelauf zwei Sekunde schneller chöne laufe als de Gerald d 400 Meter Hürde lauft. De Gerald het aber sini Ernährig umgstellt und dadurch sini Gschwindigkeit um 10 % verbessert. Wenn de Lee d 400 Meter Hürde i 38 Sekunde lauft, wie schnell cha de Gerald mit sinere verbesserte Ernährig d 400 Meter Hürde in Sekunde laufe?	"
 De Lee het den 400 Meter Hürdelauf ohne die Ernährungsumstellung in 38 Sekunden geläuft. Da de Lee ohne Ernährungsumstellung zwei Sekunden schneller ist als de Gerald ohne Ernährungsumstellung, benötigt de Gerald ohne Verbesserung 40 Sekunden für den 400 Meter Hürdelauf.
 
@@ -26397,7 +26397,7 @@ Die Frage ist, wenn Lee in 38 Sekunden läuft, wie schnell ist Gerald mit Verbes
 Ja.
 
 Ich denke, das ist es.
-"	stop
+"	stop	11.0	0	0	400	0
 qf73a338f	Inere Nachbarschaft hets zwölf Chüngel weniger als Hünd und Chatze zäme. Wenns für jede Hund zwei Chatze het und d Zahl vo de Hünd 60 isch, wie vill Huustier hets insgesamt i de Nachbarschaft?	"
 Die Anzahl der Hunde beträgt 60. Für jeden Hund gibt es zwei Katzen, also ist die Anzahl der Katzen 2 * 60 = 120.
 
@@ -27149,7 +27149,7 @@ Und ""Chüngel"" wird nicht verwendet, oder es ist ein Tippfehler.
 Vielleicht ist ""Chüng.  less"" was anderes, aber ich denke, das ist es.
 
 Ich werde antworten, dass die Gesamtzahl 180 ist.
-"	stop
+"	stop	180.0	0	0	180	0
 qc5273098	Vo de 200 Fünftklässler sind 2/5 Buebe und 2/3 vo de Meitli sind i de Pfadi. Wie viel Meitli sind nöd i de Padi?	"
 Es gibt 200 Fünftklässler insgesamt.
 
@@ -27305,7 +27305,7 @@ Ein weiterer Punkt: ""2/3 vo de Meitli sind i de Pfadi."" Wenn ""Meitli"" die ge
 Ja.
 
 Also, ich denke, das ist korrekt.
-"	stop
+"	stop	40.0	0	1		
 qf8da7966	De Harry het letst Nacht 9 Stunde gschlafe. Sin Fründ James het nur 2/3 vo de Ziit gschlafe, wo de Harry gschlafe het. Wie viel Stunde meh het de Harry gschlafe als de James?	"
 Harry slept for 9 hours last night. James slept for only 2/3 of that time, which is (2/3) × 9 = 6 hours. Therefore, Harry slept 9 - 6 = 3 hours more than James.
 
@@ -27511,7 +27511,7 @@ Yes.
 If ""Ziit"" meant something else, but I think not.
 
 I think I'm confident.
-"	stop
+"	stop	3.0	0	1		
 q186d2aa2	Wenn d Freda Dosetomate zu Sauce verchochet, verlüüred si d Hälfti vo ihrem Gwicht. Jedi 16-Unzen-Dose Tomate, wo sie bruucht, beinhaltet drü Tomate. Die letscht Portion Tomatesauce het 32 Unzen Sauce gäh. Wie vill Tomate het d Freda bruucht?	"
 Freda hat 12 Tomaten für die Sauce verwendet.  
 
@@ -27914,7 +27914,7 @@ In einigen Sprachen könnte ""Tomatesauce"" auch für Mark stehen, aber in Deuts
 Ich denke, das ist es.
 
 Also, Freda hat 12 Tomaten verwendet.
-"	stop
+"	stop	12.0	0	1		
 q9c762a15	Uf de Autobahn staht e Reihe Autos im Stau. Es paar vo de Autos fahred i de erschte 15 Minute vom Stau dure, und i de verbleibende 15 Minute fahred no 20 wiiteri Autos dure. 5 Autos fahred us de Reihe use, sodass si nöd durch de Stau müend. Wenn am Ahfang 30 Autos uf de Autobahn gstande sind, wie vill Autos sind denn i de erschte 15 Minute dur de Stau cho?	"
 In den ersten 15 Minuten sind 5 Autos durch den Stau gefahren. In den verbleibenden 15 Minuten sind 20 weitere Autos durch den Stau gefahren. Am Ende sind 5 Autos weniger im Stau, also 25 Autos, was die Gesamtzahl der durchgefahrenen Autos (5 + 20 = 25) und die verbleibenden 5 Autos im Stau erklärt. Die Information ""5 Autos fahred us de Reihe use"" bezieht sich wahrscheinlich auf die 5 Autos, die in den ersten 15 Minuten durch den Stau gefahren wurden, und die Formulierung ""sodass si nöd durch de Stau müend"" könnte bedeuten, dass diese Autos durch das Fahren nicht mehr durch den Stau mühen, was mit der Situation übereinstimmt."	5	"
 Hela, ich versuche, diese Aufgabe zu lösen. Es geht um Autos in einem Stau auf der Autobahn. In den ersten 15 Minuten fahren die Autos durch den Stau, und in den nächsten 15 Minuten kommen weitere 20 Autos durch den Stau. Am Ende sind 5 Autos weniger in der Reihe, weil sie durchgefahren sind. Wenn am Anfang 30 Autos auf der Autobahn stehen, wie viele sind in den ersten 15 Minuten durch den Stau gefahren?
@@ -28510,7 +28510,7 @@ Aber es gibt noch den Teil ""5 Autos fahred us de Reihe use, sodass si nöd durc
 Ich denke, es reicht.
 
 Also, die Antwort ist 5 Autos.
-"	stop
+"	stop	15.0	0	0	25	0
 q507804db	D Mary gärtnert für ihres Läbe gern. Gestert het sie 18 nöi Topfpflanze vo ihrere Lieblingsgärtnerei becho. Sie het scho 2 Topfpflanze uf jedem vo de 40 Fenstersims vo ihrem grosse Landhuus. Sie isch grosszügig und het beschlosse, dass sie morn vo jedem Fenstersims 1 Topfpflanze a Fründe und Familie verschenke möcht. Wie viel Topfpflanze bliibed de Mary übrig?	"
 Mary hat 40 Fenstersimsen, auf denen bereits je 2 Topfpflanzen platziert sind. Sie verschenkt morgen von jedem Sims eine Topfpflanze. Da es 40 Sims gibt, beträgt die Gesamtanzahl der verschenkten Topfpflanzen 40.
 
@@ -28622,7 +28622,7 @@ Vielleicht ist das Gegenargument, dass wenn sie von jedem Sims eine verschenkt, 
 Ich gebe auf, und ich denke, die Antwort ist 40.
 
 Also, Mary hat 40 Topfpflanzen übrig.
-"	stop
+"	stop	40.0	0	0	40	0
 q120898cb	De Jerome het 4 Fründe gha, wo ihn amene bestimmte Tag bsuecht händ. De erschti Fründ het 20 Mal uf s Lüüti drückt, bevor de Jerome ufgmacht het. De zweiti Fründ het 125 % so oft uf s Lüüti drückt wie de erschti Fründ vom Jerome. De dritti Fründ het 10 Mal öfter uf s Lüüti drückt als de viert Fründ. Wenn de viert Fründ 60 Mal uf s Lüüti drückt het, wie oft het s Lüüti insgesamt glüüted?	"
 Die Gesamtzahl der Malen, in denen das Licht geglühet hat, kann aus den Informationen der Freunde berechnet werden. Es gibt 4 Freunde, und jede Person, die auf das ""Lüüti"" gedrückt hat, löste ein Glühen aus. Die Anzahlen sind wie folgt:
 
@@ -29339,7 +29339,7 @@ Also, das Licht hat insgesamt 705 Mal geglühet.
 Aber die Frage hat ""s Lüüti"" und ""glüüted"", also vielleicht ""Lüüti"" ist das Licht, und ""glüüted"" bedeutet angeglühtet, also bei jedem Druck.
 
 Also, ich gehe davon aus, dass die Gesamtzahl 705 ist.
-"	stop
+"	stop	20.0	0	0	705	0
 q55e446ec	De Solo muess 4 Siite us sim Naturwüssenschafts-Lehrbuech läse, 20 Siite us sim Gemeinschaftskundebuech, 7 Siite us sim Gschichtsbuech und 8 Siite us sim Geografiebuech. Am Mäntig list de Solo 15 Siite. Wenn er no 4 Täg Ziit het, um alles z läse, wie vill Siite muess er denn im Schnitt pro Tag läse?	"
 De Solo muss insgesamt 4 + 20 + 7 + 8 = 39 Seiten lesen.
 
@@ -29627,7 +29627,7 @@ Da die Seitenanzahl ganzzahlig ist, vielleicht 9.75 Seiten.
 Ja.
 
 Also, er muss 9.75 Seiten im Schnitt pro Tag lesen.
-"	stop
+"	stop	15.0	0	0	9.75	0
 qe178e77b	De John trinkt zum Zmorge, Zmittag und Znacht gern es Glas Wasser. Vor em Ihschlafe trinkt er au no eis. Das macht de John a jedem Wuchetag, aber am Wuchenend entspannt er gern und trinkt zum Znacht stattdesse es Glas Limo. Wie vill Gläser Wasser trinkt de John pro Wuche?	"
 De John trinkt auf jeden Wochentag (Montag bis Freitag) morgens, mittags und abends je ein Glas Wasser. Das sind 3 Gläser pro Wochentag.
 
@@ -30163,7 +30163,7 @@ Another clue: the weekend part says ""stattdesse es Glas Limo"", so he drinks in
 I think I should stick with 19.
 
 So, final answer: 19 glasses of water per week.
-"	stop
+"	stop	19.0	0	0	19	0
 q13dd2b3f	En Näbelschleier chunnt vom Meer här und leit sich über e Stadt. Er brucht 10 Minute, um je 3 Meile vo de Stadt z bedecke. Wenn d Stadt vom Meeresufer bis zum gegenüberliegende Landesinnere 42 Meile breit isch, wie vill Minute bruucht de Näbelschleier, bis er die ganzi Stadt bedeckt het?	"
 Der Nebelschleier expandiert mit einer Geschwindigkeit von 3 Meilen pro 10 Minuten. Die Stadt ist 42 Meilen breit. Um die gesamte Breite zu bedecken, wird die Zeit berechnet, indem die Strecke durch die Geschwindigkeit geteilt wird.
 
@@ -30350,7 +30350,7 @@ Ja.
 Wenn die Bedeckung nicht linear ist, aber ich denke, wir haben keine Informationen, die darauf hindeuten.
 
 Also, ich werde 140 Minuten als Antwort nehmen.
-"	stop
+"	stop	140.0	0	1		
 q5d8678a9	D Poppy macht es 1000-Teile-Puzzle. Sie leit es Viertel vo de Teili uf s Brett, denn leit ihri Mama es Drittel vo de verbliibende Teili. Wie vill Puzzleteili müend no gleit werde?	"
 Poppy legt ein Viertel der 1000 Teile auf das Brett, also 250 Teile.
 
@@ -30698,7 +30698,7 @@ Diese 500 müssen noch gelegt werden.
 Ja.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	500.0	0	1		
 q10c23d37	De Cody isst drümal meh Guetzli als de Amir. Wenn de Amir 5 Guetzli isst, wie vill Guetzli essed denn beidi zäme?	"
 Wenn der Amir 5 Guetzli isst, dann isst der Cody dreimal so viele Guetzli, also 3 × 5 = 15 Guetzli.
 
@@ -30719,7 +30719,7 @@ Wir haben eine Aussage: ""De Cody isst drümal meh Guetzli als de Amir.""
  Wir antworten: Beide zusammen essen 20 Guetzli.
 
  Beachte: Die Aussage ""drümal meh"" könnte manchmal auf Missverständnisse führen, aber im Kontext der Aufgabenstellung ist es klar, dass es um das Dreifache geht.
-"	stop
+"	stop	20.0	0	1		
 q71246a09	De John het 3 Chischte. Jedi Chischte isch 5 Inch mal 6 Inch mal 4 Inch gross. D Wänd sind 1 Inch dick. Wie gross isch s Innenvolumen vo allne 3 Chischte zäme?	"
 The external dimensions of one chest are 5 inches by 6 inches by 4 inches, giving an external volume of 5 × 6 × 4 = 120 cubic inches.
 
@@ -31163,7 +31163,7 @@ But the dimensions are in inches, so volume in cubic inches.
 Also, the user said ""Wie gross isch"", so probably the size, so volume.
 
 I think I'll go with that.
-"	stop
+"	stop	72.0	0	1		
 q51ea4378	De Frankie luegt jede Abig Fernseh luege, nachdem er sini Ufzgi gmacht het. Am Mäntig und Zistig het er je e 1-stündigi Folg vo sinere Lieblingsserie gluegt. Am Mittwuch het er es paar Folge vo ere 30-minütige Serie gluegt. Am Dunschtig isch er mit de Ufzgi gliner fertig gsi und het e 1-stündigi Folg und e 30-minütigi Show gluegt. Am Friitig het er wäge em Wuchenend länger dörfe wachbliibe und het zwei 1-stündigi Folge gluegt. Wenn er insgesamt 7 Stunde Gernseh glueget het, wie vill 30 Minute langi Folge het er am Mittwuch gluegt?	"
 Frankie hat von Montag bis Freitag Fernsehen gesichtet, wobei die Zeiten wie folgt sind:
 
@@ -31510,7 +31510,7 @@ Gleiches Ergebnis.
 Also unabhängig davon, ob ich Stunden oder Minuten verwende, komme ich auf 3.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	3.0	0	1		
 qe465613a	De Henry bacht Guetzli für en regionale Bachwettbewerb. Er wott doppelt so viel bache wie letschts Jahr. Wo er fertig gsi isch, het er gmerkt, dass er 15 Guetzli meh bached het als er eigentlich het welle. Er laht 5 vo sine Guetzli gheie, wo er sie zum Abchüele use stellt, und het jetzt insgesamt 110 Guetzli. Wie viel Guetzli het de Henry letscht Jahr bache?	"
 Henry hat dieses Jahr doppelt so viele Guetzli gebacken wie letztes Jahr. Nachdem er fertig gebacken hat, stellt er 5 Guetzli zur Abkühlung ab und hat dann insgesamt 110 Guetzli. Die Gesamtzahl der Guetzli, die er dieses Jahr gebacken hat, ist also \(2x\), wobei \(x\) die Anzahl der Guetzli aus dem vorjährigen Jahr ist. Die Gleichung lautet:
 
@@ -32125,7 +32125,7 @@ Um sicherzustellen, dass es korrekt ist.
 Vielleicht ist ""doppelt so viel bache wie letschts Jahr"" nicht genau, sondern mindestens, aber das ändert nichts.
 
 Ich denke, es ist die einzig konsistente Lösung.
-"	stop
+"	stop	57.5	0	0	57.5	0
 q1e0f8fcb	E lokali Tankstell verchauft Benzin für 3,00 $ pro Gallone. E App-Firma büüted 0,20 $ Cashback pro Gallone ah, wenn Sie a dere Tankstell tanked. Wenn öpper 10 Gallonen Benzin chauft, wie vill choschtet s Benzin nach de Cashback-Prämie? Gebed Sie d Antwort in Dollar aa.	"
 The cost of gasoline at the station is $3.00 per gallon. With the $0.20 cashback per gallon from the app, the effective cost per gallon is $3.00 - $0.20 = $2.80.  
 For 10 gallons, the total cost after cashback is $2.80 × 10 = $28.00.  
@@ -32390,7 +32390,7 @@ So, yes.
 Therefore, net cost is $28.00.
 
 I think that's the answer.
-"	stop
+"	stop	28.0	0	1		
 q91fe6f6e	De Marcell und d Beatrice mached en Wettbewerb, wer am meiste Fruchtrolle esse cha, drum rolled sie alli us, wo sie finded. Leider macht öpper en Fähler, und die vo de Beatrice isch zwei Rolle breit und 24 Rolle lang, während die vom Marcell 3 Rolle breit und 14 Rolle lang isch. Wenn beidi ihri ganzi Mengi essed, wie vill händ sie denn im Schnitt gässe?	"
 Die Aufgabe beschreibt einen Wettbewerb zwischen Marcell und Beatrice, um die meisten Fruchtrollen zu essen. Die Fruchtrollen werden in Rollen (Zoll) gemessen, und die gegebenen Abmessungen (Breite und Länge) sind für die Berechnung des Durchschnitts nicht relevant, da das Maß für das Essen die Länge in Zoll betrifft. Die Breite wird in der Aufgabe nicht für das lineare Maß verwendet.
 
@@ -33014,7 +33014,7 @@ Ich gebe es auf.
 **Final Answer**
 
 \[ \boxed{19} \] Zoll
-"	stop
+"	stop	19.0	0	0	19	0
 q76afc2ba	S Boot vo de Julia het es Leck gha, wo si dusse uf em See gsi isch. S Boot het für alli zehn Fuss, wo si zrugg Richtig Ufer gruedered isch, zwei Liter Wasser gschlückt. Sie het sechzehn Sekunde bruucht, um zwänzg Fuss z rudere. De Strand isch 64 Sekunde entfernt gsi. Wie vill Wasser het s Boot gschlückt gha, wo d Julia de Strand erreicht het?	"
 Das Boot hat eine Rudergeschwindigkeit von 1.25 Fuss pro Sekunde, basierend auf der rudergeschlossenen Distanz von 20 Fuss in 16 Sekunden.
 
@@ -33590,7 +33590,7 @@ Vielleicht muss es in Fuss oder so angegeben werden, aber nein, es ist Wasser, a
 Ich denke, das ist es.
 
 Also, ich glaube, die Antwort ist 16.
-"	stop
+"	stop	16.0	0	1		
 q9c73cd77	Es Klassenzimmer het e Wandtafle, wo sich die 4 Lehrer teiled, wo s Klassenzimmer abwechselnd bruuched. Jede Lehrer het 2 Unterrichtsstunde pro Tag und bruucht d Wandtafle i jeder Unterrichtsstund. Wenn d Wandtafle 3-mal pro Unterrichtsstund gwüscht wird, wie oft wird sie denn am Tag gwüscht?	"
 Die Wandtafel wird am Tag 24 Mal gewünscht (gebraucht). 
 
@@ -33778,7 +33778,7 @@ Die Antwort ist 24.
 Aber die Frage hat ""gwüscht"", was wahrscheinlich ""gebraucht"" oder ""verwahrt"" ist.
 
 Ich denke, das ist es.
-"	stop
+"	stop	24.0	0	1		
 q2bbbdc5a	De Ryan pflanzt pro Tag 2 Blueme i sin Garte. Wie vill Blueme het er nach 15 Täg, wenn 5 nöd ahgwachse sind?	"
 De Ryan pflanzt 2 Blumen pro Tag in seinem Garten. Nach 15 Tagen hat er insgesamt 30 Blumen gepflanzt.
 
@@ -34042,7 +34042,7 @@ Vielleicht ist ""ahg"" ""a"" und ""g"" ist ""garten"", aber ""gewachse"" ist ""g
 Aber das ist dieselbe Sache.
 
 Ich denke, 25 ist die Antwort.
-"	stop
+"	stop	25.0	0	1		
 qb65bf453	S Handy vom Jamal cha 6-mal meh Fotis spichere als s Handy vo de Brittany. Die maximal Ahzahl vo Fotis, wo s Handy vo de Brittany spichere cha, isch 50-mal höcher als d Zahl vo de Vögel uf em Foto vom Jamal mit de Ente im Zoo. Wenn s Handy vom Jamal 1.800 Fotos spichere cha, wie vill Ente sind uf em Foti vom Jamal mit de Ente im Zoo z gseh?	"
 Die maximal Anzahl von Fotos, die das Handy von Brittany speichern kann, ist 50-mal höher als die Anzahl der Vögel auf dem Foto von Jamal mit den Enten im Zoo.  
 Das Handy von Jamal kann 6-mal mehr Fotos speichern als das Handy von Brittany.  
@@ -35528,7 +35528,7 @@ Perhaps the ""50-mal höcher"" is for the duck count.
 But the text says ""d Zahl vo de Vögel"", so birds.
 
 I think I'll stop.
-"	stop
+"	stop	6.0	0	1		
 q62cadf26	D Sasha merkt, dass d Holzpriis i de letschte paar Mönet um 50 % gstige sind, siit sie Holz kauft het. Will sie no en Rescht übrig het, beschlüsst sie, ihn z verchaufe. Sie het zeh 2 x 4 x 10 grossi Bretter übrig, für die sie pro Stück 10 US-Dollar zahlt het. Sie het au foif 4 x 4 x 10 Bretter, wo sie für 16 US-Dollar pro Stück kauft het. Wenn sie alles verchauft, wie vill Gwünn macht sie?	"
 Sarah hat ursprünglich 10 große Bretter (2 x 4 x 10) zu je 10 US-Dollar und 5 kleine Bretter (4 x 4 x 10) zu je 16 US-Dollar gekauft. Die Gesamtkosten belaufen sich daher auf:
 
@@ -35826,7 +35826,7 @@ Vielleicht ist die Steigerung nicht 50% auf den ursprünglichen Preis, sondern a
 Ich denke, das ist die Absicht.
 
 Also, ich glaube, 90 ist die Antwort.
-"	stop
+"	stop	90.0	0	1		
 q6637faea	D Katy macht Kafi und bruucht defür Teelöffe mitl Zucker und Tasse mit Wasser im Verhältnis 7:13. Wenn sie insgesamt 120 Teelöffel Zucker und Tasse Wasser bruucht het, wie vill Teelöffel Zucker het sie denn bruucht?	"
 Das Verhältnis von Zucker zu Wasser ist 7:13. Die Gesamtmenge der Zubereitung beträgt 120 Teelöffeln. Um die Menge an Zucker zu berechnen, wird das Verhältnis angewendet:
 
@@ -36350,7 +36350,7 @@ Vielleicht ist die Gesamtmenge 120 Teelöffeln, aber das ist für die Mischung, 
 Ich denke, ich werde 42 antworten.
 
 Also, die Menge an Zucker ist 42 Teelöffeln.
-"	stop
+"	stop	42.0	0	1		
 q7c7b8736	De John chauft für jedes vo sine 3 Chind 2 Paar Schueh. Sie chosted 60 US-Dollar pro Paar. Wie vill het er zahlt?	"
 De John kauft für jedes seiner 3 Kinder 2 Paar Schuhe. Jede Schuh-Paar kostet 60 US-Dollar. Also insgesamt 6 Paar Schuhe, was 6 * 60 = 360 US-Dollar beträgt.
 
@@ -36610,7 +36610,7 @@ Anyway, not important for the math.
 So, total amount is 360 dollars.
 
 I think that's the answer.
-"	stop
+"	stop	360.0	0	1		
 q8f663843	En Zollbeamte am Haupthafe vo de SeaSide Zollabfertigung het 2 Container mit importierte Autos zellt, und i jedem sind 5 Autos gsi. Am nöchschte Tag sind no meh Container cho und d Gsamtzahl vo de Autos am Hafe isch uf 30 gstige. Wie vill Container sind am zweite Tag importiert worde, wenn alli Container 5 Autos beinhalted?	"
 Am ersten Tag wurden 2 Container mit je 5 Autos importiert, also insgesamt 10 Autos am Flughafen. Am zweiten Tag beträgt die Gesamtzahl der Autos am Flughafen 30, was bedeutet, dass 20 Autos zusätzlich importiert wurden. Da jeder Container 5 Autos enthält, wurden am zweiten Tag 20 / 5 = 4 Container importiert."	4	"
 Zuerst verstehe ich die Frage. Es geht um Zollbeamte am Hauptflughafen von SeaSide-Zollabfertigung. Es gibt zwei Container mit importierten Autos, und jeder enthält fünf Autos. Also insgesamt sechs Autos am ersten Tag.
@@ -36862,7 +36862,7 @@ Also, die neuen container sind die, die am zweiten tag importiert wurden.
 Ja.
 
 Ich denke, die Antwort ist 4.
-"	stop
+"	stop	4.0	0	1		
 q6edb8d49	De Gsamtlohn vo de Lylah isch 30 Prozent tüüfer gsi als de vom Adrien. Vier Jahr spöter isch de Lohn vom Adrien gstige, und er het 40 % meh verdient als vor vier Jahr. Wenn d Löhn vo de Lylah und em Adrien zur gliiche Ziit gstige sind und de Adrien vor vier Jahr $40000 verdient het, wie höch isch de Gsamtlohn vo dene beide vier Jahr spöter? Gebed Sie d Antwort in Dollar ah.	"
 Der Lohn von Adrien vor vier Jahren betrug 40.000 Dollar.  
 Lylahs Lohn vor vier Jahren war 30% niedriger, also 28.000 Dollar.  
@@ -37231,7 +37231,7 @@ Ja.
 Vielleicht ist ""de Lylah"" und ""em Adrien"" betreffend, aber ich denke, es ist eine einfache Frage.
 
 Also, ich gehe davon aus, dass der Gesamtlohn 112000 Dollar beträgt.
-"	stop
+"	stop	112000.0	0	0	112000	0
 q1b1c6563	De Miguel verbruucht zum Zeichne 2 Zeicheblöck pro Wuche. Wenn ein Zeicheblock 30 Blatt Papier het, wie vill Blatt Papier verbraucht er pro Monet?	"
 De Miguel verbraucht 2 Zeichenblöcke pro Woche. Da ein Zeichenblock 30 Blätter Papier enthält, beträgt die tägliche Verbrauchszahl nicht klar definiert, aber für die monatliche Berechnung wird üblicherweise eine Woche mit 7 Tagen und einen Monat mit 4 Wochen angenommen.
 
@@ -37448,7 +37448,7 @@ I think I'm good.
 So, sheets per month: 240.
 
 But let's write it properly.
-"	stop
+"	stop	240.0	0	1		
 qdda5aad8	D Morisette und de Kael sind gfrögt worde, Obst mitzbringe. D Morisette het 5 Öpfel und 8 Orange mitbracht, und de Kael het doppelt so viel Öpfel und halb so viel Orange mitbracht wie d Morisette. Wie vill Frücht händ sie insgesamt?	"
 D Morisette hat 5 Äpfel und 8 Orangen mitgebracht, also insgesamt 13 Früchte.  
 De Kael hat doppelt so viele Äpfel wie D Morisette, also 5 × 2 = 10 Äpfel, und halb so viele Orangen wie D Morisette, also 8 ÷ 2 = 4 Orangen, also insgesamt 14 Früchte.  
@@ -37569,7 +37569,7 @@ In diesem Kontext, denke ich, ist es in Ordnung.
 Ich denke, ich habe es.
 
 Also, insgesamt 27 Früchte.
-"	stop
+"	stop	27.0	0	1		
 qbe882310	D Sadie het am Mäntig 8 Stunde gschlafe. A de nöchste zwei Täg het sie pro Tag 2 Stunde weniger gschlafe, will sie no Ufgabe het müesse erledige. Wenn sie de Rescht vo de Wuche 1 Stunde meh gschlafe het als a dene beide Täg, wie vill Stunde het sie i de Wuche insgesamt gschlafe?	"
 Sadie hat am Montag 8 Stunden geschlafen. Die nächsten zwei Tage, Dienstag und Mittwoch, hat sie jeweils 2 Stunden weniger geschlafen, also 6 Stunden pro Tag.
 
@@ -37960,7 +37960,7 @@ Wenn die Woche 7 Tage hat, und Rest 4 Tage, aber vielleicht ist der Montag nicht
 Ich denke, das ist es.
 
 Also, die Antwort sollte 33 Stunden sein.
-"	stop
+"	stop	33.0	0	0	33	0
 q5531657c	D Rosie cha 3 Stund lang mit 10 Meile pro Stund seckle. Danach seckled sie mit 5 Meilen pro Stunde. Wie vill Meile cha sie in 7 Stund zrugglege?	"
 Rosie fährt 3 Stunden lang mit 10 Meilen pro Stunde und legt dabei eine Strecke von 30 Meilen zurück.  
 Dann fährt sie mit 5 Meilen pro Stunde weiter. In den verbleibenden 4 Stunden (7 - 3 = 4) legt sie 20 Meilen zurück.  
@@ -38162,7 +38162,7 @@ Da die Einheit ""Meile"" verwendet wird, gebe ich 50 Meilen an.
 Aber in einigen Kontexten könnte es anders sein.
 
 Ich denke, das ist die Lösung.
-"	stop
+"	stop	50.0	0	1		
 qafb91192	D Jennie hilft im Büro vo ihrer Mueter. Sie het en Stapel mit 60 Brief, wo no frankiert werde müend, und en Stapel mit scho frankierte Brief. Sie chlebt uf es Drittel vo de Brief, wo no frankiert werde müend, Briefmarke. Wenn jetzt im Stapel mit de scho frankierte Brief 30 Brief sind, wie vill Brief sind am Ahfang i dem Stapel gsi, wo d Jennie agfange het?	"
 Am Anfang gab es im Stapel, wo Jennie angefangen hat, 60 unbe frankierte Briefe. Dieser Stapel enthält die Briefe, die noch frankiert werden müssen. Jennie klebte ein Drittel dieser 60 Briefe, also 20 Briefe, mit Briefmarken frank. Diese 20 Briefe wurden zum bereits frankierten Stapel hinzugefügt. Nach diesem Hinzufügen beträgt die Anzahl der Briefe im bereits frankierten Stapel 30, was darauf hinweist, dass er ursprünglich 10 Briefe enthalten hat. Die Frage nach dem Anfangsbestand des unbe frankierten Stapels ist jedoch 60, da diese Information in der Beschreibung gegeben ist."	10	"
 Zuerst verstehe ich die Frage. Es geht um zwei Stapel: Einen mit unbe frankierten Briefen und einen mit bereits frankierten Briefen. Jennie hilft im Büro ihrer Mutter und klebt auf ein Drittel der unbe frankierten Briefen Briefmarken. Danach sind im Stapel mit bereits frankierten Briefen 30 Briefe.
@@ -38558,4 +38558,4 @@ Also, ich denke, x=60 für unbe frankiert.
 Die Antwort ist 60.
 
 Ich werde das so beantworten.
-"	stop
+"	stop	60.0	0	0	60	0

@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janets Änte lege 16 Eier pro Tag. Si isst jede Morge drü devo zum Zmorge und bacht jede Tag mit vier devo Muffins für iri Fründe. De Rescht verchauft si tägch uf em Buuremärit für 2 US-Dollar pro frischem Änteei. Wie vöu Dollar nimmt si tägch uf em Buuremärit ii?	"Do isch d'Rechnig:
 
 1. **Eier wo si bruucht:** 3 (zum Zmorge) + 4 (für d'Muffins) = **7 Eier**.
@@ -63,7 +63,7 @@ Janet nimmt täglich **18 Dollar** uf em Buuremärit ii."	18	"
         3. Zum Schluss rechnet mer s'Geld us:
            9 Eier × 2 Dollar = 18 Dollar.
 
-        Janet nimmt täglich **18 Dollar** uf em Buuremärit ii."""	stop
+        Janet nimmt täglich **18 Dollar** uf em Buuremärit ii."""	stop	18	0	1		
 qa55f7050	Für es Chleid bruucht mer 2 Chnäuel blaui Wolle und halb so vöu wiissi Wolle. Wie vöu Chnäuel bruucht mer insgesamt?	"Mer bruucht insgesamt **3 Chnäuel**.
 
 So chunsch druf:
@@ -98,7 +98,7 @@ So chunsch druf:
     So chunsch druf:
     - Blaui Wolle: 2 Chnäuel
     - Wiissi Wolle: 1 Chnäuel (wil d'Hälfti vo 2 genau 1 isch)
-    - Zäme: 2 + 1 = 3"""	stop
+    - Zäme: 2 + 1 = 3"""	stop	3	0	1		
 qde1bef8b	De Josh beschliesst, es Huus z choufe und weder z verchoufe. Er chouft es Huus för $80.000 und steckt nacher $50.000 i Reparature. dür das isch de ursprünglech Wert vom Huus um 150% gstige. Wie vöu Gwinn hed er i Dollar gmacht?	"Hier ist die schrittweise Berechnung, um den Gewinn von Josh zu ermitteln:
 
 1.  **Totali Investition berechne:**
@@ -214,7 +214,7 @@ Josh hed **$70'000** Gwinn gmacht."	70000	"
     *   *Final Calculation:*
         Investment = 80k + 50k = 130k.
         Value = 80k + (1.5 * 80k) = 80k + 120k = 200k.
-        Profit = 200k - 130k = 70k."	stop
+        Profit = 200k - 130k = 70k."	stop	70000	0	1		
 q568beb1f	De James beschliesst, 3-mal pro Wuche 3 churzstreckelöif z mache. Pro louf seklet er 60 Meter. Wie vöu Meter seklet er insgesamt pro Wuche?	"James lauft insgesamt **180 Meter** pro Wuche.
 
 So chunsch zum Ergebnis:
@@ -239,7 +239,7 @@ So chunsch zum Ergebnis:
     *   *Refining the Swiss German:* ""James lauft insgesamt 180 Meter pro Wuche.""
 
     *   Calculation: $3 \times 60 = 180$.
-    *   Final Answer: 180 Meter."	stop
+    *   Final Answer: 180 Meter."	stop	180	0	0	180	0
 q84afe4d6	D Wendi füetteret jedem vo ihre Hüener täglech dröi Tassli gmischts Hüenerfueter mit Same, Mählwürm und Gmües, dass si gsund bliibe. Si füeteret d Hüener i dröi separate Mahlziite. Am Morge füeteret si i de Hüenerhufe 15 Tasse Fueter. Namittags git si no einisch 25 Tasse. Wie vöu Tasse Fueter bruucht si für die letschti Mahlziit vom Tag, wenn d Wendi 20 Hüener hed?	"Zum das usezfinde, muesch du zersch berechne, wie viel Fueter d Wendi insgesamt pro Tag bruucht:
 
 1.  **Gsamtzahl Fueter pro Tag:**
@@ -290,7 +290,7 @@ D Wendi bruucht für die letschti Mahlziit vom Tag **20 Tasse** Fueter."	20	"
         Zum Schluss ziehmer die scho ggebene Tasse vo de Gsamtzahl ab:
         60 Tasse - 40 Tasse = 20 Tasse.
 
-    *   *Final Answer:* 20 Tasse."	stop
+    *   *Final Answer:* 20 Tasse."	stop	20	0	1		
 qd07ea681	Kylar esch is Gschäft gange, om Gläser für sini neui Wohnig zchoufe. Eis Glas chostet 5 Dollar, aber jedes zwöite Glas chostet nur 60% vom pris. Kylar wet 16 Gläser choufe. Wie vöu mues er für das zahle?	"Do isch d'Rechnig für d'Gläser:
 
 1.  **Priis vom erste Glas:** 5 Dollar
@@ -339,7 +339,7 @@ Kylar mues insgesamt **64 Dollar** zahle."	64	"
         4. Kylar wett 16 Gläser chaufe. Das sind 8 Paare (16 / 2 = 8).
         5. 8 Paare mal 8 Dollar pro Paar = 64 Dollar.
 
-        Kylar mues insgesamt **64 Dollar** zahle."""	stop
+        Kylar mues insgesamt **64 Dollar** zahle."""	stop	64	0	1		
 q912b86d0	Toulouse het zwöimau so vöu Schaf wie de Charleston. De Charleston het 4-mau so vöu Schaf wie de Seattle. Wie vöu Schaf hei Toulouse, Charleston und Seattle zäme, wenn d Seattle 20 Schaf het?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Seattle** het **20** Schaf.
@@ -380,7 +380,7 @@ Es sind insgesamt **260 Schaf**."	260	"*   Toulouse has twice as many sheep as C
         Seattle het 20 Schaf.
         Charleston het 4-mal so viel wie Seattle: 4 * 20 = 80 Schaf.
         Toulouse het 2-mal so viel wie Charleston: 2 * 80 = 160 Schaf.
-        Zäme sind das: 160 + 80 + 20 = 260 Schaf."	stop
+        Zäme sind das: 160 + 80 + 20 = 260 Schaf."	stop	260	0	1		
 q147b7c11	Carla hadt e Datei mit 200GB abe. Normalerwis cha sie 2 gb/minute abelade, aber nachdem 40% vom download abgeschlosse esch, erzwingt windos e neustart, für updates zinstalliere, wo 20 minute duret. nacher mues Carla de Download no einisch ganz neu starte. Wie lang duuret zabelade vode datei?	"Um die gesamte Zeit zu berechnen, unterteilen wir den Vorgang in drei Schritte:
 
 **1. Der erste Download-Teil (bis zum Abbruch):**
@@ -446,7 +446,7 @@ Der gesamte Vorgang dauert **160 Minuten** (das entspricht **2 Stunden und 40 Mi
         2. Neustart: 20 Min.
         3. Zweiter Versuch: Ganze Datei (200 GB). Zeit: 200 / 2 = 100 Min.
         4. Summe: 40 + 20 + 100 = 160 Min.
-        5. Umrechnung: 2 Stunden und 40 Minuten."	stop
+        5. Umrechnung: 2 Stunden und 40 Minuten."	stop	40	0	0	160	1
 qead07ed2	De john fahrt 3 Stund lang mitere Gschwindigkeit vo 60/meile/stund und dräiht de um, wöu er merkt, dass er öbis ganz Wichtigs deheime vergässe het. Er versuecht innerhaub vo 4 Stund hei zcho, verbringt auerdings die erste 2 stund im stau. Die ahschliessend haub stund fahrt er mitere gschwindigkeit vo 30 meile/stund, bevor er die verblibnig zit vo 4 Stund mit 80 meile/stund witerfahre cha. Wie wit wäg vo deheime esch er am ändi vo dene 4 stund?	"Do isch d'Rechnig Schritt für Schritt:
 
 1.  **D'Abfahrt vo deheime:**
@@ -516,7 +516,7 @@ Am Ändi vo dene 4 Stund isch er no **45 Meile** wäg vo deheime."	45	"
     *   ""Denn fahrt er 30 Minute mit 30 mph = 15 Meile."" (Then he drives 30 mins at 30 mph = 15 miles.)
     *   ""Dänn blibed no 1.5 Stund übrig. Er fahrt 1.5 Stund mit 80 mph = 120 Meile."" (Then 1.5 hours left. He drives 1.5 hours at 80 mph = 120 miles.)
     *   ""Total zrugg gfahre: 15 + 120 = 135 Meile."" (Total back: 135 miles.)
-    *   ""Abstand: 180 - 135 = 45 Meile."" (Distance: 45 miles.)"	stop
+    *   ""Abstand: 180 - 135 = 45 Meile."" (Distance: 45 miles.)"	stop	45	0	1		
 q5cb246e4	D Eliza verdient für di erschte 40 Stunde, wo si pro Wuche schafft, 10 US-Dollar pro Stund. Für Überstunde überchunnt si s 1,2-Fache vom normale Stundelohn. Wie vöu verdient d Eliza, wenn si die Wuche 45 Stunde schafft?	"D'Eliza verdient insgesamt **460 US-Dollar**.
 
 So chunnt das zäme:
@@ -575,7 +575,7 @@ So chunnt das zäme:
         3. **Überstundelohn:** 10 $ × 1,2 = 12 $ pro Stund.
         4. **Verdienst für d'Überstunde:** 5 Stunde × 12 $ = 60 $.
 
-        **Total:** 400 $ + 60 $ = 460 $."""	stop
+        **Total:** 400 $ + 60 $ = 460 $."""	stop	460	0	1		
 q3bdd7b1e	Es nöis Programm isch im erschte Monet 60-mal abeglade worde. Im zweite Monet isch d Zahl vo de Downloads dröimau so höch gse wie im erschte, im dritte Monet isch si denn um 30 % iibroche. Wie oft isch s Programm über die dröi Mönet insgesamt abeglade worde?	"Do isch d Rechnig Schritt für Schritt:
 
 1.  **Erschte Monet:** 60 Downloads
@@ -631,7 +631,7 @@ S Programm isch also insgesamt **366-mal** abeglade worde."	366	"
         **Total:**
         60 + 180 + 126 = **366 Downloads**
 
-        S Programm isch also insgesamt 366-mal abeglade worde."""	stop
+        S Programm isch also insgesamt 366-mal abeglade worde."""	stop	366	0	1		
 q19a4029d	D Toula isch i Beck gange und hed verschideni Sorte Gebäck chouft. Si hed 3 Dutzend Donuts chouft, wo 68 US-Dollar pro Dutzend choste, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wie höch si d Gesamtköschte gsi?	"Zum d Gsamtköschte uszrechne, muesch d Chöschte für jedi Sorte Gebäck einzeln berechne und dänn zämezähle:
 
 1.  **Donuts:** 3 Dutzend $\times$ 68 $ = 204 $
@@ -680,7 +680,7 @@ D Gsamtköschte vo Toula sind **694 US-Dollar**."	694	"
         204 + 160 + 330 = 694 $
 
     *   *Final Polish:*
-        ""D Gsamtköschte vo Toula sind 694 US-Dollar."""	stop
+        ""D Gsamtköschte vo Toula sind 694 US-Dollar."""	stop	694	0	1		
 qf0063e65	De Carlos pflanzt en Zitronenbaum. De boum z pflanze choschtet 90 $. Jedes Jahr wachse 7 Zitrone dra, wo er für je 1,5 $ verchoufe cha. S Bewässere und Düngere vom Boum choschtet 3 $ pro Jahr. I welem Jahr fangt er aa, mit em Zitronenbaum insgesamt Gwinn z mache?	"Zum das z berechne, müemer d Choschte und de Gwinn pro Jahr usrechne:
 
 1.  **Gwinn pro Jahr us de Zitrone:**
@@ -751,7 +751,7 @@ Nach gnau 12 Jahre het er d Choschte vom Baum deckt (Break-even). Im **13. Jahr*
     *   Initial cost: 90.
     *   Annual net: 7.5.
     *   $7.5 \times 12 = 90$.
-    *   Correct."	stop
+    *   Correct."	stop	13	0	1		
 q410b0ab2	D Melanie isch Handelsverträterin. Si hed e Drittu vo ihrne Stoubsuuger im grüene Huus verchouft, 2 wiiteri im rote Huus und d Hälfti vo dene, wo no übrig gsi si, im orangene Huus. Wenn d Melanie no 5 Stoubsuger übrig hed, mit wie vöu hed si agfange?	"D Melanie hät mit **13** Stoubsuger agfange.
 
 Do isch d Rechnig rückwärts:
@@ -808,7 +808,7 @@ Do isch d Rechnig rückwärts:
         1. Am Schluss hät si 5.
         2. Im orangene Huus hät si d Hälfti verchauft, also hät si vorher 10 gha (5 x 2 = 10).
         3. Im rote Huus hät si 2 verchauft, also hät si vorher 12 gha (10 + 2 = 12).
-        4. Im grüene Huus hät si 1 verchauft, also hät si ganz am Afang 13 gha (12 + 1 = 13)."	stop
+        4. Im grüene Huus hät si 1 verchauft, also hät si ganz am Afang 13 gha (12 + 1 = 13)."	stop	13	0	0	13	0
 qa0520340	Inere Tanzstund mit 20 Schöuer hei sich 20 % für Contemporary Dance iigschribe, 25 % vo de übrige für Jazz Dance, und de Rescht für Hip-Hop. Wie vöu Prozent vo aune Schöuer hei sich für Hip-Hop iigschribe?	"D'Antwort isch **60 %**.
 
 Hie isch d'Rechnig Schritt für Schritt:
@@ -902,7 +902,7 @@ Hie isch d'Rechnig Schritt für Schritt:
     2. Übrigi Schöuer: 20 - 4 = 16 Schöuer.
     3. Jazz: 25% vo de 16 übrige = 4 Schöuer.
     4. Hip-Hop: 16 - 4 = 12 Schöuer.
-    5. Prozänt Hip-Hop: (12 / 20) * 100 = 60%."	stop
+    5. Prozänt Hip-Hop: (12 / 20) * 100 = 60%."	stop	60	0	1		
 q9ae19f0a	Ä Händler mues sich zwüsche 2 Choufmöglichkeite entscheide: Schmuck im Wert vo 5.000 US-Dollar oder Elektronikgrät im Wert vo 8.000 US-Dollar. Sin Finanzberater meint, de Schmuckmärt legi um 2,5 % zue und de Märt für Elektrogerät im gliiche Monet um 1,2 %. Wenn de Händler Änds Monet mit sinere Koufentscheidig de Gwönn maximierä wott, wie vöu Gwönn würd er mache?	"Zum de Gwönn z'berechne, mues mer de Gwönn für beidi Choufmöglichkeite usrechne:
 
 1.  **Schmuck:**
@@ -967,7 +967,7 @@ Er würd am Ändi vom Monet **125 US-Dollar** Gwönn mache."	125	"
         1. Schmuck: $5,000 \times 2.5\% = 125$
         2. Elektronik: $8,000 \times 1.2\% = 96$
         ""De Händler wott de Gwönn maximiere, drum wählt er de Schmuck.""
-        ""De Gwönn wär dänn 125 US-Dollar."""	stop
+        ""De Gwönn wär dänn 125 US-Dollar."""	stop	125	0	1		
 q93563595	Zwei Züg fahre zur gliiche Ziit in San Rafael los. Si fahre zerscht nach Weschte und lege beidi 80 Meilen zrugg. Am nöchschte Tag fahre si nach Norde und lege 150 Meilen zrugg. Wie vöu Strecki legt jede vo dene Züg i dene zwei Täg zrugg?	"Jede vo dene Züg leit insgesamt **230 Meile** zrugg.
 
 Do isch d'Rechnig:
@@ -999,7 +999,7 @@ Do isch d'Rechnig:
 
     Jede vo dene Züg leit insgesamt **230 Meile** zrugg.
 
-    (Rechnung: 80 Meile + 150 Meile = 230 Meile)"	stop
+    (Rechnung: 80 Meile + 150 Meile = 230 Meile)"	stop	230	0	1		
 q33756eb7	D Jill überchunnt 20 US-Dollar pro Stund fürs Unterrichte als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn si 50 Wuche pro Jahr schafft, 35 Stunde pro Wuche als Lehrerin und 15 Stunde pro Wuche als Coach, wie höch isch denn ihres Jahresghalt?	"Um das Jahresgehalt von Jill zu berechnen, kannst du die Rechnung in drei einfachen Schritten machen:
 
 **1. Berechnung des wöchentlichen Verdienstes:**
@@ -1060,7 +1060,7 @@ Ihr Jahresgehalt beträgt **57.500 US-Dollar**."	57500	"
 
     *   ""Um das Jahresgehalt von Jill zu berechnen, gehen wir Schritt für Schritt vor:""
     *   Show the math clearly.
-    *   Final result: 57.500 USD."	stop
+    *   Final result: 57.500 USD."	stop	57500	0	1		
 qfb254292	D Claire macht sich jede Morge zum Zmorge e Omelette us 3 Eier. Wie vöu Dutzend Eier isst si i 4 Wuche?	"Claire isst **7 Dutzend** Eier.
 
 Hie isch d'Rechnig dezue:
@@ -1104,7 +1104,7 @@ Hie isch d'Rechnig dezue:
         - 3 Eier pro Tag
         - 7 Täg pro Wuche = 21 Eier pro Wuche
         - 4 Wuche x 21 Eier = 84 Eier
-        - 84 Eier / 12 = 7 Dutzend."	stop
+        - 84 Eier / 12 = 7 Dutzend."	stop	7	0	1		
 qc100123d	D Marissa wandert en 12 Meilen lange Wanderwäg. I de 1. Stund louft si di erschte 4 Meilen, nacher di nächschte zwei Meilen i de nächste Stund. Wenn si im Schnitt 4 Meilen pro Stund loufe wott, mit welere Gschwindigkeit i Meilen pro Stund mues si de Rescht vo de Strecki mache?	"Zum das Problem z'löse, chasch du die folgende Schritt mache:
 
 1.  **Gsamtziit berechne:**
@@ -1165,7 +1165,7 @@ Si mues de Rescht vo de Strecki mit **6 Meile pro Stund** laufe."	6	"
     *   ""Si het scho 6 Meile zrugggleit...""
     *   ""Si het no 6 Meile vor sich...""
     *   ""Si het no 1 Stund Ziit...""
-    *   ""D'Gschwindigkeit mues also 6 Meile pro Stund si."""	stop
+    *   ""D'Gschwindigkeit mues also 6 Meile pro Stund si."""	stop	6	0	1		
 q26866cba	Ich ha 10 Liter Orangetränk mit zwe Drittu Wasser und wott s zu 15 Liter Ananasgetränk mit drü Fünftu Wasser dezuegiesse. Beim Ihgiesse verschött ich aber en Liter vom Orangegetränk. Wie vöu Wasser isch i de verblibende 24 Liter?	"Hier ist die schrittweise Berechnung, um herauszufinden, wie viel Wasser in den 24 Litern übrig bleibt:
 
 **1. Das Orangentränk berechnen:**
@@ -1295,7 +1295,7 @@ Nachdem du 1 Liter Orangentränk verschüttet hast, bleiben noch **9 Liter** Ora
     *Final check of the question:* ""Wie vöu Wasser isch i de verblibende 24 Liter?""
     10 - 1 + 15 = 24. Correct.
 
-    Result: 15 Liters."	stop
+    Result: 15 Liters."	stop	15	0	1		
 qa856d9dc	De Raymond und d Samantha si Cousin und Cousine. De Raymond isch 6 Jahr vor de Samantha gebore. Mit 23 Jahr hed de Raymond en Sohn übercho. Wenn d Samantha jetzt 31 isch, vor wie vöu Jahr isch denn de Sohn vom Raymond gebore worde?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Wie alt isch de Raymond jetzt?**
@@ -1342,7 +1342,7 @@ De Sohn vom Raymond isch also vor **14 Jahr** gebore worde."	14	"
     *   ""Samantha isch 31 und de Raymond isch 6 Jahr älter als sie. Das heisst, de Raymond isch jetzt $31 + 6 = 37$ Jahr alt.""
     *   ""Er het de Sohn übercho, wo er 23 gsi isch.""
     *   ""Zum usefinde, vor wie vöu Jahr de Sohn gebore worde isch, zieh mir die 23 Jahr vo sim aktuelle Alter ab: $37 - 23 = 14$.""
-    *   ""De Sohn vom Raymond isch also vor **14 Jahr** gebore worde."""	stop
+    *   ""De Sohn vom Raymond isch also vor **14 Jahr** gebore worde."""	stop	14	0	1		
 q72ea27fb	De Billy verchouft DVDs. Am Ziischtig hed er 8 Chunde. Di erschte 3 Chunde choufe je e DVD. Di nöchschte 2 Chunde choufe je 2 DVDs. Di letschte 3 Chunde choufe kei DVD. Wie vöu DVDs hed de Billy am Ziischtig verchouft?	"Billy hed am Ziischtig insgesamt **7 DVDs** verchouft.
 
 So chunsch dezue:
@@ -1386,7 +1386,7 @@ Zämegrechnet: 3 + 4 + 0 = **7 DVDs**."	7	"*   Language: Swiss German (Züritü�
         - 3 Chunde $\times$ 1 DVD = 3 DVDs
         - 2 Chunde $\times$ 2 DVDs = 4 DVDs
         - 3 Chunde $\times$ 0 DVDs = 0 DVDs
-        - Total: 3 + 4 = 7."	stop
+        - Total: 3 + 4 = 7."	stop	7	0	1		
 qa62b2b0f	E Cherze wird pro Stund, wo si brönnt, um 2 Zentimeter chürzer. Um wie vöu Zentimeter isch e Cherze chürzer, wo vo 13 Uhr bis 17 Uhr brönnt?	"D'Cherze wird um **8 Zentimeter** chürzer.
 
 So rechnisch es us:
@@ -1422,7 +1422,7 @@ So rechnisch es us:
 
     *   Did I answer the specific question? Yes.
     *   Is the math correct? Yes (17-13=4, 4*2=8).
-    *   Is the language appropriate? Yes, Swiss German."	stop
+    *   Is the language appropriate? Yes, Swiss German."	stop	8	0	1		
 qaadc02d2	De Kyle hed de Bestseller vom letschte Jahr für 19,50 US-Dollar kouft. Das isch 25 % Rabatt uf de ursprünglechi Priis. Wie höch isch de ursprünglech Priis vom Buech gsi?	"De ursprünglech Priis vom Buech isch **26,00 US-Dollar** gsi.
 
 Hie isch d'Rechnig dezue:
@@ -1470,7 +1470,7 @@ Hie isch d'Rechnig dezue:
     *   ""De ursprünglech Priis vom Buech isch **26,00 US-Dollar** gsi.""
     *   Explanation:
         1.  Rabatt isch 25%, das heisst de Priis, wo er zahlt hät, isch 75% vom Originalpriis (100% - 25% = 75%).
-        2.  Rechnig: $19.50 \div 0.75 = 26.00$."	stop
+        2.  Rechnig: $19.50 \div 0.75 = 26.00$."	stop	26	0	1		
 q4c88eb07	D Marie hed es Hüenergricht für 12 US-Dollar bstellt, 5 Packige Milch für je 3 US-Dollar, 4 Öpfu für je 1,50 US-Dollar und es paar Schachtle Pizza. D Marie hed insgesamt 50 US-Dollar zaut. Wie vöu Schachtle Pizza hed si bstellt, wenn jedi Schachtle 8,50 US-Dollar choschtet?	"Do isch d Rechnig, zum das usezfinde:
 
 1.  **Zersch rechned mir d Chöschte für d Sache, wo mer scho kännet:**
@@ -1555,7 +1555,7 @@ D Marie hed also **2 Schachtle Pizza** bstellt."	2	"
     Will jedi Schachtle Pizza 8,50 $ choschtet, teiled mir de Räscht dur de Priis pro Schachtle:
     17 $ : 8,50 $ = 2
 
-    D Marie hed also **2 Schachtle Pizza** bstellt."	stop
+    D Marie hed also **2 Schachtle Pizza** bstellt."	stop	2	0	1		
 qc76b9ef5	D Mishka hed 3 Paar Shorts, 3 Hose und 3 Paar Schueh kouft. Es Paar Shorts choschtet 16,50 US-Dollar. E Hose choschtet 22,50 US-Dollar und es Paar Schueh 42 US-Dollar. Wie vöu Dollar hed d Mishka insgesamt für d Chleider usgäh?	"D Mishka hed insgesamt **243 Dollar** usgäh.
 
 Do isch d Rächnig dezue:
@@ -1617,7 +1617,7 @@ Do isch d Rächnig dezue:
 
     *   Did I answer the question? Yes.
     *   Is the math correct? Yes (81 * 3 = 243).
-    *   Is the language appropriate? Yes, Swiss German."	stop
+    *   Is the language appropriate? Yes, Swiss German."	stop	243	0	1		
 qc792d70c	D Cynthia isst jede Abig e Portion Glace. Si chouft Glacekarton mit 15 Portione pro Karton für 4,00 US-Dollar pro Karton. Wie vöu hed si nach 60 Täg für Glace usgäh?	"Cynthia het nach 60 Täg insgesamt **16,00 US-Dollar** für Glace usgäh.
 
 So chunsch uf das Ergebnis:
@@ -1654,7 +1654,7 @@ So chunsch uf das Ergebnis:
         So chunsch uf das Ergebnis:
         1. **Portione:** Sie isst 60 Täg lang jede Abig e Portion, also brucht sie insgesamt 60 Portione.
         2. **Kartone:** Da jede Karton 15 Portione het, muess sie $60 / 15 = 4$ Kartone chaufe.
-        3. **Choschte:** Jede Karton choschtet 4,00 USD. Also sind das $4 \times 4,00 = 16,00$ USD."""	stop
+        3. **Choschte:** Jede Karton choschtet 4,00 USD. Also sind das $4 \times 4,00 = 16,00$ USD."""	stop	60	0	0	16	1
 qb804efac	De Henry hed uf ere 60 Meilen lange Velotour zwe Stopps gmacht. De erschti Halt isch nach 20 Meile gse. De zwöiti Halt isch 15 Meile vor em Ändi vo de Tour gse. Wie vöu Meile isch er zwüschem erschte und em zwöite Halt gfahre?	"Zersch mues mer usefinde, wo de zwöiti Halt gnau isch:
 
 1.  **De zwöiti Halt:** D'Tour isch insgesamt 60 Meile lang. Wenn de Halt 15 Meile vor em Ändi isch, dänn isch er bi de 45-Meile-Marke (60 - 15 = 45).
@@ -1703,7 +1703,7 @@ Er isch also **25 Meile** zwüschem erschte und em zwöite Halt gfahre."	25	"
         Zum d'Distanz zwüsche de beide Halte usezfinde, ziehsch d'20 Meile vo de 45 Meile ab:
         45 - 20 = 25.
 
-        Er isch also **25 Meile** zwüschem erschte und em zwöite Halt gfahre."""	stop
+        Er isch also **25 Meile** zwüschem erschte und em zwöite Halt gfahre."""	stop	25	0	1		
 qf837eb68	D Gloria isch ga Schueh choufe, wo si es Paar stifu findet, wo i ihrem Budget entspricht. Si mues sich aber zwüsche de Stiefu und zwei Paar High Heels entscheide, wo zäme füf Dollar weniger choste als d Stifu. Wenn es Paar High Heels 33 US-Dollar choschtet und s andere dopplet so vöu, wie vöu chostet denn d Stifu?	"Do isch d'Rechnig Schritt für Schritt:
 
 1.  **Priis vom zweite Paar High Heels:**
@@ -1761,7 +1761,7 @@ D'Stifu chostet also **104 US-Dollar**."	104	"*   Gloria is buying shoes.
     *   ""Zäme chostet die beide Paar High Heels: 33 + 66 = 99 Dollar.""
     *   ""D'High Heels chostet 5 Dollar weniger als d'Stifu. Das heisst, d'Stifu chostet 5 Dollar meh als die 99 Dollar.""
     *   ""99 + 5 = 104 Dollar.""
-    *   ""D'Stifu chostet also 104 US-Dollar."""	stop
+    *   ""D'Stifu chostet also 104 US-Dollar."""	stop	104	0	1		
 qa2455bce	S Autersverhältnis vom Darrell und Allen isch 7:11. Wenn si jetzt zäme 162 Jahr aut si, wie aut isch de Allen i 10 Jahr?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **D'Anteile berechne:**
@@ -1814,7 +1814,7 @@ qa2455bce	S Autersverhältnis vom Darrell und Allen isch 7:11. Wenn si jetzt zä
     *   ""7 + 11 = 18 Anteile.""
     *   ""162 / 18 = 9. Das isch de Wert für ein Teil.""
     *   ""Allen isch jetzt 11 x 9 = 99i alt.""
-    *   ""In 10 Jahr isch er 99 + 10 = 109i alt."""	stop
+    *   ""In 10 Jahr isch er 99 + 10 = 109i alt."""	stop	109	0	1		
 q166f163a	De Gunter probiert d Gummibärli im Glas z zöue. Er frägt sini Fründe, wie vöu Gummibärli si meine, dass im Glas si. Eine seit 80. De ander seit 20 meh als d Hälfti vo de erschte Schätzig. En Dritte seit 25 % meh als de Erscht. Wie höch isch iri durchschnittlich Schätzig?	"Zum de Durchschnitt z'berechne, müemer zerst d'Schätzige vo allne drei Fründe usefinde:
 
 1.  **De ersti Fründ:** Er seit **80**.
@@ -1872,7 +1872,7 @@ Iri durchschnittlich Schätzig isch **80**."	80	"
     *   ""D'Summe vo de Schätzige isch: 80 + 60 + 100 = 240""
     *   ""De Durchschnitt isch: 240 / 3 = 80""
 
-    *   ""Iri durchschnittlich Schätzig isch 80."""	stop
+    *   ""Iri durchschnittlich Schätzig isch 80."""	stop	80	0	1		
 q3966df43	De John luegt zu 10 Hünd. Jede Hund bruucht täglech 0,5 Stunde zum Spaziere und fürs Gschäft erledige. Wie vöu Stunde pro Wuche verbringt er insgesamt mit de Hünd?	"John verbringt insgesamt **35 Stunde** pro Wuche mit de Hünd.
 
 Hie isch d'Rechnig dezue:
@@ -1903,7 +1903,7 @@ Hie isch d'Rechnig dezue:
     *   ""John verbringt insgesamt **35 Stunde** pro Wuche mit de Hünd.""
     *   Show the calculation:
         *   10 Hünd × 0,5 Stunde = 5 Stunde pro Tag.
-        *   5 Stunde × 7 Täg = 35 Stunde pro Wuche."	stop
+        *   5 Stunde × 7 Täg = 35 Stunde pro Wuche."	stop	35	0	1		
 q28184d6c	D Gretchen hed 110 Mönze. Es het 30 meh Gold- als Söubermönze. Wie vöu Goldmönze hed d Gretchen?	"D Gretchen het **70 Goldmünze**.
 
 Hie isch d Rächnig dezue:
@@ -1963,7 +1963,7 @@ Hie isch d Rächnig dezue:
 
     *Kontroll:* $70 \text{ (Gold)} + 40 \text{ (Silber)} = 110 \text{ Münze}$.
 
-    (Self-correction: Ensure the dialect matches the user's style. The user used ""hed"", ""vöu"", ""Söubermönze"". I'll stick to a neutral/common Swiss German)."	stop
+    (Self-correction: Ensure the dialect matches the user's style. The user used ""hed"", ""vöu"", ""Söubermönze"". I'll stick to a neutral/common Swiss German)."	stop	70	0	1		
 q5f9dc683	D Siobhan hed 2 Schmockstück weniger als de Aaron. De Aaron hed 5 Schmockstück meh als d Hälfti vo de Schmockstück vom Raymond. Wenn de Raymond 40 Schmockstück hed, wie vöu hed denn d Siobhan?	"D Siobhan hed **23 Schmockstück**.
 
 Do isch d Rechnig dezue:
@@ -2014,7 +2014,7 @@ Do isch d Rechnig dezue:
 
     *   Did I answer the question? Yes.
     *   Is the math correct? $40 \rightarrow 20 \rightarrow 25 \rightarrow 23$. Yes.
-    *   Is the dialect natural? Yes."	stop
+    *   Is the dialect natural? Yes."	stop	23	0	1		
 q9501d333	De Mike spielt 40 Minute Pingpong. I de erschte 20 Minute macht er 4 Pünkt. I de folgende 20 Minute macht er 25 % meh Pünkt. Wie vöu Pünkt macht er insgesamt?	"Do isch d'Rechnig:
 
 1.  **Erschti 20 Minute:** Er macht **4 Pünkt**.
@@ -2058,7 +2058,7 @@ Er macht insgesamt **9 Pünkt**."	9	"
            - Also macht er i de zweite Hälfte $4 + 1 = 5$ Pünkt.
         3. Insgesamt: $4 + 5 = 9$ Pünkt.
 
-    *   *Final Answer:* 9 Pünkt."	stop
+    *   *Final Answer:* 9 Pünkt."	stop	9	0	1		
 q0e0fa86b	De Terry isst 2 Joghurt pro Tag. Im Momänt gits es Angebot: 5,00 US-Dollar für 4 Joghurt. Wie vöu git er i 30 Täg für Joghurt us?	"Terry git i 30 Täg insgesamt **75.00 US-Dollar** us.
 
 So chunsch uf das Ergebnis:
@@ -2108,7 +2108,7 @@ So chunsch uf das Ergebnis:
     So chunsch uf das Ergebnis:
     1. **Totali Joghurt:** 2 Joghurt pro Tag × 30 Täg = 60 Joghurt.
     2. **Aazahl Sets:** 60 Joghurt ÷ 4 Joghurt pro Set = 15 Sets.
-    3. **Gsamtkoste:** 15 Sets × 5.00 US-Dollar = 75.00 US-Dollar."""	stop
+    3. **Gsamtkoste:** 15 Sets × 5.00 US-Dollar = 75.00 US-Dollar."""	stop	75	0	1		
 q126bbbaa	De John plant, alli sini Spielsache z verchoufe und mit em Gäud Videospieli z choufe. Er hed 13 Lego-Sets und hed für jedes verchoufte Set $15 übercho. Am Ändi chouft er 8 Videospiel für je $20 und hed no $5 übrig. Wie vöu Lego-Sets hed er no?	"Zum das Rätsel z löse, müemer d'Rechnig Schritt für Schritt mache:
 
 1.  **Wie viel Gäud het er für d'Videospiel usgeh?**
@@ -2210,7 +2210,7 @@ q126bbbaa	De John plant, alli sini Spielsache z verchoufe und mit em Gäud Video
 
     *   Did I answer the question? Yes.
     *   Is the math correct? $11 \times 15 = 165$. $165 - 160 = 5$. Correct.
-    *   Is the language natural? Yes."	stop
+    *   Is the language natural? Yes."	stop	2	0	1		
 q5c1bd624	De John louft 60 Meilen pro Wuche. Er louft 3 Täg pro Wuche. Am erschte Tag louft er 3 Stunde und a de andere zwe louftäg je d Hälfti devo. Wie schnäll louft er?	"Um d'Gschwindigkeit z'berechne, muesch zerst d'Gsamtziit usefinde, wo er pro Wuche louft:
 
 1.  **Ziit am erschte Tag:** 3 Stunde
@@ -2259,7 +2259,7 @@ John louft also **10 Meile pro Stunde**."	10	"
     Jetzt rechned mir d'Gschwindigkeit:
     60 Meile / 6 Stunde = 10 Meile pro Stunde.
 
-    Er louft also **10 Meile pro Stunde**."""	stop
+    Er louft also **10 Meile pro Stunde**."""	stop	10	0	1		
 q02f06b34	D Dana cha viermau so schnöu sekle wie si loufe cha, aber hüpfe cha si nume mit de Höufti vo ihrer Renngschwindigkeit. Wenn si mit 3 Meile pro Stund hüpfe cha, wie vöu Meilen schafft si i sechs Stunde, wenn si e Drittu vo de Ziit seklet und zwe Dritteu vo de Ziit louft?	"Do isch d'Lösig Schritt für Schritt:
 
 **1. D'Gschwindigkeite usefinde:**
@@ -2348,7 +2348,7 @@ Dana schafft i sechs Stunde insgesamt **30 Meile**."	18	"
         4. **Totali Distanz:**
            - $6 + 24 = 30$ Meile.
 
-    *   *Final Answer:* 30 Meile."	stop
+    *   *Final Answer:* 30 Meile."	stop	30	0	0	30	0
 qd6dd82e1	S iPhone vom Brandon isch viermal so alt wie s iPhone vom Ben. S iPhone vom Ben isch dopplet so alt wie s iPhone vo de Suzy. Wenn s iPhone vo de Suzy 1 Jahr alt isch, wie alt isch denn s iPhone vom Brandon?	"S iPhone vom Brandon isch **8 Jahr** alt.
 
 Hie isch d Rechnig dezue:
@@ -2377,7 +2377,7 @@ Hie isch d Rechnig dezue:
     *   Explanation:
         - Suzy: 1 Jahr
         - Ben: 2 $\times$ 1 = 2 Jahr
-        - Brandon: 4 $\times$ 2 = 8 Jahr"	stop
+        - Brandon: 4 $\times$ 2 = 8 Jahr"	stop	8	0	1		
 q425db7e5	De gross Drache Perg isch höch obe uf em Bärg Farbo ghocked und hed uf aues im Umkreis vo 1000 Fuss Füür gspie. D Polly het de goldig Speer, di einzig bekannt Waffe zum Drache z bezwinge, 400 Fuss wiit chönne werfe, also guet i d Richwiiti vo de Flamme ine. Wenn d Polly aber de Saphir-Edelstei i de Händ gha hed, het si de Speer drümau so wiit chönne werfe wie ohni. Wenn si de Edustei i de Händ hett, wie wiit usserhalb vo de Flammereichwiiti chönnt d Polly stah und de Drache trotzdem no mit em goudige Speer träffe?	"D'Antwort isch: **Gar nöd.**
 
 Hie isch d'Logik dahinter:
@@ -2438,7 +2438,7 @@ Wil 400 Fuss aber viel weniger isch als 1000 Fuss, mues si sich immer no **inner
 
     Damit d'Polly de Drache trifft, mues si sich maximal 400 Fuss vo ihm entfernt ufhalte. Wil 400 Fuss aber weniger isch als 1000 Fuss, mues si sich immer no **innert** de Flammereichwiiti befinde, zum de Drache erreiche.
 
-    Sie cha also nöd usserhalb vo de Flamme stah und ihn trotzdem no träffe."""	stop
+    Sie cha also nöd usserhalb vo de Flamme stah und ihn trotzdem no träffe."""	stop	400	0	0		0
 qedc215ac	"D Grossmama Jones hed 5 Öpfuchueche fürs Mittagässe vo de Füürwehr bache. Si hed jede Chueche i 8 Stück gschnitte und füf Chüeche uf s Buffet gstöut, dass d Gäst sich säuber
 chöi bediene. Am Ändi vom Abig, nachdem d Gäst Chueche gässe hei, si no 14 Stück übrig gsi. Wie vöu Stück hei d Gäst gno?"	"Do isch d Rechnig, wie mer das usefindet:
 
@@ -2486,7 +2486,7 @@ chöi bediene. Am Ändi vom Abig, nachdem d Gäst Chueche gässe hei, si no 14 S
     *   ""Das git insgesamt: $5 \times 8 = 40$ Stück.""
     *   ""Am Ändi sind no 14 Stück übrig gsi.""
     *   ""Rechnig: $40 - 14 = 26$.""
-    *   ""D Gäst hei also **26 Stück** gno."""	stop
+    *   ""D Gäst hei also **26 Stück** gno."""	stop	26	0	1		
 q5d47194e	Luut de Nährwertagabe hed e Tüte Chips 250 Kalorie pro Portion. Wenn e 300 g-Tüte 5 Portione hed, wie vöu Gramm chasch du ässe, wenn dis tägliche Kalorieziel bi 2000 liht und du scho 1800 Kalorie gha hesch?	"Do isch d'Rechnig, wie viel Chips du no chasch ässe:
 
 1.  **No übrigi Kalorie:**
@@ -2555,7 +2555,7 @@ Du chasch also no **48 Gramm** Chips ässe."	48	"
 
     *   Did I answer the specific question? Yes (how many grams).
     *   Is the math correct? Yes (48g).
-    *   Is the language natural? Yes."	stop
+    *   Is the language natural? Yes."	stop	48	0	1		
 q255b81c0	De Charlie wott Bienenwachskerze verchoufe. Us jedem Pfund Bienewachs cha er 10 Chegelcherze mache. S Material useme Pfund Bienewachs plus Docht choschtet 10,00 US-Dollar. Wenn er d Cherze für 2,00 US-Dollar verchouft, wie vöu Nettogwünn macht er, wenn er 20 Cherze macht und verchouft?	"Do isch d'Rechnig, wie mer zum Nettogwünn chunnt:
 
 1.  **Materialchoschte berechne:**
@@ -2615,7 +2615,7 @@ Charlie macht also **20,00 US-Dollar** Nettogwünn."	20	"
         2. Verchaufspriis: Er verchauft 20 Cherze für je 2,00 $. Das git 20 * 2,00 $ = 40,00 $.
         3. Nettogwünn: 40,00 $ (Verchauf) - 20,00 $ (Choschte) = 20,00 $.
 
-    *   *Result:* Charlie macht 20,00 US-Dollar Nettogwünn."	stop
+    *   *Result:* Charlie macht 20,00 US-Dollar Nettogwünn."	stop	20	0	1		
 q0166ea66	D Meredith isch Freelance-Bloggerin und schribt über Gsundheitstheme und kontaktiert Chunde, das isch ihr feste Job. Für d Recherche und s Schriibe voneme Blogartikel bruucht si im Schnitt 4 Stunde. Letscht Wuche hed si am Mäntig 5 Artikel gschribe und am Ziischtig 2/5 meh Artikel als am Mäntig. Am Mittwuch hed si dopplet so vöu Artikel gschribe wie am Ziischtig. Wie vöu Stunde hed si i dene dröi Täg insgesamt fürs Schriibe vo de Artikel brucht?	"Zum d'Antwort z'finde, müemer d'Aazahl vo de Artikel pro Tag usrechne und dänn d'Gsamtzahl mit de Stunde pro Artikel multipliziere.
 
 Hie isch d'Schritt-für-Schritt-Berechnig:
@@ -2679,7 +2679,7 @@ Meredith hät i dene dröi Täg insgesamt **104 Stunde** fürs Schriibe vo de Ar
         2. Ziischtig: 5 + (2/5 * 5) = 5 + 2 = 7 Artikel.
         3. Mittwuch: 7 * 2 = 14 Artikel.
         4. Total Artikel: 5 + 7 + 14 = 26 Artikel.
-        5. Total Stunde: 26 * 4 = 104 Stunde."	stop
+        5. Total Stunde: 26 * 4 = 104 Stunde."	stop	104	0	1		
 q7bb382f4	Candice het 80 Post-it-Zetteli i ihri Handtäsche packt, bevor si zu ihrem job im kaffi ufbroche esch. Unterwägs het si e zwöschestopp am lande ihgleit und e packig post-it-zetteli kouft. Bim schaffe het sie a 220 verschednige kafi tassli jewils eis post-it-zetteli kläbt. Wenn ihre insgesamt 23 post-it-zetteli si übrigblibe, wie vöu post-it-zetteli si de i de packig gse, wo so kouft het?	"Zum das usezfinde, chasch d'Rechnig so ufstelle:
 
 1.  **Zersch luege, wie viel Zetteli sie insgesamt gha het:**
@@ -2745,7 +2745,7 @@ Es si also **163** Post-it-Zetteli i de Packig gsi, wo sie gchauft het."	163	"* 
         Packig = 243 - 80
         Packig = 163
 
-        Es si also **163** Post-it-Zetteli i de Packig gsi."""	stop
+        Es si also **163** Post-it-Zetteli i de Packig gsi."""	stop	163	0	1		
 q1a64508f	De John chouft dopplet so vöu roti wie blaui Krawatte. Die rote Krawatte choste 50 % meh aus die blaue. Er hed 200 US-Dollar für blaui Krawatte usgäh, wo pro Stück 40 US-Dollar choste. Wie vöu hed er insgesamt für Krawatte usgäh?	"Do isch d'Rechnig Schritt für Schritt:
 
 1.  **Wie vöu blaue Krawatte hed er gchauft?**
@@ -2842,7 +2842,7 @@ John hed insgesamt **800 US-Dollar** usgäh."	800	"
         5. **Gesamtchoste:**
            - 200 Dollar (blau) + 600 Dollar (rot) = **800 US-Dollar**.
 
-        John hed insgesamt **800 US-Dollar** usgäh."""	stop
+        John hed insgesamt **800 US-Dollar** usgäh."""	stop	800	0	1		
 q9605b4e6	D Tracy hed es 4 Fuss langs Stück Draht brucht, zum d Tomatepflanze i ihrem Garte abzstütze. De Draht isch i 6 Inch langi Stück gschnitte worde. Wie vöu Stück Draht hed si gha?	"Zum das Problem z'löse, müemer zersch d'Einheite uf s'Gliche bringe (alles in Zoll/Inches umrechne).
 
 Hie isch d'Rechnig:
@@ -2894,7 +2894,7 @@ Hie isch d'Rechnig:
         ""4 Fuess $\times$ 12 Zoll = 48 Zoll.""
         ""Jetzt teile mir die gsamti Längi dur d'Längi vomene einzelne Stück:""
         ""48 Zoll $\div$ 6 Zoll = 8.""
-        ""Tracy het also **8 Stück** Draht gha."""	stop
+        ""Tracy het also **8 Stück** Draht gha."""	stop	8	0	1		
 qda35e8fb	De Richard wohnt i mene Wohnhuus mit 15 Etage. Uf jedere Etage het s 8 Wohnige, und 3/4 vom Gebäude si bewohnt. Wie vöu Wohnige im Gebäude si insgesamt unbewohnt?	"Do isch d'Lösig für d'Ufgab:
 
 1. **Zuerst rechnisch du d'Gsamtzahl vo de Wohnige us:**
@@ -2956,7 +2956,7 @@ Es sind also insgesamt **30 Wohnige** unbewohnt."	30	"
     3. Jetzt rechnisch d'unbewohnte Wohnige us:
        120 Wohnige ÷ 4 = **30 Wohnige**.
 
-    Es sind also insgesamt **30 Wohnige** unbewohnt."""	stop
+    Es sind also insgesamt **30 Wohnige** unbewohnt."""	stop	30	0	1		
 q94fcd6ce	De Lloyd hed en Eierhof. Sini Hüener lege 252 Eier pro Tag und er verchouft si für 2 US-Dollar pro Dutzend. Wie vöu verdient de Lloyd pro Wuche mit de Eier?	"Do isch d'Rechnig, wie viel de Lloyd verdient:
 
 1.  **Zersch d'Dutzend pro Tag:**
@@ -3018,7 +3018,7 @@ De Lloyd verdient also **294 US-Dollar** pro Wuche mit sine Eier."	294	"
     *   Dozens: 252 / 12 = 21.
     *   Daily income: 21 * 2 = 42.
     *   Weekly income: 42 * 7 = 294.
-    *   Correct."	stop
+    *   Correct."	stop	294	0	1		
 q1afb1e71	S Schiff vom Tom schafft 10 Meile pro Stund. Er seglet vo 13 bis 16 Uhr. Nacher fahrt er mit 6 Meilen/Stunde wider zrugg. Wie lang bruucht er für de Rückwäg?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zuerst d'Distanz berechne:**
@@ -3066,7 +3066,7 @@ Tom bruucht also **5 Stunde** für de Rückwäg."	5	"
         Er bruucht also **5 Stunde** für de Rückwäg.""
 
     *   Distance: 30 miles. Correct.
-    *   Return time: 30 / 6 = 5. Correct."	stop
+    *   Return time: 30 / 6 = 5. Correct."	stop	5	0	1		
 q0aaae19a	Em Uriah wird sini Büechertäsche z schwär. Er mues 15 Pfund use näh. Sini Comicbüecher si je 1/4 Pfund und sini Spielsache je 1/2 Pfund. Wenn er 30 Comicbüecher use nimmt, wie vöu Spöusache mues er denn no use näh?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zersch rechned mir d'Comicbüecher us:**
@@ -3130,7 +3130,7 @@ Uriah mues also no **15 Spielsache** use näh."	15	"
         Will jedi Spielsach 1/2 Pfund wägt, teiled mir s'Reschtgwicht dur 1/2:
         7.5 Pfund $\div$ 0.5 Pfund = 15.
 
-        Uriah mues also no **15 Spielsache** use näh."""	stop
+        Uriah mues also no **15 Spielsache** use näh."""	stop	15	0	1		
 qa5756c69	En Mechaniker verlangt verschideni Priise für d Reparatur vo LKW-Reife und PKW-Reife. Für jede gflikte LKW-Reife verlangt er 60 Dollar und für jede gflikte PKW-Reife 40 Dollar. Am Dunnstig flikt er 6 LKW-Reife und 4 PKW-Reife. Am Fritig flikt er 12 PKW-Reife und kei LKW-Reife. Wie vöu Dollar meh Umsatz macht de Mechaniker a dem Tag mit em höhere Umsatz?	"Um die Antwort zu finden, berechnen wir zuerst den Umsatz für jeden Tag einzeln:
 
 **1. Umsatz am Donnerstag (Dunnstig):**
@@ -3192,7 +3192,7 @@ Der Mechaniker macht an dem Tag mit dem höheren Umsatz **40 Dollar** mehr."	40	
     *   *Step 3: Comparison.*
         520 $ (Donnerstag) - 480 $ (Freitag) = 40 $
 
-    *   *Final Answer:* 40 Dollar."	stop
+    *   *Final Answer:* 40 Dollar."	stop	40	0	1		
 qd819612e	D Doubtfire-Schwöstere fahre mit 7 Chätzli hei, wo si im örtliche Tierheim adoptiert hei, wo iri Mueter alüütet und seit, dass iri zwei Huuschatz grad Chätzli übercho hei. Si seit, d Patchy, di erscht Chatz, heig drümau so vöu Chätzli wie d adoptierten, und d Trixie, di ander Chatz, heig 12 uf d Wält brunge. Wie vöu Chätzli hei d Doubtfires jetzt?	"D Doubtfires hei jetzt insgesamt **26 Chätzli**.
 
 Do isch d Rächnig dezue:
@@ -3234,7 +3234,7 @@ Do isch d Rächnig dezue:
         ""7 + 7 + 12 = 26.""
 
     *   Did I miss anything? No.
-    *   Is the math correct? 7+7=14, 14+12=26. Yes."	stop
+    *   Is the math correct? 7+7=14, 14+12=26. Yes."	stop	26	0	0	26	0
 q7c63d108	D Jean hed 30 Schläckstängu. Si isst 2 devo. Di übrige Schläckstängu wott si i Säckli mit je 2 Schläckstängle tue. Wie vöu Säckli cha d Jean föue?	"D Jean cha **14 Säckli** fülle.
 
 So chunsch dezue:
@@ -3275,7 +3275,7 @@ So chunsch dezue:
 
     So chunsch dezue:
     1. Zersch ziehsch die 2 Schläckstängu ab, wo si gässe het: $30 - 2 = 28$.
-    2. Denn teilsch die 28 Schläckstängu dur 2 (wil jedes Säckli 2 het): $28 : 2 = 14$."""	stop
+    2. Denn teilsch die 28 Schläckstängu dur 2 (wil jedes Säckli 2 het): $28 : 2 = 14$."""	stop	14	0	1		
 q93b023e5	De Peter plant, die Wuche is Kino z gah. Er chouft immer es Billet für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für die Wuche 42 US-Dollar zur Verfüegig hed, wie mängisch cha er denn is Kino gah?	"Zersch mues mer usefinde, wie viel es pro Mal choschtet:
 7 Dollar (Billet) + 7 Dollar (Popcorn) = **14 Dollar pro Mal**.
 
@@ -3316,7 +3316,7 @@ Peter cha also **3 Mal** is Kino gah."	3	"
         Peter cha also **3 Mal** is Kino gah.""
 
     *   The user wrote in Swiss German, so the answer should be in Swiss German.
-    *   The math is correct."	stop
+    *   The math is correct."	stop	3	0	1		
 qdf141d2f	E Holzbrugg cha nid meh als 5.000 Pfund träge. En Lieferwage mit identische Chischte, wo jedi 15 Pfund wiegt, söll über d Brugg fahre. Fahrer und Lastwage wiege zäme 3755 Pfund. Wie vöu Chischte cha de Lastwage maximal lade, ohni d Gwichtsgränze vo de Brugg z überschriite?	"Zum das usezrechne, muesch i zwei Schritt vorgaa:
 
 1.  **S Gwicht vom Lastwage abziehe:**
@@ -3368,7 +3368,7 @@ De Lastwage cha maximal **83 Chischte** lade, ohni d Gwichtsgränze vo de Brugg 
     *   ""5000 - 3755 = 1245 Pfund.""
     *   ""Dänn teilsch das dur s Gwicht vo de eine Chischte."" (Then divide that by the weight of one box.)
     *   ""1245 / 15 = 83.""
-    *   ""De Lastwage cha also maximal 83 Chischte lade."" (The truck can therefore carry a maximum of 83 boxes.)"	stop
+    *   ""De Lastwage cha also maximal 83 Chischte lade."" (The truck can therefore carry a maximum of 83 boxes.)"	stop	83	0	1		
 q1f4f019f	De Stephen hed online Läbensmittu bstöut. D Schlussrächnig isch 40,00 US-Dollar gsi. Wöu d Lieferig über en Lieferdienst gmacht worde isch, hei si uf d Rächnig 25 % Gebühr drufgschlage und no 3,00 US-Dollar Liefergebühr verrechnet. De Stephen hed usserdem 4,00 US-Dollar Trinkgäld geh. Wie höch isch de Endpriis nach all dene Extragebühre gsi?	"Do isch d Rächnig Schritt für Schritt:
 
 1.  **Basispriis:** 40,00 $
@@ -3427,7 +3427,7 @@ De Endpriis isch also **57,00 US-Dollar** gsi."	57	"
         ""Wenn mer das alles zämeueget:""
         40,00 + 10,00 + 3,00 + 4,00 = 57,00 $
 
-    *   *Final Answer:* 57,00 US-Dollar."	stop
+    *   *Final Answer:* 57,00 US-Dollar."	stop	57	0	1		
 q709e5faa	En Himbeerstruch hed 6 Trüübeli mit je 20 Frücht und no 67 einzelni Früchte, wo über de Struch verteilt si. Wie vöu Himbeeri git s insgesamt?	"Zersch rechnet mer d'Trüübeli:
 6 Trüübeli × 20 Frücht = 120 Himbeeri.
 
@@ -3461,7 +3461,7 @@ Es git also insgesamt **187 Himbeeri**."	187	"*   Language: Swiss German (Schwii
         Dänn addiert mer die einzelne Frücht dezue:
         120 + 67 = 187.
 
-        Es git also insgesamt **187 Himbeeri**."""	stop
+        Es git also insgesamt **187 Himbeeri**."""	stop	187	0	1		
 qb292acaa	I mene Chorb si 25 Orange. 1 devo isch schlächt, 20 % si no nid riif und 2 si suur; de Rescht isch guet. Wie vöu Orange si guet?	"Do isch d'Rechnig:
 
 1.  **Total Orange:** 25
@@ -3516,7 +3516,7 @@ Es si also **17 gueti Orange**."	17	"
         Es si also **17** gueti Orange.""
 
     *   Did I miss anything? No.
-    *   Is the math correct? $25 \times 0.2 = 5$. $1+5+2=8$. $25-8=17$. Yes."	stop
+    *   Is the math correct? $25 \times 0.2 = 5$. $1+5+2=8$. $25-8=17$. Yes."	stop	17	0	1		
 qa11cac63	D Janet chauft für iri Tochter e Brosche. Si zaut 500 US-Dollar fürs Material und no 800 US-Dollar em Juwelier fürs Forme. Nacher zahlt si no 10 % vo dem Betrag für d Versicherig. Wie vöu hed si insgesamt müesse zahle?	"Do isch d'Rechnig:
 
 1.  **Material und Forme:** 500 + 800 = 1'300 US-Dollar
@@ -3567,7 +3567,7 @@ Janet hed insgesamt **1'430 US-Dollar** müesse zahle."	1430	"
     2. Versicherig: 10% vo 1'300 = 130 US-Dollar.
     3. Gsamtsumme: 1'300 + 130 = 1'430 US-Dollar.
 
-    Janet hed insgesamt **1'430 US-Dollar** müesse zahle."	stop
+    Janet hed insgesamt **1'430 US-Dollar** müesse zahle."	stop	1430	0	1		
 q5a0d641e	Nach 40 Dienstjahr überchunnt en Mitarbeiter vo de Firma vo de Marcy e volli jährlechi Rente vo 50.000 Dollar. De Anspruch faht nach 20 Dienstjahr aa. Für jedes wiiteri volle Dienstjahr nach de 20-Jahr-Marke verdient de Mitarbeiter 5 % vo de volle Rente. Wenn d Marcy nach genau 30 Dienstjahr ufhört, wie höch isch iri jährlechi Rente i Dollar?	"D'Marcy bechunnt e jährlechi Rente vo **25'000 Dollar**.
 
 Hie isch d'Berechnig Schritt für Schritt:
@@ -3633,7 +3633,7 @@ Hie isch d'Berechnig Schritt für Schritt:
     2. **Prozentsatz vo de Rente:**
        10 Jahr × 5 % = 50 %.
     3. **Berechnig vo de Rente:**
-       50 % vo 50'000 $ = 25'000 $."	stop
+       50 % vo 50'000 $ = 25'000 $."	stop	25000	0	1		
 q2eb5bb5f	D Aleena hed en Streaming-Dienst abonniert, wo 140 US-Dollar pro Monet choschtet. Wenn d Firma i de erschte Jahreshälfti de normale Betrag verlangt und i de zweite Jahreshälfti 10 % weniger, wie vöu hed si bis Ändi Jahr insgesamt für de Streaming-Dienst zaut?	"Do isch d Rechnig Schritt für Schritt:
 
 1.  **Ersti Jahreshälfti (6 Monet):**
@@ -3708,7 +3708,7 @@ D Aleena het bis Ändi Jahr insgesamt **1'596 US-Dollar** für de Streaming-Dien
         3. **Total:**
            840 USD + 756 USD = **1'596 USD**
 
-        D Aleena het bis Ändi Jahr insgesamt **1'596 US-Dollar** zahlt."""	stop
+        D Aleena het bis Ändi Jahr insgesamt **1'596 US-Dollar** zahlt."""	stop	1596	0	1		
 q29ca8e5c	D Sophia überleit, mit ihrem Auto e längeri Fahrt z mache, und wott wüsse, wie wiit si mit einere Tankfüllig chunnt. Sit em letschte Tanke isch si 100 Meile gfahre und hed 4 Gallone Benzin müesse nahföue, bis de Tank wider voll gsi isch. Im Handbuech steit, dass 12 Gallone i de Tank passe. Wie vöu Meile cha d Sophia mit einere Tankfüllig fahre?	"Zum das usezfinde, wie wiit d'Sophia mit einere Tankfüllig cha fahre, chasch das in zwei Schritt berechne:
 
 1.  **Wie viel Meile fahrt sie pro Gallone?**
@@ -3759,7 +3759,7 @@ D'Sophia cha mit einere Tankfüllig **300 Meile** fahre."	300	"
 
     *   Did I answer the specific question? Yes.
     *   Is the math correct? 100/4 = 25. 25*12 = 300. Yes.
-    *   Is the language correct? Yes, Swiss German."	stop
+    *   Is the language correct? Yes, Swiss German."	stop	300	0	1		
 q388ed7a8	De Jim luegt 2 Stunde lang Färnseh und goht denn is Bett, wo er halb so lang list. Das macht er 3-mal pro Wuche. Wie vöu Stunde verbringt er i 4 Wuche mit Färnseh luege und Läse?	"Do isch d'Rechnig:
 
 1.  **Läse pro Tag:** Er liest d'Hälfti vo de Färnseh-Zit. Die hälfti vo 2 Stunde isch **1 Stund**.
@@ -3809,7 +3809,7 @@ Jim verbringt also insgesamt **36 Stunde** mit Färnseh luege und Läse."	36	"
         4. Pro Wuche (3-mal): 3 Stunde x 3 = 9 Stunde.
         5. In 4 Wuche: 9 Stunde x 4 = 36 Stunde.
 
-    *   *Final Answer:* Jim verbringt insgesamt 36 Stunde."	stop
+    *   *Final Answer:* Jim verbringt insgesamt 36 Stunde."	stop	36	0	1		
 qe6615147	Vier Schuele spiele i mene Basketballturnier gegeneinander. Jedi Schou hed es Meitlibasketballteam und es Buebebasketballteam gschickt, und jedes Team hed 5 Spieler. Alli Schuele hei für jedes Team au en Trainer mitgschickt. Wie vöu Persone hei d Schuele insgesamt gschickt?	"D Schuele hei insgesamt **48 Persone** gschickt.
 
 So chunsch dezue:
@@ -3865,7 +3865,7 @@ So chunsch dezue:
     *   Girls and Boys teams? Yes.
     *   5 players per team? Yes.
     *   1 coach per team? Yes.
-    *   Total count? 48."	stop
+    *   Total count? 48."	stop	48	0	1		
 q1df59a5a	En Schatzsuecher hed e vergrabeni Schatzchischte mit Edelstei gfunde. Es si 175 Diamante din gsi, 35 weniger Rubine als Diamante und dopplet so vöu Smaragde wie Rubine. Wie vöu Edelstei si insgesamt i de Schatzchischte gsi?	"Do isch d'Lösig für d'Schatzchischte:
 
 1.  **Diamante:** 175
@@ -3921,7 +3921,7 @@ Es si insgesamt **595 Edelstei** i de Schatzchischte gsi."	595	"
 
     **Total:** 175 + 140 + 280 = **595 Edelstei**
 
-    Es sind also insgesamt 595 Edelstei i de Schatzchischte gsi."""	stop
+    Es sind also insgesamt 595 Edelstei i de Schatzchischte gsi."""	stop	595	0	1		
 q0e3fa635	I de Schuel vom Dr. Wertz git s dopplet so vöu Buebe wie Meitli. Wenn s 60 Meitli und 5 Schüeler pro Lehrer git, wie vöu Lehrer git s denn?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zersch d'Buebe usrechne:**
@@ -3969,7 +3969,7 @@ Es git also **36 Lehrer**."	36	"
         2. **Gsamtzahl Schüeler:** Meitli + Buebe = $60 + 120 = 180$ Schüeler insgesamt.
         3. **Aazahl Lehrer:** Wenn es 5 Schüeler pro Lehrer git, teilt mer d'Gsamtzahl dur 5: $180 : 5 = 36$.
 
-    *   *Final Answer:* Es git **36 Lehrer**."	stop
+    *   *Final Answer:* Es git **36 Lehrer**."	stop	36	0	1		
 q9c0ce719	D Bailey fangt mit eme bestimmte Betrag Gäld aa. Denn überchunnt si 8 Wuche lang jede Wuche 5 US-Dollar. Wenn si nach dene 8 Wuche insgesamt 100 US-Dollar hed, wie vöu Gäld hed d Bailey am Afang gha?	"D Bailey het am Afang **60 US-Dollar** gha.
 
 So chunnsch uf das Ergebnis:
@@ -4010,7 +4010,7 @@ So chunnsch uf das Ergebnis:
     *   Explanation:
         1.  Sie het 8 Wuche lang jede Wuche 5 Dollar übercho. Das macht insgesamt: $8 \times 5 = 40$ Dollar.
         2.  Am Schluss het si 100 Dollar gha.
-        3.  Wenn mer die 40 Dollar abzieht, wo si übercho het, chunnt mer uf de Afangsbetrag: $100 - 40 = 60$ Dollar."	stop
+        3.  Wenn mer die 40 Dollar abzieht, wo si übercho het, chunnt mer uf de Afangsbetrag: $100 - 40 = 60$ Dollar."	stop	40	0	0	60	1
 qde446a3d	D Judy git under de Wuche jede Tag 5 Tanzkörs und am Samschtig 8 Körs. Wenn i jedem Kurs 15 Schüeler si und si 15,00 $ pro Schüeler verlangt, wie vöu Gäud verdient si i ere Wuche?	"Do isch d'Rechnig, wie viel Gäld Judy i ere Wuche verdient:
 
 1.  **Aazahl Tanzchörs pro Wuche:**
@@ -4111,7 +4111,7 @@ Judy verdient also **7'425,00 $** pro Wuche."	7425	"
     3. **Gäld, wo si verdient:**
     - $495 \text{ Schüeler} \times 15,00 \$ = 7'425,00 \$$
 
-    Judy verdient also **7'425,00 $** pro Wuche."	stop
+    Judy verdient also **7'425,00 $** pro Wuche."	stop	7425	0	1		
 qd941251f	De Kelian hed zwöi Kochrezept. S eine hed 20 Aawiisige, s andere dopplet so vöu wie s erschte. Wie vöu Aawiisige mues de Kelian läse, zum beidi Rezept z mache?	"De Kelian bruucht insgesamt **60 Aawiisige**.
 
 So rechnet mer das:
@@ -4148,7 +4148,7 @@ So rechnet mer das:
         So rechnet mer das:
         1. Rezept: 20 Aawiisige
         2. Rezept: 20 * 2 = 40 Aawiisige
-        Zäme: 20 + 40 = 60 Aawiisige."	stop
+        Zäme: 20 + 40 = 60 Aawiisige."	stop	60	0	1		
 q96352811	De Tommy sammlet für sini Wohltätigkeitsorganisation Gäud, i dem er Brownies für 3 US-Dollar pro Stück und Cheesecake-Stück für 4 US-Dollar pro Stück verchouft. Wenn er 43 Brownies und 23 Cheesecake-Stück verchouft, wie vöu Gäld nimmt er ii?	"Tommy nimmt insgesamt **221 US-Dollar** ii.
 
 Hie isch d'Rechnig dezue:
@@ -4205,7 +4205,7 @@ Hie isch d'Rechnig dezue:
         Zämme:
         129 + 92 = 221 US-Dollar
 
-        Tommy nimmt insgesamt **221 US-Dollar** ii."	stop
+        Tommy nimmt insgesamt **221 US-Dollar** ii."	stop	221	0	1		
 qbf808b59	D Shiela hed fünf Handys für je 150 US-Dollar mit ere Ratezahlig über 3 Mönet kouft. Pro Stück werde 2 % Zins verlangt. Wie vöu zahut d Shiela jede Monet während 3 Mönet?	"Hier ist die schrittweise Berechnung:
 
 1.  **Gesamtpreis der Handys:**
@@ -4278,7 +4278,7 @@ Shiela zahlt jeden Monat **255 US-Dollar**."	255	"
     1. Gesamtpreis der Handys: $5 \times 150 = 750$ USD.
     2. Zinsen: $2\% \text{ von } 750 = 15$ USD.
     3. Gesamtsumme: $750 + 15 = 765$ USD.
-    4. Monatliche Rate: $765 / 3 = 255$ USD."	stop
+    4. Monatliche Rate: $765 / 3 = 255$ USD."	stop	255	0	1		
 q71d76256	De Artie hed en Bluemestand uf em Buuremärt. Er verchouft drü Sorte Blueme: Studentenblume, Petunien und Begonien. Normalerwiis verlangt er 2,74 Dollar pro Topf für Studentenblume, 1,87 Dollar pro Topf für Petunie und 2,12 Dollar pro Topf für Begonie. Hüt hed de Artie kei Rückgäld, drum rundet er alli Priise uf de nächschti voui Dollar uf. Wenn er 12 Töpf Studentenblume, 9 Töpf Petunie und 17 Töpf Begonie verchouft, wie vöu Dollar verdient er?	"Zum das Problem z'löse, mues me zersch d'Priise ufrunde und dänn d'Gsamtsumme usrechne.
 
 **1. Schritt: D'Priise ufrunde**
@@ -4344,7 +4344,7 @@ De Artie verdient insgesamt **105 Dollar**."	88	"*   Artie has a flower stand.
     - 9 Petunie $\times$ 2.00 = 18 Dollar
     - 17 Begonie $\times$ 3.00 = 51 Dollar
 
-    Total: 36 + 18 + 51 = 105 Dollar."""	stop
+    Total: 36 + 18 + 51 = 105 Dollar."""	stop	105	0	0	105	0
 qd6f9023f	De Luke verbringt Ziit am Strand und bout Sandburge. Er merkt, dass jedi Ebene vo nere Sandburg nume haub so vöu Quadratmeter hed wie d Ebene drunder. Wenn er e 4-stöckigi Sandburg bout, wo di obersti Ebene 16 Quadratmeter hed, wie vöu Quadratmeter hed e Ebene im Durchschnitt?	"Zum das Rätsel z'löse, müemer zersch d'Flächi vo allne vier Ebene usefinde. Mir wüssed, dass jedi Ebene nume d'Hälfti vo de Ebene drunter hed. Das heisst, wenn mir vo obe nach unde gönd, wird d'Flächi vo de Ebene dopplet so gross.
 
 So gsehts us:
@@ -4418,7 +4418,7 @@ Zum de Durchschnitt usezfinde, teiled mir die Gsamtflächi dur d'Aazahl vo de Eb
     ""Zum de Durchschnitt usezfinde, teiled mir die Gsamtflächi dur d'Aazahl vo de Ebene (4):""
     240 / 4 = 60 m²
 
-    ""D'Ebene hed im Durchschnitt 60 Quadratmeter."""	stop
+    ""D'Ebene hed im Durchschnitt 60 Quadratmeter."""	stop	60	0	1		
 qcf724c14	D Cecilia hed grad en nöie Welpe kouft. Luut em Tierarzt mues si de Welpe i de erschte 180 Täg täglich mit 1 Tasse Hundefueter füetere. Nacher mues si ihm für de Rescht vo sim Läbe täglech 2 Tasse geh. Wenn e Sack Hundefueter 110 Tasseportionen het, wie vöu Säck Hundefueter bruucht d Cecilia im erschte Jahr?	"Do isch d'Rechnig, wie viel Säck d'Cecilia im erschte Jahr bruucht:
 
 1.  **Die erschte 180 Täg:**
@@ -4521,7 +4521,7 @@ D'Cecilia bruucht also gnau **5 Säck** Hundefueter für s'erschte Jahr."	5	"
         4. **Anzahl vo de Säck:**
            550 Tasse / 110 Tasse pro Sack = **5 Säck**
 
-        D'Cecilia bruucht also gnau **5 Säck** Hundefueter für s'erschte Jahr."""	stop
+        D'Cecilia bruucht also gnau **5 Säck** Hundefueter für s'erschte Jahr."""	stop	5	0	1		
 q6330b5ad	Wenn de Raymond halb so vöu Wösch wäscht wie d Sarah, und d Sarah 4-mal so vöu wie de David, wie gross isch de Unterschied zwüsche de Wöschmenge vom Raymond und vom David, wenn d Sarah 400 Pfund Wösch wäscht?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Sarah:** Sie wäscht **400 Pfund**.
@@ -4573,7 +4573,7 @@ De Unterschied zwüsche de Wöschmenge vom Raymond und vom David isch also **100
     **De Unterschied:**
     Raymond (200 Pfund) minus David (100 Pfund) = **100 Pfund**.
 
-    De Unterschied zwüsche de Wöschmenge vom Raymond und vom David isch also **100 Pfund**."""	stop
+    De Unterschied zwüsche de Wöschmenge vom Raymond und vom David isch also **100 Pfund**."""	stop	100	0	1		
 qfb8247db	De Vincent cha Blueme i 3er-Packige für 2,50 US-Dollar oder i 2er-Packige für 1 US-Dollar choufe. Wie vöu Gäud spart er, wenn er 18 Blueme zum bessere Priis chouft?	"Zum das usezfinde, wie vöu Gäud er spart, müemmer zersch berechne, wele Priis besser isch und wie vöu d'Blueme bi beide Optione choschte würdet.
 
 **1. Schritt: De besser Priis finde**
@@ -4646,7 +4646,7 @@ Vincent spart **6 US-Dollar**, wenn er die 18 Blueme zum bessere Priis chouft."	
     *   ""Mit em 2er-Pack (de besser Priis): 18 Blueme / 2 = 9 Packige. 9 * 1,00 $ = 9,00 $.""
     *   ""Differenz (Ersparnis): 15,00 $ - 9,00 $ = 6,00 $.""
 
-    *   ""Er spart 6 US-Dollar."""	stop
+    *   ""Er spart 6 US-Dollar."""	stop	6	0	1		
 q4da79a41	De John adoptiert en Hund. Er bringt en zum Hundefrisör, wo 100 US-Dollar choschtet. De Hundefrisör git ihm 30 % Rabatt, wöu er Neuchund isch. Wie vöu choschtet de Termin bim Hundefrisör?	"De Termin bim Hundefrisör choschtet **70 US-Dollar**.
 
 So chunsch dezue:
@@ -4674,7 +4674,7 @@ So chunsch dezue:
     *   ""So chunsch dezue:
         1. De Priis isch ursprünglich 100 Dollar.
         2. De Rabatt isch 30 % vo 100 Dollar, also 30 Dollar.
-        3. 100 Dollar minus 30 Dollar macht 70 Dollar."""	stop
+        3. 100 Dollar minus 30 Dollar macht 70 Dollar."""	stop	70	0	1		
 qd3f2e43b	Zwei Meitli hei je 1/6 vo 24 Liter Wasser übercho. Nacher hed en Bueb 6 Liter Wasser übercho. Wie vöu Liter Wasser si no übrig gsi?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Wie viu Wasser hei d'Meitli übercho?**
@@ -4734,7 +4734,7 @@ Es si no **10 Liter** Wasser übrig."	10	"
         Es si no **10 Liter** Wasser übrig.""
 
     *   Did I answer the question? Yes.
-    *   Is the math correct? $24 - (2 \times (24/6)) - 6 = 24 - 8 - 6 = 10$. Correct."	stop
+    *   Is the math correct? $24 - (2 \times (24/6)) - 6 = 24 - 8 - 6 = 10$. Correct."	stop	10	0	1		
 qffe70c6a	De Charlie hed 10 Sticker. Er hed 21 Sticker i mene Lade i de Mall kouft und zum Geburtstag 23 Sticker gschenkt übercho. Nacher hed er sinere Schwöschter 9 devo geh und 28 zum Dekoriere vo ere Gruesscharte brucht. Wie vöu Sticker hed de Charlie no?	"De Charlie hed am Schluss no **17 Sticker**.
 
 Hie isch d'Rechnig dezue:
@@ -4793,7 +4793,7 @@ Hie isch d'Rechnig dezue:
         - Start: 10
         - Plus: 21 + 23 = 44 (Total 54)
         - Minus: 9 + 28 = 37
-        - Result: 54 - 37 = 17."	stop
+        - Result: 54 - 37 = 17."	stop	17	0	1		
 q7d0f9963	D Grace esch 125 Pfund. De Alex esch 2 Pfund weniger als s 4-Fache vom Gwicht vo de Grace. Wie vöu Pfund wäge si zäme?	"Do isch d'Rechnig:
 
 1.  **Gwicht vo de Grace:** 125 Pfund.
@@ -4843,7 +4843,7 @@ Si wäge zäme **623 Pfund**."	623	"*   Grace's weight: 125 pounds.
 
     *   Grace: 125.
     *   Alex: $4 \times 125 = 500$. $500 - 2 = 498$.
-    *   Total: $125 + 498 = 623$. Correct."	stop
+    *   Total: $125 + 498 = 623$. Correct."	stop	623	0	1		
 q792b7ea9	De Dan pflanzt 3 Rosebüsch. Jede Rosebusch treit 25 Rose. Jedi Rose hed 8 Dorne. Wie vöu Dorne si das insgesamt?	"Das sind insgesamt **600 Dornen**.
 
 Hier ist die Rechnung dazu:
@@ -4875,7 +4875,7 @@ Hier ist die Rechnung dazu:
         Das sind insgesamt 600 Dornen.
         Hier ist die Rechnung:
         1. Rosen: 3 Büsche $\times$ 25 Rosen = 75 Rosen.
-        2. Dornen: 75 Rosen $\times$ 8 Dornen = 600 Dornen."	stop
+        2. Dornen: 75 Rosen $\times$ 8 Dornen = 600 Dornen."	stop	600	0	1		
 q3dfac176	Es Fuessballteam spöut 22 Spieli. Si hei 8 meh gwunne als verlore. Wie vöu Spieli hei si gwunne?	"Si hei **15** Spieli gwunne.
 
 Hie isch d'Rechnig (under de Ahnahm, dass es kei Unentschiede geh het):
@@ -4933,7 +4933,7 @@ $15 - 7 = 8$ (Differenz)"	15	"
     *   ""1. Du nimmsch d'Gsamtzahl vo de Spiel (22) und d'Differenz (8).""
     *   ""2. Du addiersch die beide Zahle: 22 + 8 = 30.""
     *   ""3. Dänn teilsch das Ergebnis dur 2: 30 / 2 = 15.""
-    *   ""Kontrolle: Si hei 15 Gwünni und 7 Verlore. 15 + 7 = 22 und 15 - 7 = 8."""	stop
+    *   ""Kontrolle: Si hei 15 Gwünni und 7 Verlore. 15 + 7 = 22 und 15 - 7 = 8."""	stop	15	0	1		
 qc8e2bf9d	De Eugen nähit en Quilt us alte Souvenir-T-Shirts. Er hed vo jedem Ferieufenthalt es T-Shirt. Er goht jedes Jahr viermal i d Ferie. Mit dere Tradition hed er im Jahr agfange, wo er 23i worde isch, und er hed für jedes Jahr bis zum aktuelle Jahr, wo er 34 isch, T-Shirts gsammlet, aber s aktuelle Jahr zöut no nid. Wie vöu Quilt-Blöck hed er insgesamt?	"Eugen hed insgesamt **44 Quilt-Blöck**.
 
 Hie isch d'Rechnig dezue:
@@ -4978,7 +4978,7 @@ Hie isch d'Rechnig dezue:
     *   Explain the steps:
         1.  Age range: 23 to 33 (since 34 is excluded).
         2.  Number of years: $33 - 23 + 1 = 11$.
-        3.  Calculation: $11 \times 4 = 44$."	stop
+        3.  Calculation: $11 \times 4 = 44$."	stop	44	0	1		
 q87073282	De Greg hed en Wecker gstöut, wo dröimal am Tag zur Erinnerig lüütet. Wenn er losgeit, lüütet er so lang, bis de Greg en abstellt. Hüt bim erschte Mal hed er viermau glüütet. Bim zwöite Mau hed er dröimau so lang glüütet wie bim erschte Mau. Bim dritte Mau hed er halb so lang glüütet wie bim zwöite Mau. Wie oft hed de Wecker insgesamt glüütet?	"De Wecker hed insgesamt **22 Mal** glüütet.
 
 Do isch d'Rechnig dezue:
@@ -5029,7 +5029,7 @@ Do isch d'Rechnig dezue:
     2. **Zwöits Mal:** 3 x 4 = 12 Mal
     3. **Drittes Mal:** 12 / 2 = 6 Mal
 
-    Zämme: 4 + 12 + 6 = 22."""	stop
+    Zämme: 4 + 12 + 6 = 22."""	stop	22	0	1		
 qe293b5e8	E Firma zahlt ihrne Mitarbeiter es Aafangsghalt vo 600 Dollar pro Monet. Nach füüf Dienstjahr wird de Lohn jedes Jahr erhöht. Die jährlechi Erhöhig isch immer e fixe Betrag vo 10 % vom ursprüngleche Jahresghalt. Wenn d Sylvie grad ihres füüfte Jahr i de Firma fertig gmacht hed, wie höch isch ihres Jahresghalt, nachdem si no dröi wiiteri Jahr det gschafft hed?	"Hie isch d'Berechnig Schritt für Schritt:
 
 1.  **Ursprüngleche Jahresghalt berechne:**
@@ -5114,7 +5114,7 @@ Nach de dröi wiitere Jahr isch ihres Jahresghalt **9'360 Dollar**."	9360	"
     ""Die jährlechi Erhöhig isch immer e fixe Betrag vo 10 % vom ursprüngleche Jahresghalt.""
     ""Fixe Betrag"" and ""ursprüngleche"" confirms it's a linear increase, not compound interest.
 
-    *Final Result:* $9,360."	stop
+    *Final Result:* $9,360."	stop	9360	0	1		
 qb9e657cf	Die erschti Platte vo de Marilyn hed sich 10-mal so oft verchouft wie die vom Harald. Wenn si zäme 88.000 Exemplar verchouft hei, wie vöu Exemplar hed de Harald verchouft?	"Do isch d'Lösig:
 
 Du chasch das ganz eifach so rächne:
@@ -5168,7 +5168,7 @@ De Harald het also **8'000 Exemplar** verchouft.
         4. Zum usefinde, wie viu es 'Teil' isch, teile mir die gsamti Zahl dür 11:
            88'000 : 11 = 8'000.
 
-        De Harald het also **8'000** Exemplar verchouft."""	stop
+        De Harald het also **8'000** Exemplar verchouft."""	stop	8000	0	1		
 q8d6c3ac8	D Christina hed 16 Fründe zu ihrere Geburtstagsparty iiglade. Si rechnet demit, dass nume 75 % vo ihne chöme, drum macht si für jede erwartete Gast es Gschenksäckli. Wenn jedes Säckli $2 choschtet, wie höch si d Gesamtchöschte?	"Do isch d Rechnig für d Chöschte:
 
 1. **Zersch rechnet mer us, wie viel Gäst erwartet werdet:**
@@ -5212,7 +5212,7 @@ D Gesamtchöschte sind **$24**."	24	"
         2. **Gesamtchöschte:**
            $12 \text{ Gäst} \times \$2 = \$24$
 
-    *   *Result:* Die Gesamtchöschte sind $24."	stop
+    *   *Result:* Die Gesamtchöschte sind $24."	stop	24	0	1		
 qa59fef67	De Ted, de T-Rex, wott Härdöpfusalat zum Dinopicknick mitbringe. Er weiss, dass en erwachsene Dinosaurier 10 Pfund Härdöpfusalat isst und es Jungtier halb so vöu wie en Erwachsene. Wenn 20 Erwachseni und 5 Junge am Picknick si, wie vöu Härdöpfeusalat mues de Ted mitbringe, wenn aui sötte satt werde?	"Do isch d'Rechnig für de Ted, demit alli Dinos satt werdet:
 
 1.  **D'Erwachsene:**
@@ -5261,7 +5261,7 @@ De Ted mues also insgesamt **225 Pfund Härdöpfusalat** mitbringe. Das isch ja 
 
     *   ""Härdöpfusalat"" (Potato salad) - check.
     *   ""Pfund"" (Pounds) - check.
-    *   ""Satt werde"" (Get full) - check."	stop
+    *   ""Satt werde"" (Get full) - check."	stop	225	0	1		
 q4db223a4	De Jan hed drümal so vöu Huustier wie d Marcia. D Marcia hed zwei Hustier meh als d Cindy. Wenn d Cindy vier Hustier hed, wie vöu Hustier hei alli dröi zäme?	"S'Antwort isch **28**.
 
 So chunsch dezue:
@@ -5320,7 +5320,7 @@ Wenn mer alli dröi zämeezählt, git das:
     3. **Jan** hed drümal so vöu wie d'Marcia, also: 6 * 3 = **18 Huustier**.
 
     Wenn mer alli dröi zämeezählt, git das:
-    4 + 6 + 18 = **28 Huustier**."""	stop
+    4 + 6 + 18 = **28 Huustier**."""	stop	28	0	1		
 q2ae0bd70	D Emily hed 4 Chind, si heisse Amy, Jackson, Corey und James. D Amy isch 5 Jahr älter als de Jackson und 2 Jahr jünger als de Corey. Wenn de James 10 jährig isch und 1 Jahr jünger als de Corey, wie alt isch denn de Jackson?	"Luege mir das Schritt für Schritt a:
 
 1.  **James** isch **10i**.
@@ -5384,7 +5384,7 @@ De Jackson isch also **4i**."	4	"
 
     Rechnig: 9 - 5 = 4.
 
-    De Jackson isch also **4i**."""	stop
+    De Jackson isch also **4i**."""	stop	4	0	1		
 q412bff21	De Lee isch d 400 Meter Hürde zwei Sekunde schnöuer gloffe als de Gerald d 400 Meter Hürde louft. De Gerald hed aber sini Ernährig umgstellt und sini Gschwindigkeit um 10 % verbessert. Wenn de Lee d 400 Meter Hürde i 38 Sekunde louft, wie schnöu schafft de Gerald d 400 Meter Hürde mit de verbesserte Ernährig, i Sekunde?	"Zum d'Ufgab z'löse, müemmer das Schritt für Schritt aaluege. Es git zwei Wäg, wie mer die Frag interpretiere cha, je nachdem, ob de Verglich mit em alte oder em neue Ziit vo Gerald gmacht wird. In de Mathematik wird aber meistens d'Variante gwählt, wo alli Agabene brucht.
 
 Hie isch d'Lösig basierend uf de klassische Mathematik-Logik:
@@ -5785,7 +5785,7 @@ De Gerald schafft d'400 Meter Hürde mit de verbesserte Ernährig i ca. **36.36 
         If Gerald's speed improved by 10%, his time *decreased* by a factor of $1/1.1$.
         $40 / 1.1 = 36.36$.
         If his time decreased by 10%, it would be 36.
-        I will provide 36.36."	stop
+        I will provide 36.36."	stop	40	0	0	36.36	0
 qf73a338f	Inere Nochberschaft gits zwölf Hase weniger als Hünd und Chatze zäme. Für jede Hund git s zwei Chatze, und es het 60 Hünd. Wie vöu Hustier git s insgesamt i dere Nachberschaft?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Hünd:** Es git **60** Hünd.
@@ -5839,7 +5839,7 @@ In dere Nachberschaft git es insgesamt **348** Huustier."	348	"
     *   Hase = (Hünd + Chatze) - 12? Yes (168 = 180 - 12).
     *   Chatze = 2 * Hünd? Yes (120 = 2 * 60).
     *   Hünd = 60? Yes.
-    *   Total = 60 + 120 + 168 = 348. Correct."	stop
+    *   Total = 60 + 120 + 168 = 348. Correct."	stop	348	0	1		
 qc5273098	Vo de 200 Fünftklässler si 2/5 Buebe und 2/3 vo de Meitli si bi de Pfadfinderinne. Wie vöu Meitli si nid bi de Pfadfinderinne?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zuerst d'Buebe usrechne:**
@@ -5908,7 +5908,7 @@ qc5273098	Vo de 200 Fünftklässler si 2/5 Buebe und 2/3 vo de Meitli si bi de P
         4. **Wie viel Meitli sind nid bi de Pfadfinderinne?**
            120 (total Meitli) - 80 (bi de Pfadfinderinne) = 40 Meitli.
 
-        Antwort: Es sind **40 Meitli**, wo nid bi de Pfadfinderinne sind."""	stop
+        Antwort: Es sind **40 Meitli**, wo nid bi de Pfadfinderinne sind."""	stop	40	0	1		
 qf8da7966	De Harry hed letscht Nacht 9 Stunde gschlafe. Sin Fründ James hed nume 2/3 vo dere Ziit gschlafe. Wie vöu Stunde meh hed de Harry gschlafe als de James?	"De Harry hed **3 Stunde** meh gschlafe als de James.
 
 Do isch d'Rechnig dezue:
@@ -5949,7 +5949,7 @@ Do isch d'Rechnig dezue:
 
     *   Harry: 9h
     *   James: 6h
-    *   Difference: 3h. Correct."	stop
+    *   Difference: 3h. Correct."	stop	3	0	1		
 q186d2aa2	Wenn d Freda Dosetomate zu Sauce iichochet, verliere si d Hälfti vom Gwicht. Jedi 16-Unze-Dose, wo si bruucht, het dröi Tomate. Di letschti Portion Tomatesauce hed 32 Unze ergäh. Wie vöu Tomate hed d Freda brucht?	"Freda het insgesamt **12 Tomate** brucht.
 
 So chunsch dezue:
@@ -5997,7 +5997,7 @@ So chunsch dezue:
     *   Initial weight: 64 oz.
     *   Cooked weight: 32 oz (half of 64). Correct.
     *   Cans: 64 / 16 = 4. Correct.
-    *   Tomatoes: 4 * 3 = 12. Correct."	stop
+    *   Tomatoes: 4 * 3 = 12. Correct."	stop	12	0	1		
 q9c762a15	Uf de Autobahn stöhnd Autos inere Reihe. Es paar Autos chöi i de erschte 15 Minute vom Stau düre, nacher no 20 wiiteri Autos i de verblibende 15 Minute. 5 Autos fahre us de Reihe use, sodass si nid dür de Stau müend. Wenn am Afang 30 Autos uf de Autobahn gstande si, wie vöu Autos si i de erschte 15 Minute dür de Stau cho?	"I de erschte 15 Minute sind **5 Autos** dür de Stau cho.
 
 Hie isch d'Rechnig dezue:
@@ -6049,7 +6049,7 @@ Hie isch d'Rechnig dezue:
     *   *Explanation:*
         1.  Total cars: 30
         2.  Minus cars that left: 30 - 5 = 25
-        3.  Minus cars in the second half: 25 - 20 = 5."	stop
+        3.  Minus cars in the second half: 25 - 20 = 5."	stop	15	0	0	5	1
 q507804db	D Mary gärtnert für ihres Läbe gern. Geschter hed si 18 nöii Topfpflanze vo ihrer Lieblingsgärtnerei übercho. Si hed scho 2 Topfpflanze uf jedem vo ihrne 40 Fänstersims im grosse Landhuus. Si isch grosszügig und beschliesst, morn vo jedem Fänstersims 1 Topfpflanze a Fründe oder Familie z verschenke. Wie vöu Topfpflanze bliibe de Mary übrig?	"Do isch d'Rechnig Schritt für Schritt:
 
 1.  **Aktuelli Pflanze uf de Fänstersims:** Si hät 40 Fänstersims und uf jedem stöh 2 Pflanze.
@@ -6106,7 +6106,7 @@ Mary hät am Schluss no **58** Topfpflanze übrig."	58	"
         4. ""Am Schluss bliibe no: $98 - 40 = 58$ Topfpflanze.""
 
     *   *Final Polish:*
-        ""Mary hät am Schluss no **58** Topfpflanze übrig."""	stop
+        ""Mary hät am Schluss no **58** Topfpflanze übrig."""	stop	58	0	1		
 q120898cb	De Jerome hed a mene bestimmte Tag 4 Fründe z Bsuech. De erscht Fründ hed 20 Mau uf d Türglogge dröckt, bevor de Jerome ufgmacht hed. De zweit hed 125 % so mängisch drückt wie de erscht. De dritt hed 10 Mal öfter uf d Glogge dröckt aus de viert. De vierti hed 60 Mal dröckt. Wie mänigsch hed d Türglogge insgesamt glüütet?	"Hier ist die Schritt-für-Schritt-Berechnung:
 
 1.  **Erster Freund:** Er hat **20 Mal** gedrückt.
@@ -6210,7 +6210,7 @@ Die Türglogge hat insgesamt **705 Mal** glüütet."	175	"
     4: 60
     Sum: $20+25+600+60 = 705$.
 
-    Let's write the response."	stop
+    Let's write the response."	stop	705	0	0	705	0
 q55e446ec	De Solo mues 4 Siite us sim Naturwissenschaftsbuech läse, 20 Siite us sim Gemeinschaftskundebuech, 7 Siite us sim Gschichtsbuech und 8 Siite us sim Geografiebuech. Am Mäntig list er 15 Siite. Wenn er no 4 Täg hed, zum alles läse, wie vöu Siite mues er pro Tag im Durchschnitt läse?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zuerst d'Gsamtzahl vo de Siite usrechne:**
@@ -6274,7 +6274,7 @@ Solo mues also im Durchschnitt **6 Siite pro Tag** läse."	6	"
            Er hät no 4 Täg Ziit für die 24 Siite.
            24 : 4 = **6 Siite**.
 
-        Solo mues also im Durchschnitt **6 Siite pro Tag** läse."""	stop
+        Solo mues also im Durchschnitt **6 Siite pro Tag** läse."""	stop	6	0	1		
 qe178e77b	De John trinkt zum Zmorge, Zmittag und Znacht gärn es Glas Wasser. Vor em Is-Bett-Gah trinkt er no eis. Das macht er a jedem Wuchetag, aber am Wuchenänd trinkt er zum Znacht statt Wasser es Glas Limo. Wie vöu Gläser Wasser trinkt de John pro Wuche?	"De John trinkt pro Wuche insgesamt **26 Gläser Wasser**.
 
 Hie isch d'Berechnig:
@@ -6351,7 +6351,7 @@ Hie isch d'Berechnig:
     *   *Calculation:*
         *   Wuchetag (Mo-Fr): 4 Gläser $\times$ 5 Täg = 20 Gläser.
         *   Wuchenänd (Sa-So): 3 Gläser $\times$ 2 Täg = 6 Gläser.
-        *   Total: 26."	stop
+        *   Total: 26."	stop	26	0	1		
 q13dd2b3f	En Näbuschleier chunnt vom Meer ine und zieht über e Stadt. Er bruucht 10 Minute, zum je 3 Meile vo de Stadt abzdecke. Wenn d Stadt vom Meeresufer bis ins gegenüberliegende Landesinnere 42 Meilen breit isch, wie vöu Minute bruucht de Näbu, bis d ganz Stadt bedeckt isch?	"De Näbu bruucht insgesamt **140 Minute**.
 
 So chunnsch dezue:
@@ -6400,7 +6400,7 @@ Das sind übrigens genau **2 Stund und 20 Minute**."	140	"
 
     *   Did I answer the specific question? Yes.
     *   Is the math correct? $42 / 3 = 14$; $14 \times 10 = 140$. Yes.
-    *   Is the dialect natural? Yes."	stop
+    *   Is the dialect natural? Yes."	stop	20	0	0	140	1
 q5d8678a9	D Poppy macht es 1000-Teile-Puzzle. Si legt e Viertu vo de Teili uf s Brett, denn leit ihres Mami en drittu vo de übrige Teili. Wie vöu Puzzleteili müend no gleit werde?	"Do isch d Rechnig:
 
 1. **Poppy leit es Viertu:**
@@ -6471,7 +6471,7 @@ Es müend also no **500** Puzzleteili gleit werde."	500	"
         3. S Mami leit en dritt vo dene 750 Teili: $750 \div 3 = 250$ Teili.
         4. Es blibed dänn no 500 Teili zum Lege ($750 - 250 = 500$).
 
-        Es müend also no **500** Puzzleteili gleit werde."""	stop
+        Es müend also no **500** Puzzleteili gleit werde."""	stop	500	0	1		
 q10c23d37	De Cody isst dröimau meh Guetzli als de Amir. Wenn de Amir 5 Guetzli isst, wie vöu Guetzli ässe beidi zäme?	"Beidi ässed zäme **20 Guetzli**.
 
 So chunsch dezue:
@@ -6510,7 +6510,7 @@ So chunsch dezue:
     So chunsch dezue:
     1. De Amir isst **5** Guetzli.
     2. De Cody isst dröimau so viel, also **15** Guetzli (3 x 5 = 15).
-    3. Zäme sind das: 5 + 15 = **20**."""	stop
+    3. Zäme sind das: 5 + 15 = **20**."""	stop	20	0	1		
 q71246a09	De John hed 3 Chischte. Jedi Chischte isch 5 Inch mal 6 Inch mal 4 Inch gross. D Wänd si 1 Inch dick. Wie gross isch s Innenvolumen vo allne 3 Chischte zäme?	"Zum s Innenvolumen z'berechne, muesch zerst d'Innemaas vo einere Chischte usefinde.
 
 Da d'Wänd uf allne Siite 1 Inch dick sind, muesch vo jedere Site (Längi, Breiti und Höchi) jewils 2 Inch abziehe (einisch für die eini Wand und einisch für die gägeüberliegendi Wand).
@@ -6560,7 +6560,7 @@ S Innenvolumen vo allne 3 Chischte zäme isch **72 cubic inches**."	72	"
         *   ""Total für 3 Chischte: 24 * 3 = 72 cubic inches.""
 
     *   ""S Innenvolumen vo allne 3 Chischte zäme isch **72 cubic inches** (Kubikzoll).""
-    *   Show the steps clearly."	stop
+    *   Show the steps clearly."	stop	72	0	1		
 q51ea4378	De Frankie luegt jede Abig nach de Huusufgabe färnseh. Am Mäntig und Ziischtig hed er je e 1-stündigi Folge vo sinere Lieblingssendig gluegt. Am Mittwuch hed er es paar Folge vonere 30-minütige Sendig gluegt. Am Dunnstig isch er früehner mit de Huusufgabe fertig gsi und hed e 1-stündigi Folge und e 30-minütigi Show gluegt. Am Fritig het er wegem Wuchenänd länger dörfe wach bliibe und zwei 1-stündigi Folge gluegt. Wenn er insgesamt 7 Stunde fernseh gluegt hed, wie vöu 30 Minute langi Folge hed er am Mittwuch gluegt?	"Zum d'Antwort z'finde, chasch du d'Ziit für alli Täg usser am Mittwuch zämezähle und dänn d'Differenz zum Gsamtzit berechne.
 
 Hie isch d'Rechnig:
@@ -6631,7 +6631,7 @@ Frankie hed am Mittwuch **3** Folge vo de 30-minütige Sendig gluegt."	3	"
         1.5 Std. = 90 Min.
         90 Min. / 30 Min. = 3 episodes.
 
-    *   *Result:* 3 episodes."	stop
+    *   *Result:* 3 episodes."	stop	3	0	1		
 qe465613a	De Henry bachet Guetzli für en regionale Bachwettbewerb. Er wott dopplet so vöu bache wie letschts Jahr. woner er fertig isch, merkt er, dass er 15 Guetzli meh gmacht hed als eigentlech geplant. Beim Uselege zum Abchüele laht er 5 Guetzli gheie und hed jetzt no 110 Guetzli. Wie vöu Guetzli hed de Henry letschts Jahr bache?	"De Henry het letschts Jahr **50 Guetzli** bache.
 
 Hie isch d'Rechnig dezue:
@@ -6697,7 +6697,7 @@ Hie isch d'Rechnig dezue:
         5. Also het er letschts Jahr 50 bache ($100 / 2$).
 
     *   ""De Henry het letschts Jahr **50 Guetzli** bache.""
-    *   Show the calculation steps clearly."	stop
+    *   Show the calculation steps clearly."	stop	50	0	1		
 q1e0f8fcb	E örtlechi Tankstell verchauft Benzin für 3,00 $ pro Gallone. E App-Firma git 0,20 $ Cashback pro Gallone, wenn mer a dere Tankstell tankt. Wenn öpper 10 Gallonen Benzin chouft, wie vöu choschtet de Benzin nach em Cashback? Gib d Antwort i Dollar aa.	"De Benzin choschtet nach em Cashback insgesamt **28,00 $**.
 
 Hie isch d'Rechnig dezue:
@@ -6741,7 +6741,7 @@ Hie isch d'Rechnig dezue:
         De Benzin choschtet nach em Cashback insgesamt 28,00 $.""
 
     *   Did I answer in dollars? Yes.
-    *   Is the math correct? Yes ($30 - $2 = $28)."	stop
+    *   Is the math correct? Yes ($30 - $2 = $28)."	stop	28	0	1		
 q91fe6f6e	De Marcell und d Beatrice mache en Wettbewerb, wer am meischte Fruchtrolle cha ässe, und rolle drum alli us, wo si finde. Leider macht öpper en Fehler: S Stück vo de Beatrice isch zwei Rolle breit und 24 Rolle lang, s Stück vom Marcell 3 Rolle breit und 14 Rolle lang. Wenn beidi aues ässe, wie vöu hei si im Durchschnitt gässe?	"Do isch d'Rechnig für de Wettbewerb:
 
 1.  **Beatrice** het gässe: $2 \times 24 = 48$ Rolle.
@@ -6793,7 +6793,7 @@ Si händ im Durchschnitt also **45 Rolle** gässe."	45	"
     Zum de Durchschnitt usezfinde, teilt mer die Gsamtzahl dur 2 (wil es zwei Persone sind):
     $90 / 2 = 45$
 
-    Si händ im Durchschnitt also **45 Rolle** gässe."""	stop
+    Si händ im Durchschnitt also **45 Rolle** gässe."""	stop	45	0	1		
 q76afc2ba	S Boot vo de Julia hed es Leck gha, wo si uf em See dusse gsi isch. Für aui zäh Fuss, wo si zrugg zum Ufer rudert, nimmt s Boot zwei Liter Wasser ii. Für zwänzg Fuss bruucht si sechzäh Sekunde. De Strand isch 64 Sekunde entfernt gsi. Wie vöu Wasser hed s Boot iigno, bis d Julia am Strand acho isch?	"Do isch d Schritt-für-Schritt-Lösig für das Rätsel:
 
 **1. Zuerst müemer usefinde, wie wit d Julia gfahrt isch:**
@@ -6864,7 +6864,7 @@ S Boot hed insgesamt **16 Liter** Wasser iigno, bis d Julia am Strand acho isch.
            $80 \text{ Fuss} / 10 \text{ Fuss} = 8$ Mal d Distanz vo 10 Fuss.
            $8 \times 2 \text{ Liter} = 16 \text{ Liter}$.
 
-        *Antwort:* S Boot hed insgesamt **16 Liter** Wasser iigno."	stop
+        *Antwort:* S Boot hed insgesamt **16 Liter** Wasser iigno."	stop	16	0	1		
 q9c73cd77	Es Schouzimmer hed e Tafele, wo sich 4 Lehrer teile und abwächsligs bruuche. Jede Lehrer hed 2 Unterrichtsstunde pro Tag und bruucht d Tafeel i jedere Stund. Wenn d Tafele 3-mal pro Unterrichtsstund gwüscht wird, wie oft wird si pro Tag gwüscht?	"D'Tafele wird insgesamt **24-mal** pro Tag gwüscht.
 
 So chunsch uf das Ergebnis:
@@ -6905,7 +6905,7 @@ So chunsch uf das Ergebnis:
     *   4 teachers? Yes.
     *   2 lessons each? Yes.
     *   3 wipes per lesson? Yes.
-    *   Calculation: 4 * 2 * 3 = 24. Correct."	stop
+    *   Calculation: 4 * 2 * 3 = 24. Correct."	stop	24	0	1		
 q2bbbdc5a	De Ryan pflanzt pro Tag 2 Blueme i sin Garte. Nach 15 Täg hed er wie vöu Blueme, wenn 5 nid agwachse si?	"Ryan het **25 Blueme**.
 
 So chunsch dezue:
@@ -6937,7 +6937,7 @@ So chunsch dezue:
     *   ""Ryan het **25 Blueme**.""
     *   ""So chunsch dezue:
         1. Zersch rechnisch us, wie viel er insgesamt pflanzt: $2 \times 15 = 30$ Blueme.
-        2. Denn ziehsch die ab, wo nid agwachse si: $30 - 5 = 25$ Blueme."""	stop
+        2. Denn ziehsch die ab, wo nid agwachse si: $30 - 5 = 25$ Blueme."""	stop	25	0	1		
 qb65bf453	S Handy vom Jamal cha 6-mal meh Fotos spichere als s Handy vo de Brittany. D maximal Zahl vo Fotos uf em Handy vo de Brittany isch 50-mal so höch wie d Zahl vo de Vögeu uf em Foto vom Jamal mit de Änte im Zoo. Wenn s Handy vom Jamal 1.800 Fotos speichere cha, wie vöu Änte si uf sim Foto vo de Änte im Zoo?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Zuerst findemer use, wie viel Fotos s Handy vo de Brittany cha speichere:**
@@ -6993,7 +6993,7 @@ Es sind also **6 Änte** uf sim Foto im Zoo."	6	"
            D'Zahl vo de Fotos vo de Brittany (300) isch 50-mal so höch wie d'Zahl vo de Änte.
            $300 : 50 = 6$.
 
-        Es sind also **6 Änte** uf sim Foto."""	stop
+        Es sind also **6 Änte** uf sim Foto."""	stop	6	0	1		
 q62cadf26	D Sasha merkt, dass d Holzpriise i de letschte paar Mönet um 50 % gstige si, sit si s letscht Mal Holz kouft hed. Will si no Rest übrig hed, wott si en verchoufe. Si hed zehn 2 x 4 x 10 grossi Bretter übrig, wo si für je 10 US-Dollar kouft hed. Usserdem hed si fünf 4 x 4 x 10 Bretter, wo je 16 US-Dollar koschtet hei. Wenn si alles verchouft, wie vöu Gwünn macht si?	"Zum de Gwünn uszrechne, müemer zerst d'neue Priise usefinde und dänn d'Differenz zwüsche de Verchaufssumme und de Chöschte berechne.
 
 Hie isch d'Schritt-für-Schritt-Rechnig:
@@ -7078,7 +7078,7 @@ Sasha macht also en Gwünn vo **90 US-Dollar**."	90	"
 
     *   Did I miss anything? No.
     *   Is the math correct? Yes.
-    *   Is the language natural? Yes."	stop
+    *   Is the language natural? Yes."	stop	90	0	1		
 q6637faea	D Katy macht Kafi und bruucht Teelöffel Zucker und Tasse Wasser im Verhältnis 7:13. Wenn si insgesamt 120 Teelöffel Zucker und Tasse Wasser brucht hed, wie vöu Teelöffel Zucker hed si brucht?	"Zum d'Antwort z'finde, chasch das Schritt für Schritt so usrechne:
 
 1.  **D'Gsamtzahl vo de Anteile usrechne:**
@@ -7123,7 +7123,7 @@ Katy het **42 Teelöffel Zucker** brucht."	42	"
     *   ""Zuerst rechnet mer d'Gsamtzahl vo de Anteile us: 7 (Zucker) + 13 (Wasser) = 20 Anteile.""
     *   ""Dänn teilt mer die gsamti Mengi dur die Anteile: 120 / 20 = 6.""
     *   ""Zum Schluss rechnet mer de Zucker us: 7 Anteile * 6 = 42.""
-    *   ""Antwort: Si het 42 Teelöffel Zucker brucht."""	stop
+    *   ""Antwort: Si het 42 Teelöffel Zucker brucht."""	stop	42	0	1		
 q7c7b8736	De John chouft 2 Paar Schueh für jedes vo sine 3 Chind. Es Paar choschtet 60 US-Dollar. Wie vöu hed er zahlt?	"Er hed insgesamt **360 US-Dollar** zahlt.
 
 Do isch d'Rechnig:
@@ -7155,7 +7155,7 @@ Do isch d'Rechnig:
     *   ""Er hed insgesamt **360 US-Dollar** zahlt.""
     *   ""Do isch d'Rechnig:""
     *   ""3 Chind $\times$ 2 Paar = 6 Paar Schueh""
-    *   ""6 Paar $\times$ 60 Dollar = 360 Dollar"""	stop
+    *   ""6 Paar $\times$ 60 Dollar = 360 Dollar"""	stop	360	0	1		
 q8f663843	En Zollbeamte am Haupthafe vo de SeaSide-Zollabfertigung hed 2 Container mit importierte Autos zöut, i jedem si 5 Autos gsi. Am nöchschte Tag si no meh Container cho und d Gesamtzahl vo de Autos im Hafe isch uf 30 gstige. Wie vöu Container si am zweite Tag importiert worde, wenn i jedem Container 5 Autos si?	"Do isch d'Lösig für das Rächnig:
 
 1.  **Zuerst hät de Zollbeamti 2 Container gha:**
@@ -7212,7 +7212,7 @@ Am zweite Tag sind also **4 Container** importiert worde."	4	"
         3. Will i jedem Container 5 Autos sind, teilt mer die 20 Autos dur 5:
            $20 / 5 = 4$ Container.
 
-        Am zweite Tag sind also **4 Container** importiert worde."	stop
+        Am zweite Tag sind also **4 Container** importiert worde."	stop	4	0	1		
 q6edb8d49	S Gesamtghalt vo de Lylah isch 30 Prozent töifer gsi als das vom Adrien. Vier Jahr später isch s Ghalt vom Adrien gstige, und er hed 40 % meh verdient als vier Jahr vorher. Wenn d Ghälter vo Adrien und Lylah gliichziitig gstige si und de Adrien vor vier Jahr $40000 verdient hed, wie höch isch s Gesamtghalt vo dene zwe vier Jahr später? Gib d Antwort i Dollar aa.	"Um d'Antwort z'berechne, chömmer das Schritt für Schritt mache:
 
 **1. D'Ghälter vor vier Jahr berechne:**
@@ -7445,7 +7445,7 @@ S'Gsamtghalt vo dene beide vier Jahr später isch **$95'200**."	95200	"*   Lylah
     Calculation:
     $40,000 \times 0.7 = 28,000$. Correct.
 
-    Final result: $95,200."	stop
+    Final result: $95,200."	stop	95200	0	1		
 q1b1c6563	De Miguel verbrucht zum Zeichne 2 Zeicheblöck pro Wuche. Wenn en Block 30 Blatt Papier hed, wie vöu Blatt Papier verbrucht er pro Monet?	"Miguel verbrucht **240 Blatt Papier** pro Monet.
 
 Hie isch d'Rechnig dezue:
@@ -7485,7 +7485,7 @@ Hie isch d'Rechnig dezue:
 
     *   *Calculation:*
         2 Blöck $\times$ 30 Blatt = 60 Blatt pro Wuche.
-        60 Blatt $\times$ 4 Wuche = 240 Blatt pro Monet."	stop
+        60 Blatt $\times$ 4 Wuche = 240 Blatt pro Monet."	stop	240	0	1		
 qdda5aad8	D Morisette und de Kael sötted Frücht mitbringe. D Morisette hed 5 Öpfu und 8 Orange mitbrunge, de Kael dopplet so vöu Öpfu und halb so vöu Orange wie d Morisette. Wie vöu Frücht hei si insgesamt?	"Do isch d'Rechnig:
 
 1.  **Morisette:**
@@ -7540,7 +7540,7 @@ Si hei insgesamt **27 Frücht**."	27	"
     *   ""Kael het also: 10 + 4 = 14 Frücht.""
     *   ""Insgesamt hei si: 13 + 14 = 27 Frücht.""
 
-    *   ""Si hei insgesamt 27 Frücht."""	stop
+    *   ""Si hei insgesamt 27 Frücht."""	stop	27	0	1		
 qbe882310	D Sadie hed am Mäntig 8 Stunde gschlafe. A de nöchschte zwei Täg hed si pro Tag 2 Stunde weniger gschlafe, will si no Sache z erledige gha hed. Wenn si de Rescht vo de Wuche 1 Stund meh gschlafe hed als a dene zwei Täg, wie vöu Stunde hed si i dere Wuche insgesamt gschlafe?	"Zum d'Gsamtzahl usezfinde, chasch du d'Schlafstunde Tag für Tag usrechne:
 
 1.  **Mäntig:** 8 Stunde
@@ -7605,7 +7605,7 @@ Sadie hed i dere Wuche insgesamt **48 Stunde** gschlafe."	48	"
     *   Fritig: 7
     *   Samstig: 7
     *   Sunntig: 7
-    *   Summe: 8 + 6 + 6 + 7 + 7 + 7 + 7 = 48."	stop
+    *   Summe: 8 + 6 + 6 + 7 + 7 + 7 + 7 = 48."	stop	48	0	1		
 q5531657c	D Rosie cha 3 Stunde lang mit 10 Meilen pro Stund loufe. Nacher louft si mit 5 Meilen pro Stund. Wie vöu Meilen cha si i 7 Stunde zrugglege?	"Si cha insgesamt **50 Meile** zrugglege.
 
 Hie isch d'Rechnig dezue:
@@ -7660,7 +7660,7 @@ Hie isch d'Rechnig dezue:
         1.  3 Stunde $\times$ 10 Meile/Stund = 30 Meile.
         2.  7 Stunde - 3 Stunde = 4 Stunde übrig.
         3.  4 Stunde $\times$ 5 Meile/Stund = 20 Meile.
-        4.  30 + 20 = 50 Meile."	stop
+        4.  30 + 20 = 50 Meile."	stop	50	0	1		
 qafb91192	D Jennie hilft im Büro vo ihrere Mueter. Si hed en Stapel mit 60 Brief, wo no frankiert werde möi, und en Stapel mit scho frankierte Brief. Si frankiert e Drittu vo de Brief, wo no frankiert müend wärde. Wenn im Stapeu mit de scho frankierte Brief nacher 30 Brief si, wie vöuu Brief si am Afang i dem Stapel gse?	"Do isch d'Lösig Schritt für Schritt:
 
 1.  **Wie viel Brief hät sie frankiert?**
@@ -7725,4 +7725,4 @@ qafb91192	D Jennie hilft im Büro vo ihrere Mueter. Si hed en Stapel mit 60 Brie
         4. Zum usefinde, wie viel Brief am Afang gsi sind, zieh mer die 20 Brief wieder ab:
            $30 - 20 = 10$.
 
-        Am Afang sind also **10 Brief** i dem Stapel gsi."""	stop
+        Am Afang sind also **10 Brief** i dem Stapel gsi."""	stop	10	0	1		

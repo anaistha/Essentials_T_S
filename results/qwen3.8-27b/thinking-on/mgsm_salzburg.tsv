@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janets Enten legn 16 Eier am Tog. In da Friah isst sie drei zan Fruastuck, und mit viere backt sie jeden Tag Muffins für ihre Freind. Den Rest vakafft sie jeden Tag am Bauernmoakt für 2 US-Dollar pro frischem Entenei. Wia vü Dollar nimmt sie am Tag am Bauernmarkt ei?	"**Rechnung:**
 
 - Eier am Tog: **16**
@@ -26,7 +26,7 @@ So:
 - Price per egg: 2 dollars
 - Revenue: 9 × 2 = 18 dollars
 
-The answer is 18 dollars."	stop
+The answer is 18 dollars."	stop	18.0	0	1		
 qa55f7050	Für a Kleidl braucht ma 2 Knäuel blaue Woin und hoib so vü weiße Woin. Wia vü Knäuel braucht ma insgesomt?	"Fürs Kleidl brauchst ma:
 
 - **Blaue Woin:** 2 Knäuel
@@ -43,7 +43,7 @@ So:
 - White wool: half as much as blue = 2 / 2 = 1 ball
 - Total: 2 + 1 = 3 balls
 
-Let me answer in the same dialect style."	stop
+Let me answer in the same dialect style."	stop	3.0	0	1		
 qde1bef8b	Josh wü a Haus kaffn und wieder weiterverkaffn. Er kafft des Haus für $80.000 und steckt donn $50.000 in Reparaturen. Durch des steigt da ursprüngliche Wert van Haus um 150%. Wia vü Gewinn hot er in Dollar gmocht?	"Okay, lass ma des durchrechnen:
 
 **Kostn:**
@@ -82,7 +82,7 @@ Profit = $200,000 - $130,000 = $70,000
 
 So his profit is $70,000.
 
-Let me respond in the same Bavarian dialect style to match the user's tone."	stop
+Let me respond in the same Bavarian dialect style to match the user's tone."	stop	70000.0	0	1		
 q568beb1f	James nimmb si vor, 3-moi pro Wochn 3 Kurzstreckenläufe z`mochn. Ba jedem Kurzstreckenlauf lafft er 60 Meter. Wia vü Meter lafft er insgesamt pro Woche?	"James lafft insgesamt **180 Meter** pro Wochn.
 
 D'Rechnung isch eifach:
@@ -98,7 +98,7 @@ So the calculation is:
 - 60 meters per run
 - Total: 3 × 60 = 180 meters per week
 
-The question is straightforward. I'll answer in Swiss German to match the user's language."	stop
+The question is straightforward. I'll answer in Swiss German to match the user's language."	stop	180.0	0	0	180	0
 q84afe4d6	Wendi gibt jedem vo ihre Hehna jeden Tog drei Tassen gmischt's Hehnafuata mit Samen, Mehlwürmern und Gmias, damit's gsund bleim. Sie fuatat de Hehna in drei getrennten Mahlzeiten. In da Fruah gibt sie ihrer Hehnaschar 15 Tassen Fuata, am Nochmittag no amoi 25 Tassen. Wia vü Tassen Fuata braucht sie für de letzte Mahlzeit vom Tag, wenn Wendis Hehnaschar aus 20 Hehnan besteht?	"##Lösung
 
 **Schritt 1: Gesamte Tagesration berechnen**
@@ -132,7 +132,7 @@ So:
 - Afternoon: 25 cups
 - Last meal: 60 - 15 - 25 = 20 cups
 
-The answer is 20 cups."	stop
+The answer is 20 cups."	stop	20.0	0	1		
 qd07ea681	Kylar geht in a Gschäft, weil er Glasln für sei neie Wohnung kaffn wü. A Glasl kost 5 Dollar, oba jedes zweite Glasl kost nur 60% van Preis. Kylar wü 16 Glasl kaffn. Wia vü muaß er dafür zoin?	"Okay, lass ma's ausrechnen:
 
 Kylar kafft **16 Glasln**.
@@ -166,7 +166,7 @@ So:
 
 Total: 40 + 24 = 64 dollars
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	64.0	0	1		
 q912b86d0	Toulouse hot doppet so vü Schof wie Charleston. Charleston hat 4-moi so vü Schof wia Seattle. Wia vü Schof hom Toulouse, Charleston und Seattle zommen, wenn Seattle 20 Schof hot?	"So, loß mer das rechne:
 
 - **Seattle** hot **20** Schof.
@@ -186,7 +186,7 @@ Let me solve this:
 
 Total: 20 + 80 + 160 = 260 sheep
 
-Let me respond in the same dialect style."	stop
+Let me respond in the same dialect style."	stop	260.0	0	1		
 q147b7c11	Carla lodt a Datei mit 200 GB owa. Normal schafft sie 2 GB/Minutn, oba soboid 40 % van Download fertig san, erzwingt Windows an Neistart für Updates, und des dauert 20 Minuten. Danoch muaß Carla den Download wieda gonz va vorn ofonga. Wia long dauert's insgesomt, bis de Datei owa glodn is?	"## Lösung
 
 **Erster Versuch (bis zum Neistart):**
@@ -226,7 +226,7 @@ Let me double-check:
 
 That's 2 hours and 40 minutes.
 
-I'll respond in the same Bavarian dialect style."	stop
+I'll respond in the same Bavarian dialect style."	stop	40.0	0	0	160	1
 qead07ed2	John foat 3 Stunden lang mit 60 Meilen/Stund und draht donn um, wei er merkt, dass er dahoam wos gonz Wichtigs vagessen hot. Er wü innerhoib va 4 Stund wieda hoamkema, steckt oba de ersten 2 Stund im Stau. Danoch foat er a hoibe Stund mit 30 Meilen/Stund und ko für de restliche Zeit va dena 4 Stund mit 80 Meilen/Stund weiterfoan. Wia weit is er am Ende vo de 4 Stund no va dahoam weg?	"##Lösung
 
 **Hinfahrt (weg vo dahoam):**
@@ -268,7 +268,7 @@ Total distance covered on return: 0 + 15 + 120 = 135 miles
 
 Distance from home at the end: 180 - 135 = 45 miles
 
-So he is 45 miles away from home."	stop
+So he is 45 miles away from home."	stop	45.0	0	1		
 q5cb246e4	Eliza griag für de erstn 40 Stund, de sie pro Wochn oabat, 10US-Dollar pro Stund. Für de Überstundn griag sie des 1,2 foche va ihrm normaln Stundnsotz. Wia vü verdient Eliza, wonn sie de Wochn 45 Stund oabat?	"**Eliza's Gld pro Woch bei 45 Stundn:**
 
 - **Grundzeit (40 Stundn):** 40 × 10 $ = **400 $**
@@ -287,7 +287,7 @@ Let me solve this:
 - Overtime pay: 5 × $12 = $60
 - Total: $400 + $60 = $460
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	460.0	0	1		
 q3bdd7b1e	A neis Programm is im ersten Monat 60-moi owa glodn woan. Im zweiten Monat woa de Zoi va Downloads drei moi so hoch wia im ersten Monat, im dritten Monat is sie donn um 30% eibrochn. Wia oft is des Programm in de drei Monat insgesomt owa glodn woan?	"**Lösung:**
 
 - **Erster Monat:** 60 Downloads
@@ -311,7 +311,7 @@ Let me calculate:
 
 Total: 60 + 180 + 126 = 366 downloads
 
-Let me respond in Bavarian dialect since the question was in Bavarian."	stop
+Let me respond in Bavarian dialect since the question was in Bavarian."	stop	366.0	0	1		
 q19a4029d	Toula geht in de Bäckerei und kafft verschiedene Sorten Gebäck. Sie nimmb 3 Dutzend Donuts um 68 US-Dollar pro Dutzend, 2 Dutzend Mini-Cupcakes um 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes um 55 US-Dollar pro Dutzend. Wia hoch san de Gesamtkosten?	"## Gesamtkosten berechnen
 
 | Gebäck | Menge | Preis pro Dutzend | Kosten |
@@ -340,7 +340,7 @@ Let me calculate:
 
 Total: 204 + 160 + 330 = 694 US dollars
 
-I'll respond in Bavarian dialect since the question was in Bavarian."	stop
+I'll respond in Bavarian dialect since the question was in Bavarian."	stop	694.0	0	1		
 qf0063e65	Carlos pflanzt an Zitronenbam. Den Bam zu pflanzen kost 90 $. Jeds Joa wochsn 7 Zitronen drauf, de er für jeweils 1,5 $ verkaffn ko. Bewässan und Dünga kost 3 $ im Jahr. In wöcham Jahr macht er mit dem Zitronenbam zum ersten Moi insgesamt Gewinn?	"## Rech'nung
 
 **Jeds Joa:**
@@ -414,7 +414,7 @@ First profit: 13th year
 
 The answer is the 13th year.
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	13.0	0	1		
 q410b0ab2	Melanie is Hondelsvertreterin. Im greanan Haus verkafft sie a Drittel vo ihre Staubsauger, im rotn Haus no 2 und im orangenen Haus de Höfte vo dem, wos donn no übrig is. Wonn Melanie am Schluss 5 Staubsauger übrig hot, mit wia vü hat sie ogfonga?	"## Rech'n wir's vo hinten na vo vorn:
 
 **Am Schluss:** 5 Staubsauger übrig.
@@ -463,7 +463,7 @@ Let me verify:
 
 So she started with 18 vacuum cleaners.
 
-The user is writing in Bavarian dialect, so I'll respond in Bavarian dialect as well."	stop
+The user is writing in Bavarian dialect, so I'll respond in Bavarian dialect as well."	stop	18.0	0	1		
 qa0520340	In ana Tonzstund mit 20 Schuala hom si 20% für Contemporary Dance o`gmödt. Va de übrigen nehman 25% Jazz Dance, und da Rest mödt si für Hip-Hop o. Wia vü Prozent va olle Schuala san ban Hip-Hop?	"**Lösung:**
 
 - **Contemporary Dance:** 20% vo 20 = **4** Schüla
@@ -491,7 +491,7 @@ Let me solve:
 
 So the answer is 60%.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	60.0	0	1		
 q9ae19f0a	A Händler überleg zwischn 2 Kaufmöglichkeitn: Schmuck im Wert va 5.000 US-Dollar oda Elektronikgeräte im Wert va 8.000 US-Dolalr. Sei Finanzberota rechnat damit, dass da Schmuckmoakt im söbn Monat um 2,5% steig und da Moakt für Elektrogeräte um 1,2%. Wonn da Händler am Monatsende mit seina Kaufentscheidung den Gwinn maximiern wü, auf wia vü Gwinn kimmb er donn?	"## Gwinn-Berechnung
 
 Da Händler hot zwasch Wahlmöglichkeitn:
@@ -542,7 +542,7 @@ The question asks ""auf wia vü Gwinn kimmb er donn?"" - how much profit will he
 
 The answer is $125 (by choosing jewelry).
 
-Let me respond in Bavarian dialect since the question was asked in that dialect."	stop
+Let me respond in Bavarian dialect since the question was asked in that dialect."	stop	125.0	0	1		
 q93563595	Zwoa Züge foan zur gleichn Zeit in San Rafael los. Zerscht foan boade noch Westn und legn 80 Meilen zruck. Am nächsten Tog foan's noch Nordn und legn 150 Meilen zruck. Wia vü Strecken leg jeda Zug üba de zwoa Tog zruck?	"Jeda Zug legt üba de zwoa Tog a gsamte Streckn vo **230 Meilen** zruck.
 
 Des is schlicht und eafach:
@@ -569,7 +569,7 @@ The question asks ""Wia vü Strecken leg jeda Zug üba de zwoa Tog zruck?"" - Ho
 
 This is simply 80 + 150 = 230 miles. The question is about total distance traveled (Strecke), not displacement. So the answer is 230 miles.
 
-Let me respond in the same dialect style."	stop
+Let me respond in the same dialect style."	stop	230.0	0	1		
 q33756eb7	Jill griag 20 Us-Dollar pro Stund fürs Unterrichten ois Lehrerin und 30 US-Dollar pro Stund ois Cheerleader-Coach. Wonn sie 50 Wochn im Joa oabat, 35 Stundn pro Wochn ois Lehrerin und 15 Stundn pro Wochn ois Coach, wia hoch is donn ihr Joahresgehoit?	"Hier is de Rech'nung:
 
 **Lehrerin:**
@@ -595,7 +595,7 @@ Coach:
 
 Total: 35,000 + 22,500 = 57,500 USD
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	57500.0	0	1		
 qfb254292	Claire mocht si jedn Moagn zan Fruahstuck a Omelett aus 3 Oa. Wia vü Dutzend Oa isst sie in 4 Wochn?	"Rechnung:
 
 - 4 Wochn = 4 × 7 = **28 Täg**
@@ -617,7 +617,7 @@ Let me calculate:
 
 So the answer is 7 Dutzend (dozens).
 
-I'll respond in Bavarian/German dialect to match the user's language."	stop
+I'll respond in Bavarian/German dialect to match the user's language."	stop	7.0	0	1		
 qc100123d	Marissa wondert an 12 Meiln longan Wondaweg. In da 1. Stund schofft sie de ersten 4 Meilen, in da nächstn Stund donn de nächstn zwoa Meilen. Wonn sie am End auf a Durchschnittsgschwindigkeit va 4 Meilen pro Stund kema wü, mit wöcha Gschwindigkeit in Meilen pro Stund muas sie in Rest geh?	"## Lösung
 
 **Gegebene:**
@@ -663,7 +663,7 @@ To find the required average speed of 4 mph over the entire 12 miles:
 
 So she needs to walk the remaining 6 miles at 6 miles per hour.
 
-Let me write the answer in Bavarian dialect to match the user's language."	stop
+Let me write the answer in Bavarian dialect to match the user's language."	stop	6.0	0	1		
 q26866cba	I hob 10 Lita Oroschngetränk, des za woa Drittl aus Wossa is, und wü`s za 15 Lita Ananasgetränk doa, des za drei Fünftln aus Wossa is. Ban Einigiassn vaschütt i oba an Lita van Oroschngetränk. Wia vü Wossa is donn in de übrigen 24 Lita drei?	"Schön, des rechne i dir aus:
 
 **Oroschngetränk (10 L, 2/3 Wossa):**
@@ -709,7 +709,7 @@ Total water remaining:
 
 So the answer is 15 liters of water.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	15.0	0	1		
 qa856d9dc	Raymond und Samantha san Cousins. Raymond is 6 Joa vor Samantha geboan. Mit 23 Joa hot Raymond an Sohn griag. Wonn Samantha hiaz 31 is, vor wia vü Joa is Raymonds Sohn geboan woan?	"## Léisung
 
 **Raymond is 6 Joa älter als Samantha.**
@@ -737,7 +737,7 @@ Let me work this out:
 - Raymond had his son when he was 23.
 - So the son was born 37 - 23 = 14 years ago.
 
-The answer is 14 years ago."	stop
+The answer is 14 years ago."	stop	14.0	0	1		
 q72ea27fb	Billy verkafft DVDs. Am Dienstag hot er 8 Kundn. De ersten 3 kaffn jeweils a DVD, de nächstn 2 kaffn jeweils 2 DVDs, und de letztn 3 kaffn goa koane. Wia vü DVDs hot Billy am Dienstog vakafft?	"Am Dienstog hot Billy **7 DVDs** vakafft.
 
 So rechnd ma's aus:
@@ -757,7 +757,7 @@ Let me calculate:
 
 Total: 3 + 4 + 0 = 7 DVDs
 
-The question is in Bavarian dialect, so I'll respond in a similar style."	stop
+The question is in Bavarian dialect, so I'll respond in a similar style."	stop	7.0	0	1		
 qa62b2b0f	A Keazn weat für jede Stund, de se brennt, um 2 Zentimeta kiaza. Wia vü Zentimeta kiaza is a Keazn, de va 13 Uhr bis 17 Uhr brennt?	"Va 13 Uhr bis 17 Uhr san das **4 Stundn**.
 
 4 Stundn × 2 Zentimeta pro Stund = **8 Zentimeta kiaza**.
@@ -787,7 +787,7 @@ Calculation:
 
 The answer is 8 centimeters.
 
-I'll respond in the same dialectal style to match the user's tone."	stop
+I'll respond in the same dialectal style to match the user's tone."	stop	8.0	0	1		
 qaadc02d2	Kyle hot den Bestseller van letztn Joa füa 19,50 US-Dollar kafft. Des woa mit 25% Rabatt aufn ursprünglichen Preis. Wia hoch woa da ursprüngliche Preis van Buach?	"Da ursprüngliche Preis van Buach woa **26,00 US-Dollar**.
 
 **Rechnung:**
@@ -816,7 +816,7 @@ original price = 19.50 / 0.75 = 26.00
 
 So the original price was $26.00.
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	19.5	0	0	26	1
 q4c88eb07	Marie hot a Hendlgericht für 12 US-Dollar bestöt, 5 Packla Müch für jeweils 3 US-Dollar, 4 Äpfe für jeweils 1,50 US-Dollar und a poa Schochtln Pizza. Marie hot insgesomt 50 US-Dollar zoit. Wia vü Schochtln Pizza hot Marie bestöt, wonn jede Schochtl 8,50 US-Dollar kost?	"**Rechnung:**
 
 | Postn | Preis |
@@ -855,7 +855,7 @@ x = 2
 
 So Marie ordered 2 slices of pizza.
 
-Let me respond in the same dialect style (Bavarian/Austrian German)."	stop
+Let me respond in the same dialect style (Bavarian/Austrian German)."	stop	2.0	0	1		
 qc76b9ef5	Mishka hot 3 Paar’dln Shorts, 3 Hosn und 3 Poa Schua kafft. Oa Paar’dl Shorts kost 16,50 US-Dollar. A Hosn kost 22,50 US-Dollar und a Paar’dl Schua 42 US-Dollar. Wia vü Dollar hot Mishka insgesomt für des Gwond ausgebn?	"Mishka hot foigods ausgebn:
 
 - 3 Paar'dln Shorts: 3 × 16,50 $ = **49,50 $**
@@ -894,7 +894,7 @@ Let me double-check:
 
 So Mishka spent 243 US dollars in total.
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	243.0	0	1		
 qc792d70c	Cynthia isst jedn Obnd a Portion Eis. Sie kafft Kartons mit 15 Portionen pro Karton, und jeda Karton kost 4,00 US-Dollar. Wia vü hot sie noch 60 Tog für Eis ausgebn?	"**Léisung:**
 
 Cynthia iess 1 Portioun pro Owend, also no 60 Deeg:
@@ -919,7 +919,7 @@ Let me solve this:
 
 So the answer is $16.00.
 
-Let me respond in Luxembourgish since the question was in Luxembourgish."	stop
+Let me respond in Luxembourgish since the question was in Luxembourgish."	stop	16.0	0	1		
 qb804efac	Henry hot auf ana 60 Meilen longan Radltour zwoa Stopps eiglegt. Sein erstn Hoit hot er noch 20 Meiln gmocht. Da zweite Hoit woa 15 Meiln vorm Ende va seina Tour. Wia vü Meilen hot er zwischn dem erstn und zweitn Hoit zruckglegt?	"Da Henry hot **25 Meilen** zwischn dem erstn und dem zweitn Hoit zruckglegt.
 
 So rechnt ma's aus:
@@ -941,7 +941,7 @@ So:
 
 Distance between first and second stop: 45 - 20 = 25 miles.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	25.0	0	1		
 qf837eb68	Gloria is ban Schuah shoppen und find a Paar´dl Stiefe, de in ihr Budget passn. Sie muas owa zwischen de Stiefe und zwoa Paar´dln High Heels wähln, de zommen fünf Dollar weniger kostn ois wia de Stiefe. Wonn a Paar´dl High Heels 33 US-Dollar kostn und des ondare doppet so vü, wia vü kostn donn de Stiefe?	"## Lösung
 
 **Schritt 1 – Preis der zwoa Paar´dl High Heels:**
@@ -971,7 +971,7 @@ So:
 - The two pairs of high heels together cost $5 less than the boots.
 - So boots cost: $99 + $5 = $104
 
-The boots cost $104."	stop
+The boots cost $104."	stop	104.0	0	1		
 qa2455bce	Des Oitersverhältnis vo Darrell und Allen is 7:11. Wonn se zommen 162 Joa oit san, wia oit is donn Allen in 10 Joa?	"## Léisung
 
 D'Altersverhältnis ass 7:11, also:
@@ -1011,7 +1011,7 @@ Allen = 11 × 9 = 99
 
 In 10 years, Allen will be: 99 + 10 = 109
 
-Let me respond in Luxembourgish since the question was in Luxembourgish."	stop
+Let me respond in Luxembourgish since the question was in Luxembourgish."	stop	109.0	0	1		
 q166f163a	Gunter probiert, de Gummibärchen im Glasl zan zöhn. Er frog seine Freind, wia vü Gummibärchen eana Meinung noch im Glasl san. Oana sog 80. Da ondare sog 20 mehr ois de Höfte va da ersten Schätzung. A Dritter sog 25% mehr ois da Erste. Wia is eana durchschnittliche Schätzung?	"Okay, lass ma des rechne:
 
 **Schätzung 1:** 80
@@ -1047,7 +1047,7 @@ Average = (80 + 60 + 100) / 3 = 240 / 3 = 80
 
 So the average estimate is 80.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	80.0	0	1		
 q3966df43	John kümmert si um 10 Hund. Jeda Hund braucht pro Tog 0,5h für an Spaziergong und um sei Geschäft zu erledigen. Wia vü Stundn pro Wochn kümmert er si insgesomt um de Hund?	"**Berechnig:**
 
 - Pro Tog: 10 Hund × 0,5 h = **5 Stundn**
@@ -1068,7 +1068,7 @@ Calculation:
 
 The answer is 35 hours per week.
 
-Let me respond in Swiss German since the question was in Swiss German."	stop
+Let me respond in Swiss German since the question was in Swiss German."	stop	35.0	0	1		
 q28184d6c	Grechen hot 110 Münzn. Es san 30 mehr Goid aus wia Silbermünzen. Wia vü Goidmünzn hot Gretchen?	"**Gretchen huet 70 Goumünzen.**
 
 Hei d'Rechnung:
@@ -1109,7 +1109,7 @@ G = 40 + 30 = 70
 
 So Gretchen has 70 gold coins.
 
-I'll respond in Luxembourgish since the question was in Luxembourgish."	stop
+I'll respond in Luxembourgish since the question was in Luxembourgish."	stop	70.0	0	1		
 q5f9dc683	Siobhan hot 2 Schmuckstück weniga ois da Aaron. Aaron hot 5 Schmuckstück mehr ois de Höfte vo Raymonds Schmuckstückn. Wonn Raymond 40 Schmuckstück hot, wia vü hot donn da Siobhan?	"**Siobhan hot 23 Schmuckstück.**
 
 So geh i des Schritt für Schritt durch:
@@ -1132,7 +1132,7 @@ Raymond = 40
 Aaron = 5 + (half of Raymond) = 5 + (40/2) = 5 + 20 = 25
 Siobhan = Aaron - 2 = 25 - 2 = 23
 
-So Siobhan has 23 pieces of jewelry."	stop
+So Siobhan has 23 pieces of jewelry."	stop	23.0	0	1		
 q9501d333	Mike spüt 40 Minutn long Pingpong. In de erstn 20 Minutn mochta 4 Punkte. In de nächstn 20 Minutn mochta 25% Punkte mehr. Wia vü Punkte mochta insgesomt?	"In de erstn 20 Minutn: **4 Punkte**
 
 In de nächstn 20 Minutn: 25% mehr als 4 → 4 + (0,25 × 4) = 4 + 1 = **5 Punkte**
@@ -1148,7 +1148,7 @@ So:
 - Next 20 minutes: 25% more points than the first 20 minutes = 4 + 25% of 4 = 4 + 1 = 5 points
 - Total: 4 + 5 = 9 points
 
-Let me answer in Swiss German/Bairisch to match the user's language."	stop
+Let me answer in Swiss German/Bairisch to match the user's language."	stop	9.0	0	1		
 q0e0fa86b	Terry isst 2 Joghurts pro Tog. Se san grod für 5,00 US-Dollar für 4 Joghurts im Ongebot. Wia vü gib er innerhoib 30 Tog für Joghurt aus?	"**Léisung:**
 
 - Terry isst 2 Joghurts pro Dag → an 30 Dag: 2 × 30 = **60 Joghurts**
@@ -1171,7 +1171,7 @@ Let me solve this:
 
 The answer is 75.00 US-Dollar.
 
-I'll respond in Luxembourgish since the question was in Luxembourgish."	stop
+I'll respond in Luxembourgish since the question was in Luxembourgish."	stop	75.0	0	1		
 q126bbbaa	John wü olle seine Spüsochn vakaffn und mit dem Göd Videospiele kaffn. Er hot 13 Lego-Sets und hot 15 Dollar für jeds verkaffte Set griag. Er kafft donn 8 Videospiele für 20 Dollar und hot no 5 Dollar übrig. Wia vü Lego-Sets hot er no?	"## Lösung
 
 Geh schritt für Schritt:
@@ -1208,7 +1208,7 @@ Let me work backwards:
 
 Let me verify: 11 sets × 15 dollars = 165 dollars. 165 - (8 × 20) = 165 - 160 = 5 dollars left. ✓
 
-So the answer is 2 LEGO sets."	stop
+So the answer is 2 LEGO sets."	stop	2.0	0	1		
 q5c1bd624	John lafft 60 Meiln pro Wochn. Er lafft 3 Tog pro Wochn. Er lafft am erstn Tog 3 Stund und auf de ondan zwoa Lauftogn jeweils de Höfte. Wia schnö lafft er?	"**Rechnung:**
 
 - Gsamtstreck: **60 Meiln**
@@ -1235,7 +1235,7 @@ So:
 
 Speed = Distance / Time = 60 miles / 6 hours = 10 miles per hour
 
-Let me respond in the same Bavarian dialect style."	stop
+Let me respond in the same Bavarian dialect style."	stop	10.0	0	1		
 q02f06b34	Dana ko viermoi so schnö laffn wia sie geh ko, oba sie ko nur hoib so schnö hupfn wia sie laffn ko. Wonn sie mit 3 Meiln pro Stund hupfn ko, wia vü Meilen ko sie donn innerhoib va 6 Stund zrucklegn, wonn sie a Drittl va da Zeit lafft und zwoa Drittel va da Zeit geht?	"## Lösn
 
 **Schritt 1: Gschwindigkeitan ermittn**
@@ -1296,7 +1296,7 @@ Time: 6 hours total
 
 Distance: 6 × 2 + 1.5 × 4 = 12 + 6 = 18 miles
 
-The answer is 18 miles."	stop
+The answer is 18 miles."	stop	18.0	0	1		
 qd6dd82e1	Brandons iPhone is viermoi so oit wia Bens iPhone. Bens iPhone is doppet so oit wia Suzys iPhone. Wonn Suzys iPhone 1 Joa oit is, wia oit is Brandons iPhone?	"Suzys iPhone ass **1 Joer** oit.
 
 Bens iPhone ass d'oppel vun Suzys: 2 × 1 = **2 Joer** oit.
@@ -1316,7 +1316,7 @@ So:
 
 The answer is 8 years old.
 
-Let me respond in Luxembourgish since the question was in Luxembourgish."	stop
+Let me respond in Luxembourgish since the question was in Luxembourgish."	stop	8.0	0	1		
 q425db7e5	Da grosse Drochn Perg is hoch obn am Berg Farbo gsessn und spuckt Feia auf ois in an Umkreis va 1000 Fuss. Polly hot den goidenen Speer, de oazige bekonnte Woffn, mit dem ma en Drochn bezwinga ko, 400 Fuass weit schmeissn, oiso guat in de Reichweite va de Flommen van Drochn. Wia sie oba den Saphir-Edelstoa in de Händ kob hot, hot sie en Speer dreimoi so weit schmeissn kena wia ohne den Edelstoa. Wonn sie en Edelstoa in de Händ hoit, wia weit ausserhoib va da Reichweite va de Flommen van Drochn kunat Polly stenga und den Drochn trotzdem no mitn goidenen Speer treffen?	"## Lösung
 
 **Ohne den Saphir:**
@@ -1345,7 +1345,7 @@ So:
 
 If she can throw 1200 feet, and the danger zone is 1000 feet, then she can stand 1200 - 1000 = 200 feet outside the range of the flames.
 
-The answer is 200 feet (Fuass)."	stop
+The answer is 200 feet (Fuass)."	stop	200.0	0	1		
 qedc215ac	Grossmama Jones hot 5 Opfekuchn fürs Mittogessn va da Feiawehr bochn. Sie hot jedn Kuchn in 8 Sticke gschnittn und stöt 5 Kuchn aufn Buffettisch, damit se de Gäst söwa bediena kenan. Am Ende van Obnd nochdem si olle bedient hom san no 14 Kuchnsticke übrig bliem. Wia vü Sticke hom si de Gäst gnomma?	"Da is ganz einfach:
 
 - 5 Kuchn × 8 Sticke pro Kuchn = **40 Sticke** insgesamt
@@ -1365,7 +1365,7 @@ Solution:
 
 The answer is 26 pieces.
 
-I'll respond in the same Bavarian dialect style to match the user's tone."	stop
+I'll respond in the same Bavarian dialect style to match the user's tone."	stop	26.0	0	1		
 q5d47194e	De Nährwertangaben zufolge hot a Tütn Chips 250 Kalorien pro Portion. Wonn a 300 g-Tütn 5 Portionen hot, wia vü Gramm konnst donn essn, wonn dei Tägliches Kalorienzü ba 2000 lieg und du bereits 1800 Kalorien za dir gnomma host?	"## Rechnerei
 
 **Schritt 1: No Kalorien**
@@ -1413,7 +1413,7 @@ Let me solve this:
 
 So the answer is 48 grams.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	48.0	0	1		
 q255b81c0	Charlie mechat Bienenwochskerzn vakaffn. Aus jedn Pfund Bienenwochs ko er 10 Kegelkerzn mochn. Is Zubehör aus an Pfund Bienenwochs plus Docht kost 10 US-Dollar. Wonn er de Kerzn für 2,00 US-Dollar vakafft, wia vü Nettogewinn mocht er donn wonn er 20 Kerzn mocht und vakafft?	"Hier is d' Rechnung:
 
 **Wia vü Bienenwochs braucht er?**
@@ -1450,7 +1450,7 @@ Let me solve:
 
 The answer is $20 net profit.
 
-Let me respond in the same dialectal style the user used, since they wrote in a very colloquial dialect. I'll respond in a similar dialectal German."	stop
+Let me respond in the same dialectal style the user used, since they wrote in a very colloquial dialect. I'll respond in a similar dialectal German."	stop	20.0	0	1		
 q0166ea66	Meredith is Freelance-Bloggerin und schreib üba Gesundheitsthemen und kümmert si um Kunden, wos ihr festa Job is. Fürs Recherchieren und Schreim va an Blog-Artikel braucht sie im Schnitt 4 Stund. Letzte Wochn hot sie am Montog 5 Artikel gschriem und am DIenstog ⅖ mehr ois am Montog. Am Mittwoch hot sie doppet so vü Artikel gschriem wia am Dienstog. Wia vü Stund hot sie auf de drei Tog insgesomt mitm Schreibn verbrocht?	"## Rechnung
 
 **Gegeben:**
@@ -1522,7 +1522,7 @@ So the answer is 117.5 hours.
 
 Let me verify: 235/8 × 4 = 235/2 = 117.5. Yes.
 
-I'll respond in Bavarian dialect since the question was in that dialect."	stop
+I'll respond in Bavarian dialect since the question was in that dialect."	stop	117.5	0	0	117.5	0
 q7bb382f4	Candice hot 80 Post-it Notizzettl in ihr Hondtaschn pockt, bevor sie za ihrn Job im Coffee Shop losgonga is. Unterwegs hot sie an Zwischenstopp am Lodn gmocht und und a Packerl Post-it Notizzettl kafft. Ba da Oabat hot sie auf 220 verschiedene Tassn Kaffee je oan Post-it-Notizzettel kleb. Wonn ihr insgesomt 23 Post-it-Notizzettel üba bliem san, wia vü Post-it-Notizzettel woan donn in da Pockung de sie kafft hot?	"**Lösung:**
 
 Candice hot am Anfong **80** Post-it-Notizzettel ghobt.
@@ -1556,7 +1556,7 @@ x = 163
 
 The pack she bought had 163 Post-it notes.
 
-Let me respond in Bavarian dialect since the question was in Bavarian."	stop
+Let me respond in Bavarian dialect since the question was in Bavarian."	stop	163.0	0	1		
 q1a64508f	John kafft zwoa moi so vü rote wia blaue Krawatten. De rotn Krawattn kostn 50% mehr ois de blauen Krawatten. Er hot 200 US-Dollar für blaue Krawattn ausgebn, de 40 US-Dollar pro Sticke kostn. Wia vü hot er für Krawattn ausgebn?	"**Lösung:**
 
 **Blaue Krawattn:**
@@ -1596,7 +1596,7 @@ Red ties:
 
 Total spent on ties: $200 + $600 = $800
 
-Let me respond in the same dialect style the user used."	stop
+Let me respond in the same dialect style the user used."	stop	800.0	0	1		
 q9605b4e6	Tracy hot a 4 Fuss longs Sticke Droht verwendt, um de Tomatnpflonzn in ihrem Goatn obzustützn. Da Droht is in 6 Inch longe Sticke gschnittn woan. Wia vü Sticke Droht hot sie?	"Tracy hot **8 Sticke** Droht.
 
 So rechnet ma's aus:
@@ -1619,7 +1619,7 @@ Then divide by 6 inches per piece: 48 ÷ 6 = 8 pieces
 
 The answer is 8 pieces of wire.
 
-Let me respond in the same dialect style as the question, since it's written in a German dialect."	stop
+Let me respond in the same dialect style as the question, since it's written in a German dialect."	stop	8.0	0	1		
 qda35e8fb	Richard leb in an Wohnhaus mit 15 Etagen. Auf jeda Etage san 8 WOhnungen, und ¾ van Gebäude san bewohnt. Wia vü Wohnungen in dem Gebäude san insgesomt unbewohnt?	"**Lösung:**
 
 - Etagen: 15
@@ -1648,7 +1648,7 @@ Unoccupied apartments: 120 × ¼ = 30
 
 So 30 apartments are unoccupied.
 
-The question is written in a dialect that seems to be a mix of German with some dialectal features (like ""san"" instead of ""sind"", ""jeda"" instead of ""jede"", ""van"" instead of ""vom"", ""Wia vü"" instead of ""Wie viele""). This looks like it could be a Bavarian/Austrian dialect or a simplified/constructed dialect. I'll respond in German since that's the base language, but I could also mirror the dialectal style. Let me respond in standard German with the solution clearly laid out."	stop
+The question is written in a dialect that seems to be a mix of German with some dialectal features (like ""san"" instead of ""sind"", ""jeda"" instead of ""jede"", ""van"" instead of ""vom"", ""Wia vü"" instead of ""Wie viele""). This looks like it could be a Bavarian/Austrian dialect or a simplified/constructed dialect. I'll respond in German since that's the base language, but I could also mirror the dialectal style. Let me respond in standard German with the solution clearly laid out."	stop	30.0	0	1		
 q94fcd6ce	Lloyd hot an Eierhof. Seine Hehna legn 252 Eia pro Tog und er vakafft sie für 2 US-Dollar pro Dutzend. Wia vü verdient Lloyd pro Wochn an de Eier?	"So, rechne mal mit:
 
 **Täglich:**
@@ -1680,7 +1680,7 @@ $42 × 7 days = $294 per week
 
 So Lloyd earns $294 per week from the eggs.
 
-Let me respond in Swiss German to match the user's dialect."	stop
+Let me respond in Swiss German to match the user's dialect."	stop	294.0	0	1		
 q1afb1e71	Toms Schiff ko 10 Meilen pro Stund foan. Er seglt va 13 bis 16 Uhr. Donn foat er mit ana Gschwindigkeit va 6 Meilen/Stund wieda zruck. Wia long braucht er fürn Rückweg?	"**Gschweng g'rechnet:**
 
 - **Hinweg:** 13 bis 16 Uhr = **3 Stund**
@@ -1704,7 +1704,7 @@ Let me solve:
 
 So he needs 5 hours for the return trip.
 
-I'll respond in the same Bavarian dialect style to match the user."	stop
+I'll respond in the same Bavarian dialect style to match the user."	stop	5.0	0	1		
 q0aaae19a	Uriah sei Biachatoschn weat zschwa. Er muas 15 Pfund aussa doa. Seine Comicbiacha wiegn 1/4Pfund pro Sticke und sei Spüzeig jeweils ½ Pfund. Wonn er 30 Comicbiacha aussa duat, wia vü Spüzeig muas er donn no aussa doa?	"Okay, lass uns das rechne:
 
 **Gsammt: 15 Pfund muass Uriah loswenn.**
@@ -1736,7 +1736,7 @@ Let me solve this:
 
 So he needs to get rid of 15 toys (Spielzeug).
 
-Let me respond in the same dialect style."	stop
+Let me respond in the same dialect style."	stop	15.0	0	1		
 qa5756c69	A Mechaniker verlong unterschiedliche Preise für de Reparatur va LKW-Reifen und PKW-Reifen. Für jedn repariertn LKW-Reifn berechnet da Mechanika 60 Dolalr und für jedn repariertn PKW-Reifn 40 Dollar. Am Donnastog repariert da Mechanika 6 LKW-Reifen und 4 PKW-Reifen. Am Freitog Repariert da Mechanika 12 PKW-Reifen und koane LKW-Reifen. WIa vü Dolalr mehr Umsotz hot da Mechanika an dem Tog mitm höheren Umsatz gmocht?	"## Lösung
 
 **Donnastog (Donnerstag):**
@@ -1772,7 +1772,7 @@ So the mechanic makes 40 dollars more on Thursday (the day with higher revenue).
 
 The question asks ""Wie viel Dollar mehr Umsatz hat der Mechaniker an dem Tag mit dem höheren Umsatz gemacht?"" - How many more dollars of revenue does the mechanic have on the day with the higher revenue?
 
-The answer is 40 dollars."	stop
+The answer is 40 dollars."	stop	40.0	0	1		
 qd819612e	De Schwestern Doubtfire foan mit 7 Katzal hoam, de se im örtlichen Tierheim adoptiert hom. Donn ruaft ihre Muata o und sog, dass ihre boadn Hauskotzn grod Katzal griag hom. Patchy, de erste Kotz, hot 3 moi so vü katzal wia de apoptierten, und Trixi, de ondare Kotz, hot 12 zur Wöd brocht. Wia vü Katzal hom de Doubtfires hiaz?	"## Rechenung
 
 | Quelle | Anzahl Katzal |
@@ -1803,7 +1803,7 @@ So:
 
 Total kittens: 7 + 21 + 12 = 40
 
-The question asks how many kittens (Katzal) the Doubtfires have now. That would be 7 + 21 + 12 = 40."	stop
+The question asks how many kittens (Katzal) the Doubtfires have now. That would be 7 + 21 + 12 = 40."	stop	40.0	0	1		
 q7c63d108	Jean hot 30 Lutscha. Er isst 2 davo. De ondan Lutscha mechta in a Sackal mit je 2 Lutscha doa. Wia vü Sackal ko er füllen?	"**14 Sackal.**
 
 Jean hot 30 Lutscha, isst 2 davo → 28 blibed.
@@ -1819,7 +1819,7 @@ So the calculation is:
 - Eats 2: 30 - 2 = 28 remaining
 - Puts them into bags of 2: 28 / 2 = 14 bags
 
-The answer is 14 bags."	stop
+The answer is 14 bags."	stop	14.0	0	1		
 q93b023e5	Peter plant, de Wochn ins Kino zgeh. Er kafft si imma a Eintrittskoatn für 7 US-Dolalr und Popcorn für 7 US-Dollar. Wonn er für de Wochn 42 US-Dollar hot, wia oft ko er donn ins Kino geh?	"Jede Kino-Rund gaht 7 $ (Eintritt) + 7 $ (Popcorn) = **14 $** koschtn.
 
 Mit 42 $ in der Woch kummt er:
@@ -1839,7 +1839,7 @@ He has: 42 US-Dollars
 
 He can go to the cinema 3 times.
 
-Let me respond in the same dialect style."	stop
+Let me respond in the same dialect style."	stop	3.0	0	1		
 qdf141d2f	A Hoizbruckn ko ni mehr ois 5000 Pfund trogn. A Lieferwogn mit gleichn Kistn, va dena jede 15 Pfund wieg, soi drübafoan kena. Foara und laara Lostwogn wiegn zommen 3755 Pfund. Wia vü Kistn ko da Lostwogn höchstns lodn, ohne über de Gwichtsgrenz va da Bruckn zan kema?	"## Rechnung
 
 **Gwichtsgrenz vo da Bruckn:** 5000 Pfund
@@ -1873,7 +1873,7 @@ So:
 
 Let me verify: 83 × 15 = 1245. 3755 + 1245 = 5000. Yes, exactly 5000.
 
-So the answer is 83 boxes."	stop
+So the answer is 83 boxes."	stop	83.0	0	1		
 q1f4f019f	Stephen bestöt Lebensmittel online. De Endobrechnung is 40,00 US-Dollar. Wei a Lieferdienst de LIeferung übernimmb, schlogn se 25% auf de Endobrechnung drauf und valongan zuasätzlich 3,00 US-Dollar Liefergebür. Stephen gib aussadem 4,00 US-Dollar Trinkgöd. Wia hoch is da Endpreis für Stephens Lebensmittel noch oi dena Extragebührn?	"So, rechne ma's durch:
 
 - **Endobrechnung:** 40,00 $
@@ -1895,7 +1895,7 @@ Let me calculate:
 
 Total: 40.00 + 10.00 + 3.00 + 4.00 = $57.00
 
-The question is in Bavarian dialect, so I'll respond in a similar style but keep it clear. Let me write the answer in a mix of Bavarian/German to match the user's tone."	stop
+The question is in Bavarian dialect, so I'll respond in a similar style but keep it clear. Let me write the answer in a mix of Bavarian/German to match the user's tone."	stop	57.0	0	1		
 q709e5faa	A Himbeerstrauch hot 6 Traubn mit je 20 Frücht und aussadem 67 oanzelne Frücht, de üban Strauch vateilt san. Wia vü Himbeern san des insgesomt?	"Des rechnd ma so aus:
 
 - 6 Traubn × 20 Frücht = **120** Himbeern
@@ -1914,7 +1914,7 @@ So the calculation is:
 - Plus 67 individual berries
 - Total = 120 + 67 = 187 berries
 
-Let me respond in Bavarian dialect since that's what the user wrote in."	stop
+Let me respond in Bavarian dialect since that's what the user wrote in."	stop	187.0	0	1		
 qb292acaa	In an Korb san 25 Orangen. Davo is 1 schlecht, 20% san unreif und 2 san sauer. Da Rest is guat. Wia vü Orangen san guat?	"**17 Orangen san guat.**
 
 So rechnt's:
@@ -1941,7 +1941,7 @@ Let me calculate:
 
 The answer is 17.
 
-I'll respond in Swiss German to match the user's language."	stop
+I'll respond in Swiss German to match the user's language."	stop	17.0	0	1		
 qa11cac63	Janet kafft a Brosche für ihr Tochta. Sie zoit 500 US-Dollar fürs Material zan herstön und 800 US-Dollar fürn Juwelier zan modelliern. Danoch zoit sie no 10% van Betrog für de Vasicharung. Wia vü hot sie zoin miassn?	"Janet hot des zoin miassn:
 
 - Material: **500 US-Dollar**
@@ -1968,7 +1968,7 @@ Insurance = 10% of 1300 = 130 USD
 
 Total = 500 + 800 + 130 = 1430 USD
 
-Let me respond in the same dialect style to match the user's tone."	stop
+Let me respond in the same dialect style to match the user's tone."	stop	430.0	0	0	1	0
 q5a0d641e	Noch 40 Dienstjoa graig a Mitarbeiter va Marcys Firma a volle jährliche Rentn va 50.000 Dollar. Pensionsansprüche hota noch 20 Dienstjoa. Für jeds weitere Dienstjoa noch de 20 Joa keman 5%van voin Rentnbetrog dazua. Wonn Marcy noch genau 30 Dienstjoa aufheat, wia hoch is donn de jährliche Rentn in Dollar?	"## Lösung
 
 **Grundrente nach 20 Dienstjahren:** 50.000 $
@@ -2004,7 +2004,7 @@ So 5% of $50,000 = $2,500 per additional year.
 10 additional years × $2,500 = $25,000
 Total: $50,000 + $25,000 = $75,000
 
-The answer is $75,000."	stop
+The answer is $75,000."	stop	30.0	0	0	75000	0
 q2eb5bb5f	Aleena hot an Streaming-DIenst abboniert, der 140 US-Dollar pro Monat kost. Wonn des Streaming-Unternmehmen ihr für de erste Joareshöfte den ursprünglichen Betrog berechnet und donn für de zweite Joareshöfte 10% weniger, donn berechne den Gesomtbetrog den sie bis zan Joaresende für den Streaming-Dienst zoit hot.	"## Berechnung vum Gesamtbetrag
 
 **Erscht Joareshelft (6 Méint):**
@@ -2039,7 +2039,7 @@ Second half: 10% less than $140 = $140 × 0.90 = $126 per month
 
 Total: $840 + $756 = $1,596
 
-Let me respond in Luxembourgish since the question was in Luxembourgish."	stop
+Let me respond in Luxembourgish since the question was in Luxembourgish."	stop	1596.0	0	1		
 q29ca8e5c	Sophia übaleg, a Autofoat zmochn und schaun, wia weit sie mit an Tank voi Benzin kimmb. Seit da letztn Tankfüllung is sie 100 Meiln gfoan und hot 4 Gallonen Benzin nochtankn miassn, damit da Tank wieda voi is. In da Bedienungsonleitung va ihrn Auto steht, dass 12 Gallonen in ihrn Tank passn. Wia vü Meiln ko Sophia mit ana oazign Tankfüllung foan?	"**Lösung:**
 
 Sophia hot für 100 Meiln genau 4 Gallonen Benzin braucht. Des heasst, ihr Auto fohrt:
@@ -2066,7 +2066,7 @@ With a full tank of 12 gallons:
 
 So Sophia can drive 300 miles with one full tank.
 
-Let me respond in Bavarian dialect since the question was asked in that dialect."	stop
+Let me respond in Bavarian dialect since the question was asked in that dialect."	stop	300.0	0	1		
 q388ed7a8	Jim schaut 2 Stund long TV und geht donn ins Bett. Do duat er no hoib so long lesn. Des mocht er 3-moi pro Wochn. Wia vü Stund verbring er in 4 Wochn mit Fernsehschaun und Lesn?	"**Berechnig:**
 
 - **TV pro Mal:** 2 Stund
@@ -2094,7 +2094,7 @@ Let me calculate:
 
 The answer is 36 hours.
 
-I'll respond in Swiss German to match the user's language."	stop
+I'll respond in Swiss German to match the user's language."	stop	36.0	0	1		
 qe6615147	Vier Schuin spün ba an Basketboiturnier gengranond. Jede Schui schickt a Dirndl-Basketballteam und a Buam-Basketballteam, und jeds Team hot 5 Spiela. Für jeds Team kimmb aussadem a Trainer mit. Wia vü Personen schickn de Schuin insgesomt?	"## Lösung
 
 **Ghabn:**
@@ -2135,7 +2135,7 @@ Per school: 2 teams × (5 players + 1 coach) = 2 × 6 = 12 persons
 
 Total: 4 schools × 12 persons = 48 persons
 
-The answer is 48."	stop
+The answer is 48."	stop	48.0	0	1		
 q1df59a5a	A Schatzsuacha hot a vagrome Schotzkistn mit Edelstoana gfundn. Es woan 175 Diamantn, 35 weniger Rubine ois wia Diamanten und zwoa moi so vü Smaragde wia Rubine. Wia vü Edelstoana woan in da Schotzkistn?	"So, des rechn ma o:
 
 - **Diamantn:** 175
@@ -2157,7 +2157,7 @@ Let me calculate:
 
 Total: 175 + 140 + 280 = 595
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	595.0	0	1		
 q0e3fa635	In da Schui va Dr. Wertz gibs zwoa moi so vü Buama wia Diandla. Wonns 60 Diandla und 5 Schuala pro Lehrer gib, wia vü Lehrer gibs donn?	"##Lösung
 
 **Gegebene Informationn:**
@@ -2185,7 +2185,7 @@ Let me solve this:
 - Students per teacher = 5
 - Teachers (Lehrer) = 180 / 5 = 36
 
-So there are 36 teachers."	stop
+So there are 36 teachers."	stop	36.0	0	1		
 q9c0ce719	Bailey fong mit an bestimmtn Gödbetrog o. Donn griag sie 8 Wochn long jede Wochn 5 US-Dollar. Wonn sie noch de 8 Wochn insgesomt 100 US-Dollar hot, wia vü Göd hot Bailey donn am Ofong kob?	"## Lösn
 
 Bailey griad jede Wochn 5 US-Dollar, und zwoa 8 Wochn:
@@ -2212,7 +2212,7 @@ So:
 So: x + 40 = 100
 x = 60
 
-Bailey started with 60 US dollars."	stop
+Bailey started with 60 US dollars."	stop	60.0	0	1		
 qde446a3d	Judy unterrichtet unta da Wochn täglich 5 Tonzkurse und somstogs 8 Kurse. Wonn jeda Kurs 15 Schuala hot und sie 15 Dollar pro Schuala valong, wia vü Göd verdient sie in oana Wochn?	"## Lösung
 
 **Schritt 1: Kurse in oana Wochn zähl'n**
@@ -2255,7 +2255,7 @@ Let me double-check:
 - Students: 33 × 15 = 495
 - Money: 495 × 15 = 7,425
 
-Yes, $7,425."	stop
+Yes, $7,425."	stop	7425.0	0	1		
 qd941251f	Kelian hot zwoa Kochrezepte, wobei des oane 20 Onweisungen hot und des ondare zwoamoi so vü wia des erste. Wia vü Onweisungen muas Kelian lesn, damit er de boadn Rezepte mochn ko?	"Kelian muas **60 Onweisungen** lesn.
 
 So rechnt's:
@@ -2275,7 +2275,7 @@ So:
 - Recipe 2: twice as many as the first = 2 × 20 = 40 instructions
 - Total: 20 + 40 = 60 instructions
 
-The answer is 60. I'll respond in Bavarian dialect since that's what the user is using."	stop
+The answer is 60. I'll respond in Bavarian dialect since that's what the user is using."	stop	60.0	0	1		
 q96352811	Tommy sommet für sei Woitätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Sticke und Käsekuchnstickla für 4 US-Dollar pro Sticke vakafft. Wonn Tommy 43 Brownies und 23 Käsekuchnstickla vakafft, wia vü Göd sommet er donn?	"Tommy sommet so vü Göd:
 
 - **Brownies:** 43 Sticke × 3 US-Dollar = **129 US-Dollar**
@@ -2296,7 +2296,7 @@ So the calculation is:
 
 The answer is $221.
 
-I'll respond in Swiss German since the question was in Swiss German."	stop
+I'll respond in Swiss German since the question was in Swiss German."	stop	221.0	0	1		
 qbf808b59	Sheila hot fünf Handys für 150 US-Dollar pro Sticke mit an Ratenzahlungsvatrog für 3 Monat kafft. Pro Sticke wean 2% Zinsn valong. Wia vü zoit Sheila jedn Monat va dene 3 Monat?	"##Lösung:
 
 **Schritt 1 – Gsamtprais (ohne Zins):**
@@ -2338,7 +2338,7 @@ Per month: $765 / 3 = $255
 
 The answer is $255 per month.
 
-The user is writing in a dialect that looks like it could be Swiss German or a similar dialect. Let me respond in a similar style or in standard German with the math clearly shown."	stop
+The user is writing in a dialect that looks like it could be Swiss German or a similar dialect. Let me respond in a similar style or in standard German with the math clearly shown."	stop	255.0	0	1		
 q71d76256	Artie hot an Blumenstond am Bauernmoakt. Er vakafft drei Oatn va Blumen: Studentenblumen, Petunien und Begonien. NOrmalerweise vakafft er de Studentenblumen für 2,74 Dollar pro Topf, Petunien für 1,87 Dollar pro Topf und Begonien für 2,12 Dollar pro Topf. Artie hot heit koa Wechselgöd, drum hota beschlossn dass a seine Preise aufn nächstn Dollar aufrund. Wonn Artie 12 Tepf Studentenblumen, 9 Tepf Petunien und 17 Tepf Begonien vakafft, wia vü Dollar weata vadeana?	"## Rechenweg
 
 Da Artie seine Preise aufn **nächstn Dollar aufrundt**:
@@ -2386,7 +2386,7 @@ Let me double-check:
 - 17 × 3 = 51
 - 36 + 18 + 51 = 105
 
-So the answer is $105."	stop
+So the answer is $105."	stop	105.0	0	0	105	0
 qd6f9023f	Luke is am Strond und baut Sondburgn. Er merkt, dass jede Ebene va ana Sondburg nur hoib so vü Quadratmeter hot wia de Ebene drunta. Wonn er a 4-stöckige Sondburg baut und de oberste Ebene 16 Quadratmeta hot, wia gross is donn im Durchschnitt a Ebene in Quadratmeter?	"## Lösung
 
 Wia jede Ebene nur **hoib** so groß is wia de drunta, dann is de Ebene drunta **doppelt** so groß:
@@ -2421,7 +2421,7 @@ Average per level = 240 / 4 = 60 m²
 
 The answer is 60 square meters.
 
-Let me respond in the same Bavarian dialect to match the user's tone."	stop
+Let me respond in the same Bavarian dialect to match the user's tone."	stop	60.0	0	1		
 qcf724c14	Cecilia hot grod an nein Welpn kafft. Laut ihrn Tieroazt muas sie eam in de erstn 180 Tog mi 1 Tassn Hundefuata täglich fuatan. Danoch brauchta 2 Tassen Hundefuata täglich fürn Rest va sein Lebn. Wonn a Sackal Hundefuata 110 Tassenportionen hot, wia vü Sackal Hundefuata vabraucht Cecilia donn im erstn Joa?	"**Lösung:**
 
 Im erstn Joa (365 Tog) gibt's zwaa Phasen:
@@ -2454,7 +2454,7 @@ Bags needed: 550 / 110 = 5 bags
 
 So Cecilia uses 5 bags of dog food in the first year.
 
-Let me respond in Bavarian dialect since the question was in Bavarian."	stop
+Let me respond in Bavarian dialect since the question was in Bavarian."	stop	5.0	0	1		
 q6330b5ad	Wonn Raymond hoib so vü Wäsch woscht wia Sarah, und Sarah 4-moi so vü Wäsch woscht wia David, donn rechn den Unterschied va da Wäschemenge aus de Raymond und David woschn, wonn de Sarah 400 Pfund Wäsch woscht.	"Hier is d'Rechnung:
 
 **Gegeben:**
@@ -2481,7 +2481,7 @@ Let me solve:
 - Sarah = 4 times David, so David = Sarah/4 = 400/4 = 100 pounds
 - Difference between Raymond and David = 200 - 100 = 100 pounds
 
-I'll respond in the same Bavarian dialect to match the user's language."	stop
+I'll respond in the same Bavarian dialect to match the user's language."	stop	100.0	0	1		
 qfb8247db	Vincent ko Blumen in 3-er-Packungen für 2,50 US-Dollar oda in 2-er-Packungen für 1 US-Dollar kaffn. Wia vü Göd spoat er, wonn er 18 Blumen zan bessan Preis kafft?	"**Da bessan Preis:**
 
 - 3-er-Packung: 2,50 $ / 3 = **0,83 $** pro Blume
@@ -2518,7 +2518,7 @@ Wait, let me re-read. ""Wia vü Göd spoat er"" - ""How much money does he save"
 
 So the answer is $6.00.
 
-Let me respond in the same dialect/style the user used."	stop
+Let me respond in the same dialect/style the user used."	stop	6.0	0	1		
 q4da79a41	John adoptiert an Hund. Er geht mit eam zan Hundefrisör, wos 100 US-Dollar kost. Da Hundefrisör gib eam an Rabatt va 30%, weila Neikunde is. Wia vü kost de SItzung ban Hundefrisör?	"Ban Hundefrisör kost de Sitzung:
 
 100 $ − 30 % Rabatt = 100 $ − 30 $ = **70 US-Dollar**
@@ -2535,7 +2535,7 @@ So the calculation is:
 - Discount amount: 100 × 0.30 = 30 USD
 - Final price: 100 - 30 = 70 USD
 
-I'll answer in Bavarian dialect to match the user's language."	stop
+I'll answer in Bavarian dialect to match the user's language."	stop	70.0	0	1		
 qd3f2e43b	Zwoa Diandla griang jeweils ⅙ va de 24 Lita Wossa. Donn hot a Bua 6 Lita Wossa griag. Wia vü Lita Wossa bleim üwa?	"**Berechnung:**
 
 - Zwoa Diandla griang **jeweils** ⅙ va 24 L:
@@ -2564,7 +2564,7 @@ Let me calculate:
 - Total consumed: 8 + 6 = 14 liters
 - Remaining: 24 - 14 = 10 liters
 
-Let me respond in the same dialect style."	stop
+Let me respond in the same dialect style."	stop	10.0	0	1		
 qffe70c6a	Charlie hot 10 Sticker kob. Er hot 21 Sticker in an Lodn in da Moll kafft und hot 23 Sticker zan Geburtstag griag. Donn hotta seina Schwesta 9 Sticka gem und hot 28 zan dekoriern va ana Gruasskoatn braucht. Wia vü Sticker hot Charlie übrig?	"**Rechnung:**
 
 - Start: **10** Sticker
@@ -2597,7 +2597,7 @@ Let me verify: 10 + 21 = 31; 31 + 23 = 54; 54 - 9 = 45; 45 - 28 = 17.
 
 So Charlie has 17 stickers left.
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	17.0	0	1		
 q7d0f9963	Grace wieg 125 Pfund. Alex wieg 2 Pfund weniger ois des 4-fache va da Grace ihrn Gwicht. Wia vü Pfund wiegn se zommen?	"So, ma rechns:
 
 - **Grace:** 125 Pfund
@@ -2615,7 +2615,7 @@ Let me solve:
 - Alex = 4 × 125 - 2 = 500 - 2 = 498 lbs
 - Together = 125 + 498 = 623 lbs
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	623.0	0	1		
 q792b7ea9	Dan setzt 3 Rosnbischl ei. Jeda Rosnbuschn hot 25 Rosn. Jede Rosn hot 8 Dornen. Wia vü Dornen sans insgesomt?	"So, des rechnd ma aus:
 
 - 3 Rosnbischl
@@ -2637,7 +2637,7 @@ So the calculation is:
 
 The answer is 600 thorns.
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	600.0	0	1		
 q3dfac176	A Fuasboiteam spüt 22 Spü. Se hom 8 mehr gwunga ois wia valoan. Wia vü hom se gwunga?	"**15 Gwün.**
 
 So rechnd ma's aus:
@@ -2702,7 +2702,7 @@ G = 15
 
 The answer is 15 wins.
 
-Let me respond in Bavarian dialect since that's what the user wrote in."	stop
+Let me respond in Bavarian dialect since that's what the user wrote in."	stop	15.0	0	1		
 qc8e2bf9d	Eugen naht an Quilt aus oitn Souvenir-T-Shirts. Er hot a T-Shirt va jedn Urlaub, dena gmocht hot. Er foat jeds Joa vier moi in Urlaub. Mit der Tradition hota in dem Joa ogfonga, in dem a 23 woan is, und hot T-Shirts für jeds Joa bis 33, gsommet. Wia vü Quilt-Blöck hota insgesomt?	"##Lösung
 
 **Gäba:**
@@ -2763,7 +2763,7 @@ From 23 to 33 inclusive: 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 = 11 years.
 
 4 × 11 = 44.
 
-The answer is 44 quilt blocks."	stop
+The answer is 44 quilt blocks."	stop	44.0	0	1		
 q87073282	Greg hot an Wecka gstöt, der drei moi am Tog leit. Wonn da Wecka los geht, leit a solong, bis da Greg eam ausschoit. Wiara heit zan erstn moi gleit hot, hota vier moi klinglt. Ban zweitn Moi wiara gleit hot, hota drei moi so long klinglt wia ban erstn Moi. Ban drittn Moi hota hoib so long gleit wia ban zweitn Moi. Wia oft hot da Wecka insgesomt gleit?	"## Lösung
 
 Des Rechna is schen eifach:
@@ -2797,7 +2797,7 @@ Total: 4 + 12 + 6 = 22 times
 
 The question asks ""Wia oft hot da Wecka insgesomt gleit?"" - How many times did the watch ring in total?
 
-Answer: 22 times."	stop
+Answer: 22 times."	stop	22.0	0	1		
 qe293b5e8	A Firma zoit ihre Mitoabeiter a Einstiegsgehoit va 600 Dollar pro Monat. De Unternehmenspolitik belohnt longjährige Mitoabeiter: Noch fünf DIenstjoa weats Gehoit jeds Joa erhöht. De jährliche Erhöhung is imma a festa Betrog, der ois 10% van onfänglichen Joaresgehoit grechnet weat. Wonn Sylvie grod ihr fünfts Joa im Unternehmen obgschlossn hot, wia hoch weat ihr Joaresgehoit sei, nochdem sie drei weitere Joa goabat hot?	"## Lösung
 
 **Schritt 1: Anfängliches Jahresgehalt berechnen**
@@ -2872,7 +2872,7 @@ Let me double-check:
 - Annual raise: 10% of 7,200 = 720
 - After 3 raises: 7,200 + 3 × 720 = 7,200 + 2,160 = 9,360
 
-Yes, 9,360 dollars."	stop
+Yes, 9,360 dollars."	stop	9360.0	0	1		
 qb9e657cf	Marilyns erste Plottn is 10-moi so oft vakafft woan wia Haralds. Wonn se zommen 88.000 Exemplare vakafft hom, hot Harald wia vü Exemplare vakafft?	"**Harald hot 8.000 Exemplare vakafft.**
 
 So is des ausgerechnet:
@@ -2908,7 +2908,7 @@ x = 8,000
 
 So Harald sold 8,000 copies.
 
-Let me respond in the same dialect style to be friendly, but I'll keep it clear."	stop
+Let me respond in the same dialect style to be friendly, but I'll keep it clear."	stop	8000.0	0	1		
 q8d6c3ac8	Christina hot 16 Freind za ihra Geburtstogsfeia eiglodn. Sie rechnet, dass nur 75% va eana kema wean, oiso richt sie für jedn erwoatetn Gost a Geschenksackal her. Wonn de Geschenksackal jeweils 2 Dollar kostn, wia hoch wean donn de Gesomtkostn für de Geschenksackal sei?	"**Lösung:**
 
 Christina hot **16** Freind eiglodn, owa sie rechnet nur mit **75 %**, die kemma wean:
@@ -2931,7 +2931,7 @@ Let me solve:
 - Each gift bag costs 2 dollars
 - Total cost: 12 × 2 = 24 dollars
 
-I'll respond in Bavarian dialect to match the user's language."	stop
+I'll respond in Bavarian dialect to match the user's language."	stop	24.0	0	1		
 qa59fef67	Ted der T-Rex plant, Eachtlengsalot zan Dinopicknick mitznehma. Er woas, dass a erwochsena Dinosaurier 10 Pfund Eachtlengsalot isst, und a Jungs hoib so vü isst wia a erwochsens Tier. Wonn am Picknick 20 Erwochsene und 5 Junge teilnehma, muas Ted wia vü Eachtlengsalot zan Picknick mitnehma, damit olle gnuag hom?	"## Léisung
 
 **Ginn:**
@@ -2961,7 +2961,7 @@ So:
 - 5 young ones: 5 × 5 = 25 pounds
 - Total: 200 + 25 = 225 pounds
 
-Let me respond in Luxembourgish since the question was in Luxembourgish."	stop
+Let me respond in Luxembourgish since the question was in Luxembourgish."	stop	225.0	0	1		
 q4db223a4	Jan hot dreimoi so vü Haustier wia Marica. Marcia hot zwoa Haustier mehr ois de Cindy. Wonn Cindy vier Haustier hot, wia vü Haustier hom donn olle drei zommen?	"Okay, lass ma des rechne:
 
 - **Cindy** hot **4** Haustier.
@@ -2983,7 +2983,7 @@ Let me solve:
 
 Total: 4 + 6 + 18 = 28 pets.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	28.0	0	1		
 q2ae0bd70	Emily hot 4 Kinda: Amy, Jackson, Corey und James. Amy is 5 Joa öta ois Jackson und 2 Joa jünga ois Corey. Wonn James 10 Joa oit is und 1 Joa jünga ois Corey, wia oit is donn Jackson?	"## Lösung
 
 Gehn ma des Schritt für Schritt durch:
@@ -3014,7 +3014,7 @@ From Amy = Jackson + 5:
 9 = Jackson + 5
 Jackson = 4
 
-So Jackson is 4 years old."	stop
+So Jackson is 4 years old."	stop	4.0	0	1		
 q412bff21	Lee is de 400m Hürdenlauf zwoa Sekundn schnella glaffn ois Gerald. Olladings hot Gerald sei Ernährungsweise umgstöt, durch des hota sei Geschwindigkeit um 10% vabessat. Wonn Lee de 400m Hürden in 38 Sekundn lafft, wia schnö ko donn Gerald mit seiner verbessertn Ernährungsweise de 400m laffn?	"## Lössung
 
 **Gegebna:**
@@ -3072,7 +3072,7 @@ Let me double-check:
 
 Yes, that's correct. Approximately 36.36 seconds, or 36 seconds and 4/11 of a second.
 
-Let me express this more precisely: 400/11 = 36 + 4/11 seconds ≈ 36.36 seconds."	stop
+Let me express this more precisely: 400/11 = 36 + 4/11 seconds ≈ 36.36 seconds."	stop	36.4	0	0	36.36	0
 qf73a338f	In ana Nochboaschoft mit Hosn, Hund und Kotzn gibs 12 Hosn weniga ois wia Hund und Kotzn zommen. Wonns für jedn Hund zwoa Kotzn gib unds insgesomt 60 Hund san, wia vü Haustiere gibs donn insgesomt in da Nochboaschoft?	"## Rechnung
 
 **Ggebn:**
@@ -3107,7 +3107,7 @@ Let me double-check:
 - Cats = (Dogs + Kittens) - 12 = (60 + 120) - 12 = 180 - 12 = 168
 - Total = 168 + 60 + 120 = 348
 
-Yes, 348 pets total."	stop
+Yes, 348 pets total."	stop	348.0	0	1		
 qc5273098	Va de 200 Fünftklässla san ⅖ Buama und ⅔ va de Diandla san ba de Pfadfinderinnen. Wia vü Diandla san nit ba de Pfadfinderinnen?	"## Lösung
 
 **Schritt 1: Anzahl der Buben**
@@ -3137,7 +3137,7 @@ Girls: 200 - 80 = 120
 Girls in girl scouts (Pfadfinderinnen): 2/3 of 120 = 80
 Girls NOT in girl scouts: 120 - 80 = 40
 
-So the answer is 40."	stop
+So the answer is 40."	stop	40.0	0	1		
 qf8da7966	Harry hot letzte Nocht 9 Stund gschlofn. Sei Freind James hot nur ⅔ der Zeit gschlofn, de da Harry gschlofn hot. Wia vü Stund hot Harry mehr gschlofn ois James?	"James hot ⅔ vo da 9 Stund gschlofn, also:
 
 ⅔ × 9 = **6 Stund**
@@ -3157,7 +3157,7 @@ So:
 - James slept 2/3 of Harry's time = 2/3 × 9 = 6 hours.
 - Difference: 9 - 6 = 3 hours.
 
-The answer is 3 hours. I'll respond in Bavarian dialect to match the user's language."	stop
+The answer is 3 hours. I'll respond in Bavarian dialect to match the user's language."	stop	3.0	0	1		
 q186d2aa2	Wonn Freda Dosntomatn zur Soss eikocht, valierns de Höfte vom Gwicht. Jede 16-Unzen-Dosn Tomatn, de sie braucht, hot 3 Tomatn drei. De letzte Portion Tomatensosse hot 32 Unzn Sosse gem. Wia vü Tomatn hot Freda braucht?	"## Lösung
 
 **Gegeben:**
@@ -3194,7 +3194,7 @@ So how many cans does she need?
 
 Each can has 3 tomatoes, so 4 cans × 3 tomatoes = 12 tomatoes.
 
-The answer is 12 tomatoes."	stop
+The answer is 12 tomatoes."	stop	12.0	0	1		
 q9c762a15	Auf da Autoboh staun si de Autos. A poa foan in de erstn 15 Minuntn durch, danoch keman no amoi 20 Autos in de restlichen 15 Minutn. 5 Autos foan aus da Reih ausse, damit se ni durchn Stau foan miassn. Wonn am Ofong 30 Autos auf da Autoboh woan, wia vü Autos san donn in de ersten 15 Minutn durchn Stau kema?	"Des is a einfache Rechne:
 
 - Am Ofong san **30 Autos** auf da Autoboh.
@@ -3219,7 +3219,7 @@ So X = 25 - 20 = 5
 
 The answer is 5 cars got through in the first 15 minutes.
 
-Let me respond in Bavarian dialect since the question was in Bavarian."	stop
+Let me respond in Bavarian dialect since the question was in Bavarian."	stop	15.0	0	0	5	1
 q507804db	Mary gachtlt voi gern. Gestan hot sie 18 neie Topfpflonzn va ihra Lieblingsgärtnerei griag. Sie hot scho 2 Topfpflonzn auf jedm va ihre 40 Fenstabrettln van grossn Londhaus steh. Wei sie grosszügig is mecht sie moang 1 Topfpflonzn va jedn Fenstabrettl an Freind und Familie vaschenkn. Wia vü Topfpflonzn bleim Mary donn no üwa?	"##Lösung
 
 **Schritt 1 – Bestehende Pflanzen:**
@@ -3263,7 +3263,7 @@ Total plants: 80 (existing) + 18 (new) = 98
 Plants given away: 40
 Remaining: 98 - 40 = 58
 
-The answer is 58 potted plants."	stop
+The answer is 58 potted plants."	stop	58.0	0	1		
 q120898cb	Jerome hot 4 Freind, de eam besucht hom. Da erste Freind hot 20 moi auf de Klingel druckt, bevor Jerome aufgmocht hot. Da zweite Freind hot 125% so oft auf de Klingel druckt wia Jeromes ersta Freind. Da dritte Freind druckt 10 Moi öfta auf de Klingel ois da vierte Freind. Wonn da vierte Freind 60 Moi druckt hot, wia oft hot de Klingel donn insgesomt gleit?	"##Lösung
 
 Schritt für Schritt:
@@ -3301,7 +3301,7 @@ Total: 20 + 25 + 70 + 60 = 175 times
 
 Let me double-check: 20 + 25 = 45, 45 + 70 = 115, 115 + 60 = 175.
 
-Yes, 175 times total."	stop
+Yes, 175 times total."	stop	175.0	0	1		
 q55e446ec	Solo muas 4 Seitn aus sein naturwissenschoftlichn Textbuach lesn, 20 Seitn aus sein Gemeinschaftskundebuch, 7 Seitn aus sein Gschichtsbuach und 8 Seitn aus seinn Geografiebuach. Solo liest am Montog 15 Seitn. Wonn er noch 4 Tage hat, um ois zan lesn, wia vü Seitn pro Tog muasa donn im Durchschnitt lesn?	"**Aufgschloss'n:**
 
 **Gsammtseitn zan lesn:**
@@ -3334,7 +3334,7 @@ He has 4 more days to read the rest.
 
 Pages per day: 24 / 4 = 6 pages per day.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	6.0	0	1		
 qe178e77b	John trinkt zan Fruastuck, zan MIttogessn und Obndessn gern a Glasl Wossa. Zan Obschluss trinkta a no oans voam Schlofngeh. Des duata an jedn Wochntog, oba am Wochenende nimmb er zan entsponna gern a glasl Limonade. Wia vü Glasl Wossa trinkt John pro Wochn?	"## Rech'n:
 
 **Wochntog (Mo–Fr, 5 Tog):**
@@ -3411,7 +3411,7 @@ But ""a glasl"" is singular... In Bavarian, ""a glasl"" could be used genericall
 
 I think for a clean math problem, the answer is 20 glasses of water per week (5 weekdays × 4 glasses). On the weekend he drinks lemonade instead, so no water counted.
 
-Let me go with 20."	stop
+Let me go with 20."	stop	20.0	0	0	20	0
 q13dd2b3f	A Nebeschleia kimmb van Meer eina und leg se üba a Stodt. Es dauat 10 Minutn, um jeweils 3 Meiln va da Stodt zan bedeckn. Wonn de Stodt van Meeresufa bis zan gegenüberliegenden Londesinneren 42 Meilen broat is, wia vü Minutn braucht donn da Nebeschleia, bis a si üba de gonze Stodt gleg hot?	"Da Nebeschleia bedeckt 3 Meiln in 10 Minutn.
 
 De Stodt is 42 Meilen broat.
@@ -3433,7 +3433,7 @@ So the problem is:
 
 The answer is 140 minutes.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	140.0	0	1		
 q5d8678a9	Poppy mocht a 1000-Teile-Puzzle. Sie leg a Viertl va de Teile aufs Bett, donn leg ihr Mama a Drittel va de übrigen Teile. Wia vü Puzzleteile miasn no gleg wean?	"## Lösung
 
 1. **Poppy legt a Viertl:**
@@ -3460,7 +3460,7 @@ Let me solve this:
 4. Mom puts a third of the remaining: 750/3 = 250 pieces placed
 5. Pieces still to be placed: 750 - 250 = 500
 
-So 500 pieces still need to be placed."	stop
+So 500 pieces still need to be placed."	stop	500.0	0	1		
 q10c23d37	Cody isst dreimoi mehr Keksl ois da Amir. Wonn Amir 5 Keksl iss, wia vü Keksl essn donn beide zommen?	"Amir isst **5** Keksl.
 
 Cody isst dreimoi so vü ois da Amir: 3 × 5 = **15** Keksl.
@@ -3481,7 +3481,7 @@ In common usage, ""dreimal mehr"" in colloquial German/Bavarian typically means 
 
 Together: 5 + 15 = 20 cookies.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	20.0	0	1		
 q71246a09	John hot 3 Kistn. Jede Kistn is 5 Inch moi 6 Inch moi 4 Inch gross. De Wänd san 1 Inch dick. Wia gross is es Innenvolumen va olle 3 Kistn zomm?	"**Innenvolumen vo a Kistn:**
 
 De Wänd san 1 Inch dick, also müss ma vo jeder Dimensio 2 Inch abziehn (1 Inch links/rechts bzw. oben/unt):
@@ -3517,7 +3517,7 @@ Inner volume of one box: 3 × 4 × 2 = 24 cubic inches
 
 For 3 boxes: 24 × 3 = 72 cubic inches
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	72.0	0	1		
 q51ea4378	Frankie schaut jedn Obnd fern, nochdem a seine Hausaufgobn gmocht hot. Am MOntog und Dienstog hota jeweils a oa-stündige Foige va seina Lieblingssendung gschaut. Am Mittwoch hota einige Foign va ana 30-minütigen Sendung ogschaut. Am Donnastog hota seine Hausaufgobn friara gmocht und a 1-stündige Foige und a 30-minütige Show ogschaut. Am Freitog hota wegan Wochenende länga aufbleim deaft und zwoa 1-stündige Foign gschaut. Wonna insgesomt 7 Stund ferngschaut hot, wia vü 30-Minuten longe Foign hota donn am Mittwoch gschaut?	"## Rech'nung
 
 Ich zähl de gschautn Zein amoi zamm:
@@ -3574,7 +3574,7 @@ Total: 1 + 1 + 0.5x + 1.5 + 2 = 7
 0.5x = 1.5
 x = 3
 
-So he watched 3 episodes of the 30-minute show on Wednesday."	stop
+So he watched 3 episodes of the 30-minute show on Wednesday."	stop	3.0	0	1		
 qe465613a	Henry bockt Keksl für an regioaln Backwettbewerb. Er mechat zwoamoi so vü bockn wia letzts Joa. Wiara mitm bockn fertig woa, merkt er, dass er 15 Keksl mehr bockn hot ois a eigentlich woit. Er losst 5 Keksl foin, wiara se zan kühlen ausse stöt. Insgesomt hota hiaz 110 Keksl. Wia vü Keksl hot da Henry letzts Joa bockn?	"## Rechnung (von hinten nach vorne)
 
 | Schritt | Rechnung | Keksl |
@@ -3605,7 +3605,7 @@ Let me work backwards:
 - He baked 15 more than he wanted, so what he wanted: 115 - 15 = 100 cookies.
 - He wanted to bake twice as many as last year, so last year: 100 / 2 = 50 cookies.
 
-So Henry baked 50 cookies last year."	stop
+So Henry baked 50 cookies last year."	stop	50.0	0	1		
 q1e0f8fcb	A lokale Tankstö vakafft Sprit für 3,00 Dollar pro Gallone. A App-Firma gib 0,20 DOllar cashback pro Gallone, wonn ma an dera Tankstö tankt. Wonn wer 10 Gallonen Sprit kafft, wia vü kost der Sprit noch da Cashback-Prämie? Gib de Ontwoat in Dollar o.	"**Berechnung:**
 
 - Spritkoscht: 10 Gallonen × 3,00 $ = **30,00 $**
@@ -3626,7 +3626,7 @@ So:
 
 The answer is $28.00.
 
-Let me respond in the same dialect/language as the question (Luxembourgish/German dialect)."	stop
+Let me respond in the same dialect/language as the question (Luxembourgish/German dialect)."	stop	28.0	0	1		
 q91fe6f6e	Marcell und Beatrice hom an Wettbewerb laffn, um zan segn wea de meistn Fruchtrolln essn ko.Drum roin se olle ausanond, de se findn kenan. Leida mocht oana an Fehla und Beatrices Sticke is zwoa Roin broat und 24 Roin long, während Marcels Sticke 3 Roin broat und 14 Roin long is. Wonn boade ois essn, wia vü homs donn im Durchschnitt gessn?	"Okay, lass ma des rechne:
 
 **Beatrices Sticke:** 2 Roin broat × 24 Roin long = **48 Fruchtrolln**
@@ -3691,7 +3691,7 @@ Let me re-read to make sure I understand the dialect correctly. The dialect seem
 
 So the answer is 45 fruit rolls on average each.
 
-Let me write a response in the same dialect style."	stop
+Let me write a response in the same dialect style."	stop	45.0	0	1		
 q76afc2ba	Julias Boot hot a Loch kob, wia se am See draussn woa. Ban zruckruadan zan Ufa hots Boot für olle 10 Fuass zwoa Lita Wossa gschluckt. Sie hot 16 Sekundn braucht, um zwoanzg Fuass zan ruadan. Da Strond woa 64 Sekundn weg. Wia vü WOssa hots Boot gschluckt, bis Julia in Strond erreicht hot?	"## Lösung
 
 **Schritt 1: Rudergeschwindigkeit**
@@ -3723,7 +3723,7 @@ So:
 - Distance to shore: 64 seconds × 1.25 feet/second = 80 feet
 - Water swallowed: 2 liters per 10 feet → 80 feet ÷ 10 × 2 liters = 16 liters
 
-The answer is 16 liters of water."	stop
+The answer is 16 liters of water."	stop	16.0	0	1		
 q9c73cd77	A Klassnraum hot a Tofe, de se 4 Lehra teiln, weil se den Raum obwechslnd nutzn. Jeda Lehra hot 2 Stundn pro Tog und braucht de Tofe in jeda Stund. Wonn de Tofe 3-moi pro Stund gwischt weat, wia oft weat se pro Tog gwischt?	"**Rechnung:**
 
 - 4 Lehra × 2 Stundn = **8 Stundn** Tofennutz pro Tog
@@ -3750,7 +3750,7 @@ Wipes per day: 8 hours × 3 wipes per hour = 24 wipes
 
 The answer is 24 times per day.
 
-Let me respond in the same dialect style to match the user's tone."	stop
+Let me respond in the same dialect style to match the user's tone."	stop	24.0	0	1		
 q2bbbdc5a	Ryan pflonzt pro Tog 2 Blumen in sein Goatn. Noch 15 Tog hot er wia vü Blumen, wonn 5 ni ogwochsn san?	"Ryan hot **25 Blumen**.
 
 So, wia des ausrechnet:
@@ -3771,7 +3771,7 @@ So the math is:
 
 The answer is 25.
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	25.0	0	1		
 qb65bf453	Jamals Handy ko 6-moi mehr FOtos speichan ois Brittanys Handy. De maximale Onzoi Fotos, de Brittanys Handy speichan ko, is 50-moi höha ois de Onzoi an Vegl auf Jamals Foto mit de Enten im Zoo. WOnn Jamals Handy 1.800 Fotos speichan ko, san wia vü Entn auf Jamals Foto va de Entn im Zoo zan segn?	"## Lösung
 
 **Gegebene Informationen:**
@@ -3808,7 +3808,7 @@ Let me solve this:
 - So 300 = 50 × (number of ducks)
 - Number of ducks = 300 / 50 = 6
 
-The answer is 6 ducks."	stop
+The answer is 6 ducks."	stop	6.0	0	1		
 q62cadf26	Sasha merkt, dass de Hoizpreise im 50% in de letztn poa Monat gstiegn san, seit sie Hoiz kafft hot. Wei sie an Rest übrig hot, wü si den vakaffn. Sie hot zehn 2 x 4 x 10 grosse Brettln üwa, für de se pro Sticke 10 US-Dollar zoit hot. Sie hot a fünf 4 x 4 x 10 Brettln, de se für 16 US-Dollar pro Sticke kafft hot. Wonn se ois vakafft, wia vü Gwinn mocht se donn?	"## Gwinn-Berechnung
 
 De Hoizpreise san um **50%** gstiegn, also kafft se de Brettln zu dem neien, höhern Preis.
@@ -3853,7 +3853,7 @@ For the 4x4x10 boards:
 
 Total profit: $50 + $40 = $90
 
-Let me respond in Bavarian/Austrian dialect to match the user's language."	stop
+Let me respond in Bavarian/Austrian dialect to match the user's language."	stop	90.0	0	1		
 q6637faea	Katy mocht Kaffee und nimmb dazua Teeleffe mit Zucka und Tassn mit Wossa im Verhältnis 7:13. Wonn sie insgesomt 120 Teeleffe Zucka und Tassen Wossa braucht hot, wia vü Teeleffe Zucka hot sie donn braucht?	"Schön, dass ich helfe! 😊
 
 **Gerechnet:**
@@ -3888,7 +3888,7 @@ Teaspoons of sugar = (7/20) × 120 = 7 × 6 = 42
 
 So the answer is 42 teaspoons of sugar.
 
-Let me respond in a similar dialectal/casual German style to match the user's tone."	stop
+Let me respond in a similar dialectal/casual German style to match the user's tone."	stop	42.0	0	1		
 q7c7b8736	John kafft 2 Paardl Schua für jeds seina 3 Kinda. Se kostn 60 US-Dollar pro Paardl. Wia vü hota zoit?	"John hot **360 US-Dollar** zoit.
 
 So:
@@ -3912,7 +3912,7 @@ So the calculation is:
 Total pairs = 3 × 2 = 6 pairs
 Total cost = 6 × 60 = 360 USD
 
-Let me respond in a similar informal/dialectal German style."	stop
+Let me respond in a similar informal/dialectal German style."	stop	360.0	0	1		
 q8f663843	A Zoibeomter am Haupthofn va da SeaSide Zoiobfertigung hot 2 Container mit importierten Autos zöt, wobei in jedn Container 5 Autos woan. Am nächstn Tog san no mehr Container gliefert woan und de Gesomtzoi Autos is auf 30 gstiegn. Wia vü Container san am zweitn Tog importiert woan, wonn in jedn Container 5 Autos san?	"## Lösung
 
 **Am easchtn Tog:**
@@ -3939,7 +3939,7 @@ So:
 - Cars added on day 2: 30 - 10 = 20 cars
 - Containers on day 2: 20 / 5 = 4 containers
 
-The answer is 4 containers."	stop
+The answer is 4 containers."	stop	4.0	0	1		
 q6edb8d49	Lylahs Gesomtgehoit woa 30% niedriga ois des vo Adrien. Vier joa späta woa Adriens Gehoit 40% mehr ois des, wos er vor 4 Joa verdient hot. Wonn Adriens und Lylahs Gehoit gleichzeitig gstiegn san und Adrien vor vier Joa 40000Dollar verdient hot, berechne des Gesomtgehoit, des de boadn vier joa Späta griag hom. Gib de Ontwoat in Dollar o.	"## Lösung
 
 **Gegeben:**
@@ -3980,7 +3980,7 @@ Let me work through this:
 5. Lylah's salary 4 years later: 28,000 × 1.40 = $39,200
 6. Total salary four years later: 56,000 + 39,200 = $95,200
 
-The answer is $95,200."	stop
+The answer is $95,200."	stop	4.0	0	0	95200	1
 q1b1c6563	Miguel braucht zan Zeichna 2 Zeichenblöck pro WOchn. Wonn a Zeichenblock 30 Blattln Papier hot, wia vü Blattl Papier vabraucht er pro Monat?	"So, des rechne ma aus:
 
 - **2 Zeichenblöck** pro Woch
@@ -4001,7 +4001,7 @@ So the calculation:
 
 2 × 30 × 4 = 240 sheets per month
 
-Let me respond in the same dialect/Bavarian German style."	stop
+Let me respond in the same dialect/Bavarian German style."	stop	240.0	0	1		
 qdda5aad8	Morisette und Kael san gebetn woan, Obst mitznehma. Morisette hot 5 Äpfe und 8 Orangen mitgnomma, und Kael hot doppet so vü Äpfe und hoib so vü Orangen wia Morisette mitgnomma. Wia vü Frücht hom se insgesomt?	"So, des rechne ma aus:
 
 **Morisette:**
@@ -4027,7 +4027,7 @@ Let me calculate:
 
 Total: 13 + 14 = 27 fruits
 
-Let me respond in Bavarian dialect to match the user's language."	stop
+Let me respond in Bavarian dialect to match the user's language."	stop	27.0	0	1		
 qbe882310	Sadie hot am Montog 8 Stund gschlofn. De nächstn zwoa Tog hot sie 2 Stund weniga pro Tog gschlofn, weil sie einiges zan doa kob hot. Wonn sie den Rest va da WOchn über 1 Stund mehr ois an de boadn Togn gschlofn hot, wia vü Stund hot sie donn insgesomt in der WOchn gschlofn?	"## Lösung
 
 **Montag:** 8 Stunden
@@ -4080,7 +4080,7 @@ Total: 8 + 6 + 6 + 7 + 7 + 7 + 7 = 48 hours
 
 Let me double-check: 8 + 6 + 6 = 20. 7 × 4 = 28. 20 + 28 = 48.
 
-Yes, 48 hours total."	stop
+Yes, 48 hours total."	stop	48.0	0	1		
 q5531657c	Rosie ko 3 Stund long mit 10 Meilen pro Stund laffn. Danoch lafft sie 5 Meilen pro Stund. Wia vü Meiln ko sie in 7 Stund laffn?	"So, des rechn ma aus:
 
 **De easchtn 3 Stund:**
@@ -4103,7 +4103,7 @@ So:
 - Remaining time: 7 - 3 = 4 hours at 5 miles/hour = 20 miles
 - Total: 30 + 20 = 50 miles
 
-Let me respond in the same dialect style (Bavarian/Austrian German)."	stop
+Let me respond in the same dialect style (Bavarian/Austrian German)."	stop	50.0	0	1		
 qafb91192	Jennie hüft im Büro va ihra Muata. Sie hot an Stape mit 60 Briaf, de frankiert wean miassn und bereits oan frankiertn Briafstape. Sie kleb Briafmarkn auf a Drittl va de Briaf, de frankiert wean miassn. Wonn si in dem Stape mit bereits frankiertn Briafn 30 Briaf befindn, wia vü Briaf woan donn in dem Stape, ois Jennie ogfonga hot?	"## Lösung
 
 **Gegebene Information:**
@@ -4154,4 +4154,4 @@ She sticks stamps on a third of the letters that need to be stamped. So she stam
 So: initial stamped stack + 20 (newly stamped) = 30
 initial stamped stack = 10
 
-The answer is 10."	stop
+The answer is 10."	stop	10.0	0	1		

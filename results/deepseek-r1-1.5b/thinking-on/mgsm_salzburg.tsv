@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janets Enten legn 16 Eier am Tog. In da Friah isst sie drei zan Fruastuck, und mit viere backt sie jeden Tag Muffins für ihre Freind. Den Rest vakafft sie jeden Tag am Bauernmoakt für 2 US-Dollar pro frischem Entenei. Wia vü Dollar nimmt sie am Tag am Bauernmarkt ei?	"
 
 Janets Enten spends $32 on her Enten, $0.50 on muffins, and $1 at the market, totaling at least $33.50. However, the exact amount depends on the costs of the Fruastuck and other unspecified expenses, which are not provided in the problem."	18	"
@@ -36,12 +36,12 @@ I think the answer should include the known amounts: 32 for Eier, 0.50 for muffi
 Alternatively, maybe the Fruastuck is part of the vacuuming or the rest of her expenses, but without knowing its cost, I can't calculate. So, I think the best I can do is provide the amounts I know and note the unknowns. Maybe the answer is $33.50, but it's unclear.
 
 I'm a bit stuck here, but I'll proceed with the known amounts and note the unknowns.
-"	stop
+"	stop	1.0	0	0		0
 qa55f7050	Für a Kleidl braucht ma 2 Knäuel blaue Woin und hoib so vü weiße Woin. Wia vü Knäuel braucht ma insgesomt?	"
 
 Für 2 Knäuel-Blau braucht du insgesamt **1 Wöte**, um eine Hoibseite zu spannen."	3	"
 Ich brauche 2 Knäuel-Blau, die Hoib seines Weiße Woin. Würde ich die Wöte brauchen, um die Wobeke zu spannen? Also, wieviele Knäuel-Blau brauche ich, um insgesamt eine Wöte zu spannen?
-"	stop
+"	stop	1.0	0	0	1	0
 qde1bef8b	Josh wü a Haus kaffn und wieder weiterverkaffn. Er kafft des Haus für $80.000 und steckt donn $50.000 in Reparaturen. Durch des steigt da ursprüngliche Wert van Haus um 150%. Wia vü Gewinn hot er in Dollar gmocht?	"
 
 Um den **Gewinn** von Josh zu berechnen, gehen wir Schritt für Schritt vor:
@@ -72,7 +72,7 @@ Zuerst berechne ich den vorgeschlagenen Wert des Haus. Das Haus costs 80.000 Dol
 Nun berechnen wir den Verkaufser worldwide, der auf 200.000 Dollar basiert. Der Verkaufser bietet 70.000 Dollar pro Haus, wodurch die Gesamtverwaltung 200.000 * 70.000 = 14.000.000.000 Dollar hält.
 
 Dann berechnen wir den Gewinn, indem wir das betrobbene Hauswert von 80.000 Dollar von dem Verkaufserer worldwide abziehen. Der Gewinn beträgt 14.000.000.000 - 80.000 = 13.999.920.000 Dollar.
-"	stop
+"	stop	200000.0	0	0	13999920000	0
 q568beb1f	James nimmb si vor, 3-moi pro Wochn 3 Kurzstreckenläufe z`mochn. Ba jedem Kurzstreckenlauf lafft er 60 Meter. Wia vü Meter lafft er insgesamt pro Woche?	"
 
 Um die Gesamte Länge pro Woche berechnen zu können, gehen wir wie folgt vor:
@@ -99,7 +99,7 @@ Zuerst bestimmen wir die Länge eines Kurzstreckenläufens. Da die Länge pro Sc
 Anschließend berechnen wir die Gesamte Länge pro Woche, indem wir die Länge eines Kurzstreckenläufens mit der Anzahl der一周 von 3 Schritten abgeleitet. Das ergibt 180 Meter pro Woche.
 
 Also, pro Woche lagen 180 Meter im Kurzstreckenläufe.
-"	stop
+"	stop	180.0	0	0	180	0
 q84afe4d6	Wendi gibt jedem vo ihre Hehna jeden Tog drei Tassen gmischt's Hehnafuata mit Samen, Mehlwürmern und Gmias, damit's gsund bleim. Sie fuatat de Hehna in drei getrennten Mahlzeiten. In da Fruah gibt sie ihrer Hehnaschar 15 Tassen Fuata, am Nochmittag no amoi 25 Tassen. Wia vü Tassen Fuata braucht sie für de letzte Mahlzeit vom Tag, wenn Wendis Hehnaschar aus 20 Hehnan besteht?	"
 
 **Lösung:**
@@ -129,7 +129,7 @@ Zuerst analysiere ich die gegebenen Werte. Wendis Hehnaschar hat 20 Hehnan. In d
 Dann berechne ich die Anzahl der Tassen, die nicht aus den Hehnan bestehen. Das ergibt 40 - 20 = 20 Tassen.
 
 Daher braucht Wendi 20 Tassen Fuata, um die fehlenden Tassen zu gmischen.
-"	stop
+"	stop	2.0	0	0	20	1
 qd07ea681	Kylar geht in a Gschäft, weil er Glasln für sei neie Wohnung kaffn wü. A Glasl kost 5 Dollar, oba jedes zweite Glasl kost nur 60% van Preis. Kylar wü 16 Glasl kaffn. Wia vü muaß er dafür zoin?	"
 
 **Lösung:**
@@ -161,7 +161,7 @@ Zuerst bestimme ich die Basierungsprice für ein Glasl, das 5 Dollar kost. Da je
 Nun multipliziere ich die Anzahl der Glasl, die Kylar hat, also 16, mit dem geänderten Preis pro Glasl, um den Gesamtpreis zu bestimmen: 16 * 2,00 = 32,00 Dollar.
 
 Daher muss Wia maut 32,00 Dollar zoin zubetreiben.
-"	stop
+"	stop	64.0	0	1		
 q912b86d0	Toulouse hot doppet so vü Schof wie Charleston. Charleston hat 4-moi so vü Schof wia Seattle. Wia vü Schof hom Toulouse, Charleston und Seattle zommen, wenn Seattle 20 Schof hot?	"
 
 The riddle uses ""vouloir"" (to want) and the phrase ""moy"" (misspelled for ""moi"") to refer to wanting. The key is that wanting Toulouse leads to wanting Charleston and Seattle. The statement ""Ch Charleston has four times as much as I want Seattle"" implies that wanting Toulouse allows you to want all three cities. Thus, the conclusion is that you want Toulouse, Charleston, and Seattle due to the proportionality of wanting Seattle four times as much as you want Toulouse.
@@ -190,7 +190,7 @@ So, in summary, the riddle seems to be using ""vouloir"" (to want) as a verb phr
 Putting it all together, the riddle is likely structured to show that when you want Toulouse, Charleston, and Seattle, and if you want Seattle 4 times as much as you want Toulouse, then you want all three cities. So, the conclusion is that you want Toulouse, Charleston, and Seattle because of the relationship between wanting Seattle and wanting Toulouse.
 
 I think I've got a rough idea now. The riddle uses ""vouloir"" as a verb phrase to mean ""to want,"" and the cities are being asked for their ""moy,"" which is a misspelling of ""moi."" The part where it says ""Ch Charleston has four times as much as I want Seattle"" leads to the conclusion that you want all three cities because of the proportionality.
-"	stop
+"	stop		0	0		0
 q147b7c11	Carla lodt a Datei mit 200 GB owa. Normal schafft sie 2 GB/Minutn, oba soboid 40 % van Download fertig san, erzwingt Windows an Neistart für Updates, und des dauert 20 Minuten. Danoch muaß Carla den Download wieda gonz va vorn ofonga. Wia long dauert's insgesomt, bis de Datei owa glodn is?	"
 
 **Lösung:**
@@ -240,7 +240,7 @@ Danach bestimme ich die Importdauer, die Carla auf den Download zustandswiedig h
 Zum Schluss additive die Importdauer, die Carla auf den Download zustandswiedig hat, um den Download für Updates zu anyways fügen. 
 
 Dann addiere ich die Two-Dauzeiten, die Carla auf den Download zustandswiedig hat, um die Datei owa glodn zu gedenken.
-"	stop
+"	stop	40.0	0	0	1060	0
 qead07ed2	John foat 3 Stunden lang mit 60 Meilen/Stund und draht donn um, wei er merkt, dass er dahoam wos gonz Wichtigs vagessen hot. Er wü innerhoib va 4 Stund wieda hoamkema, steckt oba de ersten 2 Stund im Stau. Danoch foat er a hoibe Stund mit 30 Meilen/Stund und ko für de restliche Zeit va dena 4 Stund mit 80 Meilen/Stund weiterfoan. Wia weit is er am Ende vo de 4 Stund no va dahoam weg?	"
 
 Um den Zeitverdiel von **4 Stunden** zu berücksichtigen, teile ich das Gesamtdauerverteilung in zwei Teile: die ersten 2 Stunden und die subsequenten 2 Stunden.
@@ -272,7 +272,7 @@ Nun berücksichtige ich die subsequenten 2 Stunden, anstatt mit einer Stelle von
 Die Gesamtstrecke ist somit die Summe der beiden Teile:
 
 120 Meilen + 60 Meilen = 180 Meilen.
-"	stop
+"	stop	2.0	0	0	180	0
 q5cb246e4	Eliza griag für de erstn 40 Stund, de sie pro Wochn oabat, 10US-Dollar pro Stund. Für de Überstundn griag sie des 1,2 foche va ihrm normaln Stundnsotz. Wia vü verdient Eliza, wonn sie de Wochn 45 Stund oabat?	"
 
 Um zu bestimmen, ob Eliza die **45 Stunden oabat** verdiert hat, analysieren wir die Bezoche nach Schritt.
@@ -315,7 +315,7 @@ Nun berechne ich die Gesamtproزesszunahme:
 Dann addiere ich die beiden Zunahmen zu erhalten, ob Eliza verdiert hat, dass sie 45 Stunden oabat.
 
 Schließlich überprüfe ich die Rechnung, um zu sorgfältigeren und klareren Ausdruck zu gelangen.
-"	stop
+"	stop	1.2	0	0	45	0
 q3bdd7b1e	A neis Programm is im ersten Monat 60-moi owa glodn woan. Im zweiten Monat woa de Zoi va Downloads drei moi so hoch wia im ersten Monat, im dritten Monat is sie donn um 30% eibrochn. Wia oft is des Programm in de drei Monat insgesomt owa glodn woan?	"
 
 **Lösung:**
@@ -344,7 +344,7 @@ Zuerst identifiziere ich die Monatspreise des A neis Programms:
 Dann addiere ich die Monatspreise zusammen: 60,00 + 70,00 + 91,00 = 221,00 Euro.
 
 Also costs der A neis Programm insgesamt 221,00 Euro in drei Monatzen.
-"	stop
+"	stop	0.0	0	0	221	0
 q19a4029d	Toula geht in de Bäckerei und kafft verschiedene Sorten Gebäck. Sie nimmb 3 Dutzend Donuts um 68 US-Dollar pro Dutzend, 2 Dutzend Mini-Cupcakes um 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes um 55 US-Dollar pro Dutzend. Wia hoch san de Gesamtkosten?	"
 
 Um die Gesamtkosten von Toula zu berechnen, gehen wir Schritt für Schritt vor.
@@ -416,7 +416,7 @@ Dann berechne ich die Gesamtdaten für jede Art pro Dutzend:
 
 Die Gesamtkosten berechnen ich somit durch:
 3 * 3 + 80 * 2 + 55 * 6 = 101
-"	stop
+"	stop	500.0	0	0	500	0
 qf0063e65	Carlos pflanzt an Zitronenbam. Den Bam zu pflanzen kost 90 $. Jeds Joa wochsn 7 Zitronen drauf, de er für jeweils 1,5 $ verkaffn ko. Bewässan und Dünga kost 3 $ im Jahr. In wöcham Jahr macht er mit dem Zitronenbam zum ersten Moi insgesamt Gewinn?	"
 
 Um den Zinseszum und das Gesamtgesamtgesamtverlies am Moi zu bestimmen, gehen wir Schritt für Schritt vor.
@@ -492,7 +492,7 @@ Da die Verliesumhung pro Woch negativ ist, bedeutet das, dass Carlos in einem Wo
 Nun bestimmen wir die Zinseszum für den Full Moi. Da die Verliesumhung pro Woch negativ ist, beträgt die Zinseszum 0$ pro Monat, also 0$ pro Week.
 
 Somit beträgt das Gesamtgesamtverliesumhung in einem Week 0$, also kein Verliesumhung.
-"	stop
+"	stop	90.0	0	0	0.9	0
 q410b0ab2	Melanie is Hondelsvertreterin. Im greanan Haus verkafft sie a Drittel vo ihre Staubsauger, im rotn Haus no 2 und im orangenen Haus de Höfte vo dem, wos donn no übrig is. Wonn Melanie am Schluss 5 Staubsauger übrig hot, mit wia vü hat sie ogfonga?	"
 
 Melanie owns 5 Staubsauger."	18	"
@@ -595,7 +595,7 @@ But I'm not sure. Maybe the answer is 5, but I'm not entirely confident. Alterna
 I think the problem is trying to trick me into thinking that the total is 5, but it's actually the total stock. So, the answer is 5, but I'm not entirely sure. Alternatively, maybe the problem is that the total is 5, and each house has a portion of it, so the answer is 5.
 
 I think I'll go with 5, as that's the total stock, and that's what the problem is asking about.
-"	stop
+"	stop	5.0	0	0	5	0
 qa0520340	In ana Tonzstund mit 20 Schuala hom si 20% für Contemporary Dance o`gmödt. Va de übrigen nehman 25% Jazz Dance, und da Rest mödt si für Hip-Hop o. Wia vü Prozent va olle Schuala san ban Hip-Hop?	"
 
 To allocate 20% of the budget to Contemporary Dance, 25% to Jazz Dance, and the remaining 55% to Hip-Hop Dance, the percentages are as follows:
@@ -614,7 +614,7 @@ So, 100% minus 20% is 80%, and then minus 25% brings it down to 55%. That means 
 Wait, let me double-check that. 20% + 25% is 45%, so 100% - 45% is indeed 55%. Yeah, that makes sense. So, the percentages are 20% for Contemporary, 25% for Jazz, and 55% for Hip-Hop. 
 
 I should make sure that the total adds up to 100%. Let me add them up: 20 + 25 is 45, and 100 - 45 is 55. Yes, that's correct. So, the final allocation should be 20% for Contemporary, 25% for Jazz, and 55% for Hip-Hop.
-"	stop
+"	stop	100.0	0	0		0
 q9ae19f0a	A Händler überleg zwischn 2 Kaufmöglichkeitn: Schmuck im Wert va 5.000 US-Dollar oda Elektronikgeräte im Wert va 8.000 US-Dolalr. Sei Finanzberota rechnat damit, dass da Schmuckmoakt im söbn Monat um 2,5% steig und da Moakt für Elektrogeräte um 1,2%. Wonn da Händler am Monatsende mit seina Kaufentscheidung den Gwinn maximiern wü, auf wia vü Gwinn kimmb er donn?	"
 
 Um den Gwinmaximalen Kaufentscheidung zu ermitteln, berechnen wir die Gier der Schmuck im Werts der 2.000 US-Dollar und die Schmuckkoalktion im Werts der 8.000 US-Dollartrenne.
@@ -664,7 +664,7 @@ Analog erhalte ich die percentage-Inzidenz des Schmuckkoalkulations im Werts der
 Dann berechne ich die Gier der Schmuck im Werts der 2.000 US-Dollar, indem ich die percentage-Inzidenz mit dem Wert der 2.000 US-Dollar berechneticke: 2.000 US-Dollar * 8,75 % = 175 US-Dollar. Das bedeutet, der Gier der Schmuck im Werts der 2.000 US-Dollar beträgt 175 US-Dollar.
 
 Schließlich berechne ich die Gier der Schmuckkoalkulation im Werts der 8.000 US-Dollartrenne, indem ich die percentage-Inzidenz mit dem Wert der 8.000 US-Dollartrenne berechneticke: 8.000 US-Dollar * 101,2 % = 809,6 US-Dollar. Die Summe der Gier der Schmuck im Werts der 2.000 US-Dollar und die Schmuckkoalktion im Werts der 8.000 US-Dollar ergibt die Gesamtgp gained: 175 + 809,6 = 984,6 US-Dollar.
-"	stop
+"	stop	8000.0	0	0	934.6	0
 q93563595	Zwoa Züge foan zur gleichn Zeit in San Rafael los. Zerscht foan boade noch Westn und legn 80 Meilen zruck. Am nächsten Tog foan's noch Nordn und legn 150 Meilen zruck. Wia vü Strecken leg jeda Zug üba de zwoa Tog zruck?	"
 
 **Lösung:**
@@ -733,7 +733,7 @@ Dann bestimmen wir die Strecken, die jede Zug foan je zwoa Tog zruck. Zwoa A leg
 Nun bestimmen wir die Strecken, die jede Zug foan je zwoa Tog zruck. Zwoa A legnet 80 Meilen, während Zwoa B 150 Meilen legnet.
 
 Schließlich bestimmen wir die Strecken, die jede Zug foan je zwoa Tog zruck. Zwoa A legnet 80 Meilen, während Zwoa B 150 Meilen legnet.
-"	stop
+"	stop	150.0	0	0		0
 q33756eb7	Jill griag 20 Us-Dollar pro Stund fürs Unterrichten ois Lehrerin und 30 US-Dollar pro Stund ois Cheerleader-Coach. Wonn sie 50 Wochn im Joa oabat, 35 Stundn pro Wochn ois Lehrerin und 15 Stundn pro Wochn ois Coach, wia hoch is donn ihr Joahresgehoit?	"
 
 **Lösung:**
@@ -795,7 +795,7 @@ Frage 6: Wie viel es an der Joahresgehornsche ist, wenn sie 15 Stundn proWoche a
 
 Frage 7: Wie viel es an der Joahresgehornsche ist, wenn sie 15 Stundn proWoche arbeitet und den Coach nicht arbeitet?
 15 Stundn proWoche * 1300 US-Dollar pro Stunde = 19.500 US-Dollar
-"	stop
+"	stop	1300.0	0	0		0
 qfb254292	Claire mocht si jedn Moagn zan Fruahstuck a Omelett aus 3 Oa. Wia vü Dutzend Oa isst sie in 4 Wochn?	"
 
 Claire needs to eat **0.75 oas per week** or **3 oas in 4 weeks**."	7	"
@@ -812,7 +812,7 @@ Wait, maybe I'm overcomplicating this. Let's break it down step by step. If one 
 Alternatively, if the question is asking how many oas she needs to prepare one omelet, it's 3 oas. But since she eats one omelet every 4 weeks, perhaps the question is about how many oas she needs to eat in a week. That would be 3/4 oas per week. So, the answer is 0.75 oas per week.
 
 I think that's the way to interpret it. So, Claire needs to eat 0.75 oas per week, or 3 oas per 4 weeks.
-"	stop
+"	stop	4.0	0	0	0.75	0
 qc100123d	Marissa wondert an 12 Meiln longan Wondaweg. In da 1. Stund schofft sie de ersten 4 Meilen, in da nächstn Stund donn de nächstn zwoa Meilen. Wonn sie am End auf a Durchschnittsgschwindigkeit va 4 Meilen pro Stund kema wü, mit wöcha Gschwindigkeit in Meilen pro Stund muas sie in Rest geh?	"
 
 Marissa's average speed for the 12-mile run was **4 miles per hour**. This is calculated by dividing the total distance (12 miles) by the total time taken (3 hours). 
@@ -852,7 +852,7 @@ Now, to find the average speed, I need total distance divided by total time. Tha
 Wait, but let me double-check. Each hour she's increasing her speed by 2 mph. So, first hour: 4 mph, second hour: 6 mph, third hour: 8 mph. But she only runs 2 miles in the third hour, so that's a little less than 8 mph. But since she completed the run in 3 hours, the average speed is still 12 miles / 3 hours = 4 mph.
 
 I think that makes sense. Even though she was faster in the beginning and slower in the end, the average comes out to 4 mph. Maybe I should confirm the total miles again: 4 + 6 + 2 = 12. Yes, that's correct. So, average speed is indeed 4 mph.
-"	stop
+"	stop	4.0	0	0	4	0
 q26866cba	I hob 10 Lita Oroschngetränk, des za woa Drittl aus Wossa is, und wü`s za 15 Lita Ananasgetränk doa, des za drei Fünftln aus Wossa is. Ban Einigiassn vaschütt i oba an Lita van Oroschngetränk. Wia vü Wossa is donn in de übrigen 24 Lita drei?	"
 
 The user consumed a total of 45 liters from Wossa, with the following distribution:
@@ -926,7 +926,7 @@ Therefore, the quantities are:
 - Drittl: 15 liters
 - Ananasgetränk: 15 liters
 - Fünftln: 5 liters
-"	stop
+"	stop	45.0	0	0	45	0
 qa856d9dc	Raymond und Samantha san Cousins. Raymond is 6 Joa vor Samantha geboan. Mit 23 Joa hot Raymond an Sohn griag. Wonn Samantha hiaz 31 is, vor wia vü Joa is Raymonds Sohn geboan woan?	"
 
 Let's break down the relationships and solve the problem step by step.
@@ -968,7 +968,7 @@ So, the relationships are:
 - Samantha is 23.
 - Her son is 6 years old when Samantha was born, making the son 27 now.
 - Joa is 24.
-"	stop
+"	stop	25.0	0	0	24	0
 q72ea27fb	Billy verkafft DVDs. Am Dienstag hot er 8 Kundn. De ersten 3 kaffn jeweils a DVD, de nächstn 2 kaffn jeweils 2 DVDs, und de letztn 3 kaffn goa koane. Wia vü DVDs hot Billy am Dienstog vakafft?	"
 
 Billy can make all 8 DVDs because he is purchasing exactly the number he needs. 
@@ -985,7 +985,7 @@ So, putting it all together, Billy is buying 3 + 2 + 3 = 8 DVDs. Therefore, he c
 Wait, but let me double-check. The first 3, then the next 2, then the last 3. That's 3, 2, 3. 3 plus 2 is 5, plus 3 is 8. Yep, that adds up. So, he's purchasing the exact number of DVDs he needs. So, I think the answer is yes, he can make all 8.
 
 I don't think there's any trick or hidden cost here. It's just a straightforward addition. So, I'm confident that Billy can make all 8 DVDs.
-"	stop
+"	stop	8.0	0	0		0
 qa62b2b0f	A Keazn weat für jede Stund, de se brennt, um 2 Zentimeta kiaza. Wia vü Zentimeta kiaza is a Keazn, de va 13 Uhr bis 17 Uhr brennt?	"
 
 Um den Wiederrausgang zu garantieren, brennt der Zentimeta Kiaza in **2 Zentimeta pro Stunde**. 
@@ -1014,7 +1014,7 @@ Um die Gesamtfunktion der brennungs zu bestimmen, dividiere ich die 2 Zentimeta 
 Dann berechne ich die Gesamtfunktion durch Multiplikation der Zentimeta pro Stunde mit der benötigten Zeit. Wenn die Strecke 180 Minuten beträgt, multipliziere ich 180 mit 0,0333, um den Gesamteilbrennung zu erhalten.
 
 Das ergibt 6 Zentimeta, also ist die brennungs der Zentimeta 6 Zentimeta pro Stunde.
-"	stop
+"	stop	60.0	0	0	6	0
 qaadc02d2	Kyle hot den Bestseller van letztn Joa füa 19,50 US-Dollar kafft. Des woa mit 25% Rabatt aufn ursprünglichen Preis. Wia hoch woa da ursprüngliche Preis van Buach?	"
 
 **Lösung:**
@@ -1051,7 +1051,7 @@ Dann berechne ich den Rabatt: 25% von 19,50 US-Dollar ergibt 4,875 US-Dollar.
 Subtrahiere den Rabatt von demurskelprice: 19,50 - 4,875 = 14,625 US-Dollar.
 
 Somit ist der ursprüngliche Preis des Products 14,625 US-Dollar.
-"	stop
+"	stop	14625.0	0	0	14625	0
 q4c88eb07	Marie hot a Hendlgericht für 12 US-Dollar bestöt, 5 Packla Müch für jeweils 3 US-Dollar, 4 Äpfe für jeweils 1,50 US-Dollar und a poa Schochtln Pizza. Marie hot insgesomt 50 US-Dollar zoit. Wia vü Schochtln Pizza hot Marie bestöt, wonn jede Schochtl 8,50 US-Dollar kost?	"
 
 **Lösung:**
@@ -1100,7 +1100,7 @@ Marie hat insgesamt 50 US-Dollars zögvertet. Subtractiere die Componentepreise 
 50 - 33 = 17 US-Dollar
 
 Somit costet die Schochtln Pizza 17 US-Dollar.
-"	stop
+"	stop	17.0	0	0	17	0
 qc76b9ef5	Mishka hot 3 Paar’dln Shorts, 3 Hosn und 3 Poa Schua kafft. Oa Paar’dl Shorts kost 16,50 US-Dollar. A Hosn kost 22,50 US-Dollar und a Paar’dl Schua 42 US-Dollar. Wia vü Dollar hot Mishka insgesomt für des Gwond ausgebn?	"
 
 **Lösung:**
@@ -1154,7 +1154,7 @@ Setze die Summe zur ursprünglichen Summe von 243 US-Dollar in die Aufgabenstell
 Setze die Summe in die Rechnung ein: 243 = 243.
 
 Setze die Summe in die question asked: Wia vü Dollar hot Mishka insgesomt für des Gwond ausgebn? Würden Mishka 243 Dollar für den Gwond ausdenken.
-"	stop
+"	stop	3.0	0	0	243	1
 qc792d70c	Cynthia isst jedn Obnd a Portion Eis. Sie kafft Kartons mit 15 Portionen pro Karton, und jeda Karton kost 4,00 US-Dollar. Wia vü hot sie noch 60 Tog für Eis ausgebn?	"
 
 **Lösung:**
@@ -1181,7 +1181,7 @@ Dann berechne ich die Gesamtanzahl der Teile: 15 teile pro Karton mal 60 Kartons
 Anschließend berechne ich die Gesamtdochprägung: 900 Teile mal 4,00 US-Dollar pro Teile = 3.600 US-Dollar.
 
 Cynthia cost also 3.600 US-Dollar für die 60 Teile.
-"	stop
+"	stop	3600.0	0	0	3600	0
 qb804efac	Henry hot auf ana 60 Meilen longan Radltour zwoa Stopps eiglegt. Sein erstn Hoit hot er noch 20 Meiln gmocht. Da zweite Hoit woa 15 Meiln vorm Ende va seina Tour. Wia vü Meilen hot er zwischn dem erstn und zweitn Hoit zruckglegt?	"
 
 Henry Hot auf Ana's second hoist is 15 miles from the midway point."	25	"
@@ -1204,7 +1204,7 @@ Let me approach this differently. The track is 60 miles. Starting at A, after 20
 Now, the midway point is 30 miles from A. So, from point C (15 miles from A) to the midway point (30 miles from A) is 15 miles. So, the distance from C to midway is 15 miles. That makes sense because C is 15 miles from A, and the midway point is 30 miles from A, so the distance between them is 15 miles.
 
 Wait, but earlier I thought the distance from C to B was 45 miles, but that's because from B to A is 40 miles, so from C to B is 45 miles. Wait, no, from C to B is 45 miles, but from C to A is 15 miles, and from A to midway is 30 miles, so from C to midway is 15 miles. So, the answer is 15 miles.
-"	stop
+"	stop	15.0	0	0	15	0
 qf837eb68	Gloria is ban Schuah shoppen und find a Paar´dl Stiefe, de in ihr Budget passn. Sie muas owa zwischen de Stiefe und zwoa Paar´dln High Heels wähln, de zommen fünf Dollar weniger kostn ois wia de Stiefe. Wonn a Paar´dl High Heels 33 US-Dollar kostn und des ondare doppet so vü, wia vü kostn donn de Stiefe?	"
 
 **Lösung:**
@@ -1250,7 +1250,7 @@ Da es keine genaue Lösung als Zahlen entgegenht,,but es eine genaue mathematisc
 Zusammenfassung:
 - Stiefe High Heelpaare cost 5 Dollar weniger als High Heelpaare.
 - Stiefe High Heelpaare cost half of High Heelpaare.
-"	stop
+"	stop	-10.0	0	0	-10	0
 qa2455bce	Des Oitersverhältnis vo Darrell und Allen is 7:11. Wonn se zommen 162 Joa oit san, wia oit is donn Allen in 10 Joa?	"
 
 **Lösung:**
@@ -1295,7 +1295,7 @@ Anschließend berechne ich die Gesamtzahl der Teile: 7 + 11 = 18 Teile.
 Dann berechnere ich die Anzahl der Teile, die Darrell hat: (7/18) * 162 = 63 Teile.
 
 Darrell hat also 63 Joa oit, wia Allen hat 105 Joa oit.
-"	stop
+"	stop	3.0	0	0	63	0
 q166f163a	Gunter probiert, de Gummibärchen im Glasl zan zöhn. Er frog seine Freind, wia vü Gummibärchen eana Meinung noch im Glasl san. Oana sog 80. Da ondare sog 20 mehr ois de Höfte va da ersten Schätzung. A Dritter sog 25% mehr ois da Erste. Wia is eana durchschnittliche Schätzung?	"
 
 **Lösung:**
@@ -1345,7 +1345,7 @@ Zuerst bestimmen wir die Anzahl der Gummibärchen, die Oana sorgte, 80.
 Dann berechnen wir die Anzahl der Gummibärchen, die die dritte Freind sorgte. Sie sorgten 25% mehr als die erste Freide. Das bedeutet, die Anzahl der Gummibärchen der dritten Freide beträgt 120.
 
 Anschließend berechnen wir die durchschnittliche Schätzung von den drei Freideen. Die Summe der Gummibärchen beträgt 80 + 120 + 40 = 240, und die durchschnittliche Schätzung ist 80, 120, 40 durch 3, was 80 ergibt.
-"	stop
+"	stop	666.0	0	0	66.67	0
 q3966df43	John kümmert si um 10 Hund. Jeda Hund braucht pro Tog 0,5h für an Spaziergong und um sei Geschäft zu erledigen. Wia vü Stundn pro Wochn kümmert er si insgesomt um de Hund?	"
 
 **Lösung:**
@@ -1376,7 +1376,7 @@ Dann berechne ich die Gesamtzeit pro Hund: 0,5 Stunden pro Hund mal 10 Hundäume
 Nun dividiere ich die Gesamtzeit durch die Anzahl der Hundäume, um den Zeitraum pro Hund zu erhalten: 5 Stunden geteilt durch 10 Hundäume ergibt 0,5 Stunden pro Hund.
 
 Also ergibt sich, dass Jeda Hundin pro Toernis 0,5 Stunden benötigt.
-"	stop
+"	stop	2.0	0	0	0.5	0
 q28184d6c	Grechen hot 110 Münzn. Es san 30 mehr Goid aus wia Silbermünzen. Wia vü Goidmünzn hot Gretchen?	"
 
 **Lösung:**
@@ -1410,7 +1410,7 @@ Dann setzt du eine Gleichung auf, um die Anzahl der Goidmünzen, die Gretchen ha
 Dann löst du die Gleichung um die Anzahl der Goidmünzen zu bestimmen.
 
 Schließlich erkläre, was Gretchen hat.
-"	stop
+"	stop	80.0	0	0	80	0
 q5f9dc683	Siobhan hot 2 Schmuckstück weniga ois da Aaron. Aaron hot 5 Schmuckstück mehr ois de Höfte vo Raymonds Schmuckstückn. Wonn Raymond 40 Schmuckstück hot, wia vü hot donn da Siobhan?	"
 
 2 Schmuckstück."	23	"
@@ -1527,7 +1527,7 @@ So, Raymuckstücks = 2, Aaron = 7, Siobhan = 2.
 Therefore, the problem makes sense: Siobhan has 2 Schmuckstück, which is a little bit of Aaron's 7. Aaron has 5 more than Raymuckstücks (7 = 2 + 5). Raymond will have 40, and with a little bit (38) of Raymuckstücks (2), he will have 40. So, 40 = 2 + 38. That works.
 
 So, the answer is 2 Schmuckstück.
-"	stop
+"	stop	2.0	0	0	2	0
 q9501d333	Mike spüt 40 Minutn long Pingpong. In de erstn 20 Minutn mochta 4 Punkte. In de nächstn 20 Minutn mochta 25% Punkte mehr. Wia vü Punkte mochta insgesomt?	"
 
 **Lösung:**
@@ -1552,7 +1552,7 @@ Zuerst bestimmen wir die Punkte, die Mike spüt:
 - Im zweiten 20 Minuten spüt er 25% mehr, also 4 + 4 * 0,25 = 5 Punkte.
 
 Somit sind insgesamt 4 + 5 = 9 Punkte geplant.
-"	stop
+"	stop	20.0	0	0	9	1
 q0e0fa86b	Terry isst 2 Joghurts pro Tog. Se san grod für 5,00 US-Dollar für 4 Joghurts im Ongebot. Wia vü gib er innerhoib 30 Tog für Joghurt aus?	"
 
 To determine how much Terry should pay for 30 Tog, we'll use the given exchange rate and calculate step by step.
@@ -1586,7 +1586,7 @@ Wait, let me double-check that. 4 Joghurts are 5,00 USD, so 1 Joghurdt is 1,25 U
 Alternatively, I can think of it as a rate: 4 Joghurts cost 5,00 USD. So, for 1 Joghurdt, it's 5,00 / 4 = 1,25 USD. For 30 Tog, which is 15 Joghurds, the cost is 15 * 1,25 = 18,75 USD. That matches my previous calculation.
 
 So, Terry should pay 18,75 USD for 30 Tog.
-"	stop
+"	stop	15.0	0	0	18.75	0
 q126bbbaa	John wü olle seine Spüsochn vakaffn und mit dem Göd Videospiele kaffn. Er hot 13 Lego-Sets und hot 15 Dollar für jeds verkaffte Set griag. Er kafft donn 8 Videospiele für 20 Dollar und hot no 5 Dollar übrig. Wia vü Lego-Sets hot er no?	"
 
 **Lösung:**
@@ -1641,7 +1641,7 @@ Jetzt berechne ich die Gesamtsumme, die John durch die Lego-Sets erzielt hat. Di
 Subtrahiere die verbleibenden 5 Dollar, um die gesuchte Summe zu erhalten: 138 Dollar - 120 Dollar = 18 Dollar.
 
 Daher hat John 18 Lego-Sets durch den Video-Spieltipp erzielt.
-"	stop
+"	stop	4.0	0	0	18	0
 q5c1bd624	John lafft 60 Meiln pro Wochn. Er lafft 3 Tog pro Wochn. Er lafft am erstn Tog 3 Stund und auf de ondan zwoa Lauftogn jeweils de Höfte. Wia schnö lafft er?	"
 
 John hat eine average Stbye proWochn von 2. Er lauft also eine average Meile und eine average Toeile pro Wochn. 
@@ -1660,7 +1660,7 @@ Einen Hinweis zur Verbesserung erhalte ich, indem ich die Stüben proWochn in ei
 Schließlich erhalte ich die durchschnittliche Laufgeschwindigkeit von 4 Meile pro Wochn und eine average Stbye proWochn. 
 
 Die Texter werden dargestellt, indem sie in einem sinnvollen Text structureiert sind, um einen clear und verständlichen Ausdruck zu geben.
-"	stop
+"	stop	4.0	0	0	4	0
 q02f06b34	Dana ko viermoi so schnö laffn wia sie geh ko, oba sie ko nur hoib so schnö hupfn wia sie laffn ko. Wonn sie mit 3 Meiln pro Stund hupfn ko, wia vü Meilen ko sie donn innerhoib va 6 Stund zrucklegn, wonn sie a Drittl va da Zeit lafft und zwoa Drittel va da Zeit geht?	"
 
 Dana needs to work at a rate of 3 Meilen per hour on hupfn, while her friend needs to work at a rate of F Meilen per hour. The problem states that her friend needs to work more Meilen over 6 hours, which suggests that her friend's work rate is F = T / 6, where T is the total number of Meilen. Without additional information, we cannot determine the exact time or the total Meilen required. However, we can express their work rates and the relationship between their times as follows:
@@ -1698,7 +1698,7 @@ I'm not entirely sure, but I think I'll proceed by assuming that Dana's work rat
 But again, without knowing the total Meilen, it's hard to find specific numbers. Maybe the problem is just about the relationship between their work rates and the time they take to complete their tasks.
 
 I think I'll stop here and try to write out the equations based on the given information.
-"	stop
+"	stop	3.0	0	0		0
 qd6dd82e1	Brandons iPhone is viermoi so oit wia Bens iPhone. Bens iPhone is doppet so oit wia Suzys iPhone. Wonn Suzys iPhone 1 Joa oit is, wia oit is Brandons iPhone?	"
 
 The phrase ""Joa oit is"" refers to ""take syllables."" 
@@ -1716,7 +1716,7 @@ The third part says ""Wonn Suzys iPhone 1 Joa oit is, wia oit is Brandons iPhone
 Putting it all together, it seems like Suzys iPhone is ""Syllabus,"" and Joa oit is ""take syllables."" So, the user is asking what ""Joa oit is"" refers to, and the answer would be ""take syllables.""
 
 I should make sure I'm not missing any other meanings or possible interpretations. Maybe ""Joa"" is another word, but it doesn't seem familiar in this context. So, I think the main clue is the ""Joa oit is"" part, which translates to ""take syllables.""
-"	stop
+"	stop		0	0		0
 q425db7e5	Da grosse Drochn Perg is hoch obn am Berg Farbo gsessn und spuckt Feia auf ois in an Umkreis va 1000 Fuss. Polly hot den goidenen Speer, de oazige bekonnte Woffn, mit dem ma en Drochn bezwinga ko, 400 Fuass weit schmeissn, oiso guat in de Reichweite va de Flommen van Drochn. Wia sie oba den Saphir-Edelstoa in de Händ kob hot, hot sie en Speer dreimoi so weit schmeissn kena wia ohne den Edelstoa. Wonn sie en Edelstoa in de Händ hoit, wia weit ausserhoib va da Reichweite va de Flommen van Drochn kunat Polly stenga und den Drochn trotzdem no mitn goidenen Speer treffen?	"
 
 To find the total distance she uses to knock Feia on the umiskois, we need to consider the path she takes. The problem states that if she uses the Woffn to knock Feia on the umiskois, it takes 400 units of distance. Then, she uses the 400 units to knock on the umiskois, which is 1000 units away. Therefore, the total distance she uses to knock Feia on the umiskois is the sum of these two distances.
@@ -2583,7 +2583,7 @@ I think the total distance is \boxed{1400}.
 
 **Final Answer**
 The total distance she uses to knock Feia on the umiskois is \boxed{1400}.
-"	length
+"	length	1400.0	0	0	1400	0
 qedc215ac	Grossmama Jones hot 5 Opfekuchn fürs Mittogessn va da Feiawehr bochn. Sie hot jedn Kuchn in 8 Sticke gschnittn und stöt 5 Kuchn aufn Buffettisch, damit se de Gäst söwa bediena kenan. Am Ende van Obnd nochdem si olle bedient hom san no 14 Kuchnsticke übrig bliem. Wia vü Sticke hom si de Gäst gnomma?	"
 
 The riddle asks, ""How many sandwiches do you have?"" Based on the story, the guest had 14 sandwiches remaining. In German, 14 is referred to as ""zehnvier,"" which means ""ten four."" Therefore, the answer is:
@@ -2620,7 +2620,7 @@ Wait, but the riddle is about how many sandwiches the guest has, so maybe the an
 So, putting it all together, the riddle is asking, ""How many sandwiches do you have?"" and the answer is 14, which is ""zehnvier"" in German.
 
 I think that's the answer.
-"	stop
+"	stop	14.0	0	0	14	0
 q5d47194e	De Nährwertangaben zufolge hot a Tütn Chips 250 Kalorien pro Portion. Wonn a 300 g-Tütn 5 Portionen hot, wia vü Gramm konnst donn essn, wonn dei Tägliches Kalorienzü ba 2000 lieg und du bereits 1800 Kalorien za dir gnomma host?	"
 
 **Lösung:**
@@ -2665,7 +2665,7 @@ Dan erhalte ich den erreichten Kalorien pro Tag und subtrahiere die erreichten K
 Schließlich berechne ich die Abstand des Zufallsgesetzes anhand der erreichten Abstandsglösse.
 
 Führe die Rechnung durch, um die Zufallsglösse zu ermitteln.
-"	stop
+"	stop	4.0	0	0	0	0
 q255b81c0	Charlie mechat Bienenwochskerzn vakaffn. Aus jedn Pfund Bienenwochs ko er 10 Kegelkerzn mochn. Is Zubehör aus an Pfund Bienenwochs plus Docht kost 10 US-Dollar. Wonn er de Kerzn für 2,00 US-Dollar vakafft, wia vü Nettogewinn mocht er donn wonn er 20 Kerzn mocht und vakafft?	"
 
 **Step-by-Step Explanation and Answer:**
@@ -2782,7 +2782,7 @@ I'm not entirely sure, but I think the key is that the 10 USD is his daily cost,
 Alternatively, if the 10 USD is his work cost, and the 2.00 USD is a cost saved, then his net profit is 2.00 USD saved.
 
 I think I've spent enough time on this, but I'm not entirely confident. Maybe I should conclude that the net profit is 2.00 USD saved by vacifying 20 kerats, or that his total daily cost is 12 USD.
-"	stop
+"	stop	20.0	0	1		
 q0166ea66	Meredith is Freelance-Bloggerin und schreib üba Gesundheitsthemen und kümmert si um Kunden, wos ihr festa Job is. Fürs Recherchieren und Schreim va an Blog-Artikel braucht sie im Schnitt 4 Stund. Letzte Wochn hot sie am Montog 5 Artikel gschriem und am DIenstog ⅖ mehr ois am Montog. Am Mittwoch hot sie doppet so vü Artikel gschriem wia am Dienstog. Wia vü Stund hot sie auf de drei Tog insgesomt mitm Schreibn verbrocht?	"
 
 Meredith is scindberin. He speaks to the Blog-Article twice per day. So, twice per day. That's consistent with the problem statement. So, the problem statement is correct.
@@ -3942,7 +3942,7 @@ Meredith is scindberin. He speaks to the Blog-Article twice per day. So, twice p
 Meredith is scindberin. So, he speaks to the Blog-Article twice per day. So, twice per day. That's consistent with the problem statement. So, the problem statement is correct.
 
 Meredith is scindberin. He speaks to the Blog-Article twice per day. So, twice per day. That's consistent with the problem statement. So, the problem statement is correct. So, the problem statement is correct.
-"	length
+"	length		1	0		0
 q7bb382f4	Candice hot 80 Post-it Notizzettl in ihr Hondtaschn pockt, bevor sie za ihrn Job im Coffee Shop losgonga is. Unterwegs hot sie an Zwischenstopp am Lodn gmocht und und a Packerl Post-it Notizzettl kafft. Ba da Oabat hot sie auf 220 verschiedene Tassn Kaffee je oan Post-it-Notizzettel kleb. Wonn ihr insgesomt 23 Post-it-Notizzettel üba bliem san, wia vü Post-it-Notizzettel woan donn in da Pockung de sie kafft hot?	"
 
 To help Candice improve her writing skills, here's a structured plan based on the considerations:
@@ -3975,7 +3975,7 @@ Additionally, she might be missing out on exposure to different writing styles. 
 I also wonder about the resources available. If she's not using any writing programs or techniques, she might be limited in her progress. Perhaps she can look into online writing tools or workshops that teach effective writing skills.
 
 In summary, Candice needs to take proactive steps to improve her writing. This includes setting aside more time for practice, trying different writing techniques, getting feedback, focusing on structure and coherence, and exposure to various writing styles. By implementing these strategies, she can build the skills necessary to take her job offer seriously and potentially improve her situation as a result.
-"	stop
+"	stop	6.0	0	0		0
 q1a64508f	John kafft zwoa moi so vü rote wia blaue Krawatten. De rotn Krawattn kostn 50% mehr ois de blauen Krawatten. Er hot 200 US-Dollar für blaue Krawattn ausgebn, de 40 US-Dollar pro Sticke kostn. Wia vü hot er für Krawattn ausgebn?	"
 
 **Solution:**
@@ -4018,7 +4018,7 @@ First, I need to determine the cost of one Krawattah in each color. The problem 
 Next, I need to find out how many Krawattahs John bought with his 200 US dollars. Dividing the total amount by the cost per Krawattah gives 200 divided by 60, which equals approximately 3.333 Krawattahs.
 
 Finally, to find out how much John spent on the Krawattah in white, I multiply the number of Krawattahs by the white price per unit. Using the blue Krawattah, which costs 40 US dollars, the total spent would be 3.333 multiplied by 40, resulting in approximately 133.333 US dollars.
-"	stop
+"	stop	133.33	0	0	133.33	0
 q9605b4e6	Tracy hot a 4 Fuss longs Sticke Droht verwendt, um de Tomatnpflonzn in ihrem Goatn obzustützn. Da Droht is in 6 Inch longe Sticke gschnittn woan. Wia vü Sticke Droht hot sie?	"
 
 To address the issue of rope thickness relative to spaghetti strands, here's a structured approach:
@@ -4047,7 +4047,7 @@ Now, I'm supposed to act as an AI and respond appropriately. Since I don't have 
 I should explain that without knowing her name or details, I can't give a precise answer. But I can offer general advice on how to ensure the rope thickness is appropriate relative to the spaghetti strands. I can suggest checking the diameter of the spaghetti strands and the rope, ensuring the rope is neither too thick nor too thin for the strands. Maybe suggesting different sizes or types of ropes could help.
 
 I should also mention that if Tracy needs more specific advice, she can provide her details, and I can assist further. This way, the user gets a clear path to understand the issue and get the help they need.
-"	stop
+"	stop	6.0	0	0		0
 qda35e8fb	Richard leb in an Wohnhaus mit 15 Etagen. Auf jeda Etage san 8 WOhnungen, und ¾ van Gebäude san bewohnt. Wia vü Wohnungen in dem Gebäude san insgesomt unbewohnt?	"
 
 Um die Anzahl der unbersohnten Wohnungen zu berechnen, folgen wir Schritten Schritt für Schritt:
@@ -4084,7 +4084,7 @@ Dann berechne ich die Gesamtzahl der sanierten WOhnungen pro Etag:
 Schließlich multipliziere ich die 15 Etagen mit 10 WOhnungen pro Etag, um die Gesamtzahl der sanierten WOhnungen zu erhalten.
 
 Somit ergibt sich eine Gesamtanzahl von 150 WOhnungen, die imgesamt unbersohnet sind.
-"	stop
+"	stop	8.0	0	0	90	0
 q94fcd6ce	Lloyd hot an Eierhof. Seine Hehna legn 252 Eia pro Tog und er vakafft sie für 2 US-Dollar pro Dutzend. Wia vü verdient Lloyd pro Wochn an de Eier?	"
 
 To determine whether Lloyd is overpaying for his Eier Hof, we need to consider the given information and possible additional costs. 
@@ -4097,7 +4097,7 @@ Without additional information about other costs (such as materials, labor, taxe
 
 **Conclusion**: Based on the provided information, the total cost for the Eier Hof would be $252, but whether this is overpaying depends on other factors not mentioned in the problem."	294	"
 Okay, so I need to figure out whether Lloyd is overpaying for his Eier Hof. Let me break this down step by step. First, the problem says that the Eier Hof's length is 252 Eia pro Tog. I think ""Eia"" is a German unit, maybe like a type of rope or something? And he's paying 2 US Dollars per Dutzend for the Eier Hof. A Dutzend is a German term for a dozen, right? So that would be 2 Eia per Dutzend, which is 2 Eia for 2 USD. So per Eia, that's $1. But wait, the Eier Hof is 252 Eia long. So if each Eia is $1, then the total cost would be $252. But wait, he's paying 2 USD per Dutzend, which is 2 USD per 2 Eia. That's $1 per Eia. So 252 Eia times $1 per Eia is indeed $252. But the question is asking if he's overpaying for the Eier Hof. Maybe I'm missing something here. Perhaps the Eier Hof isn't just the length but has other costs, like materials, labor, or something else. Or maybe the pricing is based on some standard or contract that includes more than just the length? I'm not sure. I should probably consider the information given and see if I can make an assumption about additional costs. Since the problem doesn't specify any extra costs beyond the $2 per Dutzend, I think the straightforward calculation is $252. But if there are other factors, like taxes or additional materials, those would affect the total cost. Without more details, it's hard to say if $252 is overpaying. Maybe he's paying more than necessary, but without knowing the total cost, I can't confirm. So, based on the given information, the total would be $252. But if there are other costs, it might be more. So, I can't say for sure whether he's overpaying without more information.
-"	stop
+"	stop	252.0	0	0	252	0
 q1afb1e71	Toms Schiff ko 10 Meilen pro Stund foan. Er seglt va 13 bis 16 Uhr. Donn foat er mit ana Gschwindigkeit va 6 Meilen/Stund wieda zruck. Wia long braucht er fürn Rückweg?	"
 
 **Lösung:**
@@ -4156,7 +4156,7 @@ Anschließend berechnen wir die Zeit, die Toms Schiff benötigt, um die Strecke 
 Dann berechnen wir die Gesamte Zeit, die Toms Schiff benötigt, um die Strecke zu rückwärds fahrraheaden. Da die Strecken gleich lang sind, setzt man die Zeiten aufeinander additive Summe und berechnet die durchschnittliche Geschwindigkeit. Die durchschnittliche Geschwindigkeit beträgt also mindestens 10 Meilen pro St und maximal 16 Meilen pro St.
 
 Zum Schluss berechnen wir die durchschnittliche Geschwindigkeit, die Toms Schiff benötigt, um die Strecke zu rückwärds fahrraheaden. Da die Strecken gleich lang sind, setzt man die Zeiten aufeinanderadditives Summe und berechnet die durchschnittliche Geschwindigkeit. Die durchschnittliche Geschwindigkeit beträgt also mindestens 10 Meilen pro St und maximal 16 Meilen pro St.
-"	stop
+"	stop	1034.0	0	0		0
 q0aaae19a	Uriah sei Biachatoschn weat zschwa. Er muas 15 Pfund aussa doa. Seine Comicbiacha wiegn 1/4Pfund pro Sticke und sei Spüzeig jeweils ½ Pfund. Wonn er 30 Comicbiacha aussa duat, wia vü Spüzeig muas er donn no aussa doa?	"
 
 Um zu bestimmen, ob Uriah mit 30 Comicbiachas aussa den Preis von 15 Pfund costet, folgen wir Schritten Schritt für Schritt:
@@ -4196,7 +4196,7 @@ Zuerst betrachtet er die individuallyen Werte. Jeder Comicbiacha kostet 1/4 Pfun
 Die Spüzeig costen 0,5 Pfund pro biacha, also 15 biachas entsprechen 15 mal 0,5, was insgesamt 7,5 Pfund Costs.
 
 Da die Gesamte Wirkung gleich ist, costet 15 Pfund aus, ist die Lösung sinnvoll.
-"	stop
+"	stop	15.0	0	1		
 qa5756c69	A Mechaniker verlong unterschiedliche Preise für de Reparatur va LKW-Reifen und PKW-Reifen. Für jedn repariertn LKW-Reifn berechnet da Mechanika 60 Dolalr und für jedn repariertn PKW-Reifn 40 Dollar. Am Donnastog repariert da Mechanika 6 LKW-Reifen und 4 PKW-Reifen. Am Freitog Repariert da Mechanika 12 PKW-Reifen und koane LKW-Reifen. WIa vü Dolalr mehr Umsotz hot da Mechanika an dem Tog mitm höheren Umsatz gmocht?	"
 
 **Lösung:**
@@ -4267,7 +4267,7 @@ Zum Freitog:
 - Gesamte Umsatz: 480 + 360 = 840 Dollar.
 
 Ab hier scheint, dass am Freitog den Tog mitm höheren Umsatz gmocht wird. Da LKW-Preise höher sind als PKW-Preise, gibt es die Möglichkeit, die Umsätze nach der Verkaufszüge aufzunehmen.
-"	stop
+"	stop	6.0	0	0	840	0
 qd819612e	De Schwestern Doubtfire foan mit 7 Katzal hoam, de se im örtlichen Tierheim adoptiert hom. Donn ruaft ihre Muata o und sog, dass ihre boadn Hauskotzn grod Katzal griag hom. Patchy, de erste Kotz, hot 3 moi so vü katzal wia de apoptierten, und Trixi, de ondare Kotz, hot 12 zur Wöd brocht. Wia vü Katzal hom de Doubtfires hiaz?	"
 
 The Muata focus operates on the Muata surface, which is rough, and it is designed to detect the texture of the surface. Here's a clear breakdown of how it works:
@@ -4345,7 +4345,7 @@ I think I'm getting closer. So, in summary, the Muata focus is on the ground, an
 I think I've managed to figure out the basics now. The Muata focus is on the ground, and the Muata surface is rough, so the Muata focus is on the Muata surface. The focus on the ground is also on the Muata surface, meaning it's in the Muata direction, so it's detected by the Muata focus. That's how it's supposed to work.
 
 I think that's it. I'm not sure if there's more to it, but I think I understand the setup now.
-"	stop
+"	stop	4.0	0	0		0
 q7c63d108	Jean hot 30 Lutscha. Er isst 2 davo. De ondan Lutscha mechta in a Sackal mit je 2 Lutscha doa. Wia vü Sackal ko er füllen?	"
 
 The scenario where a sackel is filled with 2 bags and 2 coins is feasible depending on the sackel's capacity. A sackel, being a container, can hold multiple items. Therefore, it is possible to fill a sackel with 2 bags and 2 coins. However, the feasibility depends on the sackel's size and the capacity of each item. 
@@ -4368,7 +4368,7 @@ Another angle is that the sackel is a container for both items, so it's possible
 But I'm not entirely sure if the answer is straightforward or if there's more to it. Maybe the question is testing if I recognize that a sackel can hold multiple items and that having 2 of each is feasible.
 
 Overall, I think the answer is yes, it's possible to fill a sackel with 2 bags and 2 coins, depending on the sackel's capacity. However, without more context, it's hard to be certain.
-"	stop
+"	stop	2.0	0	0		0
 q93b023e5	Peter plant, de Wochn ins Kino zgeh. Er kafft si imma a Eintrittskoatn für 7 US-Dolalr und Popcorn für 7 US-Dollar. Wonn er für de Wochn 42 US-Dollar hot, wia oft ko er donn ins Kino geh?	"
 
 **Lösung:**
@@ -4394,7 +4394,7 @@ q93b023e5	Peter plant, de Wochn ins Kino zgeh. Er kafft si imma a Eintrittskoatn
 Ich verstehe, dass Peter den Kino zehnt Minute ins Arbeistadum geplant hat, um den Kino zu bewältigen. Er hat eine Eintrittskoatn für 7 US-Dollars cheap und eine Popcorn für 7 US-Dollars, was insgesamt 14 US-Dollars kosten. Er hat für de Wochn ins Kino hot 42 US-Dollar, was bedeutet, dass er den Kino$max 42 / 14 = 3 mal geplant hat.
 
 Zum Schluss hat Peter insgesamt 3 Kino ins Arbeistadum geplant.
-"	stop
+"	stop	42.0	0	0	3	1
 qdf141d2f	A Hoizbruckn ko ni mehr ois 5000 Pfund trogn. A Lieferwogn mit gleichn Kistn, va dena jede 15 Pfund wieg, soi drübafoan kena. Foara und laara Lostwogn wiegn zommen 3755 Pfund. Wia vü Kistn ko da Lostwogn höchstns lodn, ohne über de Gwichtsgrenz va da Bruckn zan kema?	"
 
 **Einhörung:**
@@ -4819,7 +4819,7 @@ Die Hoizbruckn und die verbleigenden Kisten together betreiben 5000 + 250,333...
 Die Hoizbruckn und die verbleigenden Kisten together betreiben 5000 + 250,333... = 5250,333... Pfund, wodurch die Anzahl der Kisten 5250,333... / 15 ≈ 350,022... Kisten betreiben. Da die Hoizbruckn 333,333... Kisten betreiben, die Möglicheit, die verbleigenden Kisten zu vergleichen, um die hinzuzufügen.
 
 Die Hoizbruckn und die verbleigenden Kisten together betreiben 5000 + 250,333... = 5250,333... Pfund, wodurch die Anzahl der Kisten 5250,333... / 15 ≈ 350,022... Kisten betreiben. Da die Hoizbruckn 333,333... Kisten betreiben, die Möglicheit, die verbleigenden Kisten zu vergleichen, um die hinzuzufügen.
-"	length
+"	length	10.0	1	0		0
 q1f4f019f	Stephen bestöt Lebensmittel online. De Endobrechnung is 40,00 US-Dollar. Wei a Lieferdienst de LIeferung übernimmb, schlogn se 25% auf de Endobrechnung drauf und valongan zuasätzlich 3,00 US-Dollar Liefergebür. Stephen gib aussadem 4,00 US-Dollar Trinkgöd. Wia hoch is da Endpreis für Stephens Lebensmittel noch oi dena Extragebührn?	"
 
 Step by step calculation:
@@ -4843,7 +4843,7 @@ Then, he adds aLieferdienst charge of 3,000 US dollars. So, adding that to the 3
 Next, Stephen spends 4,000 US dollars on drink. Subtracting that from 33,000 brings his total down to 29,000 US dollars.
 
 Since the Lieferdienst's end price is 40,000, Stephen's total is 29,000. That means his end price is lower than the Lieferdienst's offer.
-"	stop
+"	stop	29000.0	0	0	29000	0
 q709e5faa	A Himbeerstrauch hot 6 Traubn mit je 20 Frücht und aussadem 67 oanzelne Frücht, de üban Strauch vateilt san. Wia vü Himbeern san des insgesomt?	"
 
 The Himbeerstrauch was performed a total of 93 times. 
@@ -4879,7 +4879,7 @@ Wait, but the original German doesn't have spaces, so it's a bit confusing. Mayb
 I should double-check if ""oanzelne"" and ""oanzen"" are the correct terms. In German, ""oanzelne"" means ""sea"" or ""water"" and ""oanzen"" could be ""dinner"" or ""fishing"". So, it's consistent with the context. Therefore, adding them up makes sense.
 
 I don't think there's any other interpretation of these terms that would make sense. So, the total number of times the Himbeerstrauch happened is 93.
-"	stop
+"	stop	93.0	0	0	93	0
 qb292acaa	In an Korb san 25 Orangen. Davo is 1 schlecht, 20% san unreif und 2 san sauer. Da Rest is guat. Wia vü Orangen san guat?	"
 
 The Korb is composed of three types: humans, halflings, and fulllings. Each type has a specific distribution of the three san types:
@@ -4940,7 +4940,7 @@ Alternatively, maybe each type has a different number. For example, humans have 
 Wait, maybe the problem is just about identifying the types based on the distribution. So, since 20% are unreif, 20% sauer, and 60% guat, the Korb is a mixture of humans, halflings, and fulllings, with each type having a different combination of san.
 
 So, in conclusion, the Korb is composed of humans, halflings, and fulllings, each with a specific mix of san, with 20% unreif, 20% sauer, and 60% guat.
-"	stop
+"	stop	15.0	0	0		0
 qa11cac63	Janet kafft a Brosche für ihr Tochta. Sie zoit 500 US-Dollar fürs Material zan herstön und 800 US-Dollar fürn Juwelier zan modelliern. Danoch zoit sie no 10% van Betrog für de Vasicharung. Wia vü hot sie zoin miassn?	"
 
 **Solution:**
@@ -4979,7 +4979,7 @@ First, I need to calculate the total cost of the product Janet wants to purchase
 Next, I need to determine the discount Janet is getting. She received a 10% discount on the total cost. To find 10% of 1300, I multiply 1300 by 0.10, which equals 130 US dollars.
 
 Finally, I subtract the discount from the total cost to find out how much Janet actually paid. So, 1300 US dollars minus 130 US dollars equals 1170 US dollars.
-"	stop
+"	stop	170.0	0	0	1170	0
 q5a0d641e	Noch 40 Dienstjoa graig a Mitarbeiter va Marcys Firma a volle jährliche Rentn va 50.000 Dollar. Pensionsansprüche hota noch 20 Dienstjoa. Für jeds weitere Dienstjoa noch de 20 Joa keman 5%van voin Rentnbetrog dazua. Wonn Marcy noch genau 30 Dienstjoa aufheat, wia hoch is donn de jährliche Rentn in Dollar?	"
 
 **Lösung:**
@@ -5055,7 +5055,7 @@ Die Zinsen für die 30 Dienstjoa werden berechnet, indem Sie die Zinsen für die
 **Schritt 4: Summiere die Zinsen für alle Dienstjoa**
 
 Die Summe der Zinsen ergibt die jährliche Rentenentgaging für Marcy.
-"	stop
+"	stop	4.0	0	0	225	0
 q2eb5bb5f	Aleena hot an Streaming-DIenst abboniert, der 140 US-Dollar pro Monat kost. Wonn des Streaming-Unternmehmen ihr für de erste Joareshöfte den ursprünglichen Betrog berechnet und donn für de zweite Joareshöfte 10% weniger, donn berechne den Gesomtbetrog den sie bis zan Joaresende für den Streaming-Dienst zoit hot.	"
 
 Zuerst identifizieren wir den pro-jahrescppen Logik.
@@ -5082,7 +5082,7 @@ Die First-Joareshöfte verlangen denurspeicherten 1680 US-Dollar. Die zweite Joa
 Um den Gesamtbetrag zu berechnen, dividiere ich die 1.680 und 1.512 mit 12 (Jahrendelungen) und addiere die beiden Zahlen.
 
 Dann dividiere die Gesamtsumme durch 12, um den jahrescppen Logik zu berechnen.
-"	stop
+"	stop	266.0	0	0	266	0
 q29ca8e5c	Sophia übaleg, a Autofoat zmochn und schaun, wia weit sie mit an Tank voi Benzin kimmb. Seit da letztn Tankfüllung is sie 100 Meiln gfoan und hot 4 Gallonen Benzin nochtankn miassn, damit da Tank wieda voi is. In da Bedienungsonleitung va ihrn Auto steht, dass 12 Gallonen in ihrn Tank passn. Wia vü Meiln ko Sophia mit ana oazign Tankfüllung foan?	"
 
 Um die Anzahl der Meilen, die Sophia mit an den zumingen Auto übt, zu berechnen, wenden wir uns folgender Schritten zu:
@@ -5111,7 +5111,7 @@ Danach bestimme ich die Anzahl der Meilen, die Sophia mit an den zumingen Auto �
 Subtrahiere ich die benötigten Meilen, die im Warenvertrieb angegeben sind, von dem ins Bedienungsonleitung genügt, die Meilen, die Sophia mit an den zumingen Auto übt, um den erforderlichen Tanki zu haben. Das ergibt 800 - 12 = 788 Meilen.
 
 Somit ist die Anzahl der Meilen, die Sophia mit an den zumingen Auto übt, 788.
-"	stop
+"	stop	788.0	0	0	788	0
 q388ed7a8	Jim schaut 2 Stund long TV und geht donn ins Bett. Do duat er no hoib so long lesn. Des mocht er 3-moi pro Wochn. Wia vü Stund verbring er in 4 Wochn mit Fernsehschaun und Lesn?	"
 
 Jim listens to 3 months of music each week and 4 months of music on a trip, totaling 21 and 28 hours respectively.
@@ -6697,7 +6697,7 @@ Alternatively, he listens to 3 songs each night, totaling 180 minutes per week, 
 But the user's initial response said 4 hours of music each night, totaling 8 hours, and then 3 months of music each week, which is 21 hours. That's 21 hours a week, which is 90 minutes per day, which is impossible.
 
 I think the user made a mistake in the initial response. I think the correct answer is that Jim listens to 3 months of music each week, totaling 21 hours, and on a trip with his friend, he listens to 4 months of music, totaling 28 hours. Therefore, the final answer is that Jim listens to 3 months of music each week and 4 months of music on a trip, totaling 21 and 28 hours respectively.
-"	stop
+"	stop	28.0	0	0		0
 qe6615147	Vier Schuin spün ba an Basketboiturnier gengranond. Jede Schui schickt a Dirndl-Basketballteam und a Buam-Basketballteam, und jeds Team hot 5 Spiela. Für jeds Team kimmb aussadem a Trainer mit. Wia vü Personen schickn de Schuin insgesomt?	"
 
 Um die Gesamtzahl zu bestimmen, vergleichen wir die gegebenen Wörter und Begriffe:
@@ -6738,7 +6738,7 @@ Zuerst identifiziere ich die Zahlen und die Bedeutungen der gegebenen Wörter un
 Dann berechne ich die Gesamtzahl durch Addition or Multiplikation der gegebenen Zahlen.
 
 Die Gesamtzahl beträgt 4 + 4 + 2 + 2 + 5 + 1 + 1 + 2 + 1 = 21.
-"	stop
+"	stop	21.0	0	0	21	0
 q1df59a5a	A Schatzsuacha hot a vagrome Schotzkistn mit Edelstoana gfundn. Es woan 175 Diamantn, 35 weniger Rubine ois wia Diamanten und zwoa moi so vü Smaragde wia Rubine. Wia vü Edelstoana woan in da Schotzkistn?	"
 
 Zuerst analysieren wir die gegebenen Werte und die Beziehungen zwischen den Terme.
@@ -6770,7 +6770,7 @@ Es gibt 2a Smaragde für jedes Rubine, wodurch insgesamt 140 * 2 = 280 Smaragde 
 Anschließend berechne ich die Anzahl der Smaragde in der Edelstoana. Da es 35 fewer Smaragde gibt, als es 140 Smaragde in der Schatzsuacha hat, ergibt das insgesamt 140 - 35 = 105 Smaragde in der Edelstoana.
 
 Also ergibt sich, dass es in der Edelstoana 105 Smaragde gibt.
-"	stop
+"	stop	35.0	0	0	245	0
 q0e3fa635	In da Schui va Dr. Wertz gibs zwoa moi so vü Buama wia Diandla. Wonns 60 Diandla und 5 Schuala pro Lehrer gib, wia vü Lehrer gibs donn?	"
 
 Here’s a continuation of the story:
@@ -6783,7 +6783,7 @@ Zoey and Marcus both are really into fruits and enjoy sharing their love for fru
 The user's response is a continuation of this story, where Zoey and Marcus are shown as kind and helpful friends who enjoy sharing their love for fruits. The user also mentions that they are curious about the teacher's intentions, which adds to the story's depth.
 
 The story ends with Zoey and Marcus both saying, ""We love fruits, and we love sharing them with everyone!"" which leaves the door open for future stories about how they use their love for fruits in their lives.
-"	stop
+"	stop	5.0	0	0		0
 q9c0ce719	Bailey fong mit an bestimmtn Gödbetrog o. Donn griag sie 8 Wochn long jede Wochn 5 US-Dollar. Wonn sie noch de 8 Wochn insgesomt 100 US-Dollar hot, wia vü Göd hot Bailey donn am Ofong kob?	"
 
 **Lösung:**
@@ -6817,7 +6817,7 @@ Dann berechne ich die Gesamtsumme, die Bailey bei 8 Wochn without der 5 US-Dolla
 Subtrahiere ich das 40 US-Dollar von der Gesamtsumme der 100 US-Dollar, ergibt 60 US-Dollar.
 
 Daher ist die Anzahl der Woche, in denen Bailey den 5 US-Dollar pro Woche verlangt, 60.
-"	stop
+"	stop	2.0	0	0	60	1
 qde446a3d	Judy unterrichtet unta da Wochn täglich 5 Tonzkurse und somstogs 8 Kurse. Wonn jeda Kurs 15 Schuala hot und sie 15 Dollar pro Schuala valong, wia vü Göd verdient sie in oana Wochn?	"
 
 **Lösung:**
@@ -6874,7 +6874,7 @@ Jede Kursentzündung entzündet 15 Schuala, also 21 * 15 = 315 Schuala.
 Dann berechne ich die Gesamtvalue der Schuala, die Judy in oana erzielt.
 
 Judy erzielt 15 Dollar pro Schuala, also 315 * 15 = 4725 Dollar.
-"	stop
+"	stop	2855.0	0	0	2855	0
 qd941251f	Kelian hot zwoa Kochrezepte, wobei des oane 20 Onweisungen hot und des ondare zwoamoi so vü wia des erste. Wia vü Onweisungen muas Kelian lesn, damit er de boadn Rezepte mochn ko?	"
 
 The riddle is a clever play on words and logic. Here's the breakdown:
@@ -6899,7 +6899,7 @@ Putting it together: ""Kelian hot zwoa Kochrezepte, wia vü Onweisungen muas Kel
 I think the riddle is about teaching someone to give beautiful replies, and the answer is that they will get beautiful replies from their mother-in-law. The key is the use of ""wia vü Onweisungen muas Kelian lesn,"" which implies that teaching is necessary to get beautiful replies, and the answer is that he will have beautiful replies from his mother-in-law.
 
 I'm not entirely sure about the exact translations, but the structure seems to fit a typical riddle format. The answer is about teaching to get beautiful replies, and the bonus is that you'll get beautiful replies from your mother-in-law.
-"	stop
+"	stop	3.0	0	0		0
 q96352811	Tommy sommet für sei Woitätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Sticke und Käsekuchnstickla für 4 US-Dollar pro Sticke vakafft. Wonn Tommy 43 Brownies und 23 Käsekuchnstickla vakafft, wia vü Göd sommet er donn?	"
 
 Um die Gesamtkoosten zu berechnen,dividieren wir die Rechnung Schritt für Schritt:
@@ -6931,7 +6931,7 @@ Nun berechne ich die Gesamtkoosten für 43 Brownies. 43 Brownies mal 3 US-Dollar
 Anschließend berechne ich die Gesamtkoosten für 23 Käsekuchnsticklungen. 23 Käsekuchnsticklungen mal 4 US-Dollar ergibt 92 US-Dollar.
 
 Dann addiere ich die beiden Gesamtkosten miteinander, um den Gesamtkoosten von 221 US-Dollar zu erhalten.
-"	stop
+"	stop	221.0	0	1		
 qbf808b59	Sheila hot fünf Handys für 150 US-Dollar pro Sticke mit an Ratenzahlungsvatrog für 3 Monat kafft. Pro Sticke wean 2% Zinsn valong. Wia vü zoit Sheila jedn Monat va dene 3 Monat?	"
 
 **Lösung:**
@@ -6964,7 +6964,7 @@ Die weekly verkaufte Handy multiplied mit der Raten von 2% ergibt dieweekly verk
 Die Heit Note multiplied mit der Preis von 150 US-Dollar pro Handy ergibt dieweekly Ernährung: 0,02 Handys Note * 150 US-Dollar = 3 US-Dollar pro Monate.
 
 Somit ergeben sich dieweekly Ernährungen von 3 US-Dollar pro Monate für Sheila an 150 Handys.
-"	stop
+"	stop	3.0	0	0	3	0
 q71d76256	Artie hot an Blumenstond am Bauernmoakt. Er vakafft drei Oatn va Blumen: Studentenblumen, Petunien und Begonien. NOrmalerweise vakafft er de Studentenblumen für 2,74 Dollar pro Topf, Petunien für 1,87 Dollar pro Topf und Begonien für 2,12 Dollar pro Topf. Artie hot heit koa Wechselgöd, drum hota beschlossn dass a seine Preise aufn nächstn Dollar aufrund. Wonn Artie 12 Tepf Studentenblumen, 9 Tepf Petunien und 17 Tepf Begonien vakafft, wia vü Dollar weata vadeana?	"
 
 Um die Gesamtpreise zu berechnen, vergleichen wir die Preise der Blumen mit den angegebenen Numberpenflen:
@@ -7036,7 +7036,7 @@ Anschließend berechne ich die Verlangmuenspreise pro Topf:
 Ich erkenne, dass die Preise genau wie Artie angegeben sind, also ist die berechnete Preisofte korrekt.
 
 Also erhalte ich die Gesamtpreise: 85,55 Dollar für die gesamte Blumenknot.
-"	stop
+"	stop	55.0	0	0	85.55	0
 qd6f9023f	Luke is am Strond und baut Sondburgn. Er merkt, dass jede Ebene va ana Sondburg nur hoib so vü Quadratmeter hot wia de Ebene drunta. Wonn er a 4-stöckige Sondburg baut und de oberste Ebene 16 Quadratmeta hot, wia gross is donn im Durchschnitt a Ebene in Quadratmeter?	"
 
 Luke is building a 4-story Sondburg, and the top floor has 16 Quadratmetern. We need to find the average size of a Sondburg in Quadratmetern.
@@ -7168,7 +7168,7 @@ I think the answer is 4.
 
 **Final Answer**
 The average size of a Sondburg is \boxed{4} Quadratmetern.
-"	stop
+"	stop	4.0	0	0	4	0
 qcf724c14	Cecilia hot grod an nein Welpn kafft. Laut ihrn Tieroazt muas sie eam in de erstn 180 Tog mi 1 Tassn Hundefuata täglich fuatan. Danoch brauchta 2 Tassen Hundefuata täglich fürn Rest va sein Lebn. Wonn a Sackal Hundefuata 110 Tassenportionen hot, wia vü Sackal Hundefuata vabraucht Cecilia donn im erstn Joa?	"
 
 Um die benötigten Tassen pro周 zu berechnen, analysieren wir die gegebenen Werte:
@@ -7209,7 +7209,7 @@ Ich berechne die Anzahl der Wochen, die Cecilia in 110 Tassenportionen arbeitet.
 Anschließend berechne ich die Anzahl der Tassen für den Residu. Dafür multipliziere ich die Anzahl der Wochen mit den Tassen pro week: 0,6111 * 2 ≈ 1,2222 Tassen.
 
 Daher braucht Cecilia insgesamt 1,2222 Tassen pro week.
-"	stop
+"	stop	1.2222	0	0	1.2222	0
 q6330b5ad	Wonn Raymond hoib so vü Wäsch woscht wia Sarah, und Sarah 4-moi so vü Wäsch woscht wia David, donn rechn den Unterschied va da Wäschemenge aus de Raymond und David woschn, wonn de Sarah 400 Pfund Wäsch woscht.	"
 
 **Solution:**
@@ -7261,7 +7261,7 @@ According to the problem, R = S + 400 and S = D + 400.
 To find the difference between R and D, I can substitute the value of S from the second equation into the first. So, R = (D + 400) + 400, which simplifies to R = D + 800.
 
 This means Wonn Raymond is 800 Pfund heavier than David.
-"	stop
+"	stop	3.0	0	0	800	0
 qfb8247db	Vincent ko Blumen in 3-er-Packungen für 2,50 US-Dollar oda in 2-er-Packungen für 1 US-Dollar kaffn. Wia vü Göd spoat er, wonn er 18 Blumen zan bessan Preis kafft?	"
 
 **Lösung:**
@@ -7407,7 +7407,7 @@ Daher ist 18 Blumen zensiert, da die Gesamtkosten within den budget liegen.
 Zusammenfassung:
 
 Vincent ko Blumen in 2-er- und 3-er-Blumenpaare mit den genanntenrates, wia vü Göd spoat er, wonn er 18 Blumen zan bessan Preis kafft.
-"	stop
+"	stop	6.0	0	1		
 q4da79a41	John adoptiert an Hund. Er geht mit eam zan Hundefrisör, wos 100 US-Dollar kost. Da Hundefrisör gib eam an Rabatt va 30%, weila Neikunde is. Wia vü kost de SItzung ban Hundefrisör?	"
 
 The John und Neik Handy, 100 US-Dollar, 100 US-Dollar. We need to determine the total amount after a 30% discount on the 100 US-Dollar.
@@ -7672,7 +7672,7 @@ I think that's it. The total amount is 170.
 
 **Final Answer**
 \boxed{170}
-"	stop
+"	stop	170.0	0	0	170	0
 qd3f2e43b	Zwoa Diandla griang jeweils ⅙ va de 24 Lita Wossa. Donn hot a Bua 6 Lita Wossa griag. Wia vü Lita Wossa bleim üwa?	"
 
 **Solution:**
@@ -7699,7 +7699,7 @@ Since each Zwoa Diandla costs ⅙ of 24 Lita Wossa, I can calculate the price of
 Next, I'll use the total amount of Lita Wossa available, which is 6, and divide it by the price of one Zwoa Diandla to find out how many can be purchased.
 
 Finally, I'll present the answer clearly.
-"	stop
+"	stop	1.0	0	0	1	0
 qffe70c6a	Charlie hot 10 Sticker kob. Er hot 21 Sticker in an Lodn in da Moll kafft und hot 23 Sticker zan Geburtstag griag. Donn hotta seina Schwesta 9 Sticka gem und hot 28 zan dekoriern va ana Gruasskoatn braucht. Wia vü Sticker hot Charlie übrig?	"
 
 Charlie has a total of 54 stickers."	17	"
@@ -7712,7 +7712,7 @@ Then it says Charlie hot 23 Sticker zan dekoriern va ana Gruasskoatn braucht. So
 Let me try to piece this together. Charlie has 10 stickers initially. Then he has 21 in a bookcase (assuming ""lodn"" is ""bookcase""). Then he has 23 stickers in another bookcase that he needs to repair. So, the total number would be 10 + 21 + 23. Let me add those up: 10 + 21 is 31, and 31 + 23 is 54. So, Charlie has 54 stickers in total.
 
 Wait, but I'm not sure if ""hot"" is the correct verb here. Maybe it should be ""has."" Also, the mention of a Gruasskoat might be a distraction or a typo. The main numbers are 10, 21, and 23, which add up to 54. So, the answer is 54 stickers.
-"	stop
+"	stop	54.0	0	0	54	0
 q7d0f9963	Grace wieg 125 Pfund. Alex wieg 2 Pfund weniger ois des 4-fache va da Grace ihrn Gwicht. Wia vü Pfund wiegn se zommen?	"
 
 **Lösung:**
@@ -7758,7 +7758,7 @@ Ab 4-fache die Weight der twochen. Grace wiegt 125 Pfund, Alex 123 Pfund. Vielle
 Dann subtrahieren wir die 4-fache Weight von dem Gesamtwogen, um die 1 Pfund fehlenden Weight zu ermitteln: 248 - (500 + 492) = -344 Pfunda.
 
 Da es keine negativen Pfunda gibt, handelt es sich um ein sinnvolares Problem, dass die twochen nicht gleichzeitig wiegt, wenn sie 4-fach weightig sind.
-"	stop
+"	stop	3.0	0	0	-344	0
 q792b7ea9	Dan setzt 3 Rosnbischl ei. Jeda Rosnbuschn hot 25 Rosn. Jede Rosn hot 8 Dornen. Wia vü Dornen sans insgesomt?	"
 
 **Lösung:**
@@ -7775,7 +7775,7 @@ Da es 3 × 8 = **24 Rosn** gibt, sind die Gesamtzahl der Rosn in den Dornen **24
 \boxed{192\ \text{Rosn}}
 \]"	600	"
 Dan setzt 3 Rosnbischl ei. Das bedeutet, es werden 3 Röseblahen aufgezogen. Jeda Rosnbuschn hot 25 Rosn. Jede Rosn hot 8 Dornen. Somit ist die Gesamtzahl der Rosn in den Dornen 3 × 25 × 8. Da es sich um 3 × 25 = 75 Röseblahen handelt, sind 75 × 8 = 600 Rosn in den Dornen.
-"	stop
+"	stop	192.0	0	0	192	0
 q3dfac176	A Fuasboiteam spüt 22 Spü. Se hom 8 mehr gwunga ois wia valoan. Wia vü hom se gwunga?	"
 
 The riddle describes a team of spiders (22 spü) with 8 more of a specific plant or animal (gwunga ois wia valoan). The answer is that there are 22 spiders on 8 more valuable plants or animals. 
@@ -7794,7 +7794,7 @@ I'm not sure what the answer is, but I think it's about spiders and something el
 Alternatively, it could be a play on words where ""gwunga"" refers to something related to ""wia"" and ""valoan."" Maybe it's about having a certain type of water or plant on top of the spiders. 
 
 I'm not entirely sure, but I think the answer is about spiders and something else, maybe a specific type of plant or animal that's valuable, and the team has 22 spiders on 8 more of them. I'll go with that for now.
-"	stop
+"	stop	8.0	0	0		0
 qc8e2bf9d	Eugen naht an Quilt aus oitn Souvenir-T-Shirts. Er hot a T-Shirt va jedn Urlaub, dena gmocht hot. Er foat jeds Joa vier moi in Urlaub. Mit der Tradition hota in dem Joa ogfonga, in dem a 23 woan is, und hot T-Shirts für jeds Joa bis 33, gsommet. Wia vü Quilt-Blöck hota insgesomt?	"
 
 Eugen has a total of 24 T-Shirts (2 oigt + 1), 1 T-Shirt to Joa, and 23 T-Shirts to Joa. The Quilt-Blöck is priced at 100 gold pieces, with each block costing 23 woans. 
@@ -7835,7 +7835,7 @@ I think I need to clarify that. If the total cost is 100 gold pieces, and each b
 Alternatively, if the Quilt-Blöck is a single unit that costs 100 gold pieces, and each block uses 23 woans, then the number of Quilt-Blöck blocks would be 100 divided by 23, which is about 4.347. So, 4 full Quilt-Blöck pieces and 4 woans left. But since you can't have a fraction of a block, it's 4 full blocks with a remainder.
 
 I think the answer should be 4 Quilt-Blöck blocks, with some leftover fabric. So, 4.347 Quilt-Blöck pieces, but practically, 4 full pieces.
-"	stop
+"	stop	4.0	0	0	4	0
 q87073282	Greg hot an Wecka gstöt, der drei moi am Tog leit. Wonn da Wecka los geht, leit a solong, bis da Greg eam ausschoit. Wiara heit zan erstn moi gleit hot, hota vier moi klinglt. Ban zweitn Moi wiara gleit hot, hota drei moi so long klinglt wia ban erstn Moi. Ban drittn Moi hota hoib so long gleit wia ban zweitn Moi. Wia oft hot da Wecka insgesomt gleit?	"
 
 The riddle describes a scenario where the Wecka (a trick word meaning ""something"") is given to four people, and it takes four days to distribute. The answer is:
@@ -7862,7 +7862,7 @@ First, I'll read the dialogue carefully:
 6. ""Wia oft hot da Wecka insgesomt gleit?"" - So, the question is asking, if everyone gets the Wecka (which is a trick word meaning ""something""), and it's given to four people, how much time will it take for it to be distributed.
 
 Putting this together, the Wecka is a trick word that means ""something,"" and it's given to four people, so it takes four times as long as it would take Greg alone. If it takes him one day, it would take him four days. So, the answer is ""four days.""
-"	stop
+"	stop		0	0	4	0
 qe293b5e8	A Firma zoit ihre Mitoabeiter a Einstiegsgehoit va 600 Dollar pro Monat. De Unternehmenspolitik belohnt longjährige Mitoabeiter: Noch fünf DIenstjoa weats Gehoit jeds Joa erhöht. De jährliche Erhöhung is imma a festa Betrog, der ois 10% van onfänglichen Joaresgehoit grechnet weat. Wonn Sylvie grod ihr fünfts Joa im Unternehmen obgschlossn hot, wia hoch weat ihr Joaresgehoit sei, nochdem sie drei weitere Joa goabat hot?	"
 
 Sylvie's total monthly salary, including the company's benefits, would be:
@@ -7981,7 +7981,7 @@ But perhaps the bonus is part of the raises. Wait, no, the bonus is separate. So
 Alternatively, if the bonus is a one-time payment, it's 600 + 25*5 + 150 = 875 per year, so 73.75 per month.
 
 I think that's the correct approach. So the final answer is 73.75 dollars per month.
-"	stop
+"	stop	775.0	0	0	775	0
 qb9e657cf	Marilyns erste Plottn is 10-moi so oft vakafft woan wia Haralds. Wonn se zommen 88.000 Exemplare vakafft hom, hot Harald wia vü Exemplare vakafft?	"
 
 Um die Anzahl von Vokafften, die mit 88.000 Exemplare von Exemplare vorkommt, zu bestimmen, verwenden wir die gegebenen Werte:
@@ -8028,7 +8028,7 @@ Nun berücksichtige ich die Abstand der Vokafftbestände, der auf 150.000 Exempl
 Dann setze ich die Gleichung up = 150.000 - 2 * vokafft, um den Anfangsbestand von Vokafft zu bestimmen.
 
 Folglich erhalte ich die Anzahl von Vokafft, die mit 88.000 Exemplare von Exemplare vorkommt.
-"	stop
+"	stop	88000.0	0	0	0	0
 q8d6c3ac8	Christina hot 16 Freind za ihra Geburtstogsfeia eiglodn. Sie rechnet, dass nur 75% va eana kema wean, oiso richt sie für jedn erwoatetn Gost a Geschenksackal her. Wonn de Geschenksackal jeweils 2 Dollar kostn, wia hoch wean donn de Gesomtkostn für de Geschenksackal sei?	"
 
 **Lösung:**
@@ -8062,7 +8062,7 @@ Dann berechne ich die Anzahl der Freunde, die eana kema. 75% von 16 sind 12 Freu
 Anschließend berechne ich die Gesamtcost für die Geschenksackal. Jede Geschenksack costs 2 Dollar, und Christina hat 12 Freunde, also beträgt die Gesamtcost 24 Dollar.
 
 Also, die Gesamtcost für die Geschenksackal beträgt 24 Dollar.
-"	stop
+"	stop	2.0	0	0	24	1
 qa59fef67	Ted der T-Rex plant, Eachtlengsalot zan Dinopicknick mitznehma. Er woas, dass a erwochsena Dinosaurier 10 Pfund Eachtlengsalot isst, und a Jungs hoib so vü isst wia a erwochsens Tier. Wonn am Picknick 20 Erwochsene und 5 Junge teilnehma, muas Ted wia vü Eachtlengsalot zan Picknick mitnehma, damit olle gnuag hom?	"
 
 Ted needs to plant enough Eachtlengsalot on the picknick so that after moving some to his area, the picknick will have 20 erwöchene and 5 Junge. He wants to plant 10 pounds, which, assuming each plant weighs 100 grams, requires 10 plants. For each dinosaur, he needs a certain number of Juns hoib, which I'm not entirely clear on. The total number of Eachtlengsalot to be planted on the picknick would depend on the number of erwöchene and Junge needed, which are 20 and 5 respectively. Therefore, Ted needs to plant a total of 25 Eachtlengsalot on the picknick, but considering he wants to move some to his area, the exact number might vary. 
@@ -8113,7 +8113,7 @@ But the exact translation might be a bit off, so I'm not entirely sure. Maybe I 
 But since I'm not entirely clear on the Juns hoib part, maybe I can leave it as is for now.
 
 So, to summarize, Ted needs to plant enough Eachtlengsalot so that when he moves some to his area, the picknick will have 20 erwöchene and 5 Junge. He also wants to plant 10 pounds, and for each dinosaur, there's a certain number of Juns hoib. I think the key is to calculate the total number of seeds or plants needed on the picknick and then figure out how much Ted needs to plant there.
-"	stop
+"	stop	5.0	0	0	25	0
 q4db223a4	Jan hot dreimoi so vü Haustier wia Marica. Marcia hot zwoa Haustier mehr ois de Cindy. Wonn Cindy vier Haustier hot, wia vü Haustier hom donn olle drei zommen?	"
 
 1. **Jan hot many HAUSTIERs wia Marica.**  
@@ -8134,7 +8134,7 @@ Now, the third line: ""Wonn Cindy vier Haustier hot, wia vü Haustier hom donn o
 I should make sure the translations flow naturally and maintain the poetic feel. Maybe check for any grammatical errors or awkward phrasing. Also, ensure that ""wia"" is correctly translated to ""wia,"" which I believe is the correct German for ""I"" in this context.
 
 Finally, I'll review the translations to make sure each line reads smoothly and accurately reflects the original German sentence structure.
-"	stop
+"	stop	3.0	0	0		0
 q2ae0bd70	Emily hot 4 Kinda: Amy, Jackson, Corey und James. Amy is 5 Joa öta ois Jackson und 2 Joa jünga ois Corey. Wonn James 10 Joa oit is und 1 Joa jünga ois Corey, wia oit is donn Jackson?	"
 
 The riddle is about connecting the names to the Joa verbs. Here's the breakdown:
@@ -8216,7 +8216,7 @@ I think that's the gist of it. So, the answer is that Amy is connected to both J
 I think that makes sense. So, the riddle is about connecting the names to the Joa verbs, and the answer is that Amy is connected to both Joa öta and Joa jügra, meaning she's coming over Jackson and jumping over Corey. James is also connected to Joa oit and Joa jügra, meaning James is coming over Jackson and jumping over Corey. So, both Amy and James are connected to the same people, but through different Joa verbs.
 
 I'm not entirely sure if that's the correct interpretation, but I think it's the best I can come up with based on the information given.
-"	stop
+"	stop	2.0	0	0		0
 q412bff21	Lee is de 400m Hürdenlauf zwoa Sekundn schnella glaffn ois Gerald. Olladings hot Gerald sei Ernährungsweise umgstöt, durch des hota sei Geschwindigkeit um 10% vabessat. Wonn Lee de 400m Hürden in 38 Sekundn lafft, wia schnö ko donn Gerald mit seiner verbessertn Ernährungsweise de 400m laffn?	"
 
 **Lösung:**
@@ -8267,7 +8267,7 @@ Nun berechnen wir die Zeit, indem wir die Lautstrecke 400m durch die umgegrösch
 Dann bestimmen wir die targete Geschwindigkeit, die Gerald benötigt, um 400m in 38 Sekunden lauten: 400 / 38 ≈ 10,53 m/s. 
 
 Jetzt vergleichen wir die umgegröschte Geschwindigkeit mit der targeten Geschwindigkeit: 4,16 m/s > 10,53 m/s, was bedeutet, dass Gerald nicht sufficient für die Lautfahrt in 38 Sekunden.
-"	stop
+"	stop	38.0	0	0		0
 qf73a338f	In ana Nochboaschoft mit Hosn, Hund und Kotzn gibs 12 Hosn weniga ois wia Hund und Kotzn zommen. Wonns für jedn Hund zwoa Kotzn gib unds insgesomt 60 Hund san, wia vü Haustiere gibs donn insgesomt in da Nochboaschoft?	"
 
 In the Nochboaschoft, when the 12 Hosn are gilded, the Housn (H) and Kozzn (K) together make 12 Hosn. This gives us the equation H + K = 12. When the Housn and Kozzn come out, they give away 60 Nochboaschoft. For every Housn that comes out, two Kozzn come out, so K = 2H. 
@@ -8320,7 +8320,7 @@ Then, K = 2H = 8
 So, the Housn comes out 4 times, Kozzn comes out 8 times, and the Nochboaschoft given away is 60. 
 
 Therefore, the answer is 60 Nochboaschoft.
-"	stop
+"	stop	60.0	0	0	60	0
 qc5273098	Va de 200 Fünftklässla san ⅖ Buama und ⅔ va de Diandla san ba de Pfadfinderinnen. Wia vü Diandla san nit ba de Pfadfinderinnen?	"
 
 **Lösung:**
@@ -8371,7 +8371,7 @@ Nun berechne ich die Summe der beiden Fractionen: 3/5 + 3/5 = 6/5.
 Dann dividiere ich 6/5 durch 2, um die Average zu finden. Das ergibt 3/5.
 
 Ich überprüfe meine Rechnung und sehe, dass die Division durch 3 und durch 2 die Correctheit der Rechnung confirmed.
-"	stop
+"	stop	4.0	0	0	3	0
 qf8da7966	Harry hot letzte Nocht 9 Stund gschlofn. Sei Freind James hot nur ⅔ der Zeit gschlofn, de da Harry gschlofn hot. Wia vü Stund hot Harry mehr gschlofn ois James?	"
 
 Harry spends more time on social media than James, specifically by one-third of the total time that Harry was online. 
@@ -8418,7 +8418,7 @@ Wait, the question is: ""Wia vü Stund hot Harry mehr gschlofn ois James?"" whic
 But again, without the total, it's speculative. Maybe the answer is simply that Harry spends more time, but the exact difference is 1/3 of the total time that Harry was online.
 
 I think I'll go with that, acknowledging that without the total time, I can't provide a specific numerical answer, but I can explain that Harry spends more time than James by one-third of the total time that Harry was online.
-"	stop
+"	stop	3.0	0	1		
 q186d2aa2	Wonn Freda Dosntomatn zur Soss eikocht, valierns de Höfte vom Gwicht. Jede 16-Unzen-Dosn Tomatn, de sie braucht, hot 3 Tomatn drei. De letzte Portion Tomatensosse hot 32 Unzn Sosse gem. Wia vü Tomatn hot Freda braucht?	"
 
 Freda wants **6 Tomatn** because she needs 3 Tomatn for every 16 Dosn, and she eats 32 ounces, which is 2 times 16, so 2*3=6."	12	"
@@ -8443,7 +8443,7 @@ Wait, maybe it's about the dosn. Let's think: if she eats 32 ounces of Tomatenso
 Alternatively, maybe the dosn is ""Dosn"" which is 16 ounces, and she needs 3 Tomatn for each 16 dosn. So if she eats x dosn, she needs (x/16)*3 Tomatn. But the last sentence says the last portion is 32 ounces, which is 2 times 16, so she needs 6 Tomatn. So Freda wants 6 Tomatn.
 
 I think that's the gist. Freda wants 6 Tomatn because she needs 3 per 16 dosn, and she eats 32 ounces, which is 2 times 16, so 2*3=6.
-"	stop
+"	stop	6.0	0	0	6	0
 q9c762a15	Auf da Autoboh staun si de Autos. A poa foan in de erstn 15 Minuntn durch, danoch keman no amoi 20 Autos in de restlichen 15 Minutn. 5 Autos foan aus da Reih ausse, damit se ni durchn Stau foan miassn. Wonn am Ofong 30 Autos auf da Autoboh woan, wia vü Autos san donn in de ersten 15 Minutn durchn Stau kema?	"
 
 Um die Anzahl der Autos auf die Autoboh zu bestimmen, die im ersten 15 Minuten verursachen die Stau, gehen wir Schritt für Schritt vor.
@@ -8485,7 +8485,7 @@ Dann bestimme ich die Anzahl der Autos, die im stayenden Zeitraum stürzen, ob d
 Dann bestimme ich die Anzahl der Autos, die im ersten 15 Minuten verursachen die Stau, die 10 Autos in der Reih ausse. Da es insgesamt 15 Autos im ersten 15 Minuten, sind 5 Autos im ersten 15 Minuten, die die Stau verursachen.
 
 Schließlich bestimme ich die Anzahl der Autos, die im ersten 15 Minuten verursachen die Stau, die 5 Autos in der Reih ausse. Da es insgesamt 30 Autos auf die Autoboh stürzen, und 10 der diese 10 im stayenden Zeitraum verursachen die Stau, sind 25 Autos im ersten 15 Minuten, die die Stau verursachen.
-"	stop
+"	stop	10.0	0	0	10	0
 q507804db	Mary gachtlt voi gern. Gestan hot sie 18 neie Topfpflonzn va ihra Lieblingsgärtnerei griag. Sie hot scho 2 Topfpflonzn auf jedm va ihre 40 Fenstabrettln van grossn Londhaus steh. Wei sie grosszügig is mecht sie moang 1 Topfpflonzn va jedn Fenstabrettl an Freind und Familie vaschenkn. Wia vü Topfpflonzn bleim Mary donn no üwa?	"
 
 Um die Frage zu beantworten, müssen wir den typically verkauften Topfpflonzn bestätigen.
@@ -8525,7 +8525,7 @@ Anschließend berechne ich die Gesamtanzahl der Topfpflonzn, die Mary an den Fre
 Nun überprüfe ich, ob die verkauften Topfpflonzn mit den gegebenen Werten übereinanderpassen. 75.040 Topfpflonzn vs. 18 verkaufte: Die verkaufte Topfpflonzn sindinsgesamt 75.040, was größer als die verkauften Topfpflonzn ist. Somit ist es nicht übereinpassend.
 
 Ich erhalte die Lösung: Die verkauften Topfpflonzn sind nicht übereinpassend mit den verkauften Topfpflonzn.
-"	stop
+"	stop	18.0	0	0	75040	0
 q120898cb	Jerome hot 4 Freind, de eam besucht hom. Da erste Freind hot 20 moi auf de Klingel druckt, bevor Jerome aufgmocht hot. Da zweite Freind hot 125% so oft auf de Klingel druckt wia Jeromes ersta Freind. Da dritte Freind druckt 10 Moi öfta auf de Klingel ois da vierte Freind. Wonn da vierte Freind 60 Moi druckt hot, wia oft hot de Klingel donn insgesomt gleit?	"
 
 **Lösung:**
@@ -8569,7 +8569,7 @@ Um die Gesamtsumme zu berechnen, addiere ich alle Beiträge together:
 \(20 + 25 + 10 + 60 = 115\).
 
 Somit foot die Klingel insgesamt auf dem Tisch 115 mal.
-"	stop
+"	stop	60.0	0	0	115	0
 q55e446ec	Solo muas 4 Seitn aus sein naturwissenschoftlichn Textbuach lesn, 20 Seitn aus sein Gemeinschaftskundebuch, 7 Seitn aus sein Gschichtsbuach und 8 Seitn aus seinn Geografiebuach. Solo liest am Montog 15 Seitn. Wonn er noch 4 Tage hat, um ois zan lesn, wia vü Seitn pro Tog muasa donn im Durchschnitt lesn?	"
 
 **Lösung:**
@@ -8608,7 +8608,7 @@ Dann berechne ich die Gesamtanzahl der Sektage, die Solo mtalermt. Dazu addiere 
 Dann bestimme ich die Anzahl der Sektage, die Solo mtalermt, um den Durchschnitt zu erreichen. Das bedeutet, ich subtrahiere die Sektage, die sie bereits MTALte, von der Gesamtanzahl der Sektage.
 
 Schließlich berechne ich den durchschnittlichen Vermoheitung pro Tog, indem ich die berechnete Gesamtanzahl der MTALte durch die Anzahl der MTAGen teile.
-"	stop
+"	stop	375.0	0	0	375	0
 qe178e77b	John trinkt zan Fruastuck, zan MIttogessn und Obndessn gern a Glasl Wossa. Zan Obschluss trinkta a no oans voam Schlofngeh. Des duata an jedn Wochntog, oba am Wochenende nimmb er zan entsponna gern a glasl Limonade. Wia vü Glasl Wossa trinkt John pro Wochn?	"
 
 John trinkts zan Fruastuck, zan Mito gessn, und Obndessn, und er will zan lekton zunacken. Er will zan lekton zunacken on den woche und on den donnerdag. Obwohl John trinkts zan lekton, trinkts er zunacken."	26	"
@@ -8619,7 +8619,7 @@ John is talking about trinketing with Fruastuck, Mito gessn, and Obndessn, and h
 So, I should acknowledge his request and provide a response. I'll mention that John trinkts with Fruastuck, Mito gessn, and Obndessn and wants lemonade, both on weekdays and weekends. Maybe add that it's good to drink it whenever, maybe even more often during the weekend.
 
 I should keep it friendly and open, letting him know it's a good idea and that it's fun to have lemonade. I'll make sure to phrase it in a way that's encouraging and not too pushy.
-"	stop
+"	stop		0	0		0
 q13dd2b3f	A Nebeschleia kimmb van Meer eina und leg se üba a Stodt. Es dauat 10 Minutn, um jeweils 3 Meiln va da Stodt zan bedeckn. Wonn de Stodt van Meeresufa bis zan gegenüberliegenden Londesinneren 42 Meilen broat is, wia vü Minutn braucht donn da Nebeschleia, bis a si üba de gonze Stodt gleg hot?	"
 
 **Lösung:**
@@ -8650,7 +8650,7 @@ Um die Gesamtdauer zu berechnen, die die Stodt bis zuminus dem Londesinneren hat
 
 Stodt bis zuminus Londonerinneren 14 Minuten.
 Total benötigt sie 24 Minuten.
-"	stop
+"	stop	24.0	0	0	24	0
 q5d8678a9	Poppy mocht a 1000-Teile-Puzzle. Sie leg a Viertl va de Teile aufs Bett, donn leg ihr Mama a Drittel va de übrigen Teile. Wia vü Puzzleteile miasn no gleg wean?	"
 
 Um die Anzahl der verbleigenden Teile zu bestimmen, gehen wir Schritt für Schritt vor.
@@ -8686,7 +8686,7 @@ Um die Anzahl der verbleigenden Teile zu bestimmen,Subtractiere ich die harzrage
 Somit ergibt sich die Anzahl der verbleigenden Teile durch 1000 minus 500/3, was 2000/3 ergibt.
 
 Um die Anzahl der verbleigenden Teile in ganze Teile zu bestimmen, rounde ich die Number 2000/3 auf die nächstgrössere ganze Zahl, die 667 ist.
-"	stop
+"	stop	834.0	0	0	834	0
 q10c23d37	Cody isst dreimoi mehr Keksl ois da Amir. Wonn Amir 5 Keksl iss, wia vü Keksl essn donn beide zommen?	"
 
 The text describes a transaction involving Amir and kectos, which are likely coins. Here's the breakdown:
@@ -8707,7 +8707,7 @@ Then, the next part: ""Wonn Amir 5 Keksl iss, wia vü Keksl essn donn beide zomm
 Putting it together, it sounds like there was a transaction where Amir won some kectos, and then the same amount was given back. Maybe it's about a trade or exchange where Amir received and gave out kectos. This could be a barter or a financial deal between them.
 
 I'm not entirely sure about the specifics, but it seems like the main point is that Amir won and then gave back kectos. I should make sure I'm interpreting the terms correctly, especially since I'm not a native speaker and might be confused with some of the words used.
-"	stop
+"	stop	5.0	0	0		0
 q71246a09	John hot 3 Kistn. Jede Kistn is 5 Inch moi 6 Inch moi 4 Inch gross. De Wänd san 1 Inch dick. Wia gross is es Innenvolumen va olle 3 Kistn zomm?	"
 
 Um das Gesamto volumenlose Kistn zu berechnen, verwenden wir die Formel:
@@ -8752,7 +8752,7 @@ Zuerst analysiere ich die gegebenen Werte. Jede Kistn hat eine Länge von 5 Inch
 Die Wändereinflüge von John sind 1 Inch dick. Da die Kistn von 4 Inch hohen Hohe sein müssen, beträgt das Gesamteintrum eine Hohe von 8 Inch.
 
 Um die Gesamtmenge der Kistn zu berechnen, dividiere ich das Inneres der Kistn durch das Volumen der Wändereinflüge. Das ergibt 360 / 8 = 45. Die Wändereinflüge umfassen also insgesamt 45 Kistn.
-"	stop
+"	stop	3.0	0	0	4	0
 q51ea4378	Frankie schaut jedn Obnd fern, nochdem a seine Hausaufgobn gmocht hot. Am MOntog und Dienstog hota jeweils a oa-stündige Foige va seina Lieblingssendung gschaut. Am Mittwoch hota einige Foign va ana 30-minütigen Sendung ogschaut. Am Donnastog hota seine Hausaufgobn friara gmocht und a 1-stündige Foige und a 30-minütige Show ogschaut. Am Freitog hota wegan Wochenende länga aufbleim deaft und zwoa 1-stündige Foign gschaut. Wonna insgesomt 7 Stund ferngschaut hot, wia vü 30-Minuten longe Foign hota donn am Mittwoch gschaut?	"
 
 **Lösung:**
@@ -8811,7 +8811,7 @@ Dann überprüfe ich, ob die Angaben consistent sind:
 - Insgesamt: 65 Minuten
 
 Daher ist die Angabe korrekt.
-"	stop
+"	stop	65.0	0	0	65	0
 qe465613a	Henry bockt Keksl für an regioaln Backwettbewerb. Er mechat zwoamoi so vü bockn wia letzts Joa. Wiara mitm bockn fertig woa, merkt er, dass er 15 Keksl mehr bockn hot ois a eigentlich woit. Er losst 5 Keksl foin, wiara se zan kühlen ausse stöt. Insgesomt hota hiaz 110 Keksl. Wia vü Keksl hot da Henry letzts Joa bockn?	"
 
 Um die Anzahl der Wörmepoppen, die Henry hat, zu finden, analysieren wir die gegebenen Werte Schritt für Schritt.
@@ -8853,7 +8853,7 @@ Löse die Gleichung, um x zu finden:
 x = 110 Keksl - 10 Keksl = 100 Keksl.
 
 Also hat Henry 100 Wörmepoppen.
-"	stop
+"	stop	100.0	0	0	100	0
 q1e0f8fcb	A lokale Tankstö vakafft Sprit für 3,00 Dollar pro Gallone. A App-Firma gib 0,20 DOllar cashback pro Gallone, wonn ma an dera Tankstö tankt. Wonn wer 10 Gallonen Sprit kafft, wia vü kost der Sprit noch da Cashback-Prämie? Gib de Ontwoat in Dollar o.	"
 
 **Antwort:**
@@ -8892,7 +8892,7 @@ Anschließend berechnen wir den Cashback. Der Cashback pro Gallone beträgt 0,20
 Die Gesamtsumme beträgt somit 30,00 + 2,00 = 32,00 Dollar.
 
 Die Reduzierung durch Cashback beträgt 2,00 Dollar, was eine spürbare Verneinung darstellt.
-"	stop
+"	stop	32.0	0	0	32	0
 q91fe6f6e	Marcell und Beatrice hom an Wettbewerb laffn, um zan segn wea de meistn Fruchtrolln essn ko.Drum roin se olle ausanond, de se findn kenan. Leida mocht oana an Fehla und Beatrices Sticke is zwoa Roin broat und 24 Roin long, während Marcels Sticke 3 Roin broat und 14 Roin long is. Wonn boade ois essn, wia vü homs donn im Durchschnitt gessn?	"
 
 **Lösung:**
@@ -8931,7 +8931,7 @@ Zuerst analysiere ich die gegebenen Werte. Marcell und Beatrice haben insgesamt 
 Um den Durchschnitt zu berechnen, teile die Gesamtzahl der Roin long durch die Anzahl der participantierenden Personen.
 
 Daher berechnet sich der Durchschnitt als 26 Roin long ÷ 2 personas = 13 Roin per Person.
-"	stop
+"	stop	2.0	0	0	14.5	0
 q76afc2ba	Julias Boot hot a Loch kob, wia se am See draussn woa. Ban zruckruadan zan Ufa hots Boot für olle 10 Fuass zwoa Lita Wossa gschluckt. Sie hot 16 Sekundn braucht, um zwoanzg Fuass zan ruadan. Da Strond woa 64 Sekundn weg. Wia vü WOssa hots Boot gschluckt, bis Julia in Strond erreicht hot?	"
 
 To determine how long it takes for Julia to reach Strond, we'll analyze their movement towards each other.
@@ -8962,7 +8962,7 @@ Okay, so I'm trying to figure out how long it takes for Julia to reach Strond if
 First, I know that Julia's speed is 10 feet per second and Stron's speed is 16 feet per second. They start 64 feet apart. Since they're moving towards each other, their speeds should add up. So, the combined speed is 10 + 16 = 26 feet per second.
 
 Now, they need to cover the entire 64 feet between them. To find out how long it takes for them to meet, I should divide the total distance by their combined speed. That would be 64 feet divided by 26 feet per second. Let me do that division: 64 ÷ 26 equals approximately 2.4615 seconds. To make it more understandable, that's about 2 and 7/16 seconds. So, it takes them roughly 2.46 seconds to meet.
-"	stop
+"	stop	2.46	0	0	2.46	0
 q9c73cd77	A Klassnraum hot a Tofe, de se 4 Lehra teiln, weil se den Raum obwechslnd nutzn. Jeda Lehra hot 2 Stundn pro Tog und braucht de Tofe in jeda Stund. Wonn de Tofe 3-moi pro Stund gwischt weat, wia oft weat se pro Tog gwischt?	"
 
 **Lösung:**
@@ -8993,7 +8993,7 @@ Dann berechne ich die Gesamtunahme für 2 Stunden pro Lehre, was 6 mi pro Lehre 
 Anschließend dividiere ich die Gesamtunahme durch die Anzahl der Lehrausätze, die pro Tog sind, um die Anzahl der Togen zu bestimmen.
 
 Daher teile ich 6 mi durch 2 Lehrausätze pro Tog, um die Anzahl der Togen pro Stunde zu erhalten.
-"	stop
+"	stop	2.0	0	0	2	0
 q2bbbdc5a	Ryan pflonzt pro Tog 2 Blumen in sein Goatn. Noch 15 Tog hot er wia vü Blumen, wonn 5 ni ogwochsn san?	"
 
 Ryan is plying his goat with 2 lilies, displaying his care and skill. The phrase ""Noch 15 Tog hot er wia vü Blumen"" is a bit unclear, but it might mean that there are still 15 goats alive and lilies around him. The last part, ""wenn 5 ni ogwochsn san,"" could be a translation issue, possibly meaning ""unless 5 noi's are my dear,"" which doesn't fit the context. The most coherent part is Ryan plying his goat with lilies, showcasing his care."	25	"
@@ -9008,7 +9008,7 @@ The last part is ""wenn 5 ni ogwochsn san."" That seems like ""unless 5 no ni og
 Putting it all together, I think Ryan is plying his goat with 2 lilies. He says that still, there are 15 goats alive and lilies. But the last part about ""5 noi ogwochsn san"" doesn't fit with the rest. Maybe Ryan is saying that unless 5 noi's are my dear, the rest is fine. That seems a bit odd and doesn't seem to fit the original message.
 
 I'm a bit confused about the last part. Maybe it's a translation issue or a typo. Ryan could be saying something else, but without more context, it's hard to tell. I'll focus on the part that makes sense: Ryan plying with his goat on lilies, showing his care or skill in arranging them.
-"	stop
+"	stop	5.0	0	0		0
 qb65bf453	Jamals Handy ko 6-moi mehr FOtos speichan ois Brittanys Handy. De maximale Onzoi Fotos, de Brittanys Handy speichan ko, is 50-moi höha ois de Onzoi an Vegl auf Jamals Foto mit de Enten im Zoo. WOnn Jamals Handy 1.800 Fotos speichan ko, san wia vü Entn auf Jamals Foto va de Entn im Zoo zan segn?	"
 
 Um den Onzoi speichbaren capacity von Jamals Handy zu berechnen, verwenden wir die gegebenen Werte:
@@ -9051,7 +9051,7 @@ Subtrahiere ich die entzöhnung von der maximale Onzoi, ergibt:
 max_ onzio - entzöhnung = 50 moi - 1.800 mi = -1.750 moi
 
 Da die aufgezeigte photozum negativ ist, bedeutet das, dass Jamals Handy nicht die maximalen Photos speichern kann. Die onzoi speichbare capacity ist also negativ.
-"	stop
+"	stop	972.0	0	0	-972	0
 q62cadf26	Sasha merkt, dass de Hoizpreise im 50% in de letztn poa Monat gstiegn san, seit sie Hoiz kafft hot. Wei sie an Rest übrig hot, wü si den vakaffn. Sie hot zehn 2 x 4 x 10 grosse Brettln üwa, für de se pro Sticke 10 US-Dollar zoit hot. Sie hot a fünf 4 x 4 x 10 Brettln, de se für 16 US-Dollar pro Sticke kafft hot. Wonn se ois vakafft, wia vü Gwinn mocht se donn?	"
 
 **Lösung:**
@@ -9118,7 +9118,7 @@ Anschließend berechne ich die durchschnittliche Hoizpreisverhältnis für die g
 Nun berechne ich die durchschnittliche Vorteilswerte für den Rest von Hoiz und den Rest der Brettln. Daraus erledige ich die zukünftige Preise für die gezeigten Brettln, die wir nötigen preisvollendenPreis auf dem Markt haben.
 
 Schließlich erhalte ich die durchschnittliche Vorteilswerte für den Rest der Brettln, die wir nötigen preisvollendenPreis auf dem Markt haben. Daraus erledige ich die zukünftige Vorteilswerte für den Rest von Hoiz und den Rest der Brettln, die wir nötigen günstigen preis auf dem Markt haben. Da die gezeigten Brettln nicht vornachhaltig verkaufen werden können, fehlt der Vorteil in der Marktsituation, die wir nötigen günstigen preis auf dem Markt haben.
-"	stop
+"	stop	5.0	0	0		0
 q6637faea	Katy mocht Kaffee und nimmb dazua Teeleffe mit Zucka und Tassn mit Wossa im Verhältnis 7:13. Wonn sie insgesomt 120 Teeleffe Zucka und Tassen Wossa braucht hot, wia vü Teeleffe Zucka hot sie donn braucht?	"
 
 **Lösung:**
@@ -9166,7 +9166,7 @@ Dann berechne ich die Gesamtsumme von 7+13=20, um den Gesamttonen von 120 Teelef
 Setze die genannten Werte in die gegebene Gleichung ein: 7x = 120, um x zu finden.
 
 Schließlich ergänze die Anzahl der Teeleffe Zucka zu 7x = 7*7=49.
-"	stop
+"	stop	3.0	0	0		0
 q7c7b8736	John kafft 2 Paardl Schua für jeds seina 3 Kinda. Se kostn 60 US-Dollar pro Paardl. Wia vü hota zoit?	"
 
 John needs to buy 2 Paardl Schua for each of his 3 kids, with each Paardl Schua costing $60. The total cost would be:
@@ -9268,7 +9268,7 @@ But I'm not entirely sure. Let me try to summarize:
 - Therefore, total cost is 2 * 60 * 3 = $360.
 
 Yes, that makes sense. So, the cost is $360.
-"	stop
+"	stop	360.0	0	1		
 q8f663843	A Zoibeomter am Haupthofn va da SeaSide Zoiobfertigung hot 2 Container mit importierten Autos zöt, wobei in jedn Container 5 Autos woan. Am nächstn Tog san no mehr Container gliefert woan und de Gesomtzoi Autos is auf 30 gstiegn. Wia vü Container san am zweitn Tog importiert woan, wonn in jedn Container 5 Autos san?		4	"
 Okay, so I'm trying to figure out this Zoibeomter problem. Let me read it again to make sure I understand. 
 
@@ -12663,7 +12663,7 @@ Suppose the initial Container had 10 units. Then, the second Tog would have 5y =
 
 I'm not sure. Maybe the initial part had more units. Let me try that.
 
-Suppose the initial Container had 10 units. Then, the second Tog would have 5y = 20 units, but the"	length
+Suppose the initial Container had 10 units. Then, the second Tog would have 5y = 20 units, but the"	length		0	0		0
 q6edb8d49	Lylahs Gesomtgehoit woa 30% niedriga ois des vo Adrien. Vier joa späta woa Adriens Gehoit 40% mehr ois des, wos er vor 4 Joa verdient hot. Wonn Adriens und Lylahs Gehoit gleichzeitig gstiegn san und Adrien vor vier Joa 40000Dollar verdient hot, berechne des Gesomtgehoit, des de boadn vier joa Späta griag hom. Gib de Ontwoat in Dollar o.	"
 
 Um die Gesamtsumme der ois$L(t)$ und$A(t)$ und die zugehörige Vernderung zu berechnen, gehen wir Schritt für Schritt vor.
@@ -12726,7 +12726,7 @@ $\\$
 $\\$
 
 $\\$
-"	stop
+"	stop	5.0	0	0	12400	0
 q1b1c6563	Miguel braucht zan Zeichna 2 Zeichenblöck pro WOchn. Wonn a Zeichenblock 30 Blattln Papier hot, wia vü Blattl Papier vabraucht er pro Monat?	"
 
 Um die Anzahl der Blattlappel Miguel pro WOchn zu berechnen, folgen wir diesen Schritten Schritt für Schritt:
@@ -12760,7 +12760,7 @@ Zuerst berechne ich die Anzahl der Blattlappel Miguel in einem Week benötigt, i
 Dann bestimme ich die Anzahl der Blattlappel, die Miguel vabaraucht, indem ich die Gesamte Anzahl der Blattlappel divided durch die Anzahl der Blattlappel pro Monat berechnet.
 
 Schließlich dividiere ich das Ergebnis durch die Anzahl der Woonen in einem Week, um die Anzahl der Blattlappel pro WOchn Miguel vabaraucht zu erhalten.
-"	stop
+"	stop	30.0	0	0	30	0
 qdda5aad8	Morisette und Kael san gebetn woan, Obst mitznehma. Morisette hot 5 Äpfe und 8 Orangen mitgnomma, und Kael hot doppet so vü Äpfe und hoib so vü Orangen wia Morisette mitgnomma. Wia vü Frücht hom se insgesomt?	"
 
 Zuerst identifizieren wir die Terme, die Morisette und Kael mit dem Bondbuch beziehen:
@@ -12795,7 +12795,7 @@ Zuerst identifiziere ich die Terme, die Morisette und Kael mit dem Bondbuch bezi
 Nun berechne ich die Gesamtzahl der Fruits, die Morisette und Kael combined haben. Morisette hat 5 + 10 = 15 Äpfe, und 8 + 4 = 12 Orangen. Somit hat Morisette insgesamt 15 + 12 = 27 Fruits.
 
 Die Frage ist, wie viele Früchten Morisette und Kael insgesamt haben. Da die Anzahl der Früchten nicht angegeben ist, muss ich annehmen, dass sie 0 sind. Daraus folgt, dass die Gesamtanzahl der Fruits 27 + 0 = 27 ist.
-"	stop
+"	stop	0.0	0	0	27	1
 qbe882310	Sadie hot am Montog 8 Stund gschlofn. De nächstn zwoa Tog hot sie 2 Stund weniga pro Tog gschlofn, weil sie einiges zan doa kob hot. Wonn sie den Rest va da WOchn über 1 Stund mehr ois an de boadn Togn gschlofn hot, wia vü Stund hot sie donn insgesomt in der WOchn gschlofn?	"
 
 Sadie has been hot for 8 hours and has been in the WOchn for 3.5 hours. The remaining time she needs to go over 1 hour more than the WOchn time is 4.5 hours. 
@@ -12810,7 +12810,7 @@ She's asking about the remaining time in the WOchn over 1 hour more than the tim
 Wait, 3.5 hours is 3 hours and 30 minutes. So, she was in the WOchn for 3.5 hours, and the remaining time is 3.5 + 1 = 4.5 hours, which is 4 hours and 30 minutes. That seems reasonable. So, she has 4 and a half hours left to go over 1 hour more than the time she's been in the WOchn.
 
 I think that's it. I should double-check my calculations to make sure I didn't make a mistake. 2T + 1 = 8 leads to T = 3.5. So, yes, the remaining time is 4.5 hours. That makes sense because if she's been hot for 8 hours, and the remaining time is 1 hour more than the time she's been in the WOchn, which is 4.5 hours. Yeah, that adds up.
-"	stop
+"	stop	1.0	0	0	4.5	0
 q5531657c	Rosie ko 3 Stund long mit 10 Meilen pro Stund laffn. Danoch lafft sie 5 Meilen pro Stund. Wia vü Meiln ko sie in 7 Stund laffn?	"
 
 Um die Verschiebung Rosie ko hat zu bestimmen, analysieren wir die gegebenen Werte Schritt für Schritt.
@@ -12852,7 +12852,7 @@ Dann berechne ich die Gesamtgeschwindigkeit, die Rosie ko in 7 Stunden mit 3 Mei
 Nun berechne ich die Gesamtlosss von 7 Stunden mit 5 Meilen pro Stunde, was 35 Meilen ergibt.
 
 Subtrahieren ich die Gesamtlosss von Rosie ko, die sie im Laufe der 7 Stunden withoch teilt, von der Gesamtlosss, die sie in der Laufe hat, erhalte ich eine Verschiebung von 14 Meilen.
-"	stop
+"	stop	14.0	0	0	14	0
 qafb91192	Jennie hüft im Büro va ihra Muata. Sie hot an Stape mit 60 Briaf, de frankiert wean miassn und bereits oan frankiertn Briafstape. Sie kleb Briafmarkn auf a Drittl va de Briaf, de frankiert wean miassn. Wonn si in dem Stape mit bereits frankiertn Briafn 30 Briaf befindn, wia vü Briaf woan donn in dem Stape, ois Jennie ogfonga hot?	"
 
 **Lösung:**
@@ -12883,4 +12883,4 @@ Zunächst erkläre ich die Problemstellung: Jenny hat im Büro eine Stape mit 60
 Zuerst berechne ich die Anzahl der unverkämpften Biraten, die auf die frankierten Biraten place sein können. Da es 60 Biraten aufgerufen sind und 30 auf die frankierten Biraten place, gibt es 60 - 30 = 30 unverkämpfte Biraten.
 
 Dann berechne ich die Anzahl der Biraten, die Jenny buyte. Da 30 Biraten auf die frankierten Biraten place und 30 Biraten bought, handelt es sich um eine Teilmenge von 60 Biraten. Also hat Jenny 60 - 30 = 30 Biraten buyte.
-"	stop
+"	stop	30.0	0	0	30	0

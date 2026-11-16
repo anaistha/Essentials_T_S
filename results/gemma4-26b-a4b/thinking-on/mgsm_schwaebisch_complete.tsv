@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	D'Enta von d'r Janet legat 16 Eier am Tag. Morgens zum Frühschtück isst se drei, und vier nimmt se jeden Dag zum Muffinsbacka für ihre Freind. Was iebrig bleibt, verkauft se jeden Tag auf em Bauramarkt für 2 US-Dollar pro frischem Entenei. Wia viel Dollar nimmt se jeden Tag auf em Bauramarkt ei?	"Des isch ganz einfach ausgerechnet:
 
 1.  **Zerscht rechnet ma, wie viel Eier se selber verbraucht:**
@@ -48,7 +48,7 @@ D'r Janet nimmt also jeden Tag **18 US-Dollar** auf em Bauramarkt ei!"	18	"
 
     *   16 - 3 - 4 = 9.
     *   9 * 2 = 18.
-    *   Correct."	stop
+    *   Correct."	stop	18.0	0	1		
 qa55f7050	Für a Kleid braucht ma 2 Knäuel blaue Wolle und halb so viel weiße Wolle. Wia viele Knäuel braucht ma insgesamt?	"Du brauchst insgesamt **3 Knäuel**.
 
 So rechnest du:
@@ -74,7 +74,7 @@ So rechnest du:
     ""Du brauchst insgesamt **3 Knäuel**.
 
     So rechnest du:
-    2 Knäuel blaue Wolle + 1 Knäuel weiße Wolle (die Hälfte von 2) = 3 Knäuel."""	stop
+    2 Knäuel blaue Wolle + 1 Knäuel weiße Wolle (die Hälfte von 2) = 3 Knäuel."""	stop	3.0	0	1		
 qde1bef8b	D'r Josh will a Haus kaufa und wieder verkaufa. Er kauft des Haus für $80.000 und steckt danoch $50.000 in Reparatura nei. Dadurch isch dr ursprüngliche Wert vom Haus om 150% gstiega. Wia viel Gewinn hot er in Dollar gmacht?	"Des isch a klassisch Rechenaufgab. Do isch dr Weg, wie ma des usrechnet:
 
 **1. Zerscht berechnet ma d'Gesamtkoste (was er insgesamt ausgem hot):**
@@ -177,7 +177,7 @@ Der Gewinn isch dr neue Wert minus d'Gesamtkoste.
 
     *Final check of the prompt's dialect:* ""D'r Josh will a Haus kaufa..."" (Josh wants to buy a house...). ""um 150% gstiega"" (increased by 150%).
 
-    Result: $70,000."	stop
+    Result: $70,000."	stop	70000.0	0	1		
 q568beb1f	Dr James nemmt sich vor, 3-mal pro Woch 3 Kurzschtreckenläufe zu macha. Bei jedem Kurzschtreckenlauf läuft er 60 Meter. Wia viele Meter läuft er insgesamt pro Woche?	"Dr. James läuft insgesamt **180 Meter** pro Woche.
 
 **Die Rechnung dazu ist:**
@@ -200,7 +200,7 @@ q568beb1f	Dr James nemmt sich vor, 3-mal pro Woch 3 Kurzschtreckenläufe zu mach
     *   The user's input is in a slightly informal/dialectal German. I should respond in clear, standard German (or a friendly tone matching the input).
 
     *   *Draft 1:* Dr. James läuft 180 Meter pro Woche. (3 mal 60 ist 180).
-    *   *Draft 2 (More detailed):* Dr. James läuft insgesamt 180 Meter pro Woche. Die Rechnung ist: 3 Läufe × 60 Meter = 180 Meter."	stop
+    *   *Draft 2 (More detailed):* Dr. James läuft insgesamt 180 Meter pro Woche. Die Rechnung ist: 3 Läufe × 60 Meter = 180 Meter."	stop	180.0	0	0	180	0
 q84afe4d6	D'Wendi gibt jedem von ihre Hühner jeden Tag drei Tassen gemischtes Hühnerfutter mit Samen, Mehlwürmern und Gemüse, damit se gsund bleibat. Se füttert d'Hühner in drei einzelne Mahlzeita. Morgens gibt se ihrer Hühnerschar 15 Tassen Futter. Nachmittags krieget d'Hühner nomal 25 Tassen Futter. Wia viele Tassen Futter braucht se für d'letzte Mahlzeit vom Tag, wenn d'Wendi 20 Hühner hot?	"Um die Antwort zu finden, rechnen wir die Menge Schritt für Schritt aus:
 
 1.  **Gesamtmenge pro Tag:** Da jedes der 20 Hühner 3 Tassen Futter am Tag bekommt, braucht D'Wendi insgesamt:
@@ -261,7 +261,7 @@ D'Wendi braucht für die letzte Mahlzeit also **20 Tassen** Futter."	20	"
     2. **Bereits gefütterte Menge:** 15 Tassen (morgens) + 25 Tassen (nachmittags) = **40 Tassen**.
     3. **Restliche Menge für die letzte Mahlzeit:** 60 Tassen - 40 Tassen = **20 Tassen**.
 
-    D'Wendi braucht also **20 Tassen** Futter für die letzte Mahlzeit."	stop
+    D'Wendi braucht also **20 Tassen** Futter für die letzte Mahlzeit."	stop	20.0	0	1		
 qd07ea681	Dr Kylar isch in a Gschäft ganga, um Gläser für sei neue Wohnung zu kaufa. A Glas koschtet 5 Dollar, aber jedes zweite Glas koschtet bloß 60% vom Preis. Dr Kylar will 16 Gläser kaufa. Wia viel muss er dafür zahla?	"Dr Kylar mues insgesamt **64 Dollar** zahla.
 
 Do isch d'Rechnig Schritt für Schritt:
@@ -327,7 +327,7 @@ Do isch d'Rechnig Schritt für Schritt:
     3. **D'Chöschte für die volle Gläser:** 8 x 5 Dollar = 40 Dollar.
     4. **D'Chöschte für die reduzierte Gläser:** 8 x 3 Dollar = 2
 
-    **Total:** 40 + 24 = 64 Dollar."""	stop
+    **Total:** 40 + 24 = 64 Dollar."""	stop	64.0	0	1		
 q912b86d0	Toulouse hot zweimal so viele Schafe wie Charleston. Charleston hot 4-mal so viele Schoaf wie Seattle. Wia viele Schoaf hend Toulouse, Charleston und Seattle zamma, wenn Seattle 20 Schoaf hot?	"Do isch d'Rächnig:
 
 1.  **Seattle** het **20** Schaf.
@@ -376,7 +376,7 @@ Es hend alli drei zäme **260 Schaf**."	260	"
     *   Seattle: 20
     *   Charleston: 80
     *   Toulouse: 160
-    *   Sum: 260. Correct."	stop
+    *   Sum: 260. Correct."	stop	260.0	0	1		
 q147b7c11	D'Carla lädt a Datei mit 200 GB ronter. Normal kann se 2 GB/Minute ronterlada, aber nachdem 40 % vom Download fertig sind, zwingt Windows se zu me Neuschtart für Updates, und des dauert 20 Minuten. Danach muss d'Carla dr Download nomal ganz von vorn schtarta. Wia lang dauert's, bis d'Datei ronterglada isch?	"Des isch a bittere Situation für d'Carla! Aber rechne mer's mal Schritt für Schritt aus:
 
 1.  **Der erste Download-Versuch (bis zum Abbruch):**
@@ -445,7 +445,7 @@ Es dauert insgesamt **160 Minuten** (also **2 Stunden und 40 Minuten**), bis d'D
     *   Step 1: 40% of 200GB = 80GB. 80/2 = 40 min.
     *   Step 2: Restart = 20 min.
     *   Step 3: Full download = 200/2 = 100 min.
-    *   Total: 160 min."	stop
+    *   Total: 160 min."	stop	40.0	0	0	160	1
 qead07ed2	Dr John fährt 3 Schtoden lang mit 60 Meilen/Schtond und dreht dann om, weil er merkt, dass er was ganz Wichtigs dahoim vergessa hot. Er will innerhalb von 4 Schtonda wieder heimkomma, schteckt aber d'ersten 2 Schtonda im Stau. D'nächste halbe Schtond fährt er 30 Meilen/Schtond, bevor er für d'verbleibende Zeit von de 4 Schtonden mit 80 Meilen/Schtond weiterfahra kann. Wia weit von dahoim weg isch er am Ende von dench 4 Schtonda?	"Des isch a rechtes Rätsel! Lass uns des mal Schritt für Schritt durerechnen, damit mer d'Übersicht behaltet:
 
 **1. Wie weit isch er am Anfang weg gsi?**
@@ -531,7 +531,7 @@ Am Ende von de 4 Schtonda isch er no **45 Meile** von dahoim weg."	45	"
         *   0.5h @ 30 = 15.
         *   1.5h @ 80 = 120.
     *   Total return distance: 135.
-    *   Remaining distance: 180 - 135 = 45. Correct."	stop
+    *   Remaining distance: 180 - 135 = 45. Correct."	stop	45.0	0	1		
 q5cb246e4	D'Eliza kriegt für d'ersten 40 Schtonda, die se pro Woche schafft, 10 US-Dollar pro Schtond. Für Ieberschtonda kriegt se des 1,2-Fache vom normalen Schtonalohn. Wia viel verdient d'Eliza, wenn se 45 Schtondaen dr Woch schafft?	"D'Eliza verdient insgesamt **460 US-Dollar**.
 
 Hier is die Rechnung dazu:
@@ -581,7 +581,7 @@ Hier is die Rechnung dazu:
     *   Breakdown:
         *   40 Stunden à 10 $ = 400 $
         *   5 Überstunden à 12 $ (10 $ * 1,2) = 60 $
-        *   400 $ + 60 $ = 460 $"	stop
+        *   400 $ + 60 $ = 460 $"	stop	460.0	0	1		
 q3bdd7b1e	A neues Programm isch im ersten Monat 60-mal runterglada worda. Im zweiten Monat gab's dreimal so viele Downloads wie im erschten, aber im dritten Monat isch d'Zahl um 30 % eingebrocha. Wia oft isch des Programm in dene drei Monaten insgesamt runterglada worda?	"Des isch ganz einfach usgrechnet:
 
 1.  **Erster Monat:** 60 Downloads
@@ -621,7 +621,7 @@ Des Programm isch in dene drei Monat insgesamt **366-mal** runterglada worda."	3
     *   ""Dritter Monat: 180 - 30% (also 180 * 0,7) = 126 Downloads""
     *   ""Insgesamt: 60 + 180 + 126 = 366 Downloads""
 
-    *   ""Des Programm isch in dene drei Monat insgesamt **366-mal** runterglada worda."""	stop
+    *   ""Des Programm isch in dene drei Monat insgesamt **366-mal** runterglada worda."""	stop	366.0	0	1		
 q19a4029d	D'Toula isch zum Bäcker ganga und hot verschiedene Gebäcksacha g'kauft. Se hot 3 Dutzend Donuts g'kauft, die 68 US-Dollar pro Dutzend koschtet, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wia hoch warat d'G'samtkoschta?	"Des isch koi Problem, des rechne mer schnell aus! Do isch d'Rechnig:
 
 1.  **D'Donuts:** 3 Dutzend $\times$ 68 \$ = **204 \$**
@@ -674,7 +674,7 @@ D'G'samtkoschta warat also **694 US-Dollar**."	694	"
     *   ""D'Mini-Cupcakes: 2 Dutzend mal 80 $ = 160 $""
     *   ""D'Mini-Cheesecakes: 6 Dutzend mal 55 $ = 330 $""
     *   ""Wenn ma des alles z'sammere, dann kommt ma auf: 204 + 160 + 330 = 694 $""
-    *   ""D'G'samtkoschta warat also 694 US-Dollar."""	stop
+    *   ""D'G'samtkoschta warat also 694 US-Dollar."""	stop	694.0	0	1		
 qf0063e65	D'r Carlos pflanzt an Zitronabaum. D'r Baum zum Pflanza koschtet 90 $. Jedes Jahr wachset 7 Zitronen dran, die er für jeweils 1,5 $ verkaufa kann. Zum Gieße und Düngen kostet dr Baum 3 $ im Jahr. In welchem Jahr fängt er an, mit em Zitronabaum insgesamt Gewinn zu macha?	"Um das herauszufinden, müssen wir zuerst berechnen, wie viel Carlos pro Jahr an Netto-Gewinn (Einnahmen minus laufende Kosten) übrig behält.
 
 **1. Die jährlichen Einnahmen:**
@@ -746,7 +746,7 @@ Nach genau 12 Jahren hat er die 90 $ wieder eingespielt (er ist bei Null). Im **
         *   Kosten pro Jahr: $10,50 - 3 = 7,50$.
         *   Anfangsinvestition: $90$.
         *   Rechnung: $90 / 7,5 = 12$.
-        *   Nach 12 Jahren ist er bei Null. Im 13. Jahr macht er Gewinn."	stop
+        *   Nach 12 Jahren ist er bei Null. Im 13. Jahr macht er Gewinn."	stop	13.0	0	1		
 q410b0ab2	D'Melanie isch Handelsvertreterin. Se hot a Drittel von ihre Staubsauger im grünen Haus verkauft, 2 weitere im roten Haus und d'Hälfte von denen, die danach no übrig warat, im orangenen Haus. Wenn d'Melanie 5 Staubsauger übrig hot, mit wia viele hot se dann angfanga?	"Des is a klassische Rückwärts-Rechnerei. Schau ma uns des amoi Schritt für Schritt o, angefangen beim Ende:
 
 1.  **Am Ende** san no **5** Staubsauger übrig.
@@ -818,7 +818,7 @@ Passt!"	18	"
         3.  Vor'm roten Haus (2 weg): 10 + 2 = 12.
         4.  Vor'm grünen Haus (1/3 weg, also 2/3 übrig): Wenn 12 de 2/3 san, dann is des ganze (3/3) 18.
 
-    (Self-Correction: Ensure the dialect is consistent with the prompt's style)."	stop
+    (Self-Correction: Ensure the dialect is consistent with the prompt's style)."	stop	5.0	0	0	18	1
 qa0520340	In ere Tanzstund mit 20 Schüler hend sich 20 % für Contemporary Dance a'gmeldet, 25 % von den übrigen für Jazz Dance, und dr Rescht isch beim Hip-Hop glandet. Wia viel Prozent von alle Schüler hend sich für Hip-Hop agmeldet?	"Do isch d'Uslösig Schritt für Schritt:
 
 1.  **Contemporary Dance:** 20 % vo 20 Schüler sind **4 Schüler** ($0,20 \times 20 = 4$).
@@ -891,7 +891,7 @@ $\frac{12}{20} \times 100 = 60 \%$
     *   Remaining = 12. Correct.
     *   12/20 = 60%. Correct.
 
-    (Self-Correction: The number 20 is actually irrelevant to the final percentage, but it's good to show the work using it as requested by the context)."	stop
+    (Self-Correction: The number 20 is actually irrelevant to the final percentage, but it's good to show the work using it as requested by the context)."	stop	60.0	0	1		
 q9ae19f0a	An Händler muss sich zwischa 2 Kaufmöglichkeita entscheida: Schmuck im Wert von 5.000 US-Dollar oder Elektronikgeräte im Wert von 8.000 US-Dollar. Sei Finanzberater moint, dr Schmuckmarkt legt im Monat um 2,5 % zu und dr Markt für Elektrogeräte im selba Monat um 1,2 %. Wenn dr Händler am Monatsende mit seiner Entscheidung dr Gewinn maximiera will, auf wia viel Gewinn kommt er dann?	"Um den Gewinn zu maximieren, müssen wir den potenziellen Zuwachs (den Gewinn) für beide Optionen einzeln berechnen und vergleichen.
 
 **1. Berechnung für den Schmuck:**
@@ -959,7 +959,7 @@ Wenn der Händler seinen Gewinn maximieren will, beträgt der Gewinn am Monatsen
         Der Gewinn bei Schmuck (125 $) ist höher als der Gewinn bei Elektronik (96 $).
 
         **Antwort:**
-        Der maximale Gewinn beträgt **125 US-Dollar**."	stop
+        Der maximale Gewinn beträgt **125 US-Dollar**."	stop	125.0	0	1		
 q93563595	Zwei Züg fahret zur selba Zeit in San Rafael los. Se fahret z'erscht noch Weschta und legat beide 80 Meilen zurück. Am nächsta Tag fahret se nach Norda und legat 150 Meilen z'rück. Wia viel Strecke legt jeder Zug über die zwei Tage z'rück?	"Jeder Zug legt insgesamt **230 Meilen** z'rück.
 
 Hier is die Rechnung:
@@ -984,7 +984,7 @@ Hier is die Rechnung:
     *   *Draft 2 (Dialect-ish):* Jeder Zug legt insgesamt 230 Meilen z'rück. (80 Meilen am erschte Tag + 150 Meilen am zweite Tag).
 
     *   ""Jeder Zug legt insgesamt **230 Meilen** z'rück.""
-    *   Breakdown: 80 Meilen (Weschta) + 150 Meilen (Norda) = 230 Meilen."	stop
+    *   Breakdown: 80 Meilen (Weschta) + 150 Meilen (Norda) = 230 Meilen."	stop	230.0	0	1		
 q33756eb7	D'Jill kriegt 20 US-Dollar pro Schtond fürs Onterrichta als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn se 50 Wochen im Jahr schafft, 35 Schtonda pro Woch' als Lehrerin und 15 Schtonda pro Woch' als Coach, wia hoch isch dann ihr Jahresgehalt?	"Des isch ganz einfach ausgerechnet! Do isch d'Rechnung für di:
 
 1. **Als Lehrerin:**
@@ -1052,7 +1052,7 @@ D'Jill verdient also **57.500 US-Dollar** im Jahr. Des isch doch koi schlechts G
     4. **Im ganze Jahr (50 Wochen):**
        1.150 Dollar × 50 Wochen = **57.500 US-Dollar**.
 
-    D'Jill verdient also **57.500 US-Dollar** im Jahr. Des isch doch koi schlechts Geld!"""	stop
+    D'Jill verdient also **57.500 US-Dollar** im Jahr. Des isch doch koi schlechts Geld!"""	stop	57500.0	0	1		
 qfb254292	D'Claire macht sich jeda Moran zom Frühstück a Omelett aus 3 Eier. Wia viele Dutzend Eier isst se in 4 Wochen?	"Des is a einfache Rechnung, do schau ma uns des amoi Schritt für Schritt o:
 
 1. **Zerscht rechn ma aus, wia vui Dog des san:**
@@ -1102,7 +1102,7 @@ D'Claire isst oiso genau **7 Dutzend** Eier in 4 Wochn!"	7	"
 
     *   Does it answer the question? Yes.
     *   Is the math correct? 28 * 3 = 84. 84 / 12 = 7. Yes.
-    *   Is the language appropriate? Yes, Bavarian."	stop
+    *   Is the language appropriate? Yes, Bavarian."	stop	7.0	0	1		
 qc100123d	D'Marissa wandert an 12 Meilen langen Wanderweg. In dr 1. Schtond schafft se die erschste 4 Meilen, danach die nächste zwei Meilen in dr nächsten Schtond. Wenn se am Ende im Schnitt 4 Meilen pro Schtond gelaufa sei will, mit welcher G'schwindigkeit in Meilen pro Schtond muss se dr Rescht vom Weg laufa?	"Hier ist die schrittweise Lösung für D'Marissa:
 
 1.  **Gesamtzeit berechnen:**
@@ -1150,7 +1150,7 @@ qc100123d	D'Marissa wandert an 12 Meilen langen Wanderweg. In dr 1. Schtond scha
     *   ""Um einen Durchschnitt von 4 Meilen pro Stunde über die gesamten 12 Meilen zu erreichen, muss D'Marissa insgesamt 3 Stunden brauchen (12 Meilen / 4 Meilen/h = 3 Stunden).""
     *   ""Bisher ist sie 2 Stunden gelaufen (1. Stunde + 2. Stunde) und hat 6 Meilen zurückgelegt (4 Meilen + 2 Meilen).""
     *   ""Das bedeutet, sie hat noch 1 Stunde Zeit (3 Stunden - 2 Stunden), um die restlichen 6 Meilen (12 Meilen - 6 Meilen) zu schaffen.""
-    *   ""Die Geschwindigkeit muss also 6 Meilen pro Stunde sein."""	stop
+    *   ""Die Geschwindigkeit muss also 6 Meilen pro Stunde sein."""	stop	6.0	0	1		
 q26866cba	I hab 10 Liter Orangengetränk, des zu zwei Drittel aus Wasser beschteht, und will's zu 15 Liter Ananasgetränk mit drei Fünfteln Wasser dazuschütta. Beim Eingieße verschütt i aber oin Liter vom Orangengetränk. Wia viel Wasser isch in den übrigen 24 Litern drin?	"Des isch a klassische Rechenaufgab! Rechnen wir das Schritt für Schritt durch:
 
 1.  **Das Orangengetränk (vor dem Verschütten):**
@@ -1218,7 +1218,7 @@ q26866cba	I hab 10 Liter Orangengetränk, des zu zwei Drittel aus Wasser beschte
     *   ""4. Ananasgetränk: 15 Liter, davon 3/5 Wasser = 9 Liter Wasser.""
     *   ""5. Gesamtmenge Wasser: 6 Liter (aus Orange) + 9 Liter (aus Ananas) = 15 Liter Wasser.""
 
-    *   ""In den 24 Litern sind insgesamt **15 Liter Wasser** drin."""	stop
+    *   ""In den 24 Litern sind insgesamt **15 Liter Wasser** drin."""	stop	15.0	0	1		
 qa856d9dc	Dr Raymond und d'Samantha sind Cousins. Dr Raymond isch 6 Johr vor dr Samantha gebora. Mit 23 Jahren hot dr Raymond an Sohn kriegt. Wenn d'Samantha jetzt 31 isch, vor wia viele Johr isch dann dr Sohn vom Raymond gebora?	"Do isch d'Lösig:
 
 1.  **Wie alt isch dr Raymond?** D'Samantha isch 31 Johr alt und dr Raymond isch 6 Johr älter als sie. Also isch dr Raymond **37 Johr alt** (31 + 6 = 37).
@@ -1268,7 +1268,7 @@ Dr Sohn isch also vor **14 Johr** gebore worde."	14	"
     *   Raymond = 37.
     *   Son born when Raymond = 23.
     *   Years ago = 37 - 23 = 14.
-    *   Logic holds."	stop
+    *   Logic holds."	stop	14.0	0	1		
 q72ea27fb	Dr Billy verkauft DVDs. Am Dienschtag hot er 8 Kunden. D'ersten 3 Kunden kaufet jeweils oi DVD. D'nächschte 2 Kunden kaufet jeweils 2 DVDs. Die letzschte 3 Kunden kaufet gar koi DVD. Wia viele DVDs hot dr Billy am Dienschtag verkauft?	"Dr Billy hot am Dienschtag insgesamt **19 DVDs** verkauft.
 
 Do is die Rechnung:
@@ -1320,7 +1320,7 @@ Zamm gerechnet: 15 + 4 + 0 = **19 DVDs**."	7	"
     - Die näächschte 2 Kunden: 2 x 2 = 4 DVDs
     - Die letschte 3 Kunden: 3 x 0 = 0 DVDs
 
-    15 + 4 + 0 = 19 DVDs."	stop
+    15 + 4 + 0 = 19 DVDs."	stop	19.0	0	0	19	0
 qa62b2b0f	A Kerze wird in jeder Schtond, wo se brennt, um 2 Zentimeter kürzer. Um wia viele Zentimeter isch a Kerz' kürzer, wenn se von 13 Uhr bis 17 Uhr brennt?	"Des isch ganz einfach ausgerechnet:
 
 1. **Zuerst guckt ma, wie lang d'Kerze brennt:** Von 13 Uhr bis 17 Uhr sind's genau **4 Schtond**.
@@ -1356,7 +1356,7 @@ D'Kerze isch also **8 Zentimeter** kürzer."	8	"
     *   Duration: 17 - 13 = 4 hours.
     *   Reduction: 4 * 2 = 8 cm.
 
-    *Result:* 8 cm."	stop
+    *Result:* 8 cm."	stop	8.0	0	1		
 qaadc02d2	Dr Kyle hot dr Bestseller vom letzta Jahr für 19,50 US-Dollar kauft. Des war mit 25 % Rabatt auf dr ursprüngliche Preis. Wia hoch war dr ursprüngliche Preis vom Buch?	"Der ursprüngliche Preis des Buches war **26,00 US-Dollar**.
 
 **Hier ist der Rechenweg:**
@@ -1404,7 +1404,7 @@ $26,00 - 6,50 = 19,50$. Das Ergebnis stimmt also!"	26	"
         *   Rechnung: $19,50 / 0,75 = 26$
 
     *   ""Der ursprüngliche Preis des Buches war **26,00 US-Dollar**.""
-    *   (Optional: Add the breakdown for clarity)."	stop
+    *   (Optional: Add the breakdown for clarity)."	stop	26.0	0	1		
 q4c88eb07	D'Marie hot a Hühnchengericht für 12 US-Dollar b'schtellt, 5 Packungen Milch für jeweils 3 US-Dollar, 4 Äpfel für jeweils 1,50 US-Dollar und no a paar Schachtela Pizza. Insgesamt hot d'Marie 50 US-Dollar zahlt. Wia viele Schachtela Pizza hot se b'schtellt, wenn jede Schachtel 8,50 US-Dollar kostet?	"Hier isch d'Rechnig:
 
 1.  **Hühnchen:** 12 $
@@ -1464,7 +1464,7 @@ D'Marie hot **2 Schachtela Pizza** b'schtellt."	2	"
 
         Anzahl der Pizzaschachteln: 17 $ ÷ 8,50 $ = 2
 
-        D'Marie hot **2 Schachtela Pizza** b'schtellt."	stop
+        D'Marie hot **2 Schachtela Pizza** b'schtellt."	stop	2.0	0	1		
 qc76b9ef5	D'Mishka hot 3 Paar Shorts, 3 Hosen und 3 Paar Schuhe g'kauft. A Paar Shorts koschtet 16,50 US-Dollar. A Hos' koschtet 22,50 US-Dollar und a Paar Schuhe 42 US-Dollar. Wia viel Dollar hot d'Mishka insgesamt für d'Kleider ausgeba?	"Des is ganz einfach ausgrechnet. Do is da Rechenweg:
 
 1.  **3 Paar Shorts:** $3 \times 16,50\ \text{US-Dollar} = 49,50\ \text{US-Dollar}$
@@ -1517,7 +1517,7 @@ $49,50 + 67,50 + 126,00 = 243,00\ \text{US-Dollar}$
     *   Shoes: $3 \times 42 = 126$ (Correct)
     *   Total: $49.5 + 67.5 + 126 = 243$ (Correct)
 
-    (Self-Correction: I'll provide the breakdown clearly so the user can follow the logic.)"	stop
+    (Self-Correction: I'll provide the breakdown clearly so the user can follow the logic.)"	stop	243.0	0	1		
 qc792d70c	D'Cynthia isst jeden Abend a Portion Eis. Se kauft Karto' mit 15 Portiona Eis pro Karto' für 4,00 US-Dollar pro Karto'. Wia viel hot se nach 60 Tagen fürs Eis ausgeba?	"Hier ist die Rechnung Schritt für Schritt:
 
 1.  **Wie viele Portionen braucht sie?**
@@ -1567,7 +1567,7 @@ qc792d70c	D'Cynthia isst jeden Abend a Portion Eis. Se kauft Karto' mit 15 Porti
     *   60 days $\rightarrow$ 60 portions.
     *   60 / 15 = 4 cartons.
     *   4 * 4 = 16.
-    *   Correct."	stop
+    *   Correct."	stop	16.0	0	1		
 qb804efac	D'r Henry hot bei rer 60 Meilen langen Fahrradtour zwei Pausa gmacht. D'erschte war n'ch 20 Meilen. D'zweite war 15 Meilen vor em Ende von dr Tour. Wia viele Meilen isch er zwischen dr erschten und dr zweiten Paus' gfahra?	"D'r Henry isch **25 Meile** zwischa dr erschte und dr zweite Paus' gfahra.
 
 So isch d'Rechnig:
@@ -1615,7 +1615,7 @@ So isch d'Rechnig:
     So isch d'Rechnig:
     1. D'zweiti Pause isch 15 Meile vor em Ende gsi, also bi: 60 - 15 = **45 Meile**.
     2. D'erscht Pause isch nach **20 Meile** gsi.
-    3. D'Strecki zwischa de beide Pause isch: 45 - 20 = **25 Meile**."	stop
+    3. D'Strecki zwischa de beide Pause isch: 45 - 20 = **25 Meile**."	stop	25.0	0	1		
 qf837eb68	D'Gloria isch Schuhe kaufa und fendet a Paar Stiefel, die in ihr Budget basset. Se muss sich aber zwischen de' Stiefeln und zwei Paar High Heels entscheida, die zamma fünf Dollar weniger kostet als d'Stiefel. A Paar High Heels kostet 33 US-Dollar und des andere doppelt so viel. Wia viel kostet dann d'Stiefel?	"Des isch gar net so schwer zum usrechne! Do isch d'Lösig:
 
 1.  **Zuerst rechne mer d'High Heels aus:**
@@ -1666,7 +1666,7 @@ D'Stiefel kosten also **104 US-Dollar**."	104	"
     *   ""D'Stiefel kosten 5 Dollar mehr als d'High Heels (weil d'Heels 5 Dollar weniger kosten).""
     *   ""Also: 99 + 5 = 104 Dollar.""
 
-    *   ""D'Stiefel kosten 104 US-Dollar."""	stop
+    *   ""D'Stiefel kosten 104 US-Dollar."""	stop	104.0	0	1		
 qa2455bce	S'Altersverhältnis vom Darrell und d'r Allen isch 7:11. Wenn se jetzt z'samma 162 Jahre alt senn, rechne aus, wia alt dr Allen in 10 Jahren isch.	"Hei ass d'Léisung vum Rätsel Schritt fir Schritt:
 
 1.  **D'Zesumme vun de Deeler berechnen:**
@@ -1724,7 +1724,7 @@ qa2455bce	S'Altersverhältnis vom Darrell und d'r Allen isch 7:11. Wenn se jetzt
     *   ""2. De Wäert vun engem Deel erausfannen: $162 / 18 = 9$ Joer.""
     *   ""3. Den Alter vun der Allen haut berechnen: $11 \times 9 = 99$ Joer.""
     *   ""4. Den Alter vun der Allen an 10 Joer berechnen: $99 + 10 = 109$ Joer.""
-    *   ""D'Äntwert ass: De Allen ass an 10 Joer **109 Joer** alt."""	stop
+    *   ""D'Äntwert ass: De Allen ass an 10 Joer **109 Joer** alt."""	stop	109.0	0	1		
 q166f163a	D'r Gunter versucht, d'Gummibärle im Glas zom zähla. Er frogt seins Freind, wia viele se moinet, dass dren sen. Oiner sagt 80. D'r andere sagt 20 mehr als d'Hälfte von dr erschten Schätzung. A Dritter sagt 25 % mehr als dr Erste. Wia hoch isch ihre durchschnittliche Schätzung?	"Des isch a klorer Rechenweg. Do isch d'Lösig Schritt für Schritt:
 
 1.  **Dr erschte sagt:** **80**
@@ -1773,7 +1773,7 @@ D'durchschnittliche Schätzung isch also **80** Gummibärle."	80	"
     *   ""D'durchschnittliche Schätzung isch also **80** Gummibärle.""
 
     *   Check math: 80, 60, 100. Sum = 240. 240/3 = 80. Correct.
-    *   Check language: Swabian dialect used correctly."	stop
+    *   Check language: Swabian dialect used correctly."	stop	80.0	0	1		
 q3966df43	D'r John kümmert sich um 10 Hond. Für jeden Hond braucht er jeden Tag 0,5 Schtonda zum Gassigeha und damit dr Hund sei Gschäft macha kann. Wia viele Schtonda pro Woch' kümmert er sich insgesamt um die Hond'?	"Des isch ja a ordentlicher Job! Da hat der John ja alle Händ voll z'tua.
 
 Rechne mer des mal kurz aus:
@@ -1827,7 +1827,7 @@ D'r John kümmert sich also insgesamt um **35 Schtonda** pro Woch' um die Hond'.
     1. Zerscht de Tag: 10 Hond × 0,5 Schtonda = **5 Schtonda pro Tag**.
     2. Dann d'Woch': 5 Schtonda × 7 Tag = **35 Schtonda pro Woch'**.
 
-    D'r John kümmert sich also insgesamt um **35 Schtonda** pro Woch' um die Hond'."""	stop
+    D'r John kümmert sich also insgesamt um **35 Schtonda** pro Woch' um die Hond'."""	stop	35.0	0	1		
 q28184d6c	S'Gretle hot 110 Münzen. Se hot 30 mehr Gold- als Silbermünzen. Wia viele Goldmünzen hot s'Gretle?	"S'Gretle hot **70 Goldmünzen**.
 
 **So rechnet ma des:**
@@ -1898,7 +1898,7 @@ Gold = 140 / 2
     2 * Gold = 140
     Gold = 70
 
-    (Check: 70 Gold + 40 Silber = 110. 70 - 40 = 30. Correct.)"	stop
+    (Check: 70 Gold + 40 Silber = 110. 70 - 40 = 30. Correct.)"	stop	70.0	0	1		
 q5f9dc683	D'Siobhan hot 2 Schmuckstücke weniger als d'r Aaron. D'r Aaron hot 5 Schmuckstücke mehr als d'Hälfte von den Schmuckstücken vom Raymond. Wenn dr Raymond 40 Schmuckstücke hot, wia viele hot dann d'Siobhan?	"D'Siobhan huet **23** Schmuckst pieces.
 
 Hei ass de Wee zur Léisung:
@@ -1950,7 +1950,7 @@ Hei ass de Wee zur Léisung:
     Hei ass de Wee zur Léisung:
     1. Raymond huet **40** Schmuckst pieces.
     2. Den Aaron huet d'Hälfte vun deem, wat 20 ass, plus 5. Also: 20 + 5 = **25** (den Aaron).
-    3. D'Siobhan huet 2 manner wéi den Aaron. Also: 25 - 2 = **23**."	stop
+    3. D'Siobhan huet 2 manner wéi den Aaron. Also: 25 - 2 = **23**."	stop	23.0	0	1		
 q9501d333	D'r Mike spielt 40 Minuten lang Pingpong. In den erschte 20 Minuten macht er 4 Punkte. In de' nächschte 20 Minuten macht er 25 % mehr Punkte. Wia viele Punkte macht er insgesamt?	"D'Rechnig isch ganz eifach:
 
 1.  **Die erschte 20 Minute:** Er macht **4 Punkt**.
@@ -1993,7 +1993,7 @@ D'Mike macht also insgesamt **9 Punkt**."	9	"
 
     *   Did I answer the question? Yes.
     *   Is the math correct? Yes ($4 \to 5 \to 9$).
-    *   Is the language appropriate? Yes."	stop
+    *   Is the language appropriate? Yes."	stop	9.0	0	1		
 q0e0fa86b	D'r Terry isst 2 Joghurt am Tag. Grad gibt's se im Angebot: 5,00 US-Dollar für 4 Joghurt. Wia viel gibt er in 30 Tagen für Joghurt aus?	"Das lässt sich ganz einfach ausrechnen:
 
 1.  **Wie viele Joghurt braucht er insgesamt?**
@@ -2047,7 +2047,7 @@ Terry gibt in 30 Tagen also **75,00 US-Dollar** für Joghurt aus."	75	"
 
     *   Does it answer the question? Yes.
     *   Is the math correct? 2*30=60. 60/4=15. 15*5=75. Yes.
-    *   Is the tone appropriate? I will provide a clear, standard German explanation so it's easy to follow, but acknowledge the style."	stop
+    *   Is the tone appropriate? I will provide a clear, standard German explanation so it's easy to follow, but acknowledge the style."	stop	75.0	0	1		
 q126bbbaa	D'r John will alle seine Spielsacha verkaufa und von dem Geld Videospiele kaufa. Er hot 13 Lego-Sets und kriegt für jedes verkaufte Set $15. Am Ende kauft er 8 Videospiele für jeweils $20 und hot no $5 übrig. Wia viele Lego-Sets hot er no?	"D'r John hot no **2 Lego-Sets** übrig.
 
 Hier isch d'Rechnung dazu:
@@ -2101,7 +2101,7 @@ Hier isch d'Rechnung dazu:
         *   Er hot mit 13 angefanga, also: 13 - 11 = 2.
 
     *   ""D'r John hot no **2 Lego-Sets** übrig.""
-    *   (Breakdown follows)."	stop
+    *   (Breakdown follows)."	stop	2.0	0	1		
 q5c1bd624	D'r John läuft 60 Meilen pro Woche. Er läuft an 3 Tag pro Woche. Am erschta Tag läuft er 3 Schtonda und an den zwei andere Lauftag jeweils d'Hälfte davo'. Wia schnell läuft er?	"Do isch d'Uslösig für dis Rätsel:
 
 Zersch mues mer d'Laufziit pro Wuche usrächne:
@@ -2167,7 +2167,7 @@ Dr John läuft also mit **10 Meile pro Schtond**."	10	"
     *   Day 1: 3h. Correct.
     *   Days 2/3: 1.5h. Correct.
     *   Total time: 6h. Correct.
-    *   60/6 = 10. Correct."	stop
+    *   60/6 = 10. Correct."	stop	10.0	0	1		
 q02f06b34	D'Dana kann viermal so schnell laufa wie se geha kann, aber hüpfa kann se bloß mit dr Hälfte von ihrer Laufgeschwindigkeit. Wenn se mit 3 Meilen pro Schtond hüpfa kann, wia viele Meilen schafft se in sechs Schtonda, wenn se a Drittel von dr Zeit läuft und zwei Drittel von dr Zeit geht?	"Des isch a rechtes Rätsel, aber mir krieget des scho hi! Rechnet ma des Schritt für Schritt durch:
 
 **1. Zuerst mues ma d'Gschwindigkeit finda:**
@@ -2251,7 +2251,7 @@ D'Dana schafft also insgesamt **18 Meile** in de sechs Schtonda!"	18	"
     *   $v_{walk} = 6 / 4 = 1.5$.
     *   $t_{run} = 2$.
     *   $t_{walk} = 4$.
-    *   $2 \times 6 + 4 \times 1.5 = 12 + 6 = 18$. Correct."	stop
+    *   $2 \times 6 + 4 \times 1.5 = 12 + 6 = 18$. Correct."	stop	18.0	0	1		
 qd6dd82e1	Brandons iPhone isch viermal so alt wie Bens iPhone. Bens iPhone isch doppelt so alt wie Suzys iPhone. Wenn Suzys iPhone 1 Jahr alt isch, wia alt isch dann Brandons iPhone?	"Das chasch so usrächne:
 
 1.  **Suzy** sis iPhone isch **1 Jahr** alt.
@@ -2283,7 +2283,7 @@ qd6dd82e1	Brandons iPhone isch viermal so alt wie Bens iPhone. Bens iPhone isch 
     *   ""Zersch luegemer d Suzy: Ihres iPhone isch **1 Jahr** alt.
     *   S iPhone vom Ben isch doppelt so alt wie em Suzy sim, also **2 Jahr** (2 × 1).
     *   S iPhone vom Brandon isch viermal so alt wie em Ben sim, also **8 Jahr** (4 × 2).
-    *   **Antwort: Brandons iPhone isch 8 Jahr alt.**"""	stop
+    *   **Antwort: Brandons iPhone isch 8 Jahr alt.**"""	stop	8.0	0	1		
 q425db7e5	D'r große Drache Perg isch ganz oba auf em Berg Farbo g'sessa und hot auf alles in em Umkreis von 1000 Fuß Feuer gspuckt. D'Polly konnt dr goldene Speer, d'einzige bekannte Waffe, mit der ma dr Drache besiega konnt, 400 Fuß weit werfa und war damit deutlich in d'r Reichweite von de Flamma. Wenn d'Polly aber d'r Saphir-Edelstein in d'r Hand hielt, konnt se d'r Speer dreimal so weit werfa wie ohne d'' Edelstein. Wenn se dr Edelstein in d'r Hand hält, wia weit außerhalb von d'r Reichweite von de Flamma kann d'Polly standa und dr Drache trotzdem no mit em goldenen Speer treffa?	"Des isch a rechnele G'schicht, aber ganz einfach zum Löse! Do isch d'Rechnung:
 
 1.  **D'Reichweite mit em Saphir:** Ohne de Edelstein schafft d'Polly 400 Fuß. Mit em Saphir isch es dreimal so weit:
@@ -2332,7 +2332,7 @@ D'Polly kann also **200 Fuß** außerhalb von d'r Reichweite von de Flamma stand
     *   D'Flamme vom Drache genga aber nur bis 1000 Fuß.
     *   Des heißt, d'Polly kann bis zu 1200 Fuß weit weg vom Drache steha und ihn no treffa.
     *   Wenn ma d'1000 Fuß Feuer-Reichweite abzieht, bleibt no a Rest von 200 Fuß übrig.
-    *   D'Polly kann also **200 Fuß** außerhalb von d'r Reichweite von de Flamma standa."""	stop
+    *   D'Polly kann also **200 Fuß** außerhalb von d'r Reichweite von de Flamma standa."""	stop	200.0	0	1		
 qedc215ac	D'Oma Jones hot 5 Apfelkuchen fürs Mittagessa von d'r Feuerwehr bacha. Se hot jeden Kuchen in 8 Stückle gschnitta und alle fünf Kuchen auf d'r Buffettisch gschstellt, damit sich d'Gäscht selber bediena könnet. Am Ende vom Abend, nachdem d'Gäscht sich bedient und Kuchen gessa hend, warat no 14 Kuchenstückle übrig. Wia viele Stückle hend d'Gäscht gnomma?	"Des isch a einfache Rechnung. So rechnet ma des aus:
 
 1. **Zuerst rechnet ma aus, wie viel Stückle es am Anfang insgesamt g'gebe hät:**
@@ -2373,7 +2373,7 @@ D'Gäscht hend also **26 Stückle** gnomma."	26	"
     *   ""Des isch a einfache Rechnung:"" (This is a simple calculation:)
     *   ""1. Zuerst rechnet ma aus, wie viel Stückle es am Anfang insgesamt g'gebe hät: 5 Kuchen $\times$ 8 Stückle = 40 Stückle.""
     *   ""2. Dann zieht ma d'Stückle ab, wo am Ende no übrig waren: 40 Stückle - 14 Stückle = 26 Stückle.""
-    *   ""D'Gäscht hend also **26 Stückle** gnomma."""	stop
+    *   ""D'Gäscht hend also **26 Stückle** gnomma."""	stop	26.0	0	1		
 q5d47194e	Noch de Nährwertangaba hot a Tüte Chips 250 Kalorien pro Portion. Wenn a 300 g-Tüte 5 Portionen enthält, wia viele Gramm kannsch du essa, wenn dei tägliches Kalorienziel bei 2000 liegt und du scho 1800 Kalorien zu dir gnomma hosch?	"Des isch ganz einfach ausgerechnet. Do isch de Rechenweg:
 
 1.  **Wie viel Kalorie hosch du no übrig?**
@@ -2452,7 +2452,7 @@ Du darfsch also no genau **48 Gramm** Chips esse, damit de dei Kalorienziel net 
     *   0.8 * 60 = 48.
     *   Logic holds.
 
-    (Self-correction: Ensure the Swabian is natural and matches the user's tone)."	stop
+    (Self-correction: Ensure the Swabian is natural and matches the user's tone)."	stop	48.0	0	1		
 q255b81c0	D'r Charlie will Bienenwachskerzen verkaufa. Aus jedem Pfund Bienenwachs kann er 10 Kegelkerzen macha. S'Zubehör für a Pfund Bienenwachs samt Dochte koschtet 10,00 US-Dollar. Wenn er d'Kerzen für 2,00 US-Dollar verkauft, wia viel Nettogewinn macht er, wenn er 20 Kerzen herstellt und verkauft?	"Des isch ganz einfach ausgerechnet. Do isch d'Rechnung:
 
 1.  **D'Koste berechne:**
@@ -2519,7 +2519,7 @@ D'r Charlie macht also **20,00 US-Dollar Nettogewinn**."	20	"
     *   Revenue for 20 candles = $40.
     *   Profit = $40 - $20 = $20.
 
-    (Self-Correction: Ensure the math is explicitly shown)."	stop
+    (Self-Correction: Ensure the math is explicitly shown)."	stop	20.0	0	1		
 q0166ea66	D'Meredith isch Freelance-Bloggerin, schreibt über Gesundheitsthemen und kümmert sich om Kunden, des isch ihr fester Job. Für Recherche und Schreiben von einem Blog-Artikel braucht se im Schnitt 4 Schtonda. Letzschte Woch' hot se am Montag 5 Artikel gschrieba und am Dienstag 2/5 mehr Artikel als am Montag. Am Mittwoch hot se zwoimal so viele Artikel gschrieba wie am Dienstag. Rechne aus, wia viele Schtonan se an den drei Tagen insgesamt fürs Artikelschreiba g'braucht hot.	"Des isch koi Problem, des rechne mer schnell aus! Do isch d'Rechnung Schritt für Schritt:
 
 1.  **Montag:**
@@ -2591,7 +2591,7 @@ q0166ea66	D'Meredith isch Freelance-Bloggerin, schreibt über Gesundheitsthemen 
     *   Tuesday: 5 + (2/5 * 5) = 7
     *   Wednesday: 7 * 2 = 14
     *   Total articles: 5 + 7 + 14 = 26
-    *   Total hours: 2_6 * 4 = 104. Correct."	stop
+    *   Total hours: 2_6 * 4 = 104. Correct."	stop	104.0	0	1		
 q7bb382f4	D'Candice hot 80 Post-it-Notizzettel in ihr' Handtasch' g'packt, bevor se zu ihrem G'schäft im Coffee Shop los isch. Unterwegs hot se im Laden aghalta und a Packung Post-it-Notizzettel kauft; beim G'schäft hot se auf 220 verschiedene Kaffeetassen jeweils oin Post-it-Notizzettel g'klebt. Wenn se am Ende no 23 Post-it-Notizzettel übrig hot, wia viele warat dann in dr Packung, die se kauft hot?	"Des isch a rechnerische Knobelaufgab! So rechnat ma des aus:
 
 1.  **D'Candice hot am Anfang:** 80 Post-it-Notizzettel.
@@ -2678,7 +2678,7 @@ In dr Packung, die se kauft hot, ware also **163** Post-it-Notizzettel drin."	16
     **X = 23 + 140**
     **X = 163**
 
-    In dr Packung, die se kauft hot, ware also **163** Post-it-Notizzettel drin."""	stop
+    In dr Packung, die se kauft hot, ware also **163** Post-it-Notizzettel drin."""	stop	163.0	0	1		
 q1a64508f	D'r John kauft zweimal so viele rote wie blaue Krawatten. D'rote Krawatten kostet 50 % mehr als die blaue. Für blaue Krawatten hot er 200 US-Dollar ausgeba, und die kostet pro Stück 40 US-Dollar. Wia viel hot er insgesamt für Krawatten ausgeba?	"Hier ist die Schritt-für-Schritt-Rechnung für das Problem:
 
 1.  **Anzahl der blauen Krawatten berechnen:**
@@ -2745,7 +2745,7 @@ John hat insgesamt **800 US-Dollar** für Krawatten ausgegeben."	800	"
     *   ""4. Kosten für rote Krawatten: 10 Stück * 60 $ = 600 $.""
     *   ""5. Gesamtsumme: 200 $ (blau) + 600 $ (rot) = 800 $.""
 
-    *   ""John hat insgesamt **800 US-Dollar** für Krawatten ausgegeben."""	stop
+    *   ""John hat insgesamt **800 US-Dollar** für Krawatten ausgegeben."""	stop	800.0	0	1		
 q9605b4e6	D'Tracy hot a 4 Fuß langes Stück Droht gnomma, um d'Tomatenpflanzen in ihrem Garten abzustütza. D'r Droht isch in Stücke mit jeweils 6 Inch gschnitta worda. Wia viele Stück Draht hot se dann?	"D'Tracy hot **8 Stück** Draht.
 
 Do isch d'Rechnig:
@@ -2783,7 +2783,7 @@ Do isch d'Rechnig:
 
     Do isch d'Rechnig:
     1. Zerscht rechna mer d'Fuß in Inch um: 4 Fuß × 12 Inch = 48 Inch.
-    2. Dann teilt ma d'Gsamtläng durch d'Läng vo de Stücke: 48 Inch ÷ 6 Inch = 8 Stück."""	stop
+    2. Dann teilt ma d'Gsamtläng durch d'Läng vo de Stücke: 48 Inch ÷ 6 Inch = 8 Stück."""	stop	8.0	0	1		
 qda35e8fb	D'r Richard wohnt in eme Wohnhaus mit 15 Etagen. Auf jeder Etage gibt's 8 Wohnungen, und 3/4 vom Gebäude senn bewohnt. Wia viele Wohnungen im Gebäude sind insgesamt unbewohnt?	"Das isch e gueti Rächnig! Do isch de Wäg zum Resultat:
 
 1.  **Zersch luege mer, wie viel Wohnige es im ganze Gebäude git:**
@@ -2838,7 +2838,7 @@ Es sind also **30 Wohnige** im Gebäude unbewohnt."	30	"
     *   Total: 120.
     *   Occupied: 90.
     *   Unoccupied: 30.
-    *   Check: $90 + 30 = 120$. Correct."	stop
+    *   Check: $90 + 30 = 120$. Correct."	stop	30.0	0	1		
 q94fcd6ce	Dr Lloyd hot an Eierhof. Sei Hühner legat 252 Eier am Tag, und er verkauft se für 2 US-Dollar pro Dutzend. Wia viel verdient d'r Loyd pro Woch' mit de' Eier?	"Des is e einfache Rechenaufgab. Do is de Weg, wie de des usrechne kasch:
 
 1.  **Zerscht gucke mer, wie viel Dutzend des am Tag sin:**
@@ -2896,7 +2896,7 @@ Dr Lloyd verdient also **294 US-Dollar pro Woch'** mit seine Eier!"	294	"
     *   21 * 2 = 42. Correct.
     *   42 * 7 = 294. Correct.
 
-    (Self-Correction: Ensure the tone is helpful and matches the dialect's warmth.)"	stop
+    (Self-Correction: Ensure the tone is helpful and matches the dialect's warmth.)"	stop	294.0	0	1		
 q1afb1e71	Toms Schiff schafft 10 Meilen pro Schtond. Er segelt von 13 bis 16 Uhr. Danoch fährt er mit 6 Meilen/Schtond wieder z'rück. Wia lang braucht er für d'r Rückweg?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Die Strecke berechnen:**
@@ -2937,7 +2937,7 @@ q1afb1e71	Toms Schiff schafft 10 Meilen pro Schtond. Er segelt von 13 bis 16 Uhr
     *   ""Hier ist die Lösung Schritt für Schritt:""
     *   ""1. **Die Strecke berechnen:** Er segelt von 13 bis 16 Uhr, also **3 Stunden**. Bei einer Geschwindigkeit von 10 Meilen pro Stunde legt er $3 \times 10 = \mathbf{30}$ **Meilen** zurück.""
     *   ""2. **Die Zeit für den Rückweg berechnen:** Der Rückweg ist ebenfalls 30 Meilen lang. Er fährt mit 6 Meilen pro Stunde. Also: $30 : 6 = \mathbf{5}$ **Stunden**.""
-    *   ""**Antwort:** Er braucht für den Rückweg **5 Stunden**."""	stop
+    *   ""**Antwort:** Er braucht für den Rückweg **5 Stunden**."""	stop	5.0	0	1		
 q0aaae19a	Dem Uriah wird sei Büchertasche z'schwer. Er muss 15 Pfund rausnemma. Seine Comicbücher wieget jeweils 1/4 Pfund und sei Spielzeuge jeweils 1/2 Pfund. Wenn er 30 Comicbücher rausnimmt, wia viele Spielzeuge muss er dann no rausnemma?	"Des isch ganz einfach ausgerechnet:
 
 1. **Zuerst schau mer, wie viel die Comicbücher wieget:**
@@ -3001,7 +3001,7 @@ q0aaae19a	Dem Uriah wird sei Büchertasche z'schwer. Er muss 15 Pfund rausnemma.
 
     *   30 comics * 0.25 = 7.5. Correct.
     *   15 - 7.5 = 7.5. Correct.
-    *   7.5 / 0.5 = 15. Correct."	stop
+    *   7.5 / 0.5 = 15. Correct."	stop	15.0	0	1		
 qa5756c69	An Mechaniker verlangt onterschiedliche Preise für d'Reparatur von LKW-Reifen und PKW-Reifen. Für jeden reparierten LKW-Reifen verlangt er 60 Dollar, für jeden reparierten PKW-Reifen 40 Dollar. Am Donnerschtag repariert er 6 LKW-Reifen und 4 PKW-Reifen. Am Freitag repariert er 12 PKW-Reifen und koine LKW-Reifen. Wia viel Dollar mehr Umsatz hot er an dem Tag gmacht, an dem d'r Umsatz höher war?	"Hier ist die Schritt-für-Schritt-Rechnung:
 
 **1. Umsatz am Donnerstag berechnen:**
@@ -3057,7 +3057,7 @@ Der Mechaniker hat an dem Tag, an dem der Umsatz höher war, **40 Dollar** mehr 
     *   *Drafting the response:*
         Donnerstag: (6 * 60) + (4 * 40) = 360 + 160 = 520 Dollar.
         Freitag: (0 * 60) + (12 * 40) = 0 + 480 = 480 Dollar.
-        Differenz: 520 - 480 = 40 Dollar."	stop
+        Differenz: 520 - 480 = 40 Dollar."	stop	40.0	0	1		
 qd819612e	D'Doubtfire-Schwestra fahret mit 7 Kätzle hoim, die se im örtlichen Tierheim adoptiert hend, wenn ihr Mutter aruft und sagt, dass ihre zwei Hauskatzen grad Kätzle kriegt hend. Se sagt, Patchy, d'erschte Katz', hot dreimal so viele Kätzle wie die adoptierte, und Trixie, d'andere Katze, hot 12 zur Welt brocht. Wia viele Kätzle hend d'Doubtfires jetzt?	"Da chunt e rächti Chatzewält zäme! Do isch d'Rächnig:
 
 1.  **Adoptierti Kätzle:** 7
@@ -3127,7 +3127,7 @@ D'Doubtfires hend jetzt insgesamt **40 Kätzle**!"	40	"
 
     Wenn mer das alles zämetellt: $7 + 21 + 12 = 40$
 
-    D'Doubtfires hend jetzt insgesamt **40 Kätzle**!"""	stop
+    D'Doubtfires hend jetzt insgesamt **40 Kätzle**!"""	stop	40.0	0	1		
 q7c63d108	D'r Jean hot 30 Lutscher. Davon isst d'r Jean 2. Die übrige Lutscher will er in Tüta mit jeweils 2 Lutscher packa. Wia viele Tüten kann d'r Jean packa?	"D'r Jean kann **14 Tüta** packa.
 
 Hier is die Rechnung:
@@ -3162,7 +3162,7 @@ Hier is die Rechnung:
     1. Zerscht ziehste die 2 Lutscher ab, die er gessse hot: 30 - 2 = 28 Lutscher sin noch übrig.
     2. Dann teilscht die 28 Lutscher durch 2 (weil in jede Tüta 2 Lutscher kumme): 28 : 2 = 14.
 
-    Also 14 Tüta!"""	stop
+    Also 14 Tüta!"""	stop	14.0	0	1		
 q93b023e5	D'r Peter will die Woch ins Kino ganga. Er kauft immer a Eintrittskart' für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für d'ganze Woch 42 US-Dollar zur Verfügung hot, wia oft kann er dann ins Kino?	"D'r Peter kann **3 Mal** ins Kino ganga.
 
 Hier isch d'Rechnung:
@@ -3215,7 +3215,7 @@ Hier isch d'Rechnung:
 
     Hier isch d'Rechnung:
     *   Einmal ins Kino koschtet: 7 $ (Eintritt) + 7 $ (Popcorn) = **14 $**.
-    *   42 $ (Budget) ÷ 14 $ (pro Mal) = **3 Mal**."""	stop
+    *   42 $ (Budget) ÷ 14 $ (pro Mal) = **3 Mal**."""	stop	3.0	0	1		
 qdf141d2f	A Holzbrücke kann net me'r als 5.000 Pfund traga. An Lieferwagen mit lauter gleiche Kischten, von denen jede 15 Pfund wiegt, soll über d'Brücke fahra. Fahrer und leerer Laschtwagen wieget zamma 3755 Pfund. Wia viele Kischten kann dr Laschtwagen höchstens lada, ohne d'Gewichtsgrenze von dr Brücke zu überschreita?	"Des isch a klassische Rechenaufgab! So rechnet ma des aus:
 
 1. **Zuerst schau ma, wie viel Gewicht no übrig isch:**
@@ -3280,7 +3280,7 @@ Dr Laschtwagen kann höchstens **83 Kischte** lada, ohne dass d'Brücke bricht."
     *   Crate: 15.
     *   $5000 - 3755 = 1245$.
     *   $1245 / 15 = 83$.
-    *   Correct."	stop
+    *   Correct."	stop	83.0	0	1		
 q1f4f019f	Dr Stephen hot online Lebensmittel bestellt. D'Endabrechnung war 40,00 US-Dollar. Weil a Lieferdienscht d'Bestellung bracht hot, hend se auf d'Rechnung 25 % Gebühr draufgschlaga und zusätzlich 3,00 US-Dollar Liefergebühr verlangt. Dr Stephen hot außerdem 4,00 US-Dollar Trinkgeld geba. Wia hoch war dr Endpreis von seine Lebensmittel nach alle Extragebühren?	"Do isch d'Rechnig für de Dr. Stephen:
 
 1.  **D'25 % Gebühr usrechne:**
@@ -3346,7 +3346,7 @@ Dr Endpreis vo sine Lebensmittel nach alle Extragäbe isch **57,00 US-Dollar**."
     2. D'Zuesatzgebühre sind: 10,00 $ (Gebühr) + 3,00 $ (Liefergebühr) + 4,00 $ (Trinkgeld) = 17,00 $.
     3. Dr Endpreis isch: 40,00 $ (Lebensmittel) + 17,00 $ (Zuesatz) = **57,00 $**.
 
-    Dr Endpreis isch also **57,00 US-Dollar**."""	stop
+    Dr Endpreis isch also **57,00 US-Dollar**."""	stop	57.0	0	1		
 q709e5faa	A Himbeerstrauch hot 6 Trauben mit jeweils 20 Früchten und no 67 einzelne Früchte, die über dr Strauch verteilt senn. Wia viele Himbeeren senn des z'samma?	"Des senn insgesamt **187** Himbeere.
 
 D'Rechnig isch ganz eifach:
@@ -3386,7 +3386,7 @@ D'Rechnig isch ganz eifach:
 
     D'Rechnig isch:
     6 Traube × 20 Frücht = 120 Frücht
-    120 Frücht + 67 einzelne Frücht = 187 Frücht"""	stop
+    120 Frücht + 67 einzelne Frücht = 187 Frücht"""	stop	187.0	0	1		
 qb292acaa	In oim Korb senn 25 Oranga. Davon isch 1 schlecht, 20 % senn no net reif on 2 senn sauer, dr Rest isch guat. Wia viele Oranga senn guat?	"Do isch d'Rächnig:
 
 1.  **Zersch luege mer, wie vili no net riif senn:** 20 % vo 25 isch 5 (denn $25 \times 0,20 = 5$).
@@ -3440,7 +3440,7 @@ Es senn also **17** Oranga guat."	17	"
     *   Sour: 2
     *   Sum of bad/unripe/sour: 8
     *   Good: 25 - 8 = 17.
-    *   Correct."	stop
+    *   Correct."	stop	17.0	0	1		
 qa11cac63	D'Janet kauft ihrer Tochter a Brosche. Fürs Material zahlt se 500 US-Dollar und no 800 US-Dollar an dr Juwelier fürs Modelliere. Danach zahlt se zusätzlich 10 % von dem Betrag für d'Versicherung. Wia viel hot se insgesamt zahla müssa?	"Des is e einfache Rechnung. Do is de Rechenweg:
 
 1. **Zerscht rechne mer des Material un de Modelliere zamm:**
@@ -3476,7 +3476,7 @@ D'Janet hot also insgesamt **1430 US-Dollar** zahla müssa."	1430	"
     *   ""Zerscht rechne mer des Material un de Modelliere zamm: 500 $ + 800 $ = 1300 $.""
     *   ""Dann rechne mer die 10 % Versicherung us: 10 % vun 1300 $ sin 130 $.""
     *   ""Am Schluss addiere mer des alles: 1300 $ + 130 $ = 1430 $.""
-    *   ""D'Janet hot also insgesamt **1430 US-Dollar** zahla müssa."""	stop
+    *   ""D'Janet hot also insgesamt **1430 US-Dollar** zahla müssa."""	stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienschtjohr' kriegt a Mitarbeiter bei Marcys Firma a volle Jahresrente von 50.000 Dollar. Pensionsansprüche gibt's ab 20 Dienschtjohr. Für jedes weitere volle Dienschtjohr nach der 20-Jahres-Marke kriegt dr Mitarbeiter 5 % vom volla Rentabetrag dazu. Wenn d'Marcy nach genau 30 Dienschtjohr 'ufhört, wia hoch isch dann ihr' jährliche Rente in Dollar?	"Des is a klassische Rechenaufgab! Schau ma uns des Schritt für Schritt o:
 
 1.  **Zuerst find ma heraus, wia hoch die Basis-Rente is:**
@@ -3650,7 +3650,7 @@ q5a0d641e	Nach 40 Dienschtjohr' kriegt a Mitarbeiter bei Marcys Firma a volle Ja
     *Final Polish of the response:*
     - Start with the calculation of the base amount.
     - Show the calculation for the 30-year mark.
-    - Final answer: 37,500."	stop
+    - Final answer: 37,500."	stop	37500.0	0	0	37500	0
 q2eb5bb5f	D'Aleena hot an Streaming-Dienst abonniert, d'r 140 US-Dollar im Monat koschtet. Wenn d'Firma in dr erschta Hälfte vom Jahr d'r ursprüngliche Betrag verlangt und in d'r zwoiten Jahreshälfte 10 % weniger, rechne aus, wia viel se bis zum Jahresende insg'samt für d'r Schtreaming-Dienscht zahlt.	"Des is e rechnerische Aufgabe, die mer so löse kann:
 
 **1. Die erschte sechs Monde (Januar bis Juni):**
@@ -3731,7 +3731,7 @@ D'Aleena zahlt bis zum Jahresende also insgesamt **1596 US-Dollar** für de Stre
         D'Aleena zahlt bis zum Jahresende also insgesamt **1596 US-Dollar**.""
 
     *   Check math: 140 * 6 = 840. 140 * 0.9 = 126. 126 * 6 = 756. 840 + 756 = 1596. Correct.
-    *   Check language: Consistent Pfälzisch."	stop
+    *   Check language: Consistent Pfälzisch."	stop	1596.0	0	1		
 q29ca8e5c	D'Sophia überlegt, mit ihrem Auto auf Fahrt zu ganga, und will wissa, wia weit se mit me vollen Tank kommt. Seit em letzten Volltanka isch se 100 Meilen gfahra und hot 4 Gallonen Benzin nachfülla müssa, bis d'r Tank wieder voll war. In d'r Bedienungsanleitung steht, dass in d'r Tank 12 Gallonen Benzin nei passet. Wia viele Meilen kann d'Sophia mit oiner Tankfüllung fahra?	"D'Sophia kann mit oiner Tankfüllung insgesamt **300 Meile** fahra.
 
 Hier isch d'Rechnung dazu:
@@ -3779,7 +3779,7 @@ Hier isch d'Rechnung dazu:
     1. **Zuerst findet mer d'Verbrauch:** Wenn se 100 Meile gfahra isch und 4 Gallone nachgfüllt hat, dann schafft se 100 Meile geteilt durch 4 Gallone = **25 Meile pro Gallone**.
     2. **Dann rechnet mer d'Gesamtstrecke aus:** Wenn d'r Tank 12 Gallone groß isch, dann rechnet mer 12 Gallone mal 2ische 25 Meile = **300 Meile**.
 
-    Also kommt se mit am vollen Tank 300 Meile weit."""	stop
+    Also kommt se mit am vollen Tank 300 Meile weit."""	stop	300.0	0	1		
 q388ed7a8	Dr Jim guckt 2 Schtondn lang Fernseha ond goaht danoach ins Bett und liest halb so lang. Des macht er 3-mal pro Woch'. Wia viele Schtondn verbrengt er in 4 Wochen insgesamt mit Fernsehgucka und Lesa?	"Des is e rechne-Aufgab! Lass uns des mal Schritt für Schritt durchgehe:
 
 1.  **Pro Mal (pro Sitzung):**
@@ -3837,7 +3837,7 @@ Dr. Jim verbringt also insgesamt **36 Schtond** mit Fernsehgucka und Lesa."	36	"
     *   Sessions per week: 3
     *   Weekly total: 9h
     *   4 weeks: 36h.
-    *   Correct."	stop
+    *   Correct."	stop	36.0	0	1		
 qe6615147	Vier Schula tretat in 'me Basketballturnier gegeneinander an. Jede Schul' schickt a Mädlebasketballteam und a Jungenbasketballteam, und jedes Team hot 5 Schpieler. Jede Schul' schickt außerdem für jedes Team oin Trainer mit. Wia viele Personen hend d' Schula insgesamt gschickt?	"Des isch ganz eifach zum usrechne. Do isch d'Rechnig:
 
 1.  **Pro Team:** 5 Spieler + 1 Trainer = **6 Personen**.
@@ -3894,7 +3894,7 @@ D'Schula hend insgesamt **48 Personen** gschickt."	48	"
     *   Girls + Boys team? Yes (2 teams).
     *   5 players per team? Yes.
     *   1 coach per team? Yes.
-    *   Total people? 48."	stop
+    *   Total people? 48."	stop	48.0	0	1		
 q1df59a5a	An Schatzsucher hot a vergrabene Schatzkischt' mit Edelstai' gfunda. Drin warat 175 Diamanten, 35 weniger Rubine als Diamanten und zwoimal so viele Smaragde wie Rubine. Wia viele Edelsteine warat insgesamt in dr Schatzkischt?	"Des isch a ganz schöna Schatz, den der Schatzsucher do gfunda hot! Rechne mer des mal Schritt für Schritt durch:
 
 1.  **Diamante:** 175
@@ -3949,7 +3949,7 @@ Insgesamt warat also **595 Edelsteine** in dr Schatzkischt!"	595	"
     *   Diamonds: 175 (Correct)
     *   Rubies: 175 - 35 = 140 (Correct)
     *   Emeralds: 140 * 2 = 280 (Correct)
-    *   Total: 175 + 140 + 280 = 595 (Correct)"	stop
+    *   Total: 175 + 140 + 280 = 595 (Correct)"	stop	595.0	0	1		
 q0e3fa635	An d'r Schule vom Dr. Wertz gibt's zwoimal so viele Kerle wie Mädle. Wenn's 60 Mädle und 5 Schüler pro Lehrer gibt, wia viele Lehrer gibt's noa?	"Des is e rechne-Aufgab! So rechnet ma des aus:
 
 1.  **Zerscht die Kerle ausrechne:** Wenn's doppelt so viele Kerle wie Mädle gibt, dann sind des: $60 \times 2 = 120$ Kerle.
@@ -3996,7 +3996,7 @@ Also gibt's **36 Lehrer** an der Schuel vom Dr. Wertz."	36	"
     *   ""1. Zerscht die Kerle: Wenn's doppelt so viele Kerle wie Mädle gibt, dann sind des 60 * 2 = 120 Kerle.""
     *   ""2. Dann die ganze Schuel: 120 Kerle + 60 Mädle = 180 Schüler insgesamt.""
     *   ""3. Und zum Schluss die Lehrer: 180 Schüler geteilt durch 5 Schüler pro Lehrer = 36 Lehrer.""
-    *   ""Also gibt's 36 Lehrer an der Schuel vom Dr. Wertz."""	stop
+    *   ""Also gibt's 36 Lehrer an der Schuel vom Dr. Wertz."""	stop	36.0	0	1		
 q9c0ce719	D'Bailey fängt mit me bestimmta Geldbetrag an. Dann kriegt se 8 Wochen lang jede Woch' 5 US-Dollar. Wenn se am Ende von de' 8 Wochen insgesamt 100 US-Dollar hot, wia viel Geld hot d'Bailey am Anfang ghett?	"Des isch ganz einfach zum Ausrechne. Do isch de Weg:
 
 1.  **Zuerst rechnat ma, wie viel Geld se über de 8 Wochen insgesamt dazu kriegt hot:**
@@ -4040,7 +4040,7 @@ D'Bailey hot am Anfang also **60 US-Dollar** g'habt."	60	"
 
     *   Does it answer the prompt? Yes.
     *   Is the math correct? Yes (100 - 40 = 60).
-    *   Is the dialect consistent? Yes."	stop
+    *   Is the dialect consistent? Yes."	stop	60.0	0	1		
 qde446a3d	D'Judy gibt unter dr Woch' jeden Tag 5 Tanzkurs und samschtags 8 Kurs'. Wenn in jedem Kurs 15 Schüler sind und se 15,00 $ pro Schüler verlangt, wia viel Geld verdient se in oiner Woch'?	"Des isch a rechne, des kriega mer hin! Do isch d'Rechnig:
 
 1.  **D'Kurse unter dr Woch' (Mo-Fr):**
@@ -4119,7 +4119,7 @@ D'Judy verdient also **7.425,00 $** in oiner Woch'!"	7425	"
     *   25 + 8 = 33.
     *   33 * 15 = 495.
     *   495 * 15 = 7425.
-    *   Correct."	stop
+    *   Correct."	stop	7.425	0	0	7425	1
 qd941251f	D'r Kelian hot zwei Kochrezepte. Des eine hot 20 Ahweisungen, und des andere hot zweimal so viele wie des erschte. Wia viele Ahweisungen muss dr Kelian lesa, damit er beide Rezept' kocha kann?	"Dr Kelian muss insgesamt **60 Ahweisungen** lesa.
 
 Des isch d'Rechnig:
@@ -4155,7 +4155,7 @@ Des isch d'Rechnig:
     Des isch d'Rechnig:
     - Des erschte Rezept hot **20** Ahweisungen.
     - Des zweite Rezept hot doppelt so viel, also **4'0** (2 x 20).
-    - Zamma macht des **60** (20 + 40)."""	stop
+    - Zamma macht des **60** (20 + 40)."""	stop	60.0	0	1		
 q96352811	D'r Tommy sammelt Geld für sei Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Schtück und Käsekuchastückle für 4 US-Dollar pro Stück verkauft. Wenn d'r Tommy 43 Brownies und 23 Käsekuchastückle verkauft, wia viel Geld sammelt er noa ei?	"Des isch ganz einfach ausgerechnet:
 
 Zerscht rechnet ma d'Brownies aus:
@@ -4221,7 +4221,7 @@ D'r Tommy hat also insgesamt **221 US-Dollar** eingesammelt."	221	"
     Jetzt rechnet ma des Ganze zamm:
     129 $ + 92 $ = 221 $
 
-    D'r Tommy hat also insgesamt **221 US-Dollar** eingesammelt."""	stop
+    D'r Tommy hat also insgesamt **221 US-Dollar** eingesammelt."""	stop	221.0	0	1		
 qbf808b59	D'Shiela hot fünf Handys für jeweils 150 US-Dollar mit me Ratenzahlungsvertrag über 3 Monat' kauft. Pro Stück fallen 2 % Zinsen an. Wia viel zahlt d'Shiela jeden Monat über die 3 Monat'?	"Hier ist die Schritt-für-Schritt-Rechnung:
 
 1.  **Gesamtkosten der Handys (ohne Zinsen):**
@@ -4279,7 +4279,7 @@ qbf808b59	D'Shiela hot fünf Handys für jeweils 150 US-Dollar mit me Ratenzahlu
         3.  **Gesamtsumme mit Zinsen:** 750 $ + 15 $ = 765 $
         4.  **Monatliche Rate:** 765 $ ÷ 3 Monate = 255 $
 
-    *   *Result:* 255 $."	stop
+    *   *Result:* 255 $."	stop	255.0	0	1		
 q71d76256	Dr Artie hot an Blumenstand auf em Baueramarkt. Er verkauft drei Sorten Blumen: Studentenblumen, Petunien und Begonien. Normal verlangt er für Studentenblumen 2,74 Dollar pro Topf, für Petunien 1,87 Dollar pro Topf und für Begonien 2,12 Dollar pro Topf. Heut hot d'r Artie koi Wechselgeld, drum rundet er alle Preise auf dr nächschte Dollar. Wenn er 12 Töpfe Studentenblumen, 9 Töpfe Petunien und 17 Töpfe Begonien verkauft, wia viel Dollar verdient er noa?	"Um die Antwort zu finden, müssen wir zuerst die Preise auf den nächsten Dollar aufrunden und dann die Mengen mit den neuen Preisen multiplizieren.
 
 **1. Die Preise aufrunden:**
@@ -4342,7 +4342,7 @@ Dr. Artie verdient insgesamt **105 Dollar**."	88	"
 
     *   Did I round correctly? Yes, ""auf den nächsten Dollar"" means ceiling function.
     *   Did I use the correct quantities? 12, 9, 17. Yes.
-    *   Is the math correct? 36 + 18 + 51 = 105. Yes."	stop
+    *   Is the math correct? 36 + 18 + 51 = 105. Yes."	stop	105.0	0	0	105	0
 qd6f9023f	Dr Luke verbringt Zeit am Strand und baut Sandburgen. Irgendwann merkt er, dass jede Ebene von dr Sandburg bloß halb so viele Quadratmeter hot wie d'Ebene dronter. Wenn er a 4-stöckige Sandburg baut, bei der d'oberschte Ebene 16 Quadratmeter hot, wia groß isch dann im Schnitt oi Ebene in Quadratmetern?	"Des isch gar net so schwer ausgerechnet! Lass uns des mal Schritt für Schritt durchgeha:
 
 Wir wissa, dass d'oberschte Ebene (also d'4. Ebene) **16 m²** groß isch. Da jede Ebene d'doonunter isch doppelt so groß isch (weil d'oberschte ja nur halb so groß wie d'dritt isch), rechnet ma uns d'Sandburg von oben nach unten zamm:
@@ -4415,7 +4415,7 @@ Zum d'Durchschnittsfläche (im Schnitt) zu finde, teilt mer des Ganze wieder dur
     *   2nd: 64
     *   1st: 128
     *   Sum: $16+32+64+128 = 240$
-    *   Average: $240/4 = 60$. Correct."	stop
+    *   Average: $240/4 = 60$. Correct."	stop	60.0	0	1		
 qcf724c14	D'Cecilia hot grad an neuen Welpen kauft. Laut ihrem Tierarzt muss se dr Welpen in den erschte 180 Tagen jeden Tag mit 1 Tasse Hundefutter füttera. Danoch braucht dr Welpe für dr Rest von seim Leben jeden Tag 2 Tassen Hundefutter. Wenn a Tüte Hundefutter 110 Tassenportionen enthält, wia viele Tüten verbraucht d'Cecilia dann im erschta Jahr?	"Hei ass d'Rechnung fir d'Cecilia hir Hundefudder:
 
 1.  **Éischte Period (éischt 180 Deeg):**
@@ -4476,7 +4476,7 @@ D'Cecilia verbraucht also genau **5 Tüte** Hundefudder am éischte Joer."	5	"
     *   ""2. De Rescht vum Joer (365 - 180 = 185 Deeg): 185 x 2 = 370 Tassen.""
     *   ""3. Gesamtzuel vun de Tassen am Joer: 180 + 370 = 550 Tassen.""
     *   ""4. Zuel vun de Tüte: 550 / 110 = 5 Tüte.""
-    *   ""D'Cecilia verbraucht also 5 Tüte Hundefudder am éischte Joer."""	stop
+    *   ""D'Cecilia verbraucht also 5 Tüte Hundefudder am éischte Joer."""	stop	5.0	0	1		
 q6330b5ad	Wenn dr Raymond halb so viel Wäsche wäscht wie d' Sarah und d' Sarah 4-mal so viel Wäsche wäscht wie dr David, rechne dr Onterschied zwischen dr Wäschemenge vom Raymond und vom David aus, wenn d' Sarah 400 Pfund Wäsche wäscht.	"Hier ist die schrittweise Berechnung:
 
 1.  **Sarahs Wäschemenge:**
@@ -4526,7 +4526,7 @@ Der Unterschied zwischen der Wäschemenge von Raymond und David beträgt **100 P
     *   ""1. Sarah wäscht 400 Pfund.""
     *   ""2. Raymond wäscht halb so viel wie Sarah: 400 / 2 = 200 Pfund.""
     *   ""3. Sarah wäscht 4-mal so viel wie David. Das bedeutet, David wäscht ein Viertel von Sarahs Menge: 400 / 4 = 100 Pfund.""
-    *   ""4. Der Unterschied zwischen Raymond (200) und David (100) ist: 200 - 100 = 100 Pfund."""	stop
+    *   ""4. Der Unterschied zwischen Raymond (200) und David (100) ist: 200 - 100 = 100 Pfund."""	stop	100.0	0	1		
 qfb8247db	D'r Vincent kann Blumen in 3-er-Packungen für 2,50 US-Dollar oder in 2-er-Packungen für 1 US-Dollar kaufa. Wia viel Geld spart er, wenn er 18 Blumen zum günschtigera Preis kauft?	"D'Lösig isch ganz eifach, wenn mer d'Choschte für 18 Blueme i de beide Optione usrächnet:
 
 1.  **Option 1 (3er-Packige):**
@@ -4584,7 +4584,7 @@ D'r Vincent spart also **6,00 US-Dollar**, wenn er d'2er-Packige chauft."	6	"
     *   ""1. **3er-Packige:** Für 18 Blueme brucht er 6 Packige (18 ÷ 3 = 6). Das choschtet 6 × 2,50 $ = **15,00 $**.""
     *   ""2. **2er-Packige:** Für 18 Blueme brucht er 9 Packige (18 ÷ 2 = 9). Das choschtet 9 × 1,00 $ = **9,00 $**.""
     *   ""D'Differenz (d'Ersparnis) isch: 15,00 $ - 9,00 $ = **6,00 $**.""
-    *   ""D'r Vincent spart also **6,00 US-Dollar**."""	stop
+    *   ""D'r Vincent spart also **6,00 US-Dollar**."""	stop	6.0	0	1		
 q4da79a41	D'r John adoptiert an Hond. Er bringt d'r Hond zum Hondefrisör, und des koschtet 100 US-Dollar. Weil er Neukunde isch, kriegt er 30 % Rabatt. Wia viel kostet dr Termin beim Hondefrisör dann?	"Der Termin beim Hondefrisör koschtet dann **70 US-Dollar**.
 
 So isch d'Rechnung:
@@ -4609,7 +4609,7 @@ So isch d'Rechnung:
     *   ""Rechnung: 100 Dollar minus 30 % (also 30 Dollar) = 70 Dollar.""
 
     *   ""Der Termin beim Hondefrisör koschtet dann **70 US-Dollar**.""
-    *   ""D'r Rabatt isch 30 Dollar (30 % von 100), also muss dr John no 70 Dollar zahle."""	stop
+    *   ""D'r Rabatt isch 30 Dollar (30 % von 100), also muss dr John no 70 Dollar zahle."""	stop	70.0	0	1		
 qd3f2e43b	Zwei Mädle krieget jeweils 1/6 von de' 24 Liter Wasser. Danach kriegt an Bub 6 Liter Wasser. Wia viele Liter Wasser bleibet übrig?	"Des is ganz einfach gerechnet:
 
 1. **Die Mädle:** 1/6 von 24 Liter sind 4 Liter. Da es zwei Mädle sind, kriege sie zusammen **8 Liter** (2 x 4 Liter).
@@ -4655,7 +4655,7 @@ Es bleibet also **10 Liter** Wasser übrig."	10	"
     *   4 * 2 = 8.
     *   8 + 6 = 14.
     *   24 - 14 = 10.
-    *   Correct."	stop
+    *   Correct."	stop	10.0	0	1		
 qffe70c6a	Dr Charlie hot 10 Schticker ghett. Er hot 21 Schticker in me Laden in d'r Mall kauft und zum Geburtstag 23 Schticker gschenkt kriegt. Donoach hot dr Charlie seiner Schwester 9 von de Schticker geba und 28 zum Verziera vo rer Grußkarte benutzt. Wia viele Schticker hot dr Charlie no übrig?	"Hier ist die Rechnung Schritt für Schritt:
 
 1.  **Start:** Dr. Charlie hat **10** Schsticke gehabt.
@@ -4806,7 +4806,7 @@ Dr. Charlie hat noch **17** Schsticke übrig."	17	"
         4. - 9 (Schwester) = 45
         5. - 28 (Grußkarte) = 17
 
-    *   *Result:* 17."	stop
+    *   *Result:* 17."	stop	17.0	0	1		
 q7d0f9963	D'Grace wiegt 125 Pfund. Dr Alex wiegt 2 Pfund weniger als des 4-fache vom Gewicht von dr Grace. Wia viel Pfund wieget se zamma?	"Hier ist die Schritt-für-Schritt-Rechnung:
 
 1.  **Gewicht von D'Grace:** 125 Pfund
@@ -4845,7 +4845,7 @@ Zusammen wiegen sie **623 Pfund**."	623	"
     *   ""Hier ist die Rechnung:""
     *   ""1. Dr. Alex wiegt: (4 * 125) - 2 = 498 Pfund.""
     *   ""2. Zusammen wiegen sie: 125 + 498 = 623 Pfund.""
-    *   ""Sie wiegen zusammen **623 Pfund**."""	stop
+    *   ""Sie wiegen zusammen **623 Pfund**."""	stop	623.0	0	1		
 q792b7ea9	D'r Dan pflanzt 3 Rosenbüsch. Jeder Rosenbusch trägt 25 Rosen. Jede Rose hot 8 Dornen. Wia viele Dornen senn des insgesamt?	"Des senn insgesamt **600** Dornen.
 
 So rechne de des aus:
@@ -4880,7 +4880,7 @@ So rechne de des aus:
 
     So rechne de des aus:
     1. Zerscht die Rose: 3 Büsch × 25 Rose = 75 Rose.
-    2. Dann die Dornen: 75 Rose × 8 Dornen = 600 Dornen."""	stop
+    2. Dann die Dornen: 75 Rose × 8 Dornen = 600 Dornen."""	stop	600.0	0	1		
 q3dfac176	A Fußballteam schpielt 22 Schpiel. Se hend 8 meh' gwonna als verlora. Wia viele Schpiel hend se gwonna?	"S Team het **15 Schpiel** gwonna.
 
 Do isch d Rächnig dezue:
@@ -4952,7 +4952,7 @@ Do isch d Rächnig dezue:
     *   Wins: 15.
     *   Losses: 7.
     *   Difference: $15 - 7 = 8$. (Matches)
-    *   Sum: $15 + 7 = 22$. (Matches)"	stop
+    *   Sum: $15 + 7 = 22$. (Matches)"	stop	15.0	0	1		
 qc8e2bf9d	D'r Eugen näht an Quilt aus alte Souvenir-T-Shirts. Er hot von jedem Urlaub, den er gmacht hot, a T-Shirt. Er fährt jedes Joahr viermal in Urlaub. Mit d'r Tradition hot er in dem Joahr angfanga, wo er 23 worda isch, und er hot für jedes Jahr bis vor s'aktuelle Jahr T-Shirts gsammelt; jetzt isch er 34. Wia viele Quilt-Blöcke hot er insgesamt?	"D'r Eugen hot insgesamt **44 Quilt-Blöcke**.
 
 Hier isch d'Rechnung dazu:
@@ -5089,7 +5089,7 @@ Hier isch d'Rechnung dazu:
     Example: Start at 1, end at 3. Years: 1, 2, 3. $3 - 1 + 1 = 3$.
     So $33 - 23 + 1 = 11$. Correct.
 
-    Final Answer seems to be 44."	stop
+    Final Answer seems to be 44."	stop	44.0	0	1		
 q87073282	D'r Greg hot an Wecker gstellt, der dreimal am Tag zur Erinnerung klingelt. Wenn d'r Wecker losgoaht, klingelt er so lang, bis d'r Greg n' ausmacht. Beim erschten Moal heut hoat er viermal g'klingelt. Beim zweiten Moal hot er dreimal so lang g'klingelt wie beim erschten Moal. Beim dritten Moal hot er halb so lang klingelt wie beim zweiten Moal. Wia oft hot dr Wecker insgesamt klingelt?	"Des is a ganz einfache Rechnung, wenn ma's amoi aufschreibt:
 
 1. **Beim erschten Moal:** 4-mal
@@ -5130,7 +5130,7 @@ Der Wecker hot also insgesamt **22-mal** g'klingelt."	22	"
     *   ""2. Moal: 4 * 3 = 12-mal""
     *   ""3. Moal: 12 / 2 = 6-mal""
     *   ""Zamm g'rechnet: 4 + 12 + 6 = 22""
-    *   ""Der Wecker hot also insgesamt **22-mal** g'klingelt."""	stop
+    *   ""Der Wecker hot also insgesamt **22-mal** g'klingelt."""	stop	22.0	0	1		
 qe293b5e8	A Firma zahlt ihre Mitarbeiter an Einstiegslohn von 600 Dollar im Monat. D'Firmenregel belohnt Mitarbeiter, die lang dabei sind: Nach fünf Dienschtjoahr' wird d'r Lohn jedes Joahr erhöht. D'jährliche Erhöhung isch immer an feschter Betrag und entspricht 10 % vom anfänglichen Jahresgehalt. D'Sylvie hot grad ihr fünftes Joahr in dr Firma fertig. Wia hoch isch ihr Jahresgehalt, nachdem se no drei weitere Joahr dort schafft?	"Do isch d'Lösig Schritt für Schritt uf Schwyzerdütsch:
 
 1.  **S'anfängliche Jahresgehalt berechne:**
@@ -5236,7 +5236,7 @@ qe293b5e8	A Firma zahlt ihre Mitarbeiter an Einstiegslohn von 600 Dollar im Mona
     7'200 Dollar (Basis) + (3 × 720 Dollar)
     7'200 + 2'160 = **9'360 Dollar**.
 
-    **Antwort:** Ihr Jahresgehalt isch nach dene 3 weitere Johr **9'360 Dollar**."""	stop
+    **Antwort:** Ihr Jahresgehalt isch nach dene 3 weitere Johr **9'360 Dollar**."""	stop	9360.0	0	1		
 qb9e657cf	D'erschte Platte von d'r Marilyn hot sich 10-mal so oft verkauft wie die vom Harald. Wenn se zamma 88.000 Exemplare verkauft hend, wia viele Exemplare hot dr Harald verkauft?	"Des is e einfache Rechnung:
 
 Wenn dr Harald 1 Teil verkafft hot, dann hot d'Marilyn 10 mal so viel, also 10 Teile.
@@ -5281,7 +5281,7 @@ Jetzt teile mer die 88.000 Exemplare einfach durch 11:
 
         **Dr Harald hot also 8.000 Exemplare verkafft.**
 
-        (Und d'Marilyn hot 80.000 verkafft, damit komme mer uff die 88.000.)"""	stop
+        (Und d'Marilyn hot 80.000 verkafft, damit komme mer uff die 88.000.)"""	stop	8000.0	0	1		
 q8d6c3ac8	D'Christina hot 16 Freind zu ihrer Geburtstagsfeier eiglada. Se rechnet damit, dass bloß 75 % davon kommet, drum richtet se für jeden erwarteten Gast a Geschenktüte. Wenn jede Geschenktüte $2 koschtet, wia hoch sind dann d'Gesamtkoschta für d'Geschenktüten?	"Hei ass d'Rechnung:
 
 1. **Zuerst berechnen mir, wéi vill Leit d'Christina erwartet:**
@@ -5324,7 +5324,7 @@ D'Gesamtkäschten fir d'Geschenktüte sinn also **24 $**."	24	"
 
     *   Did I answer the question? Yes.
     *   Is the math correct? $16 \times 0.75 = 12$; $12 \times 2 = 24$. Yes.
-    *   Is the language correct? Yes, Luxembourgish."	stop
+    *   Is the language correct? Yes, Luxembourgish."	stop	24.0	0	1		
 qa59fef67	Dr Ted, dr T-Rex, will Kartoffelsalat zum Dinopicknick mitbringa. Er woiß, dass an erwachsener Dinosaurier 10 Pfund Kartoffelsalat isst und a Jungtier halb so viel wie a erwachsenes Tier. Wenn beim Picknick 20 Erwachsene und 5 Junge dabei senn, wia viel Kartoffelsalat muss dr Ted mitbringa, damit hoffentlich alle satt werdet?	"Servus! Des is ja a ganz schöner Hunger, den de Dinos da ham! Da braucht da Dr. Ted auf jeden Fall an ordentlichen Schlapfen Kartoffelsalat.
 
 Rechnen ma des amoi kurz durch:
@@ -5376,7 +5376,7 @@ Dr. Ted muss also **225 Pfund Kartoffelsalat** mitbringa, damit olle satt werdn 
     *   Adults: 20 * 10 = 200. Correct.
     *   Young: 5 * 5 = 25. Correct.
     *   Total: 225. Correct.
-    *   Language: Matches user's style."	stop
+    *   Language: Matches user's style."	stop	225.0	0	1		
 q4db223a4	D'r Jan hot dreimal so viele Haustiere wie d'Marcia. D'Marcia hot zwei Haustiere mehr als d'Cindy. Wenn d'Cindy vier Haustiere hot, wia viele Haustiere hend dann alle drei zamma?	"Des isch ganz einfach ausgerechnet:
 
 1. **D'Cindy** hot **4** Haustiere.
@@ -5427,7 +5427,7 @@ Alle drei zamma hen se **28 Haustiere**."	28	"
     *   Cindy: 4
     *   Marcia: 4 + 2 = 6
     *   Jan: 6 * 3 = 18
-    *   Sum: 18 + 6 + 4 = 28. Correct."	stop
+    *   Sum: 18 + 6 + 4 = 28. Correct."	stop	28.0	0	1		
 q2ae0bd70	D'Emily hot 4 Kinder: Amy, Jackson, Corey und James. D'Amy isch 5 Joahr älter als d'r Jackson und 2 Joahr jünger als d'r Corey. Wenn d'r James 10 Joahr alt und 1 Joahr jünger wie d'r Corey isch, wia alt isch dann dr Jackson?	"D'r Jackson isch **4 Joahr** alt.
 
 Hie isch d'Rechnig Schritt für Schritt:
@@ -5467,7 +5467,7 @@ Hie isch d'Rechnig Schritt für Schritt:
         1. De James isch **10**.
         2. De Corey isch 1 Joahr älter als de James, also **11**.
         3. D'Amy isch 2 Joahr jünger als de Corey, also **9**.
-        4. D'Amy isch 5 Joahr älter als de Jackson, also isch de Jackson **4** (9 - 5 = 4)."""	stop
+        4. D'Amy isch 5 Joahr älter als de Jackson, also isch de Jackson **4** (9 - 5 = 4)."""	stop	4.0	0	1		
 q412bff21	D'r Lee konnte d'400 Meter Hürden zwei Sekonden schneller laufa als dr Gerald d'400 Meter Hürden läuft. Dr Gerald hot aber sei Ernährung omgstellt und dadurch sei G'schwindigkeit um 10 % verbessert. Wenn dr Lee d'400 Meter Hürden in 38 Sekunden läuft, wia schnell kann dr Gerald mit seiner verbesserten Ernährung d'400 Meter Hürden in Sekunden laufa?	"Des is a klassische Rechenaufgab! Schau ma uns des Schritt für Schritt o:
 
 1.  **Dr Lee sei Zeit:** Dr Lee braucht **38 Sekunden**.
@@ -5529,7 +5529,7 @@ Dr Gerald konn d'400 Meter Hürden mit seiner neien Ernährung in ca. **36,36 Se
     *   Gerald (new speed): $1.1 \times$ old speed.
     *   Gerald (new time): $40 / 1.1 = 36.3636...$
 
-    (Self-Correction: Ensure the distinction between ""faster time"" and ""faster speed"" is clear. 10% faster speed $\neq$ 10% less time. 10% less time would be 36s. 10% more speed is $40/1.1 \approx 36.36s$. The math is correct.)"	stop
+    (Self-Correction: Ensure the distinction between ""faster time"" and ""faster speed"" is clear. 10% faster speed $\neq$ 10% less time. 10% less time would be 36s. 10% more speed is $40/1.1 \approx 36.36s$. The math is correct.)"	stop	36.36	0	0	36.36	0
 qf73a338f	In rer Noachbarschaft gibt's zwölf weniger Kaninchen als Hond und Katza zamma. Wenn auf jeden Hond zwei Katza kommet und es 60 Hond gibt, wia viele Haustiere gibt's dann insgesamt in d'r Nachbarschaft?	"Des isch a rechtes Rätsel! Aber des krieget mir scho hi. Do isch d'Rechnung Schritt für Schritt:
 
 1.  **D'Hond:** Des weißet mir ja scho, es sind **60**.
@@ -5597,7 +5597,7 @@ In d'r Nachbarschaft gibt's also insgesamt **348 Haustiere**!"	348	"
     *   Cats: 120
     *   Rabbits: 180 - 12 = 168
     *   Total: 60 + 120 + 168 = 348.
-    *   Logic holds."	stop
+    *   Logic holds."	stop	348.0	0	1		
 qc5273098	Von de' 200 Fünftklässler sind 2/5 Jungen, und 2/3 von de Mädle senn bei de Pfadfinderinnen. Wia viele Mädle senn net bei de Pfadfinderinnen?	"Des isch ganz einfach ausgerechnet! Hier isch de Rechenweg:
 
 1.  **Zuerst die Jungen ausrechnen:**
@@ -5653,7 +5653,7 @@ qc5273098	Von de' 200 Fünftklässler sind 2/5 Jungen, und 2/3 von de Mädle sen
 
     *   ""Des isch ganz einfach ausgerechnet:"" (This is easily calculated:)
     *   Step-by-step breakdown.
-    *   Final result."	stop
+    *   Final result."	stop	40.0	0	1		
 qf8da7966	D'r Harry hot letschte Nacht 9 Schtondn gschlafa. Sei Freind James hot bloß 2/3 von d'r Zeit gschlafa, die d'r Harry gschlafa hot. Wia viele Schtondn hot dr Harry meh' gschlafa wie d'r James?	"D'r Harry hot **3 Schtondn** meh gschlafa wie d'r James.
 
 So isch d'Rechnung:
@@ -5698,7 +5698,7 @@ So isch d'Rechnung:
 
     So isch d'Rechnung:
     1. Zerscht rechnet ma, wie lang d'r James gschlafa hot: $\frac{2}{3}$ von 9 Schtondn isch 6 Schtondn ($9 : 3 = 3$ und $3 \times 2 = 6$).
-    2. Dann rechnet ma d'Differenz: 9 Schtondn (Harry) minus 6 Schtondn (James) ergibt 3 Schtondn."""	stop
+    2. Dann rechnet ma d'Differenz: 9 Schtondn (Harry) minus 6 Schtondn (James) ergibt 3 Schtondn."""	stop	3.0	0	1		
 q186d2aa2	Wenn d'Freda Dosentomaten zu Soße ei'kocht, verlieret se d'Hälfte von ihrem G'wicht. Jede 16-Unzen-Dose Tomaten, die se nemmt, enthält drei Tomaten. D'letschte Portion Tomatensoße hot 32 Unzen Soße ergeba. Wia viele Tomaten hot d'Freda g'braucht?	"Des is e rechne-Aufgab, die mer so löse kann:
 
 1.  **Wie viel Unzen Tomate hot se am Anfang g'habt?**
@@ -5763,7 +5763,7 @@ D'Freda hot also **12 Tomate** g'braucht."	12	"
     *   Can size: 16 oz? Yes.
     *   Tomatoes per can: 3? Yes.
     *   Final sauce: 32 oz? Yes.
-    *   Calculation: 32 * 2 = 64. 64 / 16 = 4. 4 * 3 = 12. Correct."	stop
+    *   Calculation: 32 * 2 = 64. 64 / 16 = 4. 4 * 3 = 12. Correct."	stop	12.0	0	1		
 q9c762a15	Auf d'r Autobahn stauet sich d'Auto. A paar Auto kommet in den erschte 15 Minuten vom Stau durch, danach kommet no 20 weitere Auto in den übrigen 15 Minuten vom Stau durch. 5 Autos scheret aus d'r Reihe aus und müsset drum net durch dr Stau. Wenn am Anfang 30 Autos auf dr Autobahn standet, wia viele Autos sind dann in den ersten 15 Minuten durch d'r Stau komma?	"Um des zu berechne, muss mer d'r Gesamtzahl vo de Autos (30) d'Autos abziehe, wo mer scho kennt.
 
 So sieht d'Rechnig aus:
@@ -5851,7 +5851,7 @@ In de erschte 15 Minuten sind also **5 Autos** durch d'r Stau komma."	5	"
     *Final Answer Construction:*
     1. Identify total: 30.
     2. Identify knowns: 20 (passed) + 5 (exited) = 25.
-    3. Subtract: 30 - 25 = 5."	stop
+    3. Subtract: 30 - 25 = 5."	stop	5.0	0	1		
 q507804db	D'Mary gärtnert für ihr Leba gern. Geschtern hot se 18 neue Topfpflanza von ihrer Lieblingsgärtnerei kriegt. Se hot scho 2 Topfpflanzen auf jedem von de 40 Fenschtersims in ihrem großen Landhaus standa. Weil se grad großzügig isch, will se morgen von jedem Fenschtersims 1 Topfpflanze an Freind und Familie verschenka. Wia viele Topfpflanzen bleibet d'r Mary übrig?	"Hier ist die Rechnung für d'Mary:
 
 1.  **Zuerst rechnen wir aus, wie viele Pflanzen sie schon auf den Fenstersimsen hat:**
@@ -5910,7 +5910,7 @@ D'Mary bleibet also **58 Topfpflanze** übrig."	58	"
     2. Dann kommen die neuen Pflanzen dazu: 80 + 18 = 98 Pflanzen insgesamt.
     3. Morgen verschenkt sie von jedem der 40 Fenstersimse eine Pflanze: 98 - 40 = 58 Pflanzen.
 
-    D'Mary bleibet also **58 Topfpflanze** übrig."""	stop
+    D'Mary bleibet also **58 Topfpflanze** übrig."""	stop	58.0	0	1		
 q120898cb	D'r Jerome hot an bestimmte Tag 4 Freind zu Besuch. D'r erschte hot 20 Mal auf d'Türklingel drückt, bevor d'r Jerome aufgmacht hot. Dr zweite hot 125 % so oft auf d'Türklingel drückt wie d'r erschte. Dr dritte hot 10 Mal öfter klingelt als d'r vierte. Wenn d'r vierte 60 Mal auf d'Türklingel drückt hot, wia oft hot d'Türklingel insgesamt klingelt?	"Des isch ja a Wahnsinn, wie d'r Jerome d'Türklingel g'hört hot! Do isch d'Rechnung für di:
 
 1.  **D'r erschte Freind:** 20 Mal.
@@ -5981,7 +5981,7 @@ D'Türklingel hot insgesamt **705 Mal** klingelt. D'r Jerome braucht jetzt aber 
     *Let's re-verify the 125% part.*
     $20 \times 1.25 = 25$. Correct.
 
-    *Final Result:* 705."	stop
+    *Final Result:* 705."	stop	705.0	0	0	705	0
 q55e446ec	D'r Solo muss 4 Seiten aus saim naturwissenschaftlicha Textbuch lesa, 20 Seiten aus seinem Gemeinschaftskundebuch, 7 Seiten aus seinem Geschichtsbuch und 8 Seiten aus seinem Geografiebuch. Am Montag liest dr Solo 15 Seiten. Wenn er no 4 Tag' hot, um alles zom lesa, wia viele Seiten muss er dann em Schnitt pro Tag lesa?	"Hier ist die Rechnung Schritt für Schritt:
 
 1.  **Zuerst rechnen wir die Gesamtzahl der Seiten aus:**
@@ -6030,7 +6030,7 @@ Solo muss im Schnitt **6 Seiten pro Tag** lesen."	6	"
     *   ""Jetzt teilen wir die restlichen Seiten durch die verbleibenden 4 Tage:""
     *   24 / 4 = 6 Seiten pro Tag.
 
-    *   ""Er muss im Schnitt **6 Seiten pro Tag** lesen."""	stop
+    *   ""Er muss im Schnitt **6 Seiten pro Tag** lesen."""	stop	6.0	0	1		
 qe178e77b	D'r John trinkt zum Frühstück, Mittagessa und Abendessa gern jeweils a Glas Wasser. Vor em Schlafengeha trinkt er au no oins. Des macht dr John an jedem Wochentag, aber am Wochenende macht er's gemütlicher und trinkt zum Abendessa stattdessa a Glas Limonade. Wia viele Gläser Wasser trinkt dr John pro Woche?	"Dr John trinkt pro Wuche insgesamt **26 Gläser Wasser**.
 
 Hie isch d'Rächnig derzue:
@@ -6078,7 +6078,7 @@ Hie isch d'Rächnig derzue:
     *   Breakdown:
         *   Mändig bis Fritig: 4 Gläser × 5 Täg = 20 Gläser.
         *   Samstig und Sunntig: 3 Gläser × 2 Täg = 6 Gläser.
-        *   Total: 20 + 6 = 26."	stop
+        *   Total: 20 + 6 = 26."	stop	26.0	0	1		
 q13dd2b3f	An Nebelschleier kommt vom Meer rüber und legt sich über a Stadt. Er braucht 10 Minuten, om jeweils 3 Meilen von d'r Stadt zuzudecka. Wenn d' Stadt vom Meeresufer bis auf d'andere Seite im Landesinneren 42 Meilen breit isch, wia viele Minuten braucht dr Nebel, bis er über d'r ganzen Stadt liegt?	"Des isch e einfache Rechenweg:
 
 1. **Zuerst rechnet mer, wie oft die 3 Meile in die 42 Meile passe:**
@@ -6121,7 +6121,7 @@ Dr Nebel braucht **140 Minute** (des sind **2 Stunde und 20 Minute**), bis er ü
 
     *   Does it answer the question? Yes.
     *   Is the math correct? $42/3 = 14$; $14 \times 10 = 140$. Yes.
-    *   Is the tone appropriate? Yes."	stop
+    *   Is the tone appropriate? Yes."	stop	20.0	0	0	140	1
 q5d8678a9	D'Poppy macht a 1000-Teile-Puzzle. Se legt a Viertel von de Teile aufs Brett, danoach legt ihre Mama a Drittel von de übrigen Teile. Wia viele Puzzleteile müsset danach no gelegt werda?	"Des is a klassische Rechenaufgab! Do schaut ma si des am besten Schritt für Schritt o:
 
 1.  **D'Poppy:** Sie legt a Viertel vo de 1000 Teile hi.
@@ -6165,7 +6165,7 @@ Es müssen also no **500 Teile** auf des Brett glegt wern."	500	"
     *   D'Mama legt a Drittel vo de restlichen 750 Teile hi: 750 / 3 = 250 Teile.
     *   Rechnet ma des jetzt zam: 250 (Poppy) + 250 (Mama) = 500 Teile san scho am Brett.
     *   1000 - 500 = 500.
-    *   Es bleim also no **500 Teile** übrig, de no glegt wern miassn."""	stop
+    *   Es bleim also no **500 Teile** übrig, de no glegt wern miassn."""	stop	500.0	0	1		
 q10c23d37	D'r Cody isst dreimal meh' Keks' wie d'r Amir. Wenn d'r Amir 5 Kekse isst, wia viele Keks' esset die zwoi dann zamma?	D'r Cody isst 15 Kekse (denn 3 mal 5 is 15). Wenn de d'r Amir seine 5 Kekse dazu zellst, dann esset die zwoi zamma insgesamt **20 Kekse**.	20	"
 *   Language: Hessian/Palatine dialect (German dialect).
     *   Content: A math word problem.
@@ -6188,7 +6188,7 @@ q10c23d37	D'r Cody isst dreimal meh' Keks' wie d'r Amir. Wenn d'r Amir 5 Kekse i
 
     *   ""D'r Cody isst 15 Kekse (denn 3 mal 5 is 15). Wenn de d'r Amir seine 5 Kekse dazu zellst, dann esset die zwoi zamma insgesamt **20 Kekse**.""
 
-    *   ""D'r Cody isst 15 Kekse (denn 3 mal 5 is 15). Wenn de d'r Amir seine 5 Kekse dazu zellst, dann esset die zwoi zamma insgesamt **20 Kekse**."""	stop
+    *   ""D'r Cody isst 15 Kekse (denn 3 mal 5 is 15). Wenn de d'r Amir seine 5 Kekse dazu zellst, dann esset die zwoi zamma insgesamt **20 Kekse**."""	stop	20.0	0	1		
 q71246a09	Dr John hot 3 Kischta. Jede Kischt' isch 5 Inch mal 6 Inch mal 4 Inch groß. D'Wände senn 1 Inch dick. Wia groß isch s'Innenvolumen vo' alle 3 Kischta zamma?	"Do isch d'Rechnig für di:
 
 Zerscht müemmer d'Maß vo de **Innenseite** usrechne. Da d'Wände 1 Inch dick senn, muesch vo jeder Maße 2 Inch abzieha (einmal für die eint Wand und einmal für die gegenüberliegend Wand):
@@ -6266,7 +6266,7 @@ D'Antwort isch: **72 cubic inches**."	72	"
     *   ""3. Und zum Schluss für alli 3 Kischta zamma:""
     *   ""$24 \times 3 = 72$ cubic inches""
 
-    *   ""D'Antwort isch: **72 cubic inches**."""	stop
+    *   ""D'Antwort isch: **72 cubic inches**."""	stop	72.0	0	1		
 q51ea4378	D'r Frankie schaut jeden Abend fern, nachdem er seine Hausaufgaba g'macht hot. Am Montag und Dienstag hot er jeweils eine 1-stündige Folge von seiner Lieblingssendung agschaut. Am Mittwoch hot er a paar Folgen von rer 30-minütigen Sendung agschaut. Am Donnerstag war er früher mit de Hausaufgaben fertig und hot eine 1-stündige Folge und eine 30-minütige Show agschaut. Am Freitag durfte er wegen em Wochenende länger aufbleiba und hot zwei 1-stündige Folgen agschaut. Wenn er insgesamt 7 Schtondn fernsehguckt hot, wia viele 30 Minuten lange Folgen hot er am Mittwoch agschaut?	"Des is a klassische Rechenaufgab! Rechnen ma des amoi Schritt für Schritt durch:
 
 1.  **Montag:** 1 Stund
@@ -6329,7 +6329,7 @@ $1,5 \text{ Stunden} : 0,5 \text{ Stunden} = 3$.
     *   Wenn er insgesamt 7 Stund g'schaut hot, dann bleim für'n Mittwoch no: $7 - 5,5 = 1,5$ Stund.
     *   Da 1,5 Stund san drei 30-Minuten-Folgen.
 
-    *   Answer: 3 episodes."	stop
+    *   Answer: 3 episodes."	stop	3.0	0	1		
 qe465613a	D'r Henry bäckt Keks' für an regionalen Backwettbewerb. Er will zwoimal so viele bacha wie letschtes Joahr. Als er fertig isch, merkt er, dass er 15 Kekse mehr bacha hot als eigentlich g'plant. Beim Rausstelle zum Abkühla lässt er 5 Keks' falla und hot danach insgesamt 110 Keks'. Wia viele Keks' hot dr Henry letztes Jahr bacha?	"Des isch a rechne-Rätsel! Do isch dr Weg zur Lösung, Schritt für Schritt:
 
 1.  **Wie viel hot er insgesamt bacha?**
@@ -6390,7 +6390,7 @@ qe465613a	D'r Henry bäckt Keks' für an regionalen Backwettbewerb. Er will zwoi
     *   110 + 5 = 115.
     *   115 - 15 = 100.
     *   100 / 2 = 50.
-    *   Correct."	stop
+    *   Correct."	stop	50.0	0	1		
 q1e0f8fcb	A örtliche Tankschtelle verkauft Benzin für 3,00 $ pro Gallone. A App-Firma gibt 0,20 $ Cashback pro Gallone, wenn ma an d'r Tankchstelle tankt. Wenn jemand 10 Gallonen Benzin kauft, wia viel kostet des Benzin nach dr Cashback-Prämie? Gib d'Antwort in Dollar an.	"Des Benzin koscht nach dr Cashback-Prämie **28,00 $**.
 
 **So isch d'Rechnung:**
@@ -6435,7 +6435,7 @@ q1e0f8fcb	A örtliche Tankschtelle verkauft Benzin für 3,00 $ pro Gallone. A Ap
 
     *Calculation check:*
     3.00 - 0.20 = 2.80
-    2.80 * 10 = 28.00. Correct."	stop
+    2.80 * 10 = 28.00. Correct."	stop	28.0	0	1		
 q91fe6f6e	D'r Marcell und d'Beatrice machet an Wettbewerb, wer d'meiste' Fruchtrollen essa kann, also rollet se alle aus, die se findat. Leider hot jemand an Fehler gmacht: D'Menge von d'r Beatrice war zwei Rollen breit und 24 Rollen lang, während die vom Marcell 3 Rollen breit und 14 Rollen lang war. Wenn beide ihr' ganze Menge esset, wia viele hend se dann em Schnitt gessa?	"Des isch a ganz einfache Rechnung, wenn ma d'Zahlen erst mal richtig aufschreibt. Do isch d'Lösig:
 
 1.  **D'Beatrice:** Sie hot 2 Rollen breit und 24 Rollen lang gessa.
@@ -6486,7 +6486,7 @@ q91fe6f6e	D'r Marcell und d'Beatrice machet an Wettbewerb, wer d'meiste' Fruchtr
     *   ""3 mal 14..."" (Check)
     *   ""Schnitt..."" (Check)
 
-    (Self-Correction during drafting: Ensure the tone is friendly and matches the user's dialect style.)"	stop
+    (Self-Correction during drafting: Ensure the tone is friendly and matches the user's dialect style.)"	stop	45.0	0	1		
 q76afc2ba	Julias Boot hot a Leck g'kriegt, als se draußen auf em See war. Für alle zehn Fuß, die se Richtung Ufer rudert, laufet zwei Liter Wasser ins Boot. Für zwanzig Fuß braucht se sechzehn Sekonden. Dr Strand war 64 Sekonden entfernt. Wia viel Wasser war im Boot, als d'Julia d'r Strand erreicht hot?	"Hier ist die schrittweise Lösung für das Rätsel:
 
 1.  **Zuerst berechnen wir die Geschwindigkeit:**
@@ -6560,7 +6560,7 @@ q76afc2ba	Julias Boot hot a Leck g'kriegt, als se draußen auf em See war. Für 
     1.25 * 64 = 80.
     80 / 10 = 8.
     8 * 2 = 16.
-    Correct."	stop
+    Correct."	stop	16.0	0	1		
 q9c73cd77	A Klassenzimmer hot a Tafel, die sich 4 Lehrer teilet, weil se d'r Raum abwechselnd nutzet. Jeder Lehrer hot 2 Unterrichts Schtonda am Tag und benutzt d'Tafel in jeder Schtond. Wenn d'Tafel 3-mal pro Unterrichts Schtond gwischt wird, wia oft wird se dann am Tag gwischt?	"Des is e einfache Rechenaufgab. So geht's:
 
 1. **Zerscht gucke mer, wie viel Unterrichtsstunde es am Tag insgesamt git:**
@@ -6595,7 +6595,7 @@ D'Tafel wird also **24-mal** am Tag gwischt."	24	"
     *   ""Des is e einfache Rechenaufgab. So geht's:""
     *   ""1. Zerscht gucke mer, wie viel Unterrichtsstunde es am Tag insgesamt git: 4 Lehrer x 2 Schtond = 8 Schtond.""
     *   ""2. Dann rechne mer die Schtond mal die Anzahl vun de Mal, wo gwischt wird: 8 Schtond x 3 Mal = 24 Mal.""
-    *   ""D'Tafel wird also **24-mal** am Tag gwischt."""	stop
+    *   ""D'Tafel wird also **24-mal** am Tag gwischt."""	stop	24.0	0	1		
 q2bbbdc5a	D'r Ryan pflanzt jeden Tag 2 Blumen in seim Garten. Nach 15 Tag', wia viele Blumen hot er, wenn 5 net angewachsa senn?	"Ryan hat **25 Blumen**.
 
 Hier ist die einfache Rechnung dazu:
@@ -6638,7 +6638,7 @@ Hier ist die einfache Rechnung dazu:
 
     So rechnet man das:
     1. 15 Tage × 2 Blumen pro Tag = 30 Blumen gepflanzt.
-    2. 30 Blumen - 5 (die nicht gewachsen sind) = 25 Blumen."	stop
+    2. 30 Blumen - 5 (die nicht gewachsen sind) = 25 Blumen."	stop	25.0	0	1		
 qb65bf453	S' Handy vom Jamal kann 6-mal mehr Fotos speichera als des von d'r Brittany. D'maximale Zahl an Fotos, die der Brittany ihr Handy speichera kann, isch 50-mal höher als d'Anzahl von de Vögel auf Jamals Foto mit de Enten im Zoo. Wenn s' Handy vom Jamal 1.800 Fotos speichera kann, wia viele Enten sieht ma noa auf Jamals Foto von de Enten im Zoo?	"Des is e rechnerische Aufgabe, die ma ganz einfach Schritt für Schritt löse kann. Hier is de Rechenweg:
 
 1.  **Zerscht berechne mer, wie viel Fotos Brittanys Handy kann:**
@@ -6698,7 +6698,7 @@ Ma sieht **6 Enten** uff Jamals Foto im Zoo."	6	"
     *   Jamal = 1800.
     *   Brittany = 1800 / 6 = 300.
     *   Ducks = 300 / 50 = 6.
-    *   Check: 6 ducks * 50 = 300 (Brittany). 300 * 6 = 1800 (Jamal). Correct."	stop
+    *   Check: 6 ducks * 50 = 300 (Brittany). 300 * 6 = 1800 (Jamal). Correct."	stop	6.0	0	1		
 q62cadf26	D'Sasha merkt, dass d'Holzpreise in den letschten paar Monat', seit se Holz g'kauft hot, um 50 % gstiega senn. Weil se no an Rest übrig hot, will se den verkaufa. Se hot zehn 2 x 4 x 10 große Bretter übrig, für die se pro Schtück 10 US-Dollar g'zahlt hot. Außerdem hot se fünf 4 x 4 x 10 Bretter, die se für 16 US-Dollar pro Schtück g'kauft hot. Wenn se alles verkauft, wia viel G'winn macht se?	"Des isch koi Problem, des rechne mer schnell aus!
 
 Zuerst mol müss mer luega, wie viel d'Sasha insgesamt g'zahlt hot (ihre Einkaufspreis):
@@ -6775,7 +6775,7 @@ D'Sasha macht also **90 US-Dollar G'winn**, wenn se alles verkafft."	90	"
     *   Total cost = $180.
     *   Price increase = 50%.
     *   Profit = 50% of $180 = $90.
-    *   (Check: New revenue = $180 + $90 = $270. $270 - $180 = $90. Correct.)"	stop
+    *   (Check: New revenue = $180 + $90 = $270. $270 - $180 = $90. Correct.)"	stop	90.0	0	1		
 q6637faea	D'Katy macht Kaffee und nimmt dafier Teelöffel mit Zucker und Tassen mit Wasser im Verhältnis 7:13. Wenn se insgesamt 120 Teelöffel Zucker ond Tassen Wasser verwendet hot, rechne aus, wia viele Teelöffel Zucker se gnomma hot.	"Um die Anzahl der Teelöffel Zucker zu berechnen, kannst du Schritt für Schritt so vorgehen:
 
 1.  **Das Verhältnis addieren:**
@@ -6830,7 +6830,7 @@ Katy hat **42 Teelöffel Zucker** genommen.
 
     *   Ratio 7:13? Yes.
     *   Total 120? Yes.
-    *   Find sugar? Yes."	stop
+    *   Find sugar? Yes."	stop	42.0	0	1		
 q7c7b8736	D'r John kauft 2 Paar Schuh' für jedes von seine 3 Kinda. Se koschtet 60 US-Dollar pro Paar. Wia viel hot er zahlt?	"D'r John hot insgesamt **360 US-Dollar** zahlt.
 
 Do is die Rechnung:
@@ -6859,7 +6859,7 @@ Do is die Rechnung:
     *   ""D'r John hot insgesamt 360 US-Dollar zahlt.""
     *   Breakdown:
         *   3 Kinda x 2 Paar = 6 Paar insgesamt.
-        *   6 Paar x 60 Dollar = 360 Dollar."	stop
+        *   6 Paar x 60 Dollar = 360 Dollar."	stop	360.0	0	1		
 q8f663843	An Zollbeamter am Haupthafen von dr SeaSide Zollabfertigung hot 2 Container mit importierten Auto zählt, in jedem waret 5 Auto. Am nächschta Tag sind no mehr Container komma und d'Gesamtzahl von de Auto am Hafen isch auf 30 gstiega. Rechne aus, wia viele Container am zweiten Tag importiert worda sind, wenn in jedem Container 5 Auto dren sind.	"Do isch d'Ufchlärig für d'Rechnig:
 
 1. **Am erschte Tag:**
@@ -6931,7 +6931,7 @@ q8f663843	An Zollbeamter am Haupthafen von dr SeaSide Zollabfertigung hot 2 Cont
        Da in jedem Container 5 Auto sind:
        20 Auto ÷ 5 Auto pro Container = **4 Container**.
 
-    **Antwort:** Am zweite Tag sind **4 Container** importiert worda."""	stop
+    **Antwort:** Am zweite Tag sind **4 Container** importiert worda."""	stop	4.0	0	1		
 q6edb8d49	D'Lylah hot insgesamt 30 Prozent weniger G'halt kriegt wie d'r Adrien. Vier Joahr später war em Adrien sai Gehalt gstiega, und er hot 40 % meh' verdient als vier Joahr' vorher. Wenn des Gehalt vom Adrien ond der Lylah zur selba Zeit gstiega isch und dr Adrien vor vier Jahren $40000 verdient hot, rechne aus, wia viel beide vor vier Joahr z'samma verdient henn.	"Des is eigentlich gar net so schwer, wenn mer des Schritt für Schritt durchgeht. Mer muss gar net die ganze Info mit de 40 % Steigerung später nehme, weil de Frag ja nur nach de Zeit **vor vier Johr** fragt.
 
 Hier is die Rechnung:
@@ -7001,7 +7001,7 @@ Vor vier Johr hen die beide z'samma **$68.000** verdient."	95200	"
 
         Die Info mit de 40 % Steigerung später is für die Rechnung vor vier Johr gar net wichtig, die dient nur als extra Info.
 
-        **Ergebnis: Vor vier Johr hen die beide z'samma $68.000 verdient.**"""	stop
+        **Ergebnis: Vor vier Johr hen die beide z'samma $68.000 verdient.**"""	stop	68000.0	0	0	68000	0
 q1b1c6563	Dr Miguel verbraucht zum Zeichna 2 Zeichenblöck' pro Woch'. Wenn an Zeichenblock 30 Blatt Papier hot, wia viele Blatt Papier verbraucht er em Monat?	"Des is a einfache Rechnung. Do is da Weg:
 
 1. **Zuerst schau ma, wia vül Blatt des pro Woch' san:**
@@ -7051,7 +7051,7 @@ Dr. Miguel verbraucht oiso ca. **240 Blatt Papier im Monat**."	240	"
     *   2 blocks/week? Yes.
     *   30 sheets/block? Yes.
     *   Monthly total? Yes.
-    *   Language matches? Yes."	stop
+    *   Language matches? Yes."	stop	240.0	0	1		
 qdda5aad8	D'Morisette und d'r Kael solltet Obscht mitbringa. D'Morisette hot 5 Äpfel und 8 Oranga mitbroacht, und d'r Kael hot doppelt so viele Äpfel und halb so viele Oranga wie d'Morisette mitbracht. Wia viele Früchte hend se zamma?	"Do isch d'Rechnig:
 
 1.  **D'Morisette:**
@@ -7118,7 +7118,7 @@ Se hend insgesamt **27 Früchte** mitbroacht."	27	"
 
     **Zamma:** 13 + 14 = **27 Früchte**.
 
-    Se hend also insgesamt **27 Früchte** mitbroacht."""	stop
+    Se hend also insgesamt **27 Früchte** mitbroacht."""	stop	27.0	0	1		
 qbe882310	D'Sadie hot am Montag 8 Schtondn gschlafa. An de' nächschte beide Tag' hot se jeden Tag 2 Schtondn weniger gschlafa, weil se no Ufgaben zom erlediga g'hett hot. Wenn se d'r Rescht von d'r Woch' 1 Schtond mehr als an dene zwei Tag' g'schlafa hot, wia viele Schtondn hot se in dr ganzen Woche insgesamt gschlafa?	"Des isch a guate Rechenaufgab! Do isch d'Lösig Schritt für Schritt:
 
 1.  **Montag:** 8 Schtondn.
@@ -7175,7 +7175,7 @@ D'Sadie hot in dr ganze Woch' insgesamt **48 Schtondn** gschlafa."	48	"
     *   Monday: 8
     *   Tue/Wed: 6, 6 (Total 12)
     *   Thu/Fri/Sat/Sun: 7, 7, 7, 7 (Total 28)
-    *   8 + 12 + 28 = 48. Correct."	stop
+    *   8 + 12 + 28 = 48. Correct."	stop	48.0	0	1		
 q5531657c	D'Rosie kann 3 Schtonda lang mit 10 Meilen pro Schtond laufa. Danach läuft se 5 Meilen pro Schtond. Wia viele Meilen kann se in 7 Schtondn zurücklega?	"Des is ganz einfach ausgerechnet:
 
 1. Zuerst läuft se 3 Schtond lang mit 10 Meilen pro Schtond:
@@ -7239,7 +7239,7 @@ D'Rosie kann also insgesamt **50 Meilen** zurücklega!"	50	"
     3. Wenn ma des zusammenrechnet:
        **30 + 20 = 50 Meilen.**
 
-    D'Rosie kann also insgesamt **50 Meilen** zurücklega!"""	stop
+    D'Rosie kann also insgesamt **50 Meilen** zurücklega!"""	stop	3.0	0	0	50	1
 qafb91192	D'Jennie hilft im Büro von ihrer Mutter. Se hot an Stapel mit 60 Brief', die no frankiert werda müsset, und an Stapel mit scho frankierte Brief'. Se klebt auf a Drittel von de unfrankierten Briefe Briefmarken. Wenn im Stapel mit de scho frankierten Briefe jetzt 30 Briefe sind, wia viele Briefe warat in dem Stapel, als d'Jennie angfanga hot?	"Hier ist die Lösung für dein Rätsel:
 
 1. **Zuerst rechnen wir aus, wie viele Briefe d'Jennie frankiert hat:**
@@ -7298,4 +7298,4 @@ qafb91192	D'Jennie hilft im Büro von ihrer Mutter. Se hot an Stapel mit 60 Brie
         1. D'Jennie klebt Briefmarken uff ein Drittel von de 60 Briefe. Also: 60 : 3 = 20 Briefe.
         2. Jetzt sind 20 Briefe mehr im frankierte Stapel.
         3. Wenn am Ende 30 Briefe im frankierte Stapel sind, dann waren es am Anfang: 30 - 20 = 10 Briefe.
-        Antwort: Es waren 10 Briefe im Stapel mit de scho frankierte Briefe."""	stop
+        Antwort: Es waren 10 Briefe im Stapel mit de scho frankierte Briefe."""	stop	10.0	0	1		

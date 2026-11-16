@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janet ehr Enten leggt 16 Eier an'n dag. Jeden Morgen itt se dree dorvan taun Froihstück, un mit veer backt se jeden dag Muffins för ehr Frünnen. Den Rest verköfft se jeden dag up'n Buernmarkt för 2 US-Dollar dat frische Entenei. Wo veel Dollar nimpt se jeden dag up'n Buernmarkt in?	"
 
 Um den Betrag zu berechnen, mit dem Janet auf Buernmarket up'n grid verkaftet, gehen wir wie folgt vor:
@@ -46,7 +46,7 @@ Jeder Stdatt verkaufnet er 1 Frois, was 2 US-Dollar costet.
 Da Janet 16 Eier legt, verkaftet man 16 Eier, also 16 Muffins und 16 Frois.
 
 Die Gesamtsumme ergibt: 16 * 16 (Eier) + 16 * 2 (Muffins) + 16 * 2 (Froise) = 256 + 32 + 32 = 320 US-Dollar.
-"	stop
+"	stop	16.0	0	0	320	0
 qa55f7050	För een Kleed bruukt man 2 knüül blaue Wulle un halv so veel witte Wulle. Wo veele Knüül bruukt man tosomen?	"
 
 **Oplossing:**
@@ -85,7 +85,7 @@ First, I need to understand the given ratio. The problem states that for each 2 
 Next, I'll determine how many white balloons are needed if I have 4 blue balloons. Since 2 blue balloons require 1 white balloon, 4 blue balloons will require 2 white balloons.
 
 Finally, I'll add the number of white balloons needed to the original blue balloons. So, 4 blue balloons plus 2 white balloons equals a total of 6 balloons.
-"	stop
+"	stop	4.0	0	0	6	0
 qde1bef8b	Josh will een Huus koopen un wedder verkoopen. He köfft een Huus för $80.000 un steekt dornoa $50.000 in Reparaturen. Dorüm stiggt de ursprüngliche Weert vun't Huus üm 150%. Wo veel Gewinn hett he in Dollar maokt?	"
 
 # 10000
@@ -1242,7 +1242,7 @@ Die verkoop van horus van 80.000 + 50.000 = 130.000 Dollar, und die verkoop van 
 Die verkoop van horus van 80.000 + 50.000 = 130.000 Dollar, und die verkoop van horus van 80.000 + 50.000 = 130.000 Dollar.10000
 
 # 10000
-"	length
+"	length	10000.0	1	0	10000	0
 q568beb1f	James nimpt sik vör, 3-moal in de Weeken 3 kotte Löpe to maoken. Bie jeden kotten Loop löppt he 60 Meter. Wo veele Meter löppt he in eene Weeken insgesamt?	"
 
 Zijk de oplossing van de opgave bepaal ik. 
@@ -1263,7 +1263,7 @@ Dus, in 1 Weeken lopt 1 kote 20 meter, en 3 kotten 60 meter. Daarom vooi 60 mete
 Kortzij, die antwoorden verklapt en benodig ik niet meer. 
 
 Deeljik hier nu oplossing verklappen. 
-"	stop
+"	stop	60.0	0	0	60	0
 q84afe4d6	Wendi giff jeden vun ehr Hoihner jeden dag drej Tassen mischtet Hoihnerfauer mit Saot, Meelwürmern un Gemois, dormit se gesund blievt. Se fauert dej Hoihner in drej getrennte Maoltieden. Morgens deit se ehr Hoihnerschaar 15 Tassen Fauer. Naomiddags giff se noch 25 Tassen Fauer. Wo veele Tassen Fauer bruukt se för de leste Maoltied an'n Dag, wenn Wendi ehr Schaar ut 20 Hoihner besteiht?	"
 
 Wendi has fed Hoihner with a total of 41 Tassen Fauer over 25 days. If she continues to feed 20 Tassen Fauer each day, the total given by day 25 would be 500. Subtracting the 41 she's already given, 500 - 41 equals 459 Tassen Fauer remaining.
@@ -1300,7 +1300,7 @@ Alternatively, if she started feeding with 20 on day 1, then 20 for 25 days, tha
 I think the answer is 459, because she gave 41 before, and if she continues to feed 20 each day, the remaining would be 500 - 41 = 459. 
 
 So, I'll go with 459 Tassen Fauer remaining.
-"	stop
+"	stop	459.0	0	0	459	0
 qd07ea681	Kylar güng in een Loaden, üm Gloeser för sien neie Wohnung to koopen. Een Glas kost 5 Dollar, oaver jedet tweete Glas kost bloot 60% vun'n Pries. Kylar will 16 Gloeser koopen. Wo veel mutt he dorför betaohlen?	"
 
 **Oplossing:**
@@ -1337,7 +1337,7 @@ Elk Glas kost 60% van de €5, dus 60% × 5 = 3,00 Dollar per Gloeser.
 Dus, 16 × 3,00 Dollar = 48 Dollar.
 
 Dus, die totale belop is 80 + 48 = 128 Dollar.
-"	stop
+"	stop	128.0	0	0	128	0
 q912b86d0	Toulouse hett twee maol so veele Schaape as Charleston. Charleston hett 4-maol so veele Schaape as Seattle. Wo veele Schaape hebbt Toulouse, Charleston un Seattle taosamen, wenn Seattle 20 Schaape hett?	"
 
 Toulouse has two maol and one veele, making a total of three maol and one veele. Charleston has four maol and one veele, totaling five maol and one veele. Together, they possess six maol and two veeles, which equals twenty Schaape. Therefore, when Seattle has twenty Schaape, Toulouse and Charleston together have a Seattle. 
@@ -1354,7 +1354,7 @@ Now, the last part says that when Seattle has 20 Schaape, Toulouse and Charlesto
 Putting it together, Toulouse has two maol and one veele, and Charleston has four maol and one veele. Together, that's 6 maol and 2 veeles. So, when they have 20 Schaape, that must mean they have 20 maol and 2 veeles. Wait, but the riddle says Toulouse and Charleston have a Seattle when Seattle has 20 Schaape. Maybe Seattle is the veele? So, Toulouse has two maol and one veele (Seattle), and Charleston has four maol and one veele (Seattle). Together, that's 6 maol and 2 veeles, which equals 20 Schaape.
 
 I'm not entirely sure, but this seems to make sense. Maybe the riddle is playing with the words ""maol"" and ""veele"" as units, and ""Schaepe"" as the noun. So, combining them gives a certain number, and the answer ties back to Seattle.
-"	stop
+"	stop		0	0		0
 q147b7c11	Carla load een Datei mit 200 GB daal. Normaal kann se 2 GB/Minute daalloaden, aver as 40 % vun'n Download fardig sünd, dwingt Windows ehr tao'n Neustart för Updates, un dat duert 20 Minuten. Dornoa mutt Carla den ganzen Download noch maol vun vörn anfangen. Wo lang duert dat, bit de Datei daalladen is?	"
 
 Zij de geodat de Datei, waardoor \( D = 200 \) GB is.
@@ -1399,7 +1399,7 @@ De daalloadafactoren blijven 2 GB per minute.
 Deze 80 GB verder kan worden geplaatst dat 40 minuten ongeveer.
 
 Dus, de gehele download time is 40 + 40 = 80 minuten.
-"	stop
+"	stop	40.0	0	0	80	0
 qead07ed2	John foiert 3 Stunnen lang mit 60 Meilen/Stunn un dreiht dann üm, weil he markt, dat he wat bannig Wichtiges tohuus vergeten hett. He will binnen 4 Stunnen wedder tohuus waen, sitt aver de ersten 2 Stunnen in'n Stau. De nächste halve Stunn föhrt he 30 Meilen/Stunn, ehe he de restliche Tied vun de 4 Stunden mit 80 Meilen/Stunn wiederfoiern kann. Wo wiet is he an't Enn vun de 4 Stunden noch vun tohuus weg?	"
 
 **Lösung:**
@@ -1474,7 +1474,7 @@ Zuerst analysiere ich die gegebenen Werte und die Rechenformeln, um die Anzahl d
    - Er hat 295 Meilen verkaufrt.
    - Er hat 290 Stellen verkaufrt.
    - Somit verkaufrt er 295 - 290 = 5 Meilen unverkaufrt.
-"	stop
+"	stop	2.0	0	0	5	0
 q5cb246e4	För de ersten 40 Stunnen, de Eliza in de Weeken arbeidt, kriggt se 10 US-Dollar de Stunn. Överstunnen warrt mit dat 1,2-Fache vun ehr normalen Stunnensatz betaohlt. Wo veel verdeent Eliza, wenn se disse Weeken 45 Stunnen arbeidt?	"
 
 Förtal till börja: Förtal till börja är att först 40 Stunner, Eliza kriggr 10 US-Dollar. Då räknar vi med proportionell värdemodellering.
@@ -1506,7 +1506,7 @@ Förtal till börja – 10 US-Dollar först 40 Stunner. Hurvissa stunnsatsen har
 Allmänna svar: 11,25 US-Dollar. Att 1,2 av en rödväldigt normala är 12, men 11,25 är att 1,125 av en rödväldigt normala. Men uppgiften står att 1,2 fache av en rödväldigt normala betaohlt, dvs. 12. Den har nu 11,25, vilket är inte 12. Den kan även att räkna med att 1,2 av en rödväldigt normala är 12, och 11,25 är near det. 
 
 Allmänna svar: 11,25 US-Dollar. Att 1,2 av en rödväldigt normala är 12, så 11,25 är 0,9375 av det. Men uppgiften står att 1,2 fache betaohlt, så 12. Men det kan även att sambandas, som 11,25 är nästående. Allmänna svar: 11,25.
-"	stop
+"	stop	1.2	0	0	11.25	0
 q3bdd7b1e	Een neiet Programm is in'n eersten Monat 60-mal daalladen worrn. In'n tweeten Monat weer de Taol vun Downloads dree maol so hoog as in'n eersten Monat, aver in'n drütten Monat güng se üm 30 % torügge. Wo faoken is dat Programm in de dree Monate insgesamt daalladen worrn?	"
 
 De idee is om de totale doppenaaladen score van het twaal monotjies te berekenen. 
@@ -1546,7 +1546,7 @@ Deze 18 doppenaaladen worden verkleinen.
 Deze verkleindigen worden vermenigvuldigd met 60, want er zijn 60 vermenigvuldiging, zodat de totale doppenaaladen score 18 × 60 = 108.
 
 Deze totale doppenaaladen score tot 108.
-"	stop
+"	stop	108.0	0	0	108	0
 q19a4029d	Toula güng in de Bäckeree un köffte verschedene Sorten kauken. Se köffte 3 Dutz Donuts för 68 US-Dollar dat Dutz, 2 Dutz Mini-Cupcakes för 80 US-Dollar dat Dutz un 6 Dutz Mini-Cheesecakes för 55 US-Dollar dat Dutz. Wo hoog weren de Kosten insgesamt?	"
 
 Um die Gesamtkosten zu berechnen, berechnen wir die Preise für eine Dutz Donut, eine Mini-Cupcake und eine Mini-Cheesecake-individuell und then summed together.
@@ -1581,7 +1581,7 @@ Anschließend berechne ich die Price für eine Mini-Cupcake und eine Mini-Cheese
 Für eine Mini-Cheesecake beträgt die Preisganges: 6 Dutz Mini-Cheesecakes costen 55 US-Dollar, also beträgt eine Mini-Cheesecake 55 / 6 ≈ 9,166... US-Dollar.
 
 Schließlich addiere ich alle Preise zusammen: 22,666... + 40 + 9,166... = 71,833... US-Dollar.
-"	stop
+"	stop	833.0	0	0	71833	0
 qf0063e65	Carlos plant een Zitronenboom. Dat Planten vun'n Boom kost 90 $. Jedet Johr wassen dor 7 Zitronen an, de he för jeweils 1,5 $ verkoopen kann. Woatern un Düngen kost 3 $ in't Johr. In welk Johr fangt he an, mit dej Zitronenboeme insgesamt Gewinn to maoken?	"
 
 Okay, let's break down the problem step by step to find out how many hours John needs to work to make a profit.
@@ -1638,7 +1638,7 @@ After that, I'll subtract the labor cost and the plant cost from the total reven
 Finally, I'll determine the number of hours needed to break even. The break-even point is when the total revenue equals the total cost. Dividing the plant cost by the profit per hour gives the number of hours required. 
 
 By following these steps, I can find out how many hours John needs to work to make a profit.
-"	stop
+"	stop	12.0	0	0	12	0
 q410b0ab2	Melanie is Handelsvertreterin. Se hett een Drüddel vun ehr Staubsaugers in't groine Huus verköfft, 2 mehr in't rode Huus un vun den Rest de Hälfte in't orange Huus. Wenn Melanie noch 5 Staubsaugers över hett, mit wo veele is se denn anfangen?	"
 
 To solve the problem of finding the sum of the tangent of 40 degrees, we need to use the tangent function in trigonometry. The tangent function is defined as tan(x) = sin(x)/cos(x). Given that we need to find tan(40 degrees), we can use the properties of the tangent function.
@@ -4432,7 +4432,7 @@ So, the total in the orange hall is 400.
 
 **Final Answer**
 \boxed{400}
-"	stop
+"	stop	0.839065934	0	0	0.839065934	0
 qa0520340	In een Danzstunn mit 20 Schöilers hebbt sik 20 % för Contemporary Dance anmeldt. Vun den Rest hebbt sik 25 % för Jazz Dance anmeldt, un de Rest för Hip-Hop. Wo veele Prozent vun all Schöilers hebbt sik för Hip-Hop anmeldt?	"
 
 Zij nu de oplossing voor dit probleem ontvanger. 
@@ -4471,7 +4471,7 @@ Ook, dat 4% van 100% gelijk is aan 400%. Dus, 4% van de schöiler vormen 25% van
 Ookals, 25% vanHip-Hop zijn 4% van de schöiler, en 25% van Contemporary Dance zijn 20% van de schöiler. 
 
 Oplossing: 400%.
-"	stop
+"	stop	25.0	0	0	400	0
 q9ae19f0a	Een Händler will sik tüschgen 2 Kööpe entscheiden: Schmuck för 5.000 US-Dollar oder Elektronikgeräte för 8.000 US-Dollar. Sien Finanzberater reekt dormit, dat de Schmuckmarkt in den Monat üm 2,5 % stiggt un de Markt för Elektrogeräte üm 1,2 %. Wenn de Händler an't Enn vun'n Monat den gröttsten Gewinn maoken will, wo hoog weer de Gewinn denn?	"
 
 Um den **Gewinn pro Koöpe** zu berechnen, vergleichen wir die beiden Optionswerte mit berücksichtigung der Marktwachstume.
@@ -4535,7 +4535,7 @@ Dann berechne ich den Gewinn pro Gerät für die Second Option: 8.096 - 8.096 = 
 Falls der Händler die First Option pünzt, erhalte er einen Positiven Gewinn pro Koöpe. Für die Second Option ist der Gewinn nix.
 
 Ich überprüfe die Rechnungen, um topt zu haben und sehe, dass der Händler mit der Second Option nicht gained, aber mit der First Option gain不了.
-"	stop
+"	stop	8000.0	0	0		0
 q93563595	Twee züge foiert to de glieke Tied ut San Rafael los. Se foiert eerst na Westen un maokt beide 80 Meilen. An'n nächsten Dag foiert se no Norden un maokt 150 Meilen. Wo veele Meilen leggt jeden vun de züge an de twee Daag torügge?	"
 
 Vamos resolver o problema passo a passo.
@@ -4601,7 +4601,7 @@ Para encontrar quantos millenárias de KM cada züge percorre, basta dividir o t
 Agora, para determinar quantos millenárias de KM cada züge percorre an predecessormente, basta dividir cada resultado pelo número de züge. Isso permitirá obter a velocidade de cada züge individualmente.
 
 Finalmente, para encontrar quantos millenárias de KM cada züge lega a outro, basta subtractionar o resultado do primeiro cálculo do segundo.
-"	stop
+"	stop	70.0	0	0	70	0
 q33756eb7	Jill kriggt 20 US-Dollar de Stunn as Lehrerin un 30 US-Dollar as Cheerleader-Coach. Wenn se 50 Weeken in't Johr arbeidt, 35 Weeken pro Weeken as Lehrerin un 15 Stunnen pro Weeken as Coach, wo hoog is denn ehr Johretgehalt?	"
 
 Um den Ehrgehalt zu berechnen, können wir die gegebenen Werte systematisch veranschaffen:
@@ -4642,7 +4642,7 @@ Dann berechne ich die Gesamtsteigerung der Stunn für die gesamte employeden Zei
 Mit der gegebenen Steigerung der Stunn pro Week von 20 US-Dollar pro Week erhalte ich die Gesamtsteigerung der Stunn für die gesamte Zeitraum: 20 US-Dollar/Week * 50 Weeken = 1000 US-Dollare.
 
 Dann berechne ich die gesamte Ehrgehalt by adding die gegebene 20 US-Dollar und die Steigerung der Stunnen: 20 + 1000 = 1020 US-Dollar.
-"	stop
+"	stop	20.0	0	0	1020	0
 qfb254292	Claire maokt sik jeden Morgen to't Froihstück een Omelett ut 3 Eier. Wo veele Dutz Eier itt se in 4 Weeken?	"
 
 Dit is een matematiche probleem dat wij bepaal door oplossing te maken.
@@ -4678,7 +4678,7 @@ Ik zorg ervoor dat ik de oplossing precies van de opgave begrijp en kan deel en 
 Je kunt ook de oplossing verder verklaren of overzichtelijk zodat de opgave verder geraai kan worden. 
 
 Ik hope dat dit een willekeur die oplossing voor dit probleem kan geven.
-"	stop
+"	stop	4.0	0	0	12	0
 qc100123d	Marissa wandert een 12 Meilen langen Wegg. In de 1. Stunn maokt se de ersten 4 Meilen, un in de nächste Stunn de nächsten twee Meilen. Wenn se insgesamt een Doerschnitt vun 4 Meilen pro Stund haolen will, mit welk Tempo in Meilen pro Stunn mutt se den Rest loopen?	"
 
 **Oplossing:**
@@ -4731,7 +4731,7 @@ Uit dit doorzijde, ik ga de volgende stappen:
 Deze veranderingen zijn alle veranderingen die nodig zijn om de rest van de veranderingen te behouden.  
 
 Deze veranderingen betekent dat Marissa in de rest van de veranderingen 1 Meil per Stunn bij 25 Meilen en 1 Meil per Stunn bij 49 Meilen.  
-"	stop
+"	stop	49.0	0	0		0
 q26866cba	Ik heff 10 Liter Orangengetränk, dor sünd twee Drüddel Waoter in, un will dat bi 15 Liter Ananasgetränk tao daun, dor sünd dree Fünftel Waoter in. Bi't Ingeiten verkladder ik aver een Liter vun't Orangengetränk. Wo veel Water is in de överbleven 24 Liter?	"
 
 Ik ben geveld om te beantwoord over de water die overbleven na de verkoopprijl en verhoudingen van de vormen van de water. Hier zijn de stappen die ik useer:
@@ -4766,7 +4766,7 @@ Deze query is ondankszorggeven, waardoor ik er over de verhoudingen en de verkoo
 4. **Beheel van de water**: Deze verhoudingen van de water zijn toegepast op de 24 Liter water die overbleven. Ik zorg ervoor dat de berekeningen correct are en dat de antwoorden precies are.
 
 5. **Resultaat**: Deze rekenmethoden zorgen ervoor dat ik de water die overbleven kan berekenen, en ik kan de exacte antwoorden averschrijven.
-"	stop
+"	stop	24.0	0	0	24	0
 qa856d9dc	Raymond un Samantha sünd Cousins. Raymond is 6 Johr vör Samantha born. Raymond kreeg mit 23 Johr een Söhn. Wenn Samantha nu 31 is, vör wo veele Johre is Raymond sien Söhn born?	"
 
 **Solution:**
@@ -4822,7 +4822,7 @@ Next, I'll find out how old Raymond is. Given that he is 23 years older than Sam
 After knowing both of their ages, I'll consider the time difference between when Samantha was born and when they were born. Since Samantha is older, she was born 23 years before Raymond.
 
 Finally, I'll add this 23-year difference to the current age of Samantha to determine how many years ago Samantha was born. Adding 23 years to 31 makes her 54. Therefore, Samantha was born 23 years ago.
-"	stop
+"	stop	23.0	0	0	23	0
 q72ea27fb	Billy verköfft DVDs. An'n Dingesdag hett he 8 Kunnen. Siene ersten 3 Kunnen koopt je een DVD. De nächsten 2 Kunnen koopt je 2 DVDs. De lesten 3 Kunnen koopt kiene DVD. Wo veele DVDs hett Billy an'n Dingesdag verköfft?	"
 
 **Oplossing:**
@@ -4869,7 +4869,7 @@ Deze knomen worden aangeduid als follows:
 Dus, totale DVDs verköft zijn 3 + 2 + 3 = 8 DVDs.
 
 Een oplossing zou zijn om 8 DVDs te verköffen tot slot.
-"	stop
+"	stop	9.0	0	0	16	0
 qa62b2b0f	Een Kessen schmellt jede Stunn, de se brennt, üm 2 Zentimeter körter. Wo veele Zentimeter körter is een Kessen, de vun 13 Uhr bit 17 Uhr brennt?		8	"
 Zunächst identifiziere ich die Werte, die in der Beziehung stehen. 
 
@@ -8360,7 +8360,7 @@ Beträumen
 
 \boxed{13} B renz und B renz.
 
-\boxed{13} B ren"	length
+\boxed{13} B ren"	length		0	0		0
 qaadc02d2	Kyle hett den Bestseller vun't beste Johr för 19,50 US-Dollar köfft. Dat is mit 25 % Rabatt up'n ursprünglichen Pries. Wo hoog weer de ursprüngliche Pries vun't Baok?	"
 
 Um das ortspreis zu bestimmen, den Kyle den bestseller hatt, können wir die informationen ausrechnen.
@@ -8394,7 +8394,7 @@ Dann setze ich das ortspreis in die Gleichung ein, um das ortspreis zu bestimmen
 Ich muss also die Division von 19,50 durch 1,25 durchführen, um das ortspreis zu finden.
 
 Schließlich erhalte ich den ortspreis, der Kyle den bestseller hatt, wenn ich die Division durchführen.
-"	stop
+"	stop	2.0	0	0	15.6	0
 q4c88eb07	Marie hett een Hoihnergericht för 12 US-Dollar bestellt, 5 Packungen Melk för jeweils 3 US-Dollar, 4 Appels för jeweils 1,50 US-Dollar un noch een poor Schachteln Pizza. Marie hett insgesamt 50 US-Dollar betaohlt. Wo veele Schachteln Pizza hett Marie bestellt, wenn jede Schachtel 8,50 US-Dollar kost?	"
 
 Marie bought 2 pizza slices."	2	"
@@ -8425,7 +8425,7 @@ Alternatively, perhaps the pizza slice is part of the 50 USD, so let's see: tota
 But the user's question is a bit unclear. It says, ""Wo veele Schachteln Pizza hett Marie bestellt, wenn jede Schachtel 8,50 US-Dollar kost?"" Which translates to, ""Where did Marie buy pizza slices, if each slice costs 8.50 USD?"" So, given the total spent is 50 USD, and she bought pizza slices at 8.50 each, how many did she buy? That would be 50 / 8.50 ≈ 5.88, but since you can't buy a fraction of a pizza slice, maybe she bought 5 or 6. But the other items cost 33 USD, and the pizza slice was 50 USD, so perhaps the pizza slice is part of the 50 USD. So 50 - 33 = 17, and 17 / 8.50 = 2. So she bought 2 pizza slices.
 
 I think that's the answer.
-"	stop
+"	stop	2.0	0	1		
 qc76b9ef5	Mishka hett 3 Poor Shorts, 3 Büxen un 3 Poor Schaoh köfft. Een Poor Shorts kost 16,50 US-Dollar. Een Büxen kost 22,50 US-Dollar un een Poor Schaoh 42 US-Dollar. Wo veel Dollar hett Mishka insgesamt för de Kledung utgeven?	"
 
 Om Mishka hett **3 Poor Shorts**, **3 Buxen** och **3 Schaoh** köfft, så kan vi räkna ut den tota betona för att hitta den totala vattenmässigheten.
@@ -8445,7 +8445,7 @@ First, I need to determine the cost of each item Mishka bought. A Poor Shorts co
 Next, I calculate the total cost by multiplying the quantity of each item by its respective price. For the 3 Poor Shortens, 3 times 16.50 equals 49.50 dollars. For the 3 Buxens, 3 times 22.50 equals 67.50 dollars. For the 3 Schaohs, 3 times 42 dollars equals 126 dollars.
 
 Finally, I add up all the individual costs to find the total amount Mishka spent. Adding 49.50, 67.50, and 126 gives a total of 243 dollars.
-"	stop
+"	stop	243.0	0	1		
 qc792d70c	Cynthia itt jeden Aovend een Portion ies. Se köfft Kartons mit 15 Portionen ies pro Karton för 4,00 US-Dollar de Karton. Wo veel hett se no 60 Daag för ies utgeven?	"
 
 **Lösning:**
@@ -8469,7 +8469,7 @@ First, I need to determine the total number of portions Cynthia needs to produce
 Next, I'll calculate the total cost for these portions by multiplying the number of portions by the cost per portion, which is $4.00.
 
 Finally, I'll provide the final answer in dollars.
-"	stop
+"	stop	3600.0	0	0	3600	0
 qb804efac	Henry hett up een 60 Meilen lange Radtour twee Stopps maokt. Den eersten Stopp maokt he no 20 Meilen. De tweete Stopp weer 15 Meilen vör't Enn vun de Tour. Wo veele Meilen hett he tüschgen den eersten un tweeden Stopp maakt?	"
 
 De waardes van de verschillende stopen en de rest van de tour zijn gegeven door:
@@ -8495,7 +8495,7 @@ Daaropent de eerste en twede stopen tot 35 Meilen. Daaropent de zwart en groene 
 \boxed{15 \text{ Meilen}}
 \]"	25	"
 De tour hett 60 Meilen. De eerst stopp maokt 20 Meilen. De tweete stopp vör't 15 Meilen. Daarnaast maak de zwart stopp 20 Meilen, en de groene stopp 10 Meilen. De remainder 25 Meilen vör't de tweete stopp. Daaropent de eerst en twede stopp, die 20 en 15 Meilen respectively, tot 35 Meilen. Daaropent de zwart en groene stopp, die 20 en 10 Meilen respectively, tot 30 Meilen. Daaropent de remainder 25 Meilen en de groene stopp, die 10 en 10 Meilen respectively, tot 35 Meilen. Daaropent de remainder 25 Meilen en de groene stopp, die 10 en 10 Meilen respectively, tot 35 Meilen. Daaropent de remainder 25 Meilen en de groene stopp, die 10 en 10 Meilen respectively, tot 35 Meilen. Daaropent de remainder 25 Meilen en de groene stopp, die 10 en 10 Meilen respectively, tot 35 Meilen.
-"	stop
+"	stop	15.0	0	0	15	0
 qf837eb68	Gloria is Schaoh koopen, as se een Poor Stevel finnt, dat in ehr Budget passt. Se mutt sik aver tüschgen de Stevel un twee Poor High Heels entscheiden, de toasamen fief Dollar weniger kost as de Stevel. Wenn een Poor High Heels 33 US-Dollar kost un dat annere dubbel so veel, wo veel kost de Stevel denn?	"
 
 Dus, \( x \) is de cos van de Poortje met High Heels, en \( 2x \) is de cos van de Poortje met High Heels en de Poortje met High Heels en de Poortje met High Heels en de Poortje met High Heels.
@@ -8518,7 +8518,7 @@ De Poortje met 33 US-Dollar kost, en de oorzicht en de Poortje met High Heels ko
 De Poortje met High Heels costing 66 US-Dollar, en de Poortje met High Heels costing 33 US-Dollar, dan cost de Poortje met High Heels 33 x 2 = 66 US-Dollar.
 
 De Poortje met High Heels costing 66 US-Dollar, en die Poortje costing 33 US-Dollar, dan cost de Poortje met High Heels 66 - 33 = 33 US-Dollar.
-"	stop
+"	stop	33.0	0	0	33	0
 qa2455bce	Dat Öllerverhältnis vun Darrell un Allen is 7:11. Wenn se nu taosamen 162 Johr old sünd, rek ut, wo old Allen in 10 Johr is.	"
 
 Berikut adalah penyelesaian masalah yang dikemali:
@@ -8568,7 +8568,7 @@ Yus, saka rutekana 7:11, enyala Allen saka 10 Johr. Saya kana masing masing kana
 Saya kana masing masing kana rutekana Allen saka 15 5/7 Johr. Saya kana masing masing kana rutekana Allen saka 15 5/7 × 162 = 2514 6/7 Johr.
 
 Saya kana masing masing kana rutekana Allen saka 2514 6/7 Johr.
-"	stop
+"	stop	418.0	0	0	266	0
 q166f163a	Gunter versöcht, de Gummibären in't Glass to tellen. He fraogt sien Frünnen, wo veele se glöövt, dat dor in sünd. Een seggt 80. Een anner seggt 20 mehr as de Hälfte vun de eerste Schätzung. Een drütte seggt 25 % mehr as de eerste. Wo hoog is ehr doerschnittliche Schätzung?	"
 
 To determine the expected score based on Gunter's estimates, we'll average the three given estimates:
@@ -8603,7 +8603,7 @@ But wait, is that the correct approach? Or should I consider the probability of 
 Alternatively, sometimes in scoring systems, you might use a weighted average, but unless specified, I don't think that's necessary here. So, I'll go with the average of the three estimates.
 
 So, putting it all together, the expected score would be approximately 101.67.
-"	stop
+"	stop	3.0	0	0	101.67	0
 q3966df43	John passt up 10 Hunnen up. Jede Hund bruukt jeden dag 0,5 Stunnen för een gang un üm sien Geschäft to maoken. Wo veele Stunnen in de weeken kümmert he sik insgesamt üm de Hunnen?	"
 
 To determine the total Stunnes consumed by the hens in a week, follow these steps:
@@ -8632,7 +8632,7 @@ Now, there are 10 hens. If one hen eats 3.5 Stunnes in a week, then 10 hens woul
 Wait, but I'm not sure if I should consider anything else, like whether the hens are hens or something else. But the question mentions hens specifically, so I think that's correct. 
 
 Let me double-check my calculations. 0.5 per day times 7 days is 3.5 per hen. 3.5 times 10 hens is indeed 35. Yeah, that seems right.
-"	stop
+"	stop	10.0	0	0	35	1
 q28184d6c	Gretchen hett 110 Münzen. Se hett 30 mehr Goldmünzen as Silbermünzen. Wo veele Goldmünzen hett Gretchen?	"
 
 **Lösung:**
@@ -8682,7 +8682,7 @@ Setze ich den Wert der Goldmünzen in die Gleichung ein: \( 30 + S = 110 \).
 Löse die Gleichung nach \( S \) um, um die Anzahl der Silbermünzen zu finden: \( S = 80 \).
 
 Schließlich ermittle ich die Anzahl der Goldmünzen, indem ich die Goldmünzen und Silbermünzen summed together: \( G = 30 + 80 = 110 \).
-"	stop
+"	stop	60.0	0	0	60	0
 q5f9dc683	Siobhan hett 2 Schmuckstücke weniger as Aaron. Aaron hett 5 Schmuckstücke mehr as de Hälfte vun Raymond sien Schmuckstücke. Wenn Raymond 40 Schmuckstücke hett, wo veele hett Siobhan denn?	"
 
 **Lösung:**
@@ -8724,7 +8724,7 @@ Aber Raymond hett 40, also ist die Hälfte 20 Schmuckstücke.
 Aber Aaron hett 5 Schmuckstücke mehr als die Hälfte von Raymond, also 20 + 5 = 25 Schmuckstücke.
 
 Siobhan hett 2 Schmuckstücke weniger als Aaron, also 25 - 2 = 23 Schmuckstücke.
-"	stop
+"	stop	3.0	0	0	23	1
 q9501d333	Mike speelt 40 Minuten lang Pingpong. In de ersten 20 Minuten maokt he 4 Punkte. In de nächsten 20 Minuten maokt he 25 % mehr Punkte. Wo veele Punkte maokt he insgesamt?	"
 
 Het is nodig te benaderen de punten Mike maakt in de Pingpong speler voor de volgende reis:
@@ -8756,7 +8756,7 @@ Vakken breakdown:
 - 20 minutes: 25% meer punte dan 4, dat is 4 + 1,6 = 5,6 punte
 
 Dus, tot bijna 100 punte overal. Dat is 9,6 punte.
-"	stop
+"	stop	20.0	0	0	9.6	0
 q0e0fa86b	Terry itt 2 Joghurts an'n dag. Se sünd jüst för 5,00 US-Dollar för 4 Joghurts in't Angebot. Wo veel gifft he in 30 daoge för Joghurt ut?	"
 
 Beräkna belogen för 30 Joghurts:
@@ -8793,7 +8793,7 @@ Vi dividerar 30 Joghurts som 5, som tillVaras antal Joghurts per belogen.
 Så belogen per Joghurt är 5,00 / 5 = 1,00 US Dollar.
 
 För 30 Joghurts costar 30 × 1,00 = 30,00 US Dollar.
-"	stop
+"	stop	30.0	0	0	3000	0
 q126bbbaa	John will all sien Speeltüüch verkoopen un vun dat Geld Videospelen koopen. He hett 13 Lego-Sets un kriggt $15 för jedet Set, dat he verköfft. Dorna köfft he 8 Videospelen för jeweils $20 un hett noch $5 över. Wo vele Lego-Sets hett he noch?	"
 
 Um John zu spelen, sondern auch die Lego-Sets zu hett, berechnen wir das GE总价.
@@ -8835,7 +8835,7 @@ Dann berechne ich das GE总价 für die Videospelen. Er hett 8 Videospelen für 
 Jetzt subtrahiere ich den Gesamtsumme der Lego-Sets von dem Gesamtbudget: 195 Euro - 165 Euro = 30 Euro.
 
 Somit hat John 30 Euro über den Lego-Sets verkaufte.
-"	stop
+"	stop	30.0	0	0	30	0
 q5c1bd624	John löppt 60 Meilen in de Weeken. He löppt an 3 Daog in de Weeken. An'n eersten Dag löppt he 3 Stunnen, un an de annern twei Loopdaoge jeweils de Hälfte. Wo schnell löppt he?	"
 
 John's pace is 2/3 miles per Stunnight, meaning he completes a mile in 1.5 Stunnens. 
@@ -8870,7 +8870,7 @@ But wait, I'm not entirely sure about the units. Maybe I should check if ""Stunn
 Alternatively, maybe I'm overcomplicating it. The key is that he completed 3 Daog in the week, which is 3 miles, and he spent 4.5 Stunnens. So, his pace is 3 miles over 4.5 Stunnens, which is 2/3 miles per Stunnight. That seems to be the answer. 
 
 I think that's the best I can do without more information. So, John's pace is 2/3 miles per Stunnight, meaning he completes a mile in 1.5 Stunnens.
-"	stop
+"	stop	3.0	0	0	2	0
 q02f06b34	Dana kann veer maol so schnell lopen as se gaohn kann, aver hüppen kann se bloos mit de Hälfte vun ehr Looptempo. Wenn se mit 3 Meilen pro Stunde hüppen kann, wo vele Meilen kann se denn in sess Stunnen maoken, wenn se een Drüddel vun de Tied löppt un twei Drüddel vun de Tied geiht?	"
 
 Um den verständlichen Rechnungsschritt zu fügern, verwenden wir die genaue Schritt-by-Step-Analyse:
@@ -8965,7 +8965,7 @@ Zuerst identifiziere ich die gegebenen Werte:
 
 10. **Lösung:**
     - \(\boxed{2 \text{ Meilen}}\)
-"	stop
+"	stop	2.0	0	0	2	0
 qd6dd82e1	Brandons iPhone is veer maol so old as Bens iPhone. Bens iPhone is dubbelt so old as Suzys iPhone. Wenn Suzys iPhone 1 Johr old is, wo old is Brandons iPhone?	"
 
 If Suzys's iPhone is 1 year old, then Bens's iPhone is twice as old, making it 2 years old. Brands's iPhone is twice as old as Bens's, so it is 4 years old.
@@ -9010,7 +9010,7 @@ But let me make sure I didn't misinterpret the terms. ""Bens iPhone is doubelt s
 Yes, that seems right. So if Suzys's iPhone is 1 year old, then Bens's is 2, Brands's is 4.
 
 I think that's the correct interpretation. So, Brands's iPhone is 4 years old.
-"	stop
+"	stop	4.0	0	0	4	0
 q425db7e5	De grote Drachen Perg seet hoog boben up'n Barg Farbo un spei Füür up allens in een Ümkreis vun 1000 Fuß. Polly kunn den goldenen Speer, de eenzige bekannte Waffe gägen den Drachen, 400 Fuß wiet smieten, also midden in sien Flammenriek. Aver wenn Polly den Saphir-Edelsteen in de Hand hüllt, kunn se den Speer dree maol so wiet smieten as aohne den Steen. Wenn se den Edelsteen in de Hand hüllt, wo wiet buten von den Flammenriek vun'n Drachen kunn Polly staohn un üm trotzdem mit den goldenen Speer draopen?	"
 
 The problem involves De grandes Drachen Perg, Polly, and a golden spear. De grandes Drachen walk a circular track of 1000 feet, with Polly trying to reach the Flammenriek, a moving bubble in the opposite direction. The golden spear, faster than the Flammenriek, allows Polly to catch up while also helping her reach the Flammenriek in the same time the Drachen complete the circle.
@@ -9135,7 +9135,7 @@ Now, I should try to write this out more formally, probably using some equations
 But overall, the golden spear is the key solution here, and it's about using it to stay ahead of the moving Flammenriek and then adjusting your position accordingly. 
 
 I think I've worked through the problem enough. Time to put it all together in a clear, step-by-step explanation.
-"	stop
+"	stop	7.0	0	0		0
 qedc215ac	Grootmaodder Jones hett 5 Appelkaoken för't Middageten vun de Füürwehr backt. Se snitt jeden Kaoken in 8 Stücke un stellt de fief Kaoken up'n Buffettdisch, dormit de Gäste sik sülvst bedenen kunnen. An't enn vun'n Aovend, at de Gäste kaoken eten harrn, wören noch 14 Kaokenstücke över. Wo veele Stücke hebbt de Gäste sik naohmen?	"
 
 The problem as presented lacks sufficient information to determine the average number of sausages eaten per guest. Specifically, the total number of sausages and the number of guests are not provided. However, based on the numbers given:
@@ -9261,7 +9261,7 @@ Alternatively, if total is 22, and guests ate 8, and if the number of guests is 
 I think the problem is missing information. Without knowing the number of guests, I can't calculate the average number of sausages per guest. Maybe the guests ate 8, and the buffer is for when they serve the main course, so they had 14 left. So, total is 8 + 14 = 22. Then, guests ate 8, so average is 8 divided by the number of guests. But without guests, can't proceed.
 
 I think I've tried everything I can. I'll have to stop here.
-"	stop
+"	stop	8.0	0	0		0
 q5d47194e	Luut de Nährwertangaben hett een Tüten Chips 250 Kalorien pro Portion. Wenn een 300 g-Tüten 5 Portionen hett, wo veele Gramm kannst du eten, wenn dien Kalorienziel för'n dag 2000 is un du al 1800 Kalorien eten hest?	"
 
 **Oplossing:**
@@ -9299,7 +9299,7 @@ Deel 20% van 2000 Kalorien door 100% om 2000, wat 400 Kalorien is.
 Dan zullen er 100% - 20% = 80% overal. 
 
 Deel 80% van 2000 Kalorien door 100% om 160 Kalorien. 
-"	stop
+"	stop	5.0	0	0	160	0
 q255b81c0	Charlie will Bienenwachskessen verkoopen. Ut jedet Pund Bienenwachs kann he 10 Kegelkessen maoken. Dat Material ut een Pund Bienenwachs plus Dochte kost 10,00 US-Dollar. Wenn he de Kessen för 2,00 US-Dollar verköfft, wo veel Nettogewinn maokt he, wenn he 20 Kessen maakt un verköfft?	"
 
 **Lösung:**
@@ -9338,7 +9338,7 @@ Nun berechnen wir die Gesamtkost, die er benötigt, um die 10 Kegelkessen zu bau
 Die Gesamtkoost um den Pund mit dem Kessen baut, um die 10 Kegelkessen zu bauen, beträgt 20,00 US-Dollar. Da der Pund bereits mit 10 Dochte costet, die insgesamt 20,00 US-Dollar betragen, beträgt die Gesamtkoost insgesamt 20,00 + 20,00 = 40,00 US-Dollar.
 
 Abhängig von der Anzahl der Kessen, die Charlie verkaft, können wir die Nettogewinn berechnen. Wenn er 20 Kessen makes, hat er 20 / 10 = 2 Pund baut. Das bedeutet, er hat 2 Pund, die sich zu 20 Kessen umsetzt. Der Nettopronis, der er erhalte, ist die Gesamtkost minus die Nettogewinn. Somit berechnen wir 40,00 US-Dollar - Nettopronis = Nettopronis. Der Nettopronis beträgt also 20,00 US-Dollar.
-"	stop
+"	stop	20.0	0	1		
 q0166ea66	Meredith is Freelance-Bloggerin, schrifft över Gesundheit un kümmert sik as fasten Job üm Kunnen. För Recherche un Schrieven vun een Blog-Artikel bruukt se im Dörschnitt 4 Stunnen. Leste weeken hett se an'n mondag 5 Artikel schreven un an'n Dingesdag 2/5 mehr Artikel as an'n mondag. An'n middeweeken hett se twee maol so veele Artikel schreven as an'n Dingesdag. Rek ut, wo veele Stunnen se an de dree Daoge insgesamt mit schrieven verbröcht hett.	"
 
 Meredith writes:
@@ -12605,7 +12605,7 @@ Total stuns:56 +56=112.
 But the user's initial calculation was 21.6 +29.6=51.2. So I think I'm not getting it right.
 
 I think I need to stop here and follow the user's initial breakdown, even if it's confusing.
-"	length
+"	length	112.0	1	0	112	0
 q7bb382f4	Candice hett 80 Post-it-Notizzettel in ehr Handtaschken packt, ehe se no ehren Job in'n Coffee Shop losgüng. Ünnerwegs hüllt se bi'n laoden an un köffte een Packung Post-it-Notizzettel; bi de Arbeet hett se up 220 verschedene Kaffeetassen jeweils een Post-it-Notizzettel kleevt. Wenn ehr an't enn 23 Post-it-Notizzettel överbleven sünd, wo veele Notizzettel wören denn in de Packung, de se köfft hett?	"
 
 Ditop positie:
@@ -12632,7 +12632,7 @@ Next, I'll add these two quantities together to find the total number of Post-it
 After having the total, I need to account for the situation where she has 23 Post-it-Notizzels remaining. This means I'll subtract the remaining amount from the total to find out how many were included in the original pack.
 
 Finally, I'll present the final number of Post-it-Notizzels in the original pack.
-"	stop
+"	stop	23.0	0	0	277	0
 q1a64508f	John köfft twee maol so veele rode as blaue Krawatten. De roden Krawatten kost 50 % mehr as de blauen. He hett 200 US-Dollar för blaue Krawatten utgeven, un de kost pro Stück 40 US-Dollar. Wo veel hett he insgesamt för Krawatten utgeven?	"
 
 **Lösning:**
@@ -12661,7 +12661,7 @@ Först tar jag med 50 % av de vinst som blau Krawatten kan bryta. Då blau Krawa
 Joh det har 200 USD för blaue Krawatten, vilket innebär att John kan bryta 200 / 40 = 5 st. 
 
 Så hett totalan av koppar av Krawatten är 5 st, vilket innebär en vinst av 5 * 50 = 250 USD.
-"	stop
+"	stop	200.0	0	0	200	0
 q9605b4e6	Tracy hett een 4 Fuß lang Stück Draoht bruukt, üm de Tomatenplanten in ehr Goorn af to stütten. De Draoht is in Stücke vun jeweils 6 Inch snieden worrn. Wo veele Stücke Draoht harr se?	"
 
 Dij benodig ik 2 Stück en 2 stukken van draoht. Hier zijn de oplossingen:
@@ -12689,7 +12689,7 @@ Dij benodig ik 2 Stück en 2 stukken van draoht. Hier zijn de oplossingen:
 \boxed{2\ \text{stukken van 6\ inch en 2\ stukken van 6\ inch van draoht worden toegekomen.}}
 \]"	8	"
 Zij het op basis van 4 foot lang stukken van draoht, waardoor de draoht op 12 inches lang is. De Tomatenplanten worden op 6 inch lang stukken van draoht versterken. Dat betekent dat de draoht in 2 stukken van 6 inch each worden versterkeld, wat betekent dat 2 Stück en 2 stukken van draoht worden toegekomen.
-"	stop
+"	stop	6.0	0	0		0
 qda35e8fb	Richard waohnt in een Huus mit 15 Etagen. Up jede Etage sünd 8 Wohnungen, un 3/4 vun't Huus is bewaohnt. Wo veele Wohnungen in't Huus sünd insgesamt nich bewaohnt?	"
 
 **Oplossing:**
@@ -12731,7 +12731,7 @@ De totale Wohnungen in de Huus: 120
 De ones dat ongeveet bewaahgt: 90
 
 De ones dat ongeveet nemen: 120 - 90 = 30
-"	stop
+"	stop	30.0	0	1		
 q94fcd6ce	Lloyd hett een Eierhoff. Sien Höihner leggt 252 Eier an'n dag, un he verköfft se för 2 US-Dollar dat Dutz. Wo veel verdeent Lloyd in de weekend mit de Eier?	"
 
 Dit is een oplossing van de vorige question. De gegevens die de oplossing verder gebruiken onbebeurden. De oplossing is ongebeurden, want de gegevens die de oplossing verder gebruiken onbebeurden.
@@ -12759,7 +12759,7 @@ Dit is een oplossing van de vorige question. De gegevens die de oplossing verder
 - **Verw hier de verkozen:**
   - De verkozen verkozen zijn verder verkozen, zodat de totale bedovelling per dag \( 252 \times d + 252 \times D \) USD is."	294	"
 De oplossing van dit probleem is om de gegevens te benodigen te verwerpen en de rest te benodigen. Daarop, de oplossing is ongebehandeld, want de gegevens die de oplossing verder zullen gebruiken onbebeurden.
-"	stop
+"	stop	252.0	0	0		0
 q1afb1e71	Toms schipp kann 10 Meilen pro Stunn föiern. He segelt vun 13 bit 16 Uhr. Dornao föiert he mit 6 Meilen/Stunn wedder torügge. Wo lang bruukt he för den Torüggweg?	"
 
 Durch die Berechnung der Unterschiede in den Meilen pro Stun zwischen den Segelt und Dornao ergibt sich:
@@ -12780,7 +12780,7 @@ Der Toruuggengeweg ist also 3 Meilen pro Stun lang.
 Ich überprüfe die Rechnung, um sicherzum haben, ob die Rechnung korrekt ist. 13 - 10 = 3 Meilen pro Stun. 3 - 6 = -3. Da die Differenz negativ ist, bedeutet das, dass Dornao verkaufte mehr Meilen pro Stun als Toms Schipp. Der Toruuggengeweg ist also die Differenz, die wir bereit haben, um Dornao zu verkaufte Stufen zu schaffen.
 
 Also erkenne ich, dass der Toruuggengeweg 3 Meilen pro Stun lang ist.
-"	stop
+"	stop	3.0	0	0	3	0
 q0aaae19a	Uriah ehr Boikertaschgen wer him to swoor. He mutt 15 Pund dorut nehmen. Siene Comicboiker weegt je 1/4 Pund un siene Speeltüüch je 1/2 Pund. Wenn he 30 Comicboiker rutnimmt, wo veele Speeltüüch mutt he denn noch rutnehmen?	"
 
 Sure! Let's break down the problem step by step.
@@ -12835,7 +12835,7 @@ Now, I'll calculate how many ribbons 30 comic book editors would eat. Multiplyin
 Finally, I'll subtract the total eaten ribbons from the initial amount to find out how many are left. Subtracting 56.25 from 3.75 gives me 3.75 - 56.25 = -52.5 ribbons remaining.
 
 This negative result suggests that Uriah brought more ribbons than the comic book editor ate by 52.5 ribbons.
-"	stop
+"	stop	97.5	0	0	-97.5	0
 qa5756c69	Een Mechaniker nimmt verschedene Priese för Reparaturen an LKW-Reifen un PKW-Reifen. För jeden reparierten LKW-Reifen nimmt he 60 Dollar, för jeden reparierten PKW-Reifen 40 Dollar. An'n Dönnersdag repariert he 6 LKW-Reifen un 4 PKW-Reifen. An'n Freidag repariert he 12 PKW-Reifen un kiene LKW-Reifen. Wo veel Dollar mehr Ümsatz hett he an den dag mit'n höheren Ümsatz maokt?	"
 
 Um den Umsatzverhältnis zu berechnen, betrachte wir die Preise und die Anzahlen der reparierten Reifen.
@@ -12875,7 +12875,7 @@ Dann bestimme ich die Anzahlen der reparierten Reifen. Am Donnerdag parriert 6 L
 Um die Gesamtverhältnisse der Unparitaten zu berechnen, teile ich die Gesamtunparität durch die Gesamtanzahl der reparierten Reifen. Am Donnerdag beträgt der Umsatzverhältnis 20 / 10 = 2:1. 
 
 Am Freiag parriert nur die 12 PKW-Reifen parriert, wodurch der Umsatzverhältnis 0:1 entsteht. 
-"	stop
+"	stop	1.0	0	0		0
 qd819612e	De Doubtfire-Süsters föiert mit 7 kattens nao Huus, de se in't örtliche Tierheim adopteert hebbt, as ehr Maodder anröppt un seggt, dat ehr twee Huuskatten jüst kattens kregen hebbt. Patchy, de eerste katten, hett dree maol so veele kattens as de adopteerten, un Trixie, de annere katten, hett 12 kregen. Wo veele kattens hebbt de Doubtfires nu?	"
 
 Zum Understanding der Frage wir uns auf die gegebenen Informationen zu füsen.
@@ -12935,7 +12935,7 @@ Ehrer Maodder hat 2 Huuskatten. Er hat 7 Kattens nao hüttet, was bedeutet, dass
 Die First katten des Doubtfires hett 3 Maol, wodurch sie 12 Kattens Na preventive kregen. Die Trixie hett 12 Kattens, die 7 Kattens Na preventive kregen.
 
 Die Gesamtzahl der Kattens in der Heis umfasst also die 9 Kattens der Ehrer Maodder, die 12 Kattens der First katten, und die 12 Kattens der Trixie. Somit ist die Gesamtzahl der Kattens in der Heis 33.
-"	stop
+"	stop	18.0	0	0	18	0
 q7c63d108	Jean hett 30 Lutschers. Jean itt 2 dorvan. De överbleven Lutschers will Jean in Tuten mit jeweils 2 Lutschers packen. Wo veele Tuten kann Jean füllen?	"
 
 **Solution:**
@@ -12964,7 +12964,7 @@ Jean hett 30 Lutschers and ate 2, so the total number of Lutschers is 30 + 2 = 3
 Next, Jean plans to pack the Lutschers into boxes, with each box containing 2 Lutschers. To find out how many boxes Jean can fill, I divide the total number of Lutschers by the number that fit per box: 32 ÷ 2 = 16.
 
 Therefore, Jean can fill 16 boxes with 2 Lutschers each.
-"	stop
+"	stop	16.0	0	0	16	0
 q93b023e5	Peter will disse weeken in't Kino gaohn. He köfft sik jümmers een Ticket för 7 US-Dollar un Popcorn för 7 US-Dollar. Wenn he för de weeken 42 US-Dollar hett, wo faoken kann he denn in't Kino gaohn?	"
 
 Bijgeleid van deoplossing:
@@ -12989,7 +12989,7 @@ Bijgeleid van deoplossing:
 \boxed{3\ \text{Ticket}\ \text{en}\ 3\ \text{Popcorn}}
 \]"	3	"
 Peter helpt 7 US-Dollar per Ticket en 7 US-Dollar per Popcorn. Tot 42 US-Dollar hett. Want 42 divided by (7 + 7) equals 3. Dus Peter kan köpf 3 Ticket en 3 Popcorn in de Kino.
-"	stop
+"	stop	3.0	0	1		
 qdf141d2f	Een Holtbrüggen kann nich mehr as 5.000 Pund draogen. Een Lieferwaogen mit glieke Kisten, jede 15 Pund swoor, will över de Brüggen föiern. Faohrer un lohse Waogen weegt taosamen 3755 Pund. Wo veele Kisten kann de Waogen höchstens laon, aohne över de Gewichtsgrenze vun de Brügg ento kaomen?	"
 
 **Lösung:**
@@ -13021,7 +13021,7 @@ Da die Waogen insgesamt sechs Pfund weighed und die Kisten sechs Pfund weighed, 
 Zunächst bestimme ich die Gesamt Gewicht, mit dem Waogen maxima gewogen können kann, indem ich die Gewicht von den Kisten und den Hopftücks berücksichtige. Die Kisten weighed sechs Pfund und die Hopftücks weighed sechs Pfund. Da die Hopftücks und die Kisten gleich Weight hatten, addingen sie die beiden ergibt sechs plus sechs, also insgesamt zwassechs Pfund.
 
 Dann berechne ich die Anzahl der Kisten, die die Waogen maxima gewogen können können. Da die Waogen insgesamt sechs Pfund weighed, und jede Kisten sechs Pfund weighed, teile ich die Gesamt Gewicht by die Gewicht von jeder Kisten. Das ergibt sechs Dividieren durch sechs, alsoequals eins. Damit kann die Waogen also maximal eine Kisten laufen.
-"	stop
+"	stop	2.0	0	0	2	0
 q1f4f019f	Stephen hett online Levensmiddel bestellt. De Reknung weer 40,00 US-Dollar. Weil de Lieferung över een Lieferdienst loben hett, hebbt se 25 % Gebühr up de Reknung slaon un 3,00 US-Dollar Liefergebühr bereknet. Stephen hett ok noch 4,00 US-Dollar Trinkgeld geven. Wo hoog weer de Endpries för sien Levensmiddel nao all Extragebühren?	"
 
 Um die Endpreise der Levensmiddel zu bestimmen, können wir alle involveden Faktoren auf additive Art berechnen:
@@ -13076,7 +13076,7 @@ Leerguthaben: 3,00 US-Dollar
 Summe: 40 + 5 + 3 + 10 + 3 = 61,00 US-Dollar
 
 Also ist der Endpreis der Levensmiddel 61,00 US-Dollar.
-"	stop
+"	stop	0.0	0	0	58	0
 q709e5faa	Een Himbeerbusch hett 6 druben mit jeweils 20 Früchten un noch 67 enkelte Früchte över den Busch verdeelt. Wo veele Himbeeren sünd dat insgesamt?	"
 
 Um die Gesamtanzahl der Hett auf dem Bus zu bestimmen, gehen wir Schritt für Schritt vor.
@@ -13119,7 +13119,7 @@ Anschließend beseitigen 67 Früchte. Diese werden von den 120 Früchten abgezog
 Da es 6 Hett im Bus sind, teile ich die verbleibenden Früchte auf die Hett auf: \(53 \div 6 \approx 8,8333\).
 
 Da die Hett keine Bruchteile haben, rounde ich die Anzahl der Hett pro Hett auf 8. Somit sindinsgesamt 6 Hett, wobei auf 8 Hett 53 Früchte aufgepackett sind.
-"	stop
+"	stop	8.0	0	0	8	0
 qb292acaa	In een Korv leggt 25 Appelsinen. Dorvan is 1 slecht, 20 % sünd unriep un 2 sünd suur; de Rest is gaod. Wo veele Appelsinen sünd gaod?	"
 
 **Uitvalling van de opgave:**
@@ -13157,7 +13157,7 @@ Ik ga de oplossing van de opgave intozmen en begrijp het aanvullen van de gegeve
 Ik begrijp dat de 25 Appelsinen in de Korv overal versnellen. De Dorvan speelt een rol in, waardoor 1 Appelsinen sondt unriep un 2 Appelsinen suur. De rest van de Appelsinen is gaod. De question is: Wat vooil Appelsinen sondt gaod?
 
 De oplossing bepaalt de maximale number van Appelsinen die sondt gaod zijn. Daarbij moet ik de 20% en de 2 Appelsinen opvolgelen. Daarop, wat overal sondt gaod zijn, is de rest van de Appelsinen. De rest is 25 - 1 - 2 = 22 Appelsinen. Dus vooil 22 Appelsinen sondt gaod.
-"	stop
+"	stop	2.0	0	0	22	0
 qa11cac63	Janet köfft een Brosche för ehr Dochter. Se betaohlt 500 US-Dollar för't material un noch 800 US-Dollar för den Juwelier, de se formt. Dornao betaohlt se noch 10 % vun dissen Betrag för de Versicherung. Wo veel mutt se insgesamt betaohlen?	"
 
 Zo bepaal je het **toetsbedrag** dat Janet betoelde:
@@ -13181,7 +13181,7 @@ Zo bepaal je het **toetsbedrag** dat Janet betoelde:
 Deze oplossing is precies gecombineerd, waardoor het correct is dat het totale betoelde is. 
 
 Deze oplossing is exact, waardoor het precies de oplossing zorgd.
-"	stop
+"	stop	380.0	0	0	1380	0
 q5a0d641e	Nao 40 Dienstjoahre kriggt een Mitarbeiter bi Marcy ehr Firma een vulle jährliche Rente vun 50.000 Dollar. Pensionsansprüche gifft dat af 20 Dienstjohre. För jedet vulle Dienstjohr mehr nao de 20-Johr-Marke kriggt de Mitarbeiter 5 % vun de vulle Rente. Wenn Marcy nao genau 30 Dienstjohre ophöört, wo hoog is denn ehr jährliche Rente in Dollar?	"
 
 **Gegele Data:**
@@ -13235,7 +13235,7 @@ Deze verhoudingen zijn basisdriehoedig, maar als de 30 Dienstjohren van de verho
 Deze verhoudingen zijn basisdriehoedig, maar als de 30 Dienstjohren van de verhouding veranderen, zijn de exacte waardes afgerond. 
 
 Deze verhoudingen zijn basisdriehoedig, maar als de 30 Dienstjohren van de verhouding veranderen, zijn de exacte waardes afgerond.
-"	stop
+"	stop	30.0	0	0		0
 q2eb5bb5f	Aleena hett een Streaming-Dienst abonneert, de 140 US-Dollar pro Monat kost. Wenn de Streaming-Firma in de eerste Hälfte vun't Johr den normalen Bedrag nimmt un in de tweete Hälfte 10 % weniger, wo veel hett se an't enn vun't Johr insgesamt för den Streaming-Dienst betaohlt?	"
 
 Dit is een oplossing voor de opgave over het bestaan van het betaohlantje over het Streaming-Dienst van Aleena. Hier zijn de exacte waardes:
@@ -13272,7 +13272,7 @@ De problembare oplossing bestaat in drie stukken van oplossing.
 2. **Hoeveel de Streaming-Firma in de tweete Hälfte betaling:** De tweete betaling is 10% minder dan de first half. 10% van 140 USD is 14 USD, dus de tweete betaling is 140 USD - 14 USD = 126 USD.
 
 3. **Hoeveel totgesaane betaling:** Totgesaane betaling is de eerste Hälfte vermenigvuldigd met 2, wat 280 USD is, en de tweete betaling vermenigvuldigd met 1, wat 252 USD is. Totgesaane betaling is 280 USD + 252 USD = 532 USD.
-"	stop
+"	stop	532.0	0	0	532	0
 q29ca8e5c	Sophia överleggt, mit ehr Auto een Tour to maoken, un will weten, wo wiet se mit een vullen Tank kummt. Siet de leste Tankfüllung is se 100 Meilen föiert un hett 4 Gallonen Benzin naohfüllen mösst, dormit de Tank wedder vull weer. In de Bedienungsanleitung steiht, dat in ehr Tank 12 Gallonen Benzin passt. Wo veele Meilen kann Sophia mit een vullen Tank föiern?	"
 
 Om de benzinezorg in de vullen Tank te berekenen, kunstelik de volgende stappen:
@@ -13292,7 +13292,7 @@ Om de benzinezorg in de vullen Tank te berekenen, kunstelik de volgende stappen:
 **Uit Tot**:
 Sophia kan in de vullen Tank 33 Meilen Benzine zorgven."	300	"
 De oplossing voor dit probleemijl is om de benzinzorg in de vullen Tank te berekenen. We weten dat de leste Tankfüllung 100 Meilen benzin passt, maar het 4 Gallonen Benzin naohfüllt het Tank. Dit betekent dat het 4 Gallonen Benzin de benzine verkopt en in de vullen Tank over 12 Meilen benzine kan zorgven. Om dit te benodigen, vormen we de 4 Gallonen Benzin naar Meilen per Gallonen. Daaropvallen het 4 Gallonen 12 Meilen, wat betekent dat 1 Gallone Benzine 3 Meilen can zorgven. Dus, als de leste Tankfülling 100 Meilen benzine is, kan Sophia 100 Meilen Benzine zorgven.
-"	stop
+"	stop	33.0	0	0	33	0
 q388ed7a8	Jim kiekt 2 Stunnen lang TV un geiht denn in't bedde un leest halv so lang. Dat maokt he 3-maol in de weeken. Wo veele Stunnen verbringt he in 4 weeken mit TV kieken un leesen?	"
 
 Um den Faktor zu bestimmen, mit dem der TV-Knie 1,5 mal so dauernd ist wie der Stunnen, berechnen wir das folgendermaßen:
@@ -13354,7 +13354,7 @@ Dann berechne ich die Zinsdauer pro Stunnen:
 540 Stunden/week ÷ 360 Stunden/week = 1,5
 
 Also erkenne ich, dass der TV-Knie 1,5 mal so dauernd ist wie die Stunnen.
-"	stop
+"	stop	5.0	0	0	1.5	0
 qe6615147	Veer Schaolen speelt in een Basketballturnier gegenanner. Jede Schaole hett een Wichterbasketballteam un een Jungensbasketballteam schickt, un jedet Team hett 5 Speelers. Jede Schaole hett uk för jedet Team een Trainer mitschickt. Wo veele lüüd hebbt de Schaolen insgesamt schickt?	"
 
 Daten:
@@ -13396,7 +13396,7 @@ Next, I need to find out how many different Trainers each team can receive. Each
 The number of ways to distribute 8 Trainers into 5 teams, with each team receiving exactly 3 Trainers, is given by the combination formula 8 choose 3, which equals 56. This is because each Trainer is assigned to a specific team, and the order within each team doesn't matter.
 
 Finally, to find the total number of different Schaoles that can be submitted, I multiply the number of teams by the number of ways to distribute the Trainers. This results in 5 * 56 = 280 different Schaoles.
-"	stop
+"	stop	75.0	0	0	75	0
 q1df59a5a	Een Schatzsöker hett een verborgene Schatzkiste mit Edelsteene funnen. Dor wören 175 Diamanten in, 35 weniger Rubine as Diamanten un twee maol so veele Smaragde as Rubine. Wo veele Edelsteene wören in de Schatzkiste?	"
 
 Ik ga de oplossing van dit probaal aan.
@@ -13416,7 +13416,7 @@ First, ik begrijp dat de Schatzsöker 175 Diamanten ontmoet. Rubine is 35 less t
 De Smaragde vormen 35 less then de Rubine. Dus, als de Rubine 140, dan de Smaragde is 140 minus 35 = 105 Smaragde.
 
 Ook zijn Smaragde 2 maol de Edelsteene. Dus, als Smaragde 105, dan de Edelsteene is 105 divided by 2 = 52.5.
-"	stop
+"	stop	52.5	0	0	52.5	0
 q0e3fa635	In Dr. Wertz sien Schaol gifft dat twee maol so veele jungs as wichter. Wenn dor 60 wichter sünd un up jede 5 Schöilers een Lehrer kummt, wo veele Lehrers gifft dat denn?	"
 
 De oplossing is bestempeld als volgt:
@@ -13462,7 +13462,7 @@ En da verder:
 - 24 multiplied by 60 equals 1.440 (dus 1.440 lectors per sojournant)
 
 Dus het geheel is 1.440 lectors per maol.
-"	stop
+"	stop	1440.0	0	0	1440	0
 q9c0ce719	Bailey fangt mit een bestimmten Bedrag Geld an. Denn kriggt se 8 weeken lang jede weeken 5 US-Dollar. Wenn se nao de 8 weeken insgesamt 100 US-Dollar hett, wo veel Geld harr Bailey denn an'n Anfang?	"
 
 **Oplossing:**
@@ -13492,7 +13492,7 @@ Deze totaaldeel is 100 US-Dollar.
 Dus, aan de start, hattie harr:
 
 100 US-Dollar - 40 US-Dollar = 60 US-Dollar.
-"	stop
+"	stop	60.0	0	1		
 qde446a3d	Judy gifft an werkdag jeden dag 5 danzkurse un an'n soterdag 8 kurse. Wenn in jede kurs 15 schöilers sünd un se 15,00 $ pro schöiler nimmt, wo veel Geld verdeent se in een weeken?	"
 
 Deze oplossing bestaat uit de som van schoolwoorden en het bedreksum van de schoolwoorden. 
@@ -13542,7 +13542,7 @@ Onderwijs tot 5 dagen: 15 schoolwoorden * 5 dagen = 75 schoolwoorden. Onderwijs 
 Deze somma van schoolwoorden: 75 schoolwoorden. De bedreksum: 75 * 15,00 + 75,00 = 1.050,00 euro. 
 
 Dus, de totale bedreksdagen over 5 dagen: 1.050,00 euro.
-"	stop
+"	stop	5.0	0	0	1.05	0
 qd941251f	Kelian hett twee Koakrezepte. Dat eerste hett 20 Anweisungen, un dat annere hett twee maol so veele as dat erste. Wo veele Anweisungen mutt Kelian leesen, üm beide Rezepte to maoken?	"
 
 Kelian reads two Kokepte. The first has 20 Anweisungen. The second has ""wo maol so veele as dat first,"" which means it has as many pages as the first koekreete. Therefore, the second koekreete also has 20 pages. The total number of pages in both koekreete is 20 + 20 = 40. 
@@ -13643,7 +13643,7 @@ But the user's problem is about solving for the number in the second, so 40.
 But maybe the user is trying to find the total number of pages, which is 40.
 
 I think I'll go with 40, assuming that the second has twice as many pages as the first.
-"	stop
+"	stop	40.0	0	0	40	0
 q96352811	Tommy sammelt Geld för sien Wohltätigkeitsorganisation, indem he Brownies för 3 US-Dollar dat Stück un Käsekaokenstücke för 4 US-Dollar dat Stück verköfft. Wenn Tommy 43 Brownies un 23 Käsekaokenstücke verköfft, wo veel Geld sammelt he denn?	"
 
 Lägg till att räkna med om de vissa äran som Tommy har sammelt.
@@ -13666,7 +13666,7 @@ För Käsekaokenstöck: 23 Käsekaokenstöck × 4 USD per Käsekaokenstöck = 92
 Summan av de två vissa äran: 129 USD + 92 USD = 221 USD
 
 Tommy har sammelt 221 USD.
-"	stop
+"	stop	221.0	0	1		
 qbf808b59	Shiela hett fief Handys för 150 US-Dollar dat Stück mit een Ratenvertrag över 3 Monate köfft. Pro Stück werd 2 % Zinsen berekt. Wo veel betaohlt Shiela jeden Monat 3 Monate lang?	"
 
 **Lösung:**
@@ -13716,7 +13716,7 @@ Pro 3 Monate: 450 * 3 = 1350 US-Dollar betaohlt.
 Ich verstehe, dass die Zinsen pro Monat berechnet werden, und dann multipliziere ich die_betaohlt pro Monat mit 3, da es 3 Monate sind.
 
 Also, Shiela betaohlt 1350 US-Dollar in 3 Monate.
-"	stop
+"	stop	3.0	0	0	1350	0
 q71d76256	Artie hett een Blomenstand up'n Buernmarkt. He verköfft dree Sorten Blomen: Studentenblomen, Petunien un Begonien. Normaal verköfft he Studentenblomen för 2,74 Dollar de Pott, Petunien för 1,87 Dollar de Pott un Begonien för 2,12 Dollar de Pott. Vondaoge hett Artie keen Wesselgeld, dorüm rundt he all Priese up den nächsten Dollar. Wenn Artie 12 Pötte Studentenblomen, 9 Pötte Petunien un 17 Pötte Begonien verköfft, wo veele Dollar verdeent he denn?	"
 
 Artie has 87 dollars after rounding up each sale to the nearest dollar.
@@ -13777,7 +13777,7 @@ Wait, but the problem says Artie wants to round around 12 Pötte Studentenblomen
 Alternatively, if he wanted to round the total amount, that would be different. Let me calculate the total amount without rounding first. Studentenblomen: 12 * 2.74 = 32.88. Petunien: 9 * 1.87 = 16.83. Begonien: 17 * 2.12 = 36.04. Total is 32.88 + 16.83 = 49.71 + 36.04 = 85.75. Rounded up to the nearest dollar is 86. But the problem says he wants to round around the quantities, so I think it's per flower type. Therefore, my initial calculation of 87 seems correct.
 
 I think I'm confident with that. So, Artie has 87 dollars after rounding up each sale to the nearest dollar.
-"	stop
+"	stop	87.0	0	0	87	0
 qd6f9023f	Luke verbringt Tied an'n Strand un baut Sandburgen. He markt, dat jede Ebene vun een Sandburg bloos halv so veele Quadratmeter hett as de Ebene dorünner. Wenn he een Sandburg mit 4 Etagen baut, un de böverste Ebene 16 Quadratmeter hett, wo hoog is denn de durchschnittliche Quadratmetertoal vun een Ebene?	"
 
 D'accord, je dois déterminer l'**average** de la surface en carrés par plan en lequel il y a 4 étages, où la surface du last en haut est de 16 m².
@@ -13813,7 +13813,7 @@ Next, I'll determine the number of planes in the sand堡. Starting from the bott
 Then, I'll calculate the total volume of sand used. Starting from 16 square meters and doubling each plane up to 4 planes, the total volume is 16 + 8 + 4 + 2 = 30 square meters.
 
 Finally, to find the average volume per plane, I'll divide the total volume by the number of planes, which is 30 divided by 4, resulting in an average of 7.5 square meters per plane.
-"	stop
+"	stop	3.0	0	0	7.5	0
 qcf724c14	Cecilia hett jüst een neien Welpen köfft. De Tierarzt seggt, se mutt em in de ersten 180 daoge jeden dag 1 Tass Hundefoder geven. Dornao kriggt de Welpe för den Rest vun sien Leven jeden dag 2 Tassen Hundefoder. Wenn een Tuten Hundefoder 110 Tassenportionen hett, wo veele Tuteen bruukt Cecilia denn in't eerste Johr?	"
 
 De Tierarzt bedient dat in de eerste 180 dagen 1 tass Hundefoder geven. Dernat, als Dornao de Welpe 2 tassen per dag over de rest van de jaren kriggt, is de vorm van de Antwoord niet gegeleerd, maar kan worden geleden aangevoegd aan:
@@ -13824,7 +13824,7 @@ De Tierarzt bedient dat in de eerste 180 dagen 1 tass Hundefoder geven. Dernat, 
 De Tierarzt bedient dat in de eerste 180 dagen 1 tass Hundefoder geven. Daarnaast kriggt Dornao de Welpe 2 tassen per dag over de rest van de jaren.
 
 Bijstelijk is de vorm van de Antwoord niet gegeleerd, maar kan worden geleden aangevoegd dat de totale Zomhondgrootstap de Hierro's Hundefoder 110 per dag is.
-"	stop
+"	stop	110.0	0	0	110	0
 q6330b5ad	Wenn Raymond halv so veel Wäsche wascht as Sarah, un Sarah 4-maol so veel wascht as David, rek den Ünnerscheed ut tüschgen Raymond sien un David sien Wäschemenge, wenn Sarah 400 Pund Wäsche wascht.	"
 
 When it's David's turn, he has 200 wasches, and Raymond has 100 wasches."	100	"
@@ -14171,7 +14171,7 @@ Therefore, the answer is:
 Raymond: 100
 
 David: 200
-"	stop
+"	stop	100.0	0	1		
 qfb8247db	Vincent kann Blomen in 3-er-Packungen för 2,50 US-Dollar oder in 2-er-Packungen för 1 US-Dollar koopen. Wo veel Geld spaort he, wenn he 18 Blomen to den beteren Pries köfft?	"
 
 Um to bestimmen, wie viel Geld Vincent spaort, wenn er 18 Blomen buyet, können wir folgender Schritte durchführen:
@@ -14264,7 +14264,7 @@ Er erkennt, dass die Anzahl der 2-er-Packungen \( y \) mindestens 1 ist.
 Er setzt \( y = 1 \) und setzt die bestehenden Werte in die Gleichung ein, um \( x \) zu berechnen.
 
 Er erhielt den maximalen Betrag von 24,50 US-Dollars.
-"	stop
+"	stop	5.0	0	0	16	0
 q4da79a41	John adopteert een Hunn. He bringt den Hunn to'n Hunnenfrisör, un dat kost 100 US-Dollar. Weil he Neukunne is, gifft de Hunnenfrisör em 30 % Rabatt. Wo veel kost de Sitzung bi'n Hunnenfrisör?	"
 
 Deze oplossing is bestaart om de betaling en de percentuele abberentie te benaderen. De volgende stappen zijn:
@@ -14300,7 +14300,7 @@ Deze oplossing is bestaart om de betaling en de percentuele abberentie te benade
    - 100 US-Dollar - 30 US-Dollar = 70 US-Dollar.
 
 De zinlĳk bedriek is dan 70 US-Dollar.
-"	stop
+"	stop	70.0	0	1		
 qd3f2e43b	Twee wichter kregen jede 1/6 vun de 24 Liter waoter. Dornao kreeg een Jung 6 Liter waoter. Wo veele Liter waoter wören denn noch över?	"
 
 Um den Anfangsstand der Wiener zu bestimmen, wenden wir die folgende Rechnung an:
@@ -14375,7 +14375,7 @@ Dann berechne ich die Gesamtsumme der Wiener, die alleWiener kregen. Das ergibt 
 Dann bestimme ich die Anzahl der Wiener, die besides den seven Wiener kregen. Das ergibt \( 432 - 84 = 348 \) Litern Wiener.
 
 Dann berechne ich die Anzahl der Wiener, die besides den seven Wiener kregen. Das ergibt \( 348 \times 24 = 8352 \) Litern Wiener.
-"	stop
+"	stop	8352.0	0	0	8352	0
 qffe70c6a	Charlie harr 10 Stickers. He köffte 21 Stickers in een Laoden in de Mall un kreeg 23 Stickers tao'n Geburtsdag schonken. Dornao geev Charlie sien süster 9 vun de Stickers un bruukte 28, üm een Grußkaorten to dekoreiern. Wo veele Stickers hett Charlie noch över?	"
 
 **Uitreiking:**
@@ -14408,7 +14408,7 @@ qffe70c6a	Charlie harr 10 Stickers. He köffte 21 Stickers in een Laoden in de M
 \boxed{81}
 \]"	17	"
 Ik begrijp dat Charlie 10 stickers heeft. Dan kreeg Charlie 21 stickers over de Mall, en in de Geburtsdag overde hij 23 stickers. Onderwijsvormen overdeze 23 stickers zullen zijn 23 - 21 = 2 stickers. Dus, naasis, Charlie heeft 10 + 21 + 2 = 33 stickers. Daarnaast is Dornao een woonwubblig die 9 stickers overde de Mall hatt, en 28 stickers overde de Geburtsdag. Dus, 9 + 28 = 37 stickers. Zij zullen nu 33 + 37 = 70 stickers in totaal. Onderwijsvormen overdeze 70 stickers zullen zijn 70 - 33 = 37 stickers.
-"	stop
+"	stop	81.0	0	0	81	0
 q7d0f9963	Grace weegt 125 Pund. Alex weegt 2 Pund weniger as dat 4-fache vun Grace ehr Gewicht. Wo veel Pund weegt se tosaomen?	"
 
 Um die Gesamtgewichte von Grace und Alex zu bestimmen, gehen wir folgender Schritte vor:
@@ -14466,7 +14466,7 @@ Lösen wir diese Gleichung:
 Grace wiegt also 25,4 Pund, und Alex wiegt \( 4 \times 25,4 - 2 = 100 \) Pund.
 
 Die Gesamtsumme ist \( 25,4 + 100 = 125 \) Pund, was entspricht der gegebenen Bedingung.
-"	stop
+"	stop	125.0	0	0	126.4	0
 q792b7ea9	Dan plant 3 Rausenbüsche. Jede Rausenbusch hett 25 Rausen. Jede Rause hett 8 Dornen. Wo veele Dornen sünd dat insgesamt?	"
 
 **Lösung:**
@@ -14495,7 +14495,7 @@ Jede Rausen hett 8 Dornen.
 Daher, 75 Rausen × 8 Dornen/Rausen = 600 Dornen.
 
 Also, insgesamt sind 600 Dornen geplant.
-"	stop
+"	stop	600.0	0	1		
 q3dfac176	Een Footballteam speelt 22 Speele. Se hebbt 8 mehr wunnen as verloren. Wo veele hebbt se wunnen?	"
 
 Dit is vredig te sien dat die Eeen Footballteam speelt 22 speeele en se wunnen are 8. Om die mate van wunne te bereken, sal die volgende stel:
@@ -14506,7 +14506,7 @@ Dit is vredig te sien dat die Eeen Footballteam speelt 22 speeele en se wunnen a
 
 **Antwort:** Die Eeen Footballteam wunnet 14 speeele."	15	"
 Zo, ik ga de oplossing van die speelwurzel van die Eeen Footballteam out. Die speel is 22 speeele, en se hebbt 8 wunnen as verloren. Dus, deur hierdie gegelede waardes, wat 8 is, vorm ik die mate van wunnen by 22. Dat sal die mate van wunnen by 22-8=14 wunnen. Die antwort moeite is 14.
-"	stop
+"	stop	14.0	0	0	14	0
 qc8e2bf9d	Eugen neiht een Quilt ut olle Souvenir-T-Shirts. He hett vun jeden Urlaub, den he maokt hett, een T-Shirt. Jedet Johr föiert he veer maol in Urlaub. Mit de Tradition hett he anfangen in dat Johr, as he 23 worrn is, un he hett för jedet Johr bit, aver nich mit, dat aktuelle Johr T-Shirts sammelt. Nu is he 34. Wo veele Quilt-Blöcke hett he insgesamt?	"
 
 ```
@@ -16379,7 +16379,7 @@ Naar hetantwoord de sommatie van de waardeel en de basis waardoor de sommatie wa
 Naar het antredoor de sommatie van de sommatie waardoor de sommatie waardoor de sommatie van de waardeelwaardoor de sommatie van alle wade .
 
 ```
-"	length
+"	length		0	0		0
 q87073282	Greg hett een Wecker stellt, de dree maol an'n dag as Erinnerung klingelt. Wenn he losgeiht, klingelt he so lang, bit Greg em utmaokt. Vondaoge bi't eerste Maol hett he veer maol klingelt. Bi't tweete Maol hett he dree maol so lang klingelt as bi't eerste. Bi't drütte maol hett he halv so lang klingelt as bi't tweete. Wo faoken hett de Wecker insgesamt klingelt?	"
 
 The total time Greg waits for his message to be answered is 1.75 minutes, which is 1 minute and 45 seconds.
@@ -16429,7 +16429,7 @@ Let's assign variables. Let the time for the first tweet be x minutes. Then, the
 Wait, but the problem doesn't give specific times for each tweet, just that the dree takes half the time of the first tweet and the drute takes half the time of the dree. So, it's 1 + 0.5 + 0.25 = 1.75 minutes. So, the total time Greg waits is 1.75 minutes.
 
 I think that's it. So, the answer is 1.75 minutes, which is 1 minute and 45 seconds. But since the question asks how much time Greg waits, I can just write it as 1.75 minutes or 1 min 45 sec.
-"	stop
+"	stop	45.0	0	0	1.75	0
 qe293b5e8	Een Firma betaohlt ehr Mitarbeiter een Anfangsgehalt vun 600 Dollar pro Monat. De Firma belohnt Lüü, de lang dor arbeidt: No fief Dienstjohre wet dat Gehalt jedet Johr erhöht. Disse jöhrlicke Erhöhung is jümmers een fasten Betrag, nämlich 10 % vun ehr anfängliche Johresgehalt. Wenn Sylvie jüst ehr fiefte Johr in de Firma afslaten hett, wo hoog is ehr Jahresgehalt, na dat se noch dree Johren dor arbeidt hett?	"
 
 **Solution:**
@@ -16471,7 +16471,7 @@ Next, I'll calculate the increase for the first year. A 10% increase on \$7,200 
 For the subsequent three years, Sylvie's annual salary remains at \$7,200 without any increases. Therefore, her total salary over the four-year period is \$7,200 multiplied by 4, which equals \$28,800.
 
 Finally, to find her total earnings, I'll add the salary from the first year (\$7,920) to the three-year salary (\$28,800), totaling \$36,720.
-"	stop
+"	stop	29520.0	0	0	29520	0
 qb9e657cf	Marilyn ehr eerste Platte is 10-mal so faoken verköfft worrn as Harald sien. Tosaomen hebbt se 88.000 Exemplare verköfft. Wo veele Exemplare hett Harald verköfft?	"
 
 **Step-by-Step Explanation:**
@@ -16501,7 +16501,7 @@ The question is asking how many plates Verkoffnet has when Harald verkoffmt 10 m
 From the clues, it seems that Verkoffnet has a total of 98,000 plates, and Verkoffnet verkoffmt 10 mal so faoken adds 10,000 more plates, totaling 98,000 + 10,000 = 108,000 plates. However, the clue about Tosaomen verkoffting 88,000 Exemplare might indicate that Verkoffnet only has 88,000 plates. This inconsistency suggests there might be a misunderstanding or a typo in the clues.
 
 Given the confusion, I'll assume that Verkoffnet has a total of 98,000 plates, and the additional 10,000 plates from Verkoffnet verkoffmt 10 mal so faoken would make it 108,000. But since Tosaomen has 88,000, I'll adjust accordingly, leading to Verkoffnet having 88,000 + 10,000 = 98,000 plates.
-"	stop
+"	stop	98000.0	0	0	98000	0
 q8d6c3ac8	Christina hett 16 Frünnen to ehr Geburtsdagsfest inlaoden. Se reekt dormit, dat bloos 75 % dorvan kaomt, un maokt för jeden erwarteten Gast eene Geschenktuten. Wenn jede Geschenktuten $2 kost, wo hoog sünd de Gesamtkosten?	"
 
 **Lösung:**
@@ -16537,7 +16537,7 @@ Schritt 2: Bestimme die Gesamtkosten für die dorvan kamen Frünen.
 12 Frünen × 2 Euro pro Gast = 24 Euro.
 
 Also, die Gesamtkosten sind 24 Euro.
-"	stop
+"	stop	2.0	0	0	24	1
 qa59fef67	Ted de T-Rex will tüvelkensaloat to't Dinopicknick mitbringen. He weet, dat een erwachsenen Dinosaurier 10 Pund tüvelkensaloat itt, un een Jungtier halv so veel as een Grooten. Wenn 20 Groote un 5 Junge bi't Picknick sünd, wo veel tüvelkensaloat mutt Ted mitbringen, dormit all satt werrt?	"
 
 Onder de oplossing:
@@ -16565,7 +16565,7 @@ Ondersteel ik dit als Grooter = 10 Pund, en Jungtier = 5 Pund. Dat zorgt erversc
 Dan moet ik dit 10 Pund per Grooter vermenigvuldigen. Dat betekende dat 20 Groote 20*10=200 Pund, en 5 Junge 5*5=25 Pund. Dat tot 225 Pund. Dan moet ik dit 10 Pund per Grooter vermenigvuldigen, wat 225/10=22,5 Pund. 
 
 Ik verifieer dit op de volledige oplossing: 20 Groote = 200 Pund, 5 Junge =25 Pund, tot 225 Pund. Dan de verhoudingen: 225/20=11.25, 225/5=45. Dat is half van 90, wat betekent dat 20 Groote 11.25 Pund, en 5 Junge 45 Pund. Dat is correct. Dat zorgt erverschijn voor dat 225 Pund, of 22,5 Pund, Ted de T-Rex zou tüvelkensaloat.
-"	stop
+"	stop	225.0	0	1		
 q4db223a4	Jan hett dree maol so veele Huustiere as Marcia. Marcia hett twee Huustiere mehr as Cindy. Wenn Cindy veer Huustiere hett, wo veele Huustiere hebbt se all dree tosaomen?	"
 
 Veele gets a dog when Cindy has one, making the total number of dogs three. So the answer is that veele gets a dog.
@@ -16592,7 +16592,7 @@ I'm not entirely sure, but I think the answer is that veele gets a dog when Cind
 Wait, but the riddle says ""where does veele hebbt se all dree tosaomen."" Maybe it's about the three dogs together. So when Cindy has a dog, veele also has one, making it three together.
 
 Yeah, that makes sense. So the answer is that veele gets a dog when Cindy does, making the total number of dogs three. So the riddle is playing on the idea that the names correspond to the dogs, and the riddle is about the dogs together.
-"	stop
+"	stop		0	0	3	0
 q2ae0bd70	Emily hett 4 Kinner, de Amy, Jackson, Corey un James heet. Amy is 5 Johr öller as Jackson un 2 Johr jünger as Corey. Wenn James 10 Johr old is un 1 Johr jünger as Corey, wo old is Jackson denn?	"
 
 When James is 10 years old, he is 1 year younger than Corey, making Corey 11. Since Amy is 5 years younger than Jackson, and Amy is 2 years younger than Corey, Amy is 9 and Jackson is 14. Therefore, Jackson is 14 years old when James is 10. 
@@ -16652,7 +16652,7 @@ So, when James is 10, he's 1 year younger than Corey, who is 11, Amy is 9, and J
 But wait, let me make sure. If James is 10, and he's 1 year younger than Corey, that makes Corey 11. Amy is 5 years younger than Jackson, so if Amy is 9, Jackson is 14. So, yes, Jackson is 14 when James is 10.
 
 I think that's the answer.
-"	stop
+"	stop	10.0	0	0	14	0
 q412bff21	Lee kunn de 400 Meter Hürden twee Sekunden schneller loopen as Gerald de 400 Meter Hürden löppt. Gerald hett aover sien Ernährung ännert, un dorüm is sien Geschwindigkeit üm 10 % beter worrn. Wenn Lee de 400 Meter Hürden in 38 Sekunden löppt, in wo veele Sekunden kann Gerald denn mit sien betere Ernährung de 400 Meter Hürden loopen?	"
 
 **Lösung:**
@@ -16676,7 +16676,7 @@ q412bff21	Lee kunn de 400 Meter Hürden twee Sekunden schneller loopen as Gerald
 \boxed{39,6\ \text{ Sekunden}}
 \]"	36	"
 Lee kunn 400 Meter Loopen in 38 Sekunden, terne Gerald 400 Meter Loopen in 40 Sekunden. Lee loopt 2 Sekunden vwo gittern, terne Gerald 10% vwo gittern. Lee kunn 400 Meter Loopen in 38 Sekunden, terne Gerald 40 Sekunden.
-"	stop
+"	stop	10.1	0	0	39.6	0
 qf73a338f	In een Naohberschapp is de Antaoll vun Kanickel as Huustier twölf weniger as de Tall vun Hunnen un Katten tosaomen. Wenn up jede Hunn twee Katten kaomt un dor 60 Hunnen sünd, wo veele Huustiere gifft dat denn insgesamt in de Naohberschapp?	"
 
 Zoals ik begrijp, is het follows:
@@ -16707,7 +16707,7 @@ Deoretop, dat de horloop 12 fewer, wat betekent dat de horloop x-12. Dat beteken
 Deoretop, dat de horloop 132, de Tall vun Hunnen en Katten 132-12 = 120. Dat betekent dat het maximum aantal Huustiere dat het in de Naohberschapp zou gifft 120 + 132 = 252.
 
 Deoretop, dat dit resultaat 252, wat betekent dat het maximum aantal Huustiere dat het in de Naohberschapp zou gifft 252.
-"	stop
+"	stop	252.0	0	0	252	0
 qc5273098	Vun de 200 Fiefklässler sünd 2/5 Jungs, un 2/3 vun de wichter sünd bi de Pfadfinderinnen. Wo veele wichter sünd nich bi de Pfadfinderinnen?	"
 
 Um die Anzahl der 200 Vun de 200 Fiefklässler, die nich bi de Pfadfinderinnen sünd, zu bestimmen, gehen wir wie folgt vor:
@@ -16745,7 +16745,7 @@ Nun berechnen wir die Anzahl der Jungen und wichter, die bi den Pfadfinderinnen 
 Um die Anzahl der wichter, die nich bi den Pfadfinderinnen sünd, zu bestimmen, subtrahieren wir die Anzahl der Jungen und wichter, die bi den Pfadfinderinnen sünd, von der Gesamtzahl der Fiefklässler. 
 
 Schließlich ermitteln wir, dass 87 Vun die 200 Fiefklässler wichter sünd nich bi de Pfadfinderinnen.
-"	stop
+"	stop	133.0	0	0	133	0
 qf8da7966	Harry hett leste Nacht 9 Stunnen slaopen. Sien Fründ James hett bloos 2/3 vun de Tied slaopen, de Harry slaopen hett. Wo veele Stunnen mehr hett Harry slaopen as James?	"
 
 **Lösung:**
@@ -16786,7 +16786,7 @@ Dann berechne ich die Stunnen, die Harry hat: 9 mal 1/3 = 3 Stunnen.
 Um die Stunnen, die Harry hat, von der Stunnen, die James hat zu vergleichen, dividiere 3 durch 6, was 0,5 oder 50% ergibt.
 
 Also hat Harry 50% der Stunnen, als Compared mit James, der 60% hat.
-"	stop
+"	stop	3.0	0	1		
 q186d2aa2	Wenn Freda Doisentomaten to Soße koakt, verleert se de Hälfte vun ehr Gewicht. In jede 16-Unzen-Doisen Tomaten, de se bruukt, sünd dree Tomaten. De leste Portion Tomatensoße hett 32 Unzen Soße geven. Wo veele Tomaten hett Freda bruukt?	"
 
 Um das Problem zu lösen, analysieren wir die gegebenen Werte Schritt für Schritt.
@@ -16919,7 +16919,7 @@ Dann berechne die Gesamtmenge Tomaten, die aus 80% der Tomaten bestehenden. 80% 
 Dann berechne die Gesamtmenge Soße. 12,8 Unzen Tomaten mit einer rate von 2 Soße pro Unzen ergibt 25,6 Soße.
 
 Somit verlies Freda 25,6 Soße.
-"	stop
+"	stop	80.0	1	0	80	0
 q9c762a15	Up de Autobahn stoaht Autos in een Rieg. Een poar Autos kaomt in de ersten 15 Minuten vun'n Stau dör, dornao kaomt noch 20 mehr Autos in de överbleven 15 Minuten dör. 5 Autos foiert ut de Rieg rut, dormit se nich dör'n Stau mööt. Wenn an'n Anfang 30 Autos up de Autobahn stünnen, wo veele Autos sünd denn in de ersten 15 Minuten dör'n Stau kaomen?	"
 
 Dari de afhaf afzaman de afhaf afhaf. De afmetingen van de Rieg en de Stau nö na de afhaf afzins afhaf.
@@ -18749,7 +18749,7 @@ De auten stappen in de volgende manier versterken:
 \boxed{\textbf{} van de afhaf afzins afhaf. afhangering
 
 \boxed{\text{Afmetingen van de Rieg en de Stau nö na de afhaf afhaf.}
-"	length
+"	length		0	0		0
 q507804db	Mary is mit Lief un Seel Görnerin. Gistern hett se 18 neie Pottplanten vun ehr Lieblingsgörnerei kregen. Se hett al 2 Pottplanten up jede vun de 40 Fenstersimse in ehr groote Landhuus. Se is großzügig un will morgen vun jede Fenstersims 1 Pottplant an Frünnen un Familie verschenken. Wo veele Pottplanten blievt Mary över?	"
 
 Mengen \( x \) Pottplanten verlihen Mary über den ersten Tag, den 2 Tagen nach, also insgesamt **3 Tage**, also die **6 Tagend**.
@@ -18795,7 +18795,7 @@ Next, I calculate how many Pottplanten each Fenstersim had during the first week
 Then, I consider the weekly distribution for the next two weeks. The problem mentions that Mary is mit Lief un Seel Görner, which I assume means Mary is the Gistern and Lief is the Ehr. It also states that each Fenstersim gets 1 Pottplanten per day over the next two weeks. Therefore, I multiply the number of Fenstersim by the number of days (14) to find the total number of Pottplanten distributed during the next two weeks.
 
 Finally, I subtract the total number of Pottplanten distributed over the first three days (1 week and 2 weeks) from the original total to determine how many Pottplanten remain for Mary to distribute.
-"	stop
+"	stop	2.0	0	0	3	0
 q120898cb	Jerome harr an een dag 4 Frünnen to Besöök. De eerste Fründ drückte 20 Maol up de Dörklingel, ehe Jerome opmaokt hett. De tweete Fründ drückte 125 % so faoken up de Klingel as de eerste. De drütte Fründ drückte 10 Mal faoken mehr as de veerte Fründ. Wenn de veerte Fründ 60 Mal up de Dörklingel drückte, wo faoken hett de Dörklingel insgesamt klingelt?	"
 
 Het antwoorden zijn gegeven. Hier zijn de exacte waardes:
@@ -18820,7 +18820,7 @@ Het antwoorden zijn gegeven. Hier zijn de exacte waardes:
 \boxed{115}
 \]"	175	"
 Ik begrijp dat de oplossing van dit opgave bestond uit verwerpen van percentages en exacte waardes. Deze verhoudingen zijn van belang, om de oplossing correct te keepen. Daarop de haakjes versterken, zodat de verhoudingen precies benaderd worden, zodat er zowel exact als mogelijk results zijn. De oplossing bestaat uit de som van de exacte waardes die alle opgaven be Antwoorden gegeven.
-"	stop
+"	stop	20.0	0	0	115	0
 q55e446ec	Solo mutt 4 Sieten ut sien Naturwissenschaftsbaok leesen, 20 Sieten ut sien Gemeinschaftskundebaok, 7 Sieten ut sien Geschichtsbaok un 8 Sieten ut sien Geografiebaok. An'n Mondag leest Solo 15 Sieten. Wenn he noch 4 daoge hett, üm allens to leesen, wo veele Sieten mutt he denn in Dörschnitt pro dag leesen?	"
 
 Solo reads 39 sections each day to the Dörschnitt, where he can read from multiple categories, but he is allocated to read a specific number of sections from each category each day. On Monday, he read 15 sections, which could be from different categories, and if he still had 4 sections left in a category, he would read all of them in the Dörschnitt.
@@ -19136,7 +19136,7 @@ The Dörschnitt is a reading room where solo can read from multiple categories e
 Therefore, the Dörschnitt is where solo can read from multiple categories each day, but solo is allocated to read a certain number of sections from each category each day. So, on Monday, he read 15 sections, which could be from different categories, and if he still has 4 sections left in a category, he will read all of them in the Dörschnitt.
 
 I think that's the answer.
-"	stop
+"	stop	39.0	0	0		0
 qe178e77b	John drinkt to't Fröihstück, Middageten un Obendeten geern een Glas waoter. Vör't Tobeddegoahn drinkt he ok noch een. Dat maokt John jeden Werkdag, aover an't weekend maokt he dat entspannt un drinkt to't Obendeten statt waoter een Glas Limonade. Wo veele Glöser waoter drinkt John in een weeken?	"
 
 Gegeelwet:
@@ -19159,7 +19159,7 @@ Zij het gegeelwet te benaderen, waardoor John deze oplossing bepaalt.
 Deze oplossing bepaalt dat John in een onevendag, aover een weekend, en in een derde onevendag, deze vorming, dat John in een dagelijkse week en in een weeken deze vorming. Deze vorming bestaat vanaf John vormen en veranderen de waarden van de gegeelwet in de gegeelvorm tenaallyzende.
 
 Deze oplossing bepaalt dat John in een weeken deze vorming, dat John vormen en veranderen de waarden van de gegeelwet in de gegeelvorm tenaallyzende. 
-"	stop
+"	stop		0	0		0
 q13dd2b3f	Een Näbelschleier treckt vun de Sei över een Stadt. He bruukt 10 Minuten för jeweils 3 Meilen vun de Stadt to bedecken. Wenn de Stadt vun de Küste bit nao de annere Siete in't Binnenland 42 Meilen brejd is, wo veele Minuten bruukt de Näbel, bit he över de ganze Stadt liggt?	"
 
 Um den **Mindeststandort** zu berechnen, mit dem die **Een Näbelschleier** die Stadt overgenomen muss, folgen wir die Schritte Schritt für Schritt:
@@ -19211,7 +19211,7 @@ Um den Mindeststandort zu berechnen, mit dem die Een Näbelschleier die Stadt ov
 5. **Verzehn des Minimalstandorters**: Der verzaendert sich die Stelle um 7 Stellen, was zu 3 + 7 = 10 Stellen in der Stadt vortreutet.
 
 6. **Mindeststandort**: Die Een Näbelschleier braucht also 10 Minuten für 10 Stellen, was ergibt 10 Meilen für den verzehnten Standort.
-"	stop
+"	stop	42.0	0	0	10	0
 q5d8678a9	Poppy maokt een Puzzle mit 1000 Deile. Se leggt een Viddel vun de Deile up't Bredde, dornao leggt ehr Mama een Drüddel vun de överbleven Deile. Wo veele Puzzledeile mööt noch leggt werrn?	"
 
 Poppy might not be able to add more puzzle pieces because the bread isn't holding them, or the pieces are too small or don't fit. He should adjust the size of the bread or try placing the pieces differently."	500	"
@@ -19236,7 +19236,7 @@ I should suggest that Poppy could try adding more pieces where the bread doesn't
 I should also consider if the puzzle is meant to be a standalone piece, and maybe he's trying to make a larger puzzle by adding more pieces, but the pieces are too small or don't fit.
 
 In any case, the main point is that Poppy isn't adding more pieces because the bread isn't holding them, or the pieces are too small or don't fit, so he needs to adjust accordingly.
-"	stop
+"	stop		0	0		0
 q10c23d37	Cody itt dree maol mehr Kekse as Amir. Wenn Amir 5 Kekse itt, wo veele Kekse aett se denn tosaomen?	"
 
 Amir has more Kekse than she should, and it's all messed up because she's not eating it properly or because she's having too much.
@@ -19253,7 +19253,7 @@ Looking at the first part, ""I have three Kekse."" It might be a play on words. 
 Wait, but I'm not entirely sure. Let me think again. The riddle is a bit like the ""I have two cats, but they're not mine"" kind of trick. So, perhaps it's about the word ""more"" in a play on words. Maybe ""more Kekse"" means she's overdoing it, making it all messed up.
 
 Yes, that makes sense. So, the answer is that Amir has more Kekse than she should, and it's all messed up because she's not eating it properly or because she's having too much.
-"	stop
+"	stop		0	0		0
 q71246a09	John hett 3 Kisten. Jede Kiste is 5 Inch maol 6 Inch maol 4 Inch groot. De Wände sünd 1 Inch dick. Wo groot is dat Innenvolumen vun all 3 Kisten tosaomen?	"
 
 The total innenvolumen (volume) of all three Kistens is 360 cubic inches. 
@@ -19296,7 +19296,7 @@ Wait, but the Wande is 1 inch thick. Does that affect the volume? If the Wande i
 Alternatively, if the Wande is part of the structure, maybe we need to consider the space around the Kistens. But since the question is about the Kistens, I think the total volume is just the sum of their individual volumes. 
 
 So, 120 × 3 is definitely 360 cubic inches. That makes sense. I don't think the Wande's thickness affects the Kistens' volume. Unless the Wande is part of the container, but the question is about the Kistens, so I'll stick with the 360 cubic inches.
-"	stop
+"	stop	360.0	0	0	360	0
 q51ea4378	Frankie kiekt jeden Obend, nao dat he sien Huusupgaoben maokt hett, TV. An'n Mondag un Dingesdag hett he jeweils een 1-stünnige Folge vun sien Lieblingssendung kaeken. An'n Middeweeken hett he een poar Folgen vun een 30-minütige Sendung kaeken. An'n Dönnerdag wör he fröiher mit de Huusupgoben fardig un hett een 1-stünnige Folge un een 30-minütige Show kaeken. An'n Freidag dröff he waegen't Weekend länger upblieben un hett twee 1-stündige Folgen kaeken. Wenn he insgesamt 7 Stunnen TV kaeken hett, wo veele 30 Minuten lange Folgen hett he denn an'n Middeweeken kaeken?	"
 
 An'n Middeweek hett he 0 30-minütige Folgen kaeken."	3	"
@@ -19411,7 +19411,7 @@ I think the answer is that he watches zero 30-minute news segments on Tuesday, b
 Wait, maybe the problem is that he watches 7 minutes of TV during the week, but on Monday, he watches 1 minute, on Tuesday 30, on Wednesday 30, on Thursday 1, and on Friday 30. But that's 91 minutes, so he can't watch 7 minutes. So, maybe the answer is that he watches zero 30-minute news segments on Tuesday, but that's not correct.
 
 I think I'm stuck. Maybe the answer is zero, but I'm not sure.
-"	stop
+"	stop	30.0	0	0	0	0
 qe465613a	Henry backt Kekse för een regionalen Backwettbewerb. He will twee maol so veele backen as leste Johr. As he fardig is, markt he, dat he 15 Kekse mehr backt hett as he eigentlich wull. Bi't Rutstellen to'n Afköhlen lett he 5 Kekse faalen un hett nu insgesamt 110 Kekse. Wo veele Kekse hett Henry lestet Johr backt?	"
 
 De oplossing van de opgave is opgezet als volgt:
@@ -19464,7 +19464,7 @@ Kort de oplossing van de opgave:
    - 25 Kekse / 15 Kekse = 1,666..., drie-zelfdriehonderd.
 
 **Antwoord**: Henry lestet Johr backt 3,666 Kekse, drie-zelfdriehonderd.
-"	stop
+"	stop	3666.0	0	0	3666	0
 q1e0f8fcb	Een Tankstell in'n Ort verköfft Benzin för 3,00 $ de Gallone. Een App-Firma gifft 0,20 $ Cashback pro Gallone, wenn du dor tankst. Wenn eener 10 Gallonen Benzin köfft, wo veel kost dat Benzin nao de Cashback-Prämie? Gaev diene Antwort in Dollar an.	"
 
 **Lösung:**
@@ -19513,7 +19513,7 @@ Da der Cashback nur auf Minde 10 Gallonen angewendet wird, setze ich das in das 
 30,00 Dollar + 2,00 Dollar Cashback = 32,00 Dollar
 
 Daher kostet es 32,00 Dollar für 10 Gallonen Benzin.
-"	stop
+"	stop	3.0	0	0	32	0
 q91fe6f6e	Marcell un Beatrice maokt een Wettkampf, wer de meisten Fruchtrollen eten kann, un rollt all ut, de se finnen könnt. Leider maokt een een Faehler: Beatrice ehr wör twee Rollen breid un 24 Rollen lang, Marcell sien 3 Rollen breid un 14 Rollen lang. Wenn beide ehr ganze Menge ett, wo veele hebbt se denn im Dörchschnitt eten?		45	"
 Oke, ik moet dit oplossing maken. Let me versterken dat ik de problem opvloet begrijp en de antwoorden benodig drie manieren. First, ik begrijp dat de oplossing via basisvorming, via verhoudingen en via de verhoudingen via de verhoudingen via de verhoudingen. 
 
@@ -21397,7 +21397,7 @@ Ik begri p dat ik de gemate verhoudingen via de verhoudingen via de verhoudingen
 
 Ik begri p dat ik de gemate verhoudingen via de verhoudingen via de verhoudingen. 
 
-Ik begri p dat ik de gemate verhoudingen via de verhoudingen via de verhoudingen."	stop
+Ik begri p dat ik de gemate verhoudingen via de verhoudingen via de verhoudingen."	stop		0	0		0
 q76afc2ba	Julia ehr Boot harr een Leck, as se buten up'n Sei wör. För alle teihn Fuß, de se torügge nao't Ufer rudert is, kreeg dat Boot twee Liter Water binnen. Se bruukte sösteen Sekunden för twintig Fuß. De Strand weer 64 Sekunden weg. Wo veel Water harr dat Boot binnen, as Julia den Strand erreekte?	"
 
 Deze oplossing is gegeven voor de wortelwater dat Boot contains. 
@@ -21448,7 +21448,7 @@ De strand: 64 Sekunden per 100,000 foot
 Deze water is 2 Liter per 100,000 foot × (64 Sekunden / 100,000 foot) = 0,128 Liter
 
 Deze en de strand togethervrijmigen 0,128 + 0,128 = 0,256 Liter water.
-"	stop
+"	stop	64.0	0	0	0.04116	0
 q9c73cd77	Een Klassenruum hett een Taofel, de 4 Lehrers sik deilt, de den Ruum afwesselnd bruukt. Jeder Lehrer hett 2 Ünnerrichtsstunnen an'n dag un bruukt de Taofel in jede Stunn. Wenn de Taofel 3-maol pro Ünnerrichtsstunn afwischt wett, wo faoken wett se denn an'n dag afwischt?	"
 
 Deze oplossing bepaalt de extra tempo dat de instructen het because van hun dagale werking.
@@ -21495,7 +21495,7 @@ So, the answer should be 4 minutes extra each day because the teachers have to h
 Wait, but let me think again. If the theater is in use, each announcement takes 3 minutes, so 2 announcements take 6 minutes. If they handle it without the theater being in use, maybe they take less time, say 2 minutes. So, the extra time is 6 - 2 = 4 minutes per day.
 
 Yes, that makes sense. So, the extra time the teachers have because of their daily work is 4 minutes each day.
-"	stop
+"	stop	4.0	0	0	4	0
 q2bbbdc5a	Ryan plant jeden dag 2 Blaomen in sien Goorn. Wo veele Blaomen hett he nao 15 daoge, wenn 5 nich anwossen sünd?	"
 
 Ryan should plant 5 Blaomen."	25	"
@@ -21553,7 +21553,7 @@ I think I'll go with the initial thought: since Ryan plants one dayg for each Bl
 Wait, but the problem also says if Ryan finds 15 daoge, when 5 naiko are planted. Maybe the number of Blaomen is 5 because he plants 5 naiko. So the answer is 5 Blaomen.
 
 I'm not sure, but I think the answer is 5 Blaomen because he plants 5 naiko, which allows him to plant 5 daygs, meaning 5 Blaomen.
-"	stop
+"	stop	5.0	0	0	5	0
 qb65bf453	Jamal sien Handy kann 6-maol mehr Fotos speichern as Brittany ehr Handy. De maximale Taoll vun Fotos up Brittany ehr Handy is 50-maol so hoog as de Taoll vun Vögel up Jamal sien Foto mit de Enten in'n Zoo. Wenn Jamal sien Handy 1.800 Fotos speichern kann, wo veele Enten sünd denn up Jamal sien Foto vun de Enten in'n Zoo?	"
 
 Um den Anzahl der veeilen Enten zu bestimmen, gehen wir Schritt für Schritt vor:
@@ -21595,7 +21595,7 @@ Zuerst bestimmen wir die maximale Höhe der Taoll von den Vöglern auf Jamal sie
 Anschließend berechnen wir die Höhe, die auf Jamal sien Handy veele entzogenen Vöglern es sein können, wenn Jamal sien Handy 1.800 Fotos speichern kann.
 
 Dann Schreiten wir die berechneten Höhen auf die Anzahl der Vöglern ab, um die Anzahl der veeilen Enten zu bestimmen.
-"	stop
+"	stop	1800.0	0	0	1	0
 q62cadf26	Sasha markt, dat de Holtpriese in de lesten poor Monate üm 50 % stägen sünd, siet se Holt köfft hett. Weil se noch Rest över hett, will se dat verkoopen. Se hett teihn 2 x 4 x 10 grote Bretter över, för de se jeweils 10 US-Dollar betaohlt hett. Se hett uk noch fief 4 x 4 x 10 Bretter, de jeweils 16 US-Dollar kost hebbt. Wenn se allens verköfft, wo veel Gewinn maokt se?	"
 
 **Solution:**
@@ -21633,7 +21633,7 @@ First, I need to determine the total cost of the 2x4x10 bricks. Each brick costs
 Next, I'll calculate the revenue from selling the bricks. Each brick is sold for 24 US dollars. Therefore, 20 bricks multiplied by 24 US dollars each equals 480 US dollars.
 
 Finally, to find the profit, I'll subtract the total cost from the total revenue: 480 US dollars minus 200 US dollars equals a profit of 280 US dollars.
-"	stop
+"	stop	10.0	0	0	280	0
 q6637faea	Katy maokt Kaffee un bruukt Teilöpel Zucker un Tassen Waoter in't Verhältnis 7:13. Wenn se insgesamt 120 Teilöpel Zucker un Tassen Waoter bruukt hett, rek ut, wo veele Teilöpel Zucker se bruukt hett.	"
 
 **Lösung:**
@@ -21686,7 +21686,7 @@ Mithilfe von Bruchrechnung erhalte ich, dass Katy 120 * (7 / 20) = 42 Teile und 
 Falls es eine Specifikationsbedingung gibt, dass Katy or Katya Specificallyierungen oder Bedeutungen haben, muss ich diese informationlessly voraussetzen.
 
 Zusammenfassend erhalte ich, dass Katy 42 Teile und Katya 78 Teile useiten.
-"	stop
+"	stop	3.0	0	0	78	0
 q7c7b8736	John köfft för jeden vun sien 3 Kinner 2 Poor Schaoh. Se kost 60 US-Dollar pro Poor. Wo veel hett he betaohlt?	"
 
 Jag rätter att räkna med vinst och pengar rätt.
@@ -21719,7 +21719,7 @@ För att räkna med sien, jag har rätt att attkast 3 vun sien per Poor. Därfö
 För att räkna med Schaoh, jag har rätt att attkast 12 Schaoh per Poor. Därför har jag räkna med 12 × 60 = 720 US-Dollar i pengar per Poor.
 
 Vinst är allmåtarens vinst, och pengar är allmåtarens pengar. Få att räkna med de rätta vinst och pengar ger rätt svar.
-"	stop
+"	stop	960.0	0	0	960	0
 q8f663843	Een Zollbeamter an'n Haupthaven vun de SeaSide Zollabfertigung hett 2 Container mit importeerte Autos tellt, mit jeweils 5 Autos dorin. An'n nächsten dag köamen mehr Container an, un de Taoll vun Autos an'n Haven stiggt up 30. Rek ut, wo veele Container an'n tweeten dag importeert worrn sünd, wenn in jede Container 5 Autos sünd.	"
 
 Um den optimalen Verkaufstyp zu bestimmen, vergleichen wir die Anzahl der Container pro Autom in zwei Datensätzen:
@@ -21766,7 +21766,7 @@ Dann teile ich die Containercount durch den Automscount:
 2,4 / 5,5 ≈ 0,436 Container pro Autom.
 
 Da die First Container die geringere average Container pro Autom erreichen, ist sie die optimale Verkaufstyp.
-"	stop
+"	stop	5.0	0	0		0
 q6edb8d49	Lylah ehr Gesamtgehalt wör 30 Prozent deiper as Adrien sien. Veer Johr löter wör Adrien sien Gehalt stägen, un he verdeende 40 % mehr as dat, wat he vör veer Johr verdeende. Wenn Adrien un Lylah ehr Gehälter to de glieke Tied stägen sünd un Adrien vör veer Johr $40000 verdeent hett, rek dat Gesamtgehalt ut, dat se beide veer Johr löter kregen hebt. Geev de Antwort in Dollar an.	"
 
 **Lösung:**
@@ -21802,7 +21802,7 @@ Zuerst analysiere ich die gegebene Information, um den verlangten Parameter zu f
 Adrien hat 400.000 Dollar verlangt, die durch die 70% des Gesamtgehlers verdiest. Setze ich diese Werte in die Gleichung ein, ergibt 400.000 = 0,70x. Lass uns die Gleichung lösen, um den Gesamtgehalt x zu finden.
 
 Ersetze 0,70 durch 7/10, um eine cleanerere Darstellung zu erhalten. Ln des Gleiches obtaining 400.000 = (7/10)x, löse ich nach x auf, indem ich Both Seiten des Gleiches mit 10/7 multipliziere. Die rechne ich out und erhalte den Gesamtgehalt in Dollar.
-"	stop
+"	stop	4.0	0	0	571.43	0
 q1b1c6563	Miguel bruukt för't Teiken 2 Teikenblöcke in de weeken. Wenn een Teikenblock 30 Blatt Papier hett, wo veele Blatt Papier bruukt he in een Monat?	"
 
 **Oplossing:**
@@ -21827,7 +21827,7 @@ q1b1c6563	Miguel bruukt för't Teiken 2 Teikenblöcke in de weeken. Wenn een Tei
 **Uit Conclusion:**  
 Miguel brukt **\boxed{150}** papierblattjes per week."	240	"
 De Miguel bruikt 30 papierblattjes per week, want每一 er 30 papierblattjes. In een maat van een maandag tot zaterdag is dat 4 daardoor 4 × 30 = 120 papierblattjes. Dus, in een maat van een week, is het 30 × 7 = 210 papierblattjes.
-"	stop
+"	stop	150.0	0	0	150	0
 qdda5aad8	Morisette un Kael schullen Obst mitbringen. Morisette bröchte 5 Appels un 8 Appelsinen mit, un Kael bröchte dubbel so veele Appels un halb so veele Appelsinen as Morisette. Wo vele Früchte hebbt se tosaomen?	"
 
 Um den Gesamtanzahl der Früchte zu berechnen, broken wir die Aufgaben auf:
@@ -21855,7 +21855,7 @@ Zuerst identifiziere ich die Anzahlen, die Morisette und Kael b centralieren. Mo
 Dann berechne ich die Gesamtanzahlen. Morisette hat 5 + 5 = 10 Appels. Kael hat 10 + 5 = 15 Appels. Morisette hat 8 + 4 = 12 Appelsinen. Kael hat 6 + 4 = 10 Appelsinen.
 
 Der Gesamtamount der Früchte ist die Summe aus den Appels und Appelsinen, also 10 + 15 + 12 + 10 = 47.
-"	stop
+"	stop	27.0	0	1		
 qbe882310	Sadie hett an'n Mondag 8 Stunnen slaopen. An de nächsten twee daoge hett se jeden dag 2 Stunnen weniger slaopen, weil se noch Upgoben maoken mösste. Wenn se den Rest vun de weeken jede Nacht 1 Stunnen mehr as an disse twee daoge slaopen hett, wo veele Stunnen hett se in de ganze weeken slaopen?	"
 
 Dit tot de weekal Stunnes hett:
@@ -21886,7 +21886,7 @@ On Saturday, de two ge hett 1 Stunne more than on Friday. So, 7 plus 1 equals 8 
 Finally, on Sunday, de two ge hett 1 Stunne more than on Saturday. That's 8 plus 1, which is 9 Stunnes.
 
 Now, to find the total Stunnes hotted in the week, we add up all the nights: 8 (Monday) + 6 (Tuesday) + 5 (Wednesday) + 6 (Thursday) + 7 (Friday) + 8 (Saturday) + 9 (Sunday). This totals 43 Stunnes.
-"	stop
+"	stop	43.0	0	0	43	0
 q5531657c	Rosie kann 3 Stunnen lang mit 10 Meilen pro Stunn loopen. Dornao löppt se 5 Meilen pro Stunn. Wo veele Meilen kann se in 7 Stunnen maoken?	"
 
 **Lösung:**
@@ -21926,7 +21926,7 @@ Dann bestimme ich die Stunne, in denen Dornao in 7 Stunnen lopt.
 Dornao lopt 5 Meilen pro Stunn, also lopt sie in 7 Stunnen \( 5 \times 7 \) Meilen.
 
 Summiere die Meilen, die Rosie und Dornao insgesamt lopt, um die Gesamtmeilen zu berechnen.
-"	stop
+"	stop	1.0	0	0	37.1	0
 qafb91192	Jennie helpt in’t Büro von ehr Mudder. Se hett een Staopel mit 60 Breive, de noch frankeert werrn mööt, un een annern Staopel mit Breive, de al frankeert sünd. Se kleevt Marken up een Drüddel vun de Breive, de noch frankeert werrn mööt. Wenn in den Staopel mit de al frankeerten Breive nu 30 Breive sünd, wo veele Breive wörn dor in den Staopel, as Jennie anfangen hett?	"
 
 Jennie is working on the blue Staopel, which has 60 blue tiles that are still weathered. She cleans these up into a Drüddel (red wine). Now, she looks at the red Staopel, which initially had all 60 red tiles weathered. Therefore, there are 60 red tiles still weathered in the red Staopel.
@@ -22017,4 +22017,4 @@ Wait, but the problem says ""de al frankeert werrn mööt,"" which might mean th
 Alternatively, perhaps the problem is that the red Staopel initially had some weathered tiles, and Jennie is cleaning the blue one, which is a Drüddel. Then, she's looking at the red one and wants to know how many are still weathered, which would be 60 if all were weathered.
 
 I think that's the best way to interpret it. So, the answer is 60 red tiles are still weathered in the red Staopel.
-"	stop
+"	stop	60.0	0	0	60	0
