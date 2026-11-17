@@ -1,0 +1,33 @@
+{
+  "created": "2026-11-17T16:35:17+00:00",
+  "source_files": [
+    "mgsm_basel.tsv",
+    "mgsm_bern.tsv",
+    "mgsm_biel.tsv",
+    "mgsm_entlebuch.tsv",
+    "mgsm_ostaargau_baden.tsv",
+    "mgsm_plattdeutsch_complete.tsv",
+    "mgsm_salzburg.tsv",
+    "mgsm_schwaebisch_complete.tsv",
+    "mgsm_zuerich.tsv"
+  ],
+  "output": "mgsm_german_perturbed.tsv",
+  "questions": 125,
+  "written": 125,
+  "model": {
+    "tag": "kimi-k3.1-pro:cloud",
+    "size": "2812000000000",
+    "quantization": "MXFP4",
+    "ollama_version": "0.40.15"
+  },
+  "options": {
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "num_ctx": 8192,
+    "num_predict": 4096
+  },
+  "system_prompt": "Formuliere die gegebene Aufgabe neu, ohne ihren Inhalt zu verändern. Behalte alle Personen, Orte, Gegenstände, Substantive, Zahlen und mathematischen Beziehungen exakt bei. Erfinde nichts Neues; Satzstruktur, Verben und Adjektive darfst du neu formulieren.\n\nRegeln:\n- Behalte alle Personen, Orte, Gegenstände und Substantive unverändert. Führe keine neuen Personen, Orte, Gegenstände oder Substantive ein.\n- Behalte jede Zahl unverändert bei, egal ob sie als Ziffer oder als Wort geschrieben ist (zum Beispiel \"16\", \"drei\", \"dreimal\", \"die Hälfte\"). Es dürfen keine Zahlen oder Zahlwörter geändert, hinzugefügt oder entfernt werden.\n- Behalte alle mathematischen Beziehungen und die gesuchte Größe exakt bei.\n- Verben und Adjektive darfst du durch bedeutungsgleiche Wörter ersetzen. Sie dürfen die Bedeutung aber nicht verändern (nicht \"verkauft\" zu \"kauft\", nicht \"groß\" zu \"riesig\").\n- Übernimm keine Satzstruktur und keine längeren Formulierungen aus der Vorlage. Jeder Satz muss neu formuliert sein.\n- Beginne mit einem anderen Satz als die Vorlage, ohne neue Personen, Orte oder Gegenstände einzuführen.\n- Ändere die Reihenfolge, in der die Informationen eingeführt werden, und variiere die Satzlänge: Teile lange Sätze auf oder verbinde kurze Sätze.\n- Du darfst Satzteile umstellen, Aktiv und Passiv wechseln sowie Nebensätze bilden oder auflösen. Erfinde dabei keine neuen Inhalte.\n- Formuliere auch die Frage neu. Sie muss nicht mit \"Wie viele ...\" beginnen und nicht am Ende stehen.\n- Füge keine Informationen hinzu, die für die Lösung nötig sind oder sie verändern.\n- Antworte ausschließlich mit der neu formulierten Aufgabe. Keine Einleitung, keine Erklärung, keine Anführungszeichen und kein Markdown.",
+  "user_prompt": "Formuliere die folgende Textaufgabe neu. Ändere die Satzstruktur und die Reihenfolge der Informationen. Verben und Adjektive darfst du durch bedeutungsgleiche Wörter ersetzen. Behalte alle Personen, Orte, Gegenstände, Substantive, Zahlen und mathematischen Beziehungen exakt bei. Erfinde nichts Neues und verändere die Bedeutung nicht.\n\n<aufgabe>\n{question}\n</aufgabe>",
+  "seed": 0,
+  "failures": []
+}

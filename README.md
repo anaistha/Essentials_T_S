@@ -20,6 +20,27 @@ or CSV with a header row and these columns:
 
 The Standard German questions are evaluated once, as the reference `de`.
 
+### Perturbed German questions
+
+`data/dialects/mgsm_german_perturbed.tsv` starts as a copy of the German questions with an empty
+`dialect_question` column. `dialect_bench/perturb.py` fills it with paraphrases made by an Ollama
+cloud model (default `kimi-k3.1-pro:cloud`). The German system prompt asks the model to keep the
+same people, places, objects and nouns, but to change the sentence order and sentence structure.
+Verbs and adjectives may be replaced by meaning-preserving alternatives. All numbers and
+mathematical relationships must stay the same, so the original answers remain valid. The script
+writes the model's response directly; correctness is the prompt's responsibility, not a separate
+check.
+
+```bash
+python -m dialect_bench.perturb --limit 5     # try five questions first
+python -m dialect_bench.perturb               # rewrite the rest; rerunning resumes
+```
+
+The resulting file has the original German in `question` and the paraphrase in `dialect_question`.
+This means a normal run evaluates both the `de` reference and the perturbed variant, so a drop in
+accuracy on `mgsm_german_perturbed` can indicate that a model memorised the original wording.
+Generation settings and the full German prompt are saved in `mgsm_german_perturbed.meta.json`.
+
 ## Running
 
 ```bash

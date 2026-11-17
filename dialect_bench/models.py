@@ -184,16 +184,21 @@ class OllamaModel:
             "ollama_version": requests.get(f"{self.url}/api/version", timeout=60).json().get("version"),
         }
 
-    def ask(self, prompt, thinking=None):
+    def ask(self, prompt, thinking=None, system=None, options=None):
         """Returns the answer, the model's reasoning (None if it didn't think) and why the model stopped:
         "stop" if it finished, "length" if it hit num_predict.
 
-        thinking=None means we let the model decide whether to think.
+        thinking=None means we let the model decide whether to think. system adds an optional system
+        message. options overrides this model's options for one call.
         """
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
         body = {
             "model": self.tag,
-            "messages": [{"role": "user", "content": prompt}],
-            "options": self.options,
+            "messages": messages,
+            "options": options if options is not None else self.options,
             "stream": False,
         }
         # Ollama gives an error if we send "think" to a model that can't think
