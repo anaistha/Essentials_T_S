@@ -106,11 +106,36 @@ The answer comes from `predicted`, not `done_reason`: `done_reason` only records
 (`stop`/`length`) and never contains the answer. Number formats such as `1'430`, `7'425,00` and `$20` are
 handled.
 
-The script prints a summary per model and thinking mode and writes two files next to the `--summary` path
+### LLM re-check
+
+Regex sometimes picks a number that is not the model's real final answer. With `--llm`, an Ollama model
+re-reads every row where `correct` is 0 and writes two more columns:
+
+| column | meaning |
+|---|---|
+| `llm_answer` | the final answer the judge found (empty if it found none) |
+| `llm_correct` | 1 if `llm_answer` matches `gt_answer`, 0 if not, empty if the row was not judged |
+
+```bash
+python -m dialect_bench.eval --llm                    # judge with gemma4:31b-cloud
+python -m dialect_bench.eval --llm --judge-limit 50   # try it on 50 rows first
+python -m dialect_bench.eval --llm --judge-model gpt-oss:120b-cloud
+```
+
+The judge sees the full `predicted` response and is asked for only the final number (or `NONE`). Answers
+are cached in `llm_judge_cache.json`, so an interrupted run continues without asking the same question
+again; `--refresh-judge` ignores the cache. Related options: `--judge-parallel` (default 4),
+`--judge-host` (default `$OLLAMA_HOST` or `127.0.0.1:11434`) and `--judge-limit`.
+
+The summary then shows regex accuracy and accuracy after the judge's corrections. The dialect grids are
+written to `accuracy_by_dialect.tsv` (regex) and `accuracy_by_dialect_llm.tsv` (after corrections).
+
+The script prints a summary per model and thinking mode and writes these files next to the `--summary` path
 (`answer_summary.tsv` by default):
 
-- `answer_summary.tsv`: rows, answered, scored, correct, accuracy, looping count and percentage.
-- `accuracy_by_dialect.tsv`: one row per model and thinking mode, one column per dialect plus `de` and `overall`.
+- `answer_summary.tsv`: rows, answered, scored, correct, regex accuracy, LLM-corrected accuracy, looping count and percentage.
+- `accuracy_by_dialect.tsv`: regex accuracy, one row per model and thinking mode, one column per dialect plus `de` and `overall`.
+- `accuracy_by_dialect_llm.tsv`: the same grid after the LLM corrections (only written with `--llm`).
 
 Looping responses are marked `degenerate=1` but are still scored as wrong, so a model that fails to
 produce an answer is visible in the accuracy instead of being dropped.

@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	D'Enta von d'r Janet legat 16 Eier am Tag. Morgens zum Frühschtück isst se drei, und vier nimmt se jeden Dag zum Muffinsbacka für ihre Freind. Was iebrig bleibt, verkauft se jeden Tag auf em Bauramarkt für 2 US-Dollar pro frischem Entenei. Wia viel Dollar nimmt se jeden Tag auf em Bauramarkt ei?	"
 
 **Lösung:**
@@ -28,7 +28,7 @@ Zuerst bestimme ich die Anzahl der Eier, die täglich verbraucht werden. Janet l
 Anschließend berechne ich die verbleibenden Eier. Von den 16 Eiern ziehe ich die 7 verbrauchten ab, was 9 verbleibende Eier ergibt.
 
 Da Janet die verbleibenden 9 Eier täglich auf dem Bauemarkt verkauft und pro Ei 2 US-Dollar erhält, multipliziere ich 9 mit 2. Das Ergebnis ist 18 US-Dollar, die sie täglich verdienen.
-"	stop
+"	stop	2.0	0	0	18	1
 qa55f7050	Für a Kleid braucht ma 2 Knäuel blaue Wolle und halb so viel weiße Wolle. Wia viele Knäuel braucht ma insgesamt?	"
 
 **Lösung:**
@@ -57,7 +57,7 @@ Zuerst bestimme ich die benötigte blaue Wolle. Für das Kleid sind 2 Knäuel be
 Anschließend berechne ich die benötigte weiße Wolle. Da es halb so viel weiße Wolle wie blaue benötigt wird, setze ich 2 Knäuel halb, was 1 Knäuel ergibt.
 
 Schließlich addiere ich die Anzahl der blauen und weißen Knäuel, um die gesamte Anzahl zu erhalten. 2 Knäuel blaue Wolle plus 1 Knäuel weiße Wolle entscheidet sich zu insgesamt 3 Knäuel.
-"	stop
+"	stop	2.0	0	0	3	1
 qde1bef8b	D'r Josh will a Haus kaufa und wieder verkaufa. Er kauft des Haus für $80.000 und steckt danoch $50.000 in Reparatura nei. Dadurch isch dr ursprüngliche Wert vom Haus om 150% gstiega. Wia viel Gewinn hot er in Dollar gmacht?	"
 
 Lass uns Josh's Geschäfte Schritt für Schritt betrachten:
@@ -97,7 +97,7 @@ Zuerst bestimme ich den ursprünglichen Wert des Hauses, der 80.000 USD beträgt
 Der Hauspreis steigt nach den Reparaturen auf 150% des ursprünglichen Wertes, also auf 120.000 USD. 
 
 Josh verkauft das Haus für 120.000 USD und hat dabei eine Gesamtkosten von 130.000 USD. Der Gewinn ergibt sich aus dem Verkaufspreis minus den Gesamtkosten, was zu einem Verlust von 10.000 USD führt.
-"	stop
+"	stop	150.0	0	0	-10000	0
 q568beb1f	Dr James nemmt sich vor, 3-mal pro Woch 3 Kurzschtreckenläufe zu macha. Bei jedem Kurzschtreckenlauf läuft er 60 Meter. Wia viele Meter läuft er insgesamt pro Woche?	"
 
 **Lösung:**
@@ -116,7 +116,7 @@ Zuerst bestimme ich die Anzahl der Läufe pro Woche, also 3 Läufe.
 In jedem Liefert James 60 Meter.
 
 Um die gesamte Strecke pro Woche zu berechnen, multipliziere ich die Anzahl der Läufe mit der Strecke pro Liefert: 3 mal 60 Meter ergibt 180 Meter.
-"	stop
+"	stop	60.0	0	0	180	0
 q84afe4d6	D'Wendi gibt jedem von ihre Hühner jeden Tag drei Tassen gemischtes Hühnerfutter mit Samen, Mehlwürmern und Gemüse, damit se gsund bleibat. Se füttert d'Hühner in drei einzelne Mahlzeita. Morgens gibt se ihrer Hühnerschar 15 Tassen Futter. Nachmittags krieget d'Hühner nomal 25 Tassen Futter. Wia viele Tassen Futter braucht se für d'letzte Mahlzeit vom Tag, wenn d'Wendi 20 Hühner hot?	"
 
 **Lösung:**
@@ -145,7 +145,7 @@ Zuerst bestimme ich die gesamte tägliche Futtermenge für 20 Hühner. Da jedes 
 Anschließend addiere ich die beiden Mahlzeiten, die bereits erfolgt sind: 15 Tassen morgens und 25 Tassen nachmittags, insgesamt also 40 Tassen.
 
 Um die benötigte Futtermenge für die dritte Mahlzeit zu bestimmen, ziehe ich die bereits verbrauchten 40 Tassen von der gesamten täglichen Menge von 60 Tassen ab. Das ergibt 20 Tassen für die letzte Mahlzeit.
-"	stop
+"	stop	20.0	0	1		
 qd07ea681	Dr Kylar isch in a Gschäft ganga, um Gläser für sei neue Wohnung zu kaufa. A Glas koschtet 5 Dollar, aber jedes zweite Glas koschtet bloß 60% vom Preis. Dr Kylar will 16 Gläser kaufa. Wia viel muss er dafür zahla?	"
 
 Dr. Kylar möchte 16 Gläser kaufen. Die Preise für die Gläser sind nach folgendem Schema berechnet:
@@ -183,7 +183,7 @@ Die Gesamtkosten für die normale Gläser betragen 8 × 5 = 40 Dollar.
 Die Gesamtkosten für die Rabatt-Gläser betragen 8 × 3 = 24 Dollar.
 
 Die insgesamt zu zahlenden 40 + 24 = 64 Dollar.
-"	stop
+"	stop	64.0	0	1		
 q912b86d0	Toulouse hot zweimal so viele Schafe wie Charleston. Charleston hot 4-mal so viele Schoaf wie Seattle. Wia viele Schoaf hend Toulouse, Charleston und Seattle zamma, wenn Seattle 20 Schoaf hot?	"
 
 **Lösung:**
@@ -221,7 +221,7 @@ Charleston hat 4-mal so viele Schafe wie Seattle. Also berechne ich 4 × 20 = 80
 Toulouse hat doppelt so viele Schafe wie Charleston, also berechne ich 2 × 80 = 160 Schafe für Toulouse.
 
 Schließlich summiere ich die Schafanzahlen aller drei Städte: 20 (Seattle) + 80 (Charleston) + 160 (Toulouse) = 260 Schafe insgesamt.
-"	stop
+"	stop	3.0	0	0	260	1
 q147b7c11	D'Carla lädt a Datei mit 200 GB ronter. Normal kann se 2 GB/Minute ronterlada, aber nachdem 40 % vom Download fertig sind, zwingt Windows se zu me Neuschtart für Updates, und des dauert 20 Minuten. Danach muss d'Carla dr Download nomal ganz von vorn schtarta. Wia lang dauert's, bis d'Datei ronterglada isch?	"
 
 Lass uns die Lösung Schritt für Schritt betrachten:
@@ -280,7 +280,7 @@ Die Betriebssystem-Aktualisierung dauert 20 Minuten, also addiere ich diese zur 
 Nach der Aktualisierung muss der Download von neuem begonnen werden. Somit setze ich die gesamte Downloadzeit von 100 Minuten neu an.
 
 Die gesamte Dauer des Downloads beträgt somit die Zeit bis zur Unterbrechung plus die Zeit für den Neustart und die vollständige Herunterladung: 40 Minuten + 20 Minuten + 100 Minuten = 160 Minuten.
-"	stop
+"	stop	40.0	0	0	160	1
 qead07ed2	Dr John fährt 3 Schtoden lang mit 60 Meilen/Schtond und dreht dann om, weil er merkt, dass er was ganz Wichtigs dahoim vergessa hot. Er will innerhalb von 4 Schtonda wieder heimkomma, schteckt aber d'ersten 2 Schtonda im Stau. D'nächste halbe Schtond fährt er 30 Meilen/Schtond, bevor er für d'verbleibende Zeit von de 4 Schtonden mit 80 Meilen/Schtond weiterfahra kann. Wia weit von dahoim weg isch er am Ende von dench 4 Schtonda?	"
 
 **Lösung:**
@@ -333,7 +333,7 @@ In den ersten beiden Schundden steckt er im Stau, also bewegt er sich dort mit 0
 Für die verbleibenden 1,5 Schundden fährt er mit 80 Meilen/Schundd, was eine Strecke von 1,5 × 80 = 120 Meilen entspricht.
 
 Die gesamte Strecke, die Dr. John während der 4 Schundden zurücklegt, beträgt somit 180 + 15 + 120 = 315 Meilen.
-"	stop
+"	stop	4.0	0	0	315	0
 q5cb246e4	D'Eliza kriegt für d'ersten 40 Schtonda, die se pro Woche schafft, 10 US-Dollar pro Schtond. Für Ieberschtonda kriegt se des 1,2-Fache vom normalen Schtonalohn. Wia viel verdient d'Eliza, wenn se 45 Schtondaen dr Woch schafft?	"
 
 **Lösung:**
@@ -374,7 +374,7 @@ Anschließend überprüfe ich, ob Eliza mehr als 40 Stunden arbeitet. In diesem 
 Schließlich addiere ich den Lohn für die Normalstunden und die Überstunden, um den Gesamtverdienst für die Woche zu erhalten:
 
 400 US-Dollar + 60 US-Dollar = 460 US-Dollar.
-"	stop
+"	stop	3.0	0	0	460	1
 q3bdd7b1e	A neues Programm isch im ersten Monat 60-mal runterglada worda. Im zweiten Monat gab's dreimal so viele Downloads wie im erschten, aber im dritten Monat isch d'Zahl um 30 % eingebrocha. Wia oft isch des Programm in dene drei Monaten insgesamt runterglada worda?	"
 
 **Lösung:**
@@ -410,7 +410,7 @@ Im zweiten Monat sind die Downloads dreimal so hoch wie im ersten Monat, also 60
 Im dritten Monat sind die Downloads um 30 % weniger als im zweiten Monat. Dazu berechne ich 30 % von 180, was 54 ergibt, und ziehe das von 180 ab: 180 - 54 = 126 Downloads.
 
 Schließlich summiere ich dieDownloads aller drei Monate auf: 60 + 180 + 126 = 366 Downloads insgesamt.
-"	stop
+"	stop	3.0	0	0	366	1
 q19a4029d	D'Toula isch zum Bäcker ganga und hot verschiedene Gebäcksacha g'kauft. Se hot 3 Dutzend Donuts g'kauft, die 68 US-Dollar pro Dutzend koschtet, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wia hoch warat d'G'samtkoschta?	"
 
 **Lösung:**
@@ -452,7 +452,7 @@ Anschließend berechne ich die Kosten für die Mini-Cupcakes. Es werden 2 Dutzen
 Dann handle ich mit den Mini-Cheesecakes. Es werden 6 Dutzend gekauft, und jedes Dutzend kostet 55 USD. Ich multipliziere 6 mit 55 USD, was zu 330 USD führt.
 
 Schließlich addiere ich alle Berechnungen zusammen, um die Gesamtkosten zu erhalten: 204 USD (Donuts) + 160 USD (Mini-Cupcakes) + 330 USD (Mini-Cheesecakes) = 694 USD.
-"	stop
+"	stop	694.0	0	1		
 qf0063e65	D'r Carlos pflanzt an Zitronabaum. D'r Baum zum Pflanza koschtet 90 $. Jedes Jahr wachset 7 Zitronen dran, die er für jeweils 1,5 $ verkaufa kann. Zum Gieße und Düngen kostet dr Baum 3 $ im Jahr. In welchem Jahr fängt er an, mit em Zitronabaum insgesamt Gewinn zu macha?	"
 
 Um zu bestimmen, in welchem Jahr **Carlos** mit dem Zitronabaum beginnt, einen Gewinn zu machen, analysieren wir die Ausgaben und Einnahmen jährlich.
@@ -488,7 +488,7 @@ Im ersten Jahr sind die Ausgaben für den Baum 90 €, und es werden 10,5 �
 Im zweiten Jahr sinken die Ausgaben auf 3 €, während die Einnahmen weiterhin 10,5 € beträgen. Das bedeutet eine Gesamteinnahme von 10,5 € und eine Ausgabe von 3 €, was zu einem Gewinn von 7,5 € führt.
 
 Somit fängt Carlos im zweiten Jahr damit an, einen Gewinn mit dem Zitronabaum zu machen.
-"	stop
+"	stop	7.5	0	0	2	0
 q410b0ab2	D'Melanie isch Handelsvertreterin. Se hot a Drittel von ihre Staubsauger im grünen Haus verkauft, 2 weitere im roten Haus und d'Hälfte von denen, die danach no übrig warat, im orangenen Haus. Wenn d'Melanie 5 Staubsauger übrig hot, mit wia viele hot se dann angfanga?	"
 
 Lass uns den Lösungsprozess Schritt für Schritt betrachten:
@@ -572,7 +572,7 @@ Zuerst definiere ich die Anzahl der ursprünglichen Staubsauger, die Melanie hat
    \[
    x = 12 \times \frac{3}{2} = 18
    \]
-"	stop
+"	stop	18.0	0	1		
 qa0520340	In ere Tanzstund mit 20 Schüler hend sich 20 % für Contemporary Dance a'gmeldet, 25 % von den übrigen für Jazz Dance, und dr Rescht isch beim Hip-Hop glandet. Wia viel Prozent von alle Schüler hend sich für Hip-Hop agmeldet?	"
 
 **Lösung:**
@@ -602,7 +602,7 @@ Zuerst bestimme ich die Anzahl der Schüler, die sich für Contemporary Dance en
 Dann betrachte ich die verbleibenden 16 Schüler. Davon entscheiden sich 25 % für Jazz Dance, was 4 Schüler sind.
 
 Die verbleibenden 12 Schüler entscheiden sich somit für Hip-Hop. Um den prozentualen Anteil an allen 20 Schülern zu berechnen, setze ich 12 in Relation zu 20 und erhalte 60 %.
-"	stop
+"	stop	60.0	0	1		
 q9ae19f0a	An Händler muss sich zwischa 2 Kaufmöglichkeita entscheida: Schmuck im Wert von 5.000 US-Dollar oder Elektronikgeräte im Wert von 8.000 US-Dollar. Sei Finanzberater moint, dr Schmuckmarkt legt im Monat um 2,5 % zu und dr Markt für Elektrogeräte im selba Monat um 1,2 %. Wenn dr Händler am Monatsende mit seiner Entscheidung dr Gewinn maximiera will, auf wia viel Gewinn kommt er dann?	"
 
 **Lösung:**
@@ -663,7 +663,7 @@ Für die Elektronikgeräte mit einem Wert von 8.000 US-Dollar, die monatlich um 
 Der Gewinn aus der Elektronik beträgt somit 8.096 USD - 8.000 USD = 96 USD.
 
 Vergleichend sehe ich, dass der Schmuck mit einem Gewinn von 125 USD besser ist als die Elektronik mit einem Gewinn von 96 USD. Daher wird der Händler, wenn er den Gewinn maximieren möchte, den Schmuck kaufen und damit einen Gewinn von 125 USD erzielen.
-"	stop
+"	stop	125.0	0	1		
 q93563595	Zwei Züg fahret zur selba Zeit in San Rafael los. Se fahret z'erscht noch Weschta und legat beide 80 Meilen zurück. Am nächsta Tag fahret se nach Norda und legat 150 Meilen z'rück. Wia viel Strecke legt jeder Zug über die zwei Tage z'rück?	"
 
 **Lösung:**
@@ -709,7 +709,7 @@ Für den ersten Zug: 80 Meilen (erster Tag) + 150 Meilen (zweiter Tag) = 230 Mei
 Für den zweiten Zug: 80 Meilen (erster Tag) + 150 Meilen (zweiter Tag) = 230 Meilen.
 
 Also legt jeder Zug insgesamt 230 Meilen zurück.
-"	stop
+"	stop	150.0	0	0	230	1
 q33756eb7	D'Jill kriegt 20 US-Dollar pro Schtond fürs Onterrichta als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn se 50 Wochen im Jahr schafft, 35 Schtonda pro Woch' als Lehrerin und 15 Schtonda pro Woch' als Coach, wia hoch isch dann ihr Jahresgehalt?	"
 
 **Lösung:**
@@ -770,7 +770,7 @@ Nun berechne ich das monatliche Gehalt:
 
 Schließlich addiere ich die beiden Gehälter, um das gesamte Jahresgehalt zu erhalten:
 35.000 US-Dollar + 22.500 US-Dollar = 57.500 US-Dollar pro Jahr.
-"	stop
+"	stop	50.0	0	0	57500	1
 qfb254292	D'Claire macht sich jeda Moran zom Frühstück a Omelett aus 3 Eier. Wia viele Dutzend Eier isst se in 4 Wochen?	"
 
 **Lösung:**
@@ -809,7 +809,7 @@ Anschließend berechne ich die tägliche Eier消費 in Dutzenden. Da 1 Dutzend 1
 Dann überlege ich, wie viele Tage in 4 Wochen existieren. 4 Wochen entsprechen 28 Tagen.
 
 Schließlich multipliziere ich die tägliche Dutzend消費 mit der Anzahl der Tage, um die gesamte Anzahl der Dutzend Eier für 4 Wochen zu erhalten.
-"	stop
+"	stop	12.0	0	0	7	1
 qc100123d	D'Marissa wandert an 12 Meilen langen Wanderweg. In dr 1. Schtond schafft se die erschste 4 Meilen, danach die nächste zwei Meilen in dr nächsten Schtond. Wenn se am Ende im Schnitt 4 Meilen pro Schtond gelaufa sei will, mit welcher G'schwindigkeit in Meilen pro Schtond muss se dr Rescht vom Weg laufa?	"
 
 Um herauszufinden, mit welcher Geschwindigkeit D'Marissa die restliche Strecke laufen muss, um im Schnitt 4 Meilen pro Stunde zu laufen, gehen wir Schritt für Schritt vor:
@@ -851,7 +851,7 @@ Zuerst bestimme ich die insgesamt benötigte Zeit, wenn D'Marissa im Schnitt 4 M
 Nun berechne ich die Zeit, die sie bereits aufgebraucht hat. In der ersten Stunde läuft sie 4 Meilen, was bedeutet, dass sie in der ersten Stunde 4 Meilen zurücklegt. In der zweiten Stunde läuft sie weitere 2 Meilen. Somit hat sie in insgesamt 2 Stunden 6 Meilen geschafft.
 
 Die verbleibenden 6 Meilen muss sie in der verbleibenden Zeit von 1 Stunde zurücklegen. Um dies zu erreichen, benötigt sie eine Geschwindigkeit von 6 Meilen pro Stunde.
-"	stop
+"	stop	6.0	0	1		
 q26866cba	I hab 10 Liter Orangengetränk, des zu zwei Drittel aus Wasser beschteht, und will's zu 15 Liter Ananasgetränk mit drei Fünfteln Wasser dazuschütta. Beim Eingieße verschütt i aber oin Liter vom Orangengetränk. Wia viel Wasser isch in den übrigen 24 Litern drin?	"
 
 **Lösung:**
@@ -887,7 +887,7 @@ Zuerst bestimme ich die Wasseranteile in den beiden Getränkemengen. Das Orangen
 Ich addiere die Wasseranteile und ziehe das verschüttete Liter ab: 6,666 Liter + 9 Litern = 15,666 Liter. Abziehend des verschütteten 1 Liter ergibt sich 14,666 Liter Wasser im übrigen Getränk.
 
 Die Gesamtmenge des übrigen Getrankes beträgt 24 Litern, also entscheidet sich der Wasseranteil durch 14,666 Liter geteilt durch 24 Litern, was etwa 61,11 % ergibt.
-"	stop
+"	stop	24.0	0	0	61.11	0
 qa856d9dc	Dr Raymond und d'Samantha sind Cousins. Dr Raymond isch 6 Johr vor dr Samantha gebora. Mit 23 Jahren hot dr Raymond an Sohn kriegt. Wenn d'Samantha jetzt 31 isch, vor wia viele Johr isch dann dr Sohn vom Raymond gebora?	"
 
 Lass uns das Problem Schritt für Schritt lösen.
@@ -936,7 +936,7 @@ Dr. Raymond bekam seinen Sohn mit 23 Jahren. Das bedeutet, dass er 25 - 23 = 2 J
 Da Samantha jetzt 31 Jahre alt ist und Dr. Raymond 6 Jahre älter ist, war er vor 6 Jahren 25 Jahre alt. Insgesamt sind also 6 Jahre seit der Geburt von Dr. Raymond verstrichen.
 
 Da der Sohn 2 Jahre nach der Geburt von Dr. Raymond geboren wurde, sind 6 - 2 = 4 Jahre seit der Geburt des Sohnes verstrichen.
-"	stop
+"	stop	3.0	0	0	14	1
 q72ea27fb	Dr Billy verkauft DVDs. Am Dienschtag hot er 8 Kunden. D'ersten 3 Kunden kaufet jeweils oi DVD. D'nächschte 2 Kunden kaufet jeweils 2 DVDs. Die letzschte 3 Kunden kaufet gar koi DVD. Wia viele DVDs hot dr Billy am Dienschtag verkauft?	"
 
 **Lösung:**
@@ -964,7 +964,7 @@ Dann sind die nächsten 2 Kunden, die jeweils 2 DVDs kaufen. Das ergibt 2 × 2 =
 Die letzten 3 Kunden kaufen gar keine DVDs.
 
 Insgesamt hat Dr. Billy also 3 + 4 = 7 DVDs verkauft.
-"	stop
+"	stop	3.0	0	0	7	1
 qa62b2b0f	A Kerze wird in jeder Schtond, wo se brennt, um 2 Zentimeter kürzer. Um wia viele Zentimeter isch a Kerz' kürzer, wenn se von 13 Uhr bis 17 Uhr brennt?	"
 
 **Lösung:**
@@ -994,7 +994,7 @@ Da die Kerze in jeder Stunde um 2 Zentimeter kürzer wird, multipliziere ich die
 Also rechne ich 4 Stunden × 2 Zentimeter/Stunde = 8 Zentimeter.
 
 Die Kerze ist also um 8 Zentimeter kürzer, wenn sie von 13 Uhr bis 17 Uhr brennt.
-"	stop
+"	stop	2.0	0	0	8	1
 qaadc02d2	Dr Kyle hot dr Bestseller vom letzta Jahr für 19,50 US-Dollar kauft. Des war mit 25 % Rabatt auf dr ursprüngliche Preis. Wia hoch war dr ursprüngliche Preis vom Buch?	"
 
 Um den ursprünglichen Preis des Buches zu bestimmen, gehen wir Schritt für Schritt vor:
@@ -1037,7 +1037,7 @@ Um \( x \) zu finden, teile ich beide Seiten durch 0,75: \( x = \frac{19{,}50}{0
 Das ergibt \( x = 26 \).
 
 Der ursprüngliche Preis des Buches war also 26 US-Dollar.
-"	stop
+"	stop	26.0	0	1		
 q4c88eb07	D'Marie hot a Hühnchengericht für 12 US-Dollar b'schtellt, 5 Packungen Milch für jeweils 3 US-Dollar, 4 Äpfel für jeweils 1,50 US-Dollar und no a paar Schachtela Pizza. Insgesamt hot d'Marie 50 US-Dollar zahlt. Wia viele Schachtela Pizza hot se b'schtellt, wenn jede Schachtel 8,50 US-Dollar kostet?	"
 
 **Lösung:**
@@ -1080,7 +1080,7 @@ Die Gesamtsumme beträgt 50 US-Dollar. Ich addiere die bekannten Preise: 12 + 15
 Die verbleibenden 17 US-Dollar (50 - 33) gehen auf die Schachteln Pizza. Ich berechne die Anzahl an Schachteln, indem ich die verbleibenden 17 US-Dollar durch den Preis pro Schachtel teile: 17 / 8,50 = 2.
 
 Daher hat Marie 2 Schachteln Pizza gekauft.
-"	stop
+"	stop	3.0	0	0	2	1
 qc76b9ef5	D'Mishka hot 3 Paar Shorts, 3 Hosen und 3 Paar Schuhe g'kauft. A Paar Shorts koschtet 16,50 US-Dollar. A Hos' koschtet 22,50 US-Dollar und a Paar Schuhe 42 US-Dollar. Wia viel Dollar hot d'Mishka insgesamt für d'Kleider ausgeba?	"
 
 **Lösung:**
@@ -1127,7 +1127,7 @@ Dann berechne ich den Preis für jede Art des Kleidungsstücks:
 
 Schließlich addiere ich die Preise aller Artikel zusammen, um die Gesamtsumme zu erhalten:
 49,50 US-Dollar + 67,50 US-Dollar + 126 US-Dollar = 243 US-Dollar.
-"	stop
+"	stop	1.0	0	0	243	1
 qc792d70c	D'Cynthia isst jeden Abend a Portion Eis. Se kauft Karto' mit 15 Portiona Eis pro Karto' für 4,00 US-Dollar pro Karto'. Wia viel hot se nach 60 Tagen fürs Eis ausgeba?	"
 
 **Lösung:**
@@ -1163,7 +1163,7 @@ Zuerst bestimme ich die Anzahl der benötigten Kartons. D'Cynthia isst jeden Abe
 Da jedes Karton 15 Portionen enthält, rechne ich die Gesamtportionen durch den Portionen pro Karton, um die Anzahl der Kartons zu erhalten: 60 ÷ 15 = 4 Kartons.
 
 Jeder Karton kostet 4,00 US-Dollar, also multipliziere ich die Anzahl der Kartons mit dem Preis pro Karton, um die Gesamtkosten zu berechnen: 4 × 4,00 US-Dollar = 16,00 US-Dollar.
-"	stop
+"	stop	4.0	0	0	16	1
 qb804efac	D'r Henry hot bei rer 60 Meilen langen Fahrradtour zwei Pausa gmacht. D'erschte war n'ch 20 Meilen. D'zweite war 15 Meilen vor em Ende von dr Tour. Wia viele Meilen isch er zwischen dr erschten und dr zweiten Paus' gfahra?	"
 
 Lass uns die Strecke von Henry's Fahrradtour Schritt für Schritt berechnen.
@@ -1189,7 +1189,7 @@ Lass uns die Strecke von Henry's Fahrradtour Schritt für Schritt berechnen.
 Zuerst bestimme ich die Stellen, an denen Henry seine Pausen einlegt. Die erste Pause erfolgt nach 20 Meilen. Die zweite Pause ist 15 Meilen vor dem Ende der 60 Meilen langen Tour, also an der 45. Meile.
 
 Anschließend berechne ich die Distanz zwischen den beiden Pausenpunkten. Die Differenz zwischen der 45. und der 20. Meile beträgt 25 Meilen.
-"	stop
+"	stop	25.0	0	1		
 qf837eb68	D'Gloria isch Schuhe kaufa und fendet a Paar Stiefel, die in ihr Budget basset. Se muss sich aber zwischen de' Stiefeln und zwei Paar High Heels entscheida, die zamma fünf Dollar weniger kostet als d'Stiefel. A Paar High Heels kostet 33 US-Dollar und des andere doppelt so viel. Wia viel kostet dann d'Stiefel?	"
 
 Sei \( x \) die Kosten der Stiefel in US-Dollar.
@@ -1223,7 +1223,7 @@ Die High Heels kosten 33 USD und 66 USD, also insgesamt 99 USD.
 Die Stiefel kosten also x = 99 USD - 5 USD = 94 USD.
 
 Daher kosten die Stiefel 94 USD.
-"	stop
+"	stop	5.0	0	0	104	1
 qa2455bce	S'Altersverhältnis vom Darrell und d'r Allen isch 7:11. Wenn se jetzt z'samma 162 Jahre alt senn, rechne aus, wia alt dr Allen in 10 Jahren isch.	"
 
 **Lösung:**
@@ -1268,7 +1268,7 @@ Um den Wert eines Teils zu bestimmen, teile ich 162 Jahre durch 18, was 9 Jahre 
 Daraufhin berechne ich Darrells Alter als 7 Teile mal 9 Jahre, also 63 Jahre, und Allens Alter als 11 Teile mal 9 Jahre, also 99 Jahre.
 
 Um zu erfahren, wie alt Allen in 10 Jahren sein wird, addiere ich 10 Jahre zu seinem aktuellen Alter hinzu: 99 Jahre + 10 Jahre = 109 Jahre.
-"	stop
+"	stop	5.0	0	0	109	1
 q166f163a	D'r Gunter versucht, d'Gummibärle im Glas zom zähla. Er frogt seins Freind, wia viele se moinet, dass dren sen. Oiner sagt 80. D'r andere sagt 20 mehr als d'Hälfte von dr erschten Schätzung. A Dritter sagt 25 % mehr als dr Erste. Wia hoch isch ihre durchschnittliche Schätzung?	"
 
 Lass uns die Schätzungen der drei Freunde berechnen und den Durchschnitt finden.
@@ -1314,7 +1314,7 @@ Nun summiere ich alle drei Schätzungen: 80 + 60 + 100 = 240.
 Um den Durchschnitt zu finden, teile ich die Summe durch die Anzahl der Schätzungen, also 3: 240 ÷ 3 = 80.
 
 Daher beträgt die durchschnittliche Schätzung 80.
-"	stop
+"	stop	100.0	0	0	80	1
 q3966df43	D'r John kümmert sich um 10 Hond. Für jeden Hond braucht er jeden Tag 0,5 Schtonda zum Gassigeha und damit dr Hund sei Gschäft macha kann. Wia viele Schtonda pro Woch' kümmert er sich insgesamt um die Hond'?	"
 
 **Lösung:**
@@ -1351,7 +1351,7 @@ Um die wöchentliche Anzahl zu ermitteln, multipliziere ich die tägliche Anzahl
 5 Schtonda pro Tag × 7 Tage = 35 Schtonda pro Woche.
 
 Daher kümmert sich D'r John insgesamt 35 Schtonda pro Woche um die Hunde.
-"	stop
+"	stop	7.0	0	0	35	1
 q28184d6c	S'Gretle hot 110 Münzen. Se hot 30 mehr Gold- als Silbermünzen. Wia viele Goldmünzen hot s'Gretle?	"
 
 Um die Anzahl der Goldmünzen zu bestimmen, die S'Gretle hat, gehen wir Schritt für Schritt vor.
@@ -1425,7 +1425,7 @@ Somit haben wir die Anzahl der Silbermünzen bestimmt. Um die Goldmünzen zu ﬁ
 \[ G = 40 + 30 = 70 \]
 
 Daher hat S'Gretle \(\boxed{70}\) Goldmünzen.
-"	stop
+"	stop	2.0	0	0	70	1
 q5f9dc683	D'Siobhan hot 2 Schmuckstücke weniger als d'r Aaron. D'r Aaron hot 5 Schmuckstücke mehr als d'Hälfte von den Schmuckstücken vom Raymond. Wenn dr Raymond 40 Schmuckstücke hot, wia viele hot dann d'Siobhan?	"
 
 **Lösung:**
@@ -1460,7 +1460,7 @@ Zuerst bestimmen wir die Anzahl der Schmuckstücke, die Raymond hat. Laut der Au
 Nun betrachten wir Aaron. Aaron hat 5 Schmuckstücke mehr als die Hälfte der Schmuckstücke von Raymond. Die Hälfte von 40 ist 20, also hat Aaron 20 + 5 = 25 Schmuckstücke.
 
 Siobhan hat dagegen 2 Schmuckstücke weniger als Aaron. Da Aaron 25 Schmuckstücke hat, besitzt Siobhan 25 - 2 = 23 Schmuckstücke.
-"	stop
+"	stop	2.0	0	0	23	1
 q9501d333	D'r Mike spielt 40 Minuten lang Pingpong. In den erschte 20 Minuten macht er 4 Punkte. In de' nächschte 20 Minuten macht er 25 % mehr Punkte. Wia viele Punkte macht er insgesamt?	"
 
 **Lösung:**
@@ -1488,7 +1488,7 @@ Zuerst betrachte ich die ersten 20 Minuten, in denen Mike 4 Punkte erzielt.
 Dann schaue ich mir die nächsten 20 Minuten an. Mike verbessert sich um 25 %, also berechne ich 25 % von 4 Punkten, was 1 Punkt ergibt. Dazu addiere ich die ursprünglichen 4 Punkte, um die Punkte für die zweite Phase zu erhalten: 4 + 1 = 5 Punkte.
 
 Schließlich addiere ich die Punkte aus beiden Phasen, um die gesamte Punktzahl zu bestimmen: 4 + 5 = 9 Punkte.
-"	stop
+"	stop	25.0	0	0	9	1
 q0e0fa86b	D'r Terry isst 2 Joghurt am Tag. Grad gibt's se im Angebot: 5,00 US-Dollar für 4 Joghurt. Wia viel gibt er in 30 Tagen für Joghurt aus?	"
 
 **Lösung:**
@@ -1517,7 +1517,7 @@ Es handelt sich also um 5,00 US-Dollar für 4 Joghurts, was bedeutet, dass ein J
 Da Terry täglich 2 Joghurts consumeert, setzt sich die tägliche Kosten aus 2 mal 1,25 USD, also 2,50 USD pro Tag.
 
 Um die Gesamtkosten für 30 Tage zu ermitteln, multiplizieren wir die täglichen Kosten mit 30. Das ergibt 2,50 USD mal 30, was insgesamt 75,00 USD entspricht.
-"	stop
+"	stop	30.0	0	0	75	1
 q126bbbaa	D'r John will alle seine Spielsacha verkaufa und von dem Geld Videospiele kaufa. Er hot 13 Lego-Sets und kriegt für jedes verkaufte Set $15. Am Ende kauft er 8 Videospiele für jeweils $20 und hot no $5 übrig. Wia viele Lego-Sets hot er no?	"
 
 Sei \( x \) die Anzahl der verkauften Lego-Sets von D'r John.
@@ -1567,7 +1567,7 @@ $165 ÷ $15/Set = 11 Sets
 D'r John hatte ursprünglich 13 Sets und hat 11 verkauft. Die Anzahl der nicht verkauften Sets beträgt somit:
 
 13 Sets - 11 Sets = 2 Sets
-"	stop
+"	stop	11.0	0	0	11	0
 q5c1bd624	D'r John läuft 60 Meilen pro Woche. Er läuft an 3 Tag pro Woche. Am erschta Tag läuft er 3 Schtonda und an den zwei andere Lauftag jeweils d'Hälfte davo'. Wia schnell läuft er?	"
 
 **Lösung:**
@@ -1613,7 +1613,7 @@ Dann verteile ich diese Strecke auf die drei Lauf Tage. Am ersten Tag läuft Joh
 Die verbleibende Strecke nach dem ersten Tag beträgt 60 - 3 = 57 Meilen. Diese 57 Meilen werden auf die beiden anderen Tage verteilt, also 57 / 2 = 28,5 Meilen pro Tag.
 
 Schließlich berechne ich die durchschnittliche Geschwindigkeit pro Tag. Am ersten Tag beträgt die Geschwindigkeit 3 Meilen pro Tag, und an den anderen beiden Tagen 28,5 Meilen pro Tag. Der Durchschnitt über die drei Tage ergibt (3 + 28,5 + 28,5) / 3 = 20 Meilen pro Woche.
-"	stop
+"	stop	20.0	0	0	20	0
 q02f06b34	D'Dana kann viermal so schnell laufa wie se geha kann, aber hüpfa kann se bloß mit dr Hälfte von ihrer Laufgeschwindigkeit. Wenn se mit 3 Meilen pro Schtond hüpfa kann, wia viele Meilen schafft se in sechs Schtonda, wenn se a Drittel von dr Zeit läuft und zwei Drittel von dr Zeit geht?	"
 
 **Lösung:**
@@ -1660,7 +1660,7 @@ Nun berechne ich die Strecke für jede Aktivität:
 - Hüpft sie 1/3 der Zeit: Zeit = (1/3) × 6 = 2 Sekunden. Strecke = 3 Meilen/s × 2 s = 6 Meilen
 
 Gesamtstrecke = 24 Meilen + 6 Meilen = 30 Meilen
-"	stop
+"	stop	54.0	0	0	54	0
 qd6dd82e1	Brandons iPhone isch viermal so alt wie Bens iPhone. Bens iPhone isch doppelt so alt wie Suzys iPhone. Wenn Suzys iPhone 1 Jahr alt isch, wia alt isch dann Brandons iPhone?	"
 
 Lass uns die Beziehungen zwischen den Altersständen der iPhones Schritt für Schritt analysieren.
@@ -1686,7 +1686,7 @@ Suzys iPhone ist 1 Jahr alt.
 Bens iPhone ist doppelt so alt wie Suzys iPhone, also 2 Jahre.
 
 Brandons iPhone ist viermal so alt wie Bens iPhone, also 8 Jahre.
-"	stop
+"	stop	8.0	0	1		
 q425db7e5	D'r große Drache Perg isch ganz oba auf em Berg Farbo g'sessa und hot auf alles in em Umkreis von 1000 Fuß Feuer gspuckt. D'Polly konnt dr goldene Speer, d'einzige bekannte Waffe, mit der ma dr Drache besiega konnt, 400 Fuß weit werfa und war damit deutlich in d'r Reichweite von de Flamma. Wenn d'Polly aber d'r Saphir-Edelstein in d'r Hand hielt, konnt se d'r Speer dreimal so weit werfa wie ohne d'' Edelstein. Wenn se dr Edelstein in d'r Hand hält, wia weit außerhalb von d'r Reichweite von de Flamma kann d'Polly standa und dr Drache trotzdem no mit em goldenen Speer treffa?	"
 
 **Lösung:**
@@ -1720,7 +1720,7 @@ Zuerst bestimme ich die maximale Reichweite des goldenen Speers ohne den Saphir-
 Der Drache Perg hat Feuer geschüttet, das bis zu 1000 Fuß um ihn herum reicht. Polly möchte also in eine Position, die außerhalb dieser 1000-Fuß-Zone steht, damit sie nicht von den Flammen getroffen wird, während sie den Drachen mit dem goldenen Speer angreift.
 
 Um dies zu erreichen, muss Polly mindestens 1000 Fuß entfernt von der Position des Drachen sein. Da das Speer mit dem Edelstein bis zu 1200 Fuß weit wirft, ist dies möglich. Somit kann Polly 1000 Fuß entfernt von der Drachenposition stehen, um sicher zu sein, dass sie nicht in Flammen gehüllt ist, und trotzdem mit dem goldenen Speer attackieren kann.
-"	stop
+"	stop	1000.0	0	0	1000	0
 qedc215ac	D'Oma Jones hot 5 Apfelkuchen fürs Mittagessa von d'r Feuerwehr bacha. Se hot jeden Kuchen in 8 Stückle gschnitta und alle fünf Kuchen auf d'r Buffettisch gschstellt, damit sich d'Gäscht selber bediena könnet. Am Ende vom Abend, nachdem d'Gäscht sich bedient und Kuchen gessa hend, warat no 14 Kuchenstückle übrig. Wia viele Stückle hend d'Gäscht gnomma?	"
 
 Um die Anzahl der aufgegessenen Kuchenstücke zu bestimmen, gehen wir Schritt für Schritt vor:
@@ -1755,7 +1755,7 @@ Zuerst bestimme ich die gesamte Anzahl der Kuchenstücke, indem ich die Anzahl d
 Dann weiß ich, dass am Ende des Abends 14 Stücke übrig geblieben sind. Um die Anzahl der aufgegessenen Stücke zu finden, ziehe ich die übrigen Stücke von der gesamten Anzahl ab: 40 – 14 = 26.
 
 Also haben die Gäste insgesamt 26 Kuchenstücke aufgegessen.
-"	stop
+"	stop	26.0	0	1		
 q5d47194e	Noch de Nährwertangaba hot a Tüte Chips 250 Kalorien pro Portion. Wenn a 300 g-Tüte 5 Portionen enthält, wia viele Gramm kannsch du essa, wenn dei tägliches Kalorienziel bei 2000 liegt und du scho 1800 Kalorien zu dir gnomma hosch?	"
 
 **Lösung:**
@@ -1807,7 +1807,7 @@ Nun möchte ich herausfinden, wie viele Gramm ich essen kann, ohne mein Kalorien
 Um die maximale Grammzahl zu bestimmen, die ich essen kann, ohne die verbleibenden 200 Kalorien zu überschreiten, setze ich die Kalorien pro Gramm in die Gleichung ein: 4,17 × x ≤ 200. Löst man diese nach x auf, erhält man x ≤ \(\frac{200}{4,17} \approx 48\) Gramm.
 
 Daher kann ich ungefähr 48 Gramm Chips essen, ohne mein Kalorienziel zu überschreiten.
-"	stop
+"	stop	3.0	0	0	48	1
 q255b81c0	D'r Charlie will Bienenwachskerzen verkaufa. Aus jedem Pfund Bienenwachs kann er 10 Kegelkerzen macha. S'Zubehör für a Pfund Bienenwachs samt Dochte koschtet 10,00 US-Dollar. Wenn er d'Kerzen für 2,00 US-Dollar verkauft, wia viel Nettogewinn macht er, wenn er 20 Kerzen herstellt und verkauft?	"
 
 **Lösung:**
@@ -1850,7 +1850,7 @@ Als nächstes berechne ich die Kosten für die Zubehörteile. Für jedes Pfund B
 Anschließend betrachte ich die Einnahmen durch die Verkäufe der Kerzen. Bei einem Verkaufspreis von 2 US-Dollar pro Kerze und 20 verkauften Kerzen beträgt die Einnahme 20 multipliziert mit 2, also 40 US-Dollar.
 
 Schließlich berechne ich den Nettogewinn, indem ich die Gesamtkosten von den Einnahmen abziehe. Das ergibt 40 US-Dollar Einnahmen minus 20 US-Dollar Kosten, also einen Nettogewinn von 20 US-Dollar.
-"	stop
+"	stop	20.0	0	1		
 q0166ea66	D'Meredith isch Freelance-Bloggerin, schreibt über Gesundheitsthemen und kümmert sich om Kunden, des isch ihr fester Job. Für Recherche und Schreiben von einem Blog-Artikel braucht se im Schnitt 4 Schtonda. Letzschte Woch' hot se am Montag 5 Artikel gschrieba und am Dienstag 2/5 mehr Artikel als am Montag. Am Mittwoch hot se zwoimal so viele Artikel gschrieba wie am Dienstag. Rechne aus, wia viele Schtonan se an den drei Tagen insgesamt fürs Artikelschreiba g'braucht hot.	"
 
 **Lösung:**
@@ -1904,7 +1904,7 @@ Am Mittwoch hat sie doppelt so viele Artikel geschrieben wie am Dienstag, also 2
 Insgesamt hat Meredith also 5 + 7 + 14 = 26 Artikel geschrieben.
 
 Da sie für jeden Artikel im Schnitt 4 Stunden benötigt, multipliziere ich die Gesamtanzahl der Artikel mit den Stunden pro Artikel: 26 * 4 = 104 Stunden.
-"	stop
+"	stop	4.0	0	0	104	1
 q7bb382f4	D'Candice hot 80 Post-it-Notizzettel in ihr' Handtasch' g'packt, bevor se zu ihrem G'schäft im Coffee Shop los isch. Unterwegs hot se im Laden aghalta und a Packung Post-it-Notizzettel kauft; beim G'schäft hot se auf 220 verschiedene Kaffeetassen jeweils oin Post-it-Notizzettel g'klebt. Wenn se am Ende no 23 Post-it-Notizzettel übrig hot, wia viele warat dann in dr Packung, die se kauft hot?	"
 
 **Lösung:**
@@ -1968,7 +1968,7 @@ P = 23 + 220 - 80
 P = 163
 
 Daher enthielt die Packung, die Candice kaufte, 163 Post-it-Notizzettel.
-"	stop
+"	stop	23.0	0	0	163	1
 q1a64508f	D'r John kauft zweimal so viele rote wie blaue Krawatten. D'rote Krawatten kostet 50 % mehr als die blaue. Für blaue Krawatten hot er 200 US-Dollar ausgeba, und die kostet pro Stück 40 US-Dollar. Wia viel hot er insgesamt für Krawatten ausgeba?	"
 
 **Lösung:**
@@ -2025,7 +2025,7 @@ Die roten Krawatten kosten 50 % mehr als die blauen. Da jede blaue Krawatte 40 U
 Die Kosten für die roten Krawatten betragen somit 5 * 60 = 300 US-Dollar.
 
 Die Gesamtsumme, die D'r John für Krawatten ausgeben hat, setzt sich aus den Kosten für blaue und rote Krawatten zusammen: 200 + 300 = 500 US-Dollar.
-"	stop
+"	stop	500.0	0	0	500	0
 q9605b4e6	D'Tracy hot a 4 Fuß langes Stück Droht gnomma, um d'Tomatenpflanzen in ihrem Garten abzustütza. D'r Droht isch in Stücke mit jeweils 6 Inch gschnitta worda. Wia viele Stück Draht hot se dann?	"
 
 **Lösung:**
@@ -2058,7 +2058,7 @@ Als nächstes brauche ich die Länge des gesamten Drahts in Inches umzurechnen, 
 Nun möchte ich wissen, wie viele 6-Inch-Teile in 48 Inches Draht enthalten sind. Dazu dividiere ich die Gesamtzahl der Inches durch die Länge eines einzelnen Drahtstücks: 48 ÷ 6 = 8.
 
 Somit hat Tracy insgesamt 8 Drahtstücke.
-"	stop
+"	stop	8.0	0	1		
 qda35e8fb	D'r Richard wohnt in eme Wohnhaus mit 15 Etagen. Auf jeder Etage gibt's 8 Wohnungen, und 3/4 vom Gebäude senn bewohnt. Wia viele Wohnungen im Gebäude sind insgesamt unbewohnt?	"
 
 **Lösung:**
@@ -2103,7 +2103,7 @@ Nun möchte ich herausfinden, wie viele dieser Wohnungen bewohnt sind. Es ist ge
 Um die Anzahl der unbewohnten Wohnungen zu finden, ziehe ich die Anzahl der bewohnten Wohnungen von der Gesamtanzahl ab.
 
 120 - 90 = 30 Wohnungen sind unbewohnt.
-"	stop
+"	stop	30.0	0	1		
 q94fcd6ce	Dr Lloyd hot an Eierhof. Sei Hühner legat 252 Eier am Tag, und er verkauft se für 2 US-Dollar pro Dutzend. Wia viel verdient d'r Loyd pro Woch' mit de' Eier?	"
 
 **Lösung:**
@@ -2138,7 +2138,7 @@ Zuerst bestimme ich die Anzahl der Eier, die Dr. Lloyd pro Woche verkaufen kann.
 Als nächstes berechne ich, wie viele Dutzend Eier in 1764 Eiern enthalten sind. Da ein Dutzend 12 Eier umfasst, dividiere ich 1764 durch 12 und erhalte 147 Dutzend.
 
 Schließlich berechne ich die Wocheseinkommen. Bei einem Verkaufspreis von 2 US-Dollar pro Dutzend multipliziere ich 147 Dutzend mit 2 US-Dollar, was zu einem Wochenverdienst von 294 US-Dollar führt.
-"	stop
+"	stop	294.0	0	1		
 q1afb1e71	Toms Schiff schafft 10 Meilen pro Schtond. Er segelt von 13 bis 16 Uhr. Danoch fährt er mit 6 Meilen/Schtond wieder z'rück. Wia lang braucht er für d'r Rückweg?	"
 
 **Lösung:**
@@ -2168,7 +2168,7 @@ In dieser Zeit legt er mit einer Geschwindigkeit von 10 Meilen pro Stunde zurüc
 
 Für den Rückweg fährt Tom mit einer geringeren Geschwindigkeit von 6 Meilen pro Stunde. Um die benötigte Zeit zu finden, teile ich die Strecke durch die Geschwindigkeit:
 30 Meilen ÷ 6 Meilen/Stunde = 5 Stunden.
-"	stop
+"	stop	3.0	0	0	5	1
 q0aaae19a	Dem Uriah wird sei Büchertasche z'schwer. Er muss 15 Pfund rausnemma. Seine Comicbücher wieget jeweils 1/4 Pfund und sei Spielzeuge jeweils 1/2 Pfund. Wenn er 30 Comicbücher rausnimmt, wia viele Spielzeuge muss er dann no rausnemma?	"
 
 **Lösung:**
@@ -2197,7 +2197,7 @@ Uriah möchte insgesamt 15 Pfund abwichten. Er nimmt 30 Comicbücher heraus, als
 Die verbleibenden 15 - 7,5 = 7,5 Pfund müssen durch Spielzeuge aufgewogen werden. Da jedes Spielzeug 1/2 Pfund wiegt, benötigt Uriah 7,5 / (1/2) = 15 Spielzeuge.
 
 Daher muss er 15 Spielzeuge herausnehmen.
-"	stop
+"	stop	15.0	0	1		
 qa5756c69	An Mechaniker verlangt onterschiedliche Preise für d'Reparatur von LKW-Reifen und PKW-Reifen. Für jeden reparierten LKW-Reifen verlangt er 60 Dollar, für jeden reparierten PKW-Reifen 40 Dollar. Am Donnerschtag repariert er 6 LKW-Reifen und 4 PKW-Reifen. Am Freitag repariert er 12 PKW-Reifen und koine LKW-Reifen. Wia viel Dollar mehr Umsatz hot er an dem Tag gmacht, an dem d'r Umsatz höher war?	"
 
 **Lösung:**
@@ -2251,7 +2251,7 @@ Zuerst berechne ich den Umsatz am Donnerschlag. Für die 6 reparierten LKW-Reife
 Anschließend berechne ich den Umsatz am Freitag. Für die 12 reparierten PKW-Reifen erhalte ich 12 × 40 = 480 Dollar. Da am Freitag keine LKW-Reifen repariert wurden, beträgt der gesamte Umsatz 480 Dollar.
 
 Um den Unterschied zwischen den beiden Tagen zu ermitteln, ziehe ich den Umsatz am Freitag von dem Umsatz am Donnerschlag ab: 520 - 480 = 40 Dollar. Der Mechaniker hat also am Donnerschlag um 40 Dollar mehr Umsatz erzielt.
-"	stop
+"	stop	3.0	0	0	40	1
 qd819612e	D'Doubtfire-Schwestra fahret mit 7 Kätzle hoim, die se im örtlichen Tierheim adoptiert hend, wenn ihr Mutter aruft und sagt, dass ihre zwei Hauskatzen grad Kätzle kriegt hend. Se sagt, Patchy, d'erschte Katz', hot dreimal so viele Kätzle wie die adoptierte, und Trixie, d'andere Katze, hot 12 zur Welt brocht. Wia viele Kätzle hend d'Doubtfires jetzt?	"
 
 **Lösung:**
@@ -2290,7 +2290,7 @@ Die gesamte Anzahl der Kätzchen, die D'Doubtfire-Schwestra jetzt hat, setzt sic
 Zusammenfassend ergibt sich:
 
 \( 4x + 12 \).
-"	stop
+"	stop	12.0	0	0		0
 q7c63d108	D'r Jean hot 30 Lutscher. Davon isst d'r Jean 2. Die übrige Lutscher will er in Tüta mit jeweils 2 Lutscher packa. Wia viele Tüten kann d'r Jean packa?	"
 
 **Lösung:**
@@ -2327,7 +2327,7 @@ Zuerst bestimme ich die Gesamtzahl der Lutscher, die Jean hat. Er bekommt 30 Lut
 Jede Tüte soll jeweils 2 Lutscher enthalten. Um die Anzahl der Tüten zu bestimmen, teile ich die übrigen Lutscher durch die Anzahl pro Tüte: 28 ÷ 2 = 14.
 
 Also kann Jean 14 Tüten mit jeweils 2 Lutscher packen.
-"	stop
+"	stop	2.0	0	0	14	1
 q93b023e5	D'r Peter will die Woch ins Kino ganga. Er kauft immer a Eintrittskart' für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für d'ganze Woch 42 US-Dollar zur Verfügung hot, wia oft kann er dann ins Kino?	"
 
 **Lösung:**
@@ -2350,7 +2350,7 @@ Zuerst bestimme ich die Gesamtkosten für einen Kinosbesuch. D'r Peter zahlt 7 U
 Anschließend berechne ich, wie viele solche Besuche D'r Peter mit seinem Budget von 42 US-Dollar ermöglichen. Ich teile das Budget durch die Kosten pro Besuch: 42 US-Dollar geteilt durch 14 US-Dollar ergibt 3.
 
 Daher kann D'r Peter drei Mal ins Kino gehen.
-"	stop
+"	stop	3.0	0	1		
 qdf141d2f	A Holzbrücke kann net me'r als 5.000 Pfund traga. An Lieferwagen mit lauter gleiche Kischten, von denen jede 15 Pfund wiegt, soll über d'Brücke fahra. Fahrer und leerer Laschtwagen wieget zamma 3755 Pfund. Wia viele Kischten kann dr Laschtwagen höchstens lada, ohne d'Gewichtsgrenze von dr Brücke zu überschreita?	"
 
 **Lösung:**
@@ -2389,7 +2389,7 @@ Die verbleibende Kapazität für die Ladung beträgt somit 5000 - 3755 = 1245 Pf
 Jede Kiste wiegt 15 Pfund, also teile ich die verbleibende Kapazität durch die Gewicht pro Kiste: 1245 ÷ 15 = 83.
 
 Da 15 × 83 = 1245 genau passt, kann der Lastwagen maximal 83 Kisten ohne die Brückengewichtsbeschränkung zu überschreiten.
-"	stop
+"	stop	2.0	0	0	83	1
 q1f4f019f	Dr Stephen hot online Lebensmittel bestellt. D'Endabrechnung war 40,00 US-Dollar. Weil a Lieferdienscht d'Bestellung bracht hot, hend se auf d'Rechnung 25 % Gebühr draufgschlaga und zusätzlich 3,00 US-Dollar Liefergebühr verlangt. Dr Stephen hot außerdem 4,00 US-Dollar Trinkgeld geba. Wia hoch war dr Endpreis von seine Lebensmittel nach alle Extragebühren?	"
 
 Um den Endpreis der Lebensmittel samt allen zusätzlichen Gebühren zu berechnen, gehen wir Schritt für Schritt vor:
@@ -2428,7 +2428,7 @@ Anschließend berücksichtige ich die 25 % Liefergebühr auf die Bestellung, w
 Dann addiere ich die Liefergebühr von 3,00 US-Dollar, was den Preis auf 50,00 + 3,00 = 53,00 US-Dollar bringt.
 
 Schließlich setze ich die 4,00 US-Dollar für das Trinkgeld hinzu, wodurch der Endpreis zu 53,00 + 4,00 = 57,00 US-Dollar wird.
-"	stop
+"	stop	25.0	0	0	57	1
 q709e5faa	A Himbeerstrauch hot 6 Trauben mit jeweils 20 Früchten und no 67 einzelne Früchte, die über dr Strauch verteilt senn. Wia viele Himbeeren senn des z'samma?	"
 
 **Lösung:**
@@ -2469,7 +2469,7 @@ Dann addiere ich die Einzelbeeren hinzu:
 120 Beeren + 67 Beeren = 187 Beeren.
 
 Daher sind insgesamt 187 Himbeeren vorhanden.
-"	stop
+"	stop	67.0	0	0	187	1
 qb292acaa	In oim Korb senn 25 Oranga. Davon isch 1 schlecht, 20 % senn no net reif on 2 senn sauer, dr Rest isch guat. Wia viele Oranga senn guat?	"
 
 Lass uns die Angaben Schritt für Schritt analysieren:
@@ -2505,7 +2505,7 @@ Es gab insgesamt 25 Orangen.
 Somit sind schlechte, nicht reife und sauren Orangen insgesamt 1 + 5 + 2 = 8 Orangen.
 
 Daher sind die guten Orangen 25 - 8 = 17 Orangen.
-"	stop
+"	stop	17.0	0	1		
 qa11cac63	D'Janet kauft ihrer Tochter a Brosche. Fürs Material zahlt se 500 US-Dollar und no 800 US-Dollar an dr Juwelier fürs Modelliere. Danach zahlt se zusätzlich 10 % von dem Betrag für d'Versicherung. Wia viel hot se insgesamt zahla müssa?	"
 
 **Lösung:**
@@ -2528,7 +2528,7 @@ Zuerst addiere ich die Kosten für das Material und die Honorare des Juweliers: 
 Dann berechne ich 10 % der gesamten Summe für die Versicherung: 10 % von 1300 USD = 130 USD.
 
 Schließlich addiere ich die Versicherungskosten zur Gesamtsumme hinzu: 1300 USD + 130 USD = 1430 USD.
-"	stop
+"	stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienschtjohr' kriegt a Mitarbeiter bei Marcys Firma a volle Jahresrente von 50.000 Dollar. Pensionsansprüche gibt's ab 20 Dienschtjohr. Für jedes weitere volle Dienschtjohr nach der 20-Jahres-Marke kriegt dr Mitarbeiter 5 % vom volla Rentabetrag dazu. Wenn d'Marcy nach genau 30 Dienschtjohr 'ufhört, wia hoch isch dann ihr' jährliche Rente in Dollar?	"
 
 **Lösung:**
@@ -2563,7 +2563,7 @@ Für die ersten 20 Dienstjahre bekommt er die volle Rente von 50.000 USD. Für d
 Die Zulage pro Jahr beträgt also 5 % von 50.000 USD, was 2.500 USD entspricht. Für 10 Jahre summiert sich das zu 25.000 USD.
 
 Die gesamte jährliche Rente beläuft sich somit auf die Grundrente plus die Zulage, also 50.000 USD + 25.000 USD = 75.000 USD.
-"	stop
+"	stop	75000.0	0	0	75000	0
 q2eb5bb5f	D'Aleena hot an Streaming-Dienst abonniert, d'r 140 US-Dollar im Monat koschtet. Wenn d'Firma in dr erschta Hälfte vom Jahr d'r ursprüngliche Betrag verlangt und in d'r zwoiten Jahreshälfte 10 % weniger, rechne aus, wia viel se bis zum Jahresende insg'samt für d'r Schtreaming-Dienscht zahlt.	"
 
 **Lösung:**
@@ -2621,7 +2621,7 @@ Auch die zweite Jahreshälfte besteht aus sechs Monaten, also berechne ich die G
 
 Schließlich addiere ich die Kosten der beiden Halbjahreszeiträume, um die Gesamtkosten für das ganze Jahr zu erhalten:
 840 USD + 756 USD = 1.596 USD.
-"	stop
+"	stop	3.0	0	0	1596	1
 q29ca8e5c	D'Sophia überlegt, mit ihrem Auto auf Fahrt zu ganga, und will wissa, wia weit se mit me vollen Tank kommt. Seit em letzten Volltanka isch se 100 Meilen gfahra und hot 4 Gallonen Benzin nachfülla müssa, bis d'r Tank wieder voll war. In d'r Bedienungsanleitung steht, dass in d'r Tank 12 Gallonen Benzin nei passet. Wia viele Meilen kann d'Sophia mit oiner Tankfüllung fahra?	"
 
 **Lösung:**
@@ -2659,7 +2659,7 @@ Dann überlege ich, dass Sophia seit dem letzten Tank 100 Meilen gefahren ist un
 Um die Benzinkonsumption pro Meile zu berechnen, teile ich die 4 Gallonen durch die 100 Meilen, was 0,04 Gallonen pro Meile ergibt.
 
 Schließlich multipliziere ich die Benzinkapazität von 12 Gallonen mit der Konsumption von 0,04 Gallonen pro Meile, um die maximal möglichen Meilen mit einer vollen Tankfüllung zu bestimmen. Das ergibt 480 Meilen.
-"	stop
+"	stop	300.0	0	1		
 q388ed7a8	Dr Jim guckt 2 Schtondn lang Fernseha ond goaht danoach ins Bett und liest halb so lang. Des macht er 3-mal pro Woch'. Wia viele Schtondn verbrengt er in 4 Wochen insgesamt mit Fernsehgucka und Lesa?	"
 
 **Lösung:**
@@ -2688,7 +2688,7 @@ Insgesamt verbringt er also 2 Stunden mit Fernsehen und 1 Stunde mit Lesen pro W
 Da er dies 3-mal pro Woche macht, setze ich 3 Wochen mal 3 Stunden, was zu 9 Stunden pro Woche führt.
 
 Über 4 Wochen verteilt, multipliziere ich 9 Stunden/ Woche mit 4 Wochen, was zu insgesamt 36 Stunden führt.
-"	stop
+"	stop	4.0	0	0	12	0
 qe6615147	Vier Schula tretat in 'me Basketballturnier gegeneinander an. Jede Schul' schickt a Mädlebasketballteam und a Jungenbasketballteam, und jedes Team hot 5 Schpieler. Jede Schul' schickt außerdem für jedes Team oin Trainer mit. Wia viele Personen hend d' Schula insgesamt gschickt?	"
 
 Um die gesamte Anzahl der Personen zu bestimmen, die die Schulen insgesamt geschickt haben, analysieren wir die Daten Schritt für Schritt:
@@ -2729,7 +2729,7 @@ Außerdem sendet jede Schule für jedes Team einen Trainer. Da es zwei Teams pro
 Die Gesamtanzahl der Personen pro Schule beträgt somit 10 Spieler + 2 Trainers = 12 Personen.
 
 Da es vier Schulen gibt, multipliziere ich die Anzahl der Personen pro Schule mit der Anzahl der Schulen: 12 Personen/Schule × 4 Schulen = 48 Personen insgesamt.
-"	stop
+"	stop	48.0	0	1		
 q1df59a5a	An Schatzsucher hot a vergrabene Schatzkischt' mit Edelstai' gfunda. Drin warat 175 Diamanten, 35 weniger Rubine als Diamanten und zwoimal so viele Smaragde wie Rubine. Wia viele Edelsteine warat insgesamt in dr Schatzkischt?	"
 
 **Lösung:**
@@ -2765,7 +2765,7 @@ Zuerst bestimme ich die Anzahl der Rubine. Da es 35 weniger Rubine als Diamanten
 Anschließend berechne ich die Anzahl der Smaragde. Es sind doppelt so viele Smaragde wie Rubine, also 2 mal 140, was 280 Smaragde ergibt.
 
 Schließlich summiere ich alle Edelsteine auf: 175 Diamanten plus 140 Rubine plus 280 Smaragde, insgesamt also 600 Edelsteine.
-"	stop
+"	stop	600.0	0	0	600	0
 q0e3fa635	An d'r Schule vom Dr. Wertz gibt's zwoimal so viele Kerle wie Mädle. Wenn's 60 Mädle und 5 Schüler pro Lehrer gibt, wia viele Lehrer gibt's noa?	"
 
 **Lösung:**
@@ -2798,7 +2798,7 @@ Zuerst bestimme ich die Anzahl der Jungen, indem ich die Anzahl der Mädchen ver
 Dann berechne ich die gesamte Schüleranzahl, indem ich die Anzahl der Mädchen und Jungen addiere. Das ergibt 180 Schüler.
 
 Anschließend bestimme ich die Anzahl der Lehrer, indem ich die gesamte Schüleranzahl durch die Anzahl der Schüler pro Lehrer (hier 5) teile. Das ergibt 36 Lehrer.
-"	stop
+"	stop	36.0	0	1		
 q9c0ce719	D'Bailey fängt mit me bestimmta Geldbetrag an. Dann kriegt se 8 Wochen lang jede Woch' 5 US-Dollar. Wenn se am Ende von de' 8 Wochen insgesamt 100 US-Dollar hot, wia viel Geld hot d'Bailey am Anfang ghett?	"
 
 **Lösung:**
@@ -2844,7 +2844,7 @@ Anschließend bilanziere ich das Gesamtkonto. Der Anfangsbetrag plus die verdien
 Nach 8 Wochen beträgt das gesamte Geld 100 US-Dollar. Also setze ich die Gleichung auf: \( x + 40 = 100 \).
 
 Um \( x \) zu bestimmen, löse ich die Gleichung: \( x = 100 - 40 = 60 \).
-"	stop
+"	stop	3.0	0	0	60	1
 qde446a3d	D'Judy gibt unter dr Woch' jeden Tag 5 Tanzkurs und samschtags 8 Kurs'. Wenn in jedem Kurs 15 Schüler sind und se 15,00 $ pro Schüler verlangt, wia viel Geld verdient se in oiner Woch'?	"
 
 **Lösung:**
@@ -2877,7 +2877,7 @@ Zuerst bestimme ich die Anzahl der Kurse pro Woche. D'Judy gibt täglich 5 Kurse
 Nun berechne ich die Anzahl der Schüler pro Woche. Bei jedem Kurs sind 15 Schüler anwesend, also insgesamt 30 Kurse × 15 Schüler = 450 Schüler in der Woche.
 
 Anschließend ermittle ich die Wochenbetriebskosten. Bei einem Kurspreis von 15,00 USD pro Schüler versteuert D'Judy 450 Schüler × 15,00 USD = 6750,00 USD in einer Woche.
-"	stop
+"	stop	33.0	0	0	7425	1
 qd941251f	D'r Kelian hot zwei Kochrezepte. Des eine hot 20 Ahweisungen, und des andere hot zweimal so viele wie des erschte. Wia viele Ahweisungen muss dr Kelian lesa, damit er beide Rezept' kocha kann?	"
 
 **Lösung:**
@@ -2905,7 +2905,7 @@ Zuerst bestimme ich die Anzahl der Anweisungen für die beiden Rezepte. Das erst
 Anschließend addiere ich die Anweisungen beider Rezepte, um die gesamte Anzahl zu erhalten: 20 + 40 = 60 Anweisungen.
 
 Daher muss Kelian insgesamt 60 Anweisungen lesen, um beide Rezepte zu koche
-"	stop
+"	stop	2.0	0	0	60	1
 q96352811	D'r Tommy sammelt Geld für sei Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Schtück und Käsekuchastückle für 4 US-Dollar pro Stück verkauft. Wenn d'r Tommy 43 Brownies und 23 Käsekuchastückle verkauft, wia viel Geld sammelt er noa ei?	"
 
 **Lösung:**
@@ -2946,7 +2946,7 @@ Zuerst berechne ich den Umsatz der Brownies. Tommy verkauft 43 Brownies zu 3 US-
 Anschließend berechne ich den Umsatz der Käsekuchastückle. Er verkauft 23 Stück zu 4 US-Dollar pro Stück, also 23 mal 4 ergibt 92 US-Dollar.
 
 Schließlich addiere ich die beiden Beträge, um die gesamte Summe zu erhalten: 129 US-Dollar plus 92 US-Dollar ergibt 221 US-Dollar.
-"	stop
+"	stop	221.0	0	1		
 qbf808b59	D'Shiela hot fünf Handys für jeweils 150 US-Dollar mit me Ratenzahlungsvertrag über 3 Monat' kauft. Pro Stück fallen 2 % Zinsen an. Wia viel zahlt d'Shiela jeden Monat über die 3 Monat'?	"
 
 **Lösung:**
@@ -2986,7 +2986,7 @@ Anschließend berechne ich die Zinsen. 2 % der Kaufsumme von 750 US-Dollar ent
 Der gesamtezahlungsbare Betrag beliefert sich aus dem Kaufpreis plus Zinsen, also 750 US-Dollar plus 15 US-Dollar, insgesamt also 765 US-Dollar.
 
 Dieser Betrag wird über 3 Monate in gleichen Raten zurückgetragen. Ich teile also 765 US-Dollar durch 3, was 255 US-Dollar pro Monat entspricht.
-"	stop
+"	stop	255.0	0	1		
 q71d76256	Dr Artie hot an Blumenstand auf em Baueramarkt. Er verkauft drei Sorten Blumen: Studentenblumen, Petunien und Begonien. Normal verlangt er für Studentenblumen 2,74 Dollar pro Topf, für Petunien 1,87 Dollar pro Topf und für Begonien 2,12 Dollar pro Topf. Heut hot d'r Artie koi Wechselgeld, drum rundet er alle Preise auf dr nächschte Dollar. Wenn er 12 Töpfe Studentenblumen, 9 Töpfe Petunien und 17 Töpfe Begonien verkauft, wia viel Dollar verdient er noa?	"
 
 **Lösung:**
@@ -3023,7 +3023,7 @@ Anschließend berechne ich die Verkäufe:
 - Für 17 Töpfe Begonien mit 2 USD je Topf ergibt sich 17 × 2 = 34 USD.
 
 Schließlich addiere ich die einzelnen Einkommensbeiträge, um das gesamte Einkommen zu erhalten: 36 USD + 18 USD + 34 USD = 88 USD.
-"	stop
+"	stop	88.0	0	1		
 qd6f9023f	Dr Luke verbringt Zeit am Strand und baut Sandburgen. Irgendwann merkt er, dass jede Ebene von dr Sandburg bloß halb so viele Quadratmeter hot wie d'Ebene dronter. Wenn er a 4-stöckige Sandburg baut, bei der d'oberschte Ebene 16 Quadratmeter hot, wia groß isch dann im Schnitt oi Ebene in Quadratmetern?	"
 
 **Lösung:**
@@ -3072,7 +3072,7 @@ Nun berechne ich die Summe aller Etagen:
 
 Schließlich berechne ich den Durchschnitt:
 240 m² / 4 Etagen = 60 m² pro Ebene
-"	stop
+"	stop	3.0	0	0	60	1
 qcf724c14	D'Cecilia hot grad an neuen Welpen kauft. Laut ihrem Tierarzt muss se dr Welpen in den erschte 180 Tagen jeden Tag mit 1 Tasse Hundefutter füttera. Danoch braucht dr Welpe für dr Rest von seim Leben jeden Tag 2 Tassen Hundefutter. Wenn a Tüte Hundefutter 110 Tassenportionen enthält, wia viele Tüten verbraucht d'Cecilia dann im erschta Jahr?	"
 
 **Lösung:**
@@ -3103,7 +3103,7 @@ Anschließend berücksichtige ich die verbleibenden Tage im ersten Jahr. Da ein 
 Die gesamte Hundefutterverbrauch im ersten Jahr beträgt somit 180 + 370 = 550 Tassen.
 
 Da jede Tüte 110 Tassenportionen enthält, rechnet man 550 Tassen geteilt durch 110 Tassen pro Tüte. Das ergibt 5 Tüten.
-"	stop
+"	stop	5.0	0	1		
 q6330b5ad	Wenn dr Raymond halb so viel Wäsche wäscht wie d' Sarah und d' Sarah 4-mal so viel Wäsche wäscht wie dr David, rechne dr Onterschied zwischen dr Wäschemenge vom Raymond und vom David aus, wenn d' Sarah 400 Pfund Wäsche wäscht.	"
 
 **Lösung:**
@@ -3159,7 +3159,7 @@ Dann berechne ich \( R \) mit der Gleichung \( R = \frac{1}{2} \times 400 = 200 
 
 Schließlich berechne ich den Unterschied zwischen den Wäschen von Raymond und David:
 \[ R - D = 200 - 100 = 100 \] Pfund.
-"	stop
+"	stop	3.0	0	0	100	1
 qfb8247db	D'r Vincent kann Blumen in 3-er-Packungen für 2,50 US-Dollar oder in 2-er-Packungen für 1 US-Dollar kaufa. Wia viel Geld spart er, wenn er 18 Blumen zum günschtigera Preis kauft?	"
 
 Um die kostengünstigste Methode zu ermitteln, 18 Blumen zu kaufen, vergleichen wir die Preise der verfügbaren Packungen:
@@ -3258,7 +3258,7 @@ Alternativ, wenn ich 6 Packungen von 3 Blumen kaufe, erhalte ich genau 18 Blumen
 Die billigste Option ist die Kauf von sechs 3-er-Packungen, was zu einer Gesamtkosten von 15,00 USD führt. Die Verwendung von 2-er-Packungen allein ist teurer, und eine Kombination bringt keinen Preisvorteil.
 
 Daher spart D'r Vincent 9,00 USD, indem er die 3-er-Packungen statt der 2-er-Packungen kauft.
-"	stop
+"	stop	3.0	0	0	9	0
 q4da79a41	D'r John adoptiert an Hond. Er bringt d'r Hond zum Hondefrisör, und des koschtet 100 US-Dollar. Weil er Neukunde isch, kriegt er 30 % Rabatt. Wia viel kostet dr Termin beim Hondefrisör dann?	"
 
 **Lösung:**
@@ -3289,7 +3289,7 @@ Zuerst identifiziere ich die gegebenen Werte: Das BaseServicebetrag beträgt 100
 Anschließend berechne ich den Rabattbetrag durch Multiplizieren des Grundpreises mit der Rabattquote: 100 $ × 30 % = 30 $.
 
 Schließlich ziehe ich den Rabattbetrag vom Grundpreis ab, um den finalen Preis zu erhalten: 100 $ - 30 $ = 70 $.
-"	stop
+"	stop	70.0	0	1		
 qd3f2e43b	Zwei Mädle krieget jeweils 1/6 von de' 24 Liter Wasser. Danach kriegt an Bub 6 Liter Wasser. Wia viele Liter Wasser bleibet übrig?	"
 
 **Lösung:**
@@ -3338,7 +3338,7 @@ Anschließend bekommt der Junge 6 Liter.
 Zusammenfassend beträgt die vergebene Menge 8 + 6 = 14 Liter.
 
 Um die verbleibenden Liter zu berechnen, ziehe ich die vergebene Menge von der Gesamtmenge ab: 24 - 14 = 10 Liter.
-"	stop
+"	stop	10.0	0	1		
 qffe70c6a	Dr Charlie hot 10 Schticker ghett. Er hot 21 Schticker in me Laden in d'r Mall kauft und zum Geburtstag 23 Schticker gschenkt kriegt. Donoach hot dr Charlie seiner Schwester 9 von de Schticker geba und 28 zum Verziera vo rer Grußkarte benutzt. Wia viele Schticker hot dr Charlie no übrig?	"
 
 Lass uns Schritt für Schritt die Lösung finden:
@@ -3366,7 +3366,7 @@ Zuerst bestimmen wir die Anzahl der Schticker, die Dr. Charlie besitzt. Er hat 2
 Anschließend betrachten wir die Verwendung der Schticker. Er gibt seiner Schwester 9 Schticker und verwendet 28 Schticker für die Verzierung der Grußkarten. Die gesamte Verwendung entspricht also 9 + 28 = 37 Schticker.
 
 Schließlich ziehen wir die Verwendung von den Gesamtanzahl der Schticker ab, um die verbleibenden Schticker zu bestimmen: 44 - 37 = 7 Schticker.
-"	stop
+"	stop	7.0	0	0	7	0
 q7d0f9963	D'Grace wiegt 125 Pfund. Dr Alex wiegt 2 Pfund weniger als des 4-fache vom Gewicht von dr Grace. Wia viel Pfund wieget se zamma?	"
 
 **Lösung:**
@@ -3416,7 +3416,7 @@ Anschließend ziehen wir die 2 Pfund ab, um das Gewicht von Dr. Alex zu erhalten
 
 Schließlich addieren wir die Gewichte von Dr. Grace und Dr. Alex, um die gesuchte Summe zu erhalten:
 125 Pfund + 498 Pfund = 623 Pfund.
-"	stop
+"	stop	623.0	0	1		
 q792b7ea9	D'r Dan pflanzt 3 Rosenbüsch. Jeder Rosenbusch trägt 25 Rosen. Jede Rose hot 8 Dornen. Wia viele Dornen senn des insgesamt?	"
 
 **Lösung:**
@@ -3441,7 +3441,7 @@ Zuerst bestimme ich die Anzahl der Rosenbüsche, die D'r Dan gepflanzt hat, näm
 Jeder Rosenbusch trägt 25 Rosen, also insgesamt gibt es 3 Rosenbüsche × 25 Rosen pro Busch = 75 Rosen.
 
 Jede Rose hat 8 Dornen, somit ergibt sich eine Gesamtzahl von 75 Rosen × 8 Dornen pro Rose = 600 Dornen.
-"	stop
+"	stop	600.0	0	1		
 q3dfac176	A Fußballteam schpielt 22 Schpiel. Se hend 8 meh' gwonna als verlora. Wia viele Schpiel hend se gwonna?	"
 
 Um die Anzahl der gewonnenen Spiele des Fußballteams zu bestimmen, gehen wir von den gegebenen Informationen aus:
@@ -3527,7 +3527,7 @@ Nun können wir die Anzahl der Gewonnenen Spiele berechnen:
 Gewinn = Verlust + 8 = 7 + 8 = 15
 
 Daher hat das Team 15 Spiele gewonnen.
-"	stop
+"	stop	7.0	0	0	15	1
 qc8e2bf9d	D'r Eugen näht an Quilt aus alte Souvenir-T-Shirts. Er hot von jedem Urlaub, den er gmacht hot, a T-Shirt. Er fährt jedes Joahr viermal in Urlaub. Mit d'r Tradition hot er in dem Joahr angfanga, wo er 23 worda isch, und er hot für jedes Jahr bis vor s'aktuelle Jahr T-Shirts gsammelt; jetzt isch er 34. Wia viele Quilt-Blöcke hot er insgesamt?	"
 
 **Lösung:**
@@ -3553,7 +3553,7 @@ Zuerst bestimme ich, wie viele Jahre Eugen Urlaub gemacht hat. Er fing mit 23 Ja
 Jedes Jahr macht er vier Urlaubsreisen, also hat er pro Jahr vier T-Shirts gesammelt. Insgesamt sind das 11 Jahre * 4 Urlaubsreisen pro Jahr = 44 T-Shirts.
 
 Da er einen Quilt-Block aus zwei T-Shirts näht, ergibt sich die Anzahl der Quilt-Blöcke durch die Division der Gesamtanzahl der T-Shirts durch 2. Also 44 T-Shirts / 2 = 22 Quilt-Blöcke.
-"	stop
+"	stop	22.0	0	0	22	0
 q87073282	D'r Greg hot an Wecker gstellt, der dreimal am Tag zur Erinnerung klingelt. Wenn d'r Wecker losgoaht, klingelt er so lang, bis d'r Greg n' ausmacht. Beim erschten Moal heut hoat er viermal g'klingelt. Beim zweiten Moal hot er dreimal so lang g'klingelt wie beim erschten Moal. Beim dritten Moal hot er halb so lang klingelt wie beim zweiten Moal. Wia oft hot dr Wecker insgesamt klingelt?	"
 
 **Lösung:**
@@ -3602,7 +3602,7 @@ Um die gesamte Klingelanzahl zu bestimmen, addiere ich die Anzahl der Klingels f
 4 + 12 + 6 = 22 Mal.
 
 Daher klingelt der Wecker insgesamt 22 Mal.
-"	stop
+"	stop	22.0	0	1		
 qe293b5e8	A Firma zahlt ihre Mitarbeiter an Einstiegslohn von 600 Dollar im Monat. D'Firmenregel belohnt Mitarbeiter, die lang dabei sind: Nach fünf Dienschtjoahr' wird d'r Lohn jedes Joahr erhöht. D'jährliche Erhöhung isch immer an feschter Betrag und entspricht 10 % vom anfänglichen Jahresgehalt. D'Sylvie hot grad ihr fünftes Joahr in dr Firma fertig. Wia hoch isch ihr Jahresgehalt, nachdem se no drei weitere Joahr dort schafft?	"
 
 **Lösung:**
@@ -3635,7 +3635,7 @@ Da Sylvie bereits fünf Dienstjahre absolviert hat, trifft sie die Bedingung fü
 Sylvie arbeitet nach ihrem fünften Jahr noch drei weitere Jahre in der Firma. In jedem dieser drei Jahre wird das Jahresgehalt um 10 % des anfänglichen Jahresgehalts (also 720 USD) erhöht. Somit entstehen drei weitere Erhöhungen von je 720 USD.
 
 Die Gesamtverhöhung über die drei Jahre beträgt 720 USD × 3 = 2.160 USD. Das finale Jahresgehalt nach den drei weiteren Jahren ergibt sich aus dem bereits erhöhten Jahresgehalt von 7.920 USD plus 2.160 USD, was insgesamt 10.080 USD entspricht.
-"	stop
+"	stop	10080.0	0	0	10080	0
 qb9e657cf	D'erschte Platte von d'r Marilyn hot sich 10-mal so oft verkauft wie die vom Harald. Wenn se zamma 88.000 Exemplare verkauft hend, wia viele Exemplare hot dr Harald verkauft?	"
 
 **Lösung:**
@@ -3685,7 +3685,7 @@ Um \( h \) zu bestimmen, teile ich 88.000 durch 11:
 \[
 h = \frac{88.000}{11} = 8.000
 \]
-"	stop
+"	stop	88000.0	0	0	8000	1
 q8d6c3ac8	D'Christina hot 16 Freind zu ihrer Geburtstagsfeier eiglada. Se rechnet damit, dass bloß 75 % davon kommet, drum richtet se für jeden erwarteten Gast a Geschenktüte. Wenn jede Geschenktüte $2 koschtet, wia hoch sind dann d'Gesamtkoschta für d'Geschenktüten?	"
 
 **Lösung:**
@@ -3714,7 +3714,7 @@ q8d6c3ac8	D'Christina hot 16 Freind zu ihrer Geburtstagsfeier eiglada. Se rechne
 Zuerst bestimme ich die Anzahl der erwarteten Gäste, indem ich 75 % von 16 Freunden berechne. Das ergibt 12 erwartete Gäste.
 
 Dann berechne ich die Gesamtkosten für die Geschenktüten, indem ich die Anzahl der erwarteten Gäste (12) mit der Kosten pro Tüte (2 €) multipliziere. Das ergibt eine Gesamtkosten von 24 €.
-"	stop
+"	stop	2.0	0	0	24	1
 qa59fef67	Dr Ted, dr T-Rex, will Kartoffelsalat zum Dinopicknick mitbringa. Er woiß, dass an erwachsener Dinosaurier 10 Pfund Kartoffelsalat isst und a Jungtier halb so viel wie a erwachsenes Tier. Wenn beim Picknick 20 Erwachsene und 5 Junge dabei senn, wia viel Kartoffelsalat muss dr Ted mitbringa, damit hoffentlich alle satt werdet?	"
 
 **Lösung:**
@@ -3749,7 +3749,7 @@ Zuerst bestimme ich die Anzahl der benötigten Kartoffelsalat für die erwachsen
 Anschließend berechne ich die benötigte Menge für die jungen Dinosaurier. Jedes Jungtier isst halb so viel wie ein erwachener, also beträgt das 5 Pfund pro Jungtier. Mit 5 Jungtieren insgesamt benötigt man 5 Pfund mal 5, was 25 Pfund ergibt.
 
 Schließlich addiere ich die Mengen der erwachsenen und jungen Tiere, um die gesamte benötigte Kartoffelsalatzahl zu erhalten. Dazu addiere ich 200 Pfund und 25 Pfund, was insgesamt 225 Pfund ergibt.
-"	stop
+"	stop	225.0	0	1		
 q4db223a4	D'r Jan hot dreimal so viele Haustiere wie d'Marcia. D'Marcia hot zwei Haustiere mehr als d'Cindy. Wenn d'Cindy vier Haustiere hot, wia viele Haustiere hend dann alle drei zamma?	"
 
 Lass uns die Anzahl der Haustiere von jeder Person Schritt für Schritt ermitteln.
@@ -3781,7 +3781,7 @@ Marcia hat zwei Haustiere mehr als Cindy, also hat Marcia 4 + 2 = 6 Haustiere.
 Jan hat dreimal so viele Haustiere wie Marcia, also hat Jan 3 × 6 = 18 Haustiere.
 
 Schließlich sumieren wir die Haustiere aller drei: 4 (Cindy) + 6 (Marcia) + 18 (Jan) = 28 Haustiere insgesamt.
-"	stop
+"	stop	28.0	0	1		
 q2ae0bd70	D'Emily hot 4 Kinder: Amy, Jackson, Corey und James. D'Amy isch 5 Joahr älter als d'r Jackson und 2 Joahr jünger als d'r Corey. Wenn d'r James 10 Joahr alt und 1 Joahr jünger wie d'r Corey isch, wia alt isch dann dr Jackson?	"
 
 Lass uns die Altersbeziehungen zwischen den Kindern Schritt für Schritt analysieren.
@@ -3841,7 +3841,7 @@ Schließlich nutze ich die erste Gleichung, um Jacksons Alter zu bestimmen:
 9 = J + 5 → J = 9 - 5 = 4
 
 Jackson ist also 4 Jahre alt.
-"	stop
+"	stop	4.0	0	1		
 q412bff21	D'r Lee konnte d'400 Meter Hürden zwei Sekonden schneller laufa als dr Gerald d'400 Meter Hürden läuft. Dr Gerald hot aber sei Ernährung omgstellt und dadurch sei G'schwindigkeit um 10 % verbessert. Wenn dr Lee d'400 Meter Hürden in 38 Sekunden läuft, wia schnell kann dr Gerald mit seiner verbesserten Ernährung d'400 Meter Hürden in Sekunden laufa?	"
 
 **Lösung:**
@@ -3889,7 +3889,7 @@ Die Geschwindigkeit von Dr. Gerald ohne Verbesserung beträgt 400 Meter / 40 Sek
 Nach der Verbesserung seiner Ernährung verbessert sich seine Geschwindigkeit um 10 %. Somit beträgt seine neue Geschwindigkeit 10 Metern pro Sekunde * 1,10 = 11 Metern pro Sekunde.
 
 Schließlich berechnen wir die neue Zeit, die Dr. Gerald mit seiner verbesserten Geschwindigkeit benötigt: 400 Meter / 11 Metern pro Sekunde ≈ 36,36 Sekunden.
-"	stop
+"	stop	10.0	0	0	36.36	0
 qf73a338f	In rer Noachbarschaft gibt's zwölf weniger Kaninchen als Hond und Katza zamma. Wenn auf jeden Hond zwei Katza kommet und es 60 Hond gibt, wia viele Haustiere gibt's dann insgesamt in d'r Nachbarschaft?	"
 
 Lass uns die Aufgabe Schritt für Schritt lösen.
@@ -3932,7 +3932,7 @@ Zuerst bestimme ich die Anzahl der Katzen. Da auf jeden Hund zwei Katzen kommen 
 Anschließend berechne ich die Gesamtzahl der Kaninchen. Es gibt zwölf weniger Kaninchen als Hunde und Katzen zusammen. Die Summe aus Hunden und Katzen beträgt 60 + 120 = 180. Daher sind die Kaninchenzahl 180 - 12 = 168.
 
 Schließlich addiere ich die Anzahl aller Tiere: 60 Hunde + 120 Katzen + 168 Kaninchen = 348 Haustiere insgesamt.
-"	stop
+"	stop	3.0	0	0	348	1
 qc5273098	Von de' 200 Fünftklässler sind 2/5 Jungen, und 2/3 von de Mädle senn bei de Pfadfinderinnen. Wia viele Mädle senn net bei de Pfadfinderinnen?	"
 
 **Lösung:**
@@ -3967,7 +3967,7 @@ Zuerst bestimme ich die Anzahl der Jungen und Mädchen in der Klasse. Es gibt 20
 Dann betrachte ich die Mädchen und ermitteln, wie viele bei den Pfadfinderinnen sind. 2/3 der Mädchen gehören zu den Pfadfinderinnen, also sind 80 Mädchen in der Gruppe.
 
 Um die Anzahl der Mädchen zu finden, die nicht bei den Pfadfinderinnen sind, ziehe ich die Anzahl der Mädchen in der Gruppe von der Gesamtanzahl der Mädchen ab. Das ergibt 40 Mädchen, die nicht bei den Pfadfinderinnen sind.
-"	stop
+"	stop	200.0	0	0	40	1
 qf8da7966	D'r Harry hot letschte Nacht 9 Schtondn gschlafa. Sei Freind James hot bloß 2/3 von d'r Zeit gschlafa, die d'r Harry gschlafa hot. Wia viele Schtondn hot dr Harry meh' gschlafa wie d'r James?	"
 
 **Lösung:**
@@ -4005,7 +4005,7 @@ Jetzt vergleiche ich die Schlafzeiten der beiden. Harry hat 9 Stunden geschlafen
 9 Stunden − 6 Stunden = 3 Stunden.
 
 Daher hat Harry um 3 Stunden mehr geschlafen als James.
-"	stop
+"	stop	3.0	0	1		
 q186d2aa2	Wenn d'Freda Dosentomaten zu Soße ei'kocht, verlieret se d'Hälfte von ihrem G'wicht. Jede 16-Unzen-Dose Tomaten, die se nemmt, enthält drei Tomaten. D'letschte Portion Tomatensoße hot 32 Unzen Soße ergeba. Wia viele Tomaten hot d'Freda g'braucht?	"
 
 **Lösung:**
@@ -4041,7 +4041,7 @@ Zuerst bestimme ich die Menge an Tomatensoße, die benötigt wird. Da die letzte
 Anschließend berechne ich, wie viele Dosen benötigt werden. Jede Dose enthält 16 Unzen Tomaten. Also teile ich die gesamte benötigte Tomatenmenge von 64 Unzen durch die Menge pro Dose, also 16 Unzen, um die Anzahl der Dosen zu erhalten.
 
 Schließlich ermittle ich die Anzahl der Tomaten, indem ich die Anzahl der Dosen mit der Anzahl der Tomaten pro Dose multipliziere, was 3 Tomaten pro Dose beträgt.
-"	stop
+"	stop	3.0	0	0	12	1
 q9c762a15	Auf d'r Autobahn stauet sich d'Auto. A paar Auto kommet in den erschte 15 Minuten vom Stau durch, danach kommet no 20 weitere Auto in den übrigen 15 Minuten vom Stau durch. 5 Autos scheret aus d'r Reihe aus und müsset drum net durch dr Stau. Wenn am Anfang 30 Autos auf dr Autobahn standet, wia viele Autos sind dann in den ersten 15 Minuten durch d'r Stau komma?	"
 
 **Lösung:**
@@ -4077,7 +4077,7 @@ Dann betrachten wir die Autos, die in den nächsten 15 Minuten durchkommen. Davo
 Gesamtzahl der Autos am Anfang ist 30. Davon kommen in den ersten 15 Minuten 25 Autos durch, in den nächsten 15 Minuten kommen 20 Autos durch, davon 5, die aus der Reihe ausrücken.
 
 Die Gesamtzahl der Autos, die durch den Stau kommen, beträgt somit 25 plus 20, also 45 Autos.
-"	stop
+"	stop	3.0	0	0	30	0
 q507804db	D'Mary gärtnert für ihr Leba gern. Geschtern hot se 18 neue Topfpflanza von ihrer Lieblingsgärtnerei kriegt. Se hot scho 2 Topfpflanzen auf jedem von de 40 Fenschtersims in ihrem großen Landhaus standa. Weil se grad großzügig isch, will se morgen von jedem Fenschtersims 1 Topfpflanze an Freind und Familie verschenka. Wia viele Topfpflanzen bleibet d'r Mary übrig?	"
 
 Mary hat folgende Anzahl von Topfpflanzen:
@@ -4110,7 +4110,7 @@ Morgen will Mary von jedem Sims eine Pflanze an Freunde und Familie verschenken.
 Schließlich ziehe ich die 40 zu verschenkenden Pflanzen von der Gesamtanzahl ab: 98 - 40 = 58.
 
 Also bleiben Mary 58 Topfpflanzen übrig.
-"	stop
+"	stop	58.0	0	1		
 q120898cb	D'r Jerome hot an bestimmte Tag 4 Freind zu Besuch. D'r erschte hot 20 Mal auf d'Türklingel drückt, bevor d'r Jerome aufgmacht hot. Dr zweite hot 125 % so oft auf d'Türklingel drückt wie d'r erschte. Dr dritte hot 10 Mal öfter klingelt als d'r vierte. Wenn d'r vierte 60 Mal auf d'Türklingel drückt hot, wia oft hot d'Türklingel insgesamt klingelt?	"
 
 **Lösung:**
@@ -4150,7 +4150,7 @@ Zuerst bestimme ich die Anzahl der Klingelungen für jeden Gast:
 4. Der dritte Gast klingelt 10 Mal mehr als der vierte, also 60 + 10 = 70 Male.
 
 Schließlich summiere ich alle Klingelungen: 20 + 25 + 70 + 60 = 175 Male.
-"	stop
+"	stop	175.0	0	1		
 q55e446ec	D'r Solo muss 4 Seiten aus saim naturwissenschaftlicha Textbuch lesa, 20 Seiten aus seinem Gemeinschaftskundebuch, 7 Seiten aus seinem Geschichtsbuch und 8 Seiten aus seinem Geografiebuch. Am Montag liest dr Solo 15 Seiten. Wenn er no 4 Tag' hot, um alles zom lesa, wia viele Seiten muss er dann em Schnitt pro Tag lesa?	"
 
 **Lösung:**
@@ -4187,7 +4187,7 @@ Er hat noch 4 Tage, um die verbleibenden 24 Seiten zu lesen. Um den durchschnitt
 24 Seiten ÷ 4 Tage = 6 Seiten pro Tag.
 
 Dr. Solo muss also täglich durchschnittlich 6 Seiten lesen.
-"	stop
+"	stop	6.0	0	1		
 qe178e77b	D'r John trinkt zum Frühstück, Mittagessa und Abendessa gern jeweils a Glas Wasser. Vor em Schlafengeha trinkt er au no oins. Des macht dr John an jedem Wochentag, aber am Wochenende macht er's gemütlicher und trinkt zum Abendessa stattdessa a Glas Limonade. Wia viele Gläser Wasser trinkt dr John pro Woche?	"
 
 **Lösung:**
@@ -4221,7 +4221,7 @@ Am Wochenende trinkt er ebenfalls 3 Gläser Wasser (Frühstück, Mittag, Abend),
 Da es 5 Werkstage und 2 Wochenendstage gibt, berechne ich die gesamtliche Anzahl der Wasserflaschen pro Woche. An Werktagen insgesamt 5 × 4 = 20 Gläser Wasser. An Wochenendtagen insgesamt 2 × 3 = 6 Gläser Wasser.
 
 Die Gesamtsumme ergibt sich aus den Wasserflaschen an Werktagen und Wochenendtagen: 20 + 6 = 26 Gläser Wasser pro Woche.
-"	stop
+"	stop	26.0	0	1		
 q13dd2b3f	An Nebelschleier kommt vom Meer rüber und legt sich über a Stadt. Er braucht 10 Minuten, om jeweils 3 Meilen von d'r Stadt zuzudecka. Wenn d' Stadt vom Meeresufer bis auf d'andere Seite im Landesinneren 42 Meilen breit isch, wia viele Minuten braucht dr Nebel, bis er über d'r ganzen Stadt liegt?	"
 
 **Lösung:**
@@ -4248,7 +4248,7 @@ Zuerst analysiere ich das Problem: Der Nebel breitet sich mit einer Geschwindigk
 Da der Nebel von beiden Seiten der Stadt herankommt, dient die Breite der Stadt dazu, die Zeit zu berechnen, bis der Nebel die gesamte Strecke abgedeckt hat. Die gesamte Breite von 42 Meilen wird also von der Nebelgeschwindigkeit von 3 Meilen pro Minute bedient.
 
 Um die benötigte Zeit zu berechnen, teile ich die gesamte Breite durch die Geschwindigkeit des Nebels: 42 Meilen geteilt durch 3 Meilen pro Minute ergibt 14 Minuten. Insgesamt benötigt der Nebel also 14 Minuten, um die ganze Stadt zu umschließen.
-"	stop
+"	stop	1.0	0	0	14	0
 q5d8678a9	D'Poppy macht a 1000-Teile-Puzzle. Se legt a Viertel von de Teile aufs Brett, danoach legt ihre Mama a Drittel von de übrigen Teile. Wia viele Puzzleteile müsset danach no gelegt werda?	"
 
 **Lösung:**
@@ -4293,7 +4293,7 @@ Dann legt die Mama ein Drittel der übrigen Teile aufs Brett, also \(\frac{1}{3}
 Die Gesamtanzugs der auf dem Brett liegenden Teile nach beiden Schritten sind \(250 + 250 = 500\).
 
 Schließlich bestimme ich die Anzahl der noch nicht gelegten Teile durch Abzug der auf dem Brett liegenden Teile von der Gesamtanzugs: \(1000 - 500 = 500\).
-"	stop
+"	stop	1000.0	0	0	500	1
 q10c23d37	D'r Cody isst dreimal meh' Keks' wie d'r Amir. Wenn d'r Amir 5 Kekse isst, wia viele Keks' esset die zwoi dann zamma?	"
 
 **Lösung:**
@@ -4329,7 +4329,7 @@ Dann erfahren wir, dass Amir 5 Kekse hat. Substizuiere ich das in die Gleichung 
 Es wird jedoch nach der Anzahl der Kekse der ""zwoi"" gefragt, was ich als die Summe der Kekse beider Personen verstehe.
 
 Also addiere ich Amir's 5 Kekse zu Codys 15 Keksen, um die Gesamtzahl zu erhalten.
-"	stop
+"	stop	20.0	0	1		
 q71246a09	Dr John hot 3 Kischta. Jede Kischt' isch 5 Inch mal 6 Inch mal 4 Inch groß. D'Wände senn 1 Inch dick. Wia groß isch s'Innenvolumen vo' alle 3 Kischta zamma?	"
 
 Um das Innenvolumen aller drei Kisten zu berechnen, gehen wir Schritt für Schritt vor:
@@ -4375,7 +4375,7 @@ Für die Höhe ergibt sich 4 Inch minus 2 Inch = 2 Inch.
 Das Innenvolumen einer Kiste berechne ich durch Multiplikation der Innenmaße: 3 Inch × 4 Inch × 2 Inch = 24 Kub inch.
 
 Da es drei Kisten gibt, multipliziere ich das Einzelvolumen mit 3: 24 Kub inch × 3 = 72 Kub inch.
-"	stop
+"	stop	3.0	0	0	72	1
 q51ea4378	D'r Frankie schaut jeden Abend fern, nachdem er seine Hausaufgaba g'macht hot. Am Montag und Dienstag hot er jeweils eine 1-stündige Folge von seiner Lieblingssendung agschaut. Am Mittwoch hot er a paar Folgen von rer 30-minütigen Sendung agschaut. Am Donnerstag war er früher mit de Hausaufgaben fertig und hot eine 1-stündige Folge und eine 30-minütige Show agschaut. Am Freitag durfte er wegen em Wochenende länger aufbleiba und hot zwei 1-stündige Folgen agschaut. Wenn er insgesamt 7 Schtondn fernsehguckt hot, wia viele 30 Minuten lange Folgen hot er am Mittwoch agschaut?	"
 
 **Lösung:**
@@ -4428,7 +4428,7 @@ Da jede 30-Minuten-Folge 0,5 Stunden beträgt, teilt Frankie die verbleibenden 1
 1,5 / 0,5 = 3
 
 Frankie hat am Mittwoch also 3×30-Minuten-Folgen geschaut.
-"	stop
+"	stop	3.0	0	1		
 qe465613a	D'r Henry bäckt Keks' für an regionalen Backwettbewerb. Er will zwoimal so viele bacha wie letschtes Joahr. Als er fertig isch, merkt er, dass er 15 Kekse mehr bacha hot als eigentlich g'plant. Beim Rausstelle zum Abkühla lässt er 5 Keks' falla und hot danach insgesamt 110 Keks'. Wia viele Keks' hot dr Henry letztes Jahr bacha?	"
 
 **Lösung:**
@@ -4495,7 +4495,7 @@ x &= 50
 \]
 
 Henry hat im letzten Jahr 50 Kekse gebacken.
-"	stop
+"	stop	50.0	0	1		
 q1e0f8fcb	A örtliche Tankschtelle verkauft Benzin für 3,00 $ pro Gallone. A App-Firma gibt 0,20 $ Cashback pro Gallone, wenn ma an d'r Tankchstelle tankt. Wenn jemand 10 Gallonen Benzin kauft, wia viel kostet des Benzin nach dr Cashback-Prämie? Gib d'Antwort in Dollar an.	"
 
 Um den Endkostenvon 10 Gallonen Benzin nach dem Cashback-Prämie zu berechnen, gehen wir wie folgt vor:
@@ -4536,7 +4536,7 @@ Zuerst berechne ich den Gesamtbetrag für 10 Gallonen Benzin bei der örtlichen 
 Dann betrachte ich den Cashback von 0,20 $ pro Gallone. Für 10 Gallonen erhalten der Kunde somit 0,20 $ × 10 = 2,00 $ zurück.
 
 Schließlich ziehe ich den Cashback von dem Gesamtbetrag ab: 30,00 $ − 2,00 $ = 28,00 $.
-"	stop
+"	stop	0.0	0	0	28	1
 q91fe6f6e	D'r Marcell und d'Beatrice machet an Wettbewerb, wer d'meiste' Fruchtrollen essa kann, also rollet se alle aus, die se findat. Leider hot jemand an Fehler gmacht: D'Menge von d'r Beatrice war zwei Rollen breit und 24 Rollen lang, während die vom Marcell 3 Rollen breit und 14 Rollen lang war. Wenn beide ihr' ganze Menge esset, wia viele hend se dann em Schnitt gessa?	"
 
 **Lösung:**
@@ -4573,7 +4573,7 @@ Als nächstes addiere ich die Gesamtanzahlen der beiden Mengen, um die Summe all
 Um den Schnitt zu berechnen, teile ich die Gesamtanzahl durch die Anzahl der Personen, also 2. 90 ÷ 2 = 45.
 
 Somit haben Marcell und Beatrice jeweils im Schnitt 45 Fruchtrollen gegessen.
-"	stop
+"	stop	45.0	0	1		
 q76afc2ba	Julias Boot hot a Leck g'kriegt, als se draußen auf em See war. Für alle zehn Fuß, die se Richtung Ufer rudert, laufet zwei Liter Wasser ins Boot. Für zwanzig Fuß braucht se sechzehn Sekonden. Dr Strand war 64 Sekonden entfernt. Wia viel Wasser war im Boot, als d'Julia d'r Strand erreicht hot?	"
 
 **Lösung:**
@@ -4604,7 +4604,7 @@ Um die Gesamtzeit zu erreichen, multipliziere ich die Anzahl der Fuß mit der Ze
 Da jedes 10-Rudertak-Wasser 2 Liter Wasser ins Boot bringt, berechne ich die Anzahl der 10-Rudertak-Intervale in 80 Rudertaken: 80 / 10 = 8 Intervale.
 
 Schließlich multipliziere ich die Anzahl der Intervale mit den Wasserprozentsatz: 8 * 2 = 16 Liter Wasser im Boot, wenn Julia das Ufer erreicht hat.
-"	stop
+"	stop	16.0	0	1		
 q9c73cd77	A Klassenzimmer hot a Tafel, die sich 4 Lehrer teilet, weil se d'r Raum abwechselnd nutzet. Jeder Lehrer hot 2 Unterrichts Schtonda am Tag und benutzt d'Tafel in jeder Schtond. Wenn d'Tafel 3-mal pro Unterrichts Schtond gwischt wird, wia oft wird se dann am Tag gwischt?	"
 
 **Lösung:**
@@ -4644,7 +4644,7 @@ Daher multipliziere ich die Anzahl der Lehrer mit der Anzahl der Stunden und den
 4 Lehrer × 2 Stunden/Lektor × 3 Tätschelungen/Stunde = 24 Tätschelungen pro Tag.
 
 So erreiche ich die Gesamtanzahl der Tätschelungen pro Tag.
-"	stop
+"	stop	24.0	0	1		
 q2bbbdc5a	D'r Ryan pflanzt jeden Tag 2 Blumen in seim Garten. Nach 15 Tag', wia viele Blumen hot er, wenn 5 net angewachsa senn?	"
 
 **Lösung:**
@@ -4671,7 +4671,7 @@ Ryan pflanzt jeden Tag **2 Blumen** in seinen Garten. Das dauert **15 Tage**.
 Zuerst bestimme ich die gesamte Anzahl der gesaateten Blumen. Da Ryan jeden Tag 2 Blumen pflanzt und dies über 15 Tage持续ingt, ergibt sich insgesamt 2 × 15 = 30 Blumen.
 
 Nun berücksichtige ich die Tatsache, dass 5 Blumen nicht aufgegangen sind. Um die Anzahl der wirklich aufgegangenen Blumen zu bestimmen, ziehe ich die nicht aufgegangenen Blumen von der gesamten Anzahl ab: 30 - 5 = 25 Blumen.
-"	stop
+"	stop	15.0	0	0	25	1
 qb65bf453	S' Handy vom Jamal kann 6-mal mehr Fotos speichera als des von d'r Brittany. D'maximale Zahl an Fotos, die der Brittany ihr Handy speichera kann, isch 50-mal höher als d'Anzahl von de Vögel auf Jamals Foto mit de Enten im Zoo. Wenn s' Handy vom Jamal 1.800 Fotos speichera kann, wia viele Enten sieht ma noa auf Jamals Foto von de Enten im Zoo?	"
 
 **Lösung:**
@@ -4740,7 +4740,7 @@ Zunächst analysiere ich die gegebenen Informationen:
 
 **Antwort:**
 Es sind \boxed{6} Enten auf Jamals Foto im Zoo zu sehen.
-"	stop
+"	stop	6.0	0	1		
 q62cadf26	D'Sasha merkt, dass d'Holzpreise in den letschten paar Monat', seit se Holz g'kauft hot, um 50 % gstiega senn. Weil se no an Rest übrig hot, will se den verkaufa. Se hot zehn 2 x 4 x 10 große Bretter übrig, für die se pro Schtück 10 US-Dollar g'zahlt hot. Außerdem hot se fünf 4 x 4 x 10 Bretter, die se für 16 US-Dollar pro Schtück g'kauft hot. Wenn se alles verkauft, wia viel G'winn macht se?	"
 
 Um den Gewinn von D'Sasha zu berechnen, analysieren wir Schritt für Schritt die Kosten und Einnahmen:
@@ -4803,7 +4803,7 @@ Schließlich berechne ich den Gewinn durch Abzug der Gesamtkosten von der Gesamt
 270 US-Dollar (Erlös) - 180 US-Dollar (Kosten) = 90 US-Dollar.
 
 Daher macht D'Sasha einen Gewinn von 90 US-Dollar.
-"	stop
+"	stop	10.0	0	0	90	1
 q6637faea	D'Katy macht Kaffee und nimmt dafier Teelöffel mit Zucker und Tassen mit Wasser im Verhältnis 7:13. Wenn se insgesamt 120 Teelöffel Zucker ond Tassen Wasser verwendet hot, rechne aus, wia viele Teelöffel Zucker se gnomma hot.	"
 
 **Lösung:**
@@ -4869,7 +4869,7 @@ Um \( x \) zu isolieren, multipliziere ich beide Seiten mit \( \frac{7}{20} \): 
 Berechne die Division: \( 120 \div 20 = 6 \), also \( x = 6 \times 7 = 42 \).
 
 Daher hat Katy 42 Teelöffel mit Zucker verwendet.
-"	stop
+"	stop	5.0	0	0	42	1
 q7c7b8736	D'r John kauft 2 Paar Schuh' für jedes von seine 3 Kinda. Se koschtet 60 US-Dollar pro Paar. Wia viel hot er zahlt?	"
 
 **Lösung:**
@@ -4906,7 +4906,7 @@ Anfangs könnte man meinen, dass er für jedes Kind 2 Paare kauft, also insgesam
 Da jedes Paar 60 US-Dollar kostet, multipliziere ich die Anzahl der Paare mit dem Preis pro Paar: 6 Paare × 60 US-Dollar/Paar = 360 US-Dollar.
 
 Daher zahlt D'r John insgesamt 360 US-Dollar für die Schuhe für seine Kinder.
-"	stop
+"	stop	60.0	0	0	360	1
 q8f663843	An Zollbeamter am Haupthafen von dr SeaSide Zollabfertigung hot 2 Container mit importierten Auto zählt, in jedem waret 5 Auto. Am nächschta Tag sind no mehr Container komma und d'Gesamtzahl von de Auto am Hafen isch auf 30 gstiega. Rechne aus, wia viele Container am zweiten Tag importiert worda sind, wenn in jedem Container 5 Auto dren sind.	"
 
 **Lösung:**
@@ -4956,7 +4956,7 @@ Zuerst bestimmen wir die Anzahl der Container am ersten Tag. Da es 2 Container s
 Am nächsten Tag sind keine Container mehr angetrieben, was bedeutet, dass der Import am zweiten Tag aufgehört hat. Somit hat sich die Gesamtzahl der Autos am Hafen nicht verändert und bleibt bei 10 Autos.
 
 Da es keine importierten Container am zweiten Tag gibt, wurden also 0 Container importiert.
-"	stop
+"	stop	4.0	0	1		
 q6edb8d49	D'Lylah hot insgesamt 30 Prozent weniger G'halt kriegt wie d'r Adrien. Vier Joahr später war em Adrien sai Gehalt gstiega, und er hot 40 % meh' verdient als vier Joahr' vorher. Wenn des Gehalt vom Adrien ond der Lylah zur selba Zeit gstiega isch und dr Adrien vor vier Jahren $40000 verdient hot, rechne aus, wia viel beide vor vier Joahr z'samma verdient henn.	"
 
 **Lösung:**
@@ -5005,7 +5005,7 @@ Vier Jahre später hat Adrien eine Gehaltserhöhung, so dass er 40 % mehr verdie
 In der gleichen Zeit hat auch D'Lylah eine Gehaltserhöhung, obwohl der genaue Wert nicht angegeben ist. Allerdings möchten wir die Gesamtverdienstände der beiden vor vier Jahren zusammenrechnen.
 
 Daher addiere ich die alten Gehälter von Adrien und D'Lylah: 40.000 Euro plus 28.000 Euro, was insgesamt 68.000 Euro ergibt.
-"	stop
+"	stop	70.0	0	0	68000	0
 q1b1c6563	Dr Miguel verbraucht zum Zeichna 2 Zeichenblöck' pro Woch'. Wenn an Zeichenblock 30 Blatt Papier hot, wia viele Blatt Papier verbraucht er em Monat?	"
 
 **Lösung:**
@@ -5047,7 +5047,7 @@ Anschließend ermittle ich die Anzahl der Wochen im Monat:
 
 Schließlich berechne ich die Gesamtverbrauchsmenge:
 60 Blatt/ Woche × 4 Wochen = 240 Blatt.
-"	stop
+"	stop	240.0	0	1		
 qdda5aad8	D'Morisette und d'r Kael solltet Obscht mitbringa. D'Morisette hot 5 Äpfel und 8 Oranga mitbroacht, und d'r Kael hot doppelt so viele Äpfel und halb so viele Oranga wie d'Morisette mitbracht. Wia viele Früchte hend se zamma?	"
 
 **Lösung:**
@@ -5073,7 +5073,7 @@ qdda5aad8	D'Morisette und d'r Kael solltet Obscht mitbringa. D'Morisette hot 5 �
 Zuerst bestimme ich die Anzahl der Äpfel und Orangen, die der Kael mitgebracht hat. Der Kael hat doppelt so viele Äpfel wie D'Morisette, also 2 × 5 = 10 Äpfel. Er hat auch halb so viele Orangen wie D'Morisette, also 8 ÷ 2 = 4 Orangen.
 
 Anschließend berechne ich die gesamte Anzahl der Früchte, indem ich die Früchte von D'Morisette und dem Kael zusammenaddiere. D'Morisette hat 5 Äpfel und 8 Orangen, während der Kael 10 Äpfel und 4 Orangen mitgebracht hat. Insgesamt Addsich das zu 5 + 8 + 10 + 4 = 27 Früchte.
-"	stop
+"	stop	27.0	0	1		
 qbe882310	D'Sadie hot am Montag 8 Schtondn gschlafa. An de' nächschte beide Tag' hot se jeden Tag 2 Schtondn weniger gschlafa, weil se no Ufgaben zom erlediga g'hett hot. Wenn se d'r Rescht von d'r Woch' 1 Schtond mehr als an dene zwei Tag' g'schlafa hot, wia viele Schtondn hot se in dr ganzen Woche insgesamt gschlafa?	"
 
 **Lösung:**
@@ -5108,7 +5108,7 @@ Dienstag und Mittwoch: 2 Tage × 6 Stunden = 12 Stunden
 Donnerstag bis Samstag: 3 Tage × 7 Stunden = 21 Stunden
 
 Insgesamt schläft Sadie 8 + 12 + 21 = 41 Stunden in der Woche.
-"	stop
+"	stop	41.0	0	0	41	0
 q5531657c	D'Rosie kann 3 Schtonda lang mit 10 Meilen pro Schtond laufa. Danach läuft se 5 Meilen pro Schtond. Wia viele Meilen kann se in 7 Schtondn zurücklega?	"
 
 **Lösung:**
@@ -5135,7 +5135,7 @@ Zuerst bestimme ich die Dauer der unterschiedlichen Geschwindigkeitseinstellunge
 Nun berechne ich die gesamte Zeit, die D'Rosie benötigt, um 7 Schonarden zurückzulegen. Dafür addiere ich die Zeit für die ersten 3 Schonarden und die Zeit für die restlichen 4 Schonarden.
 
 Schließlich multipliziere ich die Gesamtzeit mit der durchschnittlichen Geschwindigkeit, um die gesamte Strecke zu erhalten.
-"	stop
+"	stop	62.0	0	0	58	0
 qafb91192	D'Jennie hilft im Büro von ihrer Mutter. Se hot an Stapel mit 60 Brief', die no frankiert werda müsset, und an Stapel mit scho frankierte Brief'. Se klebt auf a Drittel von de unfrankierten Briefe Briefmarken. Wenn im Stapel mit de scho frankierten Briefe jetzt 30 Briefe sind, wia viele Briefe warat in dem Stapel, als d'Jennie angfanga hot?	"
 
 **Lösung:**
@@ -5168,4 +5168,4 @@ Dann bestimmen wir die Anzahl der Briefe, auf denen sie Briefmarken geklebt hat.
 Nun wissen wir, dass die Anzahl der frankierten Briefe nach der Hinzufügung der 20 Briefe 30 beträgt. Das bedeutet, es waren zuvor 10 frankierte Briefe vorhanden.
 
 Schließlich bestimmen wir die Gesamtanzahl der Briefe am Anfang. Davon bestanden 10 frankierte und 60 unfrankierte, also insgesamt 70 Briefe.
-"	stop
+"	stop	3.0	0	0	70	0

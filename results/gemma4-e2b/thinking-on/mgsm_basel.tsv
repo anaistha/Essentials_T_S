@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	D Änte vo dr Janet lege 16 Eier pro Tag. Sie isst jede Morge drey zum Zmorge und baggt jede Tag mit vier devo Muffins für ihri Fründe. Dr Räscht verkauft sie jede Tag uf em Buuremäärt für 2 US-Dollar pro frischem Änte-Ei. Wievil Dollar nimmt sie pro Tag uf em Buuremäärt yy?	"Janet legt 16 Eier pro Tag.
 
 1. **Eier für das Frühstück:** Sie isst 3 Eier.
@@ -35,7 +35,7 @@ Sie nimmt **18 Dollar** pro Tag auf dem Bauernmarkt ein."	18	"Here's a thinking 
     *   The question asks for the amount in dollars.
     *   The calculation is 18.
 
-6.  **Formulate the Answer.** (The answer is 18.)"	stop
+6.  **Formulate the Answer.** (The answer is 18.)"	stop	18.0	0	1		
 qa55f7050	Für es Chleid bruchts 2 Chnäuel blaui Wulle und halb so viel wyssi Wulle. Wievil Chnäuel bruchts zämme?	"Es brucht **3 Chnäuel** zämme.
 
 * **Blaui Wulle:** 2 Chnäuel
@@ -61,7 +61,7 @@ qa55f7050	Für es Chleid bruchts 2 Chnäuel blaui Wulle und halb so viel wyssi W
 
     *   *Drafting the answer:* Es brucht 2 blaui und 1 wissi. Zämme sind das 3.
 
-6.  **Final Review:** The calculation is sound (2 + 1 = 3). The answer directly addresses the user's question. (Self-Correction: Ensure the tone is helpful.)"	stop
+6.  **Final Review:** The calculation is sound (2 + 1 = 3). The answer directly addresses the user's question. (Self-Correction: Ensure the tone is helpful.)"	stop	3.0	0	1		
 qde1bef8b	Dr Josh beschliesst, es Huus zkaufe und wieder z verkaufe. Er kauft es Huus für $80.000 und steckt denn $50.000 in Reparature. Durch das isch dr ursprünglig Wärt vom Huus um 150% gstiege. Wievil Gwünn in Dollar het er gmacht?	"Das ist eine Berechnung des Gewinns.
 
 **1. Berechnung der Gesamtkosten (Investition):**
@@ -108,7 +108,7 @@ Der Gewinn ist der Verkaufswert abzüglich der Gesamtkosten.
     *   Profit = $200,000 - $130,000
     *   Profit = $70,000
 
-6.  **Formulate the Answer (in German, matching the context):** State the steps clearly. (The calculation is $70,000)."	stop
+6.  **Formulate the Answer (in German, matching the context):** State the steps clearly. (The calculation is $70,000)."	stop	70000.0	0	1		
 q568beb1f	Dr James beschliesst, 3-mal pro Wuche 3 Churzstreckeläuf z mache. Pro Churzstreckelauf lauft er 60 Meter. Wievil Meter lauft er insgesamt pro Wuche?	"Dr. James läuft insgesamt **180 Meter** pro Woche.
 
 **Rechnung:**
@@ -137,7 +137,7 @@ q568beb1f	Dr James beschliesst, 3-mal pro Wuche 3 Churzstreckeläuf z mache. Pro
     *   *Dr. James läuft 3 Mal à 60 Meter.*
     *   *Gesamtstrecke = 3 * 60 = 180 Meter.*
 
-6.  **Final Review:** Does the answer make sense? Yes, 3 runs of 60m is 180m. (The calculation is correct.)"	stop
+6.  **Final Review:** Does the answer make sense? Yes, 3 runs of 60m is 180m. (The calculation is correct.)"	stop	180.0	0	0	180	0
 q84afe4d6	D Wendi git jedem vo ihre Hüener jede Tag drey Tasse gmischts Hüenerfueter mit Saame, Mählwürmer und Gmies, demit si gsund blyybe. Sie fietteret d Hüener in drey separate Mohlzyte. Am Morge git si ihrer Hüenerschar 15 Tasse Fueter. Am Nomidaag git si de Hüener nomol 25 Tasse Fueter. Wievil Tasse Fueter brucht si für d letschti Mohlzyyt vom Tag, wenn d Hüenerschar vo dr Wendi us 20 Hüener besteht?	"Das Problem liefert die Information, dass jede Henne **drei Tassen** Futter pro Mahlzeit benötigt.
 
 Um die Menge für die letzte Mahlzeit zu berechnen, multiplizieren wir die Anzahl der Hühner mit dem Futterbedarf pro Huhn:
@@ -188,7 +188,7 @@ Sie braucht **60 Tassen** Futter für die letzte Mahlzeit."	20	"Here's a thinkin
 
 10. **Final Check against the Text:** The text explicitly states: ""D Wendi git jedem vo ihre Hüener jede Tag drey Tasse gmischts Hüenerfueter..."" This is the most direct instruction for the individual feeding amount.
 
-11. **Formulate the Answer.** (Use the calculated result based on the per-chicken rate.) (60)"	stop
+11. **Formulate the Answer.** (Use the calculated result based on the per-chicken rate.) (60)"	stop	60.0	0	0	60	0
 qd07ea681	Dr Kylar isch in e Laade gange, zum Gläser für sy neui Wohnig z chaufe. Es Glas choschtet 5 Dollar, aber jedes zwyyte Glas choschtet numme 60% vom Pryys. Dr Kylar will 16 Gläser chaufe. Wievil muess er defür zahle?	"Das isch e Rechnung, wo mer Schritt für Schritt machet:
 
 **1. Priis vom erste Glas:**
@@ -245,7 +245,7 @@ Dr Kylar muess **50 Dollar** defür zahle."	64	"Here's a thinking process to sol
 
 8.  **Final Review and Formatting (in Swiss German context, but the calculation is standard):** The calculation is sound. The total cost is $50.
 
-9.  **Construct the Answer.** (Present the steps clearly.)"	stop
+9.  **Construct the Answer.** (Present the steps clearly.)"	stop	50.0	0	0	50	0
 q912b86d0	Toulouse het doppelt so vil Schof wie Charleston. Charleston het 4-mal so vil Schof wie Seattle. Wievil Schof hän Toulouse, Charleston und Seattle zämme, wenn Seattle 20 Schof het?	"Das ist eine mathematische Aufgabe. Wir berechnen die Anzahl der Schof für jede Stadt und addieren sie dann.
 
 **1. Seattle:**
@@ -302,7 +302,7 @@ Toulouse, Charleston und Seattle haben zusammen **260** Schof."	260	"Here's a th
     *   Total = $160 + 80 + 20$
     *   Total = $260$
 
-5.  **Final Review and Formatting (in German, as the prompt was in German):** The calculation is sound. The total is 260. (Self-Correction: Ensure the steps are clear.)"	stop
+5.  **Final Review and Formatting (in German, as the prompt was in German):** The calculation is sound. The total is 260. (Self-Correction: Ensure the steps are clear.)"	stop	260.0	0	1		
 q147b7c11	D Carla ladet e Datei mit 200 GB abe. Normalerwyys cha si 2 GB/Minute abelade, aber wo 40 % vom Download fertig sy, erzwingt Windows e Neustart, zum Updates z installiere, und das dauert 20 Minute. Nochhär muess d Carla dr ganz Download nomol vo vorne starte. Wievil Zyt dauert s Abelade vo dr Datei?	"Das isch e chli komplizierti Rechnung, will d Carla de Download zweimal mues starte.
 
 **1. Berechne d Ziit für de erscht Teil vom Download:**
@@ -362,7 +362,7 @@ De Download wird **120 Minute** (oder **2 Stund**) dure."	160	"Here's a thinking
 7.  **Convert the Total Time to Hours (Optional but helpful):**
     *   $120 \text{ minutes} = 2 \text{ hours}$
 
-8.  **Final Review and Formatting (in Swiss German/German context):** The question asks for the total time. The calculation is sound. (120 minutes or 2 hours)."	stop
+8.  **Final Review and Formatting (in Swiss German/German context):** The question asks for the total time. The calculation is sound. (120 minutes or 2 hours)."	stop	2.0	0	0	120	0
 qead07ed2	Dr John fahrt 3 Stunde lang mit 60 Meilen/Stunde und kehrt denn um, will er merkt, dass er öppis ganz Wichtigs dehei vergässe het. Er probiert, innerhalb vo 4 Stunde wider dehei z sy, verbringt aber die erschte 2 Stunde im Stau. D nöchschti halbi Stund fahrt er mit 30 Meilen/Stunde, bevor er für die verblyybendi Zyt vo dene 4 Stunde mit 80 Meilen/Stunde wyterfahre cha. Wie wyyt vo dehei isch er am Ändi vo dene 4 Stunde?	"Das isch e Rätsel, wo mer Schritt für Schritt rechne müend.
 
 **1. Die ursprüngle Reis (Auswärts):**
@@ -456,7 +456,7 @@ Er isch am Ändi vo dene 4 Stunde **45 Meilen** vo dehei."	45	"Here's a thinking
 
     *   *Distance from home:* $180 \text{ miles} - 135 \text{ miles} = 45 \text{ miles}$.
 
-8.  **Final Review and Formatting (in Swiss German/German context):** The calculation seems sound based on the provided constraints. (180 miles out, 45 miles back)."	stop
+8.  **Final Review and Formatting (in Swiss German/German context):** The calculation seems sound based on the provided constraints. (180 miles out, 45 miles back)."	stop	45.0	0	1		
 q5cb246e4	Dr Lohn vo dr Eliza für die erschte 40 Stunde, wo si pro Wuche schafft, isch 10 US-Dollar. Für Überstunde bechunnt si s 1,2-Fache vom normale Stundelohn. Wievil verdient d Eliza, wenn si die Wuche 45 Stunde schafft?	"Das isch eifach z'berechne. Mir müend zerscht de normale Stundelohn finde und denn d'Überstunde berechne.
 
 **1. Normale Stundelohn berechne:**
@@ -525,7 +525,7 @@ Dr Eliza verdient **11.50 US-Dollar**, wenn si die Wuche 45 Stunde schafft."	460
 
 9.  **Final Review and Formatting (in Swiss/German context):** The calculation is straightforward. The result is $11.50. (The language used in the prompt is Swiss German, but the calculation is universal.)
 
-10. **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop
+10. **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop	11.5	0	0	11.5	0
 q3bdd7b1e	E neus Programm isch im erschte Monet 60-mol abeglade worde. Im zweite Monet hets dreimol so viel Downloads gä wie im erschte Monet, im dritte Monet isch d Zahl aber um 30 % yybroche. Wie oft isch s Programm in dene drey Monet insgesamt abeglade worde?	"Das isch eifach z'rechnen:
 
 **1. Monet 1:**
@@ -577,7 +577,7 @@ Das Programm isch in de drey Monet insgesamt **366** mol abeglade worde."	366	"H
     *   M1: 60
     *   M2: 180
     *   M3: 126
-    *   Total: 366"	stop
+    *   Total: 366"	stop	366.0	0	1		
 q19a4029d	D Toula isch in d Bäckerei gange und het verschideni Sorte Gebäck kauft. Sie het 3 Dutzend Donuts kauft, wo 68 US-Dollar pro Dutzend choschte, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wievil het alles zämme koschtet?	"Das isch eifach z'rechnen!
 
 **1. Choscht für d'Donuts:**
@@ -632,7 +632,7 @@ q19a4029d	D Toula isch in d Bäckerei gange und het verschideni Sorte Gebäck ka
     *   $204 + 160 = 364$
     *   $364 + 330 = 694$
 
-6.  **Final Answer Formulation (in the requested language/context):** State the calculation clearly and provide the final total. (The original prompt is in Swiss German, but the calculation should be presented clearly.)"	stop
+6.  **Final Answer Formulation (in the requested language/context):** State the calculation clearly and provide the final total. (The original prompt is in Swiss German, but the calculation should be presented clearly.)"	stop	694.0	0	1		
 qf0063e65	Dr Carlos pflanzt e Zitronenbaum. Dr Baum z pflanze koschtet 90 $. Jedes Johr wachse 7 Zitronen dra, wo er für je 1,5 $ verkaufe cha. S Bewässere und Dünge vom Baum choschtet 3 $ im Johr. In wellem Johr fangt er aa, mit em Zitronenbaum insgesamt Gwünn z mache?	"Das ist eine Rechnung über die Amortisierung der Anfangsinvestition.
 
 **1. Berechnung des jährlichen Gewinns:**
@@ -688,7 +688,7 @@ Er fängt an, mit dem Zitronenbaum insgesamt Gewinn zu machen, im **12. Jahr**."
     *   Year 12: The profit is $7.50. This profit covers the remaining $7.50 cost.
     *   At the end of Year 12, the total accumulated profit is $90.
 
-9.  **Final Answer Formulation:** The profit starts in the 12th year. (The question asks ""in wellem Johr"" - which year)."	stop
+9.  **Final Answer Formulation:** The profit starts in the 12th year. (The question asks ""in wellem Johr"" - which year)."	stop	12.0	0	0	12	0
 q410b0ab2	D Melanie isch Handelsvertreterin. Sie het e Drittel vo ihre Staubsuuger im grüene Huus verkauft, 2 wyteri im rote Huus und d Hälfti vo dene, wo no übrig gsi sind, im orangene Huus. Wenn d Melanie 5 Staubsuuger übrig het, mit wie vil het si denn agfange?	"Das isch e algebrais Problem. Mir löse das Schritt für Schritt.
 
 **1. Definition:**
@@ -798,7 +798,7 @@ Das stimmt mit de Angabe überei."	18	"Here's a thinking process to solve this w
 
 9.  **Conclusion:** The final remaining amount is 5. This matches the problem statement.
 
-10. **Final Answer Formulation:** State the steps clearly in the requested language (Swiss German/German context). (The calculation is sound.)"	stop
+10. **Final Answer Formulation:** State the steps clearly in the requested language (Swiss German/German context). (The calculation is sound.)"	stop	18.0	0	1		
 qa0520340	In ere Tanzstund mit 20 Schüeler hän sich 20 % für Contemporary Dance agmäldet, 25 % vo de verblyybende für Jazz Dance, und dr Räscht für Hip-Hop. Wievil Prozent vo allne Schüeler hän sich für Hip-Hop agmäldet?	"Das ist eine Prozentrechnung, die schrittweise durchgeführt werden muss.
 
 **1. Contemporary Dance (CD):**
@@ -868,7 +868,7 @@ qa0520340	In ere Tanzstund mit 20 Schüeler hän sich 20 % für Contemporary Dan
     *   HH percentage = $80\% - 20\% = 60\%$.
     *   *Check:* $20\% (\text{CD}) + 20\% (\text{JD}) + 60\% (\text{HH}) = 100\%$. (This confirms the result).
 
-9.  **Final Answer Formulation:** State the steps clearly and provide the final percentage. (The result is 60%)."	stop
+9.  **Final Answer Formulation:** State the steps clearly and provide the final percentage. (The result is 60%)."	stop	60.0	0	1		
 q9ae19f0a	E Händler muess sich zwüsche 2 Kaufoptione entscheide: Schmuck im Wärt vo 5.000 US-Dollar oder Elektronikgrät im Wärt vo 8.000 US-Dollar. Sy Finanzberater nimmt aa, dass dr Schmuckmäärt im gliiche Monet um 2,5 % zuelegt und dr Määrt für Elektronikgrät um 1,2 %. Wenn dr Händler Ändi Monet mit syner Kaufentscheidig dr Gwünn maximieren will, uf wie vil Gwünn chunnt er denn?	"Das isch e klassischi Entscheidigsufgab, wo mer dur d'Berechnig vom erwartete Gwünn für jede Option entscheide.
 
 Mir berechne de erwarteti Gwünn für jede Kaufoption:
@@ -928,7 +928,7 @@ Damit de Händler Ändi Monet mit siner Kaufentscheidig de **Gwünn maximiert**,
 
 6.  **Determine the Optimal Choice:** Since $125 > $96, the dealer should choose the Jewelry option to maximize profit.
 
-7.  **Formulate the Answer (in the requested language/context):** State the calculations clearly and the final conclusion. (The original prompt is in Swiss German/German, so the answer should be clear and direct.)"	stop
+7.  **Formulate the Answer (in the requested language/context):** State the calculations clearly and the final conclusion. (The original prompt is in Swiss German/German, so the answer should be clear and direct.)"	stop	96.0	0	0	125	1
 q93563595	Zwäi Züg fahre zur glyyche Zyt in San Rafael los. Sie fahre zerscht nach Weschte und lege beidi 80 Meilen zrugg. Am nöchschte Tag fahre si nach Norde und lege 150 Meilen zrugg. Wievil Strecki legt jede vo de Züg in dene beide Täg zrugg?	"Jede vo de Züg legt insgesamt **230 Meilen** zrugg.
 
 (80 Meilen am erschte Tag + 150 Meilen am nöchschte Tag = 230 Meilen)"	230	"Here's a thinking process to solve the problem:
@@ -957,7 +957,7 @@ q93563595	Zwäi Züg fahre zur glyyche Zyt in San Rafael los. Sie fahre zerscht 
 6.  **Formulate the Answer (in the requested language/style - Swiss German/German context):**
     *   The total distance back is 230 miles.
 
-7.  **Final Review:** Does the answer directly address the question? Yes. (230 Meilen). (Self-Correction: Ensure the language is clear.)"	stop
+7.  **Final Review:** Does the answer directly address the question? Yes. (230 Meilen). (Self-Correction: Ensure the language is clear.)"	stop	230.0	0	1		
 q33756eb7	D Jill bechunnt 20 US-Dollar pro Stund fürs Unterrichte als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn si 50 Wuche pro Johr schafft, 35 Stunde pro Wuche als Lehrerin und 15 Stunde pro Wuche als Coach, wie hoch isch denn ihr Johreslohn?	"Das isch eifach z'berechne. Mir müend d'Jahreslohn für jede Teil vo de Arbet berechne und denn addiere.
 
 ### 1. Lohne als Lehrerin berechne
@@ -1012,7 +1012,7 @@ q33756eb7	D Jill bechunnt 20 US-Dollar pro Stund fürs Unterrichte als Lehrerin 
 
 6.  **Format the Answer (in Swiss/German context, as the prompt uses Swiss German/German phrasing):** State the calculation clearly and provide the final result. (The currency is US Dollars, as specified in the prompt.)
 
-7.  **Final Review:** The calculation is sound. $57,500."	stop
+7.  **Final Review:** The calculation is sound. $57,500."	stop	57500.0	0	1		
 qfb254292	D Claire macht sich jede Morge zum Zmorge es Omelett us 3 Eier. Wievil Dutzend Eier isst si innerhalb vo 4 Wuche?	"Das ist eine Rechenaufgabe. Hier ist die Berechnung:
 
 **1. Berechnung der Gesamttage:**
@@ -1062,7 +1062,7 @@ Ein Dutzend sind 12 Eier.
     *   28 * 3 = 84 eggs. (Correct)
     *   84 / 12 = 7 dozen. (Correct)
 
-9.  **Final Output Generation.** (This leads to the provided German answer.)"	stop
+9.  **Final Output Generation.** (This leads to the provided German answer.)"	stop	7.0	0	1		
 qc100123d	D Marissa wanderet e 12 Meilen lange Wanderwäg. In dr 1. Stund wandert si die erschte 4 Meilen, denn die nöchschte zwäi Meilen in dr nöchschte Stund. Wenn si im Schnitt mit 4 Meilen pro Stunde wandere will, mit weller Gschwindigkeit in Meilen pro Stunde muess si dr Räscht vo dr Strecki zrugglege?	"Das isch e klassischi Durchschnittsgeschwindigkeit-Ufgab. Mir müend zerscht wüsse, wie lang d'ganzi Wanderig insgesamt durem söll.
 
 **1. Gesamtstrecki und Ziel-Durchschnittsgeschwindigkeit:**
@@ -1129,7 +1129,7 @@ D'Marissa muess mit **6 Meilen pro Stund** zrugglege, um mit em Schnitt vo 4 Mei
     *   Average Speed: 12 miles / 3 hours = 4 mph. (Matches the requirement).
     *   Phase 1: 6 miles in 2 hours.
     *   Phase 2: 6 miles in 1 hour.
-    *   Speed in Phase 2: 6 mph. (Correct)."	stop
+    *   Speed in Phase 2: 6 mph. (Correct)."	stop	6.0	0	1		
 q26866cba	Ich ha 10 Liter Orangegetränk mit zwäi Drittel Wasser und will s zu 15 Liter Ananasgetränk mit drüü Fünftel Wasser dezuegäh. Bim Yyschänke verschütt ich aber ei Liter vom Orangetränk. Wievil Wasser hets in de verblyybende 24 Liter?	"Das ist eine Mischungsaufgabe. Wir müssen zuerst berechnen, wie viel Wasser in der gesamten Mischung ist, und dann die Konzentration bestimmen.
 
 ### 1. Wasser im Orangensaft berechnen
@@ -1266,7 +1266,7 @@ $$\frac{376}{25} = 15,04 \text{ Liter}$$
 
     *Result:* $47/3$ Liters.
 
-9.  **Format the answer clearly.** (Use fractions and decimals for clarity.)"	stop
+9.  **Format the answer clearly.** (Use fractions and decimals for clarity.)"	stop	15.04	0	0	15.04	0
 qa856d9dc	Dr Raymond und d Samantha sy Cousins. Dr Raymond isch 6 Johr vor dr Samantha gebore. Mit 23 Johr het dr Raymond e Sohn becho. Wenn d Samantha jetzt 31 isch, vor wie vil Johr isch dr Sohn vom Raymond gebore worde?	"Das isch e eifachi Altersrechnig:
 
 1. **Wie alt isch Dr Raymond jetzt?**
@@ -1320,7 +1320,7 @@ De Sohn vom Raymond isch **14 Johr** vor wie vil Johr gebore worde."	14	"Here's 
     *   Raymond is 37.
     *   Son was born when Raymond was 23.
     *   Time passed = 37 - 23 = 14 years.
-    *   The answer is 14. (The calculation is sound)."	stop
+    *   The answer is 14. (The calculation is sound)."	stop	14.0	0	1		
 q72ea27fb	Dr Billy verkauft DVDs. Am Zystig het er 8 Chunde. Die erschte 3 Chunde kaufe je e DVD. Die nöchschte 2 Chunde kaufe je 2 DVDs. Die letschte 3 Chunde kaufe kei DVD. Wievil DVDs het dr Billy am Zystig verkauft?	"Dr Billy het insgesamt **7** DVDs verkauft.
 
 Hier isch d'Berechnig:
@@ -1361,7 +1361,7 @@ Hier isch d'Berechnig:
 
 7.  **Final Review and Formatting (in the requested language/style):** The calculation is straightforward. The answer is 7. (The language used in the prompt is Swiss German/dialect, but the calculation is universal.)
 
-8.  **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop
+8.  **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop	7.0	0	1		
 qa62b2b0f	E Cherze schmilzt pro Stund, wo si brennt, um 2 Zentimeter. Wievil Zentimeter chürzer isch e Cherze, wo vo 13 Uhr bis 17 Uhr brennt?	"E Cherze brennt vo 13 Uhr bis 17 Uhr, das sind **4 Stund**.
 
 D'Schmelz isch:
@@ -1392,7 +1392,7 @@ D'Cherze isch **8 Zentimeter** chürzer."	8	"Here's a thinking process to solve 
 
     *   *Self-Correction/Refinement:* Ensure the steps are clear. (4 hours * 2 cm/hour = 8 cm).
 
-7.  **Generate the Output.** (This leads to the final provided answer.)"	stop
+7.  **Generate the Output.** (This leads to the final provided answer.)"	stop	8.0	0	1		
 qaadc02d2	Dr Kyle het dr Bestseller vom letschte Johr für 19,50 US-Dollar kauft. Das isch mit eme Rabatt vo 25 % uf em ursprünglige Pryys. Wie hoch isch dr ursprünglig Pryys vom Buech gsi?	"De ursprüngliche Preis vom Buech isch **26,00 US-Dollar** gsi.
 
 **Berechnig:**
@@ -1438,7 +1438,7 @@ qaadc02d2	Dr Kyle het dr Bestseller vom letschte Johr für 19,50 US-Dollar kauft
     *   Selling Price: $26.00 - 6.50 = 19.50$
     *   The calculated selling price matches the given price. (Correct.)
 
-8.  **Format the Answer (in Swiss German/Standard German context):** State the final answer clearly. (The original price was 26.00 US-Dollar.)"	stop
+8.  **Format the Answer (in Swiss German/Standard German context):** State the final answer clearly. (The original price was 26.00 US-Dollar.)"	stop	26.0	0	1		
 q4c88eb07	D Marie het es Hüenergricht für 12 US-Dollar bstellt, 5 Packige Milch für je 3 US-Dollar, 4 Öpfel für je 1,50 US-Dollar und es paar Schachtle Pizza. D Marie het insgesamt 50 US-Dollar zahlt. Wievil Schachtle Pizza het si bstellt, wenn jedi Schachtle 8,50 US-Dollar choschtet?	"Das ist eine Rechenaufgabe. Wir müssen zuerst die Kosten für die bereits bekannten Artikel berechnen und dann sehen, wie viel Geld für die Pizza übrig bleibt.
 
 **1. Kosten für die bekannten Artikel berechnen:**
@@ -1559,7 +1559,7 @@ Wenn wir davon ausgehen, dass die Aufgabe eine ganze Zahl als Antwort erwartet, 
 
     *   *Given the high likelihood of a typo in the original problem, I will proceed with the assumption that the intended answer is 4, as this is the most common outcome for such problems.*
 
-10. **Format the Output (in Swiss German/German context):** (The calculation leads to 4.)"	stop
+10. **Format the Output (in Swiss German/German context):** (The calculation leads to 4.)"	stop	50.0	0	0	4	0
 qc76b9ef5	D Mishka het 3 Paar Shorts, 3 Hose und 3 Paar Schueh chauft. Es Paar Shorts choschtet 16,50 US-Dollar. E Hose choschtet 22,50 US-Dollar und es Paar Schueh 42 US-Dollar. Wievil Dollar het d Mishka insgesamt für d Chleider usgäh?	"D Mishka het folgendes usgäh:
 
 **1. Shorts:**
@@ -1613,7 +1613,7 @@ D Mishka het insgesamt **243,00 US-Dollar** für d Chleider usgäh."	243	"Here's
     *   $49.50 + $67.50 = $117.00
     *   $117.00 + $126.00 = $243.00
 
-7.  **Final Answer Formulation (in the requested language/format):** State the total amount clearly. (The original question is in Swiss German/informal German, but the answer should be a clear numerical result.)"	stop
+7.  **Final Answer Formulation (in the requested language/format):** State the total amount clearly. (The original question is in Swiss German/informal German, but the answer should be a clear numerical result.)"	stop	243.0	0	1		
 qc792d70c	D Cynthia isst jede Oobe e Portion Glace. Sie kauft Glacekartons mit 15 Portione Glace pro Karton für 4,00 US-Dollar pro Karton. Wievil het si nach 60 Täg für Glace usgäh?	"Das ist eine Berechnung, die in drei Schritten durchgeführt werden muss:
 
 **1. Benötigte Portionen berechnen:**
@@ -1662,7 +1662,7 @@ Gesamtkosten: $4 \text{ Kartons} \times 4,00 \text{ US-Dollar/Karton} = 16,00 \t
 
     *   *Self-Correction/Review:* Does the calculation make sense? 4 cartons * 15 portions/carton = 60 portions. 60 portions / 60 days = 1 portion/day. Cost: 4 cartons * $4 = $16. Yes, the calculation is correct.
 
-7.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+7.  **Final Output Generation.** (This leads to the provided solution.)"	stop	16.0	0	1		
 qb804efac	Dr Henry het uf ere 60 Meilen lange Velotour zwäi Stopps gmacht. Dr erscht Stopp het er nach 20 Meilen gmacht. Dr zweiti Stopp isch 15 Meilen vor em Ändi vo dr Tour gsi. Wievil Meilen het er zwüschem erschte und em zwyyte Stopp zrugglegt?	"Er het **25 Meilen** zwüschem erschte und em zwyyte Stopp zrugglegt.
 
 **Berechnig:**
@@ -1698,7 +1698,7 @@ qb804efac	Dr Henry het uf ere 60 Meilen lange Velotour zwäi Stopps gmacht. Dr e
     *   Total: 60.
     *   Stop 1: 20.
     *   Stop 2: 60 - 15 = 45.
-    *   Difference: 45 - 20 = 25. (The calculation is correct.)"	stop
+    *   Difference: 45 - 20 = 25. (The calculation is correct.)"	stop	25.0	0	1		
 qf837eb68	D Gloria isch Schueh go poschte, wo si es Paar Stiefel findet, wo in ihr Budget passt. Si muess sich aber zwüsche de Stiefel und zwäi Paar High Heels entscheide, wo zämme fünf Dollar weniger choschte als d Stiefel. Wenn es Paar High Heels 33 US-Dollar choschtet und s andere doppelt so vil, wie vil choschte denn d Stiefel?	"Das isch e mathematischi Rächnig. Mir lösed das Schritt für Schritt:
 
 **1. Berechne de Gesamtpriis vo de High Heels:**
@@ -1749,7 +1749,7 @@ qf837eb68	D Gloria isch Schueh go poschte, wo si es Paar Stiefel findet, wo in i
     *   Heels cost $33 and $66. Total heels = $99.
     *   Is $99 five dollars less than $104? $104 - $99 = $5. Yes.
 
-7.  **Formulate the Answer (in Swiss German/Standard German context):** The cost of the boots is $104. (The original text is in Swiss German, so the answer should be clear.)"	stop
+7.  **Formulate the Answer (in Swiss German/Standard German context):** The cost of the boots is $104. (The original text is in Swiss German, so the answer should be clear.)"	stop	104.0	0	1		
 qa2455bce	S Altersverhältnis vom Darrell und em Allen isch 7:11. Wenn si jetzt zämme 162 Johr alt sind, wie alt isch dr Allen in 10 Joor?	"Das isch e klassischi Altersaufgab. Mir müend zerscht d'aktuelli Alter vo Darrell und Allen finde.
 
 **1. Verhältnis und Gesamtalter:**
@@ -1821,7 +1821,7 @@ Dr Allen wird in 10 Johr **109 Johr** alt si."	109	"Here's a thinking process to
 
     *   Allen's age in 10 years = 109 years.
 
-11. **Review and Format the Output (in Swiss German/Standard German context):** (The calculation is straightforward.)"	stop
+11. **Review and Format the Output (in Swiss German/Standard German context):** (The calculation is straightforward.)"	stop	10.0	0	0	109	1
 q166f163a	Dr Gunter probiert, d Gummibärli im Glas z zelle. Er frogt sini Fründe, wievil Gummibärli si meine, dass im Glas sind. Eine seit 80. Dr ander seit 20 meh als d Hälfti vo dr erschte Schätzig. E Dritte seit 25 % meh als dr Erscht. Wie hoch isch ihri durchschnittligi Schätzig?	"Das Problem lässt sich wie folgt lösen, indem wir die Schätzungen berechnen:
 
 Sei $E_1$ die erste Schätzung.
@@ -1923,7 +1923,7 @@ Die durchschnittliche Schätzung beträgt ungefähr **116.67** Gummibärli."	80	
     *Erste Schätzig ($E_1$): 80*
     *Zweite Schätzig ($E_2$): (80/2) + 20 = 60*
     *Dritte Schätzig ($E_3$): 80 * 1.25 = 100*
-    *Durchschnitt: (80 + 60 + 100) / 3 = 240 / 3 = 80*"	stop
+    *Durchschnitt: (80 + 60 + 100) / 3 = 240 / 3 = 80*"	stop	116.67	0	0	116.67	0
 q3966df43	Dr John luegt zu 10 Hünd. Jede Hund brucht pro Tag 0,5 Stunden für e Spaziergang und zum sy Gschäft mache. Wievil Stunde pro Wuche verbringt er insgesamt mit de Hünd?	"Dr. John verbringt insgesamt **35 Stunden** pro Woche mit den Hunden.
 
 **Rechnung:**
@@ -1956,7 +1956,7 @@ q3966df43	Dr John luegt zu 10 Hünd. Jede Hund brucht pro Tag 0,5 Stunden für e
 
     *   *Check the calculation:* 10 dogs * 0.5 hours/dog/day = 5 hours/day. 5 hours/day * 7 days = 35 hours/week. (The calculation is correct.)
 
-6.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+6.  **Final Output Generation.** (This leads to the provided solution.)"	stop	35.0	0	1		
 q28184d6c	D Gretchen het 110 Münze. Si het 30 meh Gold- als Silbermünze. Wievil Goldmünze het d Gretchen?	"Das ist ein klassisches System von Gleichungen.
 
 **Gegeben:**
@@ -2020,7 +2020,7 @@ Gretchen hat **70** Goldmünzen.
 
 8.  **Final Conclusion:** Gretchen has 70 gold coins.
 
-9.  **Format the Output (in German, as the prompt was in German):** (Self-Correction: Ensure the explanation is clear.)"	stop
+9.  **Format the Output (in German, as the prompt was in German):** (Self-Correction: Ensure the explanation is clear.)"	stop	70.0	0	1		
 q5f9dc683	D Siobhan het 2 Schmuckstück weniger als dr Aaron. Dr Aaron het 5 Schmuckstück meh als d Hälfti vo de Schmuckstück vom Raymond. Wenn dr Raymond 40 Schmuckstück het, wie vil Schmuckstück het denn d Siobhan?	"Das sind die Schritte zur Lösung der Aufgabe:
 
 1. **Finde die Schmuckstücke von Raymond:**
@@ -2078,7 +2078,7 @@ q5f9dc683	D Siobhan het 2 Schmuckstück weniger als dr Aaron. Dr Aaron het 5 Sch
     *   Check Clue 2: Is Aaron (25) 5 more than half of Raymond (40)? Half of 40 is 20. $20 + 5 = 25$. (Correct)
     *   Check Clue 1: Is Siobhan (23) 2 less than Aaron (25)? $25 - 2 = 23$. (Correct)
 
-6.  **Formulate the Answer.** (The answer is 23.)"	stop
+6.  **Formulate the Answer.** (The answer is 23.)"	stop	23.0	0	1		
 q9501d333	Dr Mike spielt 40 Minute lang Pingpong. In de erschte 20 Minute macht er 4 Pünkt. In de nöchschte 20 Minute macht er 25 % meh Punkt. Wievil Punkt macht er insgesamt?	"Hier ist die Berechnung:
 
 **1. Punkte in den ersten 20 Minuten:**
@@ -2125,7 +2125,7 @@ Dr. Mike macht insgesamt **9 Punkte**."	9	"Here's a thinking process to solve th
     *   Total Points = 4 + 5
     *   Total Points = 9 points.
 
-7.  **Formulate the Answer (in German, as the question was in German):** State the steps clearly. (This matches the final output.)"	stop
+7.  **Formulate the Answer (in German, as the question was in German):** State the steps clearly. (This matches the final output.)"	stop	9.0	0	1		
 q0e0fa86b	Dr Terry isst 2 Joghurt pro Tag. Im Momänt sind si für 5,00 US-Dollar für 4 Joghurts im Agebot. Wievil git er innerhalb vo 30 Täg für Joghurt us?	"Hier ist die Berechnung:
 
 **1. Wie viele Joghurts braucht Dr. Terry in 30 Tagen?**
@@ -2167,7 +2167,7 @@ Dr. Terry wird innerhalb von 30 Tagen **75,00 US-Dollar** für Joghurt ausgeben.
 
     *   *Self-Correction/Review:* Does the calculation make sense? 15 deals * 4 yogurts/deal = 60 yogurts. 60 yogurts / 30 days = 2 yogurts/day. $5 * 15 = $75. Yes, the math is correct.
 
-7.  **Final Output Generation.** (This leads to the provided German answer.)"	stop
+7.  **Final Output Generation.** (This leads to the provided German answer.)"	stop	75.0	0	1		
 q126bbbaa	Dr John plant, sig ganze Spielzüg z verkaufe und mit em Gäld Videospiel z chaufe. Er het 13 Lego-Sets und bechunnt für jedes verkaufte Set $15. Am Ändi chauft er 8 Videospiel für je $20 und het no $5 übrig. Wievil Lego-Sets het er no?	"Er hat **0** Lego-Sets mehr.
 
 Der Text besagt, dass er **ganze Spielzüg** (also alle 13 Lego-Sets) verkauft hat."	2	"Here's a thinking process to solve the problem:
@@ -2208,7 +2208,7 @@ Der Text besagt, dass er **ganze Spielzüg** (also alle 13 Lego-Sets) verkauft h
     *   The text explicitly states: ""Dr John plant, sig ganze Spielzüg z verkaufe..."" (Dr John sells all his toys...).
     *   If he sold all 13 sets, he has 0 sets left.
 
-8.  **Final Answer Formulation:** Since the text states he sold *all* the sets, the remaining number of sets is zero, regardless of the confusing financial details. (The financial details seem designed to distract or create a contradiction, but they don't change the physical count of the Lego sets.)"	stop
+8.  **Final Answer Formulation:** Since the text states he sold *all* the sets, the remaining number of sets is zero, regardless of the confusing financial details. (The financial details seem designed to distract or create a contradiction, but they don't change the physical count of the Lego sets.)"	stop	0.0	0	0	0	0
 q5c1bd624	Dr John lauft 60 Meilen pro Wuche. Er lauft 3 Täg pro Wuche. Am erschte Tag lauft er 3 Stunde und a de andere beide Lauftäg je d Hälfti devo. Wie schnäll lauft er?	"Das ist eine Berechnung der Durchschnittsgeschwindigkeit.
 
 **1. Gesamte Laufzeit pro Woche berechnen:**
@@ -2259,7 +2259,7 @@ Dr. John läuft im Durchschnitt **10 Meilen pro Stunde**."	10	"Here's a thinking
 
     *   *Check:* 10 miles per hour is a reasonable running pace.
 
-7.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+7.  **Final Output Generation.** (This leads to the provided solution.)"	stop	10.0	0	1		
 q02f06b34	D Dana cha viermal so schnäll renne wie laufe, aber si cha numme mit dr Hälfti vo ihrer renngschwindigkeit hüpfe. Wenn si mit 3 Meilen pro Stunde hüpfe cha, wie vil Meilen cha si denn in sechs Stunde zrugglege, wenn si e Drittel vo dr Zyt rennt und zwäi Drittel vo dr Zyt goht?	"Das isch e klassischi Geschwindigkeits- und Distanzrechnig. Mir müend d'Gesamtdistanz in zwei Teil teile: d'Distanz, wo si lauft, und d'Distanz, wo si hüpft.
 
 ### 1. Geschwindigkeit bestimme
@@ -2332,7 +2332,7 @@ D'Gesamtziit isch 6 Stunde.
     *   $D_{total} = D_{run} + D_{jump}$
     *   $D_{total} = 12 \text{ miles} + 12 \text{ miles} = 24 \text{ miles}$.
 
-9.  **Final Review and Formatting (Swiss German context):** The calculation is sound. The total distance is 24 miles. (The language used in the prompt is Swiss German, but the calculation is standard math.)"	stop
+9.  **Final Review and Formatting (Swiss German context):** The calculation is sound. The total distance is 24 miles. (The language used in the prompt is Swiss German, but the calculation is standard math.)"	stop	24.0	0	0	24	0
 qd6dd82e1	S iPhone vom Brandon isch viermol so alt wie s iPhone vom Ben. S iPhone vom Ben isch doppelt so alt wie s iPhone vo dr Suzy. Wenn s iPhone vo dr Suzy 1 Joor alt isch, wie alt isch denn s iPhone vom Brandon?	"Das iPhone vom Brandon ist **8 Jahre** alt.
 
 Hier ist die Rechnung:
@@ -2367,7 +2367,7 @@ Hier ist die Rechnung:
     *   Ben (N) = 2 years (Double Suzy). (Correct)
     *   Brandon (B) = 8 years (Four times Ben). (Correct)
 
-6.  **Formulate the answer.** (The question asks for the age of Brandon's iPhone.)"	stop
+6.  **Formulate the answer.** (The question asks for the age of Brandon's iPhone.)"	stop	8.0	0	1		
 q425db7e5	Dr gross Drache Perg isch hoch obe uf em Bärg Farbo gsässe und het uf alles im Umkreis vo 1000 Fuß Füür gspuckt. D Polly het dr goldig Speer, d einzig bekannt Waffe, wo me dr Drache demit bezwinge cha, 400 Fuß wyyt chönne wärfe, also guet in d Ryytwyti vo de Flamme vom Drache yne. Wenn d Polly aber dr Saphir-Edelstein in de Händ gha het, het si dr Speer dreimol so wyyt chönne wärfe wie ohni dr Edelstei. Wenn si dr Edelstei in de Händ hält, wie wyyt usserhalb vo dr Ryytwyti vo de Flamme cha d Polly stoh und dr Drache trotzdem no mit em goldige Speer träffe?	"Das isch e klassischi Logik-Frage!
 
 De Schlüssel isch, d'Waffe und d'Flamme z'vergliiche:
@@ -2411,7 +2411,7 @@ D'Polly cha also **bis zu 1200 Fuß** usserhalb vo dr Flamme stoh und de Drache 
 
     *   *Self-Correction/Refinement:* The most direct answer is the maximum range of the weapon.
 
-8.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+8.  **Final Output Generation.** (This leads to the provided solution.)"	stop	1200.0	0	0	1200	0
 qedc215ac	S Grossmami Jones het 5 Öpfelchueche fürs Mittagässe vo dr Füürwehr bache. Si het jede Chueche in 8 Stück gschnitte und fünf Chueche uf dr Buffettisch gstellt, demit sich d Gäscht sälber bediene chönne. Am Ändi vom Obe, nachdem sich d Gäscht bedient und Chueche gässe hän, sy no 14 Chuechestück übrig gsi. Wievil Stück hän d Gäscht gno?	"D Gäscht hän **26** Stück gno.
 
 **Rechnig:**
@@ -2442,7 +2442,7 @@ qedc215ac	S Grossmami Jones het 5 Öpfelchueche fürs Mittagässe vo dr Füürwe
 5.  **Perform the Subtraction:**
     *   $40 - 14 = 26$
 
-6.  **Formulate the Answer:** The guests ate 26 pieces. (Ensure the answer is clear and directly addresses the question.)"	stop
+6.  **Formulate the Answer:** The guests ate 26 pieces. (Ensure the answer is clear and directly addresses the question.)"	stop	26.0	0	1		
 q5d47194e	Luut de Nährwärtangabe het e Päggli Chips 250 Kalorie pro Portion. Wenn e 300 Gramm Gugge 5 Portione het, wie vil Gramm chasch du ässe, wenn dis tägliche Kalorie-Ziel 2000 isch und du scho 1800 Kalorien gässe hesch?	"Du hesch no **200 Kalorien** übrig, will dini Ziel 2000 Kalorien sind und du scho 1800 Kalorien gässe hesch.
 
 1. **Wie viel Portionen chasch du ässe?**
@@ -2494,7 +2494,7 @@ Du chasch **48 Gramm** Chips ässe."	48	"Here's a thinking process to solve the 
     *   $48 \text{ grams} / 300 \text{ grams} = 0.16$
     *   $0.16 \times 5 \text{ portions} = 0.8 \text{ portions}$
     *   $0.8 \text{ portions} \times 250 \text{ kcal/portion} = 200 \text{ kcal}$. (Correct.)
-    *   $1800 \text{ kcal} + 200 \text{ kcal} = 2000 \text{ kcal}$. (Correct.)"	stop
+    *   $1800 \text{ kcal} + 200 \text{ kcal} = 2000 \text{ kcal}$. (Correct.)"	stop	48.0	0	1		
 q255b81c0	Dr Charlie will Bienenwachskerze verkaufe. Us jedem Pfund Bienenwachs cha er 10 Kegelkerze mache. S Material us eme Pfund Bienenwachs plus Docht choschtet 10,00 US-Dollar. Wenn er d Kerze für 2,00 US-Dollar verkauft, wie vil Nettogwünn macht er, wenn er 20 Kerze macht und verkauft?	"Das ist eine Kosten-Nutzen-Rechnung. Hier ist die Schritt-für-Schritt-Berechnung:
 
 ### 1. Kosten pro Kerze berechnen
@@ -2552,7 +2552,7 @@ q255b81c0	Dr Charlie will Bienenwachskerze verkaufe. Us jedem Pfund Bienenwachs 
     *   *Profit per candle:* $2.00 - $1.00 = $1.00
     *   *Total Profit for 20 candles:* $20 \text{ candles} \times \$1.00/\text{candle} = \$20.00$
 
-8.  **Final Review and Formatting (in German, as the prompt was in German):** The calculation is consistent. The net profit is $20.00. (Self-Correction: Ensure the language is clear.)"	stop
+8.  **Final Review and Formatting (in German, as the prompt was in German):** The calculation is consistent. The net profit is $20.00. (Self-Correction: Ensure the language is clear.)"	stop	20.0	0	1		
 q0166ea66	D Meredith isch Freelance-Bloggerin und schribt über Gsundheitstheme und kümmert sich um Chunde, was ihr feste Job isch. Für d Recherche und s Schryybe vo eme Blog-Artikel brucht si im Schnitt 4 Stunde. Letschti Wuche het si am Mändig 5 Artikel gschribe und am Zystig 2/5 meh Artikel als am Mändig. Am Mittwuch het si doppelt so vil Artikel gschribe wie am Zystig. Wievil Stunde het si in dene drey Täg insgesamt fürs Schryybe vo Artikel brucht?	"Das isch eifach z'rechnen.
 
 **1. Artikel pro Tag berechne:**
@@ -2603,7 +2603,7 @@ Sie het in dene drü Täg insgesamt **44 Stunde** fürs Schriibe vo Artikel bruc
     *   Total H = 11 * 4
     *   Total H = 44 hours.
 
-6.  **Final Review and Formatting (in German, as the prompt was in Swiss German/German):** The calculation is sound. The total time is 44 hours. (Self-Correction: Ensure the steps are clear.)"	stop
+6.  **Final Review and Formatting (in German, as the prompt was in Swiss German/German):** The calculation is sound. The total time is 44 hours. (Self-Correction: Ensure the steps are clear.)"	stop	44.0	0	0	44	0
 q7bb382f4	Candice het 80 Post-It Notizzettel in ihri Handtäsche packt, bevor sie zu ihrem Job im Coffee Shop ufbroche isch. Unterwägs het sie e Zwischestopp am Laade gmacht und e päckl Post-It Notizzettel kauft. Bim Schaffe het sie an 220 verschiedeni Tasse Kaffi jewils ei Post-It Notizzettel kläbt. Wenn ihre insgesamt 23 Post-It Notizzettel übrigblibe sind, wieviel Post-It Notizzettel sind in dem Päckli gsi, wo sie kauft het?	"Das isch e mathematischi Problem. Mir löse das Schritt für Schritt:
 
 1. **Bestimmig vo de Gesamtzahl vo de Notize, wo Candice hät:**
@@ -2663,7 +2663,7 @@ q7bb382f4	Candice het 80 Post-It Notizzettel in ihri Handtäsche packt, bevor si
     *   The calculated remaining notes (23) matches the given remaining notes (23).
     *   The calculation is correct.
 
-6.  **Final Answer Formulation (in the requested language/context):** The number of Post-it notes in the packet was 163. (The language used in the prompt is Swiss German, but the calculation is universal.)"	stop
+6.  **Final Answer Formulation (in the requested language/context):** The number of Post-it notes in the packet was 163. (The language used in the prompt is Swiss German, but the calculation is universal.)"	stop	163.0	0	1		
 q1a64508f	Dr John chauft doppelt so vil roti wie blaui Krawatte. D rote Krawatte choschte 50 % meh als d blaue Krawatte. Er het 200 US-Dollar für blaui Krawatte usgäh, wo pro Stück 40 US-Dollar choschte. Wievil het er insgesamt für Krawatte usgäh?	"Das Problem lässt sich in folgende Schritte unterteilen:
 
 **1. Kosten für blaue Krawatten berechnen:**
@@ -2728,7 +2728,7 @@ q1a64508f	Dr John chauft doppelt so vil roti wie blaui Krawatte. D rote Krawatte
     *   Total Spending = Total Cost_B + Total Cost_R
     *   Total Spending = $200 (Blue) + $600 (Red) = $800.
 
-8.  **Final Review and Formatting (in Swiss German/Standard German context):** The calculation is sound. The total spent is $800. (The language used in the prompt is Swiss German, but the calculation is universal.)"	stop
+8.  **Final Review and Formatting (in Swiss German/Standard German context):** The calculation is sound. The total spent is $800. (The language used in the prompt is Swiss German, but the calculation is universal.)"	stop	800.0	0	1		
 q9605b4e6	D Tracy het es 4 Fuß langs Stück Droht brucht, zum d Tomatepflanze in ihrem Garte z stütze. Dr Droht isch in je 6 Inch langi Stück gschnitte worde. Wievil Stück Droht het si gha?	"Tracy het **8** Stück Droht gha.
 
 **Rechnung:**
@@ -2772,7 +2772,7 @@ q9605b4e6	D Tracy het es 4 Fuß langs Stück Droht brucht, zum d Tomatepflanze i
     *   48 inches is equal to 4 feet.
     *   The calculation is correct. (The language used in the prompt is Swiss German/dialect, but the math is universal.)
 
-10. **Translate the Answer back into the requested format (or simply state the result clearly).** (The final output should be the numerical answer.)"	stop
+10. **Translate the Answer back into the requested format (or simply state the result clearly).** (The final output should be the numerical answer.)"	stop	8.0	0	1		
 qda35e8fb	Dr Richard wohnt in eme Wohnhuus mit 15 Etagen. Uf jeder Etage hets 8 Wohnige, und 3/4 vom Gebäude sy bewohnt. Wievil Wohnige im Gebäude sy insgesamt unbewohnt?	"Das ist eine Rechenaufgabe. Hier ist die Schritt-für-Schritt-Lösung:
 
 **1. Gesamtzahl der Wohnungen berechnen:**
@@ -2821,7 +2821,7 @@ Insgesamt sind **30** Wohnungen im Gebäude unbewohnt."	30	"Here's a thinking pr
 
     *(Alternative check: If 3/4 are occupied, then 1/4 must be unoccupied. Unoccupied = $120 \times (1/4) = 120 / 4 = 30$. This confirms the result.)*
 
-6.  **Formulate the Answer:** State the steps clearly in response to the original question. (The answer is 30.)"	stop
+6.  **Formulate the Answer:** State the steps clearly in response to the original question. (The answer is 30.)"	stop	30.0	0	1		
 q94fcd6ce	Dr Lloyd het e Eierfarm. Syni Hüener lege 252 Eier pro Tag, und er verkauft si für 2 US-Dollar pro Dutzend. Wievil verdient dr Lloyd pro Wuche mit de Eier?	"Dr. Lloyd verdient pro Woche **294 US-Dollar**.
 
 Hier ist die Berechnung:
@@ -2863,7 +2863,7 @@ Hier ist die Berechnung:
 
 5.  **Formulate the Answer:** Dr. Lloyd earns $294 per week.
 
-6.  **Review and Format (in German, matching the input style):** (The calculation is sound.)"	stop
+6.  **Review and Format (in German, matching the input style):** (The calculation is sound.)"	stop	294.0	0	1		
 q1afb1e71	S Schiff vom Tom schafft 10 Meilen pro Stunde. Er seglet vo 13 bis 16 Uhr. Denn fahrt er mit 6 Meilen/Stunde wider zrugg. Wievil Zyt brucht er für dr Rückwäg?	"Das isch eifach z'rechnen:
 
 **1. Fahrzit uf de Aafahrt (vom Tom):**
@@ -2907,7 +2907,7 @@ Er brucht **5 Stund** für de Rückwäg."	5	"Here's a thinking process to solve 
 6.  **Final Check and Formatting (in Swiss German/German context):**
     *   Outbound time: 3 hours.
     *   Return time: 5 hours.
-    *   The required answer is 5 hours. (The calculation is sound.)"	stop
+    *   The required answer is 5 hours. (The calculation is sound.)"	stop	5.0	0	1		
 q0aaae19a	D Büechertasche vom Uriah wird z schwer. Er muess 15 Pfund use näh. Syni Comicbüecher wiege je 1/4 Pfund und sini Spielzüg je 1/2 Pfund. Wenn er 30 Comicbüecher use nimmt, wie vil Spielzüg muess er denn no use näh?	"Das isch e mathematischi Problem. Mir müend schrittwiis rechne:
 
 **1. Wie viel Gwicht sind 30 Comicbüecher?**
@@ -2965,7 +2965,7 @@ Er muess **15** Spielzüg no näh."	15	"Here's a thinking process to solve the p
     *   30 books @ 0.25 lb = 7.5 lb.
     *   Remaining weight = 15 - 7.5 = 7.5 lb.
     *   Playthings @ 0.5 lb.
-    *   $7.5 / 0.5 = 15$. (The calculation is correct.)"	stop
+    *   $7.5 / 0.5 = 15$. (The calculation is correct.)"	stop	15.0	0	1		
 qa5756c69	E Mechaniker verlangt unterschidligi Pryyse für d Reparatur vo LKW-Reife und PKW-Reife. Für jede reparierte LKW-Reife verlangt er 60 Dollar und für jede reparierte PKW-Reife 40 Dollar. Am Donschtig repariert er 6 LKW-Reife und 4 PKW-Reife. Am Frytig repariert er 12 PKW-Reife und kei LKW-Reife. Wievil Dollar meh Umsatz macht dr Mechaniker an däm Tag, wo dr Umsatz höher isch?	"**1. Umsatz am Donnschtig berechne:**
 
 *   **LKW-Reife:** 6 Reife * 60 Dollar/Reife = 360 Dollar
@@ -3019,7 +3019,7 @@ Dr Mechaniker macht am Donnschtig **40 Dollar** meh Umsatz als am Friitig."	40	"
     *   The higher day is Thursday.
     *   The difference is $40.
 
-8.  **Final Review:** The calculations are correct. $520 (Thu) vs $480 (Fri). Difference is $40. (Self-check complete.)"	stop
+8.  **Final Review:** The calculations are correct. $520 (Thu) vs $480 (Fri). Difference is $40. (Self-check complete.)"	stop	40.0	0	1		
 qd819612e	D Schwöschtere Doubtfire fahre mit 7 Chätzli hei, wo si im örtliche Tierheim adoptiert hän, won ihri Muetter alütet und seit, dass ihri beide Huuschätze grad Chätzli übercho hän. Si seit, d Patchy, d erscht Chatz, het dreimol so vil Chätzli wie d adoptierten, und d Trixie, d ander Chatz, het 12 zur Wält brocht. Wievil Chätzli hän d Doubtfires jetzt?	"D Doubtfires hän:
 
 1. **Start:** Si fahre mit **7** Chätzli hei.
@@ -3089,7 +3089,7 @@ D Doubtfires hän jetzt **55** Chätzli."	40	"Here's a thinking process to solve
 
 *(Self-Correction/Alternative interpretation check: What if the 7 is already included in the calculation? No, the 7 are the starting number.)*
 
-The calculation seems sound based on the provided numbers."	stop
+The calculation seems sound based on the provided numbers."	stop	55.0	0	0	55	0
 q7c63d108	D Jean het 30 Schläggstängel. D Jean isst 2 devo. Die übrige Schläggstängel will d Jean in Säckli mit je 2 Schläggstängel tue. Wievil Säckli cha d Jean fülle?	"D Jean het 30 Schläggstängel.
 
 1. **Schläggstängel übrig:** $30 - 2 = 28$ Schläggstängel.
@@ -3124,7 +3124,7 @@ D Jean cha **14** Säckli fülle."	14	"Here's a thinking process to solve the wo
 
 4.  **Formulate the Answer:** Jean can fill 14 bags.
 
-5.  **Review and Final Output Generation (in a clear, standard language, or matching the tone if necessary, but providing the clear answer):** (The calculation is straightforward.)"	stop
+5.  **Review and Final Output Generation (in a clear, standard language, or matching the tone if necessary, but providing the clear answer):** (The calculation is straightforward.)"	stop	14.0	0	1		
 q93b023e5	Dr Peter plant, die Wuche ins Kino z goh. Er chauft immer e Ytrittskarte für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für die Wuche 42 US-Dollar zur Verfüegig het, wie oft cha er denn ins Kino goh?	"Dr. Peter braucht für jeden Kinobesuch:
 
 *   Eintrittskarte: 7 US-Dollar
@@ -3159,7 +3159,7 @@ Er kann **3 Mal** ins Kino gehen."	3	"Here's a thinking process to solve the pro
 
 6.  **Formulate the Answer:** Dr. Peter can go to the cinema 3 times.
 
-7.  **Review and Format (in German, as the question was in German):** Ensure the answer is clear and directly addresses the question. (The calculation is sound.)"	stop
+7.  **Review and Format (in German, as the question was in German):** Ensure the answer is clear and directly addresses the question. (The calculation is sound.)"	stop	3.0	0	1		
 qdf141d2f	E Holzbrugg cha höchstens 5.000 Pfund trage. E Lieferwage mit identische Kischte, wo jedi 15 Pfund wiegt, will über d Brugg fahre. Dr Fahrer und dr leeri Lastwage wiege zämme 3755 Pfund. Wievil Kischte cha dr Lastwage maximal lade, ohni d Gwichtsgränze vo dr Brugg z überschryyte?	"Das isch e Gwichtsrechnig. Mir müend zerscht wüsse, wie viel Gwicht für d Last zuegstellt isch.
 
 **1. Berechne d'maximali Last, wo d'Kischte trage dörfed:**
@@ -3220,7 +3220,7 @@ Dr Lastwage cha **83 Kischte** maximal lade, ohni d'Gwichtsgränze vo dr Brugg z
     *   Total weight: $3755$ (Tare) $+ 1245$ (Load) $= 5000$ pounds.
     *   $5000 \le 5000$. (The limit is exactly met.)
 
-9.  **Format the Answer (in the requested language/style - Swiss German/German context):** (The calculation is straightforward, so the answer should be clear.)"	stop
+9.  **Format the Answer (in the requested language/style - Swiss German/German context):** (The calculation is straightforward, so the answer should be clear.)"	stop	83.0	0	1		
 q1f4f019f	Dr Stephen het Läbensmittel online bstellt. D Schlussrächnig isch 40,00 US-Dollar gsi. Will d Lieferig vo eme Lieferdienst gmacht worde isch, hän si uf d Schlussrächnig e Gebühr vo 25 % drufgschlage und ihm 3,00 US-Dollar Liefergebühr verrechnet. Dr Stephen het usserdem 4,00 US-Dollar Trinkgäld gäh. Wievil het s nach all dene Extragebühre insgesamt koschtet?	"Das isch eifach z'rechnen. Mir müend alli Choschte zämezelle:
 
 1. **Ursprünglichi Bestellig:** $40,00
@@ -3271,7 +3271,7 @@ Dr Stephen het insgesamt **$57,00 US-Dollar** zahlt."	57	"Here's a thinking proc
     *   Tip: $4.00
     *   Total: $40.00 + $10.00 + $3.00 + $4.00 = $57.00.
 
-8.  **Format the Answer in Swiss German/Standard German context.** (The calculation is straightforward.)"	stop
+8.  **Format the Answer in Swiss German/Standard German context.** (The calculation is straightforward.)"	stop	57.0	0	1		
 q709e5faa	E Himbeerstruuch het 6 Trüübli mit je 20 Frücht und 67 einzelni Frücht über dr Struuch verteilt. Wievil Himbeeri hets insgesamt?	"Es git insgesamt **187** Himbeeren.
 
 **Rechnung:**
@@ -3312,7 +3312,7 @@ q709e5faa	E Himbeerstruuch het 6 Trüübli mit je 20 Frücht und 67 einzelni Fr�
 
     *   *Self-Correction/Review:* Does the problem imply that the 67 individual fruits are *in addition* to the 20 per bush? Yes, the phrasing ""mit je 20 Frücht und 67 einzelni Frücht"" strongly suggests addition.
 
-8.  **Final Answer:** 187."	stop
+8.  **Final Answer:** 187."	stop	187.0	0	1		
 qb292acaa	In eme Chorb sind 25 Orange. Devo isch 1 schlächt, 20 % sind unriff und 2 sind suur, und dr Räscht isch guet. Wievil Orange sind guet?	"Das isch eifach z'rechnen.
 
 1. **Total Orange:** 25
@@ -3369,7 +3369,7 @@ Es sind **17** gueti Orange."	17	"Here's a thinking process to solve the problem
     *   Defects: 1 (schlächt) + 5 (unriff) + 2 (suur) = 8.
     *   Good: 25 - 8 = 17.
 
-9.  **Construct the Answer.** (Use clear steps.)"	stop
+9.  **Construct the Answer.** (Use clear steps.)"	stop	17.0	0	1		
 qa11cac63	D Janet kauft e Brosche für ihri Tochter. Si zahlt 500 US-Dollar fürs Material, zum si z mache, und no 800 US-Dollar für dr Juwelier, demit er si formt. Nochhär zahlt si no 10 % vo däm Betrag für d Versicherig. Wievil het si insgesamt müesse zahle?	"Janet het insgesamt **1430 US-Dollar** müesse zahle.
 
 Hier isch d'Berechnig:
@@ -3410,7 +3410,7 @@ Hier isch d'Berechnig:
         *   $130 (10% insurance)
         *   $1430 (Total) -> Yes, the calculation is correct.
 
-7.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+7.  **Final Output Generation.** (This leads to the provided solution.)"	stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienstjohr bechunnt e Mitarbeiter bi dr Firma vo dr Marcy e volle jährligi Ränte vo 50.000 Dollar. Dr Ränteaspruch fangt nach 20 Dienstjohr aa. Für jedes wytere volle Dienstjohr nach de 20 Johr verdient dr Mitarbeiter 5 % vom volle Räntebetrag. Wenn d Marcy nach genau 30 Dienstjohr ufhört, wie hoch isch ihri jährligi Ränte in Dollar?	"Das Problem lässt sich in folgende Schritte unterteilen:
 
 **1. Bestimmen Sie die Anspruchszeit für die Rente:**
@@ -3463,7 +3463,7 @@ Die jährliche Rente der Mitarbeiter beträgt **75.000 Dollar**."	25000	"Here's 
 
 6.  **Final Review and Formatting (in Swiss/German context):** The calculation is straightforward. The result is $75,000.
 
-7.  **Construct the Answer.** (Ensure the steps are clear.)"	stop
+7.  **Construct the Answer.** (Ensure the steps are clear.)"	stop	4.0	0	0	75000	0
 q2eb5bb5f	D Aleena het e Streaming-Dienst abonniert, wo 140 US-Dollar pro Monet verlangt. Wenn d Streaming-Firma ihr in dr erschte Johrshälfti dr ursprünglig Betrag verrechnet und in dr zweite Johrshälfti 10 % weniger, wie vil het si bis Ändi Johr insgesamt für dr Streaming-Dienst zahlt?	"Das isch e Berechnung für de Gesamtbetrag:
 
 **1. Betrag für d erscht Johrshälfti (6 Monet):**
@@ -3521,7 +3521,7 @@ q2eb5bb5f	D Aleena het e Streaming-Dienst abonniert, wo 140 US-Dollar pro Monet 
 
     *   *Check:* 12 months total. 6 months at $140 ($840). 6 months at $126 ($756). $840 + $756 = $1596. (The calculation is sound.)
 
-7.  **Construct the Answer.** (Present the steps clearly.)"	stop
+7.  **Construct the Answer.** (Present the steps clearly.)"	stop	1596.0	0	1		
 q29ca8e5c	D Sophia überlegt sich, e Autofahrt z mache, und will wüsse, wie wyyt si mit eme volle Tank chunnt. Sit em letschte Tanke isch si 100 Meilen gfahre und het 4 Gallonen Benzin müesse nachtanke, zum dr Tank wider ganz voll z mache. Im Handbuech vo ihrem Auto stoht, dass in dr Tank 12 Gallonen Benzin passe. Wievil Meilen cha d Sophia mit ere einzige Tankfüllig fahre?	"D Sophia cha mit ere einzige Tankfüllig **300 Meilen** fahre.
 
 **Hier isch d Berechnig:**
@@ -3561,7 +3561,7 @@ q29ca8e5c	D Sophia überlegt sich, e Autofahrt z mache, und will wüsse, wie wyy
 6.  **Final Review:**
     *   Tank size: 12 gal.
     *   Consumption: 4 gal = 100 miles. (2.5 MPG)
-    *   Full tank distance: 12 gal * (100 miles / 4 gal) = 12 * 25 = 300 miles. (The logic holds.)"	stop
+    *   Full tank distance: 12 gal * (100 miles / 4 gal) = 12 * 25 = 300 miles. (The logic holds.)"	stop	300.0	0	1		
 q388ed7a8	Dr Jim luegt 2 Stunde lang TV und beschliesst denn, ins Bett z goh und halb so lang z läse. Das macht er 3-mal pro Wuche. Wievil Stunde verbringt er in 4 Wuche insgesamt mit Fernseh luege und Läse?	"Dr. Jim verbringt insgesamt **36 Stunden** in 4 Wochen mit Fernsehen und Lesen.
 
 Hier ist die Berechnung:
@@ -3602,7 +3602,7 @@ Hier ist die Berechnung:
     *   3 hours * 3 = 9 hours/week.
     *   9 hours * 4 weeks = 36 hours. (The calculation is correct.)
 
-7.  **Formulate the Answer (in German, as the question was in German):** State the steps clearly."	stop
+7.  **Formulate the Answer (in German, as the question was in German):** State the steps clearly."	stop	36.0	0	1		
 qe6615147	Vier Schuele spiele in eme Basketballturnier gegeneinander. Jedi Schuel het e Meitli-Basketballteam und e Buebe-Basketballteam gschickt, und jedes Team het 5 Spieler. Alli Schuele hän au für jedes Team e Trainer mitgschickt. Wievil Persone hän d Schuele insgesamt gschickt?	"Die Schule hat insgesamt **24** Personen geschickt.
 
 Hier ist die Rechnung:
@@ -3638,7 +3638,7 @@ Hier ist die Rechnung:
 
 6.  **Formulate the Answer (in German, matching the context):** State the steps clearly. (The original text is in Swiss German/informal German, so the answer should be clear.)
 
-7.  **Final Check:** 4 schools * (5 players + 1 coach) = 4 * 6 = 24. (The calculation is correct.)"	stop
+7.  **Final Check:** 4 schools * (5 players + 1 coach) = 4 * 6 = 24. (The calculation is correct.)"	stop	24.0	0	0	24	0
 q1df59a5a	E Schatzsuecher het e vergrabeni Schatzchischte mit Edelstei gfunde. Drin sy 175 Diamante gsi, 35 weniger Rubine als Diamante und doppelt so vil Smaragde wie Rubine. Wievil Edelstei sy in dr Schatzchischte gsi?	"Das sind die Berechnungen:
 
 1. **Diamanten:** 175
@@ -3677,7 +3677,7 @@ In der Schatzchischte waren **595** Edelsteine."	595	"Here's a thinking process 
 
 7.  **Final Review and Formatting (in Swiss German/Standard German context):** The calculation is sound. The answer is 595.
 
-8.  **Construct the Answer.** (Present the steps clearly.)"	stop
+8.  **Construct the Answer.** (Present the steps clearly.)"	stop	595.0	0	1		
 q0e3fa635	In dr Schuel vom Dr. Wertz hets doppelt so vil Buebe wie Meitli. Wenns 60 Meitli und 5 Schüeler pro Lehrer het, wie vil Lehrer hets denn?	"Das isch eifach z'rechnen!
 
 **1. Buebe zelle rechne:**
@@ -3730,7 +3730,7 @@ Es hets **36 Lehrer**."	36	"Here's a thinking process to solve the word problem:
 
     *   *Check:* 36 teachers * 5 students/teacher = 180 students. 180 total students (60 girls + 120 boys). The math is correct.
 
-8.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+8.  **Final Output Generation.** (This leads to the provided solution.)"	stop	36.0	0	1		
 q9c0ce719	D Bailey fangt mit eme bestimmte Gäldbetrag aa. Denn bechunnt si 8 Wuche lang jede Wuche 5 US-Dollar. Wenn si nach de 8 Wuche insgesamt 100 US-Dollar het, wie vil Gäld het d Bailey am Afang gha?	"D Bailey het am Afang **60 US-Dollar** gha.
 
 **Erklärig:**
@@ -3763,7 +3763,7 @@ q9c0ce719	D Bailey fangt mit eme bestimmte Gäldbetrag aa. Denn bechunnt si 8 Wu
     *   Start with $60.
     *   Earn $40 over 8 weeks.
     *   $60 + $40 = $100. (Matches the final amount).
-    *   The calculation is correct. (The language used in the prompt is Swiss German/colloquial German, so the answer should be clear and direct.)"	stop
+    *   The calculation is correct. (The language used in the prompt is Swiss German/colloquial German, so the answer should be clear and direct.)"	stop	8.0	0	0	60	1
 qde446a3d	D Judy unterrichtet unter dr Wuche jede Tag 5 Tanzkürs und am Samschtig 8 Kürs. Wenn in jedem Kurs 15 Schüeler sy und si 15,00 $ pro Schüeler verlangt, wie vil Gäld verdient si in ere Wuche?	"Das ist eine Berechnung der Gesamteinnahmen pro Woche.
 
 **1. Anzahl der Kurse unter der Woche (Wochentage):**
@@ -3818,7 +3818,7 @@ Judy verdient in einer Woche **7.425,00 $**."	7425	"Here's a thinking process to
         *   $4950 + 2475 = 7425$
     *   (Alternatively: $495 \times 15 = 495 \times (3 \times 5) = (495 \times 3) \times 5 = 1485 \times 5 = 7425$)
 
-7.  **Final Answer Formulation (in German, matching the tone of the question):** State the steps clearly. (The final answer is 7425 $)."	stop
+7.  **Final Answer Formulation (in German, matching the tone of the question):** State the steps clearly. (The final answer is 7425 $)."	stop	7.425	0	0	7.425	0
 qd941251f	Dr Kelian het zwäi Kochrezäpt, s eine mit 20 Aawiisige und s andere mit doppelt so vil Aawiisige wie s erschte. Wievil Aawiisige muess dr Kelian läse, demit er beidi Rezäpt cha mache?	"Dr Kelian muess insgesamt **60 Aawiisige** läse.
 
 **Rechnig:**
@@ -3846,7 +3846,7 @@ qd941251f	Dr Kelian het zwäi Kochrezäpt, s eine mit 20 Aawiisige und s andere 
 6.  **Final Review:** Does the answer make sense?
     *   Recipe 1: 20
     *   Recipe 2: 40
-    *   Total: 60. Yes. (The calculation is correct.)"	stop
+    *   Total: 60. Yes. (The calculation is correct.)"	stop	60.0	0	1		
 q96352811	Dr Tommy sammlet Gäld für sini Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Stück und Chäschuechestück für 4 US-Dollar pro Stück verkauft. Wenn dr Tommy 43 Brownies und 23 Chäschuechestück verkauft, wie vil Gäld sammlet er denn?	"Dr. Tommy sammelt folgende Gelder:
 
 **1. Einnahmen aus Brownies:**
@@ -3895,7 +3895,7 @@ Dr. Tommy sammelt insgesamt **221 US-Dollar**."	221	"Here's a thinking process t
 
     *   *Self-Correction/Review:* Does the calculation make sense? $43 \times 3 = 129$. $23 \times 4 = 92$. $129 + 92 = 221$. Yes, the math is correct.
 
-7.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+7.  **Final Output Generation.** (This leads to the provided solution.)"	stop	221.0	0	1		
 qbf808b59	D Shiela het fünf Handys für 150 US-Dollar pro Stück mit ere Ratenzahlige über 3 Monet chauft. Pro Stück wärde 2 % Zins verlangt. Wievil zahlt d Shiela jede Monet während 3 Monet?	"Dies ist eine klassische Ratenzahlungsrechnung (Annuitätendarlehen).
 
 **1. Berechnung des Gesamtbetrags (Kapital):**
@@ -3994,7 +3994,7 @@ Shiela zahlt jede Monat während der 3 Monate **ungefähr 251,30 US-Dollar**."	2
 
     *Conclusion:* The calculated monthly payment is approximately $251.25.
 
-7.  **Final Formatting (German context):** Present the steps clearly. (The calculation is $251.25)."	stop
+7.  **Final Formatting (German context):** Present the steps clearly. (The calculation is $251.25)."	stop	251.3	0	0	251.3	0
 q71d76256	Dr Artie het e Bluemestand uf em Buuremäärt. Er verkauft drei Sorte Blueme: Studentenblueme, Petunie und Begonie. Normalerwyys verkauft er Studentenblueme für 2,74 Dollar pro Topf, Petunie für 1,87 Dollar pro Topf und Begonie für 2,12 Dollar pro Topf. Hüt het dr Artie kei Wächselgäld, drum het er beschlosse, alli Pryyse uf dr nöchschte volle Dollar z runde. Wenn dr Artie 12 Töpf Studentenblueme, 9 Töpf Petunie und 17 Töpf Begonie verkauft, wie vil Dollar verdient er?	"Das isch eifach z'rechnen. Zuerst müend mir d'Priese rundä.
 
 **1. Priese rundä uf d'nächschti volle Dollar:**
@@ -4051,7 +4051,7 @@ Dr Artie het **105 Dollar** verdient."	88	"Here's a thinking process to solve th
 
 8.  **Final Review and Formatting (in Swiss/German context):** The total earned is $105.00. (The language used in the prompt is Swiss German, but the calculation is standard arithmetic.)
 
-9.  **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop
+9.  **Construct the Answer.** (Self-Correction: Ensure the steps are clear.)"	stop	105.0	0	0	105	0
 qd6f9023f	Dr Luke verbringt Zyt am Strand und baut e Sandburg. Irgendwenn merkt er, dass jedi Ebene vo ere Sandburg numme halb so vil Quadratmeter het wie d Ebene drunder. Wenn er e 4-stöckigi Sandburg baut mit ere oberste Ebene vo 16 Quadratmetern, wie gross isch denn d durchschnittligi Quadratmeterzahl vo ere Ebene?	"Das isch e mathematischi Reihe. Mir müend d'Fläche vo allne vier Ebene berechne und denn d'Durchschnittsflächi finde.
 
 **1. Berechne d'Fläche vo jede Ebene:**
@@ -4101,7 +4101,7 @@ D'durchschnittlichi Quadratmeterzahl vo ere Ebene isch **7.5 Quadratmeter**."	60
 
 6.  **Final Review and Formatting (in Swiss German/Standard German context):** The calculation is straightforward. The result is 7.5. (The language used in the prompt is Swiss German/informal German, but the mathematical answer should be clear.)
 
-7.  **Construct the Answer.** (Self-Correction: Ensure the steps are clearly laid out.)"	stop
+7.  **Construct the Answer.** (Self-Correction: Ensure the steps are clearly laid out.)"	stop	7.5	0	0	7.5	0
 qcf724c14	D Cecilia het grad e neue Welpe kauft. Luut ihrem Tierarzt muess si dr Welpe in de erschte 180 Täg mit 1 Tasse Hundefueter pro Tag fietere. Nochhär muess si ihm für dr Räscht vo sym Läbe 2 Tassen Hundefueter pro Tag gäh. Wenn e Sack Hundefueter 110 Tassenportione beinhaltet, wie vil Säck Hundefueter verbrucht d Cecilia im erschte Johr?	"Das isch e Berechnig, wo mer in zwei Schritt teile müend:
 
 **1. Verbrauchsbedarf für die erschte 180 Täg (Welpe-Phase):**
@@ -4163,7 +4163,7 @@ qcf724c14	D Cecilia het grad e neue Welpe kauft. Luut ihrem Tierarzt muess si dr
 
 8.  **Final Review and Formatting (in Swiss German/German context):** The calculation is straightforward. Cecilia needs 5 bags.
 
-9.  **Construct the Answer.** (Ensure the steps are clear.)"	stop
+9.  **Construct the Answer.** (Ensure the steps are clear.)"	stop	5.0	0	1		
 q6330b5ad	Wenn dr Raymond halb so vil Wösch wäscht wie d Sarah und d Sarah 4-mal so vil Wösch wäscht wie dr David, wie gross isch dr Unterschied zwüsche dr Wöschmängi vom Raymond und vom David, wenn d Sarah 400 Pfund Wösch wäscht?	"Das ist eine mathematische Aufgabe. Wir berechnen die Wöschmengen von Raymond und David.
 
 **1. Wöschmengen von Sarah (S):**
@@ -4228,7 +4228,7 @@ $$\text{Unterschied} = 100 \text{ Pfund}$$
     *   Difference = $200 - 100$
     *   Difference = $100$ pounds.
 
-8.  **Final Review and Formatting (in German, as requested):** The difference is 100 Pfund. (The calculation is sound.)"	stop
+8.  **Final Review and Formatting (in German, as requested):** The difference is 100 Pfund. (The calculation is sound.)"	stop	100.0	0	1		
 qfb8247db	Dr Vincent cha Blueme in 3er-Packige für 2,50 US-Dollar oder in 2er-Packige für 1 US-Dollar kaufe. Wievil Gäld spart er, wenn er 18 Blueme zum bessere Pryys chauft?	"Dr. Vincent spart **$6,00**.
 
 Hier ist die Berechnung:
@@ -4275,7 +4275,7 @@ Hier ist die Berechnung:
 
     *   *Focusing on the savings:* He saves $6.00 by choosing the 2-pack deal.
 
-9.  **Final Review:** The calculation is sound. (18 flowers at $9.00 vs $15.00)."	stop
+9.  **Final Review:** The calculation is sound. (18 flowers at $9.00 vs $15.00)."	stop	3.0	0	0	6	1
 q4da79a41	Dr John adoptiert e Hund. Er bringt dr Hund zum Hundecoiffeur, was 100 US-Dollar choschtet. Dr Hundecoiffeur git ihm 30 % Rabatt, will er e Neukund isch. Wievil choschtet dr Termin bim Hundecoiffeur?	"Der Termin beim Hundecoiffeur kostet **70 US-Dollar**.
 
 **Rechnung:**
@@ -4313,7 +4313,7 @@ q4da79a41	Dr John adoptiert e Hund. Er bringt dr Hund zum Hundecoiffeur, was 100
 
 6.  **Final Review:** Does $70 make sense? Yes. (30% of 100 is 30. 100 - 30 = 70.)
 
-**(Self-Correction/Formatting for the output):** Ensure the answer is clear and directly addresses the question."	stop
+**(Self-Correction/Formatting for the output):** Ensure the answer is clear and directly addresses the question."	stop	70.0	0	1		
 qd3f2e43b	Zwäi Meitli hän je 1/6 vo 24 Liter Wasser becho. Denn het e Bueb 6 Liter Wasser becho. Wievil Liter Wasser sind übrig blibe?	"Das isch eifach z'rechnen:
 
 **1. Wie viel Wasser händ d'Meitli becho?**
@@ -4364,7 +4364,7 @@ qd3f2e43b	Zwäi Meitli hän je 1/6 vo 24 Liter Wasser becho. Denn het e Bueb 6 L
 
     *Self-Correction/Review:* Does the calculation make sense? 24 - 4 = 20. 20 - 6 = 14. Yes, 14 Liters remain.
 
-8.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+8.  **Final Output Generation.** (This leads to the provided solution.)"	stop	14.0	0	0	14	0
 qffe70c6a	Dr Charlie het 10 Sticker gha. Er het 21 Sticker in eme Lade in dr Mall chauft und 23 Sticker zum Geburtstag gschänkt becho. Denn het dr Charlie sinere Schwöschter 9 vo de Sticker gäh und 28 zum Dekoriere vo ere Gruesscharte brucht. Wievil Sticker het dr Charlie no übrig?	"Dr. Charlie hat folgende Schritte durchgeführt:
 
 **1. Sticker gesammelt:**
@@ -4405,7 +4405,7 @@ Dr. Charlie hat **17** Sticker übrig."	17	"Here's a thinking process to solve t
     *   Total Stickers (54) - Total Stickers Used (37) = Remaining Stickers
     *   $54 - 37 = 17$
 
-6.  **Formulate the Answer:** Dr. Charlie has 17 stickers left. (Ensure the answer is clear and directly addresses the question.)"	stop
+6.  **Formulate the Answer:** Dr. Charlie has 17 stickers left. (Ensure the answer is clear and directly addresses the question.)"	stop	17.0	0	1		
 q7d0f9963	D Grace wiegt 125 Pfund. Dr Alex wiegt 2 Pfund weniger als s 4-Fache vom Gwicht vo dr Grace. Wievil Pfund wiege si zämme?	"**1. Gwicht vo Dr Alex berechne:**
 
 *   **4-Fache vom Gwicht vo dr Grace:** $4 \times 125 \text{ Pfund} = 500 \text{ Pfund}$
@@ -4446,7 +4446,7 @@ Si wiege zämme **623 Pfund**."	623	"Here's a thinking process to solve the word
     *   Alex: 498 Pfund
     *   Total: 623 Pfund.
 
-6.  **Review and Output.** (The calculation is sound.)"	stop
+6.  **Review and Output.** (The calculation is sound.)"	stop	623.0	0	1		
 q792b7ea9	Dr Dan pflanzt 3 Rosebüsch. Jede Rosebusch het 25 Rose. Jedi Rose het 8 Dorne. Wievil Dorne sy das insgesamt?	"Das ist eine Rechenaufgabe. Hier ist die Berechnung:
 
 1. **Gesamtzahl der Rosen berechnen:**
@@ -4483,7 +4483,7 @@ q792b7ea9	Dr Dan pflanzt 3 Rosebüsch. Jede Rosebusch het 25 Rose. Jedi Rose het
 6.  **Final Review:**
     *   3 bushes * 25 roses/bush = 75 roses.
     *   75 roses * 8 thorns/rose = 600 thorns.
-    *   The calculation is correct. (600)"	stop
+    *   The calculation is correct. (600)"	stop	600.0	0	1		
 q3dfac176	E Fuessballteam spielt 22 Spiel. Sie hän 8 meh gwunne als verlore. Wievil Spiel hän si gwunne?	"Das ist eine einfache algebraische Aufgabe.
 
 Sei:
@@ -4535,7 +4535,7 @@ Die Mannschaft hat **15** Spiele gewonnen.
 
 7.  **State the Final Answer:** The team won 15 games.
 
-8.  **Format the Answer (in German, matching the input language):** (The team won 15 games.)"	stop
+8.  **Format the Answer (in German, matching the input language):** (The team won 15 games.)"	stop	15.0	0	1		
 qc8e2bf9d	Dr Eugen näht e Quilt us alte Souvenir-T-Shirts. Er het es T-Shirt vo allne Ferie, wo er gmacht het. Er fahrt jedes Johr viermal ind Ferie. Er het mit dere Tradition in däm Johr agfange, wo er 23 worde isch, und het für jedes Johr bis zum aktuelle Johr, wo er 34 isch, T-Shirts gsammlet, aber s aktuelle Johr sälber nid mitgrechnet. Wievil Quilt-Blöck het er insgesamt?	"Dr Eugen het insgesamt **44** Quilt-Blöck.
 
 **Berechnig:**
@@ -4583,7 +4583,7 @@ qc8e2bf9d	Dr Eugen näht e Quilt us alte Souvenir-T-Shirts. Er het es T-Shirt vo
     *   4 trips per year.
     *   Total = 44.
 
-8.  **Formulate the Answer (in Swiss German/standard response):** (The calculation is 44.)"	stop
+8.  **Formulate the Answer (in Swiss German/standard response):** (The calculation is 44.)"	stop	44.0	0	1		
 q87073282	Dr Greg het e Wecker gstellt, wo dreimal pro Tag zur Erinnerig lütet. Wenn dr Wecker losgoht, lütet er so lang, bis dr Greg ihn abstellt. Hüt bim erschte Mol het er viermol glütet. Bim zweite Mol het er dreimol so lang glütet wie bim erschte Mol. Bim dritte Mol het er halb so lang glütet wie bim zweite Mol. Wie oft het dr Wecker insgesamt glütet?	"Dr Wecker het **drei** Mol glütet.
 
 (D'Informatione über d'Längi vom Glütze sind Ablenkig, will d'Froog nach de *Anzahl* vo de Glütze fragt.)"	22	"Here's a thinking process to solve the problem:
@@ -4621,7 +4621,7 @@ q87073282	Dr Greg het e Wecker gstellt, wo dreimal pro Tag zur Erinnerig lütet.
 
 6.  **Conclusion:** The complex information about the duration (4 times, 3 times as long, half as long) is a distraction (a red herring) if the question is strictly asking for the *number of times* it rang.
 
-7.  **Final Answer Formulation (in Swiss German/German context):** The alarm rang three times. (3)"	stop
+7.  **Final Answer Formulation (in Swiss German/German context):** The alarm rang three times. (3)"	stop		0	0	3	0
 qe293b5e8	E Firma zahlt ihre Mitarbeiter e Yystiegslohn vo 600 Dollar pro Monet. D Firmenpolitik belohnt langjährigi Mitarbeiter: Nach fünf Dienstjohr wird dr Lohn vo eme Mitarbeiter jedes Johr erhöht. Die jöhrligi Lohnerhöhig isch immer e feste Betrag, wo 10 % vom anfängliche Johreslohn entspricht. Wenn d Sylvie grad ihr fünfts Johr in dr Firma abgeschlossen het, wie hoch isch ihr Johreslohn, nachdem si no drei Johr wytergschafft het?	"Das Problem muss in Schritten gelöst werden.
 
 **1. Berechnung des anfänglichen Jahreslohns:**
@@ -4711,7 +4711,7 @@ Nachdem Sylvie drei weitere Jahre gearbeitet hat, beträgt ihr Jahreslohn **\$10
 
     *   Salary at end of Year 8 = $10,080.
 
-7.  **Construct the final answer.** (Use clear steps.)"	stop
+7.  **Construct the final answer.** (Use clear steps.)"	stop	10080.0	0	0	10080	0
 qb9e657cf	D erscht Platte vo dr Marilyn het sich 10-mal so oft verkauft wie die vom Harald. Wenn si zämme 88.000 Exemplare verkauft hän, wie vil Exemplare het dr Harald verkauft?	"Das isch e mathematischi Problem. Mir bruched e Verhältnis.
 
 1. **Setz d'Verchauf vo Harald als Basis:**
@@ -4764,7 +4764,7 @@ Dr Harald het **8.000** Exemplare verkauft.
     *   If $H = 8,000$, then $M = 10 \times 8,000 = 80,000$.
     *   Check the total: $M + H = 80,000 + 8,000 = 88,000$. (The total matches the given information.)
 
-8.  **Formulate the Final Answer:** State the result clearly in response to the original question. (The question asks how many copies Harald sold.)"	stop
+8.  **Formulate the Final Answer:** State the result clearly in response to the original question. (The question asks how many copies Harald sold.)"	stop	8000.0	0	1		
 q8d6c3ac8	D Christina het 16 Fründe zu ihrer Geburtstagsparty yyglaade. Si rechnet demit, dass numme 75 % devo chömme, drum bereitet si für jede erwartete Gascht e Gschänksäckli vor. Wenn d Gschänksäckli je $2 choschte, wie hoch sind d Gesamtköschte?	"Das isch eifach z'rechnen:
 
 **1. Berechne d'erwarteti Anzahl Gascht:**
@@ -4806,7 +4806,7 @@ q8d6c3ac8	D Christina het 16 Fründe zu ihrer Geburtstagsparty yyglaade. Si rech
 
 7.  **Final Review:**
     *   16 friends * 0.75 = 12 guests. (Correct)
-    *   12 guests * $2/bag = $24. (Correct)"	stop
+    *   12 guests * $2/bag = $24. (Correct)"	stop	24.0	0	1		
 qa59fef67	Dr Ted dr T-Rex plant, Härdöpfelsalat zum Dinopicknick mitzbringe. Er weiss, dass e erwachsene Dinosaurier 10 Pfund Härdöpfelsalat isst und es Jungs halb so vil wie es erwachsenes Tier. Wenn am Picknick 20 Erwachsene und 5 Junge debii sy, wie vil Härdöpfelsalat muess dr Ted mitbringe, wenn er hofft, alli satt z kriege?	"Dr. Ted muss folgende Mengen mitbringen:
 
 **1. Berechnung für die Erwachsenen:**
@@ -4847,7 +4847,7 @@ Dr. Ted muss **225 Pfund** Härdöpfelsalat mitbringen, um alle satt zu kriegen!
 7.  **Review and Final Check:**
     *   Adults: 20 * 10 = 200
     *   Children: 5 * 5 = 25
-    *   Total: 225. (The calculation is sound.)"	stop
+    *   Total: 225. (The calculation is sound.)"	stop	225.0	0	1		
 q4db223a4	Dr Jan het dreimal so vil Huustier wie d Marcia. D Marcia het zwäi Huustier meh als d Cindy. Wenn d Cindy vier Huustier het, wie vil Huustier hän denn alli drei zämme?	"Das isch e eifachi Rächnig:
 
 1. **Cindy het:** 4 Huustier
@@ -4885,7 +4885,7 @@ Alli drei händ zämme **16 Huustier**."	28	"Here's a thinking process to solve 
         *   Jan = Marcia = 6
         *   Total = 4 + 6 + 6 = 16. (The calculation is correct.)
 
-6.  **Final Output Generation.** (Present the solution clearly.)"	stop
+6.  **Final Output Generation.** (Present the solution clearly.)"	stop	16.0	0	0	16	0
 q2ae0bd70	D Emily het 4 Kinder, wo Amy, Jackson, Corey und James heisse. D Amy isch 5 Johr älter als dr Jackson und 2 Johr jünger als dr Corey. Wenn dr James 10 Johr alt und 1 Johr jünger als dr Corey isch, wie alt isch denn dr Jackson?	"Das ist eine Altersaufgabe. Wir können die Informationen Schritt für Schritt verwenden, um das Alter von Jackson zu berechnen.
 
 **1. Alter von James und Corey bestimmen:**
@@ -4959,7 +4959,7 @@ q2ae0bd70	D Emily het 4 Kinder, wo Amy, Jackson, Corey und James heisse. D Amy i
     *   Check Clue 3: Is James (10) 10 years old? (Correct)
     *   Check Clue 4: Is James (10) 1 year younger than Corey (11)? $10 = 11 - 1$. (Correct)
 
-6.  **Final Answer Formulation:** The question asks for Jackson's age. Jackson is 4. (The language used is Swiss German/German, so the answer should be clear.)"	stop
+6.  **Final Answer Formulation:** The question asks for Jackson's age. Jackson is 4. (The language used is Swiss German/German, so the answer should be clear.)"	stop	3.0	0	0	4	1
 q412bff21	Dr Lee cha d 400 Meter Hürde zwei Sekunde schnäller laufe als dr Gerald d 400 Meter Hürden lauft. Dr Gerald het aber syni Ernährig umgstellt und durch das syni Gschwindigkeit um 10 % verbessert. Wenn dr Lee d 400 Meter Hürden in 38 Sekunden lauft, in wie vil Sekunden cha dr Gerald mit syner verbesserte Ernährig d 400 Meter Hürden laufe?	"Das ist eine Geschwindigkeits- und Zeitaufgabe. Wir müssen zuerst die ursprüngliche Zeit von Dr. Gerald berechnen und dann die Zeit unter Berücksichtigung der Verbesserung ermitteln.
 
 **1. Dr. Gerald's ursprüngliche Zeit berechnen:**
@@ -5013,7 +5013,7 @@ Dr. Gerald läuft mit seiner verbesserten Ernährung die 400 Meter Hürden in un
     *   $40 / 1.1 = 400 / 11$
     *   $400 / 11 \approx 36.36$ seconds. (Rounding to two decimal places is usually sufficient unless specified.)
 
-7.  **Construct the Answer (in German, matching the input language):** (Self-Correction: Ensure the steps are clear.)"	stop
+7.  **Construct the Answer (in German, matching the input language):** (Self-Correction: Ensure the steps are clear.)"	stop	36.36	0	0	36.36	0
 qf73a338f	In ere Nochberschaft hets zwölf Häsli weniger als Hünd und Katze zämme. Wenns für jede Hund zwei Katze het und d Zahl vo de Hünd 60 isch, wie vil Huustier hets insgesamt in dr Nochberschaft?	"Das isch e eifachi Rechnig.
 
 1. **Hund (H):** Du hesch 60 Hünd.
@@ -5062,7 +5062,7 @@ Es hets insgesamt **180** Huustier in dr Nochberschaft."	348	"Here's a thinking 
     *   If the statement means: $D + C = X$, and $X$ is 12 less than $Y$. This doesn't help us find $D+C$.
     *   *Self-Correction/Re-evaluation of the first sentence:* Often in these puzzles, the first sentence is a distraction or a poorly phrased constraint that is already satisfied by the later constraints. Since we found a definitive answer using the ratio and the number of dogs, we proceed with that answer.
 
-6.  **Final Answer Formulation:** The total number of pets is 180. (The language used is Swiss German, but the math is universal.)"	stop
+6.  **Final Answer Formulation:** The total number of pets is 180. (The language used is Swiss German, but the math is universal.)"	stop	180.0	0	0	180	0
 qc5273098	Vo de 200 Fünftklässler sy 2/5 Buebe, und 2/3 vo de Meitli sy bi de Pfadfinderinne. Wievil Meitli sy nid bi de Pfadfinderinne?	"Das isch eifach z'rechnen:
 
 **1. Buebe und Meitli finde:**
@@ -5122,7 +5122,7 @@ qc5273098	Vo de 200 Fünftklässler sy 2/5 Buebe, und 2/3 vo de Meitli sy bi de 
     *   Girls not in Pathfinder: 40
     *   Total girls accounted for: 80 + 40 = 120 (Correct)
 
-8.  **Formulate the Answer (in the requested language/style):** (The answer is 40.)"	stop
+8.  **Formulate the Answer (in the requested language/style):** (The answer is 40.)"	stop	40.0	0	1		
 qf8da7966	Dr Harry het letschti Nacht 9 Stunde gschlofe. Sy Fründ James het numme 2/3 vo dr Zyt gschlofe, wo dr Harry gschlofe het. Wievil Stunde meh het dr Harry gschlofe als dr James?	"Dr Harry het **3 Stunde** meh gschlofe als dr James.
 
 **Rechnig:**
@@ -5153,7 +5153,7 @@ qf8da7966	Dr Harry het letschti Nacht 9 Stunde gschlofe. Sy Fründ James het num
 6.  **Final Review:** Does the answer make sense?
     *   Harry = 9h.
     *   James = 6h.
-    *   9 - 6 = 3. (Correct)"	stop
+    *   9 - 6 = 3. (Correct)"	stop	3.0	0	1		
 q186d2aa2	Wenn d Freda Dosetomate zu Sauce verkocht, verlierere si d Hälfti vom Gwicht. Jedi 16-Unzen-Dose Tomate, wo si brucht, enthalte drei Tomate. Die letscht Portion Tomatesauce het 32 Unzen Sauce ergäh. Wievil Tomate het d Freda brucht?	"Basierend auf den bereitgestellten Informationen kann die **Gesamtanzahl** der Tomaten, die Freda benutzt hat, **nicht bestimmt werden**.
 
 Die Aufgabe gibt nur Informationen über **eine einzelne Portion** Tomatesauce:
@@ -5198,7 +5198,7 @@ Die Aufgabe gibt nur Informationen über **eine einzelne Portion** Tomatesauce:
 
 *(Self-Correction/Review: Is there any interpretation where ""Die letscht Portion"" implies the total? No. It clearly states ""Die letscht Portion"" (The last portion). Therefore, the calculation only applies to that specific portion.)*
 
-9.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+9.  **Final Output Generation.** (This leads to the provided solution.)"	stop	12.0	0	1		
 q9c762a15	Uf dr Autobahn stöhnd Auto hinderänand. E paar vo de Auto chömme in de erschte 15 Minute vom Stau dure, und denn nomol 20 wyteri Auto in de verblyybende 15 Minute vom Stau. 5 Auto schere us dr Reihe us und müesse drum nid durch dr Stau. Wenn ursprünglich 30 Auto uf dr Autobahn gstande sy, wie vil Auto sy denn in de erschte 15 Minute durch dr Stau cho?	"Das isch e klassischi Logik-Frage. Mir müend d'Informatione zämefüehre:
 
 1. **Total Auto:** 30
@@ -5251,7 +5251,7 @@ Auto in Phase 1 = $25 - 20 = 5$
     *   Cars in the second phase: 20.
     *   Cars in the first phase: 25 - 20 = 5.
 
-9.  **Final Review (Self-Correction/Clarity):** The question asks for the number in the *first* 15 minutes. The calculation yields 5. (The language is Swiss German, so the answer should be clear.)"	stop
+9.  **Final Review (Self-Correction/Clarity):** The question asks for the number in the *first* 15 minutes. The calculation yields 5. (The language is Swiss German, so the answer should be clear.)"	stop	5.0	0	1		
 q507804db	D Mary gärtneretfür ihr Läbe gärn. Geschter het si 18 neui Topfpflanze vo ihrer Lieblingsgärtnerei becho. Si het scho 2 Topfpflanze uf jedem vo de 40 Fänstersims vo ihrem grosse Landhuus. Si fühlt sich grosszügig und het beschlosse, dass si morn 1 Topfpflanze vo jedem Fänstersims an Fründe und Familie verschenkt. Wievil Topfpflanze blibe dr Mary übrig?	"D Mary het **58** Topfpflanze übrig.
 
 **Rechnig:**
@@ -5289,7 +5289,7 @@ q507804db	D Mary gärtneretfür ihr Läbe gärn. Geschter het si 18 neui Topfpfl
 7.  **Final Review (Self-Check):**
     *   Start: 18 new + (40 * 2) existing = 98.
     *   Action: Give away 40.
-    *   End: 98 - 40 = 58. (The calculation is sound.)"	stop
+    *   End: 98 - 40 = 58. (The calculation is sound.)"	stop	58.0	0	1		
 q120898cb	Dr Jerome het 4 Fründe gha, wo ihn an eme bestimmte Tag bsuecht hän. Dr erscht Fründ het 20 Mol uf d Türglogge druckt, bevor dr Jerome uf gmacht het. Dr zwyyti Fründ het 125 % so oft uf d Türglogge druckt wie dr erscht Fründ vom Jerome. Dr dritte Fründ het 10 Mol öfter uf d Türglogge druckt als dr vierte Fründ. Wenn dr vierte Fründ 60 Mal uf d Türglogge druckt het, wie oft het d Türglogge insgesamt glütet?	"Das isch e eifachi Rechnig. Mir müend d'Anzahl vo de Mal, wo jede Fründ d'Türglogge druckt het, zämmezelle.
 
 **1. Erster Fründ:**
@@ -5348,7 +5348,7 @@ D'Türglogge het insgesamt **175** Mol glütet."	175	"Here's a thinking process 
     *   $N_2 = 20 \times 1.25 = 25$
     *   $N_3 = 60 + 10 = 70$
     *   $N_4 = 60$
-    *   Total = $20 + 25 + 70 + 60 = 175$. (The calculation is correct.)"	stop
+    *   Total = $20 + 25 + 70 + 60 = 175$. (The calculation is correct.)"	stop	175.0	0	1		
 q55e446ec	Dr Solo muess 4 Syte us sym Naturwissenschafts-Lehrbuech läse, 20 Syte us sym Gemeinschaftskundebuech, 7 Syte us sym Gschichtsbuech und 8 Syte us sym Geografiebuech. Am Mändig list dr Solo 15 Syte. Wenn er no 4 Täg Zyt het, zum alles z läse, wie vil Syte muess er im Schnitt pro Tag läse?	"Das ist eine Rechenaufgabe. Hier ist die Schritt-für-Schritt-Lösung:
 
 **1. Gesamtzahl der Seiten berechnen:**
@@ -5396,7 +5396,7 @@ q55e446ec	Dr Solo muess 4 Syte us sym Naturwissenschafts-Lehrbuech läse, 20 Syt
 6.  **Perform the Division:**
     *   $60 / 4 = 15$
 
-7.  **Formulate the Answer:** State the steps clearly and provide the final result. (The answer should be in German, matching the context.)"	stop
+7.  **Formulate the Answer:** State the steps clearly and provide the final result. (The answer should be in German, matching the context.)"	stop	15.0	0	0	15	0
 qe178e77b	Dr John trinkt zum Zmorge, zum Zmittag und zum Znacht gärn es Glas Wasser. Vor em Bett goh trinkt er au no eins. Das macht dr John an jedem Wuchetag, aber am Wuchenänd entspannt er gärn und trinkt zum Znacht stattdesse es Glas Limonade. Wievil Gläser Wasser trinkt dr John pro Wuche?	"Dr John trinkt an jedem Wuchetag 4 Gläser Wasser (Zmorge, Zmittag, Znacht und vor em Bett).
 
 Es gibt 5 Wuchetag (Montag bis Freitag).
@@ -5433,7 +5433,7 @@ Dr John trinkt pro Wuche **20 Gläser Wasser**."	26	"Here's a thinking process t
 6.  **Final Review and Formatting (in Swiss German context):**
     *   The calculation is straightforward: 5 days * 4 glasses/day = 20 glasses.
 
-7.  **Construct the Answer.** (The answer should be clear and directly address the question.)"	stop
+7.  **Construct the Answer.** (The answer should be clear and directly address the question.)"	stop	20.0	0	0	20	0
 q13dd2b3f	E Näbelschleier chunnt vom Meer här und zieht über e Stadt. Er brucht 10 Minute, zum je 3 Meilen vo dr Stadt z bedegge. Wenn d Stadt vom Meeresufer bis zum gegenüberligende Landesinnere 42 Meilen lang isch, wie vil Minute brucht dr Näbelschleier, bis er d ganz Stadt bedeggt het?	"Dr Näbelschleier brucht **140 Minute**.
 
 **Berechnig:**
@@ -5476,7 +5476,7 @@ q13dd2b3f	E Näbelschleier chunnt vom Meer här und zieht über e Stadt. Er bruc
     *   Since each segment takes 10 minutes:
     *   Total time = $14 \text{ segments} \times 10 \text{ minutes/segment} = 140$ minutes.
 
-7.  **Final Answer Formulation (in the requested language/format):** The total time is 140 minutes. (The original question is in Swiss German, so the answer should be clear.)"	stop
+7.  **Final Answer Formulation (in the requested language/format):** The total time is 140 minutes. (The original question is in Swiss German, so the answer should be clear.)"	stop	1.0	0	0	140	1
 q5d8678a9	D Poppy macht es 1000-Teile-Puzzle. Si legt e Viertel vo de Teil uf s Brätt, denn legt ihri Mama e Drittel vo de verbleibende Teil. Wievil Puzzleteil müesse no gleggt wärde?	"Das sind die Schritte zur Berechnung:
 
 **1. Poppy legt ihre Teile:**
@@ -5527,7 +5527,7 @@ q5d8678a9	D Poppy macht es 1000-Teile-Puzzle. Si legt e Viertel vo de Teil uf s 
     *   Pieces remaining: $2/3 \times 750 = 500$ pieces.
     *   (This confirms the result.)
 
-8.  **Final Answer Formulation (in Swiss German/Standard German context):** 500 pieces remain. (The language used in the prompt is Swiss German/dialect, so the answer should be clear.)"	stop
+8.  **Final Answer Formulation (in Swiss German/Standard German context):** 500 pieces remain. (The language used in the prompt is Swiss German/dialect, so the answer should be clear.)"	stop	500.0	0	1		
 q10c23d37	Dr Cody isst dreimal meh Gutzi als dr Amir. Wenn dr Amir 5 Gutzi isst, wie vil Gutzi ässe si denn zämme?	"Das isch eifach z'rechnen:
 
 1. **Amir isst:** 5 Gutzi
@@ -5572,7 +5572,7 @@ Sie ässe **20 Gutzi** zämme."	20	"Here's a thinking process to arrive at the s
     *   Cody: 15
     *   Total: 20
 
-7.  **Final Review:** Does the answer logically follow the prompt? Yes. (If Amir eats 5, and Cody eats three times that amount, Cody eats 15. Total is 20.)"	stop
+7.  **Final Review:** Does the answer logically follow the prompt? Yes. (If Amir eats 5, and Cody eats three times that amount, Cody eats 15. Total is 20.)"	stop	20.0	0	1		
 q71246a09	Dr John het 3 Chischte. Jedi Chischte isch 5 Inch mal 6 Inch mal 4 Inch gross. D Wänd sy 1 Inch dick. Wie gross isch s Innenvolumen vo allne 3 Chischte zämme?	"Das isch e eifachi Volumenberechnig. Mir müend zerscht d'Innermasse vo ei Chischte berechne und denn das für alli drei multipliziere.
 
 **1. Innermasse vo ei Chischte berechne:**
@@ -5625,7 +5625,7 @@ D'Wänd sind 1 Zoll dick. Das heisst, d'Innermasse isch um 2 Zoll chürzer als d
     *   $V_{total} = 3 \times 24$
     *   $V_{total} = 72$ cubic inches (in³)
 
-6.  **Format the Answer (in the requested language/style - Swiss German/informal math):** State the steps clearly. (Self-Correction: Ensure the final answer is clear and directly addresses the question.)"	stop
+6.  **Format the Answer (in the requested language/style - Swiss German/informal math):** State the steps clearly. (Self-Correction: Ensure the final answer is clear and directly addresses the question.)"	stop	72.0	0	1		
 q51ea4378	Dr Frankie luegt jede Obe, nachdem er syni Huusufgobe gmacht het, färnseh. Am Mändig und am Zystig het er je e 1-stündigi Folg vo syner Lieblingssändig gluegt. Am Mittwuch het er es paar Folge vo ere 30-minütige Sendig gluegt. Am Donschtig isch er mit de Huusufgabe früener fertig gsi und het e 1-stündigi Folg und e 30-minütigi Show gluegt. Am Frytig het er wäge em Wuchenänd länger dörfe ufblibe und het zwäi 1-stündigi Folge gluegt. Wenn er insgesamt 7 Stunde fernseh gluegt het, wie vil 30 Minuten langi Folge het er am Mittwuch gluegt?	"Das Problem lässt sich am besten durch die Berechnung der bereits bekannten Sehzeiten lösen.
 
 **1. Berechnung der Sehzeiten an den anderen Tagen:**
@@ -5700,7 +5700,7 @@ Er hat am Mittwoch **3** 30-minütige Folgen geguckt."	3	"Here's a thinking proc
     *   Total: $60 + 60 + 90 + 90 + 120 = 420$ minutes.
     *   Convert 420 minutes to hours: $420 / 60 = 7$ hours. (Matches the total given).
 
-7.  **Formulate the Answer.** (The answer is 3)."	stop
+7.  **Formulate the Answer.** (The answer is 3)."	stop	3.0	0	1		
 qe465613a	Dr Henry baggt Gutzi für e regionale Backwettbewerb. Er will doppelt so vil bagge wie letschts Johr. Wo er fertig isch, merkt er, dass er 15 Gutzi meh bagge het als er eigentlich het welle. Beim Uselege zum Abchüele loht er 5 vo syne Gutzi falle und het jetzt insgesamt 110 Gutzi. Wievil Gutzi het dr Henry letschts Johr bache?	"Das ist eine mathematische Aufgabe, die wir rückwärts lösen müssen.
 
 **1. Bestimme die Gesamtanzahl der gebackenen Gutzi (vor dem Fallen):**
@@ -5759,7 +5759,7 @@ qe465613a	Dr Henry baggt Gutzi für e regionale Backwettbewerb. Er will doppelt 
     *   He baked 15 extra: $100 + 15 = 115$ Gutzi baked.
     *   5 fell: $115 - 5 = 110$ Gutzi remaining. (Matches the problem.)
 
-8.  **Conclusion:** Dr. Henry baked 50 Gutzi last year. (Translate the steps into the required language/format.)"	stop
+8.  **Conclusion:** Dr. Henry baked 50 Gutzi last year. (Translate the steps into the required language/format.)"	stop	50.0	0	1		
 q1e0f8fcb	E lokali Tankstell verkauft Benzin für 3,00 $ pro Gallone. E App-Firma bietet 0,20 $ Cashback pro Gallone, wenn me an dere Tankstell tankt. Wenn öpper 10 Gallonen Benzin chauft, wie vil choschtet s Benzin nach dr Cashback-Prämie? Gib d Antwort in Dollar aa.	"**1. Berechne die Gesamtkosten ohne Cashback:**
 * Preis pro Gallone: $3,00
 * Menge: 10 Gallonen
@@ -5808,7 +5808,7 @@ q1e0f8fcb	E lokali Tankstell verkauft Benzin für 3,00 $ pro Gallone. E App-Firm
 
 7.  **Final Review and Formatting:** The question asks for the answer in dollars. The calculated result is $28.00. (The language used in the prompt is Swiss German, but the calculation is standard math.)
 
-8.  **Construct the Answer.** (Present the steps clearly.)"	stop
+8.  **Construct the Answer.** (Present the steps clearly.)"	stop	28.0	0	1		
 q91fe6f6e	Dr Marcell und d Beatrice mache e Wettbewärb, wär am meischte Fruchtrolle ässe cha, drum rolle si alli us, wo si finde. Leider macht öpper e Fähler, und die vo dr Beatrice isch zwei Rolle breit und 24 Rolle lang, während die vom Marcell 3 Rolle breit und 14 Rolle lang isch. Wenn beidi ihri ganz Mängi ässe, wie vil hän si im Schnitt gässe?	"Das isch e eifachi Rechnung. Mir müend zerscht d'Gesamtmenge vo jede zelle.
 
 **1. Marcells Menge berechne:**
@@ -5863,7 +5863,7 @@ q91fe6f6e	Dr Marcell und d Beatrice mache e Wettbewärb, wär am meischte Frucht
     *   Marcell: 42
     *   Beatrice: 48
     *   Total: 90
-    *   Average: 45. (The calculation is correct.)"	stop
+    *   Average: 45. (The calculation is correct.)"	stop	45.0	0	1		
 q76afc2ba	S Boot vo dr Julia het es Leck gha, wo si dusse uf em See gsi isch. Für alli zehn Fuß, wo si zrugg zum Ufer rudert, nimmt s Boot zwei Liter Wasser uff. Si het sächzäh Sekunde brucht, zum zwanzig Fuß z rudere. Dr Strand isch 64 Sekunde wäg gsi. Wievil Wasser het s Boot uffgnoo, bis d Julia dr Strand erreicht het?	"Das Problem lässt sich wie folgt lösen:
 
 **1. Bestimme die Strecke, die Julia zurückgelegt hat.**
@@ -5930,7 +5930,7 @@ q76afc2ba	S Boot vo dr Julia het es Leck gha, wo si dusse uf em See gsi isch. F�
     *   Water rate: 2 L / 10 ft.
     *   Water = (20 ft / 10 ft) * 2 L = 2 * 2 L = 4 Liters.
 
-9.  **Formulate the Answer.** (The answer is 4 liters.)"	stop
+9.  **Formulate the Answer.** (The answer is 4 liters.)"	stop	4.0	0	0	4	0
 q9c73cd77	E Klassenzimmer het e Tafele, wo sich die 4 Lehrer teile, wo dr Ruum abwächslig bruche. Jede Lehrer het 2 Unterrichtsstunde pro Tag und brucht d Tafele in jedere Unterrichtsstund. Wenn d Tafele 3-mal pro Unterrichtsstund putzt wird, wie oft wird si pro Tag putzt?	"Das isch e eifachi Rechnung:
 
 1. **Gesamtzahl der Unterrichtsstunden pro Tag:**
@@ -5970,7 +5970,7 @@ D'Tafele wird pro Tag **24-mal** gputzt."	24	"Here's a thinking process to solve
 7.  **Final Answer Construction:** (Self-Correction/Refinement: Ensure the language matches the input style, which is Swiss German/colloquial German.)
 
     *   *Input:* E Klassenzimmer het e Tafele, wo sich die 4 Lehrer teile, wo dr Ruum abwächslig bruche. Jede Lehrer het 2 Unterrichtsstunde pro Tag und brucht d Tafele in jedere Unterrichtsstund. Wenn d Tafele 3-mal pro Unterrichtsstund putzt wird, wie oft wird si pro Tag putzt?
-    *   *Calculation:* 4 Lehrer * 2 Stunden = 8 Stunden. 8 Stunden * 3 Mal Reinigung = 24 Mal."	stop
+    *   *Calculation:* 4 Lehrer * 2 Stunden = 8 Stunden. 8 Stunden * 3 Mal Reinigung = 24 Mal."	stop	24.0	0	1		
 q2bbbdc5a	Dr Ryan pflanzt pro Tag 2 Blueme in sy Garte. Nach 15 Täg het er wie vil Blueme, wenn 5 nid agwachse sy?	"Dr Ryan pflanzt pro Tag 2 Blueme.
 
 Nach 15 Täg het er gpflanzt:
@@ -6002,7 +6002,7 @@ $$30 - 5 = 25 \text{ Blueme}$$
 5.  **Formulate the Answer (in appropriate language/tone):**
     *   The calculation is straightforward. The answer should be clear and directly address the question.
 
-6.  **Final Review (Self-Correction/Formatting):** The calculation is sound. The answer is 25. (The response should be presented clearly.)"	stop
+6.  **Final Review (Self-Correction/Formatting):** The calculation is sound. The answer is 25. (The response should be presented clearly.)"	stop	25.0	0	1		
 qb65bf453	S Handy vom Jamal cha 6-mal meh Fotos speichere als s Handy vo dr Brittany. D maximal Zahl vo Fotos, wo s Handy vo dr Brittany speichere cha, isch 50-mol höher als d Zahl vo de Vögel uf em Foto vom Jamal mit de Änte im Zoo. Wenn s Handy vom Jamal 1.800 Fotos speichere cha, wie vil Änte sy uf em Foto vom Jamal mit de Änte im Zoo z gseh?	"Das isch e mathematischi Rätsel. Mir löse das Schritt für Schritt:
 
 **1. Wie viel Fotos cha d Brittany speichere?**
@@ -6059,7 +6059,7 @@ Uf em Foto vom Jamal mit de Änte im Zoo sind **6** Änte z gseh."	6	"Here's a t
 6.  **Final Check and Conclusion:**
     The number of ducks is 6.
 
-7.  **Review the original language (Swiss German) and ensure the answer is clear.** (The calculation is sound.)"	stop
+7.  **Review the original language (Swiss German) and ensure the answer is clear.** (The calculation is sound.)"	stop	6.0	0	1		
 q62cadf26	D Sasha merkt, dass d Holzpryse in de letschte paar Monet um 50 % gstiege sy, sit si Holz chauft het. Wil si no e Räscht übrig het, beschliesst si, ihn z verkaufe. Si het zehn 2 x 4 x 10 grossi Brätter übrig, für wo si pro Stück 10 US-Dollar zahlt het. Si het au fünf 4 x 4 x 10 Brätter, wo si für 16 US-Dollar pro Stück chauft het. Wenn si alles verkauft, wie vil Gwünn macht si?	"Das isch eifach z'berechne. De Gwünn wird berechnet als (Verkaufspreis - Kaufpriis) pro Stück multipliziert mit de Stückzahl.
 
 **1. Gwünn mit de 2x4 Brätter:**
@@ -6121,7 +6121,7 @@ $0 (2x4) + $0 (4x4) = **$0**
 
 8.  **Final Conclusion Formulation (in Swiss German/Standard English):** State the calculations clearly. (The profit is zero because she is selling at the original purchase price.)
 
-*(Self-Correction/Double Check: Did I miss any information? No. The 50% increase in the market price is irrelevant unless the question asked for profit based on the *new* market price. Since the question asks how much profit she makes when she sells them, we assume she sells them for the price she paid.)*"	stop
+*(Self-Correction/Double Check: Did I miss any information? No. The 50% increase in the market price is irrelevant unless the question asked for profit based on the *new* market price. Since the question asks how much profit she makes when she sells them, we assume she sells them for the price she paid.)*"	stop	0.0	0	0	0	0
 q6637faea	D Katy macht Kaffi und brucht derzue Teelöffel Zucker und Tasse Wasser im Verhältnis 7:13. Wenn si insgesamt 120 Teelöffel Zucker und Tasse Wasser brucht het, wie vil Teelöffel Zucker het si verwendet?	"Das ist ein Verhältnisproblem.
 
 **1. Das Verhältnis bestimmen:**
@@ -6170,7 +6170,7 @@ Menge des Zuckers = $7 \times 6 = 42$
     *   Check the total: Sugar (42) + Water (78) = 120. (Matches the given total.)
     *   Check the ratio: 42 / 7 = 6. 78 / 13 = 6. The ratio is 6:6, which simplifies to 7:13. (Correct.)
 
-8.  **Formulate the Answer:** State the final result clearly in response to the original question. (How many teaspoons of sugar were used?)"	stop
+8.  **Formulate the Answer:** State the final result clearly in response to the original question. (How many teaspoons of sugar were used?)"	stop	42.0	0	1		
 q7c7b8736	Dr John kauft für jedes vo syne 3 Chinder 2 Paar Schueh. Si choschte 60 US-Dollar pro Paar. Wievil het er zahlt?	"Dr. John hat insgesamt **360 US-Dollar** bezahlt.
 
 Hier ist die Berechnung:
@@ -6201,7 +6201,7 @@ Hier ist die Berechnung:
     *   *Step 1: Calculate total shoes.*
     *   *Step 2: Calculate total cost.*
 
-6.  **Final Review:** Does the answer make sense? 3 children * 2 pairs = 6 pairs. 6 pairs * $60 = $360. Yes, the calculation is correct. (Self-Correction: Ensure the language is natural.)"	stop
+6.  **Final Review:** Does the answer make sense? 3 children * 2 pairs = 6 pairs. 6 pairs * $60 = $360. Yes, the calculation is correct. (Self-Correction: Ensure the language is natural.)"	stop	360.0	0	1		
 q8f663843	E Zollbeamte am Haupthafe vo dr SeaSide Zollabfertigung het 2 Container mit importierte Auto zellt, und in jedem sy 5 Auto gsi. Am nöchschte Tag sy no meh Container cho, und d Gesamtzahl vo de Auto am Haafe isch uf 30 gstiege. Wievil Container sy am zweite Tag importiert worde, wenn in jedem Container 5 Auto sy?	"Am zweite Tag sind **4 Container** importiert worde.
 
 **Erklärung:**
@@ -6236,7 +6236,7 @@ q8f663843	E Zollbeamte am Haupthafe vo dr SeaSide Zollabfertigung het 2 Containe
     *   Day 1: 2 containers * 5 cars = 10 cars.
     *   Day 2: 30 total cars.
     *   Day 2 imports: 30 - 10 = 20 cars.
-    *   Day 2 containers: 20 / 5 = 4 containers. (The calculation is sound.)"	stop
+    *   Day 2 containers: 20 / 5 = 4 containers. (The calculation is sound.)"	stop	4.0	0	1		
 q6edb8d49	Dr Gesamtlohn vo dr Lylah isch 30 Prozent tiefer gsi als dr vom Adrien. Vier Johr spöter isch dr Lohn vom Adrien gstiege, und er het 40 % meh verdient als vor vier Johr. Wenn dr Lohn vom Adrien und vo dr Lylah zur gliiche Zyt gstiege isch und dr Adrien vor vier Johr $40000 verdient het, wie hoch isch dr Gesamtlohn, wo die beide vier Johr spöter becho hän? Gib d Antwort in Dollar aa.	"Das Problem lässt sich in folgenden Schritten lösen:
 
 **1. Lohn von Adrien vor vier Jahren bestimmen ($A_0$):**
@@ -6328,7 +6328,7 @@ Die Gesamtlohn, den die beide vier Jahre später erhalten haben, beträgt **$952
     *   Lylah's final (Assumed 40% raise): $28,000 \times 1.4 = 39,200$.
     *   Total: $56,000 + 39,200 = 95,200$.
 
-    *(Self-Correction/Verification: If the problem intended for Lylah's raise to be different, the problem is unsolvable. Given the context of typical math puzzles, the assumption that both received the same raise (40%) is the intended path.)*"	stop
+    *(Self-Correction/Verification: If the problem intended for Lylah's raise to be different, the problem is unsolvable. Given the context of typical math puzzles, the assumption that both received the same raise (40%) is the intended path.)*"	stop	95200.0	0	1		
 q1b1c6563	Dr Miguel verbruucht zum Zeichne 2 Zeicheblöck pro Wuche. Wenn e Zeicheblock 30 Blatt Papier het, wie vil Blatt Papier verbraucht er pro Monet?	"Das ist eine Berechnung, die wir Schritt für Schritt durchführen müssen.
 
 **1. Zeicheblöcke pro Monat berechnen:**
@@ -6381,7 +6381,7 @@ Dr. Miguel verbraucht pro Monat **240 Blatt Papier**."	240	"Here's a thinking pr
     *   2 pads/week * 4 weeks = 8 pads/month. (Correct)
     *   8 pads * 30 sheets/pad = 240 sheets/month. (Correct)
 
-6.  **Final Output Generation.** (This leads to the provided solution.)"	stop
+6.  **Final Output Generation.** (This leads to the provided solution.)"	stop	240.0	0	1		
 qdda5aad8	D Morisette und dr Kael hän Obst sölle mitbringe. D Morisette het 5 Öpfel und 8 Orange mitbrocht, und dr Kael het doppelt so vil Öpfel und halb so vil Orange wie d Morisette mitbrocht. Wievil Früücht hän si insgesamt?	"**1. Morisette's Frücht:**
 *   Öpfel: 5
 *   Orange: 8
@@ -6428,7 +6428,7 @@ Si hän **27** Frücht insgesamt."	27	"Here's a thinking process to solve the wo
     *   Kael: 10 Äpfel + 4 Orangen = 14
     *   Total: 13 + 14 = 27.
 
-8.  **Construct the Answer.** (The answer is 27.)"	stop
+8.  **Construct the Answer.** (The answer is 27.)"	stop	27.0	0	1		
 qbe882310	D Sadie het am Mändig 8 Stunde gschlofe. An de nöchschte beide Täg het si pro Tag 2 Stunde weniger gschlofe, will si no es paar Sache het müesse erledige. Wenn si dr Räscht vo dr Wuche 1 Stunde meh gschlofe het als a dene beide Täg, wie vil Stunde het si in dr ganze Wuche insgesamt gschlofe?	"Das isch eifach z'rechnen:
 
 1. **Mändig:** 8 Stunde
@@ -6484,7 +6484,7 @@ Si het in dr ganze Wuche insgesamt **48 Stunde** gschlofe."	48	"Here's a thinkin
     *   Day 7: 7
     *   Total: $8 + 6 + 6 + 7 + 7 + 7 + 7 = 48$. (The calculation is correct.)
 
-6.  **Output the Answer.** (Ensure the answer is clear.)"	stop
+6.  **Output the Answer.** (Ensure the answer is clear.)"	stop	48.0	0	1		
 q5531657c	D Rosie cha 3 Stunde lang mit 10 Meilen pro Stunde laufe. Nochhär lauft si 5 Meilen pro Stunde. Wievil Meilen cha si in 7 Stunde zrugglege?	"Das ist eine Zeit- und Distanzaufgabe. Wir müssen die Strecke in zwei Teile aufteilen, da die Geschwindigkeit wechselt.
 
 **1. Strecke in der ersten Phase berechnen:**
@@ -6540,7 +6540,7 @@ Rosie kann in 7 Stunden **50 Meilen** zurücklegen."	50	"Here's a thinking proce
     *   Total Distance ($D_{total}$) = $d_1 + d_2$
     *   $D_{total} = 30 \text{ miles} + 20 \text{ miles} = 50 \text{ miles}$.
 
-7.  **Formulate the Answer (in German, matching the input language):** State the steps clearly and provide the final result. (Self-Correction: Ensure the calculation is straightforward and easy to follow.)"	stop
+7.  **Formulate the Answer (in German, matching the input language):** State the steps clearly and provide the final result. (Self-Correction: Ensure the calculation is straightforward and easy to follow.)"	stop	50.0	0	1		
 qafb91192	D Jennie hilft im Büro vo ihrer Muetter. Si het e Stapel mit 60 Brief, wo no frankiert wärde müesse, und e Stapel mit scho frankierte Brief. Si klebt Briefmarke uf e Drittel vo de Brief, wo no frankiert wärde müesse. Wenn jetzt im Stapel mit de scho frankierte Brief 30 Brief sy, wie vil Brief sy in däm Stapel gsi, wo d Jennie agfange het?	"Das isch e mathematischs Problem. Mir müend d'Variable für d'Brief mit de no z'frankiere und die scho frankierte Briefe finde.
 
 **1. Definiere d'Variable:**
@@ -6640,4 +6640,4 @@ Es sind **45** Brief in däm Stapel gsi, wo d'Jennie agfange het.
 
 9.  **Final Answer Formulation:** The question asks: ""wie vil Brief sy in däm Stapel gsi, wo d Jennie agfange het?"" (How many letters were in the stack that Jennie started with?) This refers to $A$.
 
-10. **Conclusion:** The initial number of letters needing franking was 45. (Self-Correction: The language is Swiss German, but the math is universal.)"	stop
+10. **Conclusion:** The initial number of letters needing franking was 45. (Self-Correction: The language is Swiss German, but the math is universal.)"	stop	45.0	0	0	45	0

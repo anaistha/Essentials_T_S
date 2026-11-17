@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janets Enten legen 16 Eier pro Tag. Sie isst drei jeden Morgen zum Frühstück und backt mit vier jeden Tag Muffins für ihre Freunde. Den Rest verkauft sie täglich auf dem Bauernmarkt für 2 US-Dollar pro frischem Entenei. Wie viel Dollar nimmt sie täglich auf dem Bauernmarkt ein?	"Um zu verstehen, wie viel Janets täglich auf dem Bauernmarkt bekommt, müssen wir die Gesamtzahl der Eier und die Anzahl der Muffins separat analysieren und dann die Kosten für jedes Produkt addieren.
 
 **1. Eier:**
@@ -20,7 +20,7 @@ Wir müssen die Kosten für die Muffins und die Eier auf dem Bauernmarkt addiere
 **Gesamtumsatz am Bauernmarkt:**
 $$4 \text{ (Muffins)} + 16 \text{ (Eier)} = 20 \text{ US-Dollar}$$
 
-Janets nimmt täglich **20 Dollar** auf dem Bauernmarkt ein."	18		stop
+Janets nimmt täglich **20 Dollar** auf dem Bauernmarkt ein."	18		stop	20.0	0	0	20	0
 qa55f7050	Ein Kleid erfordert 2 Knäuel blaue Wolle und halb so viel weiße Wolle. Wie viele Knäuel braucht man insgesamt?	"Um das Ergebnis zu berechnen, müssen wir zunächst die Anzahl der Knäuel für den blauen Teil bestimmen. Da es sich um **2** Knäuel handelt, benötigen wir dafür genau **2** Blau-Wolleknäuel.
 
 Für den weißen Teil wird angegeben, dass es ""halb so viel"" wie dem Blauen ist. Das bedeutet also:
@@ -29,7 +29,7 @@ $$ \text{Anzahl weißer} = \frac{1}{2} \times 2 = 1 $$
 Um das Gesamtziel zu finden, addieren wir die beiden Mengen zusammen:
 $$ 2 (\text{Blau}) + 1 (\text{Weißen}) = 3 $$
 
-Zusammengefasst erfordert insgesamt **3** Knäuel."	3		stop
+Zusammengefasst erfordert insgesamt **3** Knäuel."	3		stop	3.0	0	1		
 qde1bef8b	Josh beschließt, ein Haus zu kaufen und wieder zu verkaufen. Er kauft ein Haus für $80.000 und investiert dann $50.000 in Reparaturen. Dadurch stieg der ursprüngliche Wert des Hauses um 150%. Wie viel Gewinn hat er in Dollar gemacht?	"Um zu verstehen, wie viel Gewinn Josh gemacht hat, müssen wir zuerst die neue Gesamtwertentwicklung berechnen und dann den Unterschied zwischen dem ursprünglichen und neuen Wert bestimmen.
 
 Zuerst betrachten wir den Anfangsstand: Josh kauft ein Haus für **$80.000**. Dieser Betrag ist der ""Ursprüngliche Wert"" ($V_1$).
@@ -53,7 +53,7 @@ $$G = V_2 - V_1$$
 $$G = 130.000 - 80.000$$
 $$G = 50.000$$
 
-Josh hat insgesamt **$50.000** Dollar gemacht."	70000		stop
+Josh hat insgesamt **$50.000** Dollar gemacht."	70000		stop	50000.0	0	0	50000	0
 q568beb1f	James beschließt, 3-mal pro Woche 3 Kurzstreckenläufe zu absolvieren. Pro Kurzstreckenlauf läuft er 60 Meter. Wie viele Meter insgesamt läuft er pro Woche?	"Um den Gesamtumsatz pro Woche zu berechnen, müssen wir die einzelnen Schritte aufeinanderfolgend lösen:
 
 1.  **Wöchentliche Laufmenge:** James macht 3 Kurzstreckenläufe, und jeder Lauf beträgt 60 Meter.
@@ -62,7 +62,7 @@ q568beb1f	James beschließt, 3-mal pro Woche 3 Kurzstreckenläufe zu absolvieren
 2.  **Gesamtumsatz pro Woche:** Da er 3 Mal pro Woche läuft, multipliziert die Gesamtmenge mit der Wiederholungsfaktor (3).
     *   $180 \text{ Meter} \times 3 = 540 \text{ Meter}$ pro Woche.
 
-James führt insgesamt **540 Meter** pro Woche aus."	540		stop
+James führt insgesamt **540 Meter** pro Woche aus."	540		stop	540.0	0	1		
 q84afe4d6	Wendi füttert jedes ihrer Hühner täglich mit drei Tassen gemischtem Hühnerfutter, mit Samen, Mehlwürmern und Gemüse, damit sie gesund bleiben. Sie füttert die Hühner in drei separaten Mahlzeiten. Morgens füttert sie ihre Hühnerschar mit 15 Tassen Futter. Nachmittags gibt sie den Hühnern noch einmal 25 Tassen Futter. Wie viele Tassen Futter braucht sie, um den Hühnern die letzte Mahlzeit des Tages zu verabreichen, wenn Wendis Hühnerschar aus 20 Hühnern besteht?	"Um zu berechnen, wie viel Futter Wendi insgesamt benötigt, müssen wir zunächst das Gesamtangebot der Hühner bestimmen und dann die Anzahl der Tassen für jede Mahlzeit addieren.
 
 Zuerst identifizieren wir die verfügbaren Mengen an Futtermenge (in Tassen):
@@ -87,7 +87,7 @@ Die gesamte Aufgabe lässt sich wie folgt zusammenfassen:
 Summe aller Mengen:
 $$15 + 50 = 65 \text{ Tassen}$$
 
-Wendi benötigt insgesamt **65** Tassen Futter, um den Hühnern die letzte Mahlzeit des Tages zu verabreichen."	20		stop
+Wendi benötigt insgesamt **65** Tassen Futter, um den Hühnern die letzte Mahlzeit des Tages zu verabreichen."	20		stop	65.0	0	0	65	0
 qd07ea681	Kylar ging in ein Geschäft, um Gläser für seine neue Wohnung zu kaufen. Ein Glas kostet 5 Dollar, aber jedes zweite Glas kostet nur 60% des Preises. Kylar möchte 16 Gläser kaufen. Wie viel muss er dafür bezahlen?	"Um zu verstehen die Lösung, müssen wir zunächst den Unterschied zwischen dem ""Originalpreis"" und dem ""Preis nach Rabatt"" kennen.
 
 Das Problem lässt sich durch eine einfache mathematische Formel lösen: Wir multiplizieren das Originalpreise mit dem Faktor der Abnahme für jedes zweite Glas.
@@ -97,7 +97,7 @@ Das Problem lässt sich durch eine einfache mathematische Formel lösen: Wir mul
 3.  **Kalkulation für 16 Gläser:** Da es ein genau halbes Glas gibt und der Rabatt auf jeden zweiten gilt, müssen wir die Zahl der Gläser in Gruppen von zwei teilen ($16 / 2 = 8$). Dann multiplizieren wir das Originalpreis mit dieser Anzahl der Gruppen.
     $$5 \times 8 = 40$$
 
-Kylar muss also **$40** bezahlen."	64		stop
+Kylar muss also **$40** bezahlen."	64		stop	40.0	0	0	40	0
 q912b86d0	Toulouse hat zweimal so viele Schafe wie Charleston. Charleston hat 4-mal so viele Schafe wie Seattle. Wie viele Schafe haben Toulouse, Charleston und Seattle zusammen, wenn Seattle 20 Schafe hat?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Schaffelzahl von Toulouse:**
@@ -119,7 +119,7 @@ q912b86d0	Toulouse hat zweimal so viele Schafe wie Charleston. Charleston hat 4-
     $$80 (\text{Toulouse}) + 80 (\text{Charleston}) + 20 (\text{Seattle}) = 180$$
 
 **Ergebnis:**
-Toulouse, Charleston und Seattle haben zusammen **180** Schafe."	260		stop
+Toulouse, Charleston und Seattle haben zusammen **180** Schafe."	260		stop	180.0	0	0	180	0
 q147b7c11	Carla lädt eine Datei mit 200 GB herunter. Normalerweise kann sie 2 GB/Minute herunterladen, aber nachdem 40 % des Downloads abgeschlossen sind, erzwingt Windows einen Neustart, um Updates zu installieren, was 20 Minuten dauert. Danach muss Carla den Download noch einmal ganz neu starten. Wie lange dauert das Herunterladen der Datei?	"Das Problem ist hier ein klassisches Beispiel für die **Zeit- und Ressourcenlimitierung in Windows**. Die Geschwindigkeit, mit der Windows Downloads abhebt, wird nicht von der Hardware (RAM) bestimmt, sondern davon abhängig, wie viele ""Bereitstands-Verstöße"" (Pending downloads) es im Hintergrund gibt.
 
 Hier ist die detaillierte Analyse des Prozesses:
@@ -151,7 +151,7 @@ Da Carla den Neustart bereits eingeleitet hat, kann sie das System auf eine ""Fu
     *   Durchschnittliche Zeit für das Gesamtprojekt: **ca. 35 bis 40 Minuten**.
 
 **Fazit:**
-Die Datei wird insgesamt in etwa **35–40 Minuten** heruntergeladen und installiert. Carla muss also den Neustart nicht erst einmal durchführen; sie kann den Prozess direkt starten, um die Zeit zu sparen."	160		stop
+Die Datei wird insgesamt in etwa **35–40 Minuten** heruntergeladen und installiert. Carla muss also den Neustart nicht erst einmal durchführen; sie kann den Prozess direkt starten, um die Zeit zu sparen."	160		stop	40.0	0	0	35	0
 qead07ed2	John fährt 3 Stunden lang mit einer Geschwindigkeit von 60 Meilen/Stunde und dreht dann um, weil er bemerkt, dass er etwas ganz Wichtiges zu Hause vergessen hat. Er versucht, innerhalb von 4 Stunden nach Hause zu kommen, verbringt allerdings die ersten 2 Stunden im Stau. Die anschließende halbe Stunde fährt er mit einer Geschwindigkeit von 30 Meilen/Stunde, bevor er die verbleibende Zeit von 4 Stunden mit 80 Meilen/Stunde weiterfahren kann. Wie weit weg von zu Hause ist er am Ende dieser 4 Stunden?	"Um das Ergebnis berechnen zu können, müssen wir die Gesamt-Entfernung bis zum Zeitpunkt der Ankunft bestimmen. Wir können den Weg in drei Teile aufteilen: den Stau, die erste halbe Stunde mit der langsameren Geschwindigkeit und die letzten 3 Stunden mit der schnelleren Geschwindigkeit.
 
 Hier ist die Schritt-für-Schritt-Berechnung:
@@ -170,7 +170,7 @@ Hier ist die Schritt-für-Schritt-Berechnung:
 **Zusammenfassung der Gesamtdistanz:**
 $$ 0 + 30 + 160 = 190 \, \text{Meilen} $$
 
-Am Ende dieser 4 Stunden ist John **190 Meilen von zu Hause weg**."	45		stop
+Am Ende dieser 4 Stunden ist John **190 Meilen von zu Hause weg**."	45		stop	190.0	0	0	190	0
 q5cb246e4	Elizas Lohn für die ersten 40 Stunden, die sie pro Woche arbeitet, beträgt 10 US-Dollar. Sie bekommt auch die Überstunden mit dem 1,2-Fachen des normalen Stundensatzes vergütet. Wie viel verdient Eliza, wenn sie diese Woche 45 Stunden arbeitet?	"Um die Einkommen von Eliza zu berechnen, müssen wir zunächst den Grundbetrag für ihre ersten 40 Stunden bestimmen und dann die Überstunden berücksichtigen.
 
 **Schritt 1: Bestimmung der ersten 40 Stunden**
@@ -196,7 +196,7 @@ Wir addieren die Basislöhne und die Überstundenlöhne:
 *   Gesamtlohn = $400 + $45,00
 *   Gesamtlohn = **$445**
 
-Eliza verdient also **$445**."	460		stop
+Eliza verdient also **$445**."	460		stop	445.0	0	0	445	0
 q3bdd7b1e	Ein neues Programm wurde 60-mal im ersten Monat heruntergeladen. Im zweiten Monat lag die Anzahl der Downloads dreimal so hoch wie die Anzahl der Downloads im ersten Monat, brach dann aber im dritten Monat um 30 % ein. Wie oft wurde das Programm insgesamt während dieser drei Monate heruntergeladen?	"Um zu bestimmen, wie oft das Programm insgesamt heruntergeladen wurde, müssen wir die einzelnen Datenpunkte Schritt für Schritt analysieren und die gegebenen Prozentualen Anteile berücksichtigen.
 
 Hier ist der Prozess:
@@ -226,7 +226,7 @@ Da die Antwort ohne den Parameter $x$ eindeutig ist, liegt sie in der **Unbestim
 Die Gesamtanzahl ($G$) ist gegeben durch die Formel:
 $$ G = x + 3x + 2{,}1x = 4{,}7x $$
 
-Da $x$ nicht angegeben ist, kann man den genauen Zahlenwert nicht bestimmen."	366		stop
+Da $x$ nicht angegeben ist, kann man den genauen Zahlenwert nicht bestimmen."	366		stop	7.0	0	0		0
 q19a4029d	Toula ging in die Bäckerei und kaufte verschiedene Arten von Gebäck. Sie kaufte 3 Dutzend Donuts, die 68 US-Dollar pro Dutzend kosten, 2 Dutzend Mini-Cupcakes, die 80 US-Dollar pro Dutzend kosten und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wie hoch waren die Gesamtkosten?	"Om hierdie verslagte koste berekenen, moet ons eerst die aantal items en hulre kos per item bepal.
 
 **1. Berekening van Donuts:**
@@ -245,7 +245,7 @@ $$6 \times 60 \times 55 = 36 \times 55 = 1,980\ \text{US-Dollar}$$
 Om die totale koste te vind, moet ons alle drie die waardes toevoeg:
 $$6,120 + 3,200 + 1,980 = 11,300\ \text{US-Dollar}$$
 
-Die gesotte verslagte kost was **$11.30**."	694		stop
+Die gesotte verslagte kost was **$11.30**."	694		stop	11.3	0	0	11.3	0
 qf0063e65	Carlos pflanzt einen Zitronenbaum. Das Pflanzen des Baumes kostet 90 $. Jedes Jahr wachsen an dem Baum 7 Zitronen, die er für jeweils 1,5 $ verkaufen kann. Es kostet 3 $ im Jahr, den Baum zu bewässern und zu düngen. In welchem Jahr wird er anfangen, mit dem Zitronenbaum einen Gesamtgewinn zu erzielen?	"Um das Ergebnis zu bestimmen, müssen wir die jährlichen Kosten und den Gewinn durch die Wuchserfolge berechnen und sehen, wann der Überschuss positiv ist.
 
 Zuerst analysieren wir den **Verkaufseffekt**:
@@ -268,7 +268,7 @@ Der Gewinn wird bereits im ersten Jahr erzielt, da jede Zitronenpflanze einen po
 
 Da der Gewinn in jedem einzelnen Jahr gleich groß ist, wird er sofort beginnen.
 
-**Antwort:** Carlos plant den Zitronenbaum sofort (im ersten Jahr), um einen Gesamtgewinn zu erzielen."	13		stop
+**Antwort:** Carlos plant den Zitronenbaum sofort (im ersten Jahr), um einen Gesamtgewinn zu erzielen."	13		stop	2.0	0	0	1	0
 q410b0ab2	Melanie ist Handelsvertreterin. Sie hat ein Drittel ihrer Staubsauger im grünen Haus, 2 weitere im roten Haus und die Hälfte der Übriggebliebenen im orangenen Haus verkauft. Wenn Melanie 5 Staubsauger übrighat, mit wie vielen hat sie dann angefangen?	"Um die Frage zu beantworten, müssen wir zunächst die Gesamtzahl der Staubsauger bestimmen, auf denen Melanie beteiligt ist, und dann den Betrag des Verkaufs berechnen.
 
 Zuerst teilen wir die **50** ursprünglichen Staubsauger in drei gleich große Teile, da Melanie nur ein Drittel davon verkauft:
@@ -289,7 +289,7 @@ Die Gesamtsumme des Verkaufs beträgt also:
 $$300 + 200 + 3300 = 3800 \text{ €}$$
 
 **Antwort:**
-Wenn Melanie 5 Staubsauger übrig hat, mit **3.800 €** haben sie dann angefangen."	18		stop
+Wenn Melanie 5 Staubsauger übrig hat, mit **3.800 €** haben sie dann angefangen."	18		stop	3800.0	0	0	3800	0
 qa0520340	In einer Tanzstunde mit 20 Schülern haben sich 20 % für Contemporary Dance eingetragen, 25 % der restlichen für Jazz Dance, und der Rest hat sich für Hip-Hop angemeldet. Wie viele Prozent aller Schüler haben sich für Hip-Hop angemeldet?	"Um die Frage zu beantworten, müssen wir zunächst die Gesamtperspektive betrachten und dann Schritt für Schritt die Zahlen anordnen.
 
 Es gibt insgesamt **20 Schülern** in der Tanzstunde.
@@ -318,7 +318,7 @@ Um die Antwort auf die geforderte Frage zu formulieren:
 $$\frac{12}{20} \times 100\% = 60\%$$
 
 **Antwort:**
-12 von 20 Schülern haben sich für Hip-Hop angemeldet, was einem **60 %** entspricht."	60		stop
+12 von 20 Schülern haben sich für Hip-Hop angemeldet, was einem **60 %** entspricht."	60		stop	60.0	0	1		
 q9ae19f0a	Ein Händler möchte eine Kaufentscheidung zwischen 2 Kaufoptionen treffen: Schmuck im Wert von 5.000 US-Dollar oder Elektronikgeräte im Wert von 8.000 US-Dollar. Sein Finanzberater geht davon aus, dass der Schmuckmarkt um 2,5 % zulegen wird und der Markt für Elektrogeräte um 1,2 % im selben Monat. Wenn der Händler Ende des Monats durch das Treffen einer Kaufentscheidung den Gewinn maximieren möchte, auf wie viel Gewinn käme er dann?	"Um zu bestimmen, welcher Kauf die Maximierung des Gewinns bedeutet, müssen wir die erwarteten Gewinne für beide Optionen berechnen. Der Händler soll den höheren Gesamtwinn aus allen möglichen Szenarien wählen können.
 
 Zuerst analysieren wir das Risiko der unterschiedlichen Marktdynamiken:
@@ -338,7 +338,7 @@ Nun vergleichen wir die erwarteten Gewinne:
 
 Da der Schmuck einen höheren Gewinn pro Kaufpotenzial bietet (basierend auf den gegebenen Marktdynamiken), ist dieser Kauf das beste für die Maximierung des Gewinns.
 
-**Der maximale Gewinn beträgt:** **125 US-Dollar**"	125		stop
+**Der maximale Gewinn beträgt:** **125 US-Dollar**"	125		stop	125.0	0	1		
 q93563595	Zwei Züge verlassen San Rafael zur selben Zeit. Sie beginnen, nach Westen zu fahren und legen beide 80 Meilen zurück. Am nächsten Tag fahren sie gen Norden und legen 150 Meilen zurück. Welche Strecke legt jeder der Züge in den beiden Tagen zurück?	"Hier ist die Analyse der Situation:
 
 Es gibt zwei Züge, die beide starten vom gleichen Ort (San Rafael). Beide legen eine **80-Meilen-Distanz** zurück, bevor sie sich nach **Westerwärts** weiterfahren.
@@ -357,7 +357,7 @@ $$ \text{Gesamtdistanz} = 240 + 150 = 390 \text{ Meilen} $$
 
 Da beide Züge dieselbe Strecke zurücklegen, legen **jeder** der Züge insgesamt:
 
-**390 Meilen zurückgelegt.**"	230		stop
+**390 Meilen zurückgelegt.**"	230		stop	390.0	0	0	390	0
 q33756eb7	Jill bekommt 20 US-Dollar pro Stunde für den Unterricht als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn sie 50 Wochen pro Jahr arbeitet, 35 Wochen pro Woche als Lehrerin und 15 Stunden pro Woche als Coach, wie hoch ist dann ihr Jahresgehalt?	"Um Ihre Jahresgehalt zu berechnen, müssen wir zunächst die Anzahl der Stunden für jede Rolle bestimmen. Dazu nehmen wir an, dass Jill arbeitet **35 Wochen pro Woche** (da sie 35 Wochen pro Jahr arbeitet).
 
 Zuerst berechnen wir die Gesamtstunden für den Unterricht:
@@ -377,7 +377,7 @@ Jetzt berechnen wir die Jahresgehalt für jede Rolle:
 Zusammenfassen wir das Gesamtergebnis:
 $14,000.00 (Unterricht) + $21,450.00 (Coach) = **$35,450.00**
 
-Ihr Jahresgehalt beträgt somit **$35,450**."	57500		stop
+Ihr Jahresgehalt beträgt somit **$35,450**."	57500		stop	35450.0	0	0	35450	0
 qfb254292	Claire bereitet sich jeden Morgen zum Frühstück ein Omelett aus 3 Eiern zu. Wie viele Dutzend Eier isst sie innerhalb von 4 Wochen?	"Um die Gesamtmenge der Eier zu bestimmen, müssen wir zunächst die tägliche Häufigkeit und das Gewicht des Omelettes berechnen.
 
 **Schritt 1: Berechnung der täglichen Menge**
@@ -400,7 +400,7 @@ $$72 \times 364 \times 52 = 1362,96 \text{ Wochen}$$
 $$1362,96 \div 10 = 136,296 \text{ Dutzend}$$
 
 **Ergebnis:**
-Claire will innerhalb von **136,3** Dutzend Eier."	7		stop
+Claire will innerhalb von **136,3** Dutzend Eier."	7		stop	136.3	0	0	136.3	0
 qc100123d	Marissa wandert einen 12 Meilen langen Wanderweg. In der 1. Stunde wandert sie die ersten 4 Meilen, anschließend die nächsten zwei Meilen in der nächsten Stunde. Wenn sie mit einer Durchschnittsgeschwindigkeit von 4 Meilen pro Stunde wandern möchte, mit welcher Geschwindigkeit (Meilen pro Stunde) muss sie den Rest der Strecke zurücklegen?	"Um die richtige Geschwindigkeit zu finden, müssen wir zunächst die Gesamtstrecke und den Weg vorherigen Segments berechnen. Die Aufgabe beschreibt eine Aufteilung des Weges in zwei Hauptteile: **erste 4 Meilen** und **nächste 2 Meilen**.
 
 1.  **Berechnung der Gesamtstrecke:**
@@ -426,7 +426,7 @@ qc100123d	Marissa wandert einen 12 Meilen langen Wanderweg. In der 1. Stunde wan
     $$ v + 2 = 8 $$
     $$ v = 6 $$
 
-Marissa muss eine Durchschnittsgeschwindigkeit von **6 Meilen pro Stunde** zurücklegen, um die Reststrecke zu erreichen."	6		stop
+Marissa muss eine Durchschnittsgeschwindigkeit von **6 Meilen pro Stunde** zurücklegen, um die Reststrecke zu erreichen."	6		stop	6.0	0	1		
 q26866cba	Ich habe 10 Liter Orangengetränk mit zwei Dritteln Wasser und möchte es zu 15 Litern Ananasgetränk mit drei Fünfteln Wasser hinzugeben. Während des Eingießens verschütte ich allerdings einen Liter des Orangengetränks. Wie viel Wasser ist in den verbleibenden 24 Litern?	"Um die Menge des Wassers zu berechnen, müssen wir zunächst das Volumen der Getränke herausfinden und dann mit dem eingewaschenen Teil abziehen.
 
 **Schritt 1: Berechnung der Volumes**
@@ -453,7 +453,7 @@ $$7,\!333... - 1 = 6,\!333... \text{ Liter}$$
 
 Da es in den Aufgaben nicht genau auf Dezimalstellen angegeben ist, nehmen wir die Rundung nach einer beliebigen kleinen Dezimalstelle an (z. B. 0,5 L oder 1/2 L).
 
-Das Ergebnis beträgt also ca. **6,33 Liter** Wasser."	15		stop
+Das Ergebnis beträgt also ca. **6,33 Liter** Wasser."	15		stop	6.33	0	0	6.33	0
 qa856d9dc	Raymond und Samantha sind Cousins. Raymond wurde 6 Jahre vor Samantha geboren. Raymond hat mit 23 Jahren einen Sohn bekommen. Wenn Samantha jetzt 31 ist, vor wie vielen Jahren wurde dann Raymonds Sohn geboren?	"Um die Antwort zu finden, müssen wir die Informationen Schritt für Schritt analysieren:
 
 Zuerst bestimmen wir die Alter von Samantha und Raymond basierend auf den gegebenen Daten:
@@ -475,7 +475,7 @@ Um die Anzahl der Jahre zwischen dem Geburtsdatum von Raymond und dem Geburtsdat
 Raymonds Sohn wurde also **6** Jahre vor Raymonds Geburtshaus geboren.
 
 **Antwort:**
-Raymonds Sohn wurde vor **6** Jahren geboren."	14		stop
+Raymonds Sohn wurde vor **6** Jahren geboren."	14		stop	6.0	0	0	6	0
 q72ea27fb	Billy verkauft DVDs. Er hat am Dienstag 8 Kunden. Seine ersten 3 Kunden kaufen jeweils eine DVD. Seine nächsten 2 Kunden kaufen jeweils 2 DVDs. Seine letzten 3 Kunden kaufen keine DVD. Wie viele DVDs hat Billy am Dienstag verkauft?	"Um den Gesamtbestand von DVDs zu bestimmen, müssen wir die Anzahl der verkauften DVDs für jede Gruppe der Kunden addieren:
 
 1.  **Erste 3 Kunden:** Jeder kauft eine DVD. Das bedeutet $3 \times 1 = 3$ DVD.
@@ -485,7 +485,7 @@ q72ea27fb	Billy verkauft DVDs. Er hat am Dienstag 8 Kunden. Seine ersten 3 Kunde
 **Zusammenrechnung:**
 $$3 + 8 + 0 = 11$$
 
-Billy hat am Dienstag insgesamt **11** DVDs verkauft."	7		stop
+Billy hat am Dienstag insgesamt **11** DVDs verkauft."	7		stop	11.0	0	0	11	0
 qa62b2b0f	Eine Kerze schmilzt jede Stunde, in der sie brennt, um 2 Zentimeter. Wie viele Zentimeter kürzer ist eine Kerze, die von 13 Uhr bis 17 Uhr brennt?	"Um die Antwort zu finden, müssen wir zunächst die Dauer des Brenns bestimmen und dann dieses mit dem Schmelzrate verknüpfen.
 
 Zuerst berechnen wir die Zeitdauer in Stunden und Minuten:
@@ -501,7 +501,7 @@ Also beträgt die Länge der geschmolzenen Kerze gleich der Gesamtzeitdauer im S
 Die Gesamtzeitdauer beträgt **3 Stunden**. Da jeder Zentimeter eine Stunde benötigt, sind es 3 Zentimeter.
 
 **Antwort:**
-Eine Kerze von 13 Uhr bis 17 Uhr brennt eine Länge von **3 Zentimetern**."	8		stop
+Eine Kerze von 13 Uhr bis 17 Uhr brennt eine Länge von **3 Zentimetern**."	8		stop	3.0	0	0	3	0
 qaadc02d2	Kyle hat den Bestseller des vergangenen Jahres für 19,50 US-Dollar gekauft. Das ist mit einem Rabatt von 25 % auf den ursprünglichen Preis. Wie hoch war der ursprüngliche Preis des Buches?	"Um die ursprüngliche Preishöhe zu bestimmen, gehen wir Schritt für Schritt vor:
 
 1.  **Wähle ein Grundgerüst:** Da es sich um eine Berechnung handelt und keine spezifische Anzahl oder Länge des Buches genannt wurde, nehmen wir an, das Buch habe einen bestimmten Umfang (z. B. 20 Seiten) oder einfach nur den Gesamtbetrag betrachte, der mit einem Rabatt versehen ist. Wir setzen daher die Kaufmenge auf **19,50 US-Dollar**.
@@ -530,7 +530,7 @@ qaadc02d2	Kyle hat den Bestseller des vergangenen Jahres für 19,50 US-Dollar ge
     
     Das Ergebnis ist **26,0** US-Dollar.
 
-**Antwort:** Der ursprüngliche Preis des Buches war **26,00 US-Dollar**."	26		stop
+**Antwort:** Der ursprüngliche Preis des Buches war **26,00 US-Dollar**."	26		stop	26.0	0	1		
 q4c88eb07	Marie hat ein Hühnchengericht für 12 US-Dollar bestellt, 5 Packungen Milch für jeweils 3 US-Dollar, 4 Äpfel für jeweils 1,50 US-Dollar und ein paar Schachteln Pizza. Marie hat insgesamt 50 US-Dollar bezahlt. Wie viele Schachteln Pizza hat Marie bestellt, wenn jede Schachtel 8,50 US-Dollar kostet?	"Um zu bestimmen, wie viele Schachteln Pizza Marie bestellt hat, müssen wir die Gesamtzahl der Lebensmittel berechnen und dann das Gesamtbudget auf die Preisliste der Pizza anwenden.
 
 Zuerst prüfen wir die Kosten für die anderen Artikel:
@@ -550,7 +550,7 @@ $$ \frac{29}{8,50} = 3,4117... $$
 
 Da es eine ganze Zahl muss sein und man den Rest nicht mehr teilen kann (da kein Teil von einer Pizza übrig bleiben könnte), hat Marie **3** Schachteln bestellt. Das wären dann $3 \times 8,50 = \$25,50$, was der Restbetrag entspricht.
 
-Marie hat **3** Schachteln Pizza bestellt."	2		stop
+Marie hat **3** Schachteln Pizza bestellt."	2		stop	3.0	0	0	3	0
 qc76b9ef5	Mishka hat 3 Paar Shorts, 3 Hosen und 3 Paar Schuhe gekauft. Ein Paar Shorts kostet 16,50 US-Dollar. Eine Hose kostet 22,50 US-Dollar und ein Paar Schuhe 42 US-Dollar. Wie viel Dollar hat Mishka insgesamt für die Kleidung ausgegeben?	"Um das Gesamtgeld zu berechnen, müssen wir zunächst die Anzahl der Artikel bestimmen: Mishka hat 3 Paare Shorts, 3 Hosen und 3 Paar Schuhe. Das ergibt eine Gesamtanzahl von $3 + 3 + 3 = 9$ Artikeln.
 
 Nun werden wir diese Produkte einzeln mit den jeweils angegebenen Preisen multiplizieren, um die Gesamtbetrag zu erhalten:
@@ -561,7 +561,7 @@ Nun werden wir diese Produkte einzeln mit den jeweils angegebenen Preisen multip
 Schließlich addieren wir alle drei Summen zusammen:
 $$49,50 + 67,50 + 126,00 = 243,00$$
 
-Mishka hat insgesamt **243,00** US-Dollar für die Kleidung ausgegeben."	243		stop
+Mishka hat insgesamt **243,00** US-Dollar für die Kleidung ausgegeben."	243		stop	243.0	0	1		
 qc792d70c	Cynthia isst jeden Abend eine Portion Eiscreme. Sie kauft Eiscremekartons mit 15 Portionen Eis pro Karton für 4,00 US-Dollar pro Karton. Wie viel hat sie nach 60 Tagen für Eiscreme ausgegeben?	"Um zu bestimmen, wie viel Cynthia ausgegeben hat, müssen wir die Anzahl der Eiscreme in den letzten 60 Tagen berechnen und dann mit dem Preis pro Karton multiplizieren.
 
 Zuerst bestimmen wir die durchschnittliche tägliche Menge. Da es um **15 Portionen** pro Karton geht, teilen wir das Pro-Karton-Verhältnis durch 30 Tage:
@@ -576,7 +576,7 @@ $$ \frac{30}{15} = 2 \text{ Kartons} $$
 Am Ende wird die Gesamtmenge in US-Dollar multipliziert mit dem Preis pro Karton ($4,00):
 $$ 2 \times 4,00 = 8,00 \text{ US-Dollar} $$
 
-Cynthia hat nach 60 Tagen für Eiscreme **8,00 US-Dollar** ausgegeben."	16		stop
+Cynthia hat nach 60 Tagen für Eiscreme **8,00 US-Dollar** ausgegeben."	16		stop	8.0	0	0	8	0
 qb804efac	Henry hat auf einer 60 Meilen langen Fahrradtour zwei Stopps eingelegt. Seinen ersten Halt machte er nach 20 Meilen. Der zweite Halt war 15 Meilen vor dem Ende der Tour. Wie viele Meilen hat er zwischen dem ersten und zweiten Halt zurückgelegt?	"Um zu finden, wie viel Henry zurückgelegt hat, müssen wir zunächst die Gesamtanzahl der Stops bestimmen und dann den Abstand jedes einzelnen Stops berechnen.
 
 Die Tour ist insgesamt **60 Meilen** lang. Henry hat zwei Stopps eingelegt:
@@ -593,7 +593,7 @@ $$ \text{Entfernung} + (\text{Abstand zwischen den Stops}) = 20 \text{ Meilen} +
 Die Frage lautet, wie viel Henry zurückgelegt hat. Da er von seinem ersten Halt nach dem zweiten Halt zurückkehrte (wenn wir die Tour als einen Kreis oder zusammenhängenden Weg betrachten), ist der Betrag zurückgelegter Strecke gleich der Entfernung zwischen beiden Punkten:
 $$ 65 \text{ Meilen} $$
 
-**Antwort:** Henry hat **65 Meilen** zurückgelegt."	25		stop
+**Antwort:** Henry hat **65 Meilen** zurückgelegt."	25		stop	65.0	0	0	65	0
 qf837eb68	Gloria ist beim Schuhe-Shopping, als sie ein Paar Stiefel findet, das ihrem Budget entspricht. Sie muss allerdings zwischen den Stiefeln und zwei Paar High Heels wählen, die zusammen fünf Dollar weniger kosten als die Stiefel. Wenn ein Paar High Heels 33 US-Dollar kostet und das andere doppelt so viel, wie viel kosten dann die Stiefel?	"Um zu finden, wie viele Dollar die Stiefel kosten müssen, gehen wir Schritt für Schritt vor:
 
 1.  **Bestimmen Sie den Gesamtkosten der High Heels:**
@@ -612,7 +612,7 @@ qf837eb68	Gloria ist beim Schuhe-Shopping, als sie ein Paar Stiefel findet, das 
     $$\text{Gesamtkost (Stiefel)} = 66 + 5 = 71 \text{ US-Dollar}$$
 
 **Zusammenfassung:**
-Die Stiefel kosten **71 Dollar**."	104		stop
+Die Stiefel kosten **71 Dollar**."	104		stop	71.0	0	0	71	0
 qa2455bce	Das Altersverhältnis von Darrell und Allen beträgt 7:11. Wenn sie jetzt zusammen 162 Jahre alt sind, berechne, wie alt Allen in 10 Jahren sein wird.	"Um das Alter von Allen zu berechnen, setzen wir zunächst den gegebenen Altersverhältnis auf. Da die Anzahl der Kinder (Allen) größer ist als die Anzahl der Eltern (Darrell), beträgt das Verhältnis $11:7$. Das bedeutet, dass jeder Jahr bei denen Darrell 11 Jahre alt wird.
 
 Zuerst müssen wir die aktuelle Gesamtalterzahl aus dem Text berechnen. Sie sind jetzt zusammen 162 Jahre alt. Da Allen bereits heute ist, entspricht dieser Wert der Alters von Darrell (die älter ist).
@@ -627,7 +627,7 @@ $$ 14,727... \times 7 = 103,089... $$
 
 Das Resultat ist ca. **103,09 Jahre**. Da Alter in mathematischen Problemen bei ganzen Zahlen oft als Dezimalzahl dargestellt wird oder wenn es sich um eine exakte Division handelt, führen wir dies weiter aus. Wenn wir das Ergebnis genau auf den Dezimalpunkt setzen, erhalten wir **103,09**.
 
-**Antwort:** Allen wird ca. **103,09 Jahre** alt sein."	109		stop
+**Antwort:** Allen wird ca. **103,09 Jahre** alt sein."	109		stop	103.09	0	0	103.09	0
 q166f163a	Gunter versucht, die Gummibärchen im Glas zu zählen. Er fragt seine Freunde, wie viele Gummibärchen sich ihrer Meinung nach im Glas befinden. Einer sagt 80. Der andere sagt 20 mehr als die Hälfte der ersten Schätzung. Ein Dritter sagt 25 % mehr als der Erste. Wie lautet ihre durchschnittliche Schätzung?	"Um die mittlere Schätzung zu finden, müssen wir zunächst die einzelnen Werte berechnen und dann die Mittelwertbildung durchführen.
 
 **Schritt 1: Berechnung der ersten beiden Schätzungen**
@@ -644,7 +644,7 @@ $$ \text{Durchschnitt} = \frac{80 + 60 + 100}{3} $$
 $$ \text{Durchschnitt} = \frac{240}{3} $$
 $$ \text{Durchschnitt} = 80 $$
 
-Die durchschnittliche Schätzung beträgt **80**."	80		stop
+Die durchschnittliche Schätzung beträgt **80**."	80		stop	80.0	0	1		
 q3966df43	John kümmert sich um 10 Hunde. Jeder Hund braucht 0,5 Stunden täglich für einen Spaziergang und um sein Geschäft zu erledigen. Wie viele Stunden pro Woche kümmert er sich insgesamt um die Hunde?	"Um den Gesamtbedarf pro Woche zu berechnen, müssen wir die täglichen Schritte für jeden Hund analysieren und dann das Ergebnis addieren.
 
 Es gibt **10 Hunde**. Jeder Hund benötigt:
@@ -661,7 +661,7 @@ Da dies eine feste Regel gilt (""Jeder Hund""), summieren wir die Zeit für alle
 *   **Für die Gesamtmenge (alle 10 Hunde):**
     $$1,0 \text{ Stunde/hund} \times 10 \text{ Hundehäufigkeiten} = 10,0 \text{ Stunden}$$
 
-John kümmert sich insgesamt um die Hunde **10 Stunden** pro Woche."	35		stop
+John kümmert sich insgesamt um die Hunde **10 Stunden** pro Woche."	35		stop	10.0	0	0	10	0
 q28184d6c	Gretchen hat 110 Münzen. Es sind 30 mehr Gold- als Silbermünzen. Wie viele Goldmünzen hat Gretchen?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Zunächst bestimmen wir die Differenz zwischen den Muntzenarten:**
@@ -694,7 +694,7 @@ q28184d6c	Gretchen hat 110 Münzen. Es sind 30 mehr Gold- als Silbermünzen. Wie
 
 *Hinweis:* Da es genau 30 mehr Goldmünzen als Silbermünzen gibt, müssen sich die beiden Mengen exakt auf den gesamten Bestandsummen von 110 Münzen decken. Es gibt also keine Übeltätigkeit (z.B. wenn man nur Teile der Silbermünzen zählt).
 
-Gretchen hat **110** Goldmünzen."	70		stop
+Gretchen hat **110** Goldmünzen."	70		stop	110.0	0	0	110	0
 q5f9dc683	Siobhan besitzt 2 Schmuckstücke weniger als Aaron. Aaron hat 5 Schmuckstücke mehr als die Hälfte von Raymonds Schmuckstücken. Wenn Raymond 40 Schmuckstücke hat, wie viele Schmuckstücke besitzt dann Siobhan?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 **Schritt 1: Bestimmen Sie den Grundatzahl (Raymonds Schmuckstücke).**
@@ -711,7 +711,7 @@ Die Frage lautet, wie viele Schmuckstücke Siobhan besitzt *nächster*, als Aaro
 *   Siobhan's Grundatzahl = $25 - 2 =$ **23**.
 
 **Zusammenfassung:**
-Siobhan besitzt **23** Schmuckstücke."	23		stop
+Siobhan besitzt **23** Schmuckstücke."	23		stop	23.0	0	1		
 q9501d333	Mike spielt 40 Minuten lang Pingpong. In den ersten 20 Minuten macht er 4 Punkte. In den darauffolgenden 20 Minuten macht er 25 % Punkte mehr. Wie viele Punkte machte er insgesamt?	"Um zu bestimmen, wie viele Punkte Mike insgesamt gemacht hat, müssen wir die beiden Zeitperioden trennen und ihre jeweiligen Punktzahlen addieren.
 
 Zuerst betrachten wir die erste Phase: Mike spielt in den ersten **20 Minuten** und erzielt dabei 4 Punkte. Da er 20 Minuten genau so lange spielte wie angegeben, ist dieser Teil der Gesamtpunktzahl unverändert.
@@ -722,7 +722,7 @@ Nächstens spielen Mike in den darauffolgenden **20 Minuten**. In diesem Zeitrau
 Um den Gesamtanzahl der Punkte zu erhalten, addieren wir die Ergebnisse beider Phasen zusammen:
 $$4 \text{ Punkte} + 5 \text{ Punkte} = 9 \text{ Punkte}$$
 
-Mike hat insgesamt **9** Punkte gemacht."	9		stop
+Mike hat insgesamt **9** Punkte gemacht."	9		stop	9.0	0	1		
 q0e0fa86b	Terry isst 2 Joghurts pro Tag. Sie sind derzeit für 5,00 US-Dollar für 4 Joghurts im Angebot. Wie viel gibt er innerhalb von 30 Tagen für Joghurt aus?	"Basierend auf den Daten, die Ihnen gegeben wurden (2 Joghurts pro Tag) und der aktuellen Preisklasse (5,00 US-Dollar für 4 Joghurts), lässt sich folgende Berechnung durchführen:
 
 1.  **Stufenweise Abschätzung:**
@@ -740,7 +740,7 @@ q0e0fa86b	Terry isst 2 Joghurts pro Tag. Sie sind derzeit für 5,00 US-Dollar f�
     *   $60 \text{ Joghurts} \times 2,50 \text{ US-Dollar/Joghurt} = 150 \text{ US-Dollar}$
 
 **Fazit:**
-Terry gibt Ihnen innerhalb von 30 Tagen **150 US-Dollar** für die Joghurts aus."	75		stop
+Terry gibt Ihnen innerhalb von 30 Tagen **150 US-Dollar** für die Joghurts aus."	75		stop	150.0	0	0	150	0
 q126bbbaa	John plant, alle seine Spielsachen zu verkaufen und mit dem Geld Videospiele zu kaufen. Er hat 13 Lego-Sets und er hat $15 für jedes verkaufte Set bekommen. Er kauft schließlich 8 Videospiele für jeweils $20 und hat noch $5 übrig. Wie viele Lego-Sets hat er noch?	"Um zu verstehen, wie viel John plant noch besitzt, müssen wir zunächst die Informationen aus den Aufgabenstellungen analysieren:
 
 1.  **Anfangslicher Zustand:** John hat bereits **13 Lego-Sets** (die Anzahl ist nicht von der Verkaufsposition abhängig). Zudem hatte er $15 für jedes verkaufte Set erhalten. Das bedeutet, dass er bereits $20 (13 * $2) und damit schon $5 übrig haben könnte.
@@ -759,7 +759,7 @@ Jetzt berechnen wir die restlichen Lego-Sets:
 Die Anzahl der restlichen Lego-Sets ist also:
 $$22 \text{ (Total)} - 13 \text{ (Anfangs)} = \mathbf{9}$$
 
-John plant noch **9** Lego-Sets zu verkaufen."	2		stop
+John plant noch **9** Lego-Sets zu verkaufen."	2		stop	9.0	0	0	9	0
 q5c1bd624	John läuft 60 Meilen pro Woche. Er läuft 3 Tage pro Woche. Er läuft am ersten Tag 3 Stunden und an den anderen beiden Lauftagen jeweils die Hälfte. Wie schnell läuft er?	"Um das zu berechnen, müssen wir zunächst die Anzahl der Läufe pro Woche und die Gesamtzeit pro Woche bestimmen, bevor wir die Laufzeiten addieren.
 
 **Schritt 1: Bestimme die Wochenlänge**
@@ -795,7 +795,7 @@ $$3 \times 2,857... = 8,571... \text{ Meilen}$$
 *(Hinweis: Da es sich um eine Division von 60 durch 21 handelt, könnte man theoretisch versuchen, die 60 auf 21 zu teilen. $60 \div 21 = 2$ mit einer Restkürze von 18. Dann müsste man diese Restkürze als zusätzliche Laufzeit für die nächsten Tagsoberfläche hinzufügen: $2+18/21$. Dies würde zu einem Ergebnis von etwa 8,57 Meilen führen. Da es sich um eine Rundung handelt und das Problem wahrscheinlich nach einer einfachen Dezimalzahl ausgeht, ist 8,57 oder genauer 8,571 sehr nah an der Lösung.)*
 
 **Fazit:**
-John läuft ungefähr **8,57 Meilen pro Tag**."	10		stop
+John läuft ungefähr **8,57 Meilen pro Tag**."	10		stop	8.57	0	0	8.57	0
 q02f06b34	Dana kann viermal so schnell laufen wie sie gehen kann, aber sie kann nur mit der Hälfte ihrer Laufgeschwindigkeit hüpfen. Wenn sie mit 3 Meilen pro Stunde hüpfen kann, wie viele Meilen kann sie dann innerhalb von sechs Stunden zurücklegen, wenn sie ein Drittel der Zeit läuft und zwei Drittel der Zeit geht?	"Um die Frage zu beantworten, müssen wir zunächst die beiden gegebenen Informationen verknüpfen:
 
 1.  **Die Geschwindigkeit beim Hupfen:** Die Aufgabe sagt, dass Dana nur mit der *Hälfte* ihrer Laufgeschwindigkeit hüpfen kann. Wenn sie mit 3 Meilen pro Stunde (mph) hüpfen kann, ist ihre normale Laufgeschwindigkeit ($v_{lauf}$):
@@ -815,7 +815,7 @@ q02f06b34	Dana kann viermal so schnell laufen wie sie gehen kann, aber sie kann 
 
 **Ergebnis:**
 
-Dana kann innerhalb von sechs Stunden zurücklegen **36 Meilen**."	18		stop
+Dana kann innerhalb von sechs Stunden zurücklegen **36 Meilen**."	18		stop	36.0	0	0	36	0
 qd6dd82e1	Brandons iPhone ist viermal so alt wie Bens iPhone. Bens iPhone ist doppelt so alt wie Suzys iPhone. Wenn Suzys iPhone 1 Jahr alt ist, wie alt ist Brandons iPhone?	"Um zu berechnen, wie alt der **Brandons iPhone** ist, müssen wir die gegebene Reihenfolge und den Zeitunterschied zwischen den Geräten Schritt für Schritt analysieren.
 
 Hier ist die Zusammenfassung der Informationen:
@@ -838,7 +838,7 @@ Bevor Sie das Ergebnis verwenden, ist wichtig zu wissen, dass ""alt"" hier in de
 Es ist seltsam, dass der **Brandons iPhone** (ein iPhone 12 Pro Max) so alt wie ein **Bens iPhone** sein könnte. Dies deutet darauf hin, dass die Daten in diesem Fall wahrscheinlich auf den *Alter* (Jahresalter) bezogen sind, statt auf die Uhrzeit des Geräteesprungs (Dateilast), da Apple-Märkte und Preise oft stark von der aktuellen Uhrzeit abhängen.
 
 **Die endgültige Antwort lautet:**
-Der **Brandons iPhone** ist **12 Jahre** alt."	8		stop
+Der **Brandons iPhone** ist **12 Jahre** alt."	8		stop	12.0	0	0	12	0
 q425db7e5	Der große Drachen Perg saß hoch oben auf dem Berg Farbo und spie Feuer auf alles in einem Umkreis von 1000 Fuß. Polly konnte den goldenen Speer, die einzige bekannte Waffe, mit der sich der Drache bezwingen ließ, 400 Fuß weit werfen, also gut in die Reichweite der vom Drachen ausgestoßenen Flammen hinein. Als Polly aber den Saphir-Edelstein in den Händen hielt, konnte sie den Speer dreimal so weit werfen wie ohne den Edelstein in ihren Händen. Wenn sie den Edelstein in den Händen hielte, wie weit außerhalb der Reichweite der Flammen des Drachen könnte Polly stehen und den Drachen trotzdem noch mit dem goldenen Speer treffen?	"Basierend auf Ihrer Beschreibung ist die Antwort **nicht eindeutig**. Die Aussage enthält zwei verschiedene Konstellationen: eine bei Polly ohne den Edelstein und eine bei Polly mit dem Edelstein. Da wir nicht wissen, ob es sich um dieselbe Person handelt oder welche Situation genau gemeint ist (z. B. ob Polly mit dem Edelstein *im Umkreis* des Drachen stehend ist), müssen wir die beiden Szenarien analysieren:
 
 ### Szenario A: Ohne den Edelstein
@@ -858,7 +858,7 @@ Die Frage lautet: ""Wie weit außerhalb der Reichweite der Flammen könnte Polly
 
 Da die Antwort von einer Person abhängt (wenn sie ohne oder mit dem Edelstein ist), gibt es keine einzelne Zahl, die alle Fälle beschreibt. Die maximale Reichweite beträgt jedoch **1000 Fuß** (300 Meter).
 
-Wenn man also an die maximale Reichweite der Flammen herankommt, könnte Polly in einem Abstand von **1000 Fuß** (oder 300 Metern) stehen und den Drachen noch treffen."	200		stop
+Wenn man also an die maximale Reichweite der Flammen herankommt, könnte Polly in einem Abstand von **1000 Fuß** (oder 300 Metern) stehen und den Drachen noch treffen."	200		stop	1000.0	0	0	1000	0
 qedc215ac	Großmama Jones hat 5 Apfelkuchen für das Mittagessen der Feuerwehr gebacken. Sie schnitt jeden Kuchen in 8 Stücke und stellte fünf Kuchen auf den Buffettisch, damit sich die Gäste selbst bedienen konnten. Am Ende des Abends, nachdem sich die Gäste bedient und Kuchen gegessen hatten, waren noch 14 Kuchenstücke übrig. Wie viele Stücke haben sich die Gäste genommen?	"Hier ist die schrittweise Lösung:
 
 1.  **Anfangs Gesamtanzahl:** Es gab ursprünglich **5** Apfelkuchen.
@@ -868,7 +868,7 @@ qedc215ac	Großmama Jones hat 5 Apfelkuchen für das Mittagessen der Feuerwehr g
 4.  **Zähle der gefallenen Teile:** Um zu finden, wie viele Kuchen die Gäste genommen haben, müssen wir die Anzahl der geschnittenen Stück aus dem Gesamtanzahl minus die übrig gebliebenen herausrechnen:
     $$40 - 14 = 26 \text{ Stück}$$
 
-Die Gäste haben sich also **26** Kuchenstücke genommen."	26		stop
+Die Gäste haben sich also **26** Kuchenstücke genommen."	26		stop	26.0	0	1		
 q5d47194e	Den Nährwertangaben zufolge, hat eine Tüte Chips 250 Kalorien pro Portion. Wenn eine 300 g-Tüte 5 Portionen enthält, kannst du wie viele Gramm essen, wenn dein tägliches Kalorienziel bei 2000 liegt und du bereits 1800 Kalorien zu dir genommen hast?	"Um die benötigten Kalorien zu berechnen, müssen wir zunächst die Menge der einzelnen Portionen bestimmen. Da eine Tüte Chips 5 Portionen enthält, entspricht jeder Portion genau $250 \div 5 = 50$ Gramm (da das Essen pro Portion 250 Gramm entspricht).
 
 Da es bei den 300 g-Tüten **5** Portionen gibt, beträgt die Gesammenge der Tüte:
@@ -882,7 +882,7 @@ $$200 \div 250 = 0,8$$
 Das bedeutet, dass es **0,8 Portionen** (also genau eine Hälfte einer Portion) brauchst. Da jede Portion 50 Gramm enthält, ist die gerechtfertigte Menge für diesen Tag:
 $$0,8 \times 50 \text{ g} = 40 \text{ g}$$
 
-**Zusammenfassend:** Du musst **40 Gramm** essen, um deine Kalorienziel von 2000 aufzufüllen."	48		stop
+**Zusammenfassend:** Du musst **40 Gramm** essen, um deine Kalorienziel von 2000 aufzufüllen."	48		stop	40.0	0	0	40	0
 q255b81c0	Charlie möchte Bienenwachskerzen verkaufen. Aus jedem Pfund Bienenwachs kann er 10 Kegelkerzen herstellen. Das Zubehör aus einem Pfund Bienenwachs plus Dochte kostet 10,00 US-Dollar. Wenn er die Kerzen für 2,00 US-Dollar verkauft, macht er wie viel Nettogewinn, wenn er 20 Kerzen herstellt und verkauft?	"Um zu berechnen, ob Charlie einen Gewinn erzielt hat, müssen wir zunächst das Gesamtwesen des Produkts bestimmen. Die Frage ist: Wie viele Kerzen werden für den Preis von 2 US-Dollar verkauft? Da der Gewinnberechnung keine spezifische Zahl genannt wird, gehen wir davon aus, dass es sich um **einen** kompletten Pfund (oder die gesamte Menge, die mit einem Pfund behandelt wird) handelt.
 
 Hier ist die Schritt-für-Schritt-Berechnung:
@@ -903,7 +903,7 @@ Hier ist die Schritt-für-Schritt-Berechnung:
     $$\text{Gewinn} = \text{Auszahlungsbetrag} - \text{Zuhauseinsatz}$$
     $$\text{Gewinn} = \$20,00 - \$10,00 = \$10,00$$
 
-Charlie macht einen Nettogewinn von **10,00 US-Dollar**."	20		stop
+Charlie macht einen Nettogewinn von **10,00 US-Dollar**."	20		stop	10.0	0	0	10	0
 q0166ea66	Meredith ist Freelance-Bloggerin und schreibt über Gesundheitsthemen und wendet sich an Kunden, was ihr fester Job ist. Das Recherchieren und Schreiben eines Blog-Artikels nimmt im Durchschnitt 4 Stunden in Anspruch. Letzte Woche hat sie am Montag 5 Artikel geschrieben und am Dienstag 2/5 mehr Artikel als am Montag. Am Mittwoch hat sie zweimal so viele Artikel verfasst wie am Dienstag. Berechne die Gesamtzahl der Stunden, die sie an drei Tagen für das Schreiben von Artikeln aufgewendet hat.	"Um die Gesamtzahl der Stunden zu berechnen, müssen wir die Anzahl der Artikel und die dafür benötigte Zeit pro Tag analysieren.
 
 **1. Analyse der Daten:**
@@ -947,7 +947,7 @@ $$20 + 21.6 + 43.2$$
 *   $41.6 + 43.2 = 84.8$
 
 **Zusammenfassung:**
-Die Gesamtzahl der Stunden, die Meredith an drei Tagen für das Schreiben von Artikeln aufgewendet hat, beträgt **84.8 Stunden**."	104		stop
+Die Gesamtzahl der Stunden, die Meredith an drei Tagen für das Schreiben von Artikeln aufgewendet hat, beträgt **84.8 Stunden**."	104		stop	84.8	0	0	84.8	0
 q7bb382f4	Candice hat 80 Post-it-Notizzettel in ihre Handtasche gepackt, bevor sie zu ihrem Job im Coffee Shop aufgebrochen ist. Unterwegs hat sie einen Zwischenstopp am Laden eingelegt und eine Packung Post-it-Notizzettel gekauft; bei der Arbeit hat sie an 220 verschiedene Tassen Kaffee jeweils einen Post-it-Notizzettel geklebt. Wenn ihr insgesamt 23 Post-it-Notizzettel übrigblieben, wie viele Post-it-Notizzettel waren dann in der Packung, die sie gekauft hat?	"Um das zu lösen, müssen wir zunächst die Gesamtzahl der Tassen und die Anzahl der geklebten Notizen berechnen. Danach können wir den Unterschied zwischen der ursprünglichen Menge und dem Rest bestimmen.
 
 1.  **Anzahl der Tassen:** Candice nahm an, dass sie 220 verschiedene Tassen Kaffee hatte.
@@ -960,7 +960,7 @@ q7bb382f4	Candice hat 80 Post-it-Notizzettel in ihre Handtasche gepackt, bevor s
 
 Dieser Wert von 197 entspricht genau der Anzahl der Post-it-Notizen, die Candice in ihrer Packung gekauft hat, bevor sie ihre Arbeit begann.
 
-**Antwort:** Candice hatte **197** Post-it-Notizen in der Packung."	163		stop
+**Antwort:** Candice hatte **197** Post-it-Notizen in der Packung."	163		stop	197.0	0	0	197	0
 q1a64508f	John kauft zweimal so viele rote wie blaue Krawatten. Die roten Krawatten kosten 50 % mehr als die blauen Krawatten. Er hat 200 US-Dollar für blaue Krawatten ausgegeben, die pro Stück 40 US-Dollar kosten. Wie viel hat er für Krawatten ausgegeben?	"Um das Ergebnis zu bestimmen, müssen wir zunächst die Kosten der roten Krawatten berechnen, da sie als Basis dienen. John kauft zweimal so viele rote wie blaue Krawatten, also ist das Verhältnis von Roten zu Blauen 1:2 (oder 2:1).
 
 **Schritt 1: Berechne den Preis einer blauen Krawatte.**
@@ -979,7 +979,7 @@ Da John kauft zweimal so viele rote wie blaue, müssen wir beide Kosten multipli
 *   Kosten für rote Krawatten: $7,5 \text{ Dollar} \times 2 = 15 \text{ Dollar}$
 
 Gesamtkosten:
-$$ 200 + 15 = 215 \text{ Dollar} $$"	800		stop
+$$ 200 + 15 = 215 \text{ Dollar} $$"	800		stop	3.0	0	0	215	0
 q9605b4e6	Tracy hat ein 4 Fuß langes Stück Draht verwendet, um die Tomatenpflanzen in ihrem Garten abzustützen. Der Draht wurde in jeweils 6 Inch lange Stücke geschnitten. Wie viele Stück Draht hatte sie?	"Um die Anzahl der benötigten Stiche zu berechnen, teilen wir den Gesamtanzahl der Pflanzen durch die Länge einer einzelnen Schnitzung.
 
 Zuerst bestimmen wir die Anzahl der Tomatenpflanzen: Tracy hat 4 Fuß lange Pflanzen. Da ein Fuß im US-System gleich 12 Zoll (oder 36 Inches) ist, sind es insgesamt 48 Zollei.
@@ -991,7 +991,7 @@ $$ \text{Anzahl der Stiche} = \frac{\text{Gesamtanzahl der Pflanzen}}{\text{Län
 Ein Stück ist $6$ Inch lang. Wir müssen also die Gesamtanzahl der Pflanzen durch 6 teilen:
 $$ \frac{48}{6} = 8 $$
 
-Tracy hat insgesamt **8** Stücke Draht benötigt, um alle Pflanzen abzustützen."	8		stop
+Tracy hat insgesamt **8** Stücke Draht benötigt, um alle Pflanzen abzustützen."	8		stop	8.0	0	1		
 qda35e8fb	Richard lebt in einem Wohnhaus mit 15 Etagen. Auf jeder Etage befinden sich 8 Wohnungen, und 3/4 des Gebäudes sind bewohnt. Wie viele Wohnungen in dem Gebäude sind insgesamt unbewohnt?	"Um die Anzahl der unbewohnten Wohnungen zu finden, gehen wir schrittweise durch:
 
 Zuerst berechnen wir die Gesamtzahl der Wohnungen im Gebäude. Da es 15 Etagen gibt und auf jeder Etage 8 Wohnungen sind, ergibt sich der Grundumsatz:
@@ -1003,7 +1003,7 @@ $$3/4 \times 120 = 90 \text{ bewohnter Wohnungen}$$
 Um nun die unbewohnten Wohnungen zu ermitteln, subtrahieren wir die gezahlten von den Gesamtzahl der Wohnungen ab:
 $$120 - 90 = 30 \text{ unbewohnte Wohnungen}$$
 
-Die Gesamtwirtschaftsrechnung für dieses Gebäude ergibt also **30** unbewohnte Wohnungen."	30		stop
+Die Gesamtwirtschaftsrechnung für dieses Gebäude ergibt also **30** unbewohnte Wohnungen."	30		stop	30.0	0	1		
 q94fcd6ce	Lloyd hat einen Eierhof. Seine Hühner legen 252 Eier pro Tag und er verkauft sie für 2 US-Dollar pro Dutzend. Wie viel verdient Lloyd pro Woche an den Eiern?	"Um die Zahl zu bestimmen, in der Lloyd seinen Eierwert erhält, müssen wir zunächst den täglichen Ertrag im **Dutzend** berechnen und dann diesen Wert auf eine Woche ausmultiplizieren.
 
 Die Aufgabe gibt an, dass Lloyd 252 Eier pro Tag legt. Ein Dutzend ist gleich 10 Eiern.
@@ -1015,7 +1015,7 @@ $$25,2 \text{ Dutzend} \times \$2,00/\text{Dutzend} = \$50,40$$
 Diese Zahl repräsentiert den Gewinn von einem Tag. Um die Einnahme über eine Woche (7 Tage) zu berechnen, multiplizieren wir diesen Wert mit 7:
 $$\$50,40 \times 7 = \$352,80$$
 
-Lloyd verdient also pro Woche **$352,80**."	294		stop
+Lloyd verdient also pro Woche **$352,80**."	294		stop	352.8	0	0	352.8	0
 q1afb1e71	Toms Schiff kann 10 Meilen pro Stunde zurücklegen. Er segelt von 13 bis 16 Uhr. Dann fährt er mit einer Geschwindigkeit von 6 Meilen/Stunde wieder zurück. Wie lange braucht er für den Rückweg?	"Um die Antwort zu finden, müssen wir zunächst die **Gesamtwegstrecke** bestimmen und dann die Zeit für den ersten Teil des Weges berechnen, um das Rückwerkungszeit zu ermitteln.
 
 ### 1. Berechnung der Gesamtwege
@@ -1035,7 +1035,7 @@ Jetzt fährt er wieder zurück mit einer Geschwindigkeit von **6 Meilen pro Stun
 *   Zeitspanne (Rückweg) = $6 \text{ h} \times 6 \text{ m/h} = 36$ Minuten.
 
 ### Ergebnis
-Toms Schiff benötigt **36 Minuten** für den Rückweg."	5		stop
+Toms Schiff benötigt **36 Minuten** für den Rückweg."	5		stop	36.0	0	0	36	0
 q0aaae19a	Uriah wird seine Büchertasche zu schwer. Er muss 15 Pfund daraus entnehmen. Seine Comicbücher wiegen pro Stück 1/4 Pfund und seine Spielzeuge jeweils 1/2 Pfund. Wenn er 30 Comicbücher rausnimmt, wie viele Spielzeuge muss er dann noch rausnehmen?	"Um zu verstehen, wie viel Spielzeuge Uriah brauchen muss, müssen wir zunächst die Masse aller Bücher bestimmen, bevor wir mit den Spielzeugen rechnen.
 
 Die Aufgabe gibt uns folgende Informationen:
@@ -1066,7 +1066,7 @@ $$22,5 \div \frac{1}{2} = 22,5 \times 2 = 45 \text{ Spielzeuge}$$
 **Zusammenfassung:**
 Uriah muss zunächst 7,5 Pfund Bücher nehmen (30 x 1/4), bevor er die Tasche mitbringt (15). Das Gesamtgewicht ist also $22,5$ Pfund. Da jedes Spielzeug genau $0,5$ Pfund wert ist, benötigt er genau:
 $$22,5 \div 0,5 = 45$$
-Spielzeuge."	15		stop
+Spielzeuge."	15		stop	3.0	0	0	45	0
 qa5756c69	Ein Mechaniker berechnet unterschiedliche Preise für die Reparatur von LKW-Reifen und PKW-Reifen. Für jeden reparierten LKW-Reifen berechnet der Mechaniker 60 Dollar und für jeden reparierten PKW-Reifen 40 Dollar. Am Donnerstag repariert der Mechaniker 6 LKW-Reifen und 4 PKW-Reifen. Am Freitag repariert der Mechaniker 12 PKW-Reifen und keine LKW-Reifen. Wie viel Dollar mehr Umsatz hat der Mechaniker an dem Tag mit dem höheren Umsatz erzielt?	"Um zu verstehen, wie viel mehr Umsatz am Tag mit dem höheren Umsatz erzielt wurde, müssen wir zunächst die Berechnung für jeden Tag durchführen und dann den Unterschied finden.
 
 **1. Berechnung des Umsätze am Donnerstag:**
@@ -1087,7 +1087,7 @@ Jetzt vergleichen wir die beiden Gesamtausgaben:
 Der Unterschied beträgt:
 $$520 - 480 = 40$$
 
-Am Tag mit dem höheren Umsatz (Donnerstag) hat der Mechaniker **$40** mehr erzielt."	40		stop
+Am Tag mit dem höheren Umsatz (Donnerstag) hat der Mechaniker **$40** mehr erzielt."	40		stop	40.0	0	1		
 qd819612e	Die Schwestern Doubtfire fahren nach Hause mit 7 Kätzchen, die sie im örtlichen Tierheim adoptiert haben, als ihre Mutter anruft, um ihnen zu sagen, dass ihre beiden Hauskatzen gerade Kätzchen zur Welt gebracht haben. Sie sagt, dass Patchy, die erste Katze, dreimal so viele Kätzchen hat wie die adoptierten, während Trixie, die andere Katze 12 zur Welt gebracht hat. Wie viele Kätzchen haben die Doubtfires jetzt?	"Die Frage des Puzzles ist eine klassische Logik-Runde, bei der wir die Daten nicht direkt auf einmal zusammenfassen können, sondern Schritt für Schritt analysieren müssen.
 
 Zuerst betrachten wir die beiden adoptierten Kätzchen:
@@ -1103,7 +1103,7 @@ Nun betrachten wir die beiden Schwestern Doubtfire:
 Jetzt summieren wir die beiden zusammen:
 7 (Doubtfire 1) + 12 (Doubtfire 2) = **19**.
 
-Die Doubtfires haben insgesamt **19** Kätzchen."	40		stop
+Die Doubtfires haben insgesamt **19** Kätzchen."	40		stop	19.0	0	0	19	0
 q7c63d108	Jean hat 30 Lutscher. Jean isst 2 der Lutscher. Die verbleibenden Lutscher möchte Jean in eine Tüte mit jeweils 2 Lutschern stecken. Wie viele Tüten kann Jean füllen?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Zählen der ursprünglichen Lutscher:** Jean hat insgesamt **30** Lutscher.
@@ -1112,7 +1112,7 @@ q7c63d108	Jean hat 30 Lutscher. Jean isst 2 der Lutscher. Die verbleibenden Luts
 4.  **Zählen der möglichen Tüten:** Da wir 28 Lutscher haben und jede Tüte genau 2 enthält, teilen wir es durch 2:
     $$28 \div 2 = 14$$
 
-Jean kann also **14** Tüten füllen."	14		stop
+Jean kann also **14** Tüten füllen."	14		stop	14.0	0	1		
 q93b023e5	Peter plant, diese Woche ins Kino zu gehen. Er kauft sich immer eine Eintrittskarte für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für die Woche 42 US-Dollar zur Verfügung hat, wie oft kann er dann ins Kino gehen?	"Um das Problem zu lösen, müssen wir zunächst die Anzahl der Dollar-Werte im Satz deuten: Es handelt sich um **42** Dollar, nicht um eine Zahl, die mit ""und"" verbunden ist. Also haben Peter für jede Einreise 7 US-Dollar zu zahlen.
 
 Zuerst berechnen wir die Anzahl der durchgeführten Eintrittskarten:
@@ -1123,7 +1123,7 @@ $$6 \text{ Karten} \times 7 \text{ Dollar/Karte} = 42 \text{ Dollar}$$
 
 Da Peter genau **exakt** für die verfügbaren 42 US-Dollar Geld hat, ist es möglich, dass er alle 6 Einreisen beenden kann. Wenn er 7 oder mehr Dollar hätte, wäre das noch möglich, aber mit genau 42 Dollar reicht es aus.
 
-Peter kann sich ins Kino **6** mal gehen."	3		stop
+Peter kann sich ins Kino **6** mal gehen."	3		stop	6.0	0	0	6	0
 qdf141d2f	Eine Holzbrücke kann nicht mehr als 5.000 Pfund tragen. Ein Lieferwagen, der identische Kisten geladen hat, von denen jede 15 Pfund wiegt, wird über die Brücke fahren. Das Gesamtgewicht von Fahrer und leerem Lastwagen beträgt 3755 Pfund. Wie hoch ist die maximale Anzahl an Kisten, die der Lastwagen laden kann, ohne die Gewichtsgrenze der Brücke zu überschreiten?	"Um die maximale Anzahl der Kisten zu bestimmen, müssen wir zunächst den Gesamtgewichtszufall des Lieferwagens berechnen. Dazu addieren wir das Gewicht des Fahrers und des leeren Lastwagens zur Gesamtwegschraube:
 
 $$3755 \text{ Pfund} + 3755 \text{ Pfund} = 7510 \text{ Pfund}$$
@@ -1136,7 +1136,7 @@ Da es nicht möglich ist, eine ganze Anzahl von Pfund zu übermitteln und das Er
 
 Da $7515 > 7510$, überschreitet die Last von 501 Kisten die zulässige Gesamtwegschraube.
 
-Die maximale Anzahl an Kisten, die der Lastwagen laden kann, beträgt **500**."	83		stop
+Die maximale Anzahl an Kisten, die der Lastwagen laden kann, beträgt **500**."	83		stop	500.0	0	0	500	0
 q1f4f019f	Stephen hat eine Online-Bestellung für Lebensmittel aufgegeben. Die Endabrechnung belief sich auf 40,00 US-Dollar. Da die Lieferung von einem Lieferdienstleister getätigt wurde, haben sie auf die Endabrechnung eine Gebühr von 25 % aufgeschlagen und ihm 3,00 US-Dollar Liefergebühr berechnet. Stephen hat außerdem 4,00 US-Dollar Trinkgeld gegeben. Nach den Extragebühren, wie hoch war der Endpreis für Stephens Lebensmittel?	"Um die richtige Anzahlung zu berechnen, müssen wir zunächst alle angegebenen Gebühren und Einkünfte systematisch addieren.
 
 Zuerst betrachten wir die **Endabrechnung**: 40,00 US-Dollar. Da diese bereits die gesammelten Preisanzahlungen ohne Gebühren enthalten, können wir diesen Wert als Basis nutzen.
@@ -1151,7 +1151,7 @@ $$10,00 \text{ (Liefergebühr)} + 4,00 \text{ (Trinkgeld)} = 14,00 \text{ US-Dol
 Der Endpreis für Stephens Lebensmittel berechnet sich dann durch den ursprünglichen Preis minus die abgezogenen Kosten:
 $$40,00 - 14,00 = 26,00 \text{ US-Dollar}$$
 
-**Zusammenfassung:** Der endgültige Preis war **$26,00**."	57		stop
+**Zusammenfassung:** Der endgültige Preis war **$26,00**."	57		stop	26.0	0	0	26	0
 q709e5faa	Ein Himbeerstrauch hat 6 Trauben mit jeweils 20 Früchten und 67 einzelne Früchte über den Strauch verteilt. Wie viele Himbeeren gibt es insgesamt?	"Um die Gesamtzahl der Himbeeren zu bestimmen, müssen wir zuerst die Anzahl der Samen (Früchte) pro Trabe berechnen und dann die Gesamtanzahl der Truben addieren.
 
 1.  **Anzahl der Truben:** Der Strauch enthält **6** Trauben.
@@ -1165,7 +1165,7 @@ $$ \text{Gesamtfräuten} = \frac{67}{20} = 3.35 $$
 
 Da es eine Dezimalzahl ergibt, bedeutet das in diesem Kontext, dass es genau **3** ganzen Fräuten und ein kleines Stückchen (z.B. 0,35) vorhanden sind. Das kleinste mögliche Whole-Number-Fruchtanzahl ist also **3**.
 
-**Ergebnis:** Es gibt insgesamt **3** Himbeeren."	187		stop
+**Ergebnis:** Es gibt insgesamt **3** Himbeeren."	187		stop	3.0	0	0	3	0
 qb292acaa	Ein Korb enthält 25 Orangen, von denen 1 schlecht ist, 20 % unreif und 2 sauer sind und der Rest gut ist. Wie viele Orangen sind gut?	"Um die Anzahl der guten Orangen zu bestimmen, gehen wir Schritt für Schritt durch die gegebenen Informationen:
 
 Zuerst berechnen wir die Gesamtzahl der Orangen. Es gibt 25 Orangen insgesamt.
@@ -1215,7 +1215,7 @@ $$ 25 - 0,6 = 24,4 $$
 Da es eine ganze Zahl sein muss:
 $$ 24 \text{ unvollständige } \frac{1}{10} \text{ Orangen} = 24 \text{ Orangen} $$
 
-Die Anzahl der guten Orangen beträgt also **24**."	17		stop
+Die Anzahl der guten Orangen beträgt also **24**."	17		stop	24.0	0	0	24	0
 qa11cac63	Janet kauft eine Brosche für ihre Tochter. Sie zahlt 500 US-Dollar für das Material, um sie herzustellen, und weitere 800 US-Dollar für den Juwelier, damit er sie modelliert. Anschließend zahlt sie noch 10 % von diesem Betrag, um sie zu versichern. Wie viel musste sie bezahlen?	"Um die Gesamtkosten zu berechnen, müssen wir jeden Teil der Rechnung Schritt für Schritt analysieren:
 
 1.  **Materialkosten:** Janet hat bereits 500 US-Dollar gezahlt für das Broschemedium.
@@ -1229,7 +1229,7 @@ $$ 1300 \times 0,10 = 130 $$
 Jetzt addieren wir diesen Abzug zur Gesamtkosten:
 $$ 1300 + 130 = 1430 $$
 
-Janet musste insgesamt **1.430 US-Dollar** zahlen."	1430		stop
+Janet musste insgesamt **1.430 US-Dollar** zahlen."	1430		stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienstjahren erhält ein Mitarbeiter von Marcys Firma eine volle jährliche Rente von 50.000 Dollar. Pensionsansprüche entstehen nach 20 Dienstjahren. Für jedes weitere volle Dienstjahr nach der 20-Jahres-Marke verdient der Mitarbeiter 5 % des vollen Rentenbetrags. Wenn Marcy nach genau 30 Dienstjahren ausscheidet, wie hoch wird ihre jährliche Rente in Dollar sein?	"Um die jährliche Rente zu berechnen, müssen wir den Satz vom **67 Jahre** (die gesetzliche Mindestalter für eine volle Rente) berücksichtigen. Da Marcy nach 30 Jahren arbeitet und bereits 40 Dienstjahre gesammelt hat (was mehr als 20 Jahre entspricht), liegt sie unter dem Anspruchseintrittsalter von 20 Jahren. Daher verdient sie die **volle Rente** von 50.000 Dollar pro Jahr.
 
 Die Berechnung des zusätzlichen Einnahmes erfolgt basierend auf den Dienstjahren zwischen der 20-Jahres-Marke und dem Ausscheiden:
@@ -1240,7 +1240,7 @@ Die Berechnung des zusätzlichen Einnahmes erfolgt basierend auf den Dienstjahre
 Die jährliche Rente beträgt also:
 $$50.000 + 1.000 = 51.000 \text{ Dollar}$$
 
-**Antwort:** Ihre jährliche Rente wird **$51.000** sein."	25000		stop
+**Antwort:** Ihre jährliche Rente wird **$51.000** sein."	25000		stop	51000.0	0	0	51000	0
 q2eb5bb5f	Aleena hat einen Streaming-Dienst abonniert, der 140 US-Dollar pro Monat berechnet. Wenn das Streaming-Unternehmen ihr für die erste Jahreshälfte den ursprünglichen Betrag berechnet und dann für die zweite Jahreshälfte 10 % weniger berechnet, berechne den Gesamtbetrag, den sie bis Ende des Jahres für den Streaming-Dienst bezahlt haben wird.	"Um den Gesamtbetrag zu berechnen, müssen wir zunächst die jährlichen Beträge für beide Jahre bestimmen und dann diese addieren.
 
 Das Unternehmen hat einen monatlichen Abonnementpreis von **$140**.
@@ -1260,7 +1260,7 @@ Wir addieren die beiden Jahre zusammen:
 $$\$840 + \$756 = \$1596$$
 
 Die Anzahl der Monate ist $12 \times 2 = 24$.
-Der Gesamtbetrag beträgt **$1.596**."	1596		stop
+Der Gesamtbetrag beträgt **$1.596**."	1596		stop	1596.0	0	1		
 q29ca8e5c	Sophia denkt darüber nach, eine Autofahrt mit ihrem Auto zu machen und möchte wissen, wie weit sie mit einem Tank voll Benzin kommen wird. Seit der letzten Tankfüllung ist sie 100 Meilen gefahren, und sie musste 4 Gallonen Benzin nachfüllen, um den Tank wieder ganz aufzufüllen. In der Bedienungsanleitung für ihr Auto steht geschrieben, dass in ihren Tank 12 Gallonen Benzin passen. Wie viele Meilen kann Sophia mit einer einzigen Tankfüllung fahren?	"Um zu beantworten, wie weit Sophia mit einer einzigen Tankfüllung fahren kann, müssen wir zuerst die Gesamtlänge ihres Fahrzeugs bestimmen und dann die Anzahl der benötigten Tanks berechnen.
 
 Zuerst berechnen wir die Gesamt-Längenspannweite des Autos. Sophia hat seit der letzten Füllung 100 Meilen gefahren und muss nun noch **4 Gallonen** mehr Benzin zum Tank aufzufüllen haben, um ihn vollständig zu füllen. Die Bedienungsaufkleberinformation besagt zudem, dass in ihrem Tank insgesamt **12 Gallonen** Benzin passen.
@@ -1281,7 +1281,7 @@ $$128 \div 12 \approx 10,67$$
 
 Da dies eine ganze Zahl ist, müssen wir für den praktischen Einsatz genau einen zweiten Tank verwenden. Die Gesamtspannweite beträgt also **128 Meilen**.
 
-Sophia kann mit einer einzigen Tankfüllung fahren ca. **128 Meilen**."	300		stop
+Sophia kann mit einer einzigen Tankfüllung fahren ca. **128 Meilen**."	300		stop	128.0	0	0	128	0
 q388ed7a8	Jim schaut 2 Stunden lang TV und beschließt dann, ins Bett zu gehen und halb so lange zu lesen. Das macht er 3-mal pro Woche. Wie viele Stunden verbringt er in 4 Wochen mit Fernsehschauen und Lesen?	"Um die Gesamtzahl der Stunden zu berechnen, müssen wir zuerst die tägliche Verweildauer bestimmen. Jim schaut TV für 2 Stunden pro Tag. Er geht ins Bett, leidet sich dann auf halb so lange Zeit (also 1 Stunde) ab. Das bedeutet, er verbringt **3 Stunden** in einem Schlafmoment pro Tag.
 
 Damit ergibt sich die durchschnittliche tägliche Dauer:
@@ -1293,7 +1293,7 @@ $$5 \text{ Stunden/Tag} \times 7 \text{ Tage} = 35 \text{ Stunden pro Woche}$$
 Da er das durchschnittlich jede Woche einmal trifft:
 $$35 \text{ Stunden/Woche} \times 4 \text{ Wochen} = 140 \text{ Stunden}$$
 
-Jim verbringt also insgesamt **140 Stunden** in diesem Zeitraum."	36		stop
+Jim verbringt also insgesamt **140 Stunden** in diesem Zeitraum."	36		stop	140.0	0	0	140	0
 qe6615147	Vier Schulen treten in einem Basketballturnier gegeneinander an. Jede Schule hat ein Mädchenbasketballteam und ein Jungenbasketballteam geschickt und jedes Team hat 5 Spieler. Alle Schulen haben auch einen Trainer für jedes Team mitgeschickt. Wie viele Personen haben die Schulen insgesamt geschickt?	"Um zu bestimmen, wie viele Personen insgesamt geschickt wurden, müssen wir die Anzahl der Personen in jeder Schule addieren. Die Frage ist jedoch nicht nur, wie viele Spieler pro Team sind, sondern auch wie viele Trainer dafür sind.
 
 Hier ist die Schritt-für-Schritt-Analyse:
@@ -1307,7 +1307,7 @@ Nun berechnen wir die Gesamtzahl der Personen:
 $$ \text{Gesamtanzahl} = (\text{Schüler}) + (\text{Mädchen}) + (\text{Jungen}) + (\text{Trainer}) $$
 $$ \text{Gesamtanzahl} = 4 + 4 + 4 + 4 = 16 $$
 
-Die Schulen insgesamt haben geschickt **16** Personen."	48		stop
+Die Schulen insgesamt haben geschickt **16** Personen."	48		stop	16.0	0	0	16	0
 q1df59a5a	Ein Schatzsucher hat eine vergrabene Schatzkiste mit Edelsteinen gefunden. Es waren 175 Diamanten, 35 weniger Rubine als Diamanten und zweimal so viele Smaragde wie Rubine. Wie viele Edelsteine waren in der Schatzkiste?	"Um die Gesamtzahl der Edelsteine zu bestimmen, müssen wir zunächst die Anzahl der Edelsteine mit den gegebenen Informationen Schritt für Schritt berechnen.
 
 Zuerst betrachten wir **Diamanten**.
@@ -1332,7 +1332,7 @@ $$ \text{Gesamtzahl} = 315 (\text{Diamanten}) + 140 (\text{Rubine}) + 280 (\text
 $$ \text{Gesamtzahl} = 735 $$
 
 **Zusammenfassend:**
-Es gab insgesamt **735** Edelsteine in der Schatzkiste."	595		stop
+Es gab insgesamt **735** Edelsteine in der Schatzkiste."	595		stop	735.0	0	0	735	0
 q0e3fa635	In der Schule von Dr. Wertz gibt es zweimal so viele Jungen wie Mädchen. Wenn es 60 Mädchen und 5 Schüler pro Lehrer gibt, wie viele Lehrer gibt es dann?	"Um die Anzahl der Lehrer zu bestimmen, müssen wir zunächst die Gesamtzahl der Schülere berechnen und dann auf diese Zahl teilen.
 
 Zuerst zählen wir die verfügbaren Schülere: Es sind 60 Mädchen und 5 Schüler (diese beiden Gruppen bilden die gesamte Klasse).
@@ -1354,7 +1354,7 @@ Wenn man 33 Lehrer anlegt, haben sie $33 \times 2 = 66$ Schüler.
 
 Da in der Schule zwei Personen pro Lehrer sind und die Zahlen so groß sind, ist es logisch anzunehmen, dass es genau **33 Lehrer** gibt.
 
-**Antwort:** Es gibt **33** Lehrer."	36		stop
+**Antwort:** Es gibt **33** Lehrer."	36		stop	33.0	0	0	33	0
 q9c0ce719	Bailey startet mit einem bestimmten Geldbetrag. Dann erhält sie 8 Wochen lang eine wöchentliche Vergütung von 5 US-Dollar. Wenn sie am Ende der 8 Wochen über eine Gesamtsumme von 100 US-Dollar verfügt, hatte Bailey am Anfang wie viel Geld?	"Um das Geld Bailey zu finden, müssen wir die Wochenschulung (Wagen) mathematisch berechnen.
 
 Die Aufgabe beschreibt einen linearen Prozess:
@@ -1370,7 +1370,7 @@ Um das ursprüngliche Geld zu finden, teilen wir die Gesamtsumme durch den Wert 
 $$ \text{Anfangs Geld} = \frac{\text{Gesamtsumme}}{\text{Wagen}} $$
 $$ \text{Anfangs Geld} = \frac{100}{5} = 20 $$
 
-Bailey hatte am Anfang **$20** US-Dollar."	60		stop
+Bailey hatte am Anfang **$20** US-Dollar."	60		stop	20.0	0	0	20	0
 qde446a3d	Judy unterrichtet werktags täglich 5 Tanzkurse und samstags 8 Kurse. Wenn jeder Kurs 15 Schüler hat und sie 15,00 $ pro Schüler verlangt, wie viel Geld verdient sie in einer Woche?	"Um zu berechnen, wie viel Geld Judy verdient, müssen wir zunächst die Anzahl der Kurse im Monat bestimmen. Sie unterrichtet täglich 5 Kurse am Montag und samstags 8 Kurse am Samstag, was sich auf einen Monat ausdeut (7 Tage in Woche).
 
 Die Gesamtzahl der Kurse beträgt:
@@ -1383,7 +1383,7 @@ Da jede Schülerkarte 15,00 $ verlangt, ergibt sich die Gesamtzahl der Stunden d
 $$195 \text{ Schüler} \times 15,00 \text{ }/\text{Schüler} = 2,925 \text{ Dollar}$$
 
 Da es ein Monat ist (oder eine Woche), verdient Judy:
-$$2,925 \text{ Dollar}$$"	7425		stop
+$$2,925 \text{ Dollar}$$"	7425		stop	2925.0	0	0	2925	0
 qd941251f	Kelian hat zwei Kochrezepte, wobei das eine 20 Anweisungen umfasst und das andere zweimal so viele Anweisungen wie das erste. Wie viele Anweisungen muss Kelian lesen, damit er die beiden Rezepte zubereiten kann?	"Um zu verstehen, wie viele Anweisungen Kelian braucht, müssen wir zunächst die Anzahl der Anweisungen für jedes Rezept bestimmen und dann die Kombination daraus berechnen.
 
 Das erste Rezept benötigt genau **20** Anweisungen.
@@ -1394,7 +1394,7 @@ $20 \times 2 = 40$ Anweisungen.
 Um zu prüfen, ob Kelian die beiden Rezepte zubereiten kann, müssen er insgesamt alle benötigten Anweisungen lesen. Wir addieren also die Anweisungen aus den beiden Rezepten zusammen:
 $$20 + 40 = 60$$
 
-Kelian muss also **60** Anweisungen lesen, um beide Rezepte zu berechnen."	60		stop
+Kelian muss also **60** Anweisungen lesen, um beide Rezepte zu berechnen."	60		stop	60.0	0	1		
 q96352811	Tommy sammelt für seine Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Stück und Käsekuchenstücke für 4 US-Dollar pro Stück verkauft. Wenn Tommy 43 Brownies und 23 Käsekuchenstücke verkauft, wie viel Geld sammelt er dann?	"Um die Gesamtausgabe zu berechnen, müssen wir zunächst die Anzahl der einzelnen Waren bestimmen und dann das Verkaufspreis für jede Menge addieren.
 
 Zuerst betrachten wir die Brownies: Tommy verkauft **43** Stück. Da jeder Brownie 3 US-Dollar kostet, ergibt sich eine Gesamtbetrag von:
@@ -1406,7 +1406,7 @@ $$23 \times 4 = 92 \text{ US-Dollar}$$
 Schließlich addieren wir beide Ausgaben zusammen, um die Gesamtumsatz zu erhalten:
 $$129 + 92 = 221$$
 
-Tommy sammelt insgesamt **221 US-Dollar**."	221		stop
+Tommy sammelt insgesamt **221 US-Dollar**."	221		stop	221.0	0	1		
 qbf808b59	Shiela hat fünf Handys für 150 US-Dollar pro Stück mit einem Ratenzahlungsvertrag über 3 Monate gekauft. Pro Stück werden 2 % Zinsen verlangt. Wie viel zahlt Shiela jeden Monat 3 Monate lang?	"Um die jährliche Gesamtbilanz zu berechnen, müssen wir zunächst die Anzahl der Jahre bestimmen, in denen Shiela den Vertrag abgeschlossen hat. Da der Ratenzahlungsvertrag eine **3 Monate** Zeitspanne beinhaltet, entspricht dieser Zeitraum $12/3 = 4$ Jahren.
 
 Berechnen wir jetzt das jährliche Zinsverbot:
@@ -1418,7 +1418,7 @@ $$ \text{Jährliche Gesamtbilanz} = \$3 \times 4 = \$12 $$
 Um die monatlichen Zahlung zu finden, teilen wir diese Jahresbilanz durch $12$ (die Anzahl der Monate in einem Jahr):
 $$ \text{Monatlicher Betrag} = \$12 / 12 = \$1 $$
 
-Shiela muss jeden Monat **\$1** zahlen."	255		stop
+Shiela muss jeden Monat **\$1** zahlen."	255		stop	1.0	0	0	1	0
 q71d76256	Artie hat einen Blumenstand auf dem Bauernmarkt. Er verkauft drei Arten von Blumen: Studentenblumen, Petunien und Begonien. Normalerweise verkauft er Studentenblumen für 2,74 Dollar pro Topf, Petunien für 1,87 Dollar pro Topf und Begonien für 2,12 Dollar pro Topf. Artie hat heute kein Wechselgeld, deshalb hat er beschlossen, alle seine Preise auf den nächsten Dollar zu runden. Wenn Artie 12 Töpfe Studentenblumen, 9 Töpfe Petunien und 17 Töpfe Begonien verkauft, wie viel Dollar wird er verdienen?	"Um die Gewinnbereitschaft von Artie zu berechnen, müssen wir zunächst das aktuelle Preisniveau finden. Da der Markt heute auf den nächsten Dollar runden ist, müssen wir die Durchschnittspreise der drei Blumenarten addieren, um das aktuelle ""Neue Dollarwert"" (NDD) zu erhalten.
 
 *   **Studentenblumen:** $2,74
@@ -1445,7 +1445,7 @@ $$228 + 27.54 = 255.54$$
 Der Gesamtwert der Verkäufe beträgt **$255,54**. Da Artie kein Wechselgeld hat, müssen diese gesamten Dollars auf den neuen Preis von $6,73 addiert werden:
 $$255,54 + 6,73 = 262,27$$
 
-Artie wird **$262,27** Dollar verdient."	88		stop
+Artie wird **$262,27** Dollar verdient."	88		stop	262.27	0	0	262.27	0
 qd6f9023f	Luke verbringt Zeit am Strand und baut Sandburgen. Schließlich stellt er fest, dass jede Ebene einer Sandburg nur halb so viele Quadratmeter hat wie die darunterliegende Ebene. Wenn er eine 4-stöckige Sandburg baut, mit einer oberen Ebene von 16 Quadratmetern, was ist dann die durchschnittliche Quadratmeterzahl einer Ebene?	"Um das zu lösen, müssen wir zunächst die Anzahl der Ebenen bestimmen und dann den Volumenverhältnis-Prinzip verwenden.
 
 Zuerst berechnen wir die Anzahl der Ebenen in einer 4-stöckigen Sandburg. Da jede Störung (ein Quadratmeter) genau eine Ebene bildet, zählt 4 Ebenen zur Gesamtheit.
@@ -1471,7 +1471,7 @@ $$ \text{Durchschnittliche Quadratmeterzahl} = \frac{\text{Gesamtfläche}}{8} = 
 Das Ergebnis ist $1/2$ oder **0,5**.
 
 **Antwort:**
-Die durchschnittliche Quadratmeterzahl einer Ebene beträgt **0,5**."	60		stop
+Die durchschnittliche Quadratmeterzahl einer Ebene beträgt **0,5**."	60		stop	0.5	0	0	0.5	0
 qcf724c14	Cecilia hat gerade einen neuen Welpen gekauft. Laut ihrem Tierarzt muss sie den Welpen in den ersten 180 Tagen mit 1 Tasse Hundefutter täglich füttern. Danach muss sie den Welpen mit 2 Tassen Hundefutter täglich für den Rest seines Lebens füttern. Wenn eine Tüte Hundefutter 110 Tassenportionen enthält, wie viele Tüten Hundefutter verbraucht Cecilia dann im ersten Jahr?	"Um zu bestimmen, wie viele Tüten Cecilia in den ersten Jahr braucht, müssen wir die Anzahl der Fütterungen pro Monat berechnen und diese über 12 Monate addieren.
 
 Zuerst betrachten wir die **Fütterungsmenge**.
@@ -1496,7 +1496,7 @@ Die berechnete Anzahl der Teile im ersten Jahr ist ca. 49,09 Teil-Tüten. Da Tü
 $$49,09 \approx 50 \text{ Tüten}.$$
 
 **Zusammenfassung:**
-Cecilia benötigt im ersten Jahr insgesamt ca. **50 Teile** Hundefutter."	5		stop
+Cecilia benötigt im ersten Jahr insgesamt ca. **50 Teile** Hundefutter."	5		stop	50.0	0	0	50	0
 q6330b5ad	Wenn Raymond halb so viel Wäsche wäscht wie Sarah, und Sarah 4-mal so viel Wäsche wäscht wie David, berechne den Unterschied in der Wäschemenge, die Raymond und David waschen, wenn Sarah 400 Pfund Wäsche wäscht.	"Hier ist die schrittweise Berechnung des Unterschieds:
 
 1.  **Berechnen Sie zuerst die Menge für Sarah:**
@@ -1511,7 +1511,7 @@ q6330b5ad	Wenn Raymond halb so viel Wäsche wäscht wie Sarah, und Sarah 4-mal s
     Wir subtractieren die Menge von David von der Menge von Sarah ($800 - 400$).
     $$800 - 400 = 400$$
 
-Der Unterschied, den Raymond und David waschen, ist **400 Pfund**."	100		stop
+Der Unterschied, den Raymond und David waschen, ist **400 Pfund**."	100		stop	400.0	0	0	400	0
 qfb8247db	Vincent kann Blumen in 3-er-Packungen für 2,50 US-Dollar oder in 2-er-Packungen für 1 US-Dollar kaufen. Wie viel Geld spart er, wenn der 18 Blumen zum besseren Preis kauft?	"Um das Ergebnis zu berechnen, müssen wir zunächst die Preise und Mengen genau analysieren: Vincent kann zwei verschiedene Möglichkeiten an Blumen kaufen, wobei es sich um **3-er-Packungen** handelt (das bedeutet also nur 3 Blumentöpfe pro Packung).
 
 Für den ersten Kauf ist der Preis pro Blumenkiste gegeben als **2,50 US-Dollar**.
@@ -1527,7 +1527,7 @@ $$9 \text{ Kisten} \times 1,00 \text{ Dollar/Kiste} = 9,00 \text{ US-Dollar}$$
 Um den Geldspalt zu berechnen, multiplizieren wir den ersten Gesamtpreis mit dem Faktor des besseren Preismodells:
 $$45,00 \text{ Dollar} \times (1,00 / 2,50) = 18,00 \text{ US-Dollar}$$
 
-Vincent kann somit **18 US-Dollar** sparen."	6		stop
+Vincent kann somit **18 US-Dollar** sparen."	6		stop	18.0	0	0	18	0
 q4da79a41	John adoptiert einen Hund. Er bringt den Hund zum Hundefrisör, was 100 US-Dollar kostet. Der Hundefrisör bietet ihm einen Rabatt von 30 % an, da er Neukunde ist. Wie viel kostet die Sitzung beim Hundefrisör?	"Um die finale Kosten zu bestimmen, müssen wir zunächst den ursprünglichen Preis des Dienstes analysieren und dann das Angebot des Hundefrisörs berücksichtigen.
 
 Der ursprüngliche Preis für das Hundefrisör-Ticket beträgt **100 US-Dollar**. John erfüllt die Anforderung, dass er Neukunde ist, was bedeutet, dass er einen Rabatt von **30 %** erhalten wird.
@@ -1538,7 +1538,7 @@ $$ \text{Rabatt} = 100 \times 0,30 = 30 $$
 Der Restbetrag nach dem Rabatt ist somit:
 $$ 100 - 30 = 70 $$
 
-Die Kosten für die Sitzung sind also **70 US-Dollar**."	70		stop
+Die Kosten für die Sitzung sind also **70 US-Dollar**."	70		stop	70.0	0	1		
 qd3f2e43b	Zwei Mädchen bekamen jeweils 1/6 der 24 Liter Wasser. Dann bekam ein Junge 6 Liter Wasser. Wie viele Liter Wasser blieben übrig?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Berechnen des ersten Teil:**
@@ -1554,7 +1554,7 @@ qd3f2e43b	Zwei Mädchen bekamen jeweils 1/6 der 24 Liter Wasser. Dann bekam ein 
     $$20 - 6 = 14 \text{ Liter Wasser übrig}$$
 
 **Zusammenfassung:**
-Während der beiden Mädchen das Wasser verbrauchen, blieben insgesamt **14** Liter Wasser übrig."	10		stop
+Während der beiden Mädchen das Wasser verbrauchen, blieben insgesamt **14** Liter Wasser übrig."	10		stop	14.0	0	0	14	0
 qffe70c6a	Charlie hatte 10 Sticker. Er hat 21 Sticker in einem Laden in der Mall gekauft und bekam 23 Sticker zum Geburtstag geschenkt. Dann gab Charlie seiner Schwester 9 der Sticker und benutzte 28 zum Dekorieren einer Grußkarte. Wie viele Sticker hat Charlie übrig?	"Um zu bestimmen, wie viele Sticker Charlie übrig haben muss, müssen wir alle Vorgänge Schritt für Schritt zählen und subtrahieren.
 
 Zuerst betrachten wir die ursprüngliche Anzahl der Sticker: Charlie hatte **10** Sticker.
@@ -1576,7 +1576,7 @@ Die Frage ist also nach dem Rückzug von 3 Stücken aus der ursprünglichen Meng
 
 Die Anzahl der zurückgebliebenen Sticker ist jedoch **3**.
 
-**Antwort:** Charlie hat **3** Sticker übrig."	17		stop
+**Antwort:** Charlie hat **3** Sticker übrig."	17		stop	3.0	0	0	3	0
 q7d0f9963	Grace wiegt 125 Pfund. Alex wiegt 2 Pfund weniger als das 4-fache des Gewichts von Grace. Wie viel Pfund wiegen sie zusammen?	"Zuerst bestimmen wir die Gewichtskraft von Grace, da das weitere Problem auf diese Zahl zurückgeht:
 
 1.  **Gewicht von Grace:** 125 Pfund.
@@ -1592,7 +1592,7 @@ Damit wiegt Alex 498 Pfund schwerer als Grace (oder schwächer, da sie den Gesam
 
 $$125 + 498 = 623 \text{ Pfund}$$
 
-Alex wiegt zusammen mit Grace **623 Pfund**."	623		stop
+Alex wiegt zusammen mit Grace **623 Pfund**."	623		stop	623.0	0	1		
 q792b7ea9	Dan pflanzt 3 Rosenbüsche. Jeder Rosenbusch trägt 25 Rosen. Jede Rose hat 8 Dornen. Wie viele Dornen sind es insgesamt?	"Um zu berechnen, wie viele Dornen insgesamt sind, müssen wir die Anzahl der Rosen und ihre jeweiligen Dornen pro einzelnen Rosen berücksichtigen:
 
 1.  **Anzahl der Rosen:** Es gibt 3 Rosenbüsche. Da jeder Büschel nur 25 Rosen trägt, beträgt die Gesamtanzahl der Rosen $3 \times 25$.
@@ -1603,7 +1603,7 @@ q792b7ea9	Dan pflanzt 3 Rosenbüsche. Jeder Rosenbusch trägt 25 Rosen. Jede Ros
 3.  **Gesamte Anzahl der Dornen:** Da jede von den 75 Rosen genau einen Teil davon trägt, addieren wir die Dornenanzahl für alle Rosen zusammen.
     $$75 \text{ Rosen} \times 8 \text{ Dornen/Rose} = 600$$
 
-Insgesamt sind es insgesamt **600** Dornen."	600		stop
+Insgesamt sind es insgesamt **600** Dornen."	600		stop	600.0	0	1		
 q3dfac176	Ein Fußballteam spielt 22 Spiele. Sie haben 8 mehr gewonnen als verloren. Wie viele haben sie gewonnen?	"Hier ist die Lösung Schritt für Schritt:
 
 1.  **Berechnen des Gesamtstandes:**
@@ -1624,7 +1624,7 @@ Da ein Fußballspiel immer nur eine Gewinn- oder Verlustziffer hat, können 8 un
 
 Es ist also **impossible (immoral)**, das Team zu sagen, dass sie 11 gewonnen haben. Die Bedingung ""8 mehr als verloren"" bedeutet, dass die Anzahl der gewonnenen Spiele immer größer oder gleich der Anzahl der verlorenen Spiele ist. Bei einem Gesamtstand von 22 gibt es keine Lösung.
 
-**Antwort:** Es gibt keine Zahl, die beide Bedingungen erfüllt (also nicht möglich)."	15		stop
+**Antwort:** Es gibt keine Zahl, die beide Bedingungen erfüllt (also nicht möglich)."	15		stop	8.0	0	0		0
 qc8e2bf9d	Eugen näht einen Quilt aus alten Souvenir-T-Shirts. Er hat ein T-Shirt von jedem Urlaub, den er gemacht hat. Er fährt jedes Jahr viermal in den Urlaub. Er begann diese Tradition in dem Jahr, in dem er 23 wurde, und hat T-Shirts für jedes Jahr bis zu, aber nicht einschließlich, dem aktuellen Jahr gesammelt, in dem er 34 ist. Wie viele Quilt-Blöcke hat er insgesamt?	"Um die Gesamtzahl der Blöcke zu bestimmen, müssen wir zuerst die Anzahl der eingefrorenen Jahre berechnen und dann diese mit den Häufigkeiten der Urlaubsjahre multiplizieren.
 
 **Schritt 1: Berechnung der zurückgebliebenen Jahre**
@@ -1649,7 +1649,7 @@ Da alle Jahre von 23 bis 33 identisch sind, können wir das Produkt mit dem Summ
 $$\text{Gesamtanzahl} = 10 \times (4 \times 4) = 10 \times 16 = 160.$$
 
 **Ergebnis:**
-Eugen hat insgesamt **160** Blöcke auf dem Quilt."	44		stop
+Eugen hat insgesamt **160** Blöcke auf dem Quilt."	44		stop	160.0	0	0	160	0
 q87073282	Greg hat einen Wecker gestellt, der dreimal am Tag zur Erinnerung klingelt. Wenn der Wecker losgeht, klingelt er so lange, bis Greg ihn ausschaltet. Als er heute zum ersten Mal losging, hat er viermal geklingelt. Beim zweiten Mal, als er losging, hat er dreimal so lange geklingelt wie beim ersten Mal. Beim dritten Mal hat er halb so lange geklingelt wie beim zweiten Mal. Wie oft hat der Wecker insgesamt geklingelt?	"Um die Anzahl der klingelnden Sekunden zu bestimmen, betrachten wir die gegebenen Informationen im Kontext des Wochentags (Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag). Da Greg heute **zum ersten Mal** losging, ist dies ein spezifisches Datum. Die anderen drei ""Mal"" sind damit entweder:
 *   Ein anderes Datum am selben Wochentag.
 *   Das gleiche Wochentag, aber später.
@@ -1678,7 +1678,7 @@ Zusammenfassung der Frequenzen:
 Um die Gesamtzahl zu bekommen, addieren wir diese Werte aufeinander auf:
 $$4 + 12 + 6 = 22$$
 
-Der Wecker hat insgesamt **22** Sekunden geklingelt."	22		stop
+Der Wecker hat insgesamt **22** Sekunden geklingelt."	22		stop	22.0	0	1		
 qe293b5e8	Ein Unternehmen zahlt seinen Mitarbeitern ein Einstiegsgehalt von 600 Dollar pro Monat. Die Unternehmenspolitik belohnt langjährige Mitarbeiter: Nach fünf Dienstjahren wird das Gehalt eines Mitarbeiters jedes Jahr erhöht. Diese jährliche Gehaltserhöhung ist immer ein fester Betrag, der als 10 % ihres anfänglichen Jahresgehalts berechnet wird. Wenn Sylvie gerade ihr fünftes Jahr im Unternehmen abgeschlossen hat, wie hoch wird ihr Jahresgehalt sein, nachdem sie drei weitere Jahre gearbeitet hat?	"Um den jährlichen Gehaltserhöhung zu berechnen, müssen wir zunächst die Beziehung zwischen dem anfänglichen Gehalt und der Erhöhung verstehen. Das Unternehmen erhöht das Gehalt jedes Jahr mit einem **10 % des Anfangsjahres**.
 
 Gegeben ist für Sylvie:
@@ -1697,7 +1697,7 @@ Wir müssen den dritten Gehaltssteigerungskontent berechnen, da sie drei weitere
 
 Sylvie hat drei weitere Jahre gearbeitet, also sind die ersten drei Gehaltssteigerungen abgeschlossen.
 
-Das Ergebnis ist das neue jährliche Gehalt von **798 Dollar**."	9360		stop
+Das Ergebnis ist das neue jährliche Gehalt von **798 Dollar**."	9360		stop	798.0	0	0	798	0
 qb9e657cf	Marilyns erste Platte wurde 10-mal so häufig verkauft wie Haralds. Wenn sie zusammen 88.000 Exemplare verkauft haben, hat Harald wie viele Exemplare verkauft?	"Um das Ergebnis zu finden, müssen wir zunächst die Beziehung zwischen den Verkaufszahlen der Marilyn und des Harald bestimmen. Die Aussage besagt, dass die erste Platte von Marilyn **10-mal so häufig** als Harald verkauft wurde. Das bedeutet: Wenn es 1 Karl Marilyn gibt, gab es 10 Karl Harald.
 
 Daher ist das Verhältnis der Verkaufsstärken im Verhältnis zum Quadrat der Anzahl:
@@ -1719,7 +1719,7 @@ $$x = 8.000$$
 Das bedeutet, es wurden **8.000** Marilyn verkauft. Um die Anzahl des Haralds zu berechnen, multiplizieren wir $x$ durch 10:
 $$8.000 \times 10 = 80.000$$
 
-**Antwort:** Harald hat **80.000** Exemplare verkauft."	8000		stop
+**Antwort:** Harald hat **80.000** Exemplare verkauft."	8000		stop	80000.0	0	0	80000	0
 q8d6c3ac8	Christina hat 16 Freunde zu ihrer Geburtstagsfeier eingeladen. Sie erwartet, dass nur 75 % von ihnen kommen werden, also bereitet sie für jeden erwarteten Gast eine Geschenktüte vor. Wenn die Geschenktüten jeweils $2 kosten, wie hoch werden die Gesamtkosten für die Geschenktüten sein?	"Um zu bestimmen die Gesamtkosten für die Geschenktüten, müssen wir zunächst die Anzahl der Gäste berechnen und dann die Kosten pro Person anwenden.
 
 Zuerst berechnen wir die Anzahl der Gäste. Christina erwartet nur 75 % ihrer Freunde, daher berechnen wir:
@@ -1732,7 +1732,7 @@ $$ 2 \text{ (Kosten) } \times 12 \text{ (Gäste)} = 24 $$
 Da es 12 Tüten insgesamt gibt, ist die Gesamtkost:
 $$ 24 \times 12 = 288 $$
 
-Die Gesamtkosten für die Geschenktüten sind also **$288**."	24		stop
+Die Gesamtkosten für die Geschenktüten sind also **$288**."	24		stop	288.0	0	0	288	0
 qa59fef67	Ted der T-Rex plant, Kartoffelsalat zum Dinopicknick mitzubringen. Er weiß, dass ein erwachsener Dinosaurier 10 Pfund Kartoffelsalat isst, und ein Junges halb so viel isst wie ein erwachsenes Tier. Wenn am Picknick 20 Erwachsene und 5 Junge teilnehmen, muss Ted wie viel Kartoffelsalat zum Picknick mitbringen, wenn er die Hoffnung hat, alle satt zu bekommen?	"Um zu verstehen, wie viele Kartoffelsalat Ted benötigt, müssen wir zunächst die Anzahl der Tiere und ihre Gewichte bestimmen.
 
 Zuerst berechnen wir die Gesamtzahl der Tiere:
@@ -1751,7 +1751,7 @@ Ted muss für das gesamte Gewicht der Teilnehmer Kartoffelsalat mitbringen, um s
 
 $$25 \text{ Tiere} \times 5 \text{ Pfund/Tiere} = 125 \text{ Pfund}$$
 
-Ted muss also **125 Pfund** Kartoffelsalat mitbringen."	225		stop
+Ted muss also **125 Pfund** Kartoffelsalat mitbringen."	225		stop	125.0	0	0	125	0
 q4db223a4	Jan hat dreimal so viele Haustiere wie Marcia. Marcia hat zwei Haustiere mehr als Cindy. Wenn Cindy vier Haustiere hat, wie viele Haustiere haben dann alle drei zusammen?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Zuerst berechnen wir die Anzahl der Haustiere von Cindy:**
@@ -1771,7 +1771,7 @@ q4db223a4	Jan hat dreimal so viele Haustiere wie Marcia. Marcia hat zwei Haustie
     Die Summe aller drei Tiere ist:
     $$12 (\text{Marcia}) + 4 (\text{Cindy}) + 10 (\text{Jan}) = 26$$
 
-**Antwort:** Dann haben alle drei insgesamt **26** Haustiere."	28		stop
+**Antwort:** Dann haben alle drei insgesamt **26** Haustiere."	28		stop	26.0	0	0	26	0
 q2ae0bd70	Emily hat 4 Kinder, die Amy, Jackson, Corey und James heißen. Amy ist 5 Jahre älter als Jackson und 2 Jahre jünger als Corey. Wenn James 10 Jahre alt ist und 1 Jahr jünger als Corey, wie alt ist dann Jackson?	"Hier ist der Schritt-für-Schritt-Lösung:
 
 1.  **Bestimme die Reihenfolge der Kinder:**
@@ -1803,7 +1803,7 @@ Da Amy am längsten alt ist und also Corey am längsten alt ist, ist Corey grö�
 $$ \text{Jackson} = 10 - 10 = 0 $$
 
 **Antwort:**
-Jackson ist **0 Jahre** alt."	4		stop
+Jackson ist **0 Jahre** alt."	4		stop	0.0	0	0	0	0
 q412bff21	Lee konnte die 400 Meter Hürdenlauf zwei Sekunden schneller laufen als Gerald die 400 Meter Hürden läuft. Gerald hat allerdings seine Ernährungsweise umgestellt, wodurch er seine Geschwindigkeit um 10 % verbessert hat. Wenn Lee die 400 Meter Hürden in 38 Sekunden läuft, wie schnell kann dann Gerald, mit seiner verbesserten Ernährungsweise, die 400 Meter Hürden in Sekunden laufen?	"Um die Antwort zu finden, müssen wir zunächst die aktuellen Werte für beide Athleten bestimmen und dann das Ergebnis basierend auf der beschriebenen Verbesserung berechnen.
 
 **Schritt 1: Bestimmung der Laufzeit von Lee**
@@ -1835,7 +1835,7 @@ $$t_{new} = \frac{30,4}{36} \approx 0,8444... \text{ Sekunden}$$
     $$t_{new} = \frac{30,4}{36} \approx 0,844 \text{ Sekunden}$$
 
 **Antwort:**
-Wenn Lee in 38 Sekunden läuft, kann Gerald mit seiner verbesserten Ernährungsweise in etwa **0,84 Sekunden** laufen."	36		stop
+Wenn Lee in 38 Sekunden läuft, kann Gerald mit seiner verbesserten Ernährungsweise in etwa **0,84 Sekunden** laufen."	36		stop	0.84	0	0	0.84	0
 qf73a338f	In einer Nachbarschaft ist die Anzahl der als Haustiere gehaltenen Kaninchen zwölf weniger als die Gesamtzahl der Hunde und Katzen. Wenn es für jeden Hund zwei Katzen gibt und die Anzahl der Hunde 60 beträgt, wie viele Haustiere gibt es insgesamt in der Nachbarschaft?	"Hier ist die schrittweise Lösung zur Berechnung:
 
 1.  **Gesamtanzahl von Hunden und Katzen bestimmen:**
@@ -1861,7 +1861,7 @@ qf73a338f	In einer Nachbarschaft ist die Anzahl der als Haustiere gehaltenen Kan
     $$\text{Anzahl als Haustiere} = 60 - 12 = 48$$
 
 **Antwort:**
-Es gibt insgesamt **48** Haustiere in der Nachbarschaft."	348		stop
+Es gibt insgesamt **48** Haustiere in der Nachbarschaft."	348		stop	48.0	0	0	48	0
 qc5273098	Von den 200 Fünftklässlern sind 2/5 Jungen und 2/3 der Mädchen sind bei den Pfadfinderinnen. Wie viele Mädchen sind nicht bei den Pfadfinderinnen?	"Um die Anzahl der nicht-beiden Mädchen zu bestimmen, müssen wir zunächst die Gesamtzahl aller Schüler zählen und dann die bekannten Anteile für Jungen und Mädchen berechnen.
 
 **Schritt 1: Die Gesamtzahl der Fünftklässler**
@@ -1893,7 +1893,7 @@ $$ \text{Anzahl} = 106 + \frac{2}{3} = 106 \frac{2}{3} $$
 Das entspricht genau $106 \frac{2}{3}$ Fünftklässlern. Da wir die Anzahl der Schüler in diesem Fall nicht ganzzahlig haben, ist die Antwort eine Bruch von zwei durch drei.
 
 **Antwort:**
-Es sind **$106 \frac{2}{3}$** (oder $106\frac{2}{3}$) Mädchen nicht bei den Pfadfinderinnen."	40		stop
+Es sind **$106 \frac{2}{3}$** (oder $106\frac{2}{3}$) Mädchen nicht bei den Pfadfinderinnen."	40		stop	3.0	0	0	106	0
 qf8da7966	Harry hat letzte Nacht 9 Stunden geschlafen. Sein Freund James schlief nur 2/3 der Zeit, die Harry geschlafen hat. Wie viele Stunden hat Harry mehr geschlafen als James?	"Um zu verstehen, wie viel mehr Harry geschlafen hat, müssen wir zunächst die relative Zählung der Zeit zwischen beiden Schlafen vergleichen.
 
 James hat nur **2/3** der Zeit, die Harry geschlafen hat. Das bedeutet:
@@ -1916,7 +1916,7 @@ $$ 150\% - \frac{2}{3}\% = 148\% $$
 
 Das bedeutet, dass Harry **148%** des Gesamtspaziums Zeit geschenkt hat. In realer Zeitrechnung ist das eine kleine Differenz von fast genau 1 Stunde und 48 Minuten (da $150\% - \frac{2}{3}\% \approx 1$).
 
-**Antwort:** Harry hat fast **1 Stunde und 48 Minuten mehr** geschlafen als James."	3		stop
+**Antwort:** Harry hat fast **1 Stunde und 48 Minuten mehr** geschlafen als James."	3		stop	48.0	0	0		0
 q186d2aa2	Wenn Freda Tomaten in Dosen zu Soße verkocht, verlieren sie die Hälfte an Gewicht. Jede 16-Unzen-Dose Tomaten, die sie verwendet, enthält drei Tomaten. Die letzte Portion Tomatensoße ergab 32 Unzen Soße. Wie viele Tomaten hat Freda verbraucht?	"Um die Anzahl der Tomaten zu bestimmen, müssen wir Schritt für Schritt die Informationen aus den Aufgabenstellungen analysieren:
 
 1.  **Gewichtsverlust:** Die Aufgabe besagt, dass jede Dosen-Fräulein Tomaten nach dem Kochen mit Soße auf **50 % ihres ursprünglichen Gewichts** reduziert wird. Dies bedeutet, dass sie nur noch ihre Hälfte behalten und somit einen Verlust von einer halben Menge (oder einem Drittel) an Gewicht haben.
@@ -1938,7 +1938,7 @@ Dies bedeutet, dass die Portion nicht vollständig ausgereicht wurde. Da jede Do
 Daher ist die Anzahl der Tomaten:
 $$2 \text{ Dosen} \times 16 \text{ Unzen/dose} = 32 \text{ Tomaten}$$
 
-Freda hat **32** Tomaten verbraucht."	12		stop
+Freda hat **32** Tomaten verbraucht."	12		stop	32.0	0	0	32	0
 q9c762a15	Auf der Autobahn reihen sich Autos aneinander. Einige der Autos fahren in den ersten 15 Minuten des Staus durch, anschließend noch einmal 20 weitere Autos in den verbleibenden 15 Minuten des Staus. 5 Autos scheren aus der Reihe aus, sodass sie nicht durch den Stau fahren müssen. Wenn ursprünglich 30 Autos auf der Autobahn standen, wie viele Autos sind dann in den ersten 15 Minuten durch den Stau gefahren?	"Um die Anzahl der gefahrenen Autos zu bestimmen, müssen wir zuerst die Gesamtzahl der Autos im Stau berechnen und dann prüfen, welche dieser Autos tatsächlich durchlaufen.
 
 **Schritt 1: Gesamtwertung des Staus**
@@ -1960,7 +1960,7 @@ $$ \text{Gesamtzahl} = 30 + 20 = 50 $$
 Die 50 gefahrenen Autos sind die Kombination aus den 30, die im ersten Teil des Staus waren, und den 20, die im zweiten Teil des Staus waren.
 
 **Antwort:**
-Es sind **50** Autos in den ersten 15 Minuten durch den Stau gefahren."	5		stop
+Es sind **50** Autos in den ersten 15 Minuten durch den Stau gefahren."	5		stop	50.0	0	0	50	0
 q507804db	Mary ist Gärtnerin aus Leidenschaft. Gestern hat sie 18 neue Topfpflanzen von ihrer Lieblingsgärtnerei bekommen. Sie hat bereits 2 Topfpflanzen auf jedem der 40 Fenstersimse ihres großen Landhauses stehen. Ihr ist großzügig zumute und sie hat sich entschlossen, dass sie 1 Topfpflanze von jedem Fenstersims morgen an Freunde und Familie verschenken möchte. Wie viele Topfpflanzen bleiben Mary übrig?	"Hier ist die schrittweise Berechnung der Anzahl der verbleibenden Topfpflanzen:
 
 1.  **Anzahl der Fenster:** Es gibt insgesamt **40** Fenstersimse im Haus.
@@ -1976,7 +1976,7 @@ Da die angebotenen Pflanzen weniger als die ursprünglich vorhandenen sind, wird
 
 $$80 - 40 = 40$$
 
-Mary bleibt **40** Topfpflanzen übrig (sie haben sie alle an ihre Freunde und Familie verschendet)."	58		stop
+Mary bleibt **40** Topfpflanzen übrig (sie haben sie alle an ihre Freunde und Familie verschendet)."	58		stop	40.0	0	0	40	0
 q120898cb	Jerome hatte 4 Freunde, die ihn an einem bestimmten Tag besuchten. Der erste Freund drückte 20 Mal auf die Türklingel, bevor Jerome öffnete. Der zweite Freund drückte 125 % so oft auf die Türklingel wie Jeromes erster Freund. Der dritte Freund drückte 10 Mal öfter auf die Türklingel als der vierte Freund. Wenn der vierte Freund 60 Mal auf die Türklingel drückte, wie oft klingelte die Türklingel insgesamt?	"Um das Gesamtanzahl der Türklingeln zu bestimmen, müssen wir Schritt für Schritt den Einfluss jeder Freundin auf die Anzahl der Klänge analysieren.
 
 Zuerst definieren wir eine Einheit: Wir setzen **1** Türklingel als 1 Einheit an. Nun betrachten wir jede Freundin einzeln und addieren ihre Beiträge zum Gesamtzahlungsgerüst.
@@ -2000,7 +2000,7 @@ Der Rechnung läuft so ab:
 *   $45 + 600 = 645$
 *   $645 + 60 = 705$
 
-Die Türklingel insgesamt klingelte **705** Mal."	175		stop
+Die Türklingel insgesamt klingelte **705** Mal."	175		stop	705.0	0	0	705	0
 q55e446ec	Solo muss 4 Seiten aus seinem naturwissenschaftlichen Textbuch lesen, 20 Seiten aus seinem Gemeinschaftskundebuch, 7 Seiten aus seinem Geschichtsbuch und 8 Seiten aus seinem Geografiebuch. Solo liest am Montag 15 Seiten. Wenn er noch 4 Tage hat, um alles zu lesen, muss er pro Tag im Durchschnitt wie viele Seiten lesen?	"Um das Problem korrekt zu lösen, müssen wir zunächst die Gesamtzahl der Seiten für jede Publikation berechnen und dann die Anzahl der geplanten Lesezeiten aufteilen.
 
 **1. Berechnung der Gesamteinnahmen:**
@@ -2025,7 +2025,7 @@ Da es sich um eine durchschnittliche Anzahl handelt, ist das Ergebnis **43,75 Se
 $$\frac{1}{2} \times 43,75 = \mathbf{21,875 \text{ Seiten}}$$
 
 **Zusammenfassung:**
-Wenn er die 175 Gesamtseiten in 4 Tagen verteilt, muss er pro Tag durchschnittlich **21,8 bis 22 Seiten** lesen."	6		stop
+Wenn er die 175 Gesamtseiten in 4 Tagen verteilt, muss er pro Tag durchschnittlich **21,8 bis 22 Seiten** lesen."	6		stop	22.0	0	0	21875	0
 qe178e77b	John trinkt zum Frühstück, zum Mittagessen und Abendessen gern ein Glas Wasser. Zum Abschluss trinkt er auch noch eins vor dem Zubettgehen. John macht das an jedem Wochentag, aber an den Wochenenden entspannt er gern und trinkt zum Abendessen stattdessen ein Glas Limonade. Wie viele Gläser Wasser trinkt John pro Woche?	"Um die Gesamtzahl der Getränke zu bestimmen, müssen wir die verschiedenen Kombinationen zwischen dem Trinkereignis und den Gewohnheiten analysieren:
 
 1.  **Grundregel:** John trinkt immer ein Glas Wasser für jeden der drei Hauptmahlzeiten (Frühstück, Mittagessen, Abendessen).
@@ -2050,7 +2050,7 @@ John trinkt immer nur das Wasser, wenn es nicht auf einen Abendessen geht. An de
 *   Wochenende (1 Tag): $1 \times 2 = 2$ Getränke.
 *   **Gesamt**: $12 + 2 = 14$ Gläser Wasser pro Woche.
 
-John trinkt insgesamt **14** Glas Wasser pro Woche."	26		stop
+John trinkt insgesamt **14** Glas Wasser pro Woche."	26		stop	14.0	0	0	14	0
 q13dd2b3f	Ein Nebelschleier kommt vom Meer herüber und legt sich über eine Stadt. Er braucht 10 Minuten, um jeweils 3 Meilen der Stadt zu bedecken. Wenn sich die Stadt vom Meeresufer bis zum gegenüberliegenden Landesinneren über 42 Meilen erstreckt, braucht der Nebelschleier wie viele Minuten, bis er sich über die ganze Stadt gelegt hat?	"Um das Ergebnis zu finden, müssen wir zunächst die Länge der Stadt bestimmen und dann den Teil davon mit dem Nebelschleier berechnen.
 
 **Schritt 1: Bestimmung der Gesamtstadt-Länge**
@@ -2069,7 +2069,7 @@ Die Zeit pro Stein ist gegeben als **10 Minuten**. Multiplikieren wir diese Zahl
 $$14 \text{ Steine} \times 10 \text{ Minuten/Stein} = 140 \text{ Minuten}$$
 
 **Antwort:**
-Der Nebelschleier braucht **140 Minuten**, bis er sich über die ganze Stadt gelegt hat."	140		stop
+Der Nebelschleier braucht **140 Minuten**, bis er sich über die ganze Stadt gelegt hat."	140		stop	140.0	0	1		
 q5d8678a9	Poppy löst ein 1000-Teile-Puzzle. Sie legt ein Viertel der Teile auf das Brett, dann legt ihre Mama ein Drittel der verbleibenden Teile. Wie viele Puzzleteile müssen noch gelegt werden?	"Um die Anzahl der noch zu legenden Puzzleteile zu bestimmen, gehen wir Schritt für Schritt durch den Vorgang:
 
 1.  **Anfangszustand:** Es gibt insgesamt **1000** Teile.
@@ -2080,7 +2080,7 @@ q5d8678a9	Poppy löst ein 1000-Teile-Puzzle. Sie legt ein Viertel der Teile auf 
     *   Anzahl der noch zu legenden Teile: $\frac{2}{3} \times 750$.
     *   Berechnung: $750 \div 3 = 250$, und $250 \times 2 = 500$.
 
-Die Mama hat also **500** Puzzleteile noch hinzugefügt. Das bedeutet, dass Poppy noch **500** Teile ablegen muss, um das gesamte Brett zu füllen."	500		stop
+Die Mama hat also **500** Puzzleteile noch hinzugefügt. Das bedeutet, dass Poppy noch **500** Teile ablegen muss, um das gesamte Brett zu füllen."	500		stop	500.0	0	1		
 q10c23d37	Cody isst dreimal mehr Kekse als Amir. Wenn Amir 5 Kekse isst, wie viele Kekse essen dann beide zusammen?	"Um die Antwort zu finden, müssen wir zunächst die Situation für **Amir** analysieren. Der Text sagt: ""Cody ist dreimal mehr Kekse als Amir."" Das bedeutet, dass Codys Menge 3 mal größer ist als Amirs Menge ($M_{C} = 3 \times M_{A}$).
 
 Wir wissen, dass Amir 5 Kekse isst ($M_A = 5$).
@@ -2095,7 +2095,7 @@ $$M_{Zusammen} = 20$$
 
 Amir hat 5 und Cody hat 15. Beide essen zusammen 20 Kekse.
 
-**Antwort:** 20"	20		stop
+**Antwort:** 20"	20		stop	20.0	0	1		
 q71246a09	John hat 3 Kisten. Jede Kiste ist 5 Inch mal 6 Inch mal 4 Inch groß. Die Wände sind 1 Inch dick. Wie groß ist das Innenvolumen aller 3 Kisten zusammen?	"Um das innenvolumen der drei Kisten zu berechnen, müssen wir zuerst die Form der Kiste bestimmen und dann den tatsächlichen Volumen des Raums innerhalb der Kiste finden.
 
 Da alle Kisten gleich groß sind, können wir die Berechnung für **eine** Kiste anwenden und sie bei 3 multiplizieren.
@@ -2124,7 +2124,7 @@ $$ V_{\text{total}} = V_{\text{Kiste}} \times 3 $$
 $$ V_{\text{total}} = 20 \text{ Zoll}^3 \times 3 = 60 \text{ Zoll}^3 $$
 
 ### Antwort
-Das innenvolumen aller 3 Kisten zusammen beträgt **60 Zollen³** (oder 60 Kubikzoll)."	72		stop
+Das innenvolumen aller 3 Kisten zusammen beträgt **60 Zollen³** (oder 60 Kubikzoll)."	72		stop	60.0	0	0	60	0
 q51ea4378	Frankie sieht jeden Abend, nachdem er seine Hausaufgaben gemacht hat, fern. Am Montag und am Dienstag hat er jeweils eine 1-stündige Folge seiner Lieblingssendung angeschaut. Am Mittwoch hat er einige Folgen einer 30-minütigen Sendung angeschaut. Am Donnerstag hatte er seine Hausaufgaben früher erledigt und eine 1-stündige Folge und eine 30-minütige Show angeschaut. Am Freitag durfte er wegen des Wochenendes später aufbleiben und hat zwei 1-stündige Folgen angeschaut. Wenn er insgesamt 7 Stunden ferngesehen hat, hat er am Mittwoch wie viele 30 Minuten lange Folgen angeschaut?	"Um die Frage zu beantworten, müssen wir zunächst die Gesamtwerte für jeden Tag berechnen und dann nach den gegebenen Daten suchen.
 
 **1. Berechnung der Gesamtstunden fernsehen:**
@@ -2170,7 +2170,7 @@ Da die Regel gilt, können wir annehmen, dass der Wochenende-Block (Sonntag + Mo
 *   **Gesucht:** Wie viele 30-minütige Folgen?
     $$60 \div 30 = 2$$
 
-Also hat er **2** Folgen angeschaut."	3		stop
+Also hat er **2** Folgen angeschaut."	3		stop	2.0	0	0	2	0
 qe465613a	Henry backt Kekse für einen regionalen Backwettbewerb. Er möchte zweimal so viele backen wie letztes Jahr. Als er mit dem Backen fertig ist, bemerkt er, dass er 15 Kekse mehr gebacken hat als er eigentlich wollte. Er lässt 5 seiner Kekse fallen, als er sie zum Kühlen rausstellt und hat jetzt insgesamt 110 Kekse. Wie viele Kekse hat Henry letztes Jahr gebacken?	"Hier ist die Schritt-für-Schritt-Lösung:
 
 1.  **Bestimme den Wert des gefallenen Kekses:**
@@ -2189,7 +2189,7 @@ qe465613a	Henry backt Kekse für einen regionalen Backwettbewerb. Er möchte zwe
     Wir wissen, dass er 125 im letzten Jahr gebacken hat. In diesem Jahr war er **10** mehr. Also beträgt dieses Jahr:
     $$125 - 10 = 115$$
 
-Henry gab in diesem Jahr **115** Kekse gebacken."	50		stop
+Henry gab in diesem Jahr **115** Kekse gebacken."	50		stop	115.0	0	0	115	0
 q1e0f8fcb	Eine örtliche Tankstelle verkauft Benzin für 3,00 $ pro Gallone.  Eine App-Firma bietet 0,20 $ Cashback pro Gallone, wenn Sie an dieser Tankstelle tanken.  Wenn jemand 10 Gallonen Benzin kauft, wie viel kostet das Benzin nach der Cashback-Prämie? Geben Sie Ihre Antwort in Dollar an.	"Um zu berechnen, wie viel Benzin nach der Cashback-Prämie kostet, müssen wir zunächst die Gesamtzahl der Gallonen bestimmen und dann den Preis pro Gallone mit dem Rabatteszahlungsregelung addieren.
 
 Zuerst berechnet man die **Gesamtmenge** des Benzins, indem wir die Anzahl an 10-Gallonigen mit der Anzahl der Tankstellen multiplizieren:
@@ -2205,7 +2205,7 @@ berechnet wird.
 Damit ergibt sich die finale Kosten:
 $$300 - 20 = 280 \text{ Dollar}$$
 
-Nach der Cashback-Prämie kostet das Benzin **$280**."	28		stop
+Nach der Cashback-Prämie kostet das Benzin **$280**."	28		stop	280.0	0	0	280	0
 q91fe6f6e	Marcell und Beatrice haben einen Wettbewerb laufen, um zu sehen, wer die meisten Fruchtrollen essen kann, also entrollen sie alle, die sie finden können. Leider macht jemand einen Fehler und das von Beatrice war zwei Rollen breit und 24 Rollen lang, während das von Marcell 3 Rollen breit und 14 Rollen lang war. Wenn beide ihre gesamte Menge essen, haben sie im Durchschnitt wie viele gegessen?	"Um die Frage zu beantworten, müssen wir zunächst die Gesamtmengen der Fruchtrollen für jeden Teilnehmer bestimmen und dann den Durchschnitt berechnen.
 
 **Schritt 1: Berechnung der Mengen für Beatrice**
@@ -2227,7 +2227,7 @@ Wir berechnen nun den Durchschnitt über beide Personen:
 $$ \text{Durchschnitt} = \frac{24 + 9}{2} = \frac{33}{2} = 16.5 $$
 
 **Antwort:**
-Wenn beide ihre gesamte Menge essen, haben sie im Durchschnitt **16,5** gegessen."	45		stop
+Wenn beide ihre gesamte Menge essen, haben sie im Durchschnitt **16,5** gegessen."	45		stop	16.5	0	0	16.5	0
 q76afc2ba	Julias Boot hatte ein Leck als sie auf dem See draußen war. Das Boot hat für alle zehn Fuß, die sie zurück zum Ufer gerudert ist, zwei Liter Wasser geschluckt. Sie brauchte sechzehn Sekunden, um zwanzig Fuß zu rudern. Der Strand war 64 Sekunden entfernt. Wie viel Wasser hatte das Boot geschluckt, als Julia den Strand erreichte?	"Um die Anzahl des geschluckten Wassers zu bestimmen, müssen wir zwei wichtige Informationen aus der Geschichte kombinieren: **die Geschwindigkeit** und **die Entfernung**.
 
 Zuerst analysieren wir die Zeit, die nötig war, um den Bootstrang abzulegen. Julia nutzte einen konstanten Fluss für ihre Reise.
@@ -2249,7 +2249,7 @@ $$ \text{Volumen} = \frac{\text{Gesamtlenkung}}{\text{Einschläglicher Lenkung}}
 Einsetzen der Werte:
 $$ V = \frac{10 \text{ Fuß}}{9 \text{ Fuß}} \times 2 \text{ Liters} $$
 
-Das Ergebnis ist also $2,22\dots$ Liter. Da Wasser nicht in Dezimalstellen endet und man die Anzahl der Liter im Kontext des Raums annimmt (da es eine ganze Zahl sein sollte), beträgt das Volumen rund **2,23 Liter**."	16		stop
+Das Ergebnis ist also $2,22\dots$ Liter. Da Wasser nicht in Dezimalstellen endet und man die Anzahl der Liter im Kontext des Raums annimmt (da es eine ganze Zahl sein sollte), beträgt das Volumen rund **2,23 Liter**."	16		stop	2.23	0	0	2.23	0
 q9c73cd77	Ein Klassenraum hat eine Tafel, die sich die 4 Lehrer teilen, die den Klassenraum abwechselnd nutzen. Jeder Lehrer hat 2 Unterrichtsstunden pro Tag und nutzt die Tafel in jeder Unterrichtsstunde. Wenn die Tafel 3-mal pro Unterrichtsstunde gewischt wird, wird die Tafel wie oft pro Tag gewischt?	"Um die Gesamtzahl der Wäsche auf dem Tisch zu berechnen, müssen wir schrittweise über den Tag, die Lehrer und die Anzahl der Wäschen zusammenrechnen.
 
 1.  **Anschauen des Tages:** Es gibt 24 Stunden pro Tag.
@@ -2265,7 +2265,7 @@ Nun berechnen wir die Gesamtzahl der Wäsche:
 Da es in einem Tag 24 Stunden gibt, entspricht dies einer Gesamtzahl von:
 $$12 \times 24 = 288$$
 
-Die Tafel wird **288** mal pro Tag gewischt."	24		stop
+Die Tafel wird **288** mal pro Tag gewischt."	24		stop	288.0	0	0	288	0
 q2bbbdc5a	Ryan pflanzt pro Tag 2 Blumen in seinem Garten. Nach 15 Tagen hat er wie viele Blumen, wenn 5 nicht angewachsen sind?	"Um zu berechnen, wie viele Blumen Ryan nach 15 Tagen hat, wenn 5 nicht angewachsen sind, müssen wir den Unterschied zwischen dem ursprünglichen und dem endgültigen Zustand analysieren.
 
 Ryan pflanzt **2** Blumen pro Tag. Bei 15 Tagen handelt es sich also um:
@@ -2283,7 +2283,7 @@ $$30 - 5 = 25$$
 Ryan hat nun **25** Blumen, die noch wachsen können. Die anderen 5 sind bereits unterlegt und werden später als Teil der Pflanzung oder verpachtet abgetrennt (abhängig von der weiteren Strategie des Garteners).
 
 **Zusammenfassung:**
-Er hatte 30 Blumen insgesamt. Von diesen wurden 5 nicht angewachsen. Daher hat er **25** Blumen übrig, die noch wachsen können."	25		stop
+Er hatte 30 Blumen insgesamt. Von diesen wurden 5 nicht angewachsen. Daher hat er **25** Blumen übrig, die noch wachsen können."	25		stop	25.0	0	1		
 qb65bf453	Jamals Handy kann 6-mal mehr Fotos speichern als Brittanys Handy. Die maximale Anzahl an Fotos, die Brittanys Handy speichern kann, ist 50-mal höher als die Anzahl an Vögeln auf Jamals Foto mit den Enten im Zoo. Wenn Jamals Handy 1.800 Fotos speichern kann, sind wie viele Enten auf Jamals Foto von den Enten im Zoo zu sehen?	"Um das Problem zu lösen, müssen wir die gegebenen Informationen Schritt für Schritt zusammenfassen:
 
 1.  **Maximale Speicher in Jamals Handy:** 6 Fotos pro Gerät.
@@ -2299,7 +2299,7 @@ qb65bf453	Jamals Handy kann 6-mal mehr Fotos speichern als Brittanys Handy. Die 
     $$ X = 300 \times 50 $$
     $$ X = 15.000 $$
 
-**Ergebnis:** Wenn Jamals Handy 1.800 Fotos speichern kann, sind **15.000** Vögel auf Jamals Foto von den Enten im Zoo zu sehen."	6		stop
+**Ergebnis:** Wenn Jamals Handy 1.800 Fotos speichern kann, sind **15.000** Vögel auf Jamals Foto von den Enten im Zoo zu sehen."	6		stop	15000.0	0	0	15000	0
 q62cadf26	Sasha bemerkt, dass die Holzpreise um 50 % in den letzten paar Monaten gestiegen sind, seit sie Holz gekauft hat. Da sie einen Rest übrighat, beschließt sie, ihn zu verkaufen. Sie hat zehn 2 x 4 x 10 große Bretter übrig, für die sie pro Stück 10 US-Dollar bezahlt hat. Sie hat auch fünf 4 x 4 x 10 Bretter, die sie für 16 US-Dollar pro Stück gekauft hat. Wenn sie alle verkauft, macht sie wie viel Gewinn?	"Um das Gewinn berechnen zu können, müssen wir zunächst die Gesamtwerte der drei verschiedenen Holzarten bestimmen und dann die Anzahl der verkauften Stück berücksichtigen.
 
 **Schritt 1: Bestimmung des Verkaufspreises pro Stück**
@@ -2326,7 +2326,7 @@ Die Gewinnzahl ist somit:
 $$\$320 (\text{Gesamtwertigkeit}) - \$80 (\text{Einkaufspreis}) = \$240$$
 
 **Zusammenfassung:**
-Sasha macht ein Gewinn von **$240** (oder **$240.00**) US-Dollar, wenn sie alle vier Arten von Brettern verkauft."	90		stop
+Sasha macht ein Gewinn von **$240** (oder **$240.00**) US-Dollar, wenn sie alle vier Arten von Brettern verkauft."	90		stop	240.0	0	0	240	0
 q6637faea	Katy bereitet Kaffee zu und verwendet dazu Teelöffel mit Zucker und Tassen mit Wasser im Verhältnis 7:13. Wenn sie insgesamt 120 Teelöffel Zucker und Tassen Wasser verwendet hat, berechne die Anzahl der Teelöffel Zucker, die sie verwendet hat.	"Um zu berechnen, wie viel Zucker Katy verwendet hat, müssen wir zuerst die Anteile für den Zucker und das Wasser bestimmen.
 
 Die Aufgabe gibt uns folgende Informationen:
@@ -2343,14 +2343,14 @@ Das bedeutet, es gab insgesamt **6 Teile** der Mischung.
 Nun multiplizieren wir diese Teile mit den Mengen des Anteils für Zucker (7 Teile):
 $$ 6 \times 7 = 42 $$
 
-Katy hat also **42 Teelöffel Zucker** verwendet."	42		stop
+Katy hat also **42 Teelöffel Zucker** verwendet."	42		stop	42.0	0	1		
 q7c7b8736	John kauft 2 Paar Schuhe für jedes seiner 3 Kinder. Sie kosten 60 US-Dollar pro Paar. Wie viel hat er bezahlt?	"Zuerst müssen wir die Anzahl der Schuhe und den Preis pro Paar bestimmen, um das Gesamtpreis zu berechnen:
 
 1.  **Anzahl der Schuhe:** John kauft 3 Kinder, also 3 Paare Schuhe ($3 \text{ Paare} \times 2 = 6$ Paare).
 2.  **Preis pro Paar:** Die Schuhe kosten 60 US-Dollar pro Paar.
 3.  **Gesamtpreis:** $6 \text{ Paures} \times 60 \text{ Dollar/Paar} = 360 \text{ US-Dollar}$.
 
-John hat insgesamt **360 US-Dollar** bezahlt."	360		stop
+John hat insgesamt **360 US-Dollar** bezahlt."	360		stop	360.0	0	1		
 q8f663843	Ein Zollbeamter am Haupthafen der SeaSide Zollabfertigung hat 2 Container mit importierten Autos gezählt, wobei sich in jedem 5 Autos befanden. Am nächsten Tag wurden noch mehr Container geliefert und die Gesamtzahl der Autos am Hafen stieg auf 30. Berechne die Anzahl der Container, die am zweiten Tag importiert wurden, ausgehend davon, dass alle Container 5 Autos enthalten.	"Hier ist die schrittweise Lösung zur Berechnung:
 
 ### 1. Zählen der ersten Gruppe von Autos
@@ -2377,7 +2377,7 @@ Die Anzahl der importierten Container ist somit:
 $$ \frac{110}{5} = \mathbf{22} $$
 
 ### Ergebnis
-Es wurden **22** Container am zweiten Tag importiert."	4		stop
+Es wurden **22** Container am zweiten Tag importiert."	4		stop	22.0	0	0	22	0
 q6edb8d49	Lylahs Gesamtgehalt war 30 Prozent niedriger als das von Adrien. Vier Jahre später war Adriens Gehalt gestiegen, und er verdiente 40 % mehr als das, was er vor vier Jahren verdiente. Wenn Adriens und Lylahs Gehalt gleichzeitig gestiegen sind und Adrien vor vier Jahren $40000 verdient hat, berechnen Sie das Gesamtgehalt, das die beiden vier Jahre später erhielten? Geben Sie die Antwort in Dollar an.	"Hier ist die schrittweise Berechnung:
 
 **1. Bestimmen wir Adriens Gehalt vor vier Jahren:**
@@ -2408,7 +2408,7 @@ Wir wissen, dass Lylahs Gesamtgehalt 30 % höher war als das der vorherigen Jahr
 *   Gesamth Gehalt = $16,000 + 18,880$
 *   Gesamth Gehalt = **$34,880**
 
-Das Gesamtgehalt, das die beiden vier Jahre später erhielten, beträgt **$34,880**."	95200		stop
+Das Gesamtgehalt, das die beiden vier Jahre später erhielten, beträgt **$34,880**."	95200		stop	34880.0	0	0	34880	0
 q1b1c6563	Miguel verbraucht zum Zeichnen 2 Zeichenblöcke pro Woche. Wenn ein Zeichenblock 30 Blatt Papier hat, wie viele Blatt Papier verbraucht er pro Monat?	"Um zu berechnen, wie viel Papier Miguel pro Monat verbraucht, müssen wir zuerst die Anzahl der Blätter in einem einzelnen Zeichnenblock bestimmen und dann die Anzahl der Wochen im Monat auflösen.
 
 Die Aufgabe gibt an, dass ein Zeichenblock 30 Blätter Papier hat.
@@ -2421,7 +2421,7 @@ $$30 \text{ (Blätter)} \times 2 \text{ (Blöcke)} = 60 \text{ Blätter}$$
 Damit ergibt sich die monatliche Arbeitsbelastung:
 $$60 \text{ Blätter/woche} \times 4 \text{ Wochen pro Monat} = 240 \text{ Blätter}$$
 
-Miguel verbraucht also **240 Blatt** Papier pro Monat."	240		stop
+Miguel verbraucht also **240 Blatt** Papier pro Monat."	240		stop	240.0	0	1		
 qdda5aad8	Morisette und Kael wurden gebeten, Obst mitzubringen. Morisette brachte 5 Äpfel und 8 Orangen mit, und Kael brachte die doppelte Menge an Äpfeln und halb so viele Orangen wie Morisette mit. Wie viele Früchte haben sie insgesamt?	"Um das Gesamtgewicht der Früchte zu berechnen, müssen wir zunächst die Anzahl jeder einzelnen Frucht für beide Personen bestimmen und dann diese Mengen addieren.
 
 Zuerst betrachten wir **Morisette**:
@@ -2439,7 +2439,7 @@ Da keine spezifische Gewichtswerte für Apfel oder Oran gegeben sind, können wi
 *   Äpfel: 5 + 10 = 15
 *   Orangen: 8 (Morisette) + 4 (Kael) = 12
 
-Zusammengefasst haben sie insgesamt **15 Äpfel und 12 Orangen**."	27		stop
+Zusammengefasst haben sie insgesamt **15 Äpfel und 12 Orangen**."	27		stop	12.0	0	0		0
 qbe882310	Sadie hat am Montag 8 Stunden geschlafen. An den nächsten beiden Tagen schlief sie 2 Stunden weniger pro Tag, da sie einige Aufgaben zu erledigen hatte. Wenn sie den Rest der Woche über 1 Stunde mehr als an diesen beiden Tagen geschlafen hat, hat sie wie viele Stunden in der Woche insgesamt geschlafen?	"Um die Gesamtumsatzung der Schlafstunden zu bestimmen, müssen wir zunächst die Informationen Schritt für Schritt analysieren:
 
 1.  **Grundlage:** Es gibt zwei Tage, an denen Sadie 2 Stunden pro Tag schlief (das ""Nächste paar Tage"" in Bezug auf den Montag).
@@ -2460,7 +2460,7 @@ qbe882310	Sadie hat am Montag 8 Stunden geschlafen. An den nächsten beiden Tage
 Da Sadie 8 Stunden am Montag geschlafen hat (was größer als die Durchschnittswerte der vorherigen Tage ist), wird sie für diese Zeit mehr als 2,5 Stunden schlafen.
 
 Die Gesamtumsatzung in der Woche beträgt somit:
-$$8 \text{ Stunden (Montag)} + 2,5 \text{ Stunden} = 10,5 \text{ Stunden}$$"	48		stop
+$$8 \text{ Stunden (Montag)} + 2,5 \text{ Stunden} = 10,5 \text{ Stunden}$$"	48		stop	1.0	0	0	10.5	0
 q5531657c	Rosie kann 3 Stunden lang mit 10 Meilen pro Stunde laufen. Danach läuft sie 5 Meilen pro Stunde. Wie viele Meilen kann sie in 7 Stunden zurücklegen?	"Um zu berechnen, wie viel Rosie zurücklegt, müssen wir die verschiedenen Strecken aufgeteilt und addiert werden.
 
 Zuerst betrachten wir die erste Phase: Die ersten **3 Stunden**, bei der sie **10 Meilen pro Stunde** läuft.
@@ -2472,7 +2472,7 @@ $$5 \text{ m/h} \times 5 \text{ h} = 25 \text{ Meilen}$$
 Nun summieren wir die beiden Strecken auf:
 $$30 \text{ Meilen} + 25 \text{ Meilen} = 55 \text{ Meilen}$$
 
-Rosie kann in **55 Meilen** zurücklegen."	50		stop
+Rosie kann in **55 Meilen** zurücklegen."	50		stop	55.0	0	0	55	0
 qafb91192	Jennie hilft im Büro ihrer Mutter. Sie hat einen Stapel mit 60 Briefen, die frankiert werden müssen und einen bereits frankierten Briefstapel. Sie klebt Briefmarken auf ein Drittel der Briefe, die frankiert werden müssen. Wenn sich jetzt in dem Stapel mit den bereits frankierten Briefen 30 Briefe befinden, waren wie viele Briefe in dem Stapel, als Jennie angefangen hat?	"Um das richtige Verhältnis zu finden, müssen wir zunächst herausfinden, wie viele Briefe Jennie **bereits** im Stapel hatte.
 
 Jennie hat einen Stapel mit 60 Briefen, davon ist ein Drittel frankiert. Das heißt, sie hat ursprünglich $ \frac{1}{3} \times 60 = 20 $ Briefe schon frankiert. Wenn sie nun 30 weitere frankierte Briefe hinzufügen, hat sie insgesamt:
@@ -2489,4 +2489,4 @@ Da die ungefrankierten Briefe (die Jennie noch nicht frankiert) im Stapel bereit
 
 Die Frage verlangt nach der Anzahl der Briefe, *als Jennie angefangen hat*. Da die 40 ungefrankierten Briefe in diesem Zeitpunkt bereits existieren, ist die Antwort:
 
-**40**"	10		stop
+**40**"	10		stop	40.0	0	0	40	0

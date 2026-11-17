@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	D'Enta von d'r Janet legat 16 Eier am Tag. Morgens zum Frühschtück isst se drei, und vier nimmt se jeden Dag zum Muffinsbacka für ihre Freind. Was iebrig bleibt, verkauft se jeden Tag auf em Bauramarkt für 2 US-Dollar pro frischem Entenei. Wia viel Dollar nimmt se jeden Tag auf em Bauramarkt ei?	"D’Janet ihr Enta legt 16 Eier am Tag.
 
 - Frühschtück: −3 Eier  
@@ -22,7 +22,7 @@ So the answer is 18 US dollars per day.
 
 I should respond in a friendly way, perhaps acknowledging the dialect. I could answer in the same dialect or in standard German/English. The user wrote in dialect, so responding in a similar friendly tone would be nice. I'll answer in English with maybe a touch of the dialect, or just clearly explain. Let me answer clearly with the calculation, perhaps in a mix. I'll keep it simple and clear, maybe respond in the dialect style lightly but ensure clarity.
 
-Answer: 16 - 3 - 4 = 9 eggs left; 9 × $2 = $18 per day."	stop
+Answer: 16 - 3 - 4 = 9 eggs left; 9 × $2 = $18 per day."	stop	18.0	0	1		
 qa55f7050	Für a Kleid braucht ma 2 Knäuel blaue Wolle und halb so viel weiße Wolle. Wia viele Knäuel braucht ma insgesamt?	"Fürs Kleid brauchst du:
 
 - **2 Knäuel blaue Wolle**
@@ -47,7 +47,7 @@ Let me respond in a way that matches the tone - maybe a bit of dialect-friendly 
 
 ""Fürs Kleid brauchst du 2 Knäuel blaue Wolle. Halb so viel weiße Wolle sind 2 ÷ 2 = 1 Knäuel weiß. Insgesamt also 2 + 1 = 3 Knäuel.""
 
-That's clear and correct."	stop
+That's clear and correct."	stop	3.0	0	1		
 qde1bef8b	D'r Josh will a Haus kaufa und wieder verkaufa. Er kauft des Haus für $80.000 und steckt danoch $50.000 in Reparatura nei. Dadurch isch dr ursprüngliche Wert vom Haus om 150% gstiega. Wia viel Gewinn hot er in Dollar gmacht?	"Josh hot an **Gewinn vo $70.000** gmacht.
 
 So chunsch druf:
@@ -250,7 +250,7 @@ Berechnung:
 - Neuer Wert: Der ursprüngliche Wert ($80.000) ist um 150% gestiegen, also $80.000 × (1 + 1,50) = $80.000 × 2,5 = $200.000
 - Gewinn: Verkaufspreis ($200.000) - Gesamtkosten ($130.000) = $70.000""
 
-I'll provide the answer in standard German with the calculation steps clearly shown."	stop
+I'll provide the answer in standard German with the calculation steps clearly shown."	stop	70000.0	0	1		
 q568beb1f	Dr James nemmt sich vor, 3-mal pro Woch 3 Kurzschtreckenläufe zu macha. Bei jedem Kurzschtreckenlauf läuft er 60 Meter. Wia viele Meter läuft er insgesamt pro Woche?	"Dr. James lauft insgsamt **540 Meter pro Woche**.
 
 Rechnung:
@@ -271,7 +271,7 @@ Calculation:
 
 Answer: 540 Meter pro Woche.
 
-I'll keep it simple and clear. Maybe respond in a similar dialect-friendly tone but standard German is fine. Let me write in German."	stop
+I'll keep it simple and clear. Maybe respond in a similar dialect-friendly tone but standard German is fine. Let me write in German."	stop	540.0	0	1		
 q84afe4d6	D'Wendi gibt jedem von ihre Hühner jeden Tag drei Tassen gemischtes Hühnerfutter mit Samen, Mehlwürmern und Gemüse, damit se gsund bleibat. Se füttert d'Hühner in drei einzelne Mahlzeita. Morgens gibt se ihrer Hühnerschar 15 Tassen Futter. Nachmittags krieget d'Hühner nomal 25 Tassen Futter. Wia viele Tassen Futter braucht se für d'letzte Mahlzeit vom Tag, wenn d'Wendi 20 Hühner hot?	"Jedes Huhn kriegt 3 Tassa am Tag, und d’Wendi hot 20 Hühner:
 
 20 × 3 = **60 Tassa Futter insgesamt pro Tag**
@@ -303,7 +303,7 @@ Let me write:
 - Morgens 15 + Nachmittags 25 = 40 Tassen.
 - Letzte Mahlzeit: 60 − 40 = 20 Tassen.
 
-Answer: 20 Tassen Futter."	stop
+Answer: 20 Tassen Futter."	stop	20.0	0	1		
 qd07ea681	Dr Kylar isch in a Gschäft ganga, um Gläser für sei neue Wohnung zu kaufa. A Glas koschtet 5 Dollar, aber jedes zweite Glas koschtet bloß 60% vom Preis. Dr Kylar will 16 Gläser kaufa. Wia viel muss er dafür zahla?	"Dr Kylar muass **64 Dollar** zahla.
 
 So chunsch druf:
@@ -375,7 +375,7 @@ Oder:
 - 8 Gläser zu 3 Dollar (60% vo 5) = 24 Dollar
 - Total: 64 Dollar""
 
-That should be clear and helpful."	stop
+That should be clear and helpful."	stop	64.0	0	1		
 q912b86d0	Toulouse hot zweimal so viele Schafe wie Charleston. Charleston hot 4-mal so viele Schoaf wie Seattle. Wia viele Schoaf hend Toulouse, Charleston und Seattle zamma, wenn Seattle 20 Schoaf hot?	"Des isch a klassische Kettarechnung! 😄
 
 So gangt's:
@@ -415,7 +415,7 @@ Let me verify:
 
 Yes, 260.
 
-I'll respond in a friendly manner, using the dialect lightly, and give the clear math."	stop
+I'll respond in a friendly manner, using the dialect lightly, and give the clear math."	stop	260.0	0	1		
 q147b7c11	D'Carla lädt a Datei mit 200 GB ronter. Normal kann se 2 GB/Minute ronterlada, aber nachdem 40 % vom Download fertig sind, zwingt Windows se zu me Neuschtart für Updates, und des dauert 20 Minuten. Danach muss d'Carla dr Download nomal ganz von vorn schtarta. Wia lang dauert's, bis d'Datei ronterglada isch?	"Des isch a klassische Windows-Moment 😄
 
 So rechne mer's:
@@ -459,7 +459,7 @@ Let me write the answer in a similar dialect:
 - Dann nomal von vorn: 200 GB / 2 GB/Min = 100 Minute
 - Gsamt: 40 + 20 + 100 = 160 Minute = 2 Stund 40 Minute
 
-I should present this clearly. Maybe respond in the dialect with the calculation steps. Keep it light and fun."	stop
+I should present this clearly. Maybe respond in the dialect with the calculation steps. Keep it light and fun."	stop	40.0	0	0	160	1
 qead07ed2	Dr John fährt 3 Schtoden lang mit 60 Meilen/Schtond und dreht dann om, weil er merkt, dass er was ganz Wichtigs dahoim vergessa hot. Er will innerhalb von 4 Schtonda wieder heimkomma, schteckt aber d'ersten 2 Schtonda im Stau. D'nächste halbe Schtond fährt er 30 Meilen/Schtond, bevor er für d'verbleibende Zeit von de 4 Schtonden mit 80 Meilen/Schtond weiterfahra kann. Wia weit von dahoim weg isch er am Ende von dench 4 Schtonda?	"Wenn ma annimmt, dass er im Stau nix weiterkummt:
 
 - Aussifahrt: 3 h × 60 = **180 Meilen** vo dahoim weg  
@@ -533,7 +533,7 @@ Need maybe answer in dialect. Could maybe use ""Schtundn"" etc. Let's produce fi
 
 Need maybe maybe ""Dr John"" is ""Doctor John"" but no matter.
 
-Let's final."	stop
+Let's final."	stop	45.0	0	1		
 q5cb246e4	D'Eliza kriegt für d'ersten 40 Schtonda, die se pro Woche schafft, 10 US-Dollar pro Schtond. Für Ieberschtonda kriegt se des 1,2-Fache vom normalen Schtonalohn. Wia viel verdient d'Eliza, wenn se 45 Schtondaen dr Woch schafft?	"D'Eliza verdient **460 US-Dollar**.
 
 So rechnd ma des:
@@ -564,7 +564,7 @@ Let me write it out:
 - 5 Ieberschtonda: 5 × (10 × 1,2) = 5 × 12 = 60 Dollar
 - Zsamm: 460 Dollar
 
-I'll respond in dialect to match."	stop
+I'll respond in dialect to match."	stop	460.0	0	1		
 q3bdd7b1e	A neues Programm isch im ersten Monat 60-mal runterglada worda. Im zweiten Monat gab's dreimal so viele Downloads wie im erschten, aber im dritten Monat isch d'Zahl um 30 % eingebrocha. Wia oft isch des Programm in dene drei Monaten insgesamt runterglada worda?	"Des hot a schene Aufgab! Rechnen wir's mol durch:
 
 **1. Monat:** 60 Downloads
@@ -597,7 +597,7 @@ Let me write the answer:
 
 Gesamt: 60 + 180 + 126 = 366 Downloads
 
-I could respond in the same dialect to be friendly: ""Im erschten Monat: 60, im zweiten: 180, im dritten: 126. Zammgrechnt: 366-mal."" That might be nice. I'll do a mix - clear standard German with the calculation, maybe a light dialect touch. Actually, responding in the dialect could be charming and show understanding. Let me do a friendly response that mirrors slightly but stays clear."	stop
+I could respond in the same dialect to be friendly: ""Im erschten Monat: 60, im zweiten: 180, im dritten: 126. Zammgrechnt: 366-mal."" That might be nice. I'll do a mix - clear standard German with the calculation, maybe a light dialect touch. Actually, responding in the dialect could be charming and show understanding. Let me do a friendly response that mirrors slightly but stays clear."	stop	366.0	0	1		
 q19a4029d	D'Toula isch zum Bäcker ganga und hot verschiedene Gebäcksacha g'kauft. Se hot 3 Dutzend Donuts g'kauft, die 68 US-Dollar pro Dutzend koschtet, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wia hoch warat d'G'samtkoschta?	"Do kamma's ganz oafach ausrechnа:
 
 **Einzelne Positiona:**
@@ -657,7 +657,7 @@ I could also write it in a bit of dialect to match: ""D'G'samtkoschta warat 694 
 
 Actually, I can mix: give the answer in standard German but maybe end with a dialect phrase. Or just keep it simple and clear.
 
-Let me go with clear standard German with the math shown step by step."	stop
+Let me go with clear standard German with the math shown step by step."	stop	694.0	0	1		
 qf0063e65	D'r Carlos pflanzt an Zitronabaum. D'r Baum zum Pflanza koschtet 90 $. Jedes Jahr wachset 7 Zitronen dran, die er für jeweils 1,5 $ verkaufa kann. Zum Gieße und Düngen kostet dr Baum 3 $ im Jahr. In welchem Jahr fängt er an, mit em Zitronabaum insgesamt Gewinn zu macha?	"Do rechnsch so:
 
 **Jährlichi Rechnung:**
@@ -783,7 +783,7 @@ So after 12 years he has recovered the 90 $, and in the 13th year he makes the f
 
 Answer: Im 13. Jahr (oder: nach 12 Jahren, also im 13. Jahr).
 
-I'll write it clearly."	stop
+I'll write it clearly."	stop	13.0	0	1		
 q410b0ab2	D'Melanie isch Handelsvertreterin. Se hot a Drittel von ihre Staubsauger im grünen Haus verkauft, 2 weitere im roten Haus und d'Hälfte von denen, die danach no übrig warat, im orangenen Haus. Wenn d'Melanie 5 Staubsauger übrig hot, mit wia viele hot se dann angfanga?	"D’Melanie hot mit **18 Staubsauger** angfanga.
 
 So komsch druf (rückwärts grechnet):
@@ -860,7 +860,7 @@ Probe:
 
 Answer: 18 Staubsauger.
 
-I'll write this in German, clear and friendly."	stop
+I'll write this in German, clear and friendly."	stop	5.0	0	0	18	1
 qa0520340	In ere Tanzstund mit 20 Schüler hend sich 20 % für Contemporary Dance a'gmeldet, 25 % von den übrigen für Jazz Dance, und dr Rescht isch beim Hip-Hop glandet. Wia viel Prozent von alle Schüler hend sich für Hip-Hop agmeldet?	"**Lösig:**
 
 - **Contemporary:** 20 % vo 20 Schüler = **4 Schüler** → bliibet 16 Schüler (80 %)
@@ -893,7 +893,7 @@ Answer in Swiss German:
 
 So 60% hend sich für Hip-Hop a'gmeldet.
 
-I'll respond in Swiss German to match the question."	stop
+I'll respond in Swiss German to match the question."	stop	60.0	0	1		
 q9ae19f0a	An Händler muss sich zwischa 2 Kaufmöglichkeita entscheida: Schmuck im Wert von 5.000 US-Dollar oder Elektronikgeräte im Wert von 8.000 US-Dollar. Sei Finanzberater moint, dr Schmuckmarkt legt im Monat um 2,5 % zu und dr Markt für Elektrogeräte im selba Monat um 1,2 %. Wenn dr Händler am Monatsende mit seiner Entscheidung dr Gewinn maximiera will, auf wia viel Gewinn kommt er dann?	"Der Händler sollte sich für den **Schmuck** entscheiden.
 
 Berechnung des Gewinns:
@@ -930,7 +930,7 @@ Gewinnmaximierung: Schmuck wählen → Gewinn = 125 US-Dollar.
 
 Note: If the question meant percentage return, jewelry also wins (2.5% > 1.2%), but absolute profit is what's asked (""auf wie viel Gewinn""). Either way jewelry wins. The profit is $125.
 
-I'll keep it concise."	stop
+I'll keep it concise."	stop	125.0	0	1		
 q93563595	Zwei Züg fahret zur selba Zeit in San Rafael los. Se fahret z'erscht noch Weschta und legat beide 80 Meilen zurück. Am nächsta Tag fahret se nach Norda und legat 150 Meilen z'rück. Wia viel Strecke legt jeder Zug über die zwei Tage z'rück?	"Jeder der beiden Züge legt über die zwei Tage insgesamt **230 Meilen** zurück.
 
 **Rechnung:**
@@ -1010,7 +1010,7 @@ Rechnung:
 - Tag 2 (nach Norden): 150 Meilen
 - Gesamt: 80 + 150 = **230 Meilen**""
 
-That's it."	stop
+That's it."	stop	230.0	0	1		
 q33756eb7	D'Jill kriegt 20 US-Dollar pro Schtond fürs Onterrichta als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn se 50 Wochen im Jahr schafft, 35 Schtonda pro Woch' als Lehrerin und 15 Schtonda pro Woch' als Coach, wia hoch isch dann ihr Jahresgehalt?	"Jo, des rechne mer mol:
 
 **Als Lehrerin:**
@@ -1042,7 +1042,7 @@ Let me compute again:
 - Coach: 30 $/h × 15 h/Woche = 450 $/Woche; × 50 Wochen = 22.500 $/Jahr
 - Gesamt: 57.500 $/Jahr
 
-I'll respond in German with the calculation, maybe with a light dialect touch to match. Keep it clear."	stop
+I'll respond in German with the calculation, maybe with a light dialect touch to match. Keep it clear."	stop	57500.0	0	1		
 qfb254292	D'Claire macht sich jeda Moran zom Frühstück a Omelett aus 3 Eier. Wia viele Dutzend Eier isst se in 4 Wochen?	"Jeda Dog 3 Eier macht **21 Eier pro Wochn**.
 
 In 4 Wochn san des: 21 × 4 = **84 Eier**.
@@ -1081,7 +1081,7 @@ Let me make it natural:
 
 ""Jeda Dog 3 Eier macht 21 Eier pro Wochn. In 4 Wochn san des 84 Eier. Und weil a Dutzend 12 Eier hot, kummt ma auf 84 ÷ 12 = **7 Dutzend**.""
 
-That should work. I'll provide the calculation clearly but keep the dialect flavor."	stop
+That should work. I'll provide the calculation clearly but keep the dialect flavor."	stop	7.0	0	1		
 qc100123d	D'Marissa wandert an 12 Meilen langen Wanderweg. In dr 1. Schtond schafft se die erschste 4 Meilen, danach die nächste zwei Meilen in dr nächsten Schtond. Wenn se am Ende im Schnitt 4 Meilen pro Schtond gelaufa sei will, mit welcher G'schwindigkeit in Meilen pro Schtond muss se dr Rescht vom Weg laufa?	"Des isch a klassische Gschwindigkeitsfrog! 😄
 
 **Rechnig:**
@@ -1129,7 +1129,7 @@ Let me write the solution:
 
 Answer: 6 Meilen pro Schtond.
 
-I'll respond in the dialect, showing the steps clearly."	stop
+I'll respond in the dialect, showing the steps clearly."	stop	6.0	0	1		
 q26866cba	I hab 10 Liter Orangengetränk, des zu zwei Drittel aus Wasser beschteht, und will's zu 15 Liter Ananasgetränk mit drei Fünfteln Wasser dazuschütta. Beim Eingieße verschütt i aber oin Liter vom Orangengetränk. Wia viel Wasser isch in den übrigen 24 Litern drin?	"In den übrigen **24 Litern sind 15 Liter Wasser** drin (das sind **5/8** bzw. **62,5 %**).
 
 So kommst du drauf:
@@ -1276,7 +1276,7 @@ Die 24 Liter in der Frage bestätigen das: 10 - 1 + 15 = 24.
 
 Alles klar.
 
-Ich antworte nun."	stop
+Ich antworte nun."	stop	15.0	0	1		
 qa856d9dc	Dr Raymond und d'Samantha sind Cousins. Dr Raymond isch 6 Johr vor dr Samantha gebora. Mit 23 Jahren hot dr Raymond an Sohn kriegt. Wenn d'Samantha jetzt 31 isch, vor wia viele Johr isch dann dr Sohn vom Raymond gebora?	"Wenn d'Samantha jetzt 31 isch, isch dr Raymond **37 Johr alt** (31 + 6).
 
 Er het sin Sohn mit 23 Johr kriegt, also isch dr Sohn hüt **14 Johr alt** (37 - 23).
@@ -1315,7 +1315,7 @@ Let me formulate the answer in Swiss German:
 Or more naturally:
 ""Wenn d'Samantha jetzt 31 isch, isch dr Raymond 37 (31 + 6). Er het sin Sohn mit 23 kriegt, also isch dr Sohn hüt 14 Johr alt (37 - 23). Dorum isch dr Sohn vor 14 Johr gebora.""
 
-That should be clear and correct."	stop
+That should be clear and correct."	stop	14.0	0	1		
 q72ea27fb	Dr Billy verkauft DVDs. Am Dienschtag hot er 8 Kunden. D'ersten 3 Kunden kaufet jeweils oi DVD. D'nächschte 2 Kunden kaufet jeweils 2 DVDs. Die letzschte 3 Kunden kaufet gar koi DVD. Wia viele DVDs hot dr Billy am Dienschtag verkauft?	"Dr Billy hot am Dienschtag **7 DVDs** verkauft.
 
 So chunsch druf:
@@ -1348,7 +1348,7 @@ Breakdown:
 - 3 Kunden × 0 DVDs = 0 DVDs
 - Total: 7 DVDs
 
-Let me write a friendly response in Swiss German."	stop
+Let me write a friendly response in Swiss German."	stop	7.0	0	1		
 qa62b2b0f	A Kerze wird in jeder Schtond, wo se brennt, um 2 Zentimeter kürzer. Um wia viele Zentimeter isch a Kerz' kürzer, wenn se von 13 Uhr bis 17 Uhr brennt?	"Von 13 Uhr bis 17 Uhr sind das **4 Stunden**.
 
 4 Stunden × 2 cm = **8 Zentimeter**
@@ -1366,7 +1366,7 @@ I should respond in a friendly way, perhaps acknowledging the dialect but answer
 
 Answer: Von 13 Uhr bis 17 Uhr sind das 4 Stunden. 4 × 2 cm = 8 cm. Die Kerze ist also um 8 Zentimeter kürzer.
 
-I can keep it simple and clear."	stop
+I can keep it simple and clear."	stop	8.0	0	1		
 qaadc02d2	Dr Kyle hot dr Bestseller vom letzta Jahr für 19,50 US-Dollar kauft. Des war mit 25 % Rabatt auf dr ursprüngliche Preis. Wia hoch war dr ursprüngliche Preis vom Buch?	"Des is a klassische Rabatt-Aufgab! 😄
 
 **Rechnung:**
@@ -1398,7 +1398,7 @@ In dialect: ""Da Preis war 19,50 $, des san 75 % vom ursprünglichen Preis (weil
 
 Check: 25 % von 26 $ = 6,50 $; 26 − 6,50 = 19,50 $ ✓
 
-I'll respond in dialect, keeping it clear with the math shown."	stop
+I'll respond in dialect, keeping it clear with the math shown."	stop	26.0	0	1		
 q4c88eb07	D'Marie hot a Hühnchengericht für 12 US-Dollar b'schtellt, 5 Packungen Milch für jeweils 3 US-Dollar, 4 Äpfel für jeweils 1,50 US-Dollar und no a paar Schachtela Pizza. Insgesamt hot d'Marie 50 US-Dollar zahlt. Wia viele Schachtela Pizza hot se b'schtellt, wenn jede Schachtel 8,50 US-Dollar kostet?	"Des hot se g'lernt! 😄 Hier die Rechnung:
 
 **Bisherige Kosten:**
@@ -1442,7 +1442,7 @@ Let me write the solution:
 
 Answer: 2 Schachtela Pizza.
 
-I'll respond in German, perhaps with a touch of the dialect to match, but keep it understandable. Maybe standard German with a friendly tone is best, or mirror the dialect lightly. I'll do a mix: greet in dialect-ish but explain clearly. Actually, safest: respond in standard German with clear steps, maybe a light dialect touch at the end. Let me keep it mostly standard German so it's clear, but I can use ""Schachtela"" etc. I'll write in standard German with the calculation."	stop
+I'll respond in German, perhaps with a touch of the dialect to match, but keep it understandable. Maybe standard German with a friendly tone is best, or mirror the dialect lightly. I'll do a mix: greet in dialect-ish but explain clearly. Actually, safest: respond in standard German with clear steps, maybe a light dialect touch at the end. Let me keep it mostly standard German so it's clear, but I can use ""Schachtela"" etc. I'll write in standard German with the calculation."	stop	2.0	0	1		
 qc76b9ef5	D'Mishka hot 3 Paar Shorts, 3 Hosen und 3 Paar Schuhe g'kauft. A Paar Shorts koschtet 16,50 US-Dollar. A Hos' koschtet 22,50 US-Dollar und a Paar Schuhe 42 US-Dollar. Wia viel Dollar hot d'Mishka insgesamt für d'Kleider ausgeba?	"D'Mishka hot insg'samt **243 US-Dollar** ausg'gem!
 
 So hot's gr'echnet:
@@ -1474,7 +1474,7 @@ Let me show the calculation:
 - 3 × 42 = 126 Dollar (Schuhe)
 - G'samt: 49,50 + 67,50 + 126 = 243 Dollar
 
-I'll respond in the dialect with the calculation. Keep it clear."	stop
+I'll respond in the dialect with the calculation. Keep it clear."	stop	243.0	0	1		
 qc792d70c	D'Cynthia isst jeden Abend a Portion Eis. Se kauft Karto' mit 15 Portiona Eis pro Karto' für 4,00 US-Dollar pro Karto'. Wia viel hot se nach 60 Tagen fürs Eis ausgeba?	"**Rechnung:**
 
 - Jeden Abend 1 Portion → in 60 Tagen: **60 Portionen**
@@ -1501,7 +1501,7 @@ Calculation:
 
 Answer: 16 US-Dollar (16,00 $).
 
-I'll respond in German (maybe lightly matching the dialect) with the calculation steps."	stop
+I'll respond in German (maybe lightly matching the dialect) with the calculation steps."	stop	16.0	0	1		
 qb804efac	D'r Henry hot bei rer 60 Meilen langen Fahrradtour zwei Pausa gmacht. D'erschte war n'ch 20 Meilen. D'zweite war 15 Meilen vor em Ende von dr Tour. Wia viele Meilen isch er zwischen dr erschten und dr zweiten Paus' gfahra?	"Er isch **25 Meilen** zwüsche dr erschte und dr zweite Paus gfahra.
 
 So chunsch druf:
@@ -1540,7 +1540,7 @@ Or more naturally in dialect:
 
 D'erschte Paus isch nach 20 Meilen gsi, d'zweite 15 Meilen vor em Ende (also nach 60 - 15 = 45 Meilen). 45 minus 20 git 25 Meilen.""
 
-I should keep it simple and clear."	stop
+I should keep it simple and clear."	stop	25.0	0	1		
 qf837eb68	D'Gloria isch Schuhe kaufa und fendet a Paar Stiefel, die in ihr Budget basset. Se muss sich aber zwischen de' Stiefeln und zwei Paar High Heels entscheida, die zamma fünf Dollar weniger kostet als d'Stiefel. A Paar High Heels kostet 33 US-Dollar und des andere doppelt so viel. Wia viel kostet dann d'Stiefel?	"Hier isch d'Lösung:
 
 **Schritt 1:** Berechne d'Kosten vo de zwei Paar High Heels
@@ -1596,7 +1596,7 @@ Let me write the solution:
 
 Antwort: Die Stiefel kosten 104 US-Dollar.
 
-I should present this clearly."	stop
+I should present this clearly."	stop	104.0	0	1		
 qa2455bce	S'Altersverhältnis vom Darrell und d'r Allen isch 7:11. Wenn se jetzt z'samma 162 Jahre alt senn, rechne aus, wia alt dr Allen in 10 Jahren isch.	"Dr Darrell und d'Allen hend es Verhältnis vo **7:11**. Das heisst:
 
 - Darrell = 7 Teil
@@ -1657,7 +1657,7 @@ I should respond in Swiss German since the question was in Swiss German. Let me 
 Dr Allen isch hüt: 11 × 9 = 99 Jahre alt.
 In 10 Jahren isch er: 99 + 10 = **109 Jahre** alt.""
 
-That should work. Let me make it natural in Swiss German."	stop
+That should work. Let me make it natural in Swiss German."	stop	109.0	0	1		
 q166f163a	D'r Gunter versucht, d'Gummibärle im Glas zom zähla. Er frogt seins Freind, wia viele se moinet, dass dren sen. Oiner sagt 80. D'r andere sagt 20 mehr als d'Hälfte von dr erschten Schätzung. A Dritter sagt 25 % mehr als dr Erste. Wia hoch isch ihre durchschnittliche Schätzung?	"Also, rechne mer mol:
 
 - **Dr erschde** sagt **80**.
@@ -1701,7 +1701,7 @@ Durchschnitt: 240 : 3 = 80.
 
 Ihre durchschnittliche Schätzung isch also 80 Gummibärle.""
 
-That should work. I'll keep it friendly and in the dialect."	stop
+That should work. I'll keep it friendly and in the dialect."	stop	80.0	0	1		
 q3966df43	D'r John kümmert sich um 10 Hond. Für jeden Hond braucht er jeden Tag 0,5 Schtonda zum Gassigeha und damit dr Hund sei Gschäft macha kann. Wia viele Schtonda pro Woch' kümmert er sich insgesamt um die Hond'?	"10 Hond × 0,5 Schtonda pro Tag = **5 Schtonda pro Tag**
 
 5 Schtonda × 7 Täg = **35 Schtonda pro Woch'**
@@ -1723,7 +1723,7 @@ The user wrote in dialect, so I should probably respond in a friendly way, maybe
 
 Answer: 10 × 0,5 = 5 Stunden pro Tag; 5 × 7 = 35 Stunden pro Woche.
 
-I'll keep it concise and clear."	stop
+I'll keep it concise and clear."	stop	35.0	0	1		
 q28184d6c	S'Gretle hot 110 Münzen. Se hot 30 mehr Gold- als Silbermünzen. Wia viele Goldmünzen hot s'Gretle?	"S'Gretle hot **70 Goldmünzen**. 🥇
 
 Rechnung:
@@ -1761,7 +1761,7 @@ Let me answer clearly:
 
 I'll respond in German, maybe keeping it simple and clear. Since the user used dialect, I could respond in a similar friendly tone but standard German is fine and clear. Maybe I'll use a bit of dialect flavor: ""S'Gretle hot 70 Goldmünzen.""
 
-Let me write the solution steps clearly."	stop
+Let me write the solution steps clearly."	stop	70.0	0	1		
 q5f9dc683	D'Siobhan hot 2 Schmuckstücke weniger als d'r Aaron. D'r Aaron hot 5 Schmuckstücke mehr als d'Hälfte von den Schmuckstücken vom Raymond. Wenn dr Raymond 40 Schmuckstücke hot, wia viele hot dann d'Siobhan?	"D'Siobhan hot **23 Schmuckstücke**.
 
 So gangs:
@@ -1792,7 +1792,7 @@ And show the steps:
 - Aaron: 20 + 5 = 25
 - Siobhan: 25 - 2 = 23
 
-I'll respond in German (maybe with a bit of dialect) to be helpful."	stop
+I'll respond in German (maybe with a bit of dialect) to be helpful."	stop	23.0	0	1		
 q9501d333	D'r Mike spielt 40 Minuten lang Pingpong. In den erschte 20 Minuten macht er 4 Punkte. In de' nächschte 20 Minuten macht er 25 % mehr Punkte. Wia viele Punkte macht er insgesamt?	"In de erschte 20 Minute macht er **4 Punkte**.
 
 25 % mehr sind: 4 × 0,25 = **1 Punkt** mehr, also macht er in de nächschte 20 Minute **5 Punkte**.
@@ -1825,7 +1825,7 @@ Or in the dialect:
 In de nächschte 20 Minute: 25 % mehr als 4 = 4 + (25% vo 4) = 4 + 1 = 5 Punkte.
 Insgesamt: 4 + 5 = 9 Punkte.""
 
-That should be clear and match the tone."	stop
+That should be clear and match the tone."	stop	9.0	0	1		
 q0e0fa86b	D'r Terry isst 2 Joghurt am Tag. Grad gibt's se im Angebot: 5,00 US-Dollar für 4 Joghurt. Wia viel gibt er in 30 Tagen für Joghurt aus?	"D'r Terry isst 2 Joghurt am Tag – des macht in 30 Tagen:
 
 **2 × 30 = 60 Joghurt**
@@ -1864,7 +1864,7 @@ Im Angebot gibt's 4 Stück für 5 Dollar, also braucht er: 60 ÷ 4 = 15 Packunge
 
 Er gibt also 75 Dollar in 30 Tagen aus.""
 
-That should work. I'll keep it clear and friendly."	stop
+That should work. I'll keep it clear and friendly."	stop	30.0	0	0	75	1
 q126bbbaa	D'r John will alle seine Spielsacha verkaufa und von dem Geld Videospiele kaufa. Er hot 13 Lego-Sets und kriegt für jedes verkaufte Set $15. Am Ende kauft er 8 Videospiele für jeweils $20 und hot no $5 übrig. Wia viele Lego-Sets hot er no?	"So rechne ma des mol:
 
 - 8 Videospiele × $20 = **$160**
@@ -1923,7 +1923,7 @@ Rechnung:
 
 Answer: 2 Lego-Sets.
 
-I'll keep it in dialect to match the user's tone. Format: short explanation with steps, then the answer. Not too long."	stop
+I'll keep it in dialect to match the user's tone. Format: short explanation with steps, then the answer. Not too long."	stop	2.0	0	1		
 q5c1bd624	D'r John läuft 60 Meilen pro Woche. Er läuft an 3 Tag pro Woche. Am erschta Tag läuft er 3 Schtonda und an den zwei andere Lauftag jeweils d'Hälfte davo'. Wia schnell läuft er?	"So rechne mer des mol:
 
 **Zeit pro Woche:**
@@ -1968,7 +1968,7 @@ So the answer is 10 mph or 10 Meilen pro Stunde.
 
 I should present this clearly. Maybe also convert to km/h for context? 10 mph ≈ 16.09 km/h. But the question asks ""Wia schnell"" (how fast), and since the input is in miles, the answer should be in miles per hour primarily.
 
-Let me write the response in German, clear and step-by-step."	stop
+Let me write the response in German, clear and step-by-step."	stop	16.0	0	0	10	1
 q02f06b34	D'Dana kann viermal so schnell laufa wie se geha kann, aber hüpfa kann se bloß mit dr Hälfte von ihrer Laufgeschwindigkeit. Wenn se mit 3 Meilen pro Schtond hüpfa kann, wia viele Meilen schafft se in sechs Schtonda, wenn se a Drittel von dr Zeit läuft und zwei Drittel von dr Zeit geht?	"Let's work through it step by step:
 
 **Find the speeds:**
@@ -2001,7 +2001,7 @@ Let me solve:
 
 The question is in Pennsylvania Dutch dialect. I should probably respond in a way that acknowledges the dialect — maybe answer in English with perhaps a touch of the dialect, or just answer clearly in English. The user wrote in dialect, so responding in kind could be friendly, but clarity matters. I'll answer in English but could mirror a bit of the flavor. Let me provide the solution clearly with steps.
 
-Answer: 18 miles."	stop
+Answer: 18 miles."	stop	18.0	0	1		
 qd6dd82e1	Brandons iPhone isch viermal so alt wie Bens iPhone. Bens iPhone isch doppelt so alt wie Suzys iPhone. Wenn Suzys iPhone 1 Jahr alt isch, wia alt isch dann Brandons iPhone?	"Wenn Suzys iPhone **1 Jahr** alt isch:
 
 - Bens iPhone isch doppelt so alt: **2 × 1 = 2 Jahr**
@@ -2033,7 +2033,7 @@ Brandons iPhone: 4 × 2 = 8 Jahr
 
 Also isch Brandons iPhone 8 Jahr alt.""
 
-Let me make it friendly and clear."	stop
+Let me make it friendly and clear."	stop	8.0	0	1		
 q425db7e5	D'r große Drache Perg isch ganz oba auf em Berg Farbo g'sessa und hot auf alles in em Umkreis von 1000 Fuß Feuer gspuckt. D'Polly konnt dr goldene Speer, d'einzige bekannte Waffe, mit der ma dr Drache besiega konnt, 400 Fuß weit werfa und war damit deutlich in d'r Reichweite von de Flamma. Wenn d'Polly aber d'r Saphir-Edelstein in d'r Hand hielt, konnt se d'r Speer dreimal so weit werfa wie ohne d'' Edelstein. Wenn se dr Edelstein in d'r Hand hält, wia weit außerhalb von d'r Reichweite von de Flamma kann d'Polly standa und dr Drache trotzdem no mit em goldenen Speer treffa?	"Des isch a guade Rechenaufgab! So gangt's:
 
 - **Speerwurf ohne Edelstein:** 400 Fuß
@@ -2084,7 +2084,7 @@ Let me produce:
 
 Answer: 200 Fuß außerhalb der Flammenreichweite (also bis zu 1200 Fuß vom Drachen entfernt).
 
-I'll keep it concise."	stop
+I'll keep it concise."	stop	200.0	0	1		
 qedc215ac	D'Oma Jones hot 5 Apfelkuchen fürs Mittagessa von d'r Feuerwehr bacha. Se hot jeden Kuchen in 8 Stückle gschnitta und alle fünf Kuchen auf d'r Buffettisch gschstellt, damit sich d'Gäscht selber bediena könnet. Am Ende vom Abend, nachdem d'Gäscht sich bedient und Kuchen gessa hend, warat no 14 Kuchenstückle übrig. Wia viele Stückle hend d'Gäscht gnomma?	"D'Oma Jones hot insgsamt **5 Kucha × 8 Stückle = 40 Stückle** bacha.
 
 Wenn am Ende no **14 Stückle** übrig warat, hend d'Gäscht:
@@ -2109,7 +2109,7 @@ Answer: 26 Stückle.
 Let me write it in the dialect:
 ""5 Kucha × 8 Stückle = 40 Stückle insgsamt. Wenn no 14 übrig sind, hend d'Gäscht 40 − 14 = 26 Stückle gnomma.""
 
-I should respond in the same dialect style since the question was asked in dialect. Keep it friendly and clear."	stop
+I should respond in the same dialect style since the question was asked in dialect. Keep it friendly and clear."	stop	26.0	0	1		
 q5d47194e	Noch de Nährwertangaba hot a Tüte Chips 250 Kalorien pro Portion. Wenn a 300 g-Tüte 5 Portionen enthält, wia viele Gramm kannsch du essa, wenn dei tägliches Kalorienziel bei 2000 liegt und du scho 1800 Kalorien zu dir gnomma hosch?	"Servus! Rechnen wir's moi zam:
 
 **Verbleibende Kalorien:**
@@ -2164,7 +2164,7 @@ Oiso: **ca. 48 Gramm Chips** (a bissl weniger ois a volle Portion, nämlich 4/5 
 
 That's about right. Let me double check: 250 kcal per 60 g. 200 kcal → 200/250 × 60 = 0.8 × 60 = 48 g. Yes.
 
-I'll respond in Bavarian dialect to match. Keep it reasonably concise with the calculation steps."	stop
+I'll respond in Bavarian dialect to match. Keep it reasonably concise with the calculation steps."	stop	48.0	0	1		
 q255b81c0	D'r Charlie will Bienenwachskerzen verkaufa. Aus jedem Pfund Bienenwachs kann er 10 Kegelkerzen macha. S'Zubehör für a Pfund Bienenwachs samt Dochte koschtet 10,00 US-Dollar. Wenn er d'Kerzen für 2,00 US-Dollar verkauft, wia viel Nettogewinn macht er, wenn er 20 Kerzen herstellt und verkauft?	"So rechne mer des:
 
 **1. Bienenwachs-Verbrauch:**
@@ -2198,7 +2198,7 @@ Let me answer in German, showing the steps:
 - Erlös: 20 × 2,00 $ = 40,00 $
 - Nettogewinn: 40,00 $ − 20,00 $ = 20,00 $
 
-I'll respond in German since the question is in German (dialect). I might acknowledge the dialect lightly. Keep it concise with clear steps."	stop
+I'll respond in German since the question is in German (dialect). I might acknowledge the dialect lightly. Keep it concise with clear steps."	stop	20.0	0	1		
 q0166ea66	D'Meredith isch Freelance-Bloggerin, schreibt über Gesundheitsthemen und kümmert sich om Kunden, des isch ihr fester Job. Für Recherche und Schreiben von einem Blog-Artikel braucht se im Schnitt 4 Schtonda. Letzschte Woch' hot se am Montag 5 Artikel gschrieba und am Dienstag 2/5 mehr Artikel als am Montag. Am Mittwoch hot se zwoimal so viele Artikel gschrieba wie am Dienstag. Rechne aus, wia viele Schtonan se an den drei Tagen insgesamt fürs Artikelschreiba g'braucht hot.	"Do chani das usrechne:
 
 **Artikel pro Tag:**
@@ -2246,7 +2246,7 @@ Let me write the solution in Swiss German:
 
 So the answer is 104 hours (104 Schtondä).
 
-I should present this clearly step by step."	stop
+I should present this clearly step by step."	stop	104.0	0	1		
 q7bb382f4	D'Candice hot 80 Post-it-Notizzettel in ihr' Handtasch' g'packt, bevor se zu ihrem G'schäft im Coffee Shop los isch. Unterwegs hot se im Laden aghalta und a Packung Post-it-Notizzettel kauft; beim G'schäft hot se auf 220 verschiedene Kaffeetassen jeweils oin Post-it-Notizzettel g'klebt. Wenn se am Ende no 23 Post-it-Notizzettel übrig hot, wia viele warat dann in dr Packung, die se kauft hot?	"In dr Packung sind **163 Post-it-Notizzettel** gsi.
 
 Rechnig:  
@@ -2266,7 +2266,7 @@ Need consider if any trick? Let's parse: ""beim G'schäft hot se auf 220 verschi
 
 Need maybe mention ""angenommen, si het nur die 80 + die neu kauft gha"". Fine.
 
-Need final with answer."	stop
+Need final with answer."	stop	163.0	0	1		
 q1a64508f	D'r John kauft zweimal so viele rote wie blaue Krawatten. D'rote Krawatten kostet 50 % mehr als die blaue. Für blaue Krawatten hot er 200 US-Dollar ausgeba, und die kostet pro Stück 40 US-Dollar. Wia viel hot er insgesamt für Krawatten ausgeba?	"Aufgelöst:
 
 - **Blaue Krawatten:** 200 US-Dollar gesamt bei 40 US-Dollar pro Stück → 200 ÷ 40 = **5 blaue Krawatten**
@@ -2302,7 +2302,7 @@ Let me double-check:
 - Red total: 10 × 60 = 600 USD
 - Total: 200 + 600 = 800 USD
 
-Yes, 800 US-Dollar."	stop
+Yes, 800 US-Dollar."	stop	800.0	0	1		
 q9605b4e6	D'Tracy hot a 4 Fuß langes Stück Droht gnomma, um d'Tomatenpflanzen in ihrem Garten abzustütza. D'r Droht isch in Stücke mit jeweils 6 Inch gschnitta worda. Wia viele Stück Draht hot se dann?	"4 Fuß sind **48 Inch** (weil 1 Fuß = 12 Inch).
 
 Wenn der Droht in Stücke zu je **6 Inch** gschnitta wird:
@@ -2333,7 +2333,7 @@ I'll keep it in the dialect style for charm but clear. Let me formulate:
 
 ""4 Fuß sind 48 Inch (1 Fuß = 12 Inch). Wenn der Droht in 6-Inch-Stück gschnitta wird: 48 ÷ 6 = 8. Also hot d'Tracy 8 Stück Draht.""
 
-That should work. I'll answer concisely."	stop
+That should work. I'll answer concisely."	stop	8.0	0	1		
 qda35e8fb	D'r Richard wohnt in eme Wohnhaus mit 15 Etagen. Auf jeder Etage gibt's 8 Wohnungen, und 3/4 vom Gebäude senn bewohnt. Wia viele Wohnungen im Gebäude sind insgesamt unbewohnt?	"Da chani dir grad usrechne:
 
 **Gesamtzahl vo de Wohnige:**
@@ -2372,7 +2372,7 @@ Structure:
 
 Answer: 30 Wohnungen sind unbewohnt.
 
-I'll write it in standard German for clarity, maybe with a touch of warmth."	stop
+I'll write it in standard German for clarity, maybe with a touch of warmth."	stop	30.0	0	1		
 q94fcd6ce	Dr Lloyd hot an Eierhof. Sei Hühner legat 252 Eier am Tag, und er verkauft se für 2 US-Dollar pro Dutzend. Wia viel verdient d'r Loyd pro Woch' mit de' Eier?	"Servus! I rechne des mol glei für di aus:
 
 **Rechnung:**
@@ -2405,7 +2405,7 @@ Or:
 
 The user wrote in a dialect, so I should probably respond in a friendly way, maybe acknowledging the dialect but answering clearly. I could respond in standard German or English, or even playfully in the same dialect. Since the question is in German dialect, responding in German (standard or dialect-friendly) would be appropriate. I'll answer in German, perhaps with a touch of the dialect to match, but keep it clear.
 
-Let me answer in German with the calculation shown clearly."	stop
+Let me answer in German with the calculation shown clearly."	stop	294.0	0	1		
 q1afb1e71	Toms Schiff schafft 10 Meilen pro Schtond. Er segelt von 13 bis 16 Uhr. Danoch fährt er mit 6 Meilen/Schtond wieder z'rück. Wia lang braucht er für d'r Rückweg?	"Des isch a klassische Dreisatz-Aufgab:
 
 **Hinfahrt:**
@@ -2434,7 +2434,7 @@ Answer: 5 hours (5 Stunden).
 
 The user wrote in dialect, so I could respond in a friendly way, maybe acknowledging the dialect but answering clearly. I'll answer in German (standard) since the question is in German dialect. I could also play along with the dialect a bit, but clarity is important. Let me answer in standard German with the calculation, perhaps with a light nod to the dialect.
 
-Format: Short explanation with the steps, then the answer. Keep it concise."	stop
+Format: Short explanation with the steps, then the answer. Keep it concise."	stop	5.0	0	1		
 q0aaae19a	Dem Uriah wird sei Büchertasche z'schwer. Er muss 15 Pfund rausnemma. Seine Comicbücher wieget jeweils 1/4 Pfund und sei Spielzeuge jeweils 1/2 Pfund. Wenn er 30 Comicbücher rausnimmt, wia viele Spielzeuge muss er dann no rausnemma?	"Hoi! Loos mol luege:
 
 **Schritt 1:** Wie schwer sind d 30 Comicbücher?
@@ -2471,7 +2471,7 @@ Let me write the solution in Swiss German:
 
 So he needs to take out 15 toys.
 
-Let me make it clear and friendly in Swiss German."	stop
+Let me make it clear and friendly in Swiss German."	stop	15.0	0	1		
 qa5756c69	An Mechaniker verlangt onterschiedliche Preise für d'Reparatur von LKW-Reifen und PKW-Reifen. Für jeden reparierten LKW-Reifen verlangt er 60 Dollar, für jeden reparierten PKW-Reifen 40 Dollar. Am Donnerschtag repariert er 6 LKW-Reifen und 4 PKW-Reifen. Am Freitag repariert er 12 PKW-Reifen und koine LKW-Reifen. Wia viel Dollar mehr Umsatz hot er an dem Tag gmacht, an dem d'r Umsatz höher war?	"Hier die Rechnung:
 
 **Donnerschtag:**
@@ -2567,7 +2567,7 @@ In English: ""How many more dollars did he make on the day when the revenue was 
 
 So answer: 40 Dollar.
 
-I'll write the response in German (standard), showing the steps."	stop
+I'll write the response in German (standard), showing the steps."	stop	40.0	0	1		
 qd819612e	D'Doubtfire-Schwestra fahret mit 7 Kätzle hoim, die se im örtlichen Tierheim adoptiert hend, wenn ihr Mutter aruft und sagt, dass ihre zwei Hauskatzen grad Kätzle kriegt hend. Se sagt, Patchy, d'erschte Katz', hot dreimal so viele Kätzle wie die adoptierte, und Trixie, d'andere Katze, hot 12 zur Welt brocht. Wia viele Kätzle hend d'Doubtfires jetzt?	"Rechnet mer's us:
 
 - **Adoptiert:** 7 Kätzle
@@ -2613,7 +2613,7 @@ Or more dialectal:
 
 ""Rechnet mer's us: D'adoptierte sind 7, Patchy hot dreimal so vill, also 21, und Trixie hot 12. Zämegrechnet: 7 + 21 + 12 = **40 Kätzle** hend d'Doubtfires jetzt.""
 
-That should work. I'll keep it friendly and in the same dialect style."	stop
+That should work. I'll keep it friendly and in the same dialect style."	stop	40.0	0	1		
 q7c63d108	D'r Jean hot 30 Lutscher. Davon isst d'r Jean 2. Die übrige Lutscher will er in Tüta mit jeweils 2 Lutscher packa. Wia viele Tüten kann d'r Jean packa?	"Nachdäm d'r Jean 2 Lutscher gessa hot, hot er no **28** Lutscher übrig (30 − 2 = 28).
 
 Wenn er die in Tüta zu je 2 Lutscher packt:
@@ -2640,7 +2640,7 @@ I should respond in the same dialect to match the user's language, or at least a
 Or more dialectal:
 ""Nachdäm d'r Jean 2 gessa hot, hot er no 28 Lutscher (30 - 2 = 28). 28 durch 2 isch 14. Also kann er 14 Tüten packa.""
 
-Let me make it friendly and clear in the dialect."	stop
+Let me make it friendly and clear in the dialect."	stop	14.0	0	1		
 q93b023e5	D'r Peter will die Woch ins Kino ganga. Er kauft immer a Eintrittskart' für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn er für d'ganze Woch 42 US-Dollar zur Verfügung hot, wia oft kann er dann ins Kino?	"Jede Kinositzung kostet **7 + 7 = 14 US-Dollar**.
 
 Mit **42 US-Dollar** kann er also:
@@ -2665,7 +2665,7 @@ Let me answer: Each time costs 14 dollars (7+7), 42/14 = 3, so 3 times.
 
 In dialect: ""Jede Kinositzung kostet 7 + 7 = 14 US-Dollar. Mit 42 US-Dollar kann er also 42 ÷ 14 = 3 Mol ins Kino ganga.""
 
-I'll provide the answer clearly."	stop
+I'll provide the answer clearly."	stop	3.0	0	1		
 qdf141d2f	A Holzbrücke kann net me'r als 5.000 Pfund traga. An Lieferwagen mit lauter gleiche Kischten, von denen jede 15 Pfund wiegt, soll über d'Brücke fahra. Fahrer und leerer Laschtwagen wieget zamma 3755 Pfund. Wia viele Kischten kann dr Laschtwagen höchstens lada, ohne d'Gewichtsgrenze von dr Brücke zu überschreita?	"Dr Laschtwagen darf höchstens **83 Kischten** lada.
 
 Rechnig:
@@ -2701,7 +2701,7 @@ Calculation:
 
 Answer: 83 Kischten.
 
-I'll provide the reasoning briefly."	stop
+I'll provide the reasoning briefly."	stop	5000.0	0	0	83	1
 q1f4f019f	Dr Stephen hot online Lebensmittel bestellt. D'Endabrechnung war 40,00 US-Dollar. Weil a Lieferdienscht d'Bestellung bracht hot, hend se auf d'Rechnung 25 % Gebühr draufgschlaga und zusätzlich 3,00 US-Dollar Liefergebühr verlangt. Dr Stephen hot außerdem 4,00 US-Dollar Trinkgeld geba. Wia hoch war dr Endpreis von seine Lebensmittel nach alle Extragebühren?	"Dr Endpreis isch **57,00 US-Dollar**.
 
 Rechnig:
@@ -2748,7 +2748,7 @@ Rechnig:
 
 Zäme: 40,00 + 10,00 + 3,00 + 4,00 = 57,00 US-Dollar.""
 
-That should be good. I'll keep it concise and clear."	stop
+That should be good. I'll keep it concise and clear."	stop	57.0	0	1		
 q709e5faa	A Himbeerstrauch hot 6 Trauben mit jeweils 20 Früchten und no 67 einzelne Früchte, die über dr Strauch verteilt senn. Wia viele Himbeeren senn des z'samma?	"Des macht **6 × 20 = 120** Früchte in de Traube.
 
 Zämme mit de 67 einzelne senn des:
@@ -2784,7 +2784,7 @@ Or I could respond in standard German but acknowledge the dialect. But since the
 Let me craft a response:
 ""Des macht 6 × 20 = 120 Früchte in de Traube. Zämme mit de 67 einzelne senn des 120 + 67 = **187 Himbeeren**!""
 
-That should work. It's clear, answers the question, and matches the tone."	stop
+That should work. It's clear, answers the question, and matches the tone."	stop	187.0	0	1		
 qb292acaa	In oim Korb senn 25 Oranga. Davon isch 1 schlecht, 20 % senn no net reif on 2 senn sauer, dr Rest isch guat. Wia viele Oranga senn guat?	"Vo de **25 Oranga** senn:
 
 - **1** schlecht
@@ -2840,7 +2840,7 @@ Or more naturally:
 
 Das sind 8 Oranga, wo nöd guat senn. Dr Rest isch guat: 25 - 8 = **17 Oranga** senn guat.""
 
-That should be clear."	stop
+That should be clear."	stop	17.0	0	1		
 qa11cac63	D'Janet kauft ihrer Tochter a Brosche. Fürs Material zahlt se 500 US-Dollar und no 800 US-Dollar an dr Juwelier fürs Modelliere. Danach zahlt se zusätzlich 10 % von dem Betrag für d'Versicherung. Wia viel hot se insgesamt zahla müssa?	"Des isch a eifachi Rechnung:
 
 - Material: **500 $**
@@ -2869,7 +2869,7 @@ Let me answer clearly:
 10% von 1300 = 130
 Insgesamt: 1430 US-Dollar
 
-I'll respond in German, perhaps acknowledging the dialect lightly. Keep it concise."	stop
+I'll respond in German, perhaps acknowledging the dialect lightly. Keep it concise."	stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienschtjohr' kriegt a Mitarbeiter bei Marcys Firma a volle Jahresrente von 50.000 Dollar. Pensionsansprüche gibt's ab 20 Dienschtjohr. Für jedes weitere volle Dienschtjohr nach der 20-Jahres-Marke kriegt dr Mitarbeiter 5 % vom volla Rentabetrag dazu. Wenn d'Marcy nach genau 30 Dienschtjohr 'ufhört, wia hoch isch dann ihr' jährliche Rente in Dollar?	"Bi 40 Dienstjohr git’s d’volli Rente vo **50'000 Dollar**. Ab 20 Johr git’s überhaupt en Aaspruch, und für jedes volle Johr **nach** de 20er-Marke git’s 5 % vom volle Betrag dezue.
 
 D’Marcy het genau 30 Johr gschaffet:
@@ -2953,7 +2953,7 @@ Ihri jährlichi Rente isch also **25'000 Dollar**.""
 
 That should be good. I'll keep it concise and clear. Maybe mention the consistency check: at 40 years, 20 years × 5% = 100%, which matches the full pension. That confirms the interpretation.
 
-Let me write the final answer."	stop
+Let me write the final answer."	stop	25000.0	0	1		
 q2eb5bb5f	D'Aleena hot an Streaming-Dienst abonniert, d'r 140 US-Dollar im Monat koschtet. Wenn d'Firma in dr erschta Hälfte vom Jahr d'r ursprüngliche Betrag verlangt und in d'r zwoiten Jahreshälfte 10 % weniger, rechne aus, wia viel se bis zum Jahresende insg'samt für d'r Schtreaming-Dienscht zahlt.	"So rechne mr's:
 
 - **Erschte Jahreshälfte** (6 Monat): 6 × 140 $ = **840 $**
@@ -2992,7 +2992,7 @@ I'll respond in the dialect to match, but ensure clarity. Maybe a mix. Let me wr
 
 D'Aleena zahlt also bis zum Jahresende insg'samt 1.596 US-Dollar.""
 
-That should be good. Format: short, with the calculation steps. Use a small list. Keep it concise."	stop
+That should be good. Format: short, with the calculation steps. Use a small list. Keep it concise."	stop	1596.0	0	1		
 q29ca8e5c	D'Sophia überlegt, mit ihrem Auto auf Fahrt zu ganga, und will wissa, wia weit se mit me vollen Tank kommt. Seit em letzten Volltanka isch se 100 Meilen gfahra und hot 4 Gallonen Benzin nachfülla müssa, bis d'r Tank wieder voll war. In d'r Bedienungsanleitung steht, dass in d'r Tank 12 Gallonen Benzin nei passet. Wia viele Meilen kann d'Sophia mit oiner Tankfüllung fahra?	"Des isch a klassische Dreisatz-Aufgab:
 
 **Gegebe:**
@@ -3032,7 +3032,7 @@ Let me solve it step by step:
 
 So the answer is 300 Meilen.
 
-I should present this clearly."	stop
+I should present this clearly."	stop	300.0	0	1		
 q388ed7a8	Dr Jim guckt 2 Schtondn lang Fernseha ond goaht danoach ins Bett und liest halb so lang. Des macht er 3-mal pro Woch'. Wia viele Schtondn verbrengt er in 4 Wochen insgesamt mit Fernsehgucka und Lesa?	"Des isch ganz oifach:
 
 - **Fernseha:** 2 Schtondn
@@ -3083,7 +3083,7 @@ Let me write a response in the dialect:
 - 3 mol pro Woch': 3 × 3 = 9 Schtondn pro Woch'
 - In 4 Woch'n: 4 × 9 = **36 Schtondn** insgsamt.""
 
-That should work. I'll provide the answer clearly."	stop
+That should work. I'll provide the answer clearly."	stop	36.0	0	1		
 qe6615147	Vier Schula tretat in 'me Basketballturnier gegeneinander an. Jede Schul' schickt a Mädlebasketballteam und a Jungenbasketballteam, und jedes Team hot 5 Schpieler. Jede Schul' schickt außerdem für jedes Team oin Trainer mit. Wia viele Personen hend d' Schula insgesamt gschickt?	"**48 Personen** hend d' Schula insgesamt gschickt.
 
 So kummt ma drauf:
@@ -3140,7 +3140,7 @@ Or broken down:
 
 I'll present it clearly. Since the user used dialect, I might respond in a warm, accessible tone, perhaps in standard German with maybe a touch of dialect, but standard German is safest for clarity. Actually, responding in a similar dialect could be charming, but I should make sure the math is crystal clear. I'll go with standard German but friendly.
 
-Answer: 48 Personen."	stop
+Answer: 48 Personen."	stop	48.0	0	1		
 q1df59a5a	An Schatzsucher hot a vergrabene Schatzkischt' mit Edelstai' gfunda. Drin warat 175 Diamanten, 35 weniger Rubine als Diamanten und zwoimal so viele Smaragde wie Rubine. Wia viele Edelsteine warat insgesamt in dr Schatzkischt?	"Des hot ma scho glei ausrechna kenna! 😄
 
 **So geht's:**
@@ -3175,7 +3175,7 @@ Response:
 - Smaragde: 2 × 140 = 280
 - Insgesamt: 175 + 140 + 280 = 595 Edelsteine
 
-I can respond in a friendly dialect-ish German: ""So, rechne mer des mol aus..."" Let me keep it understandable."	stop
+I can respond in a friendly dialect-ish German: ""So, rechne mer des mol aus..."" Let me keep it understandable."	stop	595.0	0	1		
 q0e3fa635	An d'r Schule vom Dr. Wertz gibt's zwoimal so viele Kerle wie Mädle. Wenn's 60 Mädle und 5 Schüler pro Lehrer gibt, wia viele Lehrer gibt's noa?	"Griaß di! I rechne's moi vor:
 
 - **Mädle:** 60
@@ -3203,7 +3203,7 @@ Let me show the steps:
 - Schüler insgesamt: 180
 - Lehrer: 180 ÷ 5 = 36
 
-I'll respond in German, maybe with a bit of dialect flavor to match, but keep it clear."	stop
+I'll respond in German, maybe with a bit of dialect flavor to match, but keep it clear."	stop	36.0	0	1		
 q9c0ce719	D'Bailey fängt mit me bestimmta Geldbetrag an. Dann kriegt se 8 Wochen lang jede Woch' 5 US-Dollar. Wenn se am Ende von de' 8 Wochen insgesamt 100 US-Dollar hot, wia viel Geld hot d'Bailey am Anfang ghett?	"Des is a einfache Rechnung! 😊
 
 **Rechenweg:**
@@ -3226,7 +3226,7 @@ The user wrote in dialect, so I should probably respond in a friendly way, maybe
 
 Solution: 8 weeks × 5 USD = 40 USD. 100 − 40 = 60 USD. So she started with 60 US dollars.
 
-I'll answer in German, keeping it clear. Maybe mirror the dialect a bit lightly but keep it understandable."	stop
+I'll answer in German, keeping it clear. Maybe mirror the dialect a bit lightly but keep it understandable."	stop	60.0	0	1		
 qde446a3d	D'Judy gibt unter dr Woch' jeden Tag 5 Tanzkurs und samschtags 8 Kurs'. Wenn in jedem Kurs 15 Schüler sind und se 15,00 $ pro Schüler verlangt, wia viel Geld verdient se in oiner Woch'?	"Des isch e gueti Rechenufgab! 😊 So gaht's:
 
 **Kurs pro Wuch:**
@@ -3263,7 +3263,7 @@ Response structure:
 - Calculation steps
 - Answer: 7.425 $ (or $7,425)
 
-I'll write in German, possibly with a nod to the dialect. Keep it concise."	stop
+I'll write in German, possibly with a nod to the dialect. Keep it concise."	stop	7425.0	0	1		
 qd941251f	D'r Kelian hot zwei Kochrezepte. Des eine hot 20 Ahweisungen, und des andere hot zweimal so viele wie des erschte. Wia viele Ahweisungen muss dr Kelian lesa, damit er beide Rezept' kocha kann?	"Des erschte Rezept hot **20** Ahweisungen (Anweisungen).
 
 Des zweite hot zweimal so viele:
@@ -3331,7 +3331,7 @@ I should make sure to explain the calculation clearly.
 
 Final check: Is there any other interpretation? Could ""Ahweisungen"" mean ""rejections""? Like the recipe was rejected 20 times? That makes no sense in context. Could it be ""Zutaten"" (ingredients)? You don't ""read"" ingredients, you read the list of ingredients... but ""20 Zutaten lesen"" is possible but odd. ""Anweisungen"" (instructions) fits ""lesen"" perfectly. So I'm confident it's instructions/steps.
 
-Answer: 60."	stop
+Answer: 60."	stop	60.0	0	1		
 q96352811	D'r Tommy sammelt Geld für sei Wohltätigkeitsorganisation, indem er Brownies für 3 US-Dollar pro Schtück und Käsekuchastückle für 4 US-Dollar pro Stück verkauft. Wenn d'r Tommy 43 Brownies und 23 Käsekuchastückle verkauft, wia viel Geld sammelt er noa ei?	"D'r Tommy sammelt insgsamt **221 US-Dollar** ei! 🍫🍰
 
 So rechnt mer's:
@@ -3362,7 +3362,7 @@ Gesamt: 129 + 92 = 221 $
 
 So Tommy sammelt 221 US-Dollar.
 
-I could write it in the dialect: ""D'r Tommy sammelt insgsamt 221 Dollar!"" But maybe standard German with a friendly tone is best, perhaps acknowledging the dialect. I'll answer in German with the calculation clearly shown."	stop
+I could write it in the dialect: ""D'r Tommy sammelt insgsamt 221 Dollar!"" But maybe standard German with a friendly tone is best, perhaps acknowledging the dialect. I'll answer in German with the calculation clearly shown."	stop	221.0	0	1		
 qbf808b59	D'Shiela hot fünf Handys für jeweils 150 US-Dollar mit me Ratenzahlungsvertrag über 3 Monat' kauft. Pro Stück fallen 2 % Zinsen an. Wia viel zahlt d'Shiela jeden Monat über die 3 Monat'?	"Rechnung (mit 2 % Zinsen einmalig pro Handy über die Laufzeit):
 
 - Kaufpreis gesamt: 5 × 150 $ = **750 $**
@@ -3397,7 +3397,7 @@ Answer: 255 US-Dollar pro Monat.
 
 I'll note assumption: 2% einmalig über die Laufzeit. If 2% pro Monat, then different. Keep concise. Since user wrote in German dialect, respond in German. Maybe keep it friendly.
 
-Need to ensure no tool use in final (the instruction says must not call tools in next message — I already called tool; final is fine)."	stop
+Need to ensure no tool use in final (the instruction says must not call tools in next message — I already called tool; final is fine)."	stop	255.0	0	1		
 q71d76256	Dr Artie hot an Blumenstand auf em Baueramarkt. Er verkauft drei Sorten Blumen: Studentenblumen, Petunien und Begonien. Normal verlangt er für Studentenblumen 2,74 Dollar pro Topf, für Petunien 1,87 Dollar pro Topf und für Begonien 2,12 Dollar pro Topf. Heut hot d'r Artie koi Wechselgeld, drum rundet er alle Preise auf dr nächschte Dollar. Wenn er 12 Töpfe Studentenblumen, 9 Töpfe Petunien und 17 Töpfe Begonien verkauft, wia viel Dollar verdient er noa?	"Er rundet auf den nächsten vollen Dollar **auf**:
 
 - Studentenblumen: 2,74 → **3 Dollar**
@@ -3452,7 +3452,7 @@ Need maybe if ""nearest"" intended? Could add parenthetical: ""Falls 'nächster 
 
 Let's ensure no arithmetic error: 12*3=36, 9*2=18, 17*3=51, sum=105. Yes.
 
-Need final in German. Use ""Dollar"" maybe ""105 Dollar"". Done."	stop
+Need final in German. Use ""Dollar"" maybe ""105 Dollar"". Done."	stop	105.0	0	0	105	0
 qd6f9023f	Dr Luke verbringt Zeit am Strand und baut Sandburgen. Irgendwann merkt er, dass jede Ebene von dr Sandburg bloß halb so viele Quadratmeter hot wie d'Ebene dronter. Wenn er a 4-stöckige Sandburg baut, bei der d'oberschte Ebene 16 Quadratmeter hot, wia groß isch dann im Schnitt oi Ebene in Quadratmetern?	"Die Ebenen sind von oben nach unten:
 
 - **4. Ebene (oben):** 16 m²
@@ -3529,7 +3529,7 @@ So Ebene n = 0.5 × Ebene (n-1) [where n-1 is below]
 So if top is 16, the one below is 32, then 64, then 128. Yes.
 Average = (16+32+64+128)/4 = 240/4 = 60. Correct.
 
-I'll provide the answer clearly."	stop
+I'll provide the answer clearly."	stop	60.0	0	1		
 qcf724c14	D'Cecilia hot grad an neuen Welpen kauft. Laut ihrem Tierarzt muss se dr Welpen in den erschte 180 Tagen jeden Tag mit 1 Tasse Hundefutter füttera. Danoch braucht dr Welpe für dr Rest von seim Leben jeden Tag 2 Tassen Hundefutter. Wenn a Tüte Hundefutter 110 Tassenportionen enthält, wia viele Tüten verbraucht d'Cecilia dann im erschta Jahr?	"Hier isch d'Lösig Schritt für Schritt:
 
 **1. Futtermenge im erschte Jahr berechne:**
@@ -3627,7 +3627,7 @@ But to be thorough, I should mention that we assume 365 days.
 
 So answer: 5 Tüten.
 
-Let me write the response."	stop
+Let me write the response."	stop	5.0	0	1		
 q6330b5ad	Wenn dr Raymond halb so viel Wäsche wäscht wie d' Sarah und d' Sarah 4-mal so viel Wäsche wäscht wie dr David, rechne dr Onterschied zwischen dr Wäschemenge vom Raymond und vom David aus, wenn d' Sarah 400 Pfund Wäsche wäscht.	"Do chani dir usrechne:
 
 **Gäbe:**
@@ -3683,7 +3683,7 @@ Auf Schweizerdeutsch:
 - ""D' Sarah wäscht 4-mal so viel wie dr David, also wäscht dr David: 400 ÷ 4 = 100 Pfund.""
 - ""Dr Onterschied isch: 200 − 100 = 100 Pfund.""
 
-Das sollte passen."	stop
+Das sollte passen."	stop	100.0	0	1		
 qfb8247db	D'r Vincent kann Blumen in 3-er-Packungen für 2,50 US-Dollar oder in 2-er-Packungen für 1 US-Dollar kaufa. Wia viel Geld spart er, wenn er 18 Blumen zum günschtigera Preis kauft?	"Hier ist die Rechnung:
 
 **Mit 3-er-Packungen:**
@@ -3801,7 +3801,7 @@ Final check: 18 flowers.
 
 Yes.
 
-I'll write the answer in German."	stop
+I'll write the answer in German."	stop	6.0	0	1		
 q4da79a41	D'r John adoptiert an Hond. Er bringt d'r Hond zum Hondefrisör, und des koschtet 100 US-Dollar. Weil er Neukunde isch, kriegt er 30 % Rabatt. Wia viel kostet dr Termin beim Hondefrisör dann?	"Dr Termin koschtet **70 US-Dollar**.
 
 Rechnung: 30 % vo 100 Dollar sind 30 Dollar Rabatt. 100 − 30 = **70 Dollar**."	70	"The user is asking a math question in a German dialect (likely Swabian/Alemannic based on ""D'r"", ""isch"", ""koschtet"", ""kriegt"", ""Wia viel"").
@@ -3843,7 +3843,7 @@ Calculation:
 
 Answer: 70 US-Dollar.
 
-I'll respond in a mix that matches the user's dialect style."	stop
+I'll respond in a mix that matches the user's dialect style."	stop	70.0	0	1		
 qd3f2e43b	Zwei Mädle krieget jeweils 1/6 von de' 24 Liter Wasser. Danach kriegt an Bub 6 Liter Wasser. Wia viele Liter Wasser bleibet übrig?	"Des isch a Rechenaufgab! I rechne's mol vor:
 
 **Schritt für Schritt:**
@@ -3875,7 +3875,7 @@ Response in Swabian-ish dialect:
 - Zsamma: 8 + 6 = 14 Liter
 - Übrig: 24 - 14 = 10 Liter
 
-Answer: 10 Liter bleibet übrig."	stop
+Answer: 10 Liter bleibet übrig."	stop	10.0	0	1		
 qffe70c6a	Dr Charlie hot 10 Schticker ghett. Er hot 21 Schticker in me Laden in d'r Mall kauft und zum Geburtstag 23 Schticker gschenkt kriegt. Donoach hot dr Charlie seiner Schwester 9 von de Schticker geba und 28 zum Verziera vo rer Grußkarte benutzt. Wia viele Schticker hot dr Charlie no übrig?	"Dr Charlie hot am Afang **10 Schticker** ghet.
 
 Do kumme no dezua:
@@ -3979,7 +3979,7 @@ Davon gab er 9 an seine Schwester und benutzte 28 für die Karte: 9 + 28 = 37.
 
 Dr. Charlie hat also noch **17 Schticker** übrig.""
 
-I think a mix is nice. I'll provide the calculation clearly and the final answer."	stop
+I think a mix is nice. I'll provide the calculation clearly and the final answer."	stop	17.0	0	1		
 q7d0f9963	D'Grace wiegt 125 Pfund. Dr Alex wiegt 2 Pfund weniger als des 4-fache vom Gewicht von dr Grace. Wia viel Pfund wieget se zamma?	"Dr Alex wiegt: 4 × 125 − 2 = **498 Pfund**
 
 Zamma (zusammen) wieget se: 125 + 498 = **623 Pfund**"	623	"The user is asking a math problem in a dialect (looks like Swiss German or Alemannic dialect, possibly Zurich German or similar). Let me translate:
@@ -4034,7 +4034,7 @@ Let me write it in a way that matches the dialect somewhat:
 Or in standard German:
 ""Grace wiegt 125 Pfund. Alex wiegt 4 × 125 − 2 = 498 Pfund. Zusammen wiegen sie 125 + 498 = 623 Pfund.""
 
-I think a mix is fine - clear standard German with the calculation."	stop
+I think a mix is fine - clear standard German with the calculation."	stop	623.0	0	1		
 q792b7ea9	D'r Dan pflanzt 3 Rosenbüsch. Jeder Rosenbusch trägt 25 Rosen. Jede Rose hot 8 Dornen. Wia viele Dornen senn des insgesamt?	"Des senn **600 Dornen** insgesamt!
 
 Rechnung:
@@ -4064,7 +4064,7 @@ Or step by step:
 3 Rosenbüsche × 25 Rosen = 75 Rosen
 75 Rosen × 8 Dornen = 600 Dornen
 
-I'll answer in German since the question is in German (dialect)."	stop
+I'll answer in German since the question is in German (dialect)."	stop	600.0	0	1		
 q3dfac176	A Fußballteam schpielt 22 Schpiel. Se hend 8 meh' gwonna als verlora. Wia viele Schpiel hend se gwonna?	"Se hend **15 Schpiel gwonna**.
 
 Rechnung:
@@ -4117,7 +4117,7 @@ Calculation:
 
 So they won 15 games.
 
-I should present this clearly."	stop
+I should present this clearly."	stop	15.0	0	1		
 qc8e2bf9d	D'r Eugen näht an Quilt aus alte Souvenir-T-Shirts. Er hot von jedem Urlaub, den er gmacht hot, a T-Shirt. Er fährt jedes Joahr viermal in Urlaub. Mit d'r Tradition hot er in dem Joahr angfanga, wo er 23 worda isch, und er hot für jedes Jahr bis vor s'aktuelle Jahr T-Shirts gsammelt; jetzt isch er 34. Wia viele Quilt-Blöcke hot er insgesamt?	"Dr Eugen hot **44 Quilt-Blöck**.
 
 So rechne mr’s:
@@ -4262,7 +4262,7 @@ Wait, one more check: If he turned 23 in year X, and he is 34 in year X+11 (sinc
 
 Calculation: 11 * 4 = 44.
 
-The answer is 44."	stop
+The answer is 44."	stop	44.0	0	1		
 q87073282	D'r Greg hot an Wecker gstellt, der dreimal am Tag zur Erinnerung klingelt. Wenn d'r Wecker losgoaht, klingelt er so lang, bis d'r Greg n' ausmacht. Beim erschten Moal heut hoat er viermal g'klingelt. Beim zweiten Moal hot er dreimal so lang g'klingelt wie beim erschten Moal. Beim dritten Moal hot er halb so lang klingelt wie beim zweiten Moal. Wia oft hot dr Wecker insgesamt klingelt?	"Do hot's g'richtig g'rechnet:
 
 **Erschts Moal:** 4 mol klingelt
@@ -4324,7 +4324,7 @@ Let me verify once more:
 
 Yes, 22 is correct.
 
-I should present the solution step by step so it's easy to follow."	stop
+I should present the solution step by step so it's easy to follow."	stop	22.0	0	1		
 qe293b5e8	A Firma zahlt ihre Mitarbeiter an Einstiegslohn von 600 Dollar im Monat. D'Firmenregel belohnt Mitarbeiter, die lang dabei sind: Nach fünf Dienschtjoahr' wird d'r Lohn jedes Joahr erhöht. D'jährliche Erhöhung isch immer an feschter Betrag und entspricht 10 % vom anfänglichen Jahresgehalt. D'Sylvie hot grad ihr fünftes Joahr in dr Firma fertig. Wia hoch isch ihr Jahresgehalt, nachdem se no drei weitere Joahr dort schafft?	"Hier die Lösung Schritt für Schritt:
 
 1. **Anfängliches Jahresgehalt**
@@ -4662,7 +4662,7 @@ One more nuance: ""anfänglichen Jahresgehalt"" - initial annual salary. That's 
 
 So the answer is 9360 Dollar per year.
 
-I'll present it clearly."	stop
+I'll present it clearly."	stop	9360.0	0	1		
 qb9e657cf	D'erschte Platte von d'r Marilyn hot sich 10-mal so oft verkauft wie die vom Harald. Wenn se zamma 88.000 Exemplare verkauft hend, wia viele Exemplare hot dr Harald verkauft?	"Dr Harald hot **8.000 Exemplare** verkauft.
 
 Rechnung:
@@ -4701,7 +4701,7 @@ I'll provide the answer in the dialect style to match, but ensure clarity. Maybe
 
 Rechnung: Wenn dr Harald x verkauft hot, hot d'Marilyn 10x verkauft. Zamma: 11x = 88.000, also x = 8.000.""
 
-That should be good. Let me make it natural."	stop
+That should be good. Let me make it natural."	stop	8000.0	0	1		
 q8d6c3ac8	D'Christina hot 16 Freind zu ihrer Geburtstagsfeier eiglada. Se rechnet damit, dass bloß 75 % davon kommet, drum richtet se für jeden erwarteten Gast a Geschenktüte. Wenn jede Geschenktüte $2 koschtet, wia hoch sind dann d'Gesamtkoschta für d'Geschenktüten?	"Servus! Des is a einfache Rechnung: 🙂
 
 **Schritt 1: Erwartete Gäste**
@@ -4734,7 +4734,7 @@ Answer: $24 (24 Dollar)
 
 I could respond in the same dialect for fun, but clarity is important. Maybe a mix: answer in standard German but keep it warm. Or I could play along with the dialect lightly. Let me write in standard German with clear steps, perhaps with a light dialect touch at the start like ""Servus!"" 
 
-Format: short, with calculation steps, final answer bolded. Keep it concise."	stop
+Format: short, with calculation steps, final answer bolded. Keep it concise."	stop	24.0	0	1		
 qa59fef67	Dr Ted, dr T-Rex, will Kartoffelsalat zum Dinopicknick mitbringa. Er woiß, dass an erwachsener Dinosaurier 10 Pfund Kartoffelsalat isst und a Jungtier halb so viel wie a erwachsenes Tier. Wenn beim Picknick 20 Erwachsene und 5 Junge dabei senn, wia viel Kartoffelsalat muss dr Ted mitbringa, damit hoffentlich alle satt werdet?	"Servus! Do rechned ma glei amoi noch:
 
 **Erwachsene:**
@@ -4771,7 +4771,7 @@ Let me respond in character with the dialect:
 - 5 Junge × 5 Pfund (hoib so vui) = 25 Pfund
 - Zsamm: 225 Pfund
 
-I'll keep the dialect flavor but make sure the math is clear."	stop
+I'll keep the dialect flavor but make sure the math is clear."	stop	225.0	0	1		
 q4db223a4	D'r Jan hot dreimal so viele Haustiere wie d'Marcia. D'Marcia hot zwei Haustiere mehr als d'Cindy. Wenn d'Cindy vier Haustiere hot, wia viele Haustiere hend dann alle drei zamma?	"D'Cindy hot **4** Haustiere.
 
 D'Marcia hot zwei meh, also **4 + 2 = 6** Haustiere.
@@ -4816,7 +4816,7 @@ D'Marcia hot 2 meh, also 6 Haustiere.
 Dr Jan hot dreimal so viel wie d'Marcia, also 3 × 6 = 18 Haustiere.
 Zamma hend se 4 + 6 + 18 = 28 Haustiere.""
 
-That should work."	stop
+That should work."	stop	28.0	0	1		
 q2ae0bd70	D'Emily hot 4 Kinder: Amy, Jackson, Corey und James. D'Amy isch 5 Joahr älter als d'r Jackson und 2 Joahr jünger als d'r Corey. Wenn d'r James 10 Joahr alt und 1 Joahr jünger wie d'r Corey isch, wia alt isch dann dr Jackson?	"So, loß mr das mol usrechne:
 
 1. **James** isch 10 Joahr alt.
@@ -4863,7 +4863,7 @@ Step-by-step:
 
 So Jackson is 4 years old.
 
-I'll write the response in German, keeping it clear and friendly."	stop
+I'll write the response in German, keeping it clear and friendly."	stop	4.0	0	1		
 q412bff21	D'r Lee konnte d'400 Meter Hürden zwei Sekonden schneller laufa als dr Gerald d'400 Meter Hürden läuft. Dr Gerald hot aber sei Ernährung omgstellt und dadurch sei G'schwindigkeit um 10 % verbessert. Wenn dr Lee d'400 Meter Hürden in 38 Sekunden läuft, wia schnell kann dr Gerald mit seiner verbesserten Ernährung d'400 Meter Hürden in Sekunden laufa?	"Rechnung:
 
 - Dr Lee: **38 s**
@@ -4914,7 +4914,7 @@ I think I'll include the note briefly because many such problems expect 36 s (tr
 
 Final answer: ca. 36,36 Sekunden (genau 400/11 s). 
 
-Let me write in German."	stop
+Let me write in German."	stop	36.4	0	0	36.4	0
 qf73a338f	In rer Noachbarschaft gibt's zwölf weniger Kaninchen als Hond und Katza zamma. Wenn auf jeden Hond zwei Katza kommet und es 60 Hond gibt, wia viele Haustiere gibt's dann insgesamt in d'r Nachbarschaft?	"Rechnung:
 
 - **Hond:** 60
@@ -4949,7 +4949,7 @@ Calculation:
 
 Answer: 348 Haustiere.
 
-I should present this clearly. Maybe respond in a matching playful dialect but ensure the math is clear. Let me write in standard German with a bit of dialect flavor, or just standard German. The user used dialect; responding in kind is nice but must remain understandable. I'll do a short dialect-flavored answer with the clear steps."	stop
+I should present this clearly. Maybe respond in a matching playful dialect but ensure the math is clear. Let me write in standard German with a bit of dialect flavor, or just standard German. The user used dialect; responding in kind is nice but must remain understandable. I'll do a short dialect-flavored answer with the clear steps."	stop	348.0	0	1		
 qc5273098	Von de' 200 Fünftklässler sind 2/5 Jungen, und 2/3 von de Mädle senn bei de Pfadfinderinnen. Wia viele Mädle senn net bei de Pfadfinderinnen?	"Vo de 200 Fünftklässler:
 
 **Junge:** 200 × 2/5 = **80**
@@ -5005,7 +5005,7 @@ Or 1/3 of 120 = 40.
 
 Yes, 40 is correct.
 
-I'll provide the answer clearly."	stop
+I'll provide the answer clearly."	stop	40.0	0	1		
 qf8da7966	D'r Harry hot letschte Nacht 9 Schtondn gschlafa. Sei Freind James hot bloß 2/3 von d'r Zeit gschlafa, die d'r Harry gschlafa hot. Wia viele Schtondn hot dr Harry meh' gschlafa wie d'r James?	"Dr Harry hot **3 Schtondn** meh gschlafa wie dr James.
 
 So hot's gricht:
@@ -5036,7 +5036,7 @@ Calculation:
 - James: 2/3 × 9 = 6 Stunden
 - Unterschied: 9 - 6 = 3 Stunden
 
-I'll write the response in standard German but keep it simple and clear."	stop
+I'll write the response in standard German but keep it simple and clear."	stop	3.0	0	1		
 q186d2aa2	Wenn d'Freda Dosentomaten zu Soße ei'kocht, verlieret se d'Hälfte von ihrem G'wicht. Jede 16-Unzen-Dose Tomaten, die se nemmt, enthält drei Tomaten. D'letschte Portion Tomatensoße hot 32 Unzen Soße ergeba. Wia viele Tomaten hot d'Freda g'braucht?		12	"The user is asking a math word problem in a German dialect (looks like Pennsylvania German / Palatine German, ""Pennsylvania Dutch""). Let me translate:
 
 ""Wenn d'Freda Dosentomaten zu Soße ei'kocht, verlieret se d'Hälfte von ihrem G'wicht. Jede 16-Unzen-Dose Tomaten, die se nemmt, enthält drei Tomaten. D'letschte Portion Tomatensoße hot 32 Unzen Soße ergeba. Wia viele Tomaten hot d'Freda g'braucht?""
@@ -5061,7 +5061,7 @@ Let me double-check: 4 cans × 16 oz = 64 oz. Lose half → 32 oz sauce. 4 cans 
 
 I should respond in the same dialect perhaps, or at least answer clearly. The user wrote in Pennsylvania German dialect. I could respond in kind, or in standard German, or English. Probably best to answer in the same playful dialect plus clear explanation, or just answer clearly. I'll respond in the dialect to match, with the math shown, and maybe give the standard German/English too. Let me write in the dialect:
 
-""Antwort: 12"	stop
+""Antwort: 12"	stop		0	0		0
 q9c762a15	Auf d'r Autobahn stauet sich d'Auto. A paar Auto kommet in den erschte 15 Minuten vom Stau durch, danach kommet no 20 weitere Auto in den übrigen 15 Minuten vom Stau durch. 5 Autos scheret aus d'r Reihe aus und müsset drum net durch dr Stau. Wenn am Anfang 30 Autos auf dr Autobahn standet, wia viele Autos sind dann in den ersten 15 Minuten durch d'r Stau komma?	"Hier ist die Rechnung:
 
 - Am Anfang: **30 Autos**
@@ -5129,7 +5129,7 @@ Calculation:
 - davon 20 in den letzten 15 Minuten
 - also 25 - 20 = 5 Autos in den ersten 15 Minuten
 
-I should present this clearly."	stop
+I should present this clearly."	stop	15.0	0	0	5	1
 q507804db	D'Mary gärtnert für ihr Leba gern. Geschtern hot se 18 neue Topfpflanza von ihrer Lieblingsgärtnerei kriegt. Se hot scho 2 Topfpflanzen auf jedem von de 40 Fenschtersims in ihrem großen Landhaus standa. Weil se grad großzügig isch, will se morgen von jedem Fenschtersims 1 Topfpflanze an Freind und Familie verschenka. Wia viele Topfpflanzen bleibet d'r Mary übrig?	"D'Mary hot scho **2 × 40 = 80** Topfpflanza uf de Fenschtersims ghet.
 
 Dazua kumma **18 neue** vu dr Gärtnerei:
@@ -5166,7 +5166,7 @@ Let me write in a similar dialect:
 
 Answer: 58.
 
-I'll respond in the dialect to match, but keep it understandable."	stop
+I'll respond in the dialect to match, but keep it understandable."	stop	58.0	0	1		
 q120898cb	D'r Jerome hot an bestimmte Tag 4 Freind zu Besuch. D'r erschte hot 20 Mal auf d'Türklingel drückt, bevor d'r Jerome aufgmacht hot. Dr zweite hot 125 % so oft auf d'Türklingel drückt wie d'r erschte. Dr dritte hot 10 Mal öfter klingelt als d'r vierte. Wenn d'r vierte 60 Mal auf d'Türklingel drückt hot, wia oft hot d'Türklingel insgesamt klingelt?	"Hier ist die Rechnung:
 
 *   **Dr erschte Freind:** 20 Mal
@@ -5325,7 +5325,7 @@ I'll double-check: 20 + 25 = 45. 45 + 60 = 105. 105 + 600 = 705. Yes.
 
 Final check on ""125 % so oft"": 125% = 5/4. 5/4 of 20 = 25. Correct.
 
-Everything looks good."	stop
+Everything looks good."	stop	705.0	0	0	705	0
 q55e446ec	D'r Solo muss 4 Seiten aus saim naturwissenschaftlicha Textbuch lesa, 20 Seiten aus seinem Gemeinschaftskundebuch, 7 Seiten aus seinem Geschichtsbuch und 8 Seiten aus seinem Geografiebuch. Am Montag liest dr Solo 15 Seiten. Wenn er no 4 Tag' hot, um alles zom lesa, wia viele Seiten muss er dann em Schnitt pro Tag lesa?	"Des isch a mol e Rechenufgab! 😄
 
 **Schritt 1: Gsamtseiten zammrechna**
@@ -5357,7 +5357,7 @@ Let me write the solution steps:
 2. Nach Montag: 39 - 15 = 24 Seiten übrig
 3. Auf 4 Tage verteilt: 24 ÷ 4 = 6 Seiten pro Tag
 
-I'll respond in German, maybe with a nod to the dialect. Keep it concise."	stop
+I'll respond in German, maybe with a nod to the dialect. Keep it concise."	stop	6.0	0	1		
 qe178e77b	D'r John trinkt zum Frühstück, Mittagessa und Abendessa gern jeweils a Glas Wasser. Vor em Schlafengeha trinkt er au no oins. Des macht dr John an jedem Wochentag, aber am Wochenende macht er's gemütlicher und trinkt zum Abendessa stattdessa a Glas Limonade. Wia viele Gläser Wasser trinkt dr John pro Woche?	"Dr John trinkt also:
 
 *   **An den 5 Wochentagen** (Montag–Freitag) jeweils **4 Gläser Wasser** (Frühstück, Mittagessen, Abendessen und vor dem Schlafengehen):  
@@ -5486,7 +5486,7 @@ Therefore: 26 is correct.
 
 One more check: ""jeweils a Glas Wasser"" - ""jeweils"" means ""each"" or ""in each case"", so yes, one glass per meal.
 
-Okay, I'm confident with 26."	stop
+Okay, I'm confident with 26."	stop	26.0	0	1		
 q13dd2b3f	An Nebelschleier kommt vom Meer rüber und legt sich über a Stadt. Er braucht 10 Minuten, om jeweils 3 Meilen von d'r Stadt zuzudecka. Wenn d' Stadt vom Meeresufer bis auf d'andere Seite im Landesinneren 42 Meilen breit isch, wia viele Minuten braucht dr Nebel, bis er über d'r ganzen Stadt liegt?	"Dr Nebel brucht insgsamt **140 Minuuta** (oda **2 Stunda und 20 Minuuta**), bis er über dr ganza Stadt liegt.
 
 **Rechnung:**
@@ -5553,7 +5553,7 @@ One thing to consider: does the fog start at the shore (0 miles) and needs to co
 
 So final answer: 140 minutes or 2 hours 20 minutes.
 
-I'll write the response in Swabian dialect to match the user's language."	stop
+I'll write the response in Swabian dialect to match the user's language."	stop	140.0	0	1		
 q5d8678a9	D'Poppy macht a 1000-Teile-Puzzle. Se legt a Viertel von de Teile aufs Brett, danoach legt ihre Mama a Drittel von de übrigen Teile. Wia viele Puzzleteile müsset danach no gelegt werda?	"Es müassn danach **500 Puzzleteile** no glegt werda.
 
 Rechnung:
@@ -5584,7 +5584,7 @@ The answer is 500 pieces.
 
 I should respond in the same dialect/register to match the user, or at least clearly answer. The user wrote in Bavarian dialect. I could respond in a friendly way, perhaps in standard German or matching the dialect lightly. I'll answer clearly with the calculation, maybe in a similar tone. Since the user used dialect, I can respond in standard German but keep it simple, or use some dialect. I'll provide the answer with steps. Probably best to answer in German (standard) but maybe acknowledge. Let me answer in German with clear steps, possibly with a touch of dialect. I'll keep it understandable.
 
-Final answer: 500 Puzzleteile."	stop
+Final answer: 500 Puzzleteile."	stop	500.0	0	1		
 q10c23d37	D'r Cody isst dreimal meh' Keks' wie d'r Amir. Wenn d'r Amir 5 Kekse isst, wia viele Keks' esset die zwoi dann zamma?	"Wenn d'r Amir 5 Kekse isst, dann isst d'r Cody dreimal so viel:
 
 **3 × 5 = 15 Kekse**
@@ -5654,7 +5654,7 @@ Amir: 5
 Cody: 3 × 5 = 15
 Zusammen: 20
 
-I'll provide the answer clearly."	stop
+I'll provide the answer clearly."	stop	20.0	0	1		
 q71246a09	Dr John hot 3 Kischta. Jede Kischt' isch 5 Inch mal 6 Inch mal 4 Inch groß. D'Wände senn 1 Inch dick. Wia groß isch s'Innenvolumen vo' alle 3 Kischta zamma?	"Des isch e gueti Uffgab! 😄
 
 **Rechnig:**
@@ -5699,7 +5699,7 @@ Let me write the answer:
 Innenvolumen einer Kiste: 3 × 4 × 2 = 24 Kubikzoll (cubic inches)
 Alle 3: 24 × 3 = 72 Kubikzoll
 
-I could respond in the dialect: ""S'Innenvolumen isch 72 Kubikzoll"" — maybe mix. I'll answer in German with maybe a dialect flavor. Keep it clear."	stop
+I could respond in the dialect: ""S'Innenvolumen isch 72 Kubikzoll"" — maybe mix. I'll answer in German with maybe a dialect flavor. Keep it clear."	stop	72.0	0	1		
 q51ea4378	D'r Frankie schaut jeden Abend fern, nachdem er seine Hausaufgaba g'macht hot. Am Montag und Dienstag hot er jeweils eine 1-stündige Folge von seiner Lieblingssendung agschaut. Am Mittwoch hot er a paar Folgen von rer 30-minütigen Sendung agschaut. Am Donnerstag war er früher mit de Hausaufgaben fertig und hot eine 1-stündige Folge und eine 30-minütige Show agschaut. Am Freitag durfte er wegen em Wochenende länger aufbleiba und hot zwei 1-stündige Folgen agschaut. Wenn er insgesamt 7 Schtondn fernsehguckt hot, wia viele 30 Minuten lange Folgen hot er am Mittwoch agschaut?	"Am Mittwoch hot er **3** 30-Minuten-Folgen gschaut.
 
 Rechnung:  
@@ -5721,7 +5721,7 @@ Need be careful with ""Schtondn"" = Stunden. ""wia viele 30 Minuten lange Folgen
 
 Need maybe mention ""Rechnung: Montag+Dienstag+Donnerstag+Freitag = 1+1+1.5+2 = 5.5 Stunden; 7 - 5.5 = 1.5 Stunden; 1.5 / 0.5 = 3."" In dialect maybe.
 
-Need final concise."	stop
+Need final concise."	stop	30.0	0	0	3	1
 qe465613a	D'r Henry bäckt Keks' für an regionalen Backwettbewerb. Er will zwoimal so viele bacha wie letschtes Joahr. Als er fertig isch, merkt er, dass er 15 Kekse mehr bacha hot als eigentlich g'plant. Beim Rausstelle zum Abkühla lässt er 5 Keks' falla und hot danach insgesamt 110 Keks'. Wia viele Keks' hot dr Henry letztes Jahr bacha?	"Do kannsch so rechne:
 
 **Lösung:**
@@ -5791,7 +5791,7 @@ x = 50
 
 Antwort: 50 Kekse.
 
-I'll present this clearly."	stop
+I'll present this clearly."	stop	110.0	0	0	50	1
 q1e0f8fcb	A örtliche Tankschtelle verkauft Benzin für 3,00 $ pro Gallone. A App-Firma gibt 0,20 $ Cashback pro Gallone, wenn ma an d'r Tankchstelle tankt. Wenn jemand 10 Gallonen Benzin kauft, wia viel kostet des Benzin nach dr Cashback-Prämie? Gib d'Antwort in Dollar an.	"Berechnung:
 
 - **Preis vor Cashback:** 10 Gallonen × 3,00 $ = **30,00 $**
@@ -5815,7 +5815,7 @@ The answer is $28.00.
 
 The user wrote in a dialect, so I could respond in standard German or match the dialect somewhat. I'll respond in German (standard or slightly dialect-friendly) with the calculation clearly shown. Since they asked ""Gib d'Antwort in Dollar an"" (give the answer in dollars), I should clearly state $28.00.
 
-I'll provide a clear step-by-step calculation in German."	stop
+I'll provide a clear step-by-step calculation in German."	stop	28.0	0	1		
 q91fe6f6e	D'r Marcell und d'Beatrice machet an Wettbewerb, wer d'meiste' Fruchtrollen essa kann, also rollet se alle aus, die se findat. Leider hot jemand an Fehler gmacht: D'Menge von d'r Beatrice war zwei Rollen breit und 24 Rollen lang, während die vom Marcell 3 Rollen breit und 14 Rollen lang war. Wenn beide ihr' ganze Menge esset, wia viele hend se dann em Schnitt gessa?	"Des isch eifach z'rächnä:
 
 **D'Beatrice:** 2 breit × 24 lang = **48 Fruchtrolle**
@@ -5846,7 +5846,7 @@ Calculation:
 - Zusammen: 90
 - Schnitt (Durchschnitt): 90 ÷ 2 = 45
 
-So on average, they ate 45 fruit rolls each."	stop
+So on average, they ate 45 fruit rolls each."	stop	45.0	0	1		
 q76afc2ba	Julias Boot hot a Leck g'kriegt, als se draußen auf em See war. Für alle zehn Fuß, die se Richtung Ufer rudert, laufet zwei Liter Wasser ins Boot. Für zwanzig Fuß braucht se sechzehn Sekonden. Dr Strand war 64 Sekonden entfernt. Wia viel Wasser war im Boot, als d'Julia d'r Strand erreicht hot?	"In 64 Sekonda schafft d’Julia:
 
 - 64 ÷ 16 = 4 mol die 20 Fuß → 4 × 20 = **80 Fuß**
@@ -5876,7 +5876,7 @@ Let me write the response. I'll keep it understandable. Maybe respond in the sam
 
 ""In 64 Sekonda kumsch 4 mol 16 Sekonda, also 4 mol 20 Fuß = 80 Fuß. Uff 10 Fuß kummet 2 Liter, also 8 mol 2 Liter = 16 Liter. Antwort: 16 Liter.""
 
-That mirrors the dialect nicely. But I should also make it clear in standard German perhaps. I'll provide the calculation clearly."	stop
+That mirrors the dialect nicely. But I should also make it clear in standard German perhaps. I'll provide the calculation clearly."	stop	16.0	0	1		
 q9c73cd77	A Klassenzimmer hot a Tafel, die sich 4 Lehrer teilet, weil se d'r Raum abwechselnd nutzet. Jeder Lehrer hot 2 Unterrichts Schtonda am Tag und benutzt d'Tafel in jeder Schtond. Wenn d'Tafel 3-mal pro Unterrichts Schtond gwischt wird, wia oft wird se dann am Tag gwischt?	"Ganz eifach rechne mer:
 
 - 4 Lehrer × 2 Schtonda = **8 Unterrichtschtonda am Tag**
@@ -5900,7 +5900,7 @@ Let me show steps:
 
 I'll respond in German, maybe lightly matching the dialect tone but keeping it understandable. Something like: ""Ganz einfach: 4 Lehrer × 2 Stonda = 8 Stonda am Tag. Und 8 × 3 = 24. D'Tafel wird also 24-mal am Tag gwischt.""
 
-That mirrors the dialect nicely. Keep it concise."	stop
+That mirrors the dialect nicely. Keep it concise."	stop	24.0	0	1		
 q2bbbdc5a	D'r Ryan pflanzt jeden Tag 2 Blumen in seim Garten. Nach 15 Tag', wia viele Blumen hot er, wenn 5 net angewachsa senn?	"Rechnung:
 
 - 2 Blumen × 15 Täg = **30 Blumen** pflanzt
@@ -5920,7 +5920,7 @@ Let me answer: 2 × 15 = 30 gepflanzte Blumen; 30 − 5 = 25 Blumen sind angewac
 
 I'll respond in German, perhaps mirroring the dialect a bit lightly but keeping it understandable. Maybe: ""Rechnung: 2 Blumen × 15 Täg = 30 Blumen. Wenn 5 net angewachsa sind, hot er 30 − 5 = 25 Blumen im Garten.""
 
-That keeps the dialect flavor while being clear. Format: short, with the calculation shown. No need for headers or lists necessarily, but a small breakdown could help. Keep it concise."	stop
+That keeps the dialect flavor while being clear. Format: short, with the calculation shown. No need for headers or lists necessarily, but a small breakdown could help. Keep it concise."	stop	25.0	0	1		
 qb65bf453	S' Handy vom Jamal kann 6-mal mehr Fotos speichera als des von d'r Brittany. D'maximale Zahl an Fotos, die der Brittany ihr Handy speichera kann, isch 50-mal höher als d'Anzahl von de Vögel auf Jamals Foto mit de Enten im Zoo. Wenn s' Handy vom Jamal 1.800 Fotos speichera kann, wia viele Enten sieht ma noa auf Jamals Foto von de Enten im Zoo?	"Uf Jamals Foto sieht ma **6 Enten**! 🦆
 
 So kommt ma druf:
@@ -5969,7 +5969,7 @@ Answer: 6 Enten.
 
 I'll respond in German, maybe with a bit of dialect flavor: ""Uf Jamals Foto sieht ma 6 Enten!"" or standard: ""Auf Jamals Foto sieht man 6 Enten.""
 
-Let me craft a response that's clear and matches the playful tone."	stop
+Let me craft a response that's clear and matches the playful tone."	stop	6.0	0	1		
 q62cadf26	D'Sasha merkt, dass d'Holzpreise in den letschten paar Monat', seit se Holz g'kauft hot, um 50 % gstiega senn. Weil se no an Rest übrig hot, will se den verkaufa. Se hot zehn 2 x 4 x 10 große Bretter übrig, für die se pro Schtück 10 US-Dollar g'zahlt hot. Außerdem hot se fünf 4 x 4 x 10 Bretter, die se für 16 US-Dollar pro Schtück g'kauft hot. Wenn se alles verkauft, wia viel G'winn macht se?	"Sasha's profit would be **$90**.
 
 Here's the breakdown:
@@ -6018,7 +6018,7 @@ Let me compute carefully:
 
 Answer: $90 profit.
 
-I'll present the steps clearly."	stop
+I'll present the steps clearly."	stop	90.0	0	1		
 q6637faea	D'Katy macht Kaffee und nimmt dafier Teelöffel mit Zucker und Tassen mit Wasser im Verhältnis 7:13. Wenn se insgesamt 120 Teelöffel Zucker ond Tassen Wasser verwendet hot, rechne aus, wia viele Teelöffel Zucker se gnomma hot.	"Verhältnis Zucker : Wasser = 7 : 13
 
 - Teile insgesamt: 7 + 13 = **20 Teile**
@@ -6043,7 +6043,7 @@ Check: 42+78=120 ✓
 
 Answer: 42 Teelöffel Zucker.
 
-I should respond in German since the question is in German. Maybe lightly mirror the dialect for friendliness but keep it understandable. I'll keep it mostly standard German with a touch of warmth."	stop
+I should respond in German since the question is in German. Maybe lightly mirror the dialect for friendliness but keep it understandable. I'll keep it mostly standard German with a touch of warmth."	stop	42.0	0	1		
 q7c7b8736	D'r John kauft 2 Paar Schuh' für jedes von seine 3 Kinda. Se koschtet 60 US-Dollar pro Paar. Wia viel hot er zahlt?	"Des sind **3 Kinda × 2 Paar = 6 Paar** insgesamt.
 
 Bei **60 US-Dollar pro Paar** zahlt er:
@@ -6078,7 +6078,7 @@ Let me write it in a similar Swabian-ish dialect:
 Or more dialect-heavy:
 ""Des sind 3 Kinda × 2 Paar = 6 Paar. 6 Paar × 60 Dollar = 360 Dollar. Also hot er 360 US-Dollar zahlt.""
 
-I'll go with a friendly mix that keeps the dialect flavor but is clear."	stop
+I'll go with a friendly mix that keeps the dialect flavor but is clear."	stop	360.0	0	1		
 q8f663843	An Zollbeamter am Haupthafen von dr SeaSide Zollabfertigung hot 2 Container mit importierten Auto zählt, in jedem waret 5 Auto. Am nächschta Tag sind no mehr Container komma und d'Gesamtzahl von de Auto am Hafen isch auf 30 gstiega. Rechne aus, wia viele Container am zweiten Tag importiert worda sind, wenn in jedem Container 5 Auto dren sind.	"Do chani dir helfe! 😄
 
 **Rechnig:**
@@ -6115,7 +6115,7 @@ Bi 5 Auto pro Container: 20 ÷ 5 = 4 Container.
 
 Antwort: 4 Container sind am zweite Tag importiert worde.""
 
-That's clear. Keep it concise."	stop
+That's clear. Keep it concise."	stop	4.0	0	1		
 q6edb8d49	D'Lylah hot insgesamt 30 Prozent weniger G'halt kriegt wie d'r Adrien. Vier Joahr später war em Adrien sai Gehalt gstiega, und er hot 40 % meh' verdient als vier Joahr' vorher. Wenn des Gehalt vom Adrien ond der Lylah zur selba Zeit gstiega isch und dr Adrien vor vier Jahren $40000 verdient hot, rechne aus, wia viel beide vor vier Joahr z'samma verdient henn.	"Des isch a schöni Aufgab! Do muss mr nur aufpassen, dass mr die richtige Zeit anschaut – gfragt isch nämlich nooch **vor vier Joahr**.
 
 **Rechnung:**
@@ -6159,7 +6159,7 @@ Calculation:
 
 Note: The 40% increase applies to four years later and isn't needed for the question about four years ago. If they wanted the current total, Adrien now earns $56,000, but Lylah's current salary can't be determined (only that it also rose at some point).
 
-Format: short, clear steps, maybe a small note about the distractor. Use a few lines, maybe bullet points or numbered steps. Keep it concise."	stop
+Format: short, clear steps, maybe a small note about the distractor. Use a few lines, maybe bullet points or numbered steps. Keep it concise."	stop	68000.0	0	0	68000	0
 q1b1c6563	Dr Miguel verbraucht zum Zeichna 2 Zeichenblöck' pro Woch'. Wenn an Zeichenblock 30 Blatt Papier hot, wia viele Blatt Papier verbraucht er em Monat?	"Servus! Rechnen wir's mol aus:
 
 - **Pro Woch':** 2 Zeichenblöck × 30 Blatt = **60 Blatt**
@@ -6182,7 +6182,7 @@ Answer: 240 Blatt (assuming 4 weeks per month). If we use 4.33 weeks: ~260 Blatt
 
 I'll answer in Bavarian dialect: ""Dr. Miguel verbraucht 2 × 30 = 60 Blatt pro Woch'. Auf 4 Woch' im Monat san des 60 × 4 = 240 Blatt Papier.""
 
-Maybe mention if a month has more weeks, it'd be a bit more. Keep it simple."	stop
+Maybe mention if a month has more weeks, it'd be a bit more. Keep it simple."	stop	240.0	0	1		
 qdda5aad8	D'Morisette und d'r Kael solltet Obscht mitbringa. D'Morisette hot 5 Äpfel und 8 Oranga mitbroacht, und d'r Kael hot doppelt so viele Äpfel und halb so viele Oranga wie d'Morisette mitbracht. Wia viele Früchte hend se zamma?	"D'Morisette het **5 Äpfel + 8 Oranga = 13 Frücht** mitbroacht.
 
 Dr Kael het:
@@ -6245,7 +6245,7 @@ Or broken down:
 Oranga: 8 + 4 = 12
 Total: 27
 
-I'll provide a clear answer in the dialect."	stop
+I'll provide a clear answer in the dialect."	stop	27.0	0	1		
 qbe882310	D'Sadie hot am Montag 8 Schtondn gschlafa. An de' nächschte beide Tag' hot se jeden Tag 2 Schtondn weniger gschlafa, weil se no Ufgaben zom erlediga g'hett hot. Wenn se d'r Rescht von d'r Woch' 1 Schtond mehr als an dene zwei Tag' g'schlafa hot, wia viele Schtondn hot se in dr ganzen Woche insgesamt gschlafa?	"Rechnung:
 
 - **Montag:** 8 Stunden  
@@ -6306,7 +6306,7 @@ Let me write the answer in German, explaining steps:
 
 Answer: 48 Stunden.
 
-I should maybe mention if interpreted as decreasing (8,6,4) it'd differ, but the phrasing ""1 Stunde mehr als an den beiden Tagen"" implies those two days are the same (6 h), so 48 is the intended answer. I'll just give 48 confidently but maybe briefly note the reading. Actually to be safe, I'll state the interpretation clearly so the user can see. Final: 48 Stunden."	stop
+I should maybe mention if interpreted as decreasing (8,6,4) it'd differ, but the phrasing ""1 Stunde mehr als an den beiden Tagen"" implies those two days are the same (6 h), so 48 is the intended answer. I'll just give 48 confidently but maybe briefly note the reading. Actually to be safe, I'll state the interpretation clearly so the user can see. Final: 48 Stunden."	stop	48.0	0	1		
 q5531657c	D'Rosie kann 3 Schtonda lang mit 10 Meilen pro Schtond laufa. Danach läuft se 5 Meilen pro Schtond. Wia viele Meilen kann se in 7 Schtondn zurücklega?	"In de easchtn 3 Schtondn lafft d'Rosie: 3 × 10 = **30 Meilen**.
 
 Danach hot se no 7 − 3 = **4 Schtondn** übrig, und do lafft se: 4 × 5 = **20 Meilen**.
@@ -6326,7 +6326,7 @@ I should respond in the same dialect to match the user's style, or at least ackn
 
 ""In de easchtn 3 Schtondn lafft se 3 × 10 = 30 Meilen. In de restlichn 4 Schtondn (7 - 3 = 4) lafft se 4 × 5 = 20 Meilen. Zamm san des 30 + 20 = 50 Meilen.""
 
-That would be a nice touch. Let me make sure the math is right: 3 hours at 10 mph = 30 miles. Then 7 - 3 = 4 hours at 5 mph = 20 miles. Total = 50 miles. Correct."	stop
+That would be a nice touch. Let me make sure the math is right: 3 hours at 10 mph = 30 miles. Then 7 - 3 = 4 hours at 5 mph = 20 miles. Total = 50 miles. Correct."	stop	50.0	0	1		
 qafb91192	D'Jennie hilft im Büro von ihrer Mutter. Se hot an Stapel mit 60 Brief', die no frankiert werda müsset, und an Stapel mit scho frankierte Brief'. Se klebt auf a Drittel von de unfrankierten Briefe Briefmarken. Wenn im Stapel mit de scho frankierten Briefe jetzt 30 Briefe sind, wia viele Briefe warat in dem Stapel, als d'Jennie angfanga hot?	"A Drittel vo de 60 unfrankierten Briefe san **20 Briefe**.
 
 De 20 kemma zum scho frankierten Stapel dazu. Wenn der jetzt **30 Briefe** hot, dann warn’s vorher:
@@ -6357,4 +6357,4 @@ Need final in Bavarian maybe with ""D'Jennie hot 20 Briefe frankiert (a Drittel 
 
 Need maybe mention ""im Stapel mit de scho frankierten Briefe warn's am Anfang 10 Briefe."" Good.
 
-Need final only."	stop
+Need final only."	stop	10.0	0	1		

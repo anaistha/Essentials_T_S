@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janets Äntä lege 16 Eier pro Tag. Si isst jede Morgä zum Zmorgä drü dervo und bacht jede Tag mit vier Eier Muffins für ihri Fründe. Dr Räscht verchouft si jede Tag uf em Buuremärit für 2 US-Dollar pro frischem Äntä-Ei. Wie vieu Dollar nimmt si pro Tag uf em Buuremärit ii?	"Hie isch d Rächnig:
 
 1. **Wie viu Eier si bruucht:**
@@ -33,7 +33,7 @@ Janet nimmt also pro Tag **18 Dollar** uf em Buuremärit ii."	18	"*   Language: 
     *   *Step 1 (Usage):* ""Zersch luege mer, wie viu Eier si bruucht: 3 für ds Zmorgä und 4 für d Muffins. Das sind zäme 7 Eier.""
     *   *Step 2 (Remaining):* ""Jetzt ziehe mer die vo de Gsamtzahl ab: 16 Eier minus 7 Eier git 9 Eier, wo si cha verchaufe.""
     *   *Step 3 (Money):* ""Da si jedes Ei für 2 Dollar verchouft, rächnet me: 9 Eier $\times$ 2 Dollar = 18 Dollar.""
-    *   *Conclusion:* ""Si nimmt also pro Tag 18 Dollar uf em Buuremärit ii."""	stop
+    *   *Conclusion:* ""Si nimmt also pro Tag 18 Dollar uf em Buuremärit ii."""	stop	18.0	0	1		
 qa55f7050	Für es Chleid brucht me 2 Chnöiu blaui Wulle und halb so viu wissi Wulle. Wie viu Chnöiul brucht me insgesamt?	"Me brucht insgesamt **3 Chnöiu**.
 
 Hie isch d'Rächnig:
@@ -54,7 +54,7 @@ Hie isch d'Rächnig:
         *   Total: $2 + 1 = 3$.
 
     *   ""Me brucht insgesamt 3 Chnöiu.""
-    *   ""Rächnig: 2 blaui + 1 wissi (haubi vo 2) = 3 Chnöiu."""	stop
+    *   ""Rächnig: 2 blaui + 1 wissi (haubi vo 2) = 3 Chnöiu."""	stop	3.0	0	1		
 qde1bef8b	Der Josh beschliesst, es Huus z choufe und wider z verchoufe. Er chouft es Huus für $80.000 und steckt nachhär $50.000 i Reparature. Dür das stigt dr ursprünglech Wärt vom Huus um 150%. Wie viu Gwinn i Dollar het är gmacht?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Gsamtkoste:**
@@ -103,7 +103,7 @@ Dr Josh het also **$70'000 Gwinn** gmacht."	70000	"
         Neue Wärt: 80'000 + 120'000 = 200'000
 
     *   *Step 3: Profit.*
-        200'000 - 130'000 = 70'000."	stop
+        200'000 - 130'000 = 70'000."	stop	70000.0	0	1		
 q568beb1f	Der James beschliesst, 3-mal pro Wuche 3 churzi Löif z machä. Pro churzem Lauf louft är 60 Meter. Wie viu Meter louft är insgesamt pro Wuche?	"Dr James louft insgesamt **540 Meter** pro Wuche.
 
 **So rächnet me das:**
@@ -122,7 +122,7 @@ q568beb1f	Der James beschliesst, 3-mal pro Wuche 3 churzi Löif z machä. Pro ch
 
     *   *Step 1:* 3-mal pro Wuche $\times$ 3 Löif = 9 Löif pro Wuche.
     *   *Step 2:* 9 Löif $\times$ 60 Meter = 540 Meter.
-    *   *Conclusion:* Er louft insgesamt 540 Meter pro Wuche."	stop
+    *   *Conclusion:* Er louft insgesamt 540 Meter pro Wuche."	stop	540.0	0	1		
 q84afe4d6	D Wendi git jedem vo ihrne Hüehner pro Tag drü Tasse gmischts Hüehnerfuetter mit Same, Mäuwürm und Gmües, dass si gsung bliibe. Si fuetteret d Hüehner i drü separate Mauziite. Am Morge git si ihrer Hüehnerschar 15 Tasse Fuetter. Am Nomittag git si ne nomou 25 Tasse Fuetter. Wie viu Tasse Fuetter brucht si für die letschti Mauziit vom Tag, wenn d Wendi 20 Hüehner het?	"Hie isch d Rächnig:
 
 1. **Gsamtmängi pro Tag:**
@@ -171,7 +171,7 @@ D Wendi brucht für die letschti Mauziit also **20 Tasse Fuetter**."	20	"*   Wen
         Zum Schluss ziehe mir das vo dr Gsamtzahl ab:
         60 Tasse - 40 Tasse = 20 Tasse.
 
-        D Wendi brucht also no 20 Tasse Fuetter für die letschti Mauziit."""	stop
+        D Wendi brucht also no 20 Tasse Fuetter für die letschti Mauziit."""	stop	20.0	0	1		
 qd07ea681	Der Kylar isch i es Gschäft gange, zum Gläser für sini nöii Wohnig z choufe. Es Glas choschtet 5 Dollar, aber jedes zwöite Glas choschtet nume 60% vom Priis. Der Kylar wot 16 Gläser choufe. Wie viu muess är derfür zahle?	"Hie isch d'Rächnig für dr Kylar:
 
 1. **Wie viu Gläser git's vo welem Typ?**
@@ -222,7 +222,7 @@ Dr Kylar muess also **64 Dollar** zahle."	64	"*   Language: Swiss German (Bernes
     *   ""2. Dr Rabatt-Priis: 60% vo 5 Dollar isch $5 \times 0.6 = 3\text{ Dollar}$.""
     *   ""3. Die Rabatt-Gläser: $8 \times 3\text{ Dollar} = 24\text{ Dollar}$.""
     *   ""4. Total: $40 + 24 = 64\text{ Dollar}$.""
-    *   ""Dr Kylar muess also **64 Dollar** zahle."""	stop
+    *   ""Dr Kylar muess also **64 Dollar** zahle."""	stop	64.0	0	1		
 q912b86d0	Toulouse het dopplet so viu Schaf wie Charleston. Charleston het 4-mal so viu Schaf wie Seattle. Wie viu Schaf hei Toulouse, Charleston und Seattle zämä, wenn Seattle 20 Schaf het?	"Do isch d'Rächnig:
 
 1. **Seattle**: 20 Schaf
@@ -263,7 +263,7 @@ Toulouse, Charleston und Seattle hei zämä **260 Schaf**."	260	"*   Language: S
     *   ""Charleston: 4 $\times$ 20 = 80 Schaf""
     *   ""Toulouse: 2 $\times$ 80 = 160 Schaf""
     *   ""Zämä: 20 + 80 + 160 = 260 Schaf""
-    *   ""Toulouse, Charleston und Seattle hei zämä 260 Schaf."""	stop
+    *   ""Toulouse, Charleston und Seattle hei zämä 260 Schaf."""	stop	260.0	0	1		
 q147b7c11	D Carla ladet e Datei mit 200 GB abä. Normalerwiis cha si 2 GB/Minute abelade, aber nachdem 40 % vom Download fertig si, erzwingt Windows ä Nöistart für Updates, wo 20 Minute duuret. Nächhär muess Carla dr Download nomuu ganz vo vorne starte. Wie lang duuret ds Abelade vo dr Datei?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Dr erschti Versuech (bis zum Abbruch):**
@@ -311,7 +311,7 @@ Das sind **2 Stund und 40 Minute**."	160	"
     *   *Step 2:* 80 GB / 2 GB/min = 40 min.
     *   *Step 3:* Update = 20 min.
     *   *Step 4:* Full download = 200 GB / 2 GB/min = 100 min.
-    *   *Total:* 40 + 20 + 100 = 160 min."	stop
+    *   *Total:* 40 + 20 + 100 = 160 min."	stop	40.0	0	0	160	1
 qead07ed2	Der John fahrt 3 Stung lang mit 60 Meilen/Stung und chehrt de um, wüu är merkt, dass är öppis ganz Wichtigs deheim vergässe het. Är probiert, innerhalb vo 4 Stung hei z cho, verbringt aber die erschte 2 Stung im Stou. Die nachfougendi halb Stung fahrt är 30 Meilen/Stung, bevor är für die verblibendi Ziit vo de 4 Stung mit 80 Meilen/Stung cha witerfahre. Wie wit vo dehei isch är am Ändi vo dene 4 Stung?	"Do isch d'Rächnig Schritt für Schritt:
 
 **1. Wie wit isch er zersch vo dehei wegfahre?**
@@ -370,7 +370,7 @@ Am Ändi vo dene 4 Stund isch de John no **45 Meile** vo dehei weg."	45	"
     *   *Step 4: Final calculation.*
         ""180 Meile (weg) - 135 Meile (zrugg) = 45 Meile.""
 
-    *   Ensure the tone is helpful and the Swiss German is natural (matching the user's style)."	stop
+    *   Ensure the tone is helpful and the Swiss German is natural (matching the user's style)."	stop	45.0	0	1		
 q5cb246e4	D Eliza verdient für die erschtä 40 Stung, wo si pro Wuche schaffet, 10 US-Dollar pro Stung. Für Überstunge berchunnt si ds 1,2-Faceh vom normale Stundelohn. Wie viu verdient Eliza, wenn si die Wuche 45 Stung schaffet?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Normalstunge:**
@@ -415,7 +415,7 @@ D'Eliza verdient die Wuche also insgesamt **460 US-Dollar**."	460	"*   Language:
     *   *Step 4 (Total):* ""Am Schluss zelle mir alles zäme."" (Finally, we add everything together.)
         *   $400 + 60 = 460 \text{ Dollar}$.
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	460.0	0	1		
 q3bdd7b1e	Es nöis Programm isch im erschte Monet 60-mal abeglade worde. Im zwöite Monet het s drümou so viu Downloads gha wie im erschte, isch de aber im dritte Monet um 30 % iibroche. Wie oft isch s Programm über die drü Mönet insgesamt abeglade worde?	"Do isch d Rächnig Schritt für Schritt:
 
 1. **Erschte Monet:** 60 Downloads
@@ -463,7 +463,7 @@ S Programm isch über die drü Mönet insgesamt **366-mal** abeglade worde."	366
     *   *Month 2:* ""2. Monet: $60 \times 3 = 180$ Downloads.""
     *   *Month 3:* ""3. Monet: $180 - 30\% = 126$ Downloads (wil $180 \times 0.7 = 126$).""
     *   *Total:* ""Insgesamt: $60 + 180 + 126 = 366$.""
-    *   *Conclusion:* ""S Programm isch über die drü Mönet insgesamt 366-mal abeglade worde."""	stop
+    *   *Conclusion:* ""S Programm isch über die drü Mönet insgesamt 366-mal abeglade worde."""	stop	366.0	0	1		
 q19a4029d	D Toula isch i d Bäckerei gange und het verschideni Sache kouft. Si het 3 Dutzend Donuts kouft, wo 68 US-Dollar pro Dutzend choschtä, 2 Dutzend Mini-Cupcakes für 80 US-Dollar pro Dutzend und 6 Dutzend Mini-Cheesecakes für 55 US-Dollar pro Dutzend. Wie höch si d Gsamchtchöschte gsi?	"Do isch d Rächnig für d Toula:
 
 *   **Donuts:** 3 Dutzend $\times$ 68 USD = **204 USD**
@@ -503,7 +503,7 @@ D Gsamchtchöschte sind also **694 US-Dollar** gsi."	694	"*   Language: Swiss Ge
     *   ""Mini-Cupcakes: 2 $\times$ 80 = 160 USD""
     *   ""Mini-Cheesecakes: 6 $\times$ 55 = 330 USD""
     *   ""Gsamtsumme: 204 + 160 + 330 = 694 USD""
-    *   ""D Gsamchtchöschte sind also 694 US-Dollar gsi."" (The total costs were therefore 694 US-Dollars.)"	stop
+    *   ""D Gsamchtchöschte sind also 694 US-Dollar gsi."" (The total costs were therefore 694 US-Dollars.)"	stop	694.0	0	1		
 qf0063e65	Der Carlos pflanzt e Zitroneboum. Der Boum z pflanzä choschtet 90 $. Jedes Johr wachse 7 Zitrone dran, wo er für je 1,5 $ verchoufe cha. Bewässere und dünge choschtet 3 $ pro Johr. I welem Johr fangt är a, mit em Zitrouneboum insgesamt Gwinn z machä?	"Do isch d'Rächnig Schritt für Schritt:
 
 1.  **Einnahme pro Johr:**
@@ -558,7 +558,7 @@ Nach gnau 12 Johr hät er d'Choschte für de Boum wieder druss (Break-even). Im 
     *   ""Usgabe pro Johr: 3 $""
     *   ""Netto-Gwinn pro Johr: 10.5 $ - 3 $ = 7.5 $""
     *   ""Amortisation: 90 $ / 7.5 $ = 12 Johr.""
-    *   ""Im 13. Johr fangt är a, würklich Gwinn z'mache."""	stop
+    *   ""Im 13. Johr fangt är a, würklich Gwinn z'mache."""	stop	13.0	0	1		
 q410b0ab2	D Melanie isch Handusverträterin. Si het ä Drittu vo ihrne Staubsuger im grüenä Huus verchouft, 2 witeri im rotä Huus und d Heufti vo dene, wo no übrig gsi si, im orangschige Huus. Wenn d Melanie no 5 Staubsuger übrig het, mit wie viu het si agfange?	"D Melanie het mit **18 Staubsuger** agfange.
 
 Hie isch dr Wäg, wie me uf das Chunt (am beschte rächnet me vo hinde nach vorne):
@@ -613,7 +613,7 @@ Hie isch dr Wäg, wie me uf das Chunt (am beschte rächnet me vo hinde nach vorn
         1.  Start from the end (working backwards).
         2.  If she has 5 left after the orange house, she had 10 before it (since she sold half).
         3.  If she had 10 after the red house, she had 12 before it (since she sold 2).
-        4.  If she had 12 after the green house, and that was 2/3 of the total (since she sold 1/3), then the total is $12 \times 1.5$ or $12 / (2/3) = 18$."	stop
+        4.  If she had 12 after the green house, and that was 2/3 of the total (since she sold 1/3), then the total is $12 \times 1.5$ or $12 / (2/3) = 18$."	stop	5.0	0	0	18	1
 qa0520340	I nere Tanzstung mit 20 Schüeler hei sich 20 % für Contemporary Dance agmäudet, 25 % vo de übrige für Jazz Dance, und dr Räscht für Hip-Hop. Wie viu Prozänt vo aune Schüeler hei sich für Hip-Hop agmäudet?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Contemporary Dance:** 20 % vo aune Schüeler.
@@ -679,7 +679,7 @@ qa0520340	I nere Tanzstung mit 20 Schüeler hei sich 20 % für Contemporary Danc
     *   ""Übrig blibe: 100% - 20% = 80%""
     *   ""Jazz Dance: 25% vo dene 80% $\rightarrow$ $0.25 \times 80\% = 20\%$""
     *   ""Hip-Hop: Dr Räscht $\rightarrow$ $100\% - 20\% (\text{Contemporary}) - 20\% (\text{Jazz}) = 60\%$""
-    *   ""Äs hei sech also **60 %** vo aune Schüeler für Hip-Hop agmäudet."""	stop
+    *   ""Äs hei sech also **60 %** vo aune Schüeler für Hip-Hop agmäudet."""	stop	60.0	0	1		
 q9ae19f0a	E Händler muess sich zwüschä 2 Choufoptionä entscheidä: Schmuck im Wärt vo 5.000 US-Dollar oder Elektronikgrät im Wärt vo 8.000 US-Dollar. Si Finanzberater rächnet dermit, dass dr Schmuckmärit im glyche Monät um 2,5 % zuelegt und dr Märit für Elektrogrät um 1,2 %. Wenn dr Händler Ändi Monät mit sim Chouf dr Gwinn maximieren wot, uf wie viu Gwinn chunnt är?	"Hie isch d'Rächnig, zum usefinde, wele Chouf dr Händler sött mache:
 
 **1. Option: Schmuck**
@@ -735,7 +735,7 @@ Wenn dr Händler dr Gwinn maximiere wot, entscheidet är sich für dr Schmuck un
     *   ""Option 2: Elektronik""
     *   ""8'000 USD * 1,2% = 96 USD""
     *   ""Da 125 USD meh isch als 96 USD, entscheidet sich dr Händler für dr Schmuck.""
-    *   ""Dr maximali Gwinn isch also 125 US-Dollar."""	stop
+    *   ""Dr maximali Gwinn isch also 125 US-Dollar."""	stop	125.0	0	1		
 q93563595	Zwöi Züg fahrä zur glyche Ziit in San Rafael los. Si fahrä zerst gägä Weschtä und lege beidi 80 Meilen zrügg. Am nöchschtä Tag fahre si gägä Norde und lege 150 Meilen zrügg. Wie viu Strecki leit jede vo de Züg i denä zwöi Täg zrügg?	"Jede vo de Züg leit insgesamt **230 Meile** zrügg.
 
 D'Rächnig isch ganz eifach:
@@ -762,7 +762,7 @@ D'Rächnig isch ganz eifach:
     *   The directions (West, North) are distractors unless the question asked for the *displacement* (straight-line distance from the start), but it asks for ""Strecki"" (distance/path), which is the sum of the segments.
 
     *   ""Jede vo de Züg leit insgesamt **230 Meile** zrügg.""
-    *   Calculation: $80 + 150 = 230$."	stop
+    *   Calculation: $80 + 150 = 230$."	stop	230.0	0	1		
 q33756eb7	D Jill berchunnt 20 US-Dollar pro Stung fürs Unterrichtä als Lehrerin und 30 US-Dollar als Cheerleader-Coach. Wenn si 50 Wuchä pro Johr schaffet, 35 Stung pro Wuchä als Lehrerin und 15 Stung pro Wuchä als Coach, wie höch isch de ihr Johreslohn?	"Do isch d Rächnig Schritt für Schritt:
 
 1. **Lohn als Lehrerin pro Wuchä:**
@@ -808,7 +808,7 @@ De Johreslohn vo de Jill isch also **57'500 US-Dollar**."	57500	"*   Language: S
     *   *Annual total:* ""Und für s ganze Johr (50 Wuchä): 1'150 Dollar $\times$ 50 = 57'500 Dollar.""
     *   *Final Answer:* ""De Johreslohn vo de Jill isch also 57'500 US-Dollar.""
 
-    *   Ensure the tone is helpful and the Swiss German is natural (though Swiss German varies by dialect, a general ""Zürich/Bern"" mix is usually understood)."	stop
+    *   Ensure the tone is helpful and the Swiss German is natural (though Swiss German varies by dialect, a general ""Zürich/Bern"" mix is usually understood)."	stop	57500.0	0	1		
 qfb254292	D Claire macht sich jede Morgä zum Zmorgä es Omelett us 3 Eier. Wie viu Dutzend Eier isst si i 4 Wuchä?	"Hie isch d Rächnig:
 
 1. **Eier pro Woche:** 3 Eier $\times$ 7 Täg = 21 Eier
@@ -833,7 +833,7 @@ D Claire isst i 4 Wuchä also **7 Dutzend Eier**."	7	"*   Language: Swiss German
     *   ""I vier Wuchä sind das: $21 \times 4 = 84$ Eier."" (In four weeks that's: 84 eggs.)
     *   ""Es Dutzend het 12 Eier. Also: $84 \div 12 = 7$ Dutzend."" (A dozen has 12 eggs. So: 7 dozen.)
 
-    *   Make it clear and friendly."	stop
+    *   Make it clear and friendly."	stop	7.0	0	1		
 qc100123d	D Marissa wanderet e 12 Meilen länge Wanderwäg. I dr 1. Stung macht si die erschtä 4 Meile, nächhär die nöchschtä zwöi Meilen i dr nöchschte Stung. Wenn si im Schnitt 4 Meilen pro Stung wot wandere, wie schnäu muess si dr Räscht vo dr Strecki machä?	"Hie isch d'Rächnig für di:
 
 1.  **Gsamtzyt berechne:**
@@ -893,7 +893,7 @@ Damit si uf dr Durchschnitt chunnt, mues si die räschtliche 6 Meile i einere St
     *   ""Bisher: 2 Stunge und 6 Meile (4 + 2)""
     *   ""Räscht: 12 - 6 = 6 Meile""
     *   ""Zyt räscht: 3 - 2 = 1 Stung""
-    *   ""Resultat: 6 Meile pro Stung."""	stop
+    *   ""Resultat: 6 Meile pro Stung."""	stop	6.0	0	1		
 q26866cba	I ha 10 Liter Orangedrink mit zwöi Drittu Wasser und wot dä zu 15 Liter Ananasdrink mit drü Fünftu Wasser derzuegiesse. Beim Iigiesse verschütti i aber ei Liter vom Orangedrink. Wie viu Wasser hets i de verblibende 24 Liter?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1.  **Orangedrink:**
@@ -942,7 +942,7 @@ I de verblibende 24 Liter het es also **15 Liter Wasser**."	15	"
         Volume: 15L.
         Water: $15 \times 3/5 = 9\text{L}$.
     *   *Step 3: Total.*
-        $6 + 9 = 15\text{L}$."	stop
+        $6 + 9 = 15\text{L}$."	stop	15.0	0	1		
 qa856d9dc	Der Raymond und d Samantha si Cousin und Cousine. Der Raymond isch 6 Johr vor der Samantha gebore. Der Raymond het mit 23 Johr e Sohn übercho. Wenn d Samantha jetz 31 isch, vor wie viu Johr isch am Raymond si Sohn gebore?	"Hie isch d Rächnig:
 
 1. D Samantha isch **31 Johr** oud.
@@ -980,7 +980,7 @@ Am Raymond si Sohn isch also vor **14 Johr** gebore worde."	14	"*   Raymond and 
     *   ""Der Raymond isch 6 Johr älter, also isch er 37 (31 + 6).""
     *   ""Er het si Sohn mit 23 übercho.""
     *   ""37 minus 23 git 14.""
-    *   ""Der Sohn isch also vor 14 Johr gebore worde."""	stop
+    *   ""Der Sohn isch also vor 14 Johr gebore worde."""	stop	14.0	0	1		
 q72ea27fb	Der Billy verchauft DVDs. Am Zischtig het är 8 Chunde. Sini erschtä 3 Chunde choufe je ä DVD. Die nöchschtä 2 choufe je 2 DVDs. Die letschtä 3 choufe kei DVD. Wie viu DVDs het der Billy am Zischtig verchouft?	"Der Billy het am Zischtig **7 DVDs** verchouft.
 
 Hie isch d'Rächnig:
@@ -1014,7 +1014,7 @@ Hie isch d'Rächnig:
         *   3 Chunde à 1 DVD = 3
         *   2 Chunde à 2 DVDs = 4
         *   3 Chunde à 0 DVDs = 0
-        *   Zäme macht das 7 DVDs."	stop
+        *   Zäme macht das 7 DVDs."	stop	7.0	0	1		
 qa62b2b0f	Ä Cherze schmilzt pro Stung, wo si brönnt, um 2 Zentimeter. Wie viu Zentimeter chürzer isch d Cherze, we si vo 13 Uhr bis 17 Uhr brönnt?	"D Cherze brönnt vo 13 Uhr bis 17 Uhr, das sind **4 Schtunde**.
 
 We si pro Schtund 2 Zentimeter chürzer wird, rächnet me:
@@ -1039,7 +1039,7 @@ D Cherze isch also **8 Zentimeter chürzer**."	8	"*   Language: Swiss German (Be
 
     *   Start with the calculation of time.
     *   Multiply by the rate.
-    *   State the final answer clearly."	stop
+    *   State the final answer clearly."	stop	8.0	0	1		
 qaadc02d2	Der Kyle het dr Bestseller vom letschtä Johr für 19,50 US-Dollar kouft. Das isch mit äme Rabatt vo 25 % uf dr ursprünglech Priis. Wie höch isch dr ursprünglech Priis vom Buech gsi?	"Hie isch d'Rächnig für di:
 
 1. **Verständnis:** Dr Kyle het 25 % Rabatt übercho. Das heisst, er het nume **75 %** vom ursprüngleche Priis zahlt (100 % - 25 % = 75 %).
@@ -1095,7 +1095,7 @@ qaadc02d2	Der Kyle het dr Bestseller vom letschtä Johr für 19,50 US-Dollar kou
         Zum dr ursprüngleche Priis (100 %) usezfinde, chasch du so rächnen:
         19,50 / 0,75 = 26,00
 
-        Dr ursprüngleche Priis vom Buech isch also **26,00 US-Dollar** gsi."""	stop
+        Dr ursprüngleche Priis vom Buech isch also **26,00 US-Dollar** gsi."""	stop	26.0	0	1		
 q4c88eb07	D Marie het es Hüehnergricht für 12 US-Dollar bsteut, 5 Packige Milch für je 3 US-Dollar, 4 Öpfu für je 1,50 US-Dollar und no es paar Schachtlä Pizza. D Marie het insgesamt 50 US-Dollar zaut. Wie viu Schachtle Pizza het d Marie bsteut, wenn jedi Schachtle 8,50 US-Dollar choschtet?	"Do isch d Rächnig Schritt für Schritt:
 
 1. **Zersch rächnen mir us, was d Marie für die andere Sache usgä het:**
@@ -1147,7 +1147,7 @@ D Marie het also **2 Schachtle Pizza** bsteut."	2	"*   Language: Swiss German (s
     *   ""Jetzt luege mir, wie viu Gäld no übrig isch für d Pizza:"" (Now we look at how much money is left for the pizza:)
     *   ""50 $ - 33 $ = 17 $""
     *   ""Da eini Pizza 8.50 $ choschtet, rächnen mir: 17 $ / 8.50 $ = 2""
-    *   ""D Marie het also 2 Schachtle Pizza bsteut."" (Marie therefore ordered 2 boxes of pizza.)"	stop
+    *   ""D Marie het also 2 Schachtle Pizza bsteut."" (Marie therefore ordered 2 boxes of pizza.)"	stop	2.0	0	1		
 qc76b9ef5	D Mishka het 3 Paar Shorts, 3 Hose und 3 Paar Schueh kouft. Es Paar Shorts choschte 16,50 US-Dollar. E Hose choschtet 22,50 US-Dollar und es Paar Schueh 42 US-Dollar. Wie viu Dollar het d Mishka insgesamt für d Chleider usgäh?	"Do isch d Rächnig:
 
 Es git zwei Wäg, wie me das cha rächne.
@@ -1211,7 +1211,7 @@ Wenn me das zämezellt:
     *   3 pairs of shorts? Yes.
     *   3 pants? Yes.
     *   3 shoes? Yes.
-    *   Prices correct? 16.50, 22.50, 42. Correct."	stop
+    *   Prices correct? 16.50, 22.50, 42. Correct."	stop	243.0	0	1		
 qc792d70c	D Cynthia isst jede Obe ä Portion Glace. Si chouft Glacechischtä mit 15 Portionä pro Chischtä für 4,00 US-Dollar pro Chischtä. Wie viu het si nach 60 Täg für Glace usgäh?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Wie viu Portionä bruucht si gsamt?**
@@ -1252,7 +1252,7 @@ D Cynthia het nach 60 Täg **16,00 US-Dollar** für d Glace usgäh."	16	"*   Per
         2. Azahl Chischtä: 60 Portionä $\div$ 15 Portionä/Chischtä = 4 Chischtä.
         3. Gsamtchöschte: 4 Chischtä $\times$ 4,00 USD = 16,00 USD.
 
-        D Cynthia het nach 60 Täg 16,00 US-Dollar für d Glace usgäh."	stop
+        D Cynthia het nach 60 Täg 16,00 US-Dollar für d Glace usgäh."	stop	16.0	0	1		
 qb804efac	Der Henry het uf äre 60 Meilen länge Velotour zwöi Stopps gmacht. Dr erscht Stopp isch nach 20 Meilen gsi. Dr zwöit Stopp isch 15 Meilen vor em Ändi vo dr Tour gsi. Wie viu Meile isch er zwüschem erschtä und em zwöite Stopp gfahre?	"Hie isch d'Rächnig:
 
 1. Dr erscht Stopp isch nach **20 Meile** gsi.
@@ -1294,7 +1294,7 @@ Dr Henry isch also **25 Meile** zwüschem erschte und em zwöite Stopp gfahre."	
         2. Dr zwöit Stopp isch 15 Meile vor em Ändi gsi. Das heisst: 60 Meile - 15 Meile = **45 Meile**.
         3. Zum wüsse, wie viu er zwüsche dene zwei Stopps gfahre isch, rächnet me: 45 Meile - 20 Meile = **25 Meile**.
 
-        Dr Henry isch also **25 Meile** zwüschem erschte und em zwöite Stopp gfahre."""	stop
+        Dr Henry isch also **25 Meile** zwüschem erschte und em zwöite Stopp gfahre."""	stop	25.0	0	1		
 qf837eb68	D Gloria isch Schueh go choufe und findet es Paar Stiefu, wo i ihres Budget passt. Si muess sich aber zwüschä de Stiefu und zwöi Paar High Heels entscheide, wo zäme füf Dollar weniger choschtä als d Stiefu. Wenn es Paar High Heels 33 US-Dollar choschte und s angerä dopplet so viu, wie viu choschtä de d Stiefu?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **S erschte Paar High Heels:** 33 Dollar.
@@ -1323,7 +1323,7 @@ D Stiefu choschtä also **104 US-Dollar**."	104	"*   Language: Swiss German (Ber
     *   *Step 3: Calculate the cost of the boots.*
         ""D Stiefu choschtet füf Dollar meh als die beide Paar High Heels zäme. Also $99 + 5 = 104$ Dollar.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	104.0	0	1		
 qa2455bce	Ds Autersverhäutnis vom Darrell und em Allen isch 7:11. Wenn si jetz zämä 162 Jahr aut si, wie aut isch der Allen i 10 Johr?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1.  **S'Verhältnis verstah:**
@@ -1383,7 +1383,7 @@ qa2455bce	Ds Autersverhäutnis vom Darrell und em Allen isch 7:11. Wenn si jetz 
     *   *Step 4: Calculate Allen's current age.*
         Dr Allen isch jetz $11 \times 9 = 99$ Jahr aut.
     *   *Step 5: Calculate age in 10 years.*
-        I 10 Johr isch er $99 + 10 = 109$ Jahr aut."	stop
+        I 10 Johr isch er $99 + 10 = 109$ Jahr aut."	stop	109.0	0	1		
 q166f163a	Der Gunter probiärt, d Gummibärli im Glas ds zeue. Er frogt sini Fründe, wie viu Gummibärli ihrer Meinig noh im Glas si. Eine seit 80. Dr ander seit 20 meh als d Heufti vo dr erschte Schetzig. E drittä seit 25 % meh aus dr Erscht. Wie höch isch ihri durchschnittlächi Schetzig?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Dr Erscht:** seit **80**.
@@ -1426,7 +1426,7 @@ Die durchschnittlächi Schetzig isch also **80 Gummibärli**."	80	"
     *   *Step 1:* First person: 80.
     *   *Step 2:* Second person: Half of 80 is 40, plus 20 is 60.
     *   *Step 3:* Third person: 25% of 80 is 20, plus 80 is 100.
-    *   *Step 4:* Average: $(80 + 60 + 100) / 3 = 240 / 3 = 80$."	stop
+    *   *Step 4:* Average: $(80 + 60 + 100) / 3 = 240 / 3 = 80$."	stop	80.0	0	1		
 q3966df43	Der John luegt zu 10 Hüng. Jede Hung brucht pro Tag 0,5 Stung für e Spaziergang und zum sis Gschäft z machä. Wie viu Stung pro Wuche verbringt är insgesamt mit de Hüng?	"Hie isch d'Rächnig:
 
 1. **Pro Tag:** 10 Hüng × 0,5 Stung = **5 Stung pro Tag**.
@@ -1457,7 +1457,7 @@ Der John verbringt also insgesamt **35 Stung pro Wuche** mit sine Hüng. Das isc
         *   ""Also: 5 Stung × 7 Täg = 35 Stung."" (So: 5 hours x 7 days = 35 hours.)
         *   ""Är verbringt also insgesamt 35 Stung pro Wuche mit sine Hüng."" (He spends a total of 35 hours per week with his chickens.)
 
-    *   Make it clear and easy to follow."	stop
+    *   Make it clear and easy to follow."	stop	35.0	0	1		
 q28184d6c	Ds Gretchen het 110 Münzä. Es het 30 meh Guld- als Silbermünzä. Wie viu Goldmünzä het ds Gretchen?	"Ds Gretchen het **70 Goldmünzä**.
 
 **So rächnet me das:**
@@ -1494,7 +1494,7 @@ q28184d6c	Ds Gretchen het 110 Münzä. Es het 30 meh Guld- als Silbermünzä. Wi
         *   Subtract the difference (30) first: $110 - 30 = 80$.
         *   Divide the rest equally: $80 / 2 = 40$.
         *   The 40 are the silver coins.
-        *   Add the 30 back to get the gold coins: $40 + 30 = 70$."	stop
+        *   Add the 30 back to get the gold coins: $40 + 30 = 70$."	stop	70.0	0	1		
 q5f9dc683	Der Siobhan het 2 Schmuckstück weniger aus der Aaron. Der Aaron het 5 Schmuckstück meh aus d Häufti vo Raymonds Schmuckstück. Wenn der Raymond 40 Schmuckstück het, wie viu Schmuckstück het der Siobhan?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Raymond** het 40 Schmuckstück.
@@ -1527,7 +1527,7 @@ Der Siobhan het **23 Schmuckstück**."	23	"*   Language: Swiss German (specifica
         *   Der Aaron het 5 meh: $20 + 5 = 25$.
         *   Der Siobhan het 2 weniger aus der Aaron: $25 - 2 = 23$.
 
-    *   *Final Answer:* 23."	stop
+    *   *Final Answer:* 23."	stop	23.0	0	1		
 q9501d333	Der Mike spieut 40 Minutä lang Pingpong. I dä erschtä 20 Minute macht är 4 Pünkt. I dä nöchste 20 Minute macht är 25 % meh Pünkt. Wie viu Pünkt macht är insgesamt?	"Hie isch d'Rächnig:
 
 1. **Erschti 20 Minute:** 4 Pünkt.
@@ -1558,7 +1558,7 @@ Dr Mike macht insgesamt **9 Pünkt**."	9	"*   Language: Swiss German (Bernese/Ge
     *   *Step 3: Total.*
         ""Insgsamt sind das: 4 + 5 = 9 Pünkt."" (Altogether that is: 4 + 5 = 9 points.)
 
-    *   Keep it friendly and in the same dialect style."	stop
+    *   Keep it friendly and in the same dialect style."	stop	9.0	0	1		
 q0e0fa86b	Der Terry isst 2 Joghurts pro Tag. Im Momänt si si für 5,00 US-Dollar pro 4 Joghurts im Agebot. Wie viu git är i 30 Täg für Joghurt us?	"Hie isch d Rächnig:
 
 1. **Wie viu Joghurts bruucht er insgesamt?**
@@ -1599,7 +1599,7 @@ Dr Terry git i 30 Täg also **75,00 US-Dollar** für Joghurt us."	75	"*   Person
         15 * 5.00 = 75.00 USD.
     *   *Conclusion:* ""Dr Terry git also 75.00 US-Dollar us."" (Terry thus spends 75.00 US-Dollars.)
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	75.0	0	1		
 q126bbbaa	Der John plant, au sini Spieusache z verchoufä und mit äm Gäud Videospiel z choufä. Är het 13 Lego-Sets und berchunnt $15 für jedes Set, wo är verchouft. Am Ändi chouft är 8 Videospiel für je $20 und het no $5 übrig. Wie viu Lego-Sets het är no?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Wie viu Gäud het dr John insgesamt gha?**
@@ -1654,7 +1654,7 @@ q126bbbaa	Der John plant, au sini Spieusache z verchoufä und mit äm Gäud Vide
         *   $13 - 11 = 2$.
     *   *Conclusion:* ""Är het no 2 Lego-Sets."" (He still has 2 Lego sets.)
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	2.0	0	1		
 q5c1bd624	Der John louft 60 Meile pro Wuchä. Er louft 3 Täg pro Wuchä. Am erschtä Tag louft är 3 Stung und a dä angere zwöi Lauftäg je d Heufti dervo. Wie schnäu louft är?	"Do isch d Rächnig:
 
 1. **Zersch luege mer, wie lang är insgesamt louft:**
@@ -1706,7 +1706,7 @@ q5c1bd624	Der John louft 60 Meile pro Wuchä. Er louft 3 Täg pro Wuchä. Am ers
     *   ""Zäme git das: $3 + 1.5 + 1.5 = 6$ Stund.""
     *   ""Jetzt d Gschwindigkeit:"" (Now the speed)
     *   ""60 Meile teilt durch 6 Stund = 10 Meile pro Stund.""
-    *   ""Är louft also 10 Meile pro Stund."""	stop
+    *   ""Är louft also 10 Meile pro Stund."""	stop	10.0	0	1		
 q02f06b34	D Dana cha viermau so schnäu secklä wie si cha loufä, aber hüpfä cha si numä mit dr Häufti vo ihrer Loufgschwindigkeit. Wenn si mit 3 Meile pro Stung cha hüpfä, wie viu Meile cha si i sächs Stung zrügglege, wenn si ä Drittu vo dr Ziit secklet und zwöi Drittu vo dr Ziit louft?	"Hie isch d'Rächnig Schritt für Schritt:
 
 **1. D'Gschwindigkeite ermittle:**
@@ -1781,7 +1781,7 @@ D'Dana cha i sächs Stung also **72 Meile** zrügglege."	18	"
         - Distanz:
         - Secklä: $24 \times 2 = 48$ Meile.
         - Loufä: $6 \times 4 = 24$ Meile.
-        - Total: $48 + 24 = 72$ Meile."	stop
+        - Total: $48 + 24 = 72$ Meile."	stop	72.0	0	0	72	0
 qd6dd82e1	Am Brandon sis iPhone isch viermoul so aut wie ds iPhone vom Ben. Am Ben sis iPhone isch dopplet so aut wie ar Suzy ires iPhone. Wenn ar Suzy ires iPhone 1 Johr aut isch, wie aut isch de am Brandon sis iPhone?	"Am Brandon sis iPhone isch **8 Johr** aut.
 
 Hie isch d'Rächnig:
@@ -1805,7 +1805,7 @@ Hie isch d'Rächnig:
     *   *Step 3 (Brandon):* Am Brandon sis iPhone isch viermoul so aut wie s'vom Ben. Also: 4 * 2 = 8 Johr. (Brandon's iPhone is four times as old as Ben's. So: 4 * 2 = 8 years.)
 
     *   Direct answer: 8 years.
-    *   Explanation in Swiss German to match the user's tone."	stop
+    *   Explanation in Swiss German to match the user's tone."	stop	8.0	0	1		
 q425db7e5	Dr gross Drachä Perg isch höch obä uf äm Bärg Farbo ghocket und het uf aues i mene Umkreis vo 1000 Fuess Füür gspöit. D Polly het dr guldig Speer, di einzig bekannti Waffe, mit dere me dr Drache cha besiegä, 400 Fuess wit chönne wärfe, auso guet i d Reichwiti vo de Flammä ine. Wo d Polly aber dr Saphir-Edelstein i dä Häng gha het, het si dr Speer drümau so wit chönne schiesse wie ohni dä Stei. Wenn si dr Edelstei i de Häng het, wie wit usserhaub vo dr Reichwiti vo de Dracheflammä cha d Polly stoh und dr Drachä trotzdäm no mit äm guldige Speer träffä?	"Hie isch d Rächnig:
 
 1. **D Reichwiti vom Drachä:** 1000 Fuess.
@@ -1840,7 +1840,7 @@ D Polly cha also **200 Fuess** usserhaub vo dr Reichwiti vo de Dracheflammä sto
         *   Dr Speer ohni Stei gaht 400 Fuess.
         *   Mit em Saphir-Edelstei gaht er drümau so wit: $400 \times 3 = 1200$ Fuess.
         *   D Differenz zwüsche dr Reichwiti vom Speer (1200) und dr Reichwiti vom Füür (1000) isch: $1200 - 1000 = 200$ Fuess.
-        *   Polly cha also 200 Fuess usserhaub vo dr Reichwiti vom Drachä stoh."	stop
+        *   Polly cha also 200 Fuess usserhaub vo dr Reichwiti vom Drachä stoh."	stop	200.0	0	1		
 qedc215ac	D Grossmuetter Jones het 5 Öpfuchüeche fürs Zmittag vo der Füürwehr bachet. Si het jede Chueche i 8 Stück gschnittä und aui füf Chüeche ufs Buffet gsteut, dass sich d Gescht säuber chöi bedienä. Am Ändi vom Obe, nachdäm d Gescht Chueche gnoh und gässe hei, si no 14 Stück übrig gsi. Wie viu Stück hei d Gescht gnoh?	"D Grossmuetter Jones het insgesamt **26 Stück** Öpfuchueche verteilt.
 
 Hie isch d Rächnig derzue:
@@ -1869,7 +1869,7 @@ Hie isch d Rächnig derzue:
     *   *Final Answer:*
         ""D Gescht hei also 26 Stück gnoh.""
 
-    *   Ensure the tone is friendly and matches the dialect of the prompt."	stop
+    *   Ensure the tone is friendly and matches the dialect of the prompt."	stop	26.0	0	1		
 q5d47194e	Lut dä Nährwärtagabe het e Tüte Chips 250 Kalorie pro Portion. Wenn ä 300 g-Tüte 5 Portione het, wie viu Gramm chasch du ässe, wenn dis täglichä Kalorieziel bi 2000 ligt und du scho 1800 Kalorie gha hesch?	"Du chasch no **48 Gramm** Chips ässe.
 
 Hie isch d'Rächnig Schritt für Schritt:
@@ -1934,7 +1934,7 @@ Hie isch d'Rächnig Schritt für Schritt:
     *   ""3. Wie viu Kalorie het e Gramm Chips? $250\text{kcal} / 60\text{g} \approx 4.17\text{kcal}$ pro Gramm.""
     *   ""4. Wie viu Gramm dörfsch also ässe? $200\text{kcal} / 4.17\text{kcal/g} = 48\text{g}$.""
 
-    *   Check math: $48 \times (250/60) = 48 \times 4.1666 = 200$. Correct."	stop
+    *   Check math: $48 \times (250/60) = 48 \times 4.1666 = 200$. Correct."	stop	48.0	0	1		
 q255b81c0	Der Charlie wiot Bienenwachskerze verchoufe. Us jedem Pfund Bienenwachs cha är 10 Chegucherze machä. S Material us äme Pfund Bienenwachs plus Dochte choschtet 10,00 US-Dollar. Wenn är d Cherze für 2,00 US-Dollar verchouft, wie viu Nettogwinn macht är, wenn är 20 Cherze macht und verchouft?	"Hie isch d Rächnig für em Charlie si Gwinn:
 
 1.  **Choschte pro Cherze:**
@@ -1991,7 +1991,7 @@ Der Charlie macht also en Nettogwinn vo **20,00 US-Dollar**."	20	"
         *   ""20 Cherze x 2 Dollar = 40 Dollar."" (20 candles x 2 dollars = 40 dollars.)
         *   ""De Gwinn isch: 40 Dollar (Umsatz) - 20 Dollar (Choschte) = 20 Dollar."" (The profit is: 40 - 20 = 20.)
 
-    *   Ensure the tone is helpful and the math is clear."	stop
+    *   Ensure the tone is helpful and the math is clear."	stop	20.0	0	1		
 q0166ea66	D Meredith isch Freelance-Bloggerin, schribt über Gsundheitstheme und kontaktiert Chunde, was ihr fest Job isch. Für d Recherche und s Schribe vo menä Blogartiku brucht si im Schnitt 4 Stung. Letschti Wuchä het si am Mäntig 5 Artiku gschribä und am Zischtig 2/5 meh Artiku aus am Mäntig. Am Mittwuch het si dopplet so viu Artiku gschribä wie am Zischtig. Wie viu Stung het si i dene drü Täg insgesamt fürs Schribä vo de Artiku brucht?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Mäntig:**
@@ -2045,7 +2045,7 @@ D Meredith het i dene drü Täg insgesamt **104 Stung** fürs Schribä vo de Art
     *   *Step 4 (Total Articles):* Insgesamt sind das $5 + 7 + 14 = 26$ Artiku.
     *   *Step 5 (Total Hours):* Pro Artiku brucht si 4 Stung. $26 \times 4 = 104$ Stung.
 
-    *   Ensure the tone is helpful and the dialect is consistent with the user's input."	stop
+    *   Ensure the tone is helpful and the dialect is consistent with the user's input."	stop	104.0	0	1		
 q7bb382f4	D Candice het 80 Post-it-Zettle i ihri Handtäsche packt, bevor si zum schaffe im Coffee Shop los isch. Ungerwägs het si im Lade agghaute und e Packig Post-it-Zettle kouft; bi dr Arbeit het si uf 220 verschideni Kaffeebächär je es Post-it-Zetteli kläbt. Wenn si am Schluss no 23 Post-it-Zetteli übrig gha het, wie viu Post-it-Zetteli si i der Packig gsi, wo si kouft het?	"Hie isch d'Rächnig:
 
 1. Zersch luege mir, wie viu Zetteli si insgesamt im Spiel gsi si:
@@ -2076,7 +2076,7 @@ I der Packig si also **163 Post-it-Zetteli** gsi."	163	"*   Initial amount: 80 P
     *   *Gchouft:* $x$.
     *   *Verbrucht:* 220 Zetteli.
     *   *Rest:* 23 Zetteli.
-    *   *Rechnig:* $80 + x - 220 = 23 \rightarrow x = 220 + 23 - 80 = 163$."	stop
+    *   *Rechnig:* $80 + x - 220 = 23 \rightarrow x = 220 + 23 - 80 = 163$."	stop	163.0	0	1		
 q1a64508f	Der John chouft dopplet so viu roti wie blaui Krawatte. Die rote Krawatte choschtä 50 % meh aus die blaue. Är het 200 US-Dollar für blaui Krawatte usgäh, wo pro Stück 40 US-Dollar choschtä. Wie viu het är insgesamt für Krawatte usgäh?	"Do isch d'Rächnig Schritt für Schritt:
 
 1.  **Wie viu blaui Krawatte het er?**
@@ -2134,7 +2134,7 @@ q1a64508f	Der John chouft dopplet so viu roti wie blaui Krawatte. Die rote Krawa
     *   *Step 5 (Grand total):* ""Insgesamt."" (Overall.)
         *   $200 + 600 = 800$ USD.
 
-    *   Ensure the tone is helpful and the Swiss German is natural."	stop
+    *   Ensure the tone is helpful and the Swiss German is natural."	stop	800.0	0	1		
 q9605b4e6	D Tracy het es 4 Fuess längs Stück Droht brucht, zum d Tomatä i ihrem Gartä z stütze. Dr Droht isch i Stück vo je 6 Inch gschnittä wordä. Wie viu Stück Droht het si gha?	"D Tracy het **8 Stück** Droht gha.
 
 Hie isch d Rächnig derzue:
@@ -2164,7 +2164,7 @@ Hie isch d Rächnig derzue:
     *   ""Hie isch d Rächnig:""
     *   ""1 Fuess = 12 Inch""
     *   ""4 Fuess $\times$ 12 Inch = 48 Inch""
-    *   ""48 Inch $\div$ 6 Inch = 8 Stück"""	stop
+    *   ""48 Inch $\div$ 6 Inch = 8 Stück"""	stop	12.0	0	0	8	1
 qda35e8fb	Der Richard wohnt i mene Wohnhuus mit 15 Stockwärch. Uf jedem Stock hets 8 Wohnigä, und 3/4 vom Gebäude si bewohnt. Wie viu Wohnigä si im ganze Gebäude unbewohnt?	"Do isch d'Rächnig:
 
 1. **Zersch luege mer, wie viu Wohnige es insgesamt het:**
@@ -2208,7 +2208,7 @@ Es si also **30 Wohnige** im ganze Gebäude unbewohnt."	30	"*   Language: Swiss 
     *   ""Zersch rächnemer us, wie viu Wohnige es insgesamt het: $15 \times 8 = 120$ Wohnige.""
     *   ""Wenn 3/4 bewohnt si, dänn si 1/4 unbewohnt.""
     *   ""1/4 vo 120 isch: $120 : 4 = 30$.""
-    *   ""Es si also 30 Wohnige unbewohnt."""	stop
+    *   ""Es si also 30 Wohnige unbewohnt."""	stop	30.0	0	1		
 q94fcd6ce	Der Lloyd het ä Eierhof. Sini Hüehner legä 252 Eier pro Tag und är verchouft se für 2 US-Dollar pro Dutzend. Wie viu verdient der Lloyd pro Wuchä mit dä Eier?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Wie viu Dutzend Eier si das pro Tag?**
@@ -2258,7 +2258,7 @@ Der Lloyd verdient also **294 US-Dollar pro Wuchä**."	294	"*   Language: Swiss 
     *   ""21 Dutzend $\times$ 2 Dollar = 42 Dollar pro Tag.""
     *   ""Und für d'Wuchä (7 Täg):"" (And for the week)
     *   ""42 Dollar $\times$ 7 Täg = 294 Dollar.""
-    *   ""Der Lloyd verdient also **294 US-Dollar pro Wuchä**."""	stop
+    *   ""Der Lloyd verdient also **294 US-Dollar pro Wuchä**."""	stop	294.0	0	1		
 q1afb1e71	Am Toms sis Schiff schafft 10 Meile pro Stung. Är säglet vo 13 bis 16 Uhr. Denn fahrt är mit 6 Meilen/Stung wider zrügg. Wie lang brucht är für dr Rückwäg?	"Do isch d'Rächnig:
 
 1. **Wie wit isch er gfahre?**
@@ -2299,7 +2299,7 @@ q1afb1e71	Am Toms sis Schiff schafft 10 Meile pro Stung. Är säglet vo 13 bis 1
         De Rückwäg isch also au 30 Meile lang.
         Bi 6 Meile pro Stund brucht er:
         30 Meile / 6 Meile/Stund = 5 Stunde.
-        Är brucht also 5 Stunde für de Rückwäg."""	stop
+        Är brucht also 5 Stunde für de Rückwäg."""	stop	5.0	0	1		
 q0aaae19a	Am Uriah wird sini Büechertäschä z schwär. Är muess 15 Pfung use näh. Sini Comicbüecher wiege je 1/4 Pfung und sini Spiusache je 1/2 Pfund. Wenn är 30 Comicbüecher usänimmt, wie viu Spiusache muess är no usenäh?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Wie viu wiege d Comicbüecher?**
@@ -2344,7 +2344,7 @@ q0aaae19a	Am Uriah wird sini Büechertäschä z schwär. Är muess 15 Pfung use 
     *   *Step 3:* ""Und zum Schluss räkne mir us, wie viu Spiusache das sind."" (And finally, we calculate how many toys that is.)
         $7.5 \div 1/2 = 15$ Spiusache.
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	15.0	0	1		
 qa5756c69	E Mechaniker verlangt ungerschidlichi Priise für d Reparatur vo LKW-Reifä und PKW-Reifä. Für jede repariert LKW-Reifä verlangt är 60 Dollar und für jedä repariert PKW-Reifä 40 Dollar. Am Donnschtig repariert är 6 LKW-Reifä und 4 PKW-Reifä. Am Fritig repariert är 12 PKW-Reifä und kei LKW-Reifä. Wie viu Dollar meh Umsatz macht dr Mechaniker a däm Tag, wo är dr höcher Umsatz het?	"Hie isch d Rächnig Schritt für Schritt:
 
 **1. Umsatz am Donnschtig:**
@@ -2393,7 +2393,7 @@ Dr Mechaniker macht am Tag mit em höcherä Umsatz **40 Dollar meh**."	40	"*   L
     *   *Step 3: Comparison.*
         ""Dr Donnschtig het dr höcheri Umsatz (520$ vs. 480$).""
     *   *Step 4: Difference.*
-        ""520$ - 480$ = 40$."""	stop
+        ""520$ - 480$ = 40$."""	stop	40.0	0	1		
 qd819612e	D Doubtfire-Schwöstere fahre mit 7 Chätzli hei, wo si im örtlichä Tierheim adoptiert hei, wo ihri Mueter alütet und seit, dass ihri zwöi Huuschatz grad Jungi übercho hei. Si seit, Patchy, die erscht Chatz, heig drümau so viu Chätzli gworfe wie die adoptiertä, und Trixie, die anger Chatz, heig 12 übercho. Wie viu Chätzli hei d Doubtfires jetz?	"D Doubtfires hei immer no nume **7 Chätzli**. 
 
 Die andere Chätzli (die vo dr Patchy und dr Trixie) ghöre ja ihrer Mueter!"	40	"
@@ -2443,7 +2443,7 @@ Die andere Chätzli (die vo dr Patchy und dr Trixie) ghöre ja ihrer Mueter!"	40
 
     *   *Alternative view:* Maybe they are going to the mother's house? No, it says ""fahre... hei"" (driving home).
 
-    *   Final Answer: 7."	stop
+    *   Final Answer: 7."	stop	7.0	0	0	7	0
 q7c63d108	Der Jean het 30 Lutscher. Jean isst 2 dervo. Die übrige Lutscher wot der Jean i Tütli mit je 2 Lutscher tue. Wie viu Tütli cha der Jean füue?	"Der Jean cha **14 Tütli** füue.
 
 Hie isch d'Rächnig:
@@ -2469,7 +2469,7 @@ Hie isch d'Rächnig:
         *   ""28 : 2 = 14.""
         *   ""Der Jean cha also 14 Tütli füue."" (Jean can therefore fill 14 bags.)
 
-    *   Make it clear and concise."	stop
+    *   Make it clear and concise."	stop	14.0	0	1		
 q93b023e5	Der Peter planet, die Wuche is Chino z goh. Är chouft immer es Billet für 7 US-Dollar und Popcorn für 7 US-Dollar. Wenn är für die Wuche 42 US-Dollar zur Verfüegig het, wie mängisch cha är is Kino goh?	"Dr Peter cha **3 Mal** is Kino goh.
 
 Hie isch d'Rächnig derzue:
@@ -2497,7 +2497,7 @@ Hie isch d'Rächnig derzue:
     *   *Step 3: Final answer.*
         *   ""42 / 14 = 3. Dr Peter cha also 3 Mal is Kino goh.""
 
-    *   Ensure the tone is helpful and the dialect is consistent (or a neutral Swiss German)."	stop
+    *   Ensure the tone is helpful and the dialect is consistent (or a neutral Swiss German)."	stop	3.0	0	1		
 qdf141d2f	Ä Houzbrügg darf nid meh als 5.000 Pfund trage. Ä Lieferwage mit identischä Chischtä, wo jedi 15 Pfung wiegt, fahrt über d Brügg. Der Fahrer und der läär Wage wiege zämä 3755 Pfung. Wie viu Chischtä cha dr Wagä maximau ladä, ohni d Gwichtsgränzä vo dr Brügg z überschriitä?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Zersch luege mir, wie viu Gwicht no übrig isch**, we dr Fahrer und dr läär Wage scho uf dr Brügg stöh:
@@ -2538,7 +2538,7 @@ qdf141d2f	Ä Houzbrügg darf nid meh als 5.000 Pfund trage. Ä Lieferwage mit id
         $1245 / 15 = 83$.
 
     *   *Conclusion:*
-        ""Dr Wage cha also maximau 83 Chischtä lade."""	stop
+        ""Dr Wage cha also maximau 83 Chischtä lade."""	stop	83.0	0	1		
 q1f4f019f	Der Stephen het online Läbesmittu bsteut. D Schlussrächnig isch 40,00 US-Dollar gsi. Wüu ä Lieferdienst d Bstellig bringt, hei si 25 % uf d Rächnig drufgschlagä und no 3,00 US-Dollar Liefergebühr verlangt. Der Stephen het usserdäm 4,00 US-Dollar Trinkgäud gäh. Wie höch isch der Ändpriis für Stephens Läbensmittu nach all dene Extragebührä?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Zuesatzgebühr (25 %):** 25 % vo 40,00 USD si **10,00 USD**.
@@ -2581,7 +2581,7 @@ Der Ändpriis für Stephens Läbesmittu isch also **57,00 US-Dollar**."	57	"
     *   *Step 3: Final result.*
         ""Das git zäme 57,00 US-Dollar.""
 
-    *   Ensure the tone is helpful and matches the dialect style of the prompt."	stop
+    *   Ensure the tone is helpful and matches the dialect style of the prompt."	stop	57.0	0	1		
 q709e5faa	Ä Himbeerstruch het 6 Träubli mit je 20 Frücht und no 67 einzelni Frücht überä Struch verteilt. Wie viu Himbeeri het s insgesamt?	"Dr Himbeerstruch het insgesamt **187 Himbeeri**.
 
 Hie isch d'Rächnig:
@@ -2601,7 +2601,7 @@ Hie isch d'Rächnig:
     *   *Explanation in Swiss German:*
         *   ""Zersch rächnet me d'Träubli us: 6 mal 20 git 120."" (First, calculate the clusters: 6 times 20 is 120.)
         *   ""Denn chunnt me no die 67 einzelni Frücht dezue: 120 plus 67 git 187."" (Then add the 67 individual fruits: 120 plus 67 is 187.)
-        *   ""Insgesamt het dr Struch also 187 Himbeeri."" (In total, the bush has 187 raspberries.)"	stop
+        *   ""Insgesamt het dr Struch also 187 Himbeeri."" (In total, the bush has 187 raspberries.)"	stop	187.0	0	1		
 qb292acaa	I menä Chorb hets 25 Orangä. Dervo isch 1 schlächt, 20 % si no unriif und 2 si suur; dr Räscht isch guet. Wie viu Orange si guet?	"Es si **17 Orange** guet.
 
 Hie isch d'Rächnig derzue:
@@ -2645,7 +2645,7 @@ Zäme si das: $1 + 5 + 2 = 8$ Orange, wo nid guet si.
         *   Unriif: 5 (20% vo 25)
         *   Suur: 2
         *   Zäme: $1 + 5 + 2 = 8$
-        *   Räscht: $25 - 8 = 17$"	stop
+        *   Räscht: $25 - 8 = 17$"	stop	17.0	0	1		
 qa11cac63	D Janet chouft ä Broschä für ihri Tochter. Si zaut 500 US-Dollar fürs Materiau, zum se härzsteuä, und no 800 US-Dollar für dr Juwelier, dass är se formt. Nächhär zaut si no 10 % vo däm Betrag für d Versicherig. Wie viu muess si insgesamt zahlä?	"Hie isch d Rächnig:
 
 1. **Materiau und Juwelier:** 500 + 800 = 1'300 US-Dollar
@@ -2676,7 +2676,7 @@ D Janet muess also insgesamt **1'430 US-Dollar** zahlä."	1430	"
     *   *Conclusion:*
         ""D Janet muess also insgesamt 1430 US-Dollar zahlä.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	1430.0	0	1		
 q5a0d641e	Nach 40 Dienstjohr berchunnt ä Mitarbeiter vor Marcys Firma ä voui jöhrlechi Ränte vo 50.000 Dollar. Pensionsasprüch entstöh nach 20 Dienstjohr. Für jedes witere volle Dienstjohr nach dr 20-Jahr-Markä verdient dr Mitarbeiter 5 % vom voue Räntebetrag. Wenn Marcy nach genau 30 Dienstjohr ufhört, wie hoch isch ihri jöhrlechi Ränte i Dollar?	"D'Rächnig gseht so us:
 
 1. **Voui Ränte:** 50'000 Dollar.
@@ -2715,7 +2715,7 @@ D'Marcy bechunnt also e jöhrlechi Ränte vo **25'000 Dollar**."	25000	"
         4.  Pro Johr git's 5 %. Also: 10 Johr $\times$ 5 % = 50 %.
         5.  50 % vo 50'000 $ = 25'000 $.
 
-    *   Ensure the tone is helpful and the Swiss German is natural."	stop
+    *   Ensure the tone is helpful and the Swiss German is natural."	stop	25000.0	0	1		
 q2eb5bb5f	D Aleena het ä Streaming-Dienscht abonniert, wo 140 US-Dollar pro Monät verlangt. Wenn d Firma ihre i der erschtä Jahreshäufti dr ursprünglech Betrag verrchänet und i dr zwöite Johresheufti 10 % weniger, wie viu het si bis Ändi Johr insgesamt für dr Streaming-Dienscht zaut?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Erschti Jahreshäufti (6 Mönet):**
@@ -2773,7 +2773,7 @@ D Aleena het bis Ändi Johr insgesamt **1596 US-Dollar** für dr Streaming-Diens
     *   *Step 4: Final sum.*
         ""Insgesamt het si also zaut: $840 + 756 = 1596$ Dollar.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	1596.0	0	1		
 q29ca8e5c	D Sophia überleit sich, mit ihrem Outo ä lengeri Fahrt z machä, und wot wüsse, wie wit si mit ämene voue Tank chunnt. Sit äm letschtä Tankä isch si 100 Meile gfahre und het 4 Gallone Bänzin müesse nochefüue, bis dr Tank wider vou gsi isch. I dr Bedienigsaleitig steit, dass 12 Gallone i Tank passe. Wie viu Meile cha Sophia mit eire einzigä Tankfüuig fahrä?	"Hie isch d Rächnig für d Sophia:
 
 1. **Zersch rächnä mir us, wie viu Meile si pro Gallone fahrt (dr Verbruch):**
@@ -2810,7 +2810,7 @@ q29ca8e5c	D Sophia überleit sich, mit ihrem Outo ä lengeri Fahrt z machä, und
     *   *Conclusion:*
         *   ""D Sophia cha also mit eire Tankfüuig 300 Meile witt fahrä."" (Sophia can therefore drive 300 miles with one tank filling.)
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	300.0	0	1		
 q388ed7a8	Der Jim luegt 2 Stung lang TV und beschliesst de, is Bett z goh und halb so lang z läsä. Das macht är 3-mal pro Wuchä. Wie viu Stung verbringt är i 4 Wuche mit Fernseh luegä und läse?	"Hie isch d'Rächnig:
 
 1. **Pro Mal:**
@@ -2847,7 +2847,7 @@ Der Jim verbringt i 4 Wuche also insgesamt **36 Stung** mit Fernseh luegä und l
         ""I 4 Wuche sind das: $9 \times 4 = 36$ Stung."" (In 4 weeks that is: $9 \times 4 = 36$ hours.)
 
     *   Make it clear and friendly.
-    *   Use Swiss German to match the user's input."	stop
+    *   Use Swiss German to match the user's input."	stop	36.0	0	1		
 qe6615147	Vier Schuele träte i menä Basketballturnier gägenang a. Jedi Schueu het es Meitlibasketballteam und es Buebebasketballteam gschickt, und jedes Team het 5 Spieler. Aui Schuele hei für jedes Team ou ä Trainer mitgschickt. Wie viu Persone hei d Schuele insgesamt gschickt?	"Do isch d Rächnig:
 
 Pro Schueu git's:
@@ -2907,7 +2907,7 @@ Insgesamt hei d Schuele also **48 Persone** gschickt."	48	"*   Language: Swiss G
         Da es 4 Schuele si, rächnet me:
         4 * 12 = 48.
 
-        Insgesamt hei d Schuele also 48 Persone gschickt."	stop
+        Insgesamt hei d Schuele also 48 Persone gschickt."	stop	48.0	0	1		
 q1df59a5a	E Schatzsuächer het e vergrabeni Schatzchischtä mit Edustei gfunge. Es si 175 Diamante drin gsi, 35 weniger Rubine als Diamante und dopplet so viu Smaragde wie Rubine. Wie viu Edustei si insgesamt i dr Schatzchischtä gsi?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Diamante:** Es si **175** Diamante.
@@ -2939,7 +2939,7 @@ Es si insgesamt **595 Edustei** i dr Schatzchischtä gsi."	595	"*   Language: Sw
     *   *Step 1 (Rubies):* ""Zersch rächnemer d'Rubine us: $175 - 35 = 140$ Rubine.""
     *   *Step 2 (Emeralds):* ""Denn d'Smaragde: $140 \times 2 = 280$ Smaragde.""
     *   *Step 3 (Total):* ""Jetzt zelle mer alles zäme: $175 + 140 + 280 = 595$.""
-    *   *Conclusion:* ""Es si insgesamt 595 Edustei i dr Schatzchischtä gsi."""	stop
+    *   *Conclusion:* ""Es si insgesamt 595 Edustei i dr Schatzchischtä gsi."""	stop	595.0	0	1		
 q0e3fa635	A dr Schueu vo Dr. Wertz het s dopplet so viu Buebe wie Meitli. Wenn s 60 Meitli und 5 Schüeler pro Lehrer het, wie viu Lehrer hets de?	"Do isch d Rächnig:
 
 1. **Buebe:** Es het dopplet so viu Buebe wie Meitli.
@@ -2978,7 +2978,7 @@ Es het also **36 Lehrer**."	36	"*   Language: Swiss German (Bernese/General dial
     *   ""Buebe: $60 \times 2 = 120$""
     *   ""Total Schüeler: $60 + 120 = 180$""
     *   ""Lehrer: $180 \div 5 = 36$""
-    *   ""Es het also 36 Lehrer."" (So there are 36 teachers.)"	stop
+    *   ""Es het also 36 Lehrer."" (So there are 36 teachers.)"	stop	36.0	0	1		
 q9c0ce719	Der Bailey startät mit äre gwüsse Summä Gäud. Denn bechunnt si 8 Wuchä lang jedi Wuchä 5 US-Dollar. Wenn si am Ändi vo de 8 Wuche insgesamt 100 US-Dollar het, wie viu Gäud het d Bailey am Afang gha?	"Hie isch d Rächnig:
 
 1. **Zersch luege mer, wie viu Gäud si i dene 8 Wuche becho het:**
@@ -3012,7 +3012,7 @@ D Bailey het am Afang also **60 US-Dollar** gha."	60	"*   Language: Swiss German
     *   *Conclusion:*
         *   ""D Bailey het am Afang also 60 US-Dollar gha.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	60.0	0	1		
 qde446a3d	D Judy git wärchtags jede Tag 5 Tanzkürs und am Samschtig 8 Kürs. Wenn jede Kurs 15 Schüeler het und si 15,00 $ pro Schüeler verlangt, wie viu Gäud verdient si i eire Wuchä?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Zersch luege mir, wie viu Kürs si pro Wuchä het:**
@@ -3065,7 +3065,7 @@ D'Judy verdient also **7'425,00 $** i eire Wuchä."	7425	"*   Language: Swiss Ge
     *   ""Jetzt rächnen mir s'Gäud us:"" (Now we calculate the money)
     *   ""Pro Kurs verdient si: 15 Schüeler $\times$ 15 $ = 225 $""
     *   ""Für d'ganzi Wuchä: 33 Kürs $\times$ 225 $ = 7'425 $""
-    *   ""D'Judy verdient also **7'425 $** i eire Wuchä."""	stop
+    *   ""D'Judy verdient also **7'425 $** i eire Wuchä."""	stop	7425.0	0	1		
 qd941251f	Der Kelian het zwöi Chochrezäpt. S einte het 20 Awisigä und s angere dopplet so viu wie s erschtä. Wie viu Awisige muess der Kelian läsä, damit är beidi Rezäpt cha machä?	"Der Kelian muess insgesamt **60 Awisigä** läsä.
 
 Hie isch d Rächnig:
@@ -3089,7 +3089,7 @@ Hie isch d Rächnig:
     *   *Final Answer:*
         ""Der Kelian muess also insgesamt 60 Awisigä läsä.""
 
-    *   Keep it friendly and in the same dialect/style as the user."	stop
+    *   Keep it friendly and in the same dialect/style as the user."	stop	60.0	0	1		
 q96352811	Der Tommy sammlet Gäud für sini Wohltätigkeitsorganisation, indäm är Brownies für 3 US-Dollar pro Stück und Chäs-chueche-Stück für 4 US-Dollar pro Stück verchouft. Wenn der Tommy 43 Brownies und 23 Chäs-chueche-Stück verchouft, wie viu Gäud sammlet är?	"Hie isch d'Rächnig:
 
 * **Brownies:** 43 Stück $\times$ 3 USD = 129 USD
@@ -3135,7 +3135,7 @@ Der Tommy sammlet also insgesamt **221 US-Dollar**."	221	"*   Language: Swiss Ge
     *   ""Brownies: 43 Stück $\times$ 3 USD = 129 USD""
     *   ""Chäs-chueche: 23 Stück $\times$ 4 USD = 92 USD""
     *   ""Zäme: 129 USD + 92 USD = 221 USD""
-    *   ""Der Tommy sammlet also insgesamt 221 US-Dollar."""	stop
+    *   ""Der Tommy sammlet also insgesamt 221 US-Dollar."""	stop	221.0	0	1		
 qbf808b59	D Shiela het fünf Handys für 150 US-Dollar pro Stück mit eme Ratezahligsvertrag über 3 Mönet kouft. Pro Stück wärde 2 % Zins verlangt. Wie viu zaut d Shiela jedä Monet während 3 Mönet?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **Gsamtpriis vo de Handys (ohni Zins):**
@@ -3201,7 +3201,7 @@ qbf808b59	D Shiela het fünf Handys für 150 US-Dollar pro Stück mit eme Rateza
         4. **Monatlechi Rate (für 3 Mönet):**
            765 USD $\div$ 3 Mönet = 255 USD
 
-        **D Shiela zaut also jedä Monet 255 US-Dollar.**"	stop
+        **D Shiela zaut also jedä Monet 255 US-Dollar.**"	stop	255.0	0	1		
 q71d76256	Der Artie het ä Bluemästand uf em Buuremärit. Är verchouft drü Sorte Bluemä: Studäntenblueme, Petunie und Begonie. Normalerwiis verchouft är d Studäntenblueme für 2,74 Dollar pro Topf, Petunie für 1,87 Dollar pro Topf und Begonie für 2,12 Dollar pro Topf. Hüt het der Artie kei Wächsugäud, drum het är beschlosse, aui Priise uf dr nöchscht vou Dollar ufzrundä. Wenn der Artie 12 Töpf Studäntenblueme, 9 Töpf Petunie und 17 Töpf Begonie verchouft, wie viu Dollar verdient är?	"Hie isch d Rächnig Schritt für Schritt:
 
 **1. Zersch runden mir d Priise uf dr nöchscht vou Dollar uf:**
@@ -3264,7 +3264,7 @@ Der Artie verdient hüt also **105 Dollar**."	88	"*   Character: Artie.
     *   ""9 $\times$ 2 = 18 Dollar""
     *   ""17 $\times$ 3 = 51 Dollar""
     *   ""Und am Schluss alles zämeznäh:""
-    *   ""36 + 18 + 51 = 105 Dollar"""	stop
+    *   ""36 + 18 + 51 = 105 Dollar"""	stop	105.0	0	0	105	0
 qd6f9023f	Der Luke verbringt Ziit am Strand und bout Sandburgä. Irgendwenn merkt är, dass jedi Etage vo nerä Sandburg nume haub so viu Quadratmeter het wie die drunger. Wenn är e 4-stöckigi Sandburg bout, wo d obersti Etage 16 Quadratmeter het, wie gross isch de im Schnitt ei Etage?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Zersch findemer use, wie gross jedi Etage isch.** Da d'obersti Etage 16 m² het und jedi Etage drunter dopplet so gross isch:
@@ -3318,7 +3318,7 @@ qd6f9023f	Der Luke verbringt Ziit am Strand und bout Sandburgä. Irgendwenn merk
 
     *   ""Zersch rächnemer us, wie gross jedi Etage isch...""
     *   ""D'Summe vo allne Etage isch...""
-    *   ""Im Schnitt (Durchschnitt) isch es also..."""	stop
+    *   ""Im Schnitt (Durchschnitt) isch es also..."""	stop	60.0	0	1		
 qcf724c14	D Cecilia het grad ä nöie Wäupe kouft. Lut ihrem Tierarzt muess si dr Wäupe i dä erschtä 180 Täg jede Tag mit 1 Tassä Hundefueter füetere. Nächhär muess si ihm für dr Räscht vo sim Läbä jede Tag 2 Tasse Hundefueter gäh. Wenn ä Sack Hundefueter 110 Tasseportione het, wie viu Seck Hundefueter brucht Cecilia im erschtä Johr?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Die erschte 180 Täg:**
@@ -3376,7 +3376,7 @@ D'Cecilia brucht im erschte Johr also gnau **5 Seck** Hundefueter."	5	"*   Langu
     *   ""Denn dr Räscht vom Johr (365 - 180 = 185 Täg): 185 Täg $\times$ 2 Tasse = 370 Tasse.""
     *   ""Zäme git das: 180 + 370 = 550 Tasse.""
     *   ""Da e Sack 110 Portione het: 550 / 110 = 5 Seck.""
-    *   ""D'Cecilia brucht also gnau 5 Seck Hundefueter im erschte Johr."""	stop
+    *   ""D'Cecilia brucht also gnau 5 Seck Hundefueter im erschte Johr."""	stop	5.0	0	1		
 q6330b5ad	Wenn der Raymond haub so viu Wösch wäscht wie d Sarah, und d Sarah 4-mal so viu Wösch wäscht wie der David, wie gross isch dr Ungerschied zwüschä dr Wöschmängi vom Raymond und David, wenn d Sarah 400 Pfund Wösch wäscht?	"Hie isch d Rächnig:
 
 1.  **Sarah** wäscht **400 Pfund**.
@@ -3412,7 +3412,7 @@ Dr Ungerschied zwüschä dr Wöschmängi vom Raymond und vom David isch also **3
     *   ""Raymond: O 400 Pfund (wil er genau so viu wäscht wie d Sarah)""
     *   ""David: 100 Pfund (wil d Sarah 4-mal so viu wäscht wie er: 400 ÷ 4 = 100)""
     *   ""Dr Ungerschied: 400 - 100 = 300 Pfund.""
-    *   ""Dr Ungerschied zwüschä dr Wöschmängi vom Raymond und vom David isch also **300 Pfund**."""	stop
+    *   ""Dr Ungerschied zwüschä dr Wöschmängi vom Raymond und vom David isch also **300 Pfund**."""	stop	300.0	0	0	300	0
 qfb8247db	Der Vincent cha Bluemä i 3er-Packige für 2,50 US-Dollar oder i 2er-Packige für 1 US-Dollar choufä. Wie viu Gäud spart är, wenn är 18 Blueme zum bessere Priis chouft?	"Hie isch d'Rächnig Schritt für Schritt:
 
 **1. Choste für d'3er-Packige:**
@@ -3476,7 +3476,7 @@ Der Vincent spart also **6 US-Dollar**, wenn är d'2er-Packige chouft."	6	"*   L
     *   ""18 / 2 = 9 Packige.""
     *   ""9 * 1.00 = 9 Dollar.""
     *   ""Differenz: 15 - 9 = 6 Dollar.""
-    *   ""Är spart also 6 US-Dollar."""	stop
+    *   ""Är spart also 6 US-Dollar."""	stop	6.0	0	1		
 q4da79a41	Der John adoptiert ä Hung. Är bringt dr Hung zum Hundefrisör, wo 100 US-Dollar choschtät. Dr Hundefrisör git ihm 30 % Rabatt, wüu är e Neuchund isch. Wie viu choschtät d Sitzig bim Hundefrisör?	"D Sitzig bim Hundefrisör choschtät **70 US-Dollar**.
 
 Hie isch d Rächnig:
@@ -3498,7 +3498,7 @@ Hie isch d Rächnig:
         *   Calculation: 100 - 30 = 70.
 
     *   ""D Sitzig bim Hundefrisör choschtät **70 US-Dollar**.""
-    *   ""Hie isch d Rächnig: 100 USD minus 30 % (also 30 USD) git 70 USD."""	stop
+    *   ""Hie isch d Rächnig: 100 USD minus 30 % (also 30 USD) git 70 USD."""	stop	70.0	0	1		
 qd3f2e43b	Zwöi Meitli hei je 1/6 vo 24 Liter Wasser übercho. Denn het ä Bueb 6 Liter Wasser übercho. Wie viu Liter Wasser si übrig blibe?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **D'Meitli:** Jeis 1/6 vo 24 Liter isch:
@@ -3536,7 +3536,7 @@ Es si no **10 Liter Wasser** übrig blibe."	10	"*   Language: Swiss German (Bern
         *   ""Denn chunnt no dr Bueb mit sine 6 Liter dezue: $8 + 6 = 14$ Liter."" (Then the boy with his 6 liters is added: 8 + 6 = 14 liters.)
         *   ""Am Schluss ziehe mir das vo de 24 Liter ab: $24 - 14 = 10$ Liter."" (Finally, we subtract that from the 24 liters: 24 - 14 = 10 liters.)
 
-    *   Make it clear and easy to follow."	stop
+    *   Make it clear and easy to follow."	stop	10.0	0	1		
 qffe70c6a	Der Charlie het 10 Sticker gha. Er het 21 Sticker i menä Lade im Ichoufszentrum kouft und zum Geburtstag 23 Sticker gschänkt übercho. Denn het der Charlie sinere Schwöschter 9 Sticker gäh und 28 zum Dekoriere vo nerä Gruesscharte brucht. Wie viu Sticker het der Charlie no?	"Do isch d'Rächnig:
 
 1. Zersch luege mer, wie viu er insgesamt gha het:
@@ -3572,7 +3572,7 @@ Der Charlie het no **17 Sticker**."	17	"*   Language: Swiss German (specifically
         *   ""Do isch d'Rächnig:"" (Here is the calculation:)
         *   ""10 (am Aafang) + 21 (kouft) + 23 (gschänkt) = 54 Sticker""
         *   ""54 - 9 (für d'Schwöschter) - 28 (für d'Charte) = 17 Sticker""
-        *   ""Der Charlie het no 17 Sticker."""	stop
+        *   ""Der Charlie het no 17 Sticker."""	stop	17.0	0	1		
 q7d0f9963	D Grace wiegt 125 Pfund. Alex wiegt 2 Pfund weniger aus ds 4-Fache vor Graces Gwicht. Wie viu Pfund wiege si zämä?	"Hie isch d Rächnig:
 
 1. **Grace** wiegt **125 Pfund**.
@@ -3612,7 +3612,7 @@ Si wiege zämä **623 Pfund**."	623	"*   Language: Swiss German (Bernese/General
     *   ""Grace: 125 Pfund""
     *   ""Alex: (4 × 125) - 2 = 500 - 2 = 498 Pfund""
     *   ""Zämä: 125 + 498 = 623 Pfund""
-    *   ""Si wiege zämä 623 Pfund."""	stop
+    *   ""Si wiege zämä 623 Pfund."""	stop	623.0	0	1		
 q792b7ea9	Der Dan pflanzt 3 Rosebüsch. Jedä Rosebusch het 25 Rose. Jedi Rose het 8 Dornä. Wie viu Dornä si das insgesamt?	"Das rächnet me so us:
 
 1. Zersch luege mer, wie viu Rose es insgesamt het:
@@ -3647,7 +3647,7 @@ Es si also insgesamt **600 Dornä**."	600	"*   Language: Swiss German (Bernese/G
     *   *Polishing the language:*
         *   ""Zersch rächnemer us, wie viu Rose es insgesamt het: 3 × 25 = 75 Rose.""
         *   ""Denn rächnemer d'Dornä us: 75 × 8 = 600.""
-        *   ""Es si also insgesamt 600 Dornä."""	stop
+        *   ""Es si also insgesamt 600 Dornä."""	stop	600.0	0	1		
 q3dfac176	Es Fuessbauteam spielt 22 Spiel. Si hei 8 meh gwunne als verlore. Wie viu Spieu hei si gwunnä?	"Si hei **15 Spieu gwunne**.
 
 Hie isch d'Rächnig derzue:
@@ -3695,7 +3695,7 @@ Hie isch d'Rächnig derzue:
     *   Step-by-step logic:
         1. Total games: 22.
         2. Difference: 8.
-        3. Calculation: $(22 + 8) / 2 = 15$."	stop
+        3. Calculation: $(22 + 8) / 2 = 15$."	stop	15.0	0	1		
 qc8e2bf9d	Der Eugen näit e Quilt us aute Souvenir-T-Shirts. Är het es T-Shirt vo jedem Ferieusflug, wo är gmacht het. Är fahrt jedes Johr viermai i d Feriä. Mit dere Tradition het är i däm Johr agfange, wo er 23 wordä ish, und är het für jedes Johr bis zum aktuelle Johr T-Shirts gsammlät, aber s aktuellä Johr, wo är 34 isch, nid mitgrächnet. Wie viu Quilt-Blöck het är insgesamt?	"Hie isch d Rächnig:
 
 1. **Wie viu Johr het är gsammlät?**
@@ -3740,7 +3740,7 @@ Dr Eugen het insgesamt **44 Quilt-Blöck**."	44	"*   Language: Swiss German (spe
         *   ""Das sind $34 - 23 = 11$ Johr."" (That's 11 years).
         *   ""Pro Johr het är 4 T-Shirts übercho."" (Per year he got 4 T-shirts).
         *   ""Also: $11 \times 4 = 44$."" (So: 44).
-        *   ""Är het insgesamt 44 Quilt-Blöck."" (He has 44 quilt blocks in total)."	stop
+        *   ""Är het insgesamt 44 Quilt-Blöck."" (He has 44 quilt blocks in total)."	stop	44.0	0	1		
 q87073282	Der Greg het ä Wecker gsteut, wo drümau am Tag zur Erinnerig lütet. Wenn dr Wecker losgeit, lütet är so lang, bis der Greg ne absteut. Hüt bim erschte Mau het är viermau glütät, bim zwöite Mau het är drümou so lang glütet wie bim erschtä Mau. Bim dritte Mau het är haub so lang glütät wie bim zwöitä Mau. Wie oft het dr Wecker insgesamt glütät?	"Hie isch d'Rächnig:
 
 1. **Erschts Mau:** 4 Mau
@@ -3774,7 +3774,7 @@ Dr Wecker het insgesamt **22 Mau** glütet."	22	"
     *   *Calculation 3:* ""Bim dritte Mau het är haub so lang glütet wie bim zwöite: $12 / 2 = 6$ Mau.""
     *   *Final Sum:* ""Zäme git das: $4 + 12 + 6 = 22$ Mau.""
 
-    *   ""Dr Wecker het insgesamt **22 Mau** glütet."""	stop
+    *   ""Dr Wecker het insgesamt **22 Mau** glütet."""	stop	22.0	0	1		
 qe293b5e8	Ä Firma zaut ihrne Mitarbeitende es Listigsghaut vo 600 Dollar pro Monät. D Firmepolitik belohnt langjährigi Mitarbeitendi: Nach fünf Diänstjohr wird s Ghaut jedes Johr erhöht. Die jöhrlechi Erhöhig isch immer dr glych fescht Betrag, berächnät aus 10 % vom ursprünglächä Johresghalt. Wenn Sylvie grad ihres fünfte Jahr i dr Firma abgeschlossen het, wie hoch isch ihres Jahresghaut, nachdäm si no drü witeri Johr gschaffät het?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Ursprünglechs Jahresghaut:**
@@ -3824,7 +3824,7 @@ qe293b5e8	Ä Firma zaut ihrne Mitarbeitende es Listigsghaut vo 600 Dollar pro Mo
     *   *Step 3: Total increase after 3 more years.*
         3 * 720 = 2'160 Dollar.
     *   *Step 4: Final total.*
-        7'200 + 2'160 = 9'360 Dollar."	stop
+        7'200 + 2'160 = 9'360 Dollar."	stop	9360.0	0	1		
 qb9e657cf	Der Marilyn iri erschti Platte het sich 10-mol so oft verchouft wie am Harald sini. Wenn si zämä 88.000 Exemplar verchouft hei, wie viu Exemplar het der Harald verchouft?	"Hie isch d'Rächnig:
 
 1. Zersch luege mir, wie viu ""Teili"" es insgesamt git:
@@ -3867,7 +3867,7 @@ qb9e657cf	Der Marilyn iri erschti Platte het sich 10-mol so oft verchouft wie am
         2.  Marilyn has 10 parts.
         3.  Total parts = 11.
         4.  Divide total (88,000) by 11.
-        5.  Result = 8,000."	stop
+        5.  Result = 8,000."	stop	8000.0	0	1		
 q8d6c3ac8	D Christina het 16 Fründä zu ihrer Geburtstagsparty iiglade. Si rächnet dermit, dass nume 75 % chömä, drum macht si für jedä erwartetä Gascht es Gschänksckli parat. Wenn d Gschänkseckli je $2 choschtä, wie höch si d Gsamchtchöschte?	"Do isch d Rächnig Schritt für Schritt:
 
 1. **Wie vill Lüt chömed?**
@@ -3910,7 +3910,7 @@ D Gsamtchöschte sind also **24 Dollar**."	24	"*   Christina invited 16 friends.
         2. Denn rächnet mer d Chöschte us:
            $12 \times \$2 = \$24$.
 
-        D Gsamtchöschte sind also **24 Dollar**."	stop
+        D Gsamtchöschte sind also **24 Dollar**."	stop	24.0	0	1		
 qa59fef67	Ted dr T-Rex plant, Härdöpfusalat aus Dinopicknick mitzbringe. Är weiss, dass ä erwachsnige Dinosaurier 10 Pfund Härdöpfusalat isst, und es Jungs haub so viu wie äs erwachsnigs Tier. Wenn 20 Erwachseni und 5 Jungi am Picknick derbi si, wie viu Härdöpfusalat muess der Ted mitbringä, wenn är aui satt mache wot?	"Dr Ted mues rächt viu Härdöpfusalat mache! Hie isch d'Rächnig:
 
 1.  **Erwachseni:** 20 Dinosaurier $\times$ 10 Pfund = **200 Pfund**
@@ -3953,7 +3953,7 @@ Dr Ted mues also **225 Pfund Härdöpfusalat** mitbringä, damit aui satt wärde
 
     *   Did I account for all 20 adults? Yes.
     *   Did I account for all 5 young? Yes.
-    *   Is the math correct? $20 \times 10 = 200$; $5 \times 5 = 25$; $200 + 25 = 225$. Yes."	stop
+    *   Is the math correct? $20 \times 10 = 200$; $5 \times 5 = 25$; $200 + 25 = 225$. Yes."	stop	225.0	0	1		
 q4db223a4	Der Jan het drümou so viu Huustier wie d Marcia. D Marcia het zwöi Huustier meh aus d Cindy. Wenn d Cindy vier Huustier het, wie viu Huustier hei aui drü zämä?	"Do isch d Rächnig:
 
 1. D **Cindy** het **4** Huustier.
@@ -3996,7 +3996,7 @@ Aui drü zämä hei also **28 Huustier**."	28	"*   Language: Swiss German (speci
 
         Zämä hei si: $4 + 6 + 18 = \mathbf{28}$ Huustier.
 
-        Aui drü zämä hei also **28 Huustier**."""	stop
+        Aui drü zämä hei also **28 Huustier**."""	stop	28.0	0	1		
 q2ae0bd70	D Emily het 4 Ching, wo Amy, Jackson, Corey und James heissä. D Amy isch 5 Johr euter als der Jackson und 2 Johr jünger aus Corey. Wenn der James 10 Johr aut isch und 1 Johr jünger als d Corey, wie aut isch der Jackson?	"De Jackson isch **14 Johr aut**.
 
 Do isch d Rächnig Schritt für Schritt:
@@ -4036,7 +4036,7 @@ Do isch d Rächnig Schritt für Schritt:
         1. James = 10.
         2. Corey = 10 + 1 = 11.
         3. Amy = 11 - 2 = 9.
-        4. Jackson = 9 + 5 = 14."	stop
+        4. Jackson = 9 + 5 = 14."	stop	14.0	0	0	14	0
 q412bff21	Der Lee cha dr 400 Meter Hürdälouf zwöi Sekundä schnäuer loufä aus der Gerald dr 400 Meter Hürdälouf louft. Der Gerald het aber sini Ernährig umgsteut und derdür sini Gschwindigkeit um 10 % verbesserät. Wenn der Lee dr 400 Meter Hürdälouf i 38 Sekunde louft, wie schnäu cha der Gerald mit sinärä verbessertä Ernährig dr 400 Meter Hürdälouf i Sekundä loufe?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1.  **Dr Gerald sini ursprünglechi Zyt:**
@@ -4100,7 +4100,7 @@ Der Gerald cha dr 400 Meter Hürdälouf mit sinärä verbessertä Ernährig i ö
     *   Check: Did I apply the 10% to the time or the speed? The prompt says ""Gschwindigkeit"" (speed).
         *   If it were 10% faster *time*, it would be $40 \times 0.9 = 36$.
         *   But 10% faster *speed* is $40 / 1.1 = 36.36$.
-        *   In common language, people often mean time, but mathematically, speed is $d/t$. I will stick to the mathematical definition of speed but perhaps mention the result clearly."	stop
+        *   In common language, people often mean time, but mathematically, speed is $d/t$. I will stick to the mathematical definition of speed but perhaps mention the result clearly."	stop	36.36	0	0	36.36	0
 qf73a338f	I nere Nachbarschaft het s zwöuf weniger Hase aus d Gesamtzau vo Hüng und Chatzä. Wenn s für jedä Hung zwöi Chatzä het und d Zahl vo de Hüng 60 isch, wie viu Huustier het s insgesamt i dr Nachbarschaft?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Hüng:** Es het **60 Hüng**.
@@ -4143,7 +4143,7 @@ Es het insgesamt **348 Huustier** i dr Nachbarschaft."	348	"*   Language: Swiss 
         60 (Hüng) + 120 (Chatzä) + 168 (Hase) = 348."" (Now we add everything together: 348.)
 
     *   *Conclusion:*
-        ""Es het insgesamt 348 Huustier i dr Nachbarschaft."" (There are a total of 348 pets in the neighborhood.)"	stop
+        ""Es het insgesamt 348 Huustier i dr Nachbarschaft."" (There are a total of 348 pets in the neighborhood.)"	stop	348.0	0	1		
 qc5273098	Vo de 200 Fünftklässler si 2/5 Buebe und 2/3 vo de Meitli si bi de Pfadfinderinnä. Wie viu Meitli si nid bi de Pfadfinderinne?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Zersch rächnemer us, wie viu Buebe es het:**
@@ -4189,7 +4189,7 @@ qc5273098	Vo de 200 Fünftklässler si 2/5 Buebe und 2/3 vo de Meitli si bi de P
     *   *Step 1:* 200 / 5 * 2 = 80 Buebe.
     *   *Step 2:* 200 - 80 = 120 Meitli.
     *   *Step 3:* 120 / 3 * 2 = 80 Meitli bi de Pfadfinderinne.
-    *   *Step 4:* 120 - 80 = 40 Meitli nid bi de Pfadfinderinne."	stop
+    *   *Step 4:* 120 - 80 = 40 Meitli nid bi de Pfadfinderinne."	stop	40.0	0	1		
 qf8da7966	Der Harry het letscht Nacht 9 Stung gschlofä. Si Fründ der James het numä 2/3 vo dr Ziit gschlofä, wo Harry gschlofe het. Wie viu Stung meh het der Harry gschlofe aus der James?	"Dr Harry het 3 Stung meh gschlofä aus dr James.
 
 **So rächnet me das:**
@@ -4219,7 +4219,7 @@ qf8da7966	Der Harry het letscht Nacht 9 Stung gschlofä. Si Fründ der James het
     *   Harry het 9 Stung gschlofä.
     *   Der James het 2/3 vo 9 gschlofä. Das sind $9 \times 2 / 3 = 6$ Stung.
     *   D'Differenz isch $9 - 6 = 3$ Stung.
-    *   Antwort: Der Harry het 3 Stung meh gschlofä aus der James."	stop
+    *   Antwort: Der Harry het 3 Stung meh gschlofä aus der James."	stop	3.0	0	1		
 q186d2aa2	Wenn d Freda Dosätomatä zu Sauce iichochät, verlürä si d Heufti vom Gwicht. Jedi 16-Unzä-Dose Tomatä, wo si brucht, het drü Tomatä drin. Die letschti Portion Tomatesaucä het 32 Unze Sauce ergäh. Wie viu Tomatä het Freda brucht?	"Hie isch d Rächnig Schritt für Schritt:
 
 1. **S Gwicht vor em Iichoche:**
@@ -4256,7 +4256,7 @@ q186d2aa2	Wenn d Freda Dosätomatä zu Sauce iichochät, verlürä si d Heufti v
     *   *Step 3: Calculate number of tomatoes.*
         ""Da i jedere Dose drü Tomatä si, macht das insgesamt 12 Tomatä (4 * 3 = 12).""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	12.0	0	1		
 q9c762a15	Uf dr Autobahn stöh Outo i nerä Kolonnä. Es paar vo de Outos fahre i der erschtä 15 Minute vom Stou dürä, und nächhär no 20 witeri Outos i dä verbleibendä 15 Minute. 5 Outos fahrä us dr Reihe usä, sodass si nid düre Stou müesse. Wenn am Afang 30 Outos uf dr Autobahn gstange si, wie viu Outos si i dä erschtä 15 Minute düre Stou gfahre?	"I de erschtä 15 Minute si **5 Outos** düre gfahre.
 
 Hie isch d'Rächnig:
@@ -4292,7 +4292,7 @@ Hie isch d'Rächnig:
         5 si us dr Reihe usä.
         Das macht zäme 25 Outos.
         30 minus 25 git 5.
-        Also si i de erschte 15 Minute 5 Outos düre gfahre."""	stop
+        Also si i de erschte 15 Minute 5 Outos düre gfahre."""	stop	5.0	0	1		
 q507804db	D Mary gärtnäret für ihres Läbe gärn. Geschter het si 18 nöii Topfpflanzä vo ihrer Lieblingsgärtnerei übercho. Si het scho 2 Topfpflanzä uf jedem vo dä 40 Fänstersims i ihrem grosse Landhuus. Si isch grosszügig und het beschlossä, morn vo jedem Fänstersims 1 Topfpflanze a Fründä und Familiä z verschänke. Wie viu Topfpflanzä bliibä der Mary übrig?	"Do isch d'Rächnig Schritt für Schritt:
 
 1. **Wie viu Pflanzä het si zersch gha?**
@@ -4344,7 +4344,7 @@ Der Mary bliibä also **58 Topfpflanzä** übrig."	58	"*   Language: Swiss Germa
     *   ""2. Mit de 18 nöie Pflanzä sind das $80 + 18 = 98$ Pflanzä.""
     *   ""3. Si verschänkt vo jedem vo de 40 Fänstersims eini, also 40 Pflanzä.""
     *   ""4. $98 - 40 = 58$.""
-    *   ""Der Mary bliibä also **58 Topfpflanzä** übrig."""	stop
+    *   ""Der Mary bliibä also **58 Topfpflanzä** übrig."""	stop	58.0	0	1		
 q120898cb	Der Jerome het 4 Fründä gha, wo ihn a menä bstimmte Tag bsuächt hei. Dr erscht Fründ het 20 mou uf d Türglogge drückt, bevor der Jerome ufgmacht het. Dr zwöit Fründ het 125 % so oft glütet wie dr erscht. Dr dritt Fründ het 10 Mal mou me glütet aus dr viert. Wenn dr viert Fründ 60 mou glütet het, wie oft het d Türgloggä insgesamt glütet?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Dr erscht Fründ:** 20 Mal
@@ -4382,7 +4382,7 @@ D Türgloggä het insgesamt **705 Mal** glütet. (Dr Jerome het sicher nümme gs
         *   Fründ 2: 125% vo 20 $\rightarrow 20 \times 1.25 = 25$ Mal.
         *   Fründ 4: 60 Mal.
         *   Fründ 3: 10 Mal meh als dr viert $\rightarrow 10 \times 60 = 600$ Mal.
-        *   Total: $20 + 25 + 600 + 60 = 705$."	stop
+        *   Total: $20 + 25 + 600 + 60 = 705$."	stop	705.0	0	0	705	0
 q55e446ec	Der Solo muess 4 Sitä us sim Naturwissenschaftsbuech läsä, 20 Sitä us sim Gemeinschaftskundebuech, 7 Site us sim Gschichtsbuech und 8 Sitä us sim Geografiebuech. Am Mäntig liest Solo 15 Sitä. Wenn är no 4 Täg het, um ues z läse, wie viu Sitä muess är pro Tag im Schnitt läsä?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Zersch rächnemer alli Sitä zäme, wo dr Solo muess läse:**
@@ -4432,7 +4432,7 @@ q55e446ec	Der Solo muess 4 Sitä us sim Naturwissenschaftsbuech läsä, 20 Sitä
 
     *   Total pages: 39.
     *   Remaining: 24.
-    *   Per day: 6."	stop
+    *   Per day: 6."	stop	6.0	0	1		
 qe178e77b	Der John trinkt zum Zmorgä, Zmittag und Znacht gärn es Glas Wasser. Vor em Is-Bett-Goh trinkt är ou no eis. Das macht der John a jedem Wuchätag, aber am Wuchänänd entspannt är gärn und trinkt zum Znacht stattdesse es Glas Limonade. Wie viu Gleser Wasser trinkt der John pro Wuchä?	"Dr John trinkt pro Wuchä **26 Gleser Wasser**.
 
 Hie isch d'Rächnig:
@@ -4469,7 +4469,7 @@ Hie isch d'Rächnig:
     *   *Drafting the response:*
         *   Wuchätag (Mo-Fr): 4 Gleser pro Tag $\rightarrow$ 5 * 4 = 20.
         *   Wuchänänd (Sa-So): 3 Gleser pro Tag (will d'Limonade nid zellt) $\rightarrow$ 2 * 3 = 6.
-        *   Total: 20 + 6 = 26."	stop
+        *   Total: 20 + 6 = 26."	stop	26.0	0	1		
 q13dd2b3f	Ä Näbuschleier chunnt vom Meer här und leit sich über ä Stadt. Är brucht 10 Minute, zum je 3 Meilen vo dr Stadt ds bedeckä. Wenn sich d Stadt vom Meerufer bis zum angere Ändi im Landesinnerä über 42 Meilen ziäht, wie viu Minute brucht dr Näbuschleier, bis di ganz Stadt bedeckt isch?	"Das isch e rächti Rächnig! Do isch dr Wäg zum Resultat:
 
 1. Dr Näbuschleier brucht **10 Minute für 3 Meile**.
@@ -4518,7 +4518,7 @@ Das sind **2 Stund und 20 Minute**."	140	"
     3. Zersch luege mir, wie viu vo dene 3-Meile-Stück i die 42 Meile passe: $42 \div 3 = 14$.
     4. Jedes vo dene 14 Stück brucht 10 Minute: $14 \times 10 = 140$.
 
-    Dr Näbuschleier brucht also **140 Minute**, bis die ganz Stadt bedeckt isch. Das sind **2 Stund und 20 Minute**."""	stop
+    Dr Näbuschleier brucht also **140 Minute**, bis die ganz Stadt bedeckt isch. Das sind **2 Stund und 20 Minute**."""	stop	20.0	0	0	140	1
 q5d8678a9	D Poppy macht äs 1000-Teil-Puzzli. Si leit ä Viertu vo de Teili ufs Brätt, nächhär leit ihres Mami ä Drittu vo dä übrige Teili. Wie viu Puzzleteili müessä no gleit wärdä?	"Do isch d'Rächnig Schritt für Schritt:
 
 1. **D'Poppy leit ä Viertu:**
@@ -4559,7 +4559,7 @@ Es müessä also no **500 Puzzleteili** gleit wärdä."	500	"*   Language: Swiss
     *   ""Es blibe no $1000 - 250 = 750$ Teili übrig.""
     *   ""Denn leit s'Mami ä Drittu vo dene 750 Teili: $750 : 3 = 250$ Teili.""
     *   ""Am Schluss rächnet me: $750 - 250 = 500$.""
-    *   ""Es müessä also no **500 Puzzleteili** gleit wärdä."""	stop
+    *   ""Es müessä also no **500 Puzzleteili** gleit wärdä."""	stop	500.0	0	1		
 q10c23d37	D Cody isst drümou meh Guetzli aus der Amir. Wenn der Amir 5 Guetzli isst, wie viu Guetzli ässe beidi zämä?	"Amir isst 5 Guetzli.
 D Cody isst drümou so viu, also $3 \times 5 = 15$ Guetzli.
 
@@ -4582,7 +4582,7 @@ Zämä ässe si also $5 + 15 = \mathbf{20}$ **Guetzli**."	20	"*   Language: Swis
 
     *   ""Amir isst 5 Guetzli.""
     *   ""D Cody isst drümou so viu, also $3 \times 5 = 15$ Guetzli.""
-    *   ""Zämä ässe si also $5 + 15 = 20$ Guetzli."""	stop
+    *   ""Zämä ässe si also $5 + 15 = 20$ Guetzli."""	stop	20.0	0	1		
 q71246a09	Der John het 3 Chischtä. Jedi Chischtä isch 5 Inch mou 6 Inch mou 4 Inch gross. D Wäng si 1 Inch dick. Wie gross isch ds Innenvolumä vo aune 3 Chischtä zämä?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **D Innemass vo einere Chischtä bstimme:**
@@ -4632,7 +4632,7 @@ q71246a09	Der John het 3 Chischtä. Jedi Chischtä isch 5 Inch mou 6 Inch mou 4 
     *   *Step 3: Calculate total volume for 3 boxes.*
         ""Da dr John 3 Chischtä het: $3 \times 24 = 72$ kubik-Inch.""
 
-    *   *Final Answer:* 72 kubik-Inch."	stop
+    *   *Final Answer:* 72 kubik-Inch."	stop	72.0	0	1		
 q51ea4378	Der Frankie luögt jede Obe, nachdäm är sini Husufgabä gmacht het, färn. Am Mäntig und Zischtig het är je ä 1-stündigi Foug vo siner Lieblingssändig gluägt. Am Mittwuch het är es paar Fougä vo nere 30-minütige Sändig gluegt. Am Donnschtig isch är früecher mit dä Husufgabe fertig gsi und het ä 1-stündigi Foug und ä 30-minütigi Show gluägt. Am Fritig het är wüu Wuchenänd isch lenger dörfe ufbliibä und zwöi 1-stündigi Fouge gluegt. Wenn är insgesamt 7 Stung fernseh gluägt het, wie viu 30 Minutä längi Fouge het är am Mittwuch gluägt?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1.  **Mäntig:** 1 Stund
@@ -4687,7 +4687,7 @@ How many 30-minute episodes did he watch on Wednesday?
     *   Da e Fouge 30 Minute gaht, sind das $1.5 / 0.5 = 3$ Fouge.
 
     *   Start with the calculation.
-    *   Clearly state the result."	stop
+    *   Clearly state the result."	stop	3.0	0	1		
 qe465613a	Der Henry bachet Guetzli für ä regionalä Bachwettbewärb. Är wot dopplät so viu bache wie letscht Johr. Wo är fertig isch, merkt är, dass är 15 Güetzi meh bache het als är eigentlech wott. Bim Uselegä zum Abchüelä loht är 5 Guetzli gheiä und het jetz insgesamt 110 Guetzli. Wie viu Guetzli het der Henry letscht Johr bachä?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Zersch luege mer, wie viu är bache het, bevor d'Guetzli gheit si:**
@@ -4728,7 +4728,7 @@ qe465613a	Der Henry bachet Guetzli für ä regionalä Bachwettbewärb. Är wot d
     *   Step 1: Start from the end.
     *   Step 2: Add back the dropped cookies.
     *   Step 3: Subtract the extra cookies.
-    *   Step 4: Divide by 2 to find last year's amount."	stop
+    *   Step 4: Divide by 2 to find last year's amount."	stop	50.0	0	1		
 q1e0f8fcb	Ä örtlichi Tanksteu verchouft Bänzin für 3,00 $ pro Gallonä. Ä App-Firma git 0,20 $ Cashback pro Gallonä, wenn me a derä Tanksteu tankt. Wenn öpper 10 Gallonä Bänzin chouft, wie viu choschtet ds Bänzin nach äm Cashback? Gib d Antwort i Dollar a.	"Ds Bänzin choschtet nach em Cashback **28,00 $**.
 
 Hie isch d Rächnig:
@@ -4763,7 +4763,7 @@ Hie isch d Rächnig:
         *   10 Gallonä $\times$ 0,20 \$ = 2,00 \$ (Cashback)
         *   30,00 \$ - 2,00 \$ = 28,00 \$
 
-    *   ""Ds Bänzin choschtet nach em Cashback 28,00 $."""	stop
+    *   ""Ds Bänzin choschtet nach em Cashback 28,00 $."""	stop	28.0	0	1		
 q91fe6f6e	Marcell und Beatrice hei ä Wettbewärb, wär am meischtä Fruchtrouä cha ässä, drum rouä si aui uf, wo si fingä. Leider macht öpper ä Fähler, und Beatrices Teil isch zwöi Roue breit und 24 Roue läng, während Marcells 3 Rollä breit und 14 Rollä läng isch. Wenn beidi ihri ganzi Mängi ässä, wie viu hei si im Schnitt gässä?	"Hie isch d'Rächnig:
 
 1. **Beatrice:** $2 \times 24 = 48$ Roue
@@ -4798,7 +4798,7 @@ Im Schnitt hei si also **45 Fruchtrouä** gässä."	45	"
         ""Im Schnitt hei si also $90 : 2 = 45$ Roue gässä.""
 
     *   Ensure the tone matches the user's dialect.
-    *   Clear and concise."	stop
+    *   Clear and concise."	stop	45.0	0	1		
 q76afc2ba	Ar Julia ires Boot het äs Leck gha, wosi si dussä uf em See gsi isch. Für aui zäh Fuess, wo si zrügg as Ufer gruädärät isch, het ds Boot zwöi Liter Wasser ufgnoh. Für zwänzg Fuess het si sächzäh Sekundä brucht. Der Strand isch 64 Sekundä wäg gsi. Wie viu Wasser het ds Boot ufgnoh, wo d Julia dr Strand erreicht het?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Wie wit isch d Julia gfahre?**
@@ -4857,7 +4857,7 @@ q76afc2ba	Ar Julia ires Boot het äs Leck gha, wosi si dussä uf em See gsi isch
         *   ""80 Fuess teilt durch 10 Fuess git 8."" (80 / 10 = 8.)
         *   ""8 * 2 Liter = 16 Liter.""
 
-    *   Check the math: $64/16 = 4 \rightarrow 4 \times 20 = 80 \rightarrow 80/10 = 8 \rightarrow 8 \times 2 = 16$. Correct."	stop
+    *   Check the math: $64/16 = 4 \rightarrow 4 \times 20 = 80 \rightarrow 80/10 = 8 \rightarrow 8 \times 2 = 16$. Correct."	stop	16.0	0	1		
 q9c73cd77	Es Klassezimmer het ä Tafälä, wo sich 4 Lehrer teilä, wo dr Ruum abwächsligswiis bruuchä. Jede Lehrer het 2 Unterrichtsstunde pro Tag und brucht d Tafälä i jedere Stung. Wenn d Tafälä 3-mol pro Unterrichtsstung gwüscht wird, wie mängisch wird si pro Tag gwüscht?	"D'Rächnig gseht so us:
 
 1. Zersch luege mer, wie vill Unterrichtsstunde es insgesamt git:
@@ -4888,7 +4888,7 @@ D'Tafälä wird also **24-mol pro Tag** gwüscht."	24	"*   Language: Swiss Germa
     *   ""D'Rächnig gseht so us:"" (The calculation looks like this:)
     *   ""4 Lehrer × 2 Stunde pro Lehrer = 8 Stunde pro Tag.""
     *   ""8 Stunde × 3-mol wüsche pro Stunde = 24-mol.""
-    *   ""D'Tafälä wird also **24-mol pro Tag** gwüscht."""	stop
+    *   ""D'Tafälä wird also **24-mol pro Tag** gwüscht."""	stop	24.0	0	1		
 q2bbbdc5a	Der Ryan pflanzt pro Tag 2 Bluemä i si Gartä. Wie viu Bluemä het är nach 15 Täg, wenn 5 nid agwachsä si?	"Dr Ryan het nach 15 Täg **25 Bluemä**.
 
 Hie isch d'Rächnig:
@@ -4914,7 +4914,7 @@ Hie isch d'Rächnig:
 
     *   Calculation: $15 \times 2 = 30$.
     *   Subtraction: $30 - 5 = 25$.
-    *   Final Answer: 25."	stop
+    *   Final Answer: 25."	stop	25.0	0	1		
 qb65bf453	Am Jamal sis Handy cha 6-mou meh Foti spicherä aus ar Brittany ires Handy. D maximau Zau vo Fotos, wo ar Brittanys ires Handy cha spicherä, isch 50-mou so höch wie d Zau vo dä Vögu ufem Jamals Foti mit dä Äntä im Zoo. Wenn am Jamal sis Handy 1.800 Fotos cha spicherä, wie viu Äntä si uf em Jamals Foto vo de Äntä im Zoo ds gseh?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Zersch luege mer, wie viu Fotos d Brittany cha spicherä:**
@@ -4965,7 +4965,7 @@ Da es es Foti vo de Äntä isch, sind die Vögu au d Äntä.
     *   Jamal: 1,800.
     *   Brittany: $1,800 \times 6 = 10,800$.
     *   Birds: $10,800 / 50 = 216$.
-    *   Ducks = Birds = 216."	stop
+    *   Ducks = Birds = 216."	stop	216.0	0	0	216	0
 q62cadf26	D Sasha merkt, dass d Houpriisä i dä letschtä paar Mönet um 50 % gstigä si, sit si ds Houz kouft het. Wüu si no Räschtä het, beschliesst si, dä z verchoufä. Si het zäh 2 x 4 x 10 grossi Brätter übrig, wo si pro Stück für 10 US-Dollar kouft het. Si het ou füf 4 x 4 x 10 Brätter, wo si für 16 US-Dollar pro Stück kouft het. Wenn si aui verchouft, wie viu Gwinn macht si?	"Hie isch d Rächnig, zum usefinde, wie viu Gwinn d Sasha macht:
 
 **1. Zersch rächnemer us, wie viu si ursprünglech usgä het (Choste):**
@@ -5035,7 +5035,7 @@ D Sasha macht also e **Gwinn vo 90 US-Dollar**."	90	"*   Sasha bought wood for a
     *   *Step 2: Price increase.*
         *   50% increase.
     *   *Step 3: Profit calculation.*
-        *   50% of 180$ = 90$."	stop
+        *   50% of 180$ = 90$."	stop	90.0	0	1		
 q6637faea	D Katy macht Kaffee und brucht derfür Teelöffu Zucker und Tassä Wasser im Verhäutnis 7:13. Wenn si insgesamt 120 Teelöffu Zucker und Tassä Wasser brucht het, wie viu Teelöffu Zucker het si brucht?	"Hie isch d'Rächnig für di:
 
 1. **Zersch luege mir, wie viu ""Teile"" es insgesamt git:**
@@ -5071,7 +5071,7 @@ D'Katy het also **42 Teelöffu Zucker** brucht."	42	"*   Language: Swiss German 
     *   *Step 1:* ""Zersch luege mir, wie viu Teile es insgesamt git: 7 + 13 = 20 Teile.""
     *   *Step 2:* ""Jetzt teile mir die gsamti Mengi dur d'Azahl vo de Teile: 120 / 20 = 6.""
     *   *Step 3:* ""Da d'Katy 7 Teil Zucker brucht, rächnen mir: 7 * 6 = 42.""
-    *   *Conclusion:* ""D'Katy het also 42 Teelöffu Zucker brucht."""	stop
+    *   *Conclusion:* ""D'Katy het also 42 Teelöffu Zucker brucht."""	stop	42.0	0	1		
 q7c7b8736	Der John chouft 2 Paar Schueh für jedes vo sine 3 Ching. Es Paar choschtät 60 US-Dollar. Wie viu het är zaut?	"Dr John het insgesamt 6 Paar Schueh gchouft (3 Chind × 2 Paar).
 
 Bi 60 Dollar pro Paar git das:
@@ -5098,7 +5098,7 @@ Bi 60 Dollar pro Paar git das:
     *   *Drafting the response:*
         ""Dr John het insgesamt 6 Paar Schueh gchouft (3 Chind × 2 Paar).
         Bi 60 Dollar pro Paar git das: 6 × 60 = 360 Dollar.
-        Är het also 360 US-Dollar zaut."""	stop
+        Är het also 360 US-Dollar zaut."""	stop	360.0	0	1		
 q8f663843	Ä Zoubeamtä am Houpthafä vo dr SeaSide Zollabfertigung het 2 Container mit importiertä Outos zeut, und i jedem si 5 Outos gsi. Am nöchschtä Tag si no meh Container glieferät wordä und d Gesamtzau vo de Outos am Hafä isch uf 30 gstigä. Wie viu Container si am zwöitä Tag importiert wordä, wenn i jedäm Container 5 Outos si?	"Hie isch d Rächnig:
 
 1. **Am erschte Tag:** 2 Container $\times$ 5 Outos = **10 Outos**.
@@ -5126,7 +5126,7 @@ Am zwöite Tag si also **4 Container** importiert wordä."	4	"
 
     *   ""Am erschte Tag si $2 \times 5 = 10$ Outos cho.""
     *   ""Am Ändi si's 30 Outos gsi, also si am zwöite Tag no $30 - 10 = 20$ Outos cho.""
-    *   ""Da i jedem Container 5 Outos si, hei am zwöite Tag **4 Container** importiert wordä."""	stop
+    *   ""Da i jedem Container 5 Outos si, hei am zwöite Tag **4 Container** importiert wordä."""	stop	4.0	0	1		
 q6edb8d49	Ar Lylahs ire Gsamtlohn isch 30 Prozänt tiefer gsi aus dä vor Adrien. Vier Johr spöter isch ar Adriens Lohn gstigä, und är het 40 % meh verdient aus vier Johr vorhär. Wenn Adriens und Lylahs Lohn zur glyche Ziit gstige si und Adrien vor vier Johr $40000 verdient het, wie höch isch dr Gesamtlohn vo beidne vier Johr spöter? Gib d Antwort i Dollar a.	"Hie isch d Rächnig Schritt für Schritt:
 
 **1. De alt Lohn (vor vier Johr):**
@@ -5211,7 +5211,7 @@ De Gsamtlohn vo beidne isch vier Johr spöter **$95'200**."	95200	"*   Language:
     *   Lylah 30% lower than Adrien (40k) -> 28k. Correct.
     *   Adrien 40% increase (40k) -> 56k. Correct.
     *   Lylah 40% increase (28k) -> 39.2k. Correct.
-    *   Total -> 95.2k. Correct."	stop
+    *   Total -> 95.2k. Correct."	stop	95200.0	0	1		
 q1b1c6563	Der Miguel brucht zum Zeichnä 2 Zeichnigsblöck pro Wuchä. Wenn ä Block 30 Blatt Papier het, wie viu Blatt Papier brucht är pro Monet?	"Der Miguel brucht pro Monet **240 Blatt Papier**.
 
 Hie isch d'Rächnig derzue:
@@ -5240,7 +5240,7 @@ Hie isch d'Rächnig derzue:
     *   ""Der Miguel brucht pro Monet **240 Blatt Papier**.""
     *   ""Hie isch d'Rächnig:""
     *   ""1. Pro Wuchä: 2 Blöck $\times$ 30 Blatt = 60 Blatt""
-    *   ""2. Pro Monet (bi 4 Wuchä): 60 Blatt $\times$ 4 = 240 Blatt"""	stop
+    *   ""2. Pro Monet (bi 4 Wuchä): 60 Blatt $\times$ 4 = 240 Blatt"""	stop	240.0	0	1		
 qdda5aad8	D Morisette und d Kael hei söuä Frücht mitbringä. Morisette het 5 Öpfu und 8 Orange mitbrocht und Kael het dopplät so viu Öpfu und haub so viu Orange wie d Morisette mitbrocht. Wie viu Frücht hei si insgesamt?	"Hie isch d Rächnig:
 
 **D Morisette:**
@@ -5289,7 +5289,7 @@ Si hei also zäme **27 Frücht** mitbrocht."	27	"*   Language: Swiss German (Ber
     *   *Step 3: Final sum.*
         ""Insgesamt hei si: 13 + 14 = 27 Frücht.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	27.0	0	1		
 qbe882310	Sadie het am Mäntig 8 Stung gschlofe. A dä nöchschtä zwöi Täg het si pro Tag 2 Stung weniger gschlofe, wüu si no Ufgabä z erledige gha het. Wenn si der Räscht vor Wuchä 1 Stung meh gschlofä het aus a denä zwöi Täg, wie viu Stung het si i dr ganzä Wuchä gschlofe?	"Hie isch d Rächnig Schritt für Schritt:
 
 1.  **Mäntig:** 8 Stung
@@ -5332,7 +5332,7 @@ D Sadie het i dr ganze Wuchä **48 Stung** gschlofe."	48	"*   Language: Swiss Ge
     *   *Step 3 (Thu-Sun):* Räscht vo dr Wuchä (4 Täg): $6 + 1 = 7$ Stung pro Tag. Also $7 \times 4 = 28$ Stung.
     *   *Step 4 (Total):* $8 + 12 + 28 = 48$ Stung.
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	48.0	0	1		
 q5531657c	D Rosie cha 3 Stung lang mit 10 Meilä pro Stung loufä. Nächhär louft si 5 Meilä pro Stung. Wie viu Meilä cha si i 7 Stung zrügglegä?	"Hie isch d Rächnig:
 
 1. **Zersch die erschte 3 Stung:**
@@ -5377,7 +5377,7 @@ D Rosie cha i 7 Stung insgesamt **50 Meilä** zrügglegä."	50	"
     *   ""Zäme git das: $30 + 20 = 50$ Meilä.""
 
     *   The user asked ""Wie viu Meilä cha si i 7 Stung zrügglegä?"" (How many miles can she cover in 7 hours?).
-    *   The calculation is solid."	stop
+    *   The calculation is solid."	stop	50.0	0	1		
 qafb91192	D Jennie hiuft im Büro vo ihrer Mueter. Si het ä Stapu mit 60 Briefä, wo no frankiert müessä wärde, und ä Stapu mit scho frankiertä Brief. Si chläbt uf e Drittu vo dä Briefe, wo no frankiert müessä wärde, Briefmarke. Wenn jetz im Stapu mit dä scho frankiertä Briefe 30 Briefe si, wie viu Briefe si am Afang i däm Stapu gsi?	"Hie isch d'Rächnig Schritt für Schritt:
 
 1. **Wie viu Briefe het d'Jennie frankiert?**
@@ -5416,4 +5416,4 @@ qafb91192	D Jennie hiuft im Büro vo ihrer Mueter. Si het ä Stapu mit 60 Brief�
     *   *Conclusion:*
         ""Am Afang si also 10 Briefe i däm Stapu gsi.""
 
-    *   Ensure the tone is helpful and the dialect is consistent."	stop
+    *   Ensure the tone is helpful and the dialect is consistent."	stop	10.0	0	1		

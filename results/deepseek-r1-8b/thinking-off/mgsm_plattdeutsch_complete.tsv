@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Janet ehr Enten leggt 16 Eier an'n dag. Jeden Morgen itt se dree dorvan taun Froihstück, un mit veer backt se jeden dag Muffins för ehr Frünnen. Den Rest verköfft se jeden dag up'n Buernmarkt för 2 US-Dollar dat frische Entenei. Wo veel Dollar nimpt se jeden dag up'n Buernmarkt in?	"
 Janet legt 16 Eier am Tag. Jeden Morgen isst sie drei davon zum Frühstück, und mit vier Eiern backt sie Muffins für ihre Nachbarin. Somit werden täglich 3 + 4 = 7 Eier für den Verzehr und die Zubereitung der Muffins verwendet.
 
@@ -196,7 +196,7 @@ I think no issue.
 So, final answer should be 18 dollars.
 
 But let's write it properly.
-"	stop
+"	stop	18.0	0	1		
 qa55f7050	För een Kleed bruukt man 2 knüül blaue Wulle un halv so veel witte Wulle. Wo veele Knüül bruukt man tosomen?	"
 U kunt de vraag niet direct beantwoorden omdat er geen direct verband wordt gegeven tussen het gebruik van witte wol en knoppen. De gegevens die u noemt zijn over het gebruik van blauwe en witte wol.
 
@@ -225,7 +225,7 @@ Alternatively, maybe the user meant that the coat uses buttons, and the amount o
 So the user's actual question might be misstated. They probably want to know how much wool (blue and white) is used for the coat, but the answer incorrectly focuses on buttons. The deeper need here is likely understanding the relationship between the wool quantities, not buttons. The user might be confused because the answer jumped to buttons without a clear connection. 
 
 In conclusion, the problem as stated doesn't provide enough information to link wool to buttons. The user might need to clarify the relationship between the materials or the components they're asking about. The assistant's previous answer was based on a misinterpretation, so the correct approach is to point out the lack of information and explain the wool amounts properly.
-"	stop
+"	stop	1.0	0	0	1	0
 qde1bef8b	Josh will een Huus koopen un wedder verkoopen. He köfft een Huus för $80.000 un steekt dornoa $50.000 in Reparaturen. Dorüm stiggt de ursprüngliche Weert vun't Huus üm 150%. Wo veel Gewinn hett he in Dollar maokt?	"
 Josh bought the house for $80,000 and spent $50,000 on repairs, so his total investment is $80,000 + $50,000 = $130,000.
 
@@ -432,7 +432,7 @@ Therefore, the selling price should be the original value plus the increase, whi
 Josh's total expenditure is $130,000, so profit is $70,000.
 
 I think that's the way to go.
-"	stop
+"	stop	70000.0	0	1		
 q568beb1f	James nimpt sik vör, 3-moal in de Weeken 3 kotte Löpe to maoken. Bie jeden kotten Loop löppt he 60 Meter. Wo veele Meter löppt he in eene Weeken insgesamt?	"
 Die Frage scheint auf einen möglichen Schreibfehler oder einen ungewöhnlichen Ausdruck zurückzugehen. Angenommen, ""Weeken"" ist ein Tippfehler für ""Woche"" (im Singular) und ""3-moal"" für ""3-mal"", dann bedeutet die Formulierung, dass James in einer Woche 3 Mal die Aktivität ""3 Kotten Löpe zu machen"" durchführt.
 
@@ -978,7 +978,7 @@ But the question has ""wo veele Meter,"" which is ""how many meters,"" and ""in 
 Also, the word ""he"" might be ""er,"" but that doesn't change the calculation.
 
 So, I think the answer is 540.
-"	stop
+"	stop	60.0	0	0	540	1
 q84afe4d6	Wendi giff jeden vun ehr Hoihner jeden dag drej Tassen mischtet Hoihnerfauer mit Saot, Meelwürmern un Gemois, dormit se gesund blievt. Se fauert dej Hoihner in drej getrennte Maoltieden. Morgens deit se ehr Hoihnerschaar 15 Tassen Fauer. Naomiddags giff se noch 25 Tassen Fauer. Wo veele Tassen Fauer bruukt se för de leste Maoltied an'n Dag, wenn Wendi ehr Schaar ut 20 Hoihner besteiht?	"
 Wendi mischt täglich Futtermittel für ihre 20 Hühner. Jedes Huhn erhält 3 Tassen Futter pro Tag, also beträgt die tägliche Gesamtmenge 20 × 3 = 60 Tassen.
 
@@ -1322,7 +1322,7 @@ Mittags: 25 Tassen
 Abend: 20 Tassen
 
 Somit, für den letzten Sack, 20 Tassen.
-"	stop
+"	stop	20.0	0	1		
 qd07ea681	Kylar güng in een Loaden, üm Gloeser för sien neie Wohnung to koopen. Een Glas kost 5 Dollar, oaver jedet tweete Glas kost bloot 60% vun'n Pries. Kylar will 16 Gloeser koopen. Wo veel mutt he dorför betaohlen?	"
 Kylar wil 16 glazen kopen. Elke glazen kost 5 dollar, maar elke tweede glazen is 60% korting, dus €3,00.
 
@@ -1589,7 +1589,7 @@ Yes.
 Since each pair costs 8, and 8 pairs, 64.
 
 I think that's the answer.
-"	stop
+"	stop	64.0	0	1		
 q912b86d0	Toulouse hett twee maol so veele Schaape as Charleston. Charleston hett 4-maol so veele Schaape as Seattle. Wo veele Schaape hebbt Toulouse, Charleston un Seattle taosamen, wenn Seattle 20 Schaape hett?	"
 Het vraagstuk is als volgt te interpreteren:
 
@@ -1636,7 +1636,7 @@ Toulouse: 2 * 80 = 160
 Totaal: 160 + 80 + 20 = 260
 
 Het antwoord is 260.
-"	stop
+"	stop	260.0	0	1		
 q147b7c11	Carla load een Datei mit 200 GB daal. Normaal kann se 2 GB/Minute daalloaden, aver as 40 % vun'n Download fardig sünd, dwingt Windows ehr tao'n Neustart för Updates, un dat duert 20 Minuten. Dornoa mutt Carla den ganzen Download noch maol vun vörn anfangen. Wo lang duert dat, bit de Datei daalladen is?	"
 Carla möchte eine 200 GB große Datei herunterladen. Die normale Downloadgeschwindigkeit beträgt 2 GB/Minute, was ohne Unterbrechungen eine Downloadzeit von 100 Minuten für die gesamte Datei erfordern würde.
 
@@ -2000,7 +2000,7 @@ Yes.
 If the restart didn't happen, it would be 100 min, but with restart, it takes longer.
 
 So, I think that's the answer.
-"	stop
+"	stop	160.0	0	1		
 qead07ed2	John foiert 3 Stunnen lang mit 60 Meilen/Stunn un dreiht dann üm, weil he markt, dat he wat bannig Wichtiges tohuus vergeten hett. He will binnen 4 Stunnen wedder tohuus waen, sitt aver de ersten 2 Stunnen in'n Stau. De nächste halve Stunn föhrt he 30 Meilen/Stunn, ehe he de restliche Tied vun de 4 Stunden mit 80 Meilen/Stunn wiederfoiern kann. Wo wiet is he an't Enn vun de 4 Stunden noch vun tohuus weg?	"
 John hat 3 Stunden lang mit 60 Meilen/Stunde gefahren, also ist er 3 * 60 = 180 Meilen von zu Hause entfernt. Dann beginnt er den Rückweg. Die Gesamtzeit beträgt 4 Stunden, daher hat er für den Rückweg nur 1 Stunde.
 
@@ -2497,7 +2497,7 @@ We are given that John drove for 3 hours at 60 mph. Then he turned back because 
         I think that's the best I can do.
 
         Answer: 157.5 miles.
-"	stop
+"	stop	180.0	0	0	157.5	0
 q5cb246e4	För de ersten 40 Stunnen, de Eliza in de Weeken arbeidt, kriggt se 10 US-Dollar de Stunn. Överstunnen warrt mit dat 1,2-Fache vun ehr normalen Stunnensatz betaohlt. Wo veel verdeent Eliza, wenn se disse Weeken 45 Stunnen arbeidt?	"
 Eliza verdient für die ersten 40 Stunden 40 * 10 = 400 US-Dollar.
 
@@ -2613,7 +2613,7 @@ The question says ""disse Weeken"" which might be a typo; in German, it's usuall
 But I think for the calculation, it doesn't matter.
 
 So, I think 460 is the answer.
-"	stop
+"	stop	460.0	0	1		
 q3bdd7b1e	Een neiet Programm is in'n eersten Monat 60-mal daalladen worrn. In'n tweeten Monat weer de Taol vun Downloads dree maol so hoog as in'n eersten Monat, aver in'n drütten Monat güng se üm 30 % torügge. Wo faoken is dat Programm in de dree Monate insgesamt daalladen worrn?	"
 Het programma is in de drie maanden in totaal 366 keer gedownload.
 
@@ -2895,7 +2895,7 @@ Ja, afname met 30%.
 Soms kan ""teruggenge"" betekenis hebben, maar ik denk dat het duidelijk is.
 
 Dus ik geloof dat het antwoord 366 is.
-"	stop
+"	stop	366.0	0	1		
 q19a4029d	Toula güng in de Bäckeree un köffte verschedene Sorten kauken. Se köffte 3 Dutz Donuts för 68 US-Dollar dat Dutz, 2 Dutz Mini-Cupcakes för 80 US-Dollar dat Dutz un 6 Dutz Mini-Cheesecakes för 55 US-Dollar dat Dutz. Wo hoog weren de Kosten insgesamt?	"
 Die Gesamtkosten für die gekauften Donuts, Mini-Cupcakes und Mini-Cheesecakes betragen 694 US-Dollar.
 
@@ -3115,7 +3115,7 @@ Und ""3 Dutz"" ist die Menge.
 Also, insgesamt: 204 + 160 + 330 = 694
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	694.0	0	1		
 qf0063e65	Carlos plant een Zitronenboom. Dat Planten vun'n Boom kost 90 $. Jedet Johr wassen dor 7 Zitronen an, de he för jeweils 1,5 $ verkoopen kann. Woatern un Düngen kost 3 $ in't Johr. In welk Johr fangt he an, mit dej Zitronenboeme insgesamt Gewinn to maoken?	"
 Carlos plant de boom voor 90 $ en verdient elk jaar 7 * 1,5 = 10,5 $ door de citroenen te verkopen. De onderhoudskosten (wateren en bemesten) zijn 3 $ per jaar. De totale opbrengst na n jaar is 10,5n $. De totale kosten na n jaar zijn 90 + 3n $. De winst wordt berekend als totale opbrengst minus totale kosten: 10,5n - (90 + 3n) = 7,5n - 90 $.
 
@@ -3836,7 +3836,7 @@ So, final answer should be 13.
 But in the net income per year, if he considers only annual costs, but no, cumulative includes initial.
 
 I think it's clear.
-"	stop
+"	stop	13.0	0	1		
 q410b0ab2	Melanie is Handelsvertreterin. Se hett een Drüddel vun ehr Staubsaugers in't groine Huus verköfft, 2 mehr in't rode Huus un vun den Rest de Hälfte in't orange Huus. Wenn Melanie noch 5 Staubsaugers över hett, mit wo veele is se denn anfangen?	"
 Die ursprüngliche Anzahl der Staubsauger, die Melanie zu verkaufen hatte, kann mit der Gleichung \( S = 2G + 12 \) beschrieben werden, wobei \( G \) die Anzahl ist, die sie im grünen Haus verkauft hat. Da \( G \) eine positive ganze Zahl sein muss (mindestens 1, da sie im grünen Haus etwas verkauft hat), ist die kleinste mögliche ursprüngliche Menge \( S = 14 \) (wenn \( G = 1 \)).
 
@@ -5177,7 +5177,7 @@ Andere Möglichkeit: ""2 mehr in't rode Huus"" könnte ""2 more than the amount 
 Ich denke, 14 ist eine mögliche Antwort.
 
 Also, sie hat ursprünglich 14 Staubsauger.
-"	stop
+"	stop	14.0	0	0	14	0
 qa0520340	In een Danzstunn mit 20 Schöilers hebbt sik 20 % för Contemporary Dance anmeldt. Vun den Rest hebbt sik 25 % för Jazz Dance anmeldt, un de Rest för Hip-Hop. Wo veele Prozent vun all Schöilers hebbt sik för Hip-Hop anmeldt?	"
 In der Tanzstunde mit 20 Schülern haben 20% für zeitgenössische Tanz angemeldet, was 4 Schüler entspricht.  
 Der Rest der Schüler beträgt 20 - 4 = 16.  
@@ -5435,7 +5435,7 @@ But the problem says ""de Rest"" for Hip-Hop, which is the rest after Jazz.
 Yes.
 
 So, I think it's correct.
-"	stop
+"	stop	60.0	0	1		
 q9ae19f0a	Een Händler will sik tüschgen 2 Kööpe entscheiden: Schmuck för 5.000 US-Dollar oder Elektronikgeräte för 8.000 US-Dollar. Sien Finanzberater reekt dormit, dat de Schmuckmarkt in den Monat üm 2,5 % stiggt un de Markt för Elektrogeräte üm 1,2 %. Wenn de Händler an't Enn vun'n Monat den gröttsten Gewinn maoken will, wo hoog weer de Gewinn denn?	"
 Um den größten Gewinn am Ende des Monats zu erzielen, sollte der Händler Schmuck für 5.000 US-Dollar kaufen. Die Prozentsatzsteigerung von 2,5 % auf die Investition führt zu einem Gewinn von 125 US-Dollar.
 
@@ -5829,7 +5829,7 @@ Aber da es eine Textantwort ist, denke ich, die Höhe ist das Wichtige.
 Vielleicht ist ""dormit"" ein Tippfehler und es soll ""berechnet"" sein, aber das ändert nichts.
 
 Ich denke, ich bin bereit.
-"	stop
+"	stop	125.0	0	1		
 q93563595	Twee züge foiert to de glieke Tied ut San Rafael los. Se foiert eerst na Westen un maokt beide 80 Meilen. An'n nächsten Dag foiert se no Norden un maokt 150 Meilen. Wo veele Meilen leggt jeden vun de züge an de twee Daag torügge?	"
 Jeder der beiden Züge legt in den zwei Tagen eine Gesamtstrecke von 230 Meilen zurück, da am ersten Tag beide Züge zusammen 80 Meilen nach Westen zurücklegen (jeder Zug 40 Meilen, basierend auf Annahme gleicher Verteilung) und am zweiten Tag beide Züge zusammen 150 Meilen nach Norden zurücklegen (jeder Zug 75 Meilen, basierend auf Annahme gleicher Verteilung). Die individuelle Strecke hängt von der genauen Verteilung ab, aber ohne weitere Informationen müssen die Werte so interpretiert werden."	230	"
 De Frage is: ""Twee züge foiert to de glieke Tied ut San Rafael los. Se foiert eerst na Westen un maokt beide 80 Meilen. An'n nächsten Dag foiert se no Norden un maokt 150 Meilen. Wo veele Meilen leggt jeden vun de züge an de twee Daag torügge?""
@@ -6119,7 +6119,7 @@ Aber die Frage sagt ""jeden vun de züge"", also muss ich die individuelle Strec
 Ich denke, es ist 230.
 
 Also, die Antwort ist 230 Meilen.
-"	stop
+"	stop	75.0	0	0	230	1
 q33756eb7	Jill kriggt 20 US-Dollar de Stunn as Lehrerin un 30 US-Dollar as Cheerleader-Coach. Wenn se 50 Weeken in't Johr arbeidt, 35 Weeken pro Weeken as Lehrerin un 15 Stunnen pro Weeken as Coach, wo hoog is denn ehr Johretgehalt?	"
 Jill verdient als Lehrerin 20 US-Dollar pro Woche und als Cheerleader-Coach 30 US-Dollar pro Woche. Sie arbeitet insgesamt 50 Wochen im Jahr, wobei 35 Wochen als Lehrerin und 15 Wochen als Coach verbracht werden.
 
@@ -6176,7 +6176,7 @@ Und ""Wenn se 50 Weeken in't Johr arbeidt"", was ""Wenn sie 50 Wochen im Jahr ar
 Also, keine zusätzlichen Informationen, die ich übersehen habe.
 
 Die Antwort ist 1150 US-Dollar.
-"	stop
+"	stop	1150.0	0	0	1150	0
 qfb254292	Claire maokt sik jeden Morgen to't Froihstück een Omelett ut 3 Eier. Wo veele Dutz Eier itt se in 4 Weeken?	"
 Sie isst 3 Eier pro Tag. In einer Woche sind 7 Tage, also 7 * 3 = 21 Eier. In 4 Wochen sind 4 * 21 = 84 Eier.
 
@@ -6338,7 +6338,7 @@ Ja.
 Wenn man es in Kalenderwochen misst, aber da sie jeden Tag isst, ist es egal.
 
 Also, ich denke, es ist korrekt.
-"	stop
+"	stop	4.0	0	0	7	1
 qc100123d	Marissa wandert een 12 Meilen langen Wegg. In de 1. Stunn maokt se de ersten 4 Meilen, un in de nächste Stunn de nächsten twee Meilen. Wenn se insgesamt een Doerschnitt vun 4 Meilen pro Stund haolen will, mit welk Tempo in Meilen pro Stunn mutt se den Rest loopen?	"
 Marissa wants to achieve an average speed of 4 miles per hour for the entire 12-mile trail.
 
@@ -6864,7 +6864,7 @@ But let's see if the trail is exactly 12 miles, and she walked first 4 and next 
 Perhaps the remaining part is not linear or something, but no, it's a straight trail, I assume.
 
 I think I'm good.
-"	stop
+"	stop	6.0	0	1		
 q26866cba	Ik heff 10 Liter Orangengetränk, dor sünd twee Drüddel Waoter in, un will dat bi 15 Liter Ananasgetränk tao daun, dor sünd dree Fünftel Waoter in. Bi't Ingeiten verkladder ik aver een Liter vun't Orangengetränk. Wo veel Water is in de överbleven 24 Liter?	"
 Het lijkt erop dat het probleem betreft het mengen van twee soorten gedrunkken, waarbij de watergehalten worden gegeven. Echter, de oorspronkelijke formulering is onduidelijk vanwege spelling- en woordenschaafsfouten. Na interpretatie worden de volgende aannames gedaan:
 
@@ -7747,7 +7747,7 @@ Ik denk dat ik mijn hoofd moet schudden en het antwoord geven.
 Dus, water in de overblijvende 24 liter is 15 2/3 liter.
 
 Eindelijk.
-"	stop
+"	stop	15.04	0	0	15.04	0
 qa856d9dc	Raymond un Samantha sünd Cousins. Raymond is 6 Johr vör Samantha born. Raymond kreeg mit 23 Johr een Söhn. Wenn Samantha nu 31 is, vör wo veele Johre is Raymond sien Söhn born?	"
 Raymond und Samantha sind Cousins, und Raymond wurde 6 Jahre vor Samantha geboren. Da Samantha jetzt 31 Jahre alt ist, ist Raymond derzeit 37 Jahre alt. Raymond hatte seinen Sohn, als er 23 Jahre alt war. Daher wurde der Sohn, als Raymond 23 Jahre alt war, geboren, was 37 - 23 = 14 Jahre her ist.
 
@@ -7993,7 +7993,7 @@ Perhaps the problem is that the son might be from Samantha, but no, it says Raym
 I think I should be confident.
 
 So, the answer is 14 years ago.
-"	stop
+"	stop	14.0	0	1		
 q72ea27fb	Billy verköfft DVDs. An'n Dingesdag hett he 8 Kunnen. Siene ersten 3 Kunnen koopt je een DVD. De nächsten 2 Kunnen koopt je 2 DVDs. De lesten 3 Kunnen koopt kiene DVD. Wo veele DVDs hett Billy an'n Dingesdag verköfft?	"
 Op een Dingesdag had Billy 8 kunden.  
 - De eerste 3 kunden kopen elk één DVD, dus 3 DVDs.  
@@ -8422,7 +8422,7 @@ Misschien is ""kunten"" een woord, en ""koopt je"" is apart.
 Ik denk dat ik moet stoppen en het antwoord geven.
 
 Dus Billy verkoopt 5 DVDs.
-"	stop
+"	stop	5.0	0	0	5	0
 qa62b2b0f	Een Kessen schmellt jede Stunn, de se brennt, üm 2 Zentimeter körter. Wo veele Zentimeter körter is een Kessen, de vun 13 Uhr bit 17 Uhr brennt?	"
 Der Kessen schmilzt jede Stunde, die er brennt, um 2 Zentimeter kürzer. Von 13 Uhr bis 17 Uhr brennt er 4 Stunden lang. Daher schmilzt er 4 × 2 = 8 Zentimeter."	8	"
 Erst muss ich die Frage verstehen. Es geht um einen Kessen, der jede Stunde schmilzt, wenn er brennt, und zwar um 2 Zentimeter kürzer. Die Frage ist, wie viele Zentimeter kürzer er wird, wenn er von 13 Uhr bis 17 Uhr brennt.
@@ -8522,7 +8522,7 @@ Ja.
 Ich sollte es aufschreiben.
 
 Also, der Kessen wird um 8 Zentimeter kürzer.
-"	stop
+"	stop	8.0	0	1		
 qaadc02d2	Kyle hett den Bestseller vun't beste Johr för 19,50 US-Dollar köfft. Dat is mit 25 % Rabatt up'n ursprünglichen Pries. Wo hoog weer de ursprüngliche Pries vun't Baok?	"
 Der ursprüngliche Preis des Buchs betrug 26,00 US-Dollar.
 
@@ -8671,7 +8671,7 @@ Dann x = 19.50 / 0.75 = 26.
 Perfekt.
 
 Also, der ursprüngliche Preis war 26 US-Dollar.
-"	stop
+"	stop	26.0	0	1		
 q4c88eb07	Marie hett een Hoihnergericht för 12 US-Dollar bestellt, 5 Packungen Melk för jeweils 3 US-Dollar, 4 Appels för jeweils 1,50 US-Dollar un noch een poor Schachteln Pizza. Marie hett insgesamt 50 US-Dollar betaohlt. Wo veele Schachteln Pizza hett Marie bestellt, wenn jede Schachtel 8,50 US-Dollar kost?	"
 Marie hat insgesamt 50 US-Dollar bezahlt. Die Kosten für das Hamburger-Menü (12 $) und die anderen Bestellungen (5 Packungen Milch zu je 3 $ = 15 $, 4 Äpfel zu je 1,50 $ = 6 $) summiert sich auf 33 $.
 
@@ -8737,7 +8737,7 @@ Aber die Frage ist ""Wo veele Schachteln Pizza hett Marie bestellt"", also ""Wie
 Die Antwort ist 2.
 
 Ich denke, das ist korrekt.
-"	stop
+"	stop	2.0	0	1		
 qc76b9ef5	Mishka hett 3 Poor Shorts, 3 Büxen un 3 Poor Schaoh köfft. Een Poor Shorts kost 16,50 US-Dollar. Een Büxen kost 22,50 US-Dollar un een Poor Schaoh 42 US-Dollar. Wo veel Dollar hett Mishka insgesamt för de Kledung utgeven?	"
 Mishka hat 3 ""Poor Shorts"", 3 Büxen und 3 ""Poor Schaoh"" gekauft. Jede ""Poor Shorts"" kostet 16,50 US-Dollar, jede Büxen 22,50 US-Dollar und jeder ""Poor Schaoh"" 42 US-Dollar.
 
@@ -8907,7 +8907,7 @@ Jetzt, um die Antwort auf Deutsch zu formulieren.
 Da die Frage ""Poor Shorts"" und ""Poor Schaoh"" verwendet, könnte ich die Begriffe beibehalten oder erklären.
 
 Aber ich denke, die Antwort ist klar.
-"	stop
+"	stop	243.0	0	1		
 qc792d70c	Cynthia itt jeden Aovend een Portion ies. Se köfft Kartons mit 15 Portionen ies pro Karton för 4,00 US-Dollar de Karton. Wo veel hett se no 60 Daag för ies utgeven?	"
 Cynthia koopt één portie ies per dag. Elke karton heeft 15 porties en kost 4,00 dollar. Voor 60 dagen heeft ze 60 porties nodig. Aangezien 60 delenbaar is door 15, nodigt ze exact 4 kartons.
 
@@ -9151,7 +9151,7 @@ Perhaps ""ies"" is a specific thing, but I think it's just a placeholder.
 I think I'm overthinking.
 
 Let's state the answer.
-"	stop
+"	stop	16.0	0	1		
 qb804efac	Henry hett up een 60 Meilen lange Radtour twee Stopps maokt. Den eersten Stopp maokt he no 20 Meilen. De tweete Stopp weer 15 Meilen vör't Enn vun de Tour. Wo veele Meilen hett he tüschgen den eersten un tweeden Stopp maakt?	"
 Henry heeft een 60 mijl lange radtour gemaakt met twee stops. De eerste stop is na 20 mijl, en de tweede stop is 15 mijl voor het einde van de tour, dus op 45 mijl van het startpunt.
 
@@ -9399,7 +9399,7 @@ Another possibility: perhaps ""vür't"" is ""voor"" and ""Enn"" is ""een"", but 
 I think it's clear.
 
 So, I believe the answer is 25 miles.
-"	stop
+"	stop	25.0	0	1		
 qf837eb68	Gloria is Schaoh koopen, as se een Poor Stevel finnt, dat in ehr Budget passt. Se mutt sik aver tüschgen de Stevel un twee Poor High Heels entscheiden, de toasamen fief Dollar weniger kost as de Stevel. Wenn een Poor High Heels 33 US-Dollar kost un dat annere dubbel so veel, wo veel kost de Stevel denn?	"
 De Stiefel kost 104 US-Dollar.
 
@@ -9686,7 +9686,7 @@ Maar in de context, er is één paar genoemd.
 Ik denk dat $104 het antwoord is.
 
 Dus de Stiefel kost 104 US-Dollars.
-"	stop
+"	stop	104.0	0	1		
 qa2455bce	Dat Öllerverhältnis vun Darrell un Allen is 7:11. Wenn se nu taosamen 162 Johr old sünd, rek ut, wo old Allen in 10 Johr is.	"
 The ratio of Darrell's age to Allen's age is 7:11.  
 Currently, their combined age is 162 years.  
@@ -9856,7 +9856,7 @@ Perhaps I need to consider the ratio at that time, but the question is not askin
 No, the question is to find the age, not the ratio.
 
 I think I should proceed.
-"	stop
+"	stop	109.0	0	1		
 q166f163a	Gunter versöcht, de Gummibären in't Glass to tellen. He fraogt sien Frünnen, wo veele se glöövt, dat dor in sünd. Een seggt 80. Een anner seggt 20 mehr as de Hälfte vun de eerste Schätzung. Een drütte seggt 25 % mehr as de eerste. Wo hoog is ehr doerschnittliche Schätzung?	"
 Die drei Schätzungen der Freunde basieren auf der Annahme, dass die Person, die 80 sagt, die ""erste Schätzung"" darstellt. 
 
@@ -10476,7 +10476,7 @@ Vielleicht in Gummi- bärchen.
 Aber ich denke, das ist die Antwort.
 
 Also 80.
-"	stop
+"	stop	80.0	0	1		
 q3966df43	John passt up 10 Hunnen up. Jede Hund bruukt jeden dag 0,5 Stunnen för een gang un üm sien Geschäft to maoken. Wo veele Stunnen in de weeken kümmert he sik insgesamt üm de Hunnen?	"
 John takes care of 10 dogs, and each dog requires 0.5 hours per day for a walk and to take care of their business. Assuming John spends this time sequentially for each dog every day, he spends 10 * 0.5 = 5 hours per day on the dogs. Over a week of 7 days, this totals 5 * 7 = 35 hours.
 
@@ -10840,7 +10840,7 @@ But for calculation, it's still part of the care time.
 I think no issue.
 
 Therefore, the answer should be 35 hours.
-"	stop
+"	stop	35.0	0	1		
 q28184d6c	Gretchen hett 110 Münzen. Se hett 30 mehr Goldmünzen as Silbermünzen. Wo veele Goldmünzen hett Gretchen?	"
 Gretchen has a total of 110 coins, consisting of gold and silver coins. She has 30 more gold coins than silver coins. Let G be the number of gold coins and S be the number of silver coins.
 
@@ -11038,7 +11038,7 @@ Another thing: the word ""as"" might be a typo, but in German it should be ""als
 In English, it might be written as ""as,"" but the equation is clear.
 
 So, I believe Gretchen has 70 gold coins.
-"	stop
+"	stop	70.0	0	1		
 q5f9dc683	Siobhan hett 2 Schmuckstücke weniger as Aaron. Aaron hett 5 Schmuckstücke mehr as de Hälfte vun Raymond sien Schmuckstücke. Wenn Raymond 40 Schmuckstücke hett, wo veele hett Siobhan denn?	"
 Siobhan hat 23 Schmuckstücke.
 
@@ -11119,7 +11119,7 @@ Ja, das scheint korrekt.
 Wenn Raymond 40 hat, und die Hälfte davon, dann ist es genau 20, keine ungerade Zahl oder so, also kein Problem.
 
 Also, Siobhan hat 23 Schmuckstücke.
-"	stop
+"	stop	23.0	0	1		
 q9501d333	Mike speelt 40 Minuten lang Pingpong. In de ersten 20 Minuten maokt he 4 Punkte. In de nächsten 20 Minuten maokt he 25 % mehr Punkte. Wo veele Punkte maokt he insgesamt?	"
 Mike scoort in de eerste 20 minuten 4 punten.  
 In de volgende 20 minuten scoort hij 25% meer punten dan in de eerste periode, dus 25% van 4 is 1, en 4 + 1 = 5 punten.  
@@ -11305,7 +11305,7 @@ The problem says ""speelt 40 Minuten lang Pingpong"", and we're given points per
 Perhaps we need to find how many points per minute or something, but no, the question is about total points.
 
 So, I think it's 9.
-"	stop
+"	stop	9.0	0	1		
 q0e0fa86b	Terry itt 2 Joghurts an'n dag. Se sünd jüst för 5,00 US-Dollar för 4 Joghurts in't Angebot. Wo veel gifft he in 30 daoge för Joghurt ut?	"
 Det ser ut som din fråga innehåller några möjlighetsfall och skrivfel. Jag kommer att tolka det baserat på den information du ger:
 
@@ -11626,7 +11626,7 @@ Or directly: number of 4-yogurt sets in 60 yoghurts is 15, cost 15 * 5.00 = 75.0
 Now, about the currency: it's US dollars, so no issue.
 
 I think that's the answer.
-"	stop
+"	stop	2.0	0	0	75	1
 q126bbbaa	John will all sien Speeltüüch verkoopen un vun dat Geld Videospelen koopen. He hett 13 Lego-Sets un kriggt $15 för jedet Set, dat he verköfft. Dorna köfft he 8 Videospelen för jeweils $20 un hett noch $5 över. Wo vele Lego-Sets hett he noch?	"
 John had 13 Lego sets initially. He sold some of them for $15 each, and with the proceeds, he bought 8 video games for $20 each, leaving him with $5.
 
@@ -12124,7 +12124,7 @@ Perhaps ""he has 13 Lego-Sets"" is the initial, and ""kris dat he verköfft"" me
 I think that's it.
 
 I'll go with 2.
-"	stop
+"	stop	2.0	0	1		
 q5c1bd624	John löppt 60 Meilen in de Weeken. He löppt an 3 Daog in de Weeken. An'n eersten Dag löppt he 3 Stunnen, un an de annern twei Loopdaoge jeweils de Hälfte. Wo schnell löppt he?	"
 John läuft 60 Meilen pro Woche und trainiert dabei 3 Mal pro Woche. Auf dem ersten Trainingstag läuft er 3 Stunden. Auf den anderen beiden Trainingstagen läuft er jeweils die Hälfte der Strecke, also 15 Meilen (da die Gesamtstrecke 60 Meilen beträgt, ist die halbe Strecke des ersten Tages 30 Meilen, und die Hälfte davon ist 15 Meilen).
 
@@ -12678,7 +12678,7 @@ Perhaps ""in de Weeken"" means during the week, and ""an 3 Daog"" means on 3 day
 I think I have to go with that.
 
 So, speed is 10 mph.
-"	stop
+"	stop	10.0	0	1		
 q02f06b34	Dana kann veer maol so schnell lopen as se gaohn kann, aver hüppen kann se bloos mit de Hälfte vun ehr Looptempo. Wenn se mit 3 Meilen pro Stunde hüppen kann, wo vele Meilen kann se denn in sess Stunnen maoken, wenn se een Drüddel vun de Tied löppt un twei Drüddel vun de Tied geiht?	"
 Dana kann viermal so schnell laufen (laufen bedeutet ""laufen"" oder ""rennen"") als sie gehen kann. Sie kann mit 3 Meilen pro Stunde hüpfen, was der Hälfte ihrer Laufgeschwindigkeit entspricht. Daher ist ihre Laufgeschwindigkeit 6 Meilen pro Stunde und ihre Gehgeschwindigkeit 1,5 Meilen pro Stunde.
 
@@ -13355,7 +13355,7 @@ Perhaps ""maoken"" means to hop, but that doesn't make sense because ""maoken"" 
 I think I have to accept 6.
 
 So I'll go with that.
-"	stop
+"	stop	6.0	0	0	6	0
 qd6dd82e1	Brandons iPhone is veer maol so old as Bens iPhone. Bens iPhone is dubbelt so old as Suzys iPhone. Wenn Suzys iPhone 1 Johr old is, wo old is Brandons iPhone?	"
 Brandon's iPhone is three times as old as Ben's iPhone, and Ben's iPhone is double the age of Suzie's iPhone. Suzie's iPhone is 1 year old, so Ben's iPhone is 2 years old. Therefore, Brandon's iPhone is 3 × 2 = 6 years old.
 
@@ -13643,7 +13643,7 @@ Maybe ""veer maol"" is ""threefold older,"" but same thing.
 I think I'll go with 6.
 
 So, Brandon's iPhone is 6 years old.
-"	stop
+"	stop	6.0	0	0	6	0
 q425db7e5	De grote Drachen Perg seet hoog boben up'n Barg Farbo un spei Füür up allens in een Ümkreis vun 1000 Fuß. Polly kunn den goldenen Speer, de eenzige bekannte Waffe gägen den Drachen, 400 Fuß wiet smieten, also midden in sien Flammenriek. Aver wenn Polly den Saphir-Edelsteen in de Hand hüllt, kunn se den Speer dree maol so wiet smieten as aohne den Steen. Wenn se den Edelsteen in de Hand hüllt, wo wiet buten von den Flammenriek vun'n Drachen kunn Polly staohn un üm trotzdem mit den goldenen Speer draopen?	"
 Polly kann ohne den Saphir-Edelstein den goldenen Speer auf eine maximale Distanz von 400 Fuß werfen, um den Drachen direkt zu treffen. Mit dem Edelstein kann sie den Speer drei Mal so weit werfen, also 1200 Fuß.
 
@@ -14565,7 +14565,7 @@ Perhaps the question is asking for the range.
 But I think ""how far"" implies the maximum distance.
 
 So, I'll go with 200 feet.
-"	stop
+"	stop	200.0	0	1		
 qedc215ac	Grootmaodder Jones hett 5 Appelkaoken för't Middageten vun de Füürwehr backt. Se snitt jeden Kaoken in 8 Stücke un stellt de fief Kaoken up'n Buffettdisch, dormit de Gäste sik sülvst bedenen kunnen. An't enn vun'n Aovend, at de Gäste kaoken eten harrn, wören noch 14 Kaokenstücke över. Wo veele Stücke hebbt de Gäste sik naohmen?	"
 Grootmaodder Jones hat 5 Apfelküchlein gebacken, jedes in 8 Stücke geschnitten, also insgesamt 5 × 8 = 40 Stücke.
 
@@ -14707,7 +14707,7 @@ Vielleicht gibt es eine andere Interpretation.
 ""Kaokenstücke"" – ""Käkostücke"" oder ""Apfelküchleinstücke"", aber es ist klar.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	26.0	0	1		
 q5d47194e	Luut de Nährwertangaben hett een Tüten Chips 250 Kalorien pro Portion. Wenn een 300 g-Tüten 5 Portionen hett, wo veele Gramm kannst du eten, wenn dien Kalorienziel för'n dag 2000 is un du al 1800 Kalorien eten hest?	"
 Okay, let's break this down step by step in Platt:
 
@@ -14749,7 +14749,7 @@ Next, the user has a daily calorie limit of 2000 calories but wants to eat only 
 Then, using the calories per gram, I determine how many grams of chips they can eat with the remaining calories. I need to consider both scenarios: 2000 and 1800 calories.
 
 The user might be trying to manage their diet or following a calorie-restricted plan. They probably want to know how much of this chip snack they can consume safely. I should provide clear calculations and advice on being mindful of portion sizes.
-"	stop
+"	stop	432.0	0	0		0
 q255b81c0	Charlie will Bienenwachskessen verkoopen. Ut jedet Pund Bienenwachs kann he 10 Kegelkessen maoken. Dat Material ut een Pund Bienenwachs plus Dochte kost 10,00 US-Dollar. Wenn he de Kessen för 2,00 US-Dollar verköfft, wo veel Nettogewinn maokt he, wenn he 20 Kessen maakt un verköfft?	"
 Charlie benötigt für die Herstellung von 20 Kegelkessen 2 Pfund Bienenwachs (da 1 Pfund Bienenwachs 10 Kesseln macht). Die Gesamtkosten für die Materialien (2 Pfund Bienenwachs plus 20 Dochte) betragen 2 × 10,00 US-Dollar = 20,00 US-Dollar.
 
@@ -14941,7 +14941,7 @@ So, net profit is 20.00 US-Dollars.
 But the question says ""Nachtogewinn"", I think it's ""Nettogewinn"", typo.
 
 Anyway, I think that's the answer.
-"	stop
+"	stop	20.0	0	1		
 q0166ea66	Meredith is Freelance-Bloggerin, schrifft över Gesundheit un kümmert sik as fasten Job üm Kunnen. För Recherche un Schrieven vun een Blog-Artikel bruukt se im Dörschnitt 4 Stunnen. Leste weeken hett se an'n mondag 5 Artikel schreven un an'n Dingesdag 2/5 mehr Artikel as an'n mondag. An'n middeweeken hett se twee maol so veele Artikel schreven as an'n Dingesdag. Rek ut, wo veele Stunnen se an de dree Daoge insgesamt mit schrieven verbröcht hett.	"
 Meredith schreibt im Durchschnitt 4 Stunden pro Artikel für die gesamte Recherche und Schreibphase.  
 Letztens hat sie auf den Mittwoch, Donnerstag und Freitag insgesamt 14 Artikel geschrieben.  
@@ -15895,7 +15895,7 @@ Perhaps the ""dree Daoge"" is ""Ding, Ding, Ding"" but no.
 I think 56 is the intended answer.
 
 So let's go with that.
-"	stop
+"	stop	4.0	0	0	56	0
 q7bb382f4	Candice hett 80 Post-it-Notizzettel in ehr Handtaschken packt, ehe se no ehren Job in'n Coffee Shop losgüng. Ünnerwegs hüllt se bi'n laoden an un köffte een Packung Post-it-Notizzettel; bi de Arbeet hett se up 220 verschedene Kaffeetassen jeweils een Post-it-Notizzettel kleevt. Wenn ehr an't enn 23 Post-it-Notizzettel överbleven sünd, wo veele Notizzettel wören denn in de Packung, de se köfft hett?	"
 Candice hatte ursprünglich 80 Post-it-Notizzettel in ihrer Handtasche. Unterwegs kaufte sie eine Packung mit x Notizzetteln und fügte diese der Handtasche hinzu. Nach dem Kauf hatte sie insgesamt 80 + x Notizzettel.
 
@@ -16175,7 +16175,7 @@ Und ""in de Packung"" ist die Packung, die sie gekauft hat.
 Also, ja, x=163.
 
 Ich denke, das ist es.
-"	stop
+"	stop	163.0	0	1		
 q1a64508f	John köfft twee maol so veele rode as blaue Krawatten. De roden Krawatten kost 50 % mehr as de blauen. He hett 200 US-Dollar för blaue Krawatten utgeven, un de kost pro Stück 40 US-Dollar. Wo veel hett he insgesamt för Krawatten utgeven?	"
 John kauft zwei mal so viele rote Krawatten wie blaue Krawatten.  
 Die blauen Krawatten kosten 40 US-Dollar pro Stück und er hat insgesamt 200 US-Dollar für blaue Krawatten ausgegeben, also 200 / 40 = 5 blaue Krawatten.  
@@ -16496,7 +16496,7 @@ The sentence: ""John köfft twee maol so veele rode as blaue Krawatten. De roden
 I think I have it.
 
 So, total cost is 800 dollars.
-"	stop
+"	stop	800.0	0	1		
 q9605b4e6	Tracy hett een 4 Fuß lang Stück Draoht bruukt, üm de Tomatenplanten in ehr Goorn af to stütten. De Draoht is in Stücke vun jeweils 6 Inch snieden worrn. Wo veele Stücke Draoht harr se?	"
 Tracy hat einen 4 Fuß langen Draht, der 48 Zoll beträgt (da 1 Fuß = 12 Zoll). Er wird in Stücke von jeweils 6 Zoll geschnitten.
 
@@ -16550,7 +16550,7 @@ Oder mit Brüchen: 4 Fuß * (12 Zoll / 1 Fuß) / (6 Zoll) = (4 * 12) / 6 = 48 / 
 Alles gut.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	8.0	0	1		
 qda35e8fb	Richard waohnt in een Huus mit 15 Etagen. Up jede Etage sünd 8 Wohnungen, un 3/4 vun't Huus is bewaohnt. Wo veele Wohnungen in't Huus sünd insgesamt nich bewaohnt?	"
 In dem Haus gibt es 15 Etagen, jede mit 8 Wohnungen. Das macht insgesamt 15 × 8 = 120 Wohnungen.
 
@@ -16576,7 +16576,7 @@ This seems like a straightforward math problem, but the language used is a bit i
 The calculation itself isn't too difficult, but it's important to show the steps so the user can verify the answer. Maybe they'll use this for something practical, like understanding building security or apartment monitoring systems. 
 
 Overall, the answer is 30 non-monitored apartments. I'll present this with the calculations to be thorough.
-"	stop
+"	stop	30.0	0	1		
 q94fcd6ce	Lloyd hett een Eierhoff. Sien Höihner leggt 252 Eier an'n dag, un he verköfft se för 2 US-Dollar dat Dutz. Wo veel verdeent Lloyd in de weekend mit de Eier?	"
 Lloyd heeft een Eierhoff (chicken coop) waarvan de hennen dagelijks 252 eieren leggen. Deze eieren worden verkocht voor 2 dollar per dozen.
 
@@ -16804,7 +16804,7 @@ But I think it doesn't affect the meaning.
 Perhaps ""Eier"" is a proper noun, but unlikely.
 
 I think I'm confident.
-"	stop
+"	stop	84.0	0	0	84	0
 q1afb1e71	Toms schipp kann 10 Meilen pro Stunn föiern. He segelt vun 13 bit 16 Uhr. Dornao föiert he mit 6 Meilen/Stunn wedder torügge. Wo lang bruukt he för den Torüggweg?	"
 Tom segelt von 13 bis 16 Uhr (3 Stunden) mit 10 Meilen pro Stunde. In dieser Zeit legt er eine Distanz von 30 Meilen zurück (berechnet aus 10 Meilen/Stunde × 3 Stunden).
 
@@ -17008,7 +17008,7 @@ Also, für den Rückweg.
 Ich denke, ich bin mir sicher.
 
 Also, 5 Stunden.
-"	stop
+"	stop	5.0	0	1		
 q0aaae19a	Uriah ehr Boikertaschgen wer him to swoor. He mutt 15 Pund dorut nehmen. Siene Comicboiker weegt je 1/4 Pund un siene Speeltüüch je 1/2 Pund. Wenn he 30 Comicboiker rutnimmt, wo veele Speeltüüch mutt he denn noch rutnehmen?	"
 The phrase ""Uriah ehr Boikertaschgen wer him to swoor"" appears to be a misphrased or dialectal expression and does not directly affect the calculation. The key information is that Uriah must remove a total of 15 pounds from the bag, with comic books each weighing 1/4 pound and toys each weighing 1/2 pound.
 
@@ -17385,7 +17385,7 @@ Perhaps the question is that he removes 30 comics, and the weight is part of the
 I think I'm repeating myself.
 
 I should just give the answer.
-"	stop
+"	stop	15.0	0	1		
 qa5756c69	Een Mechaniker nimmt verschedene Priese för Reparaturen an LKW-Reifen un PKW-Reifen. För jeden reparierten LKW-Reifen nimmt he 60 Dollar, för jeden reparierten PKW-Reifen 40 Dollar. An'n Dönnersdag repariert he 6 LKW-Reifen un 4 PKW-Reifen. An'n Freidag repariert he 12 PKW-Reifen un kiene LKW-Reifen. Wo veel Dollar mehr Ümsatz hett he an den dag mit'n höheren Ümsatz maokt?	"
 Der Mechaniker hat an Donnerstag einen Umsatz von 520 Dollar und an Freitag einen Umsatz von 480 Dollar erzielt.  
 Somit hatte er an Donnerstag 40 Dollar mehr Umsatz als an Freitag.  
@@ -17553,7 +17553,7 @@ And it's implied that we're comparing to the other day.
 Yes.
 
 So, I think it's clear.
-"	stop
+"	stop	40.0	0	1		
 qd819612e	De Doubtfire-Süsters föiert mit 7 kattens nao Huus, de se in't örtliche Tierheim adopteert hebbt, as ehr Maodder anröppt un seggt, dat ehr twee Huuskatten jüst kattens kregen hebbt. Patchy, de eerste katten, hett dree maol so veele kattens as de adopteerten, un Trixie, de annere katten, hett 12 kregen. Wo veele kattens hebbt de Doubtfires nu?	"
 De Doubtfire-süsters hebben 7 kattens geadopteerd. Hun moeder zegt dat hun twee huiskatten, Patchy en Trixie, kattens hebben gebaerd. Patchy heeft drie keer zoveel kattens gebaerd als de andere adopteerders (exclusief zichzelf). Trixie heeft 12 kattens gebaerd.
 
@@ -18756,7 +18756,7 @@ Dus 295.
 Maar ik denk dat dit een standaard manier is om dergelijke problemen aan te pakken.
 
 Dus ik ga dit antwoord geven.
-"	stop
+"	stop	295.0	0	0	295	0
 q7c63d108	Jean hett 30 Lutschers. Jean itt 2 dorvan. De överbleven Lutschers will Jean in Tuten mit jeweils 2 Lutschers packen. Wo veele Tuten kann Jean füllen?	"
 Jean hat 30 Lutschers. Er hat bereits 2 Tuten gefüllt, jede mit 2 Lutschers, also wurden 4 Lutschers verwendet. Übrig bleiben 26 Lutschers.
 
@@ -19086,7 +19086,7 @@ In der Frage steht ""Jean hett 30 Lutschers. Jean itt 2 dorvan."" – ""hett"" u
 Aber ich denke, wir gehen einfach weiter.
 
 Also, Jean kann 13 Tuten mit den überblevenen Lutschers füllen.
-"	stop
+"	stop	13.0	0	0	13	0
 q93b023e5	Peter will disse weeken in't Kino gaohn. He köfft sik jümmers een Ticket för 7 US-Dollar un Popcorn för 7 US-Dollar. Wenn he för de weeken 42 US-Dollar hett, wo faoken kann he denn in't Kino gaohn?	"
 Peter köfft een Ticket för 7 US-Dollar un een Portion Popcorn för 7 US-Dollar, so each time he goes to the cinema, he spends 7 + 7 = 14 US-Dollar.
 
@@ -19115,7 +19115,7 @@ n = 42 / 14 = 3
 Therefore, Peter can go to the cinema 3 times.
 
 Answer: 3
-"	stop
+"	stop	3.0	0	1		
 qdf141d2f	Een Holtbrüggen kann nich mehr as 5.000 Pund draogen. Een Lieferwaogen mit glieke Kisten, jede 15 Pund swoor, will över de Brüggen föiern. Faohrer un lohse Waogen weegt taosamen 3755 Pund. Wo veele Kisten kann de Waogen höchstens laon, aohne över de Gewichtsgrenze vun de Brügg ento kaomen?	"
 Die Brücke kann ein maximales Gewicht von 5.000 Pfund tragen. Der leere Zustand des Lastwagens, einschließlich Fahrer, beträgt 3.755 Pfund. Jede Kiste wiegt 15 Pfund.
 
@@ -19321,7 +19321,7 @@ Since n must be integer, n ≤ 83, so maximum is 83.
 Yes.
 
 I think that's it.
-"	stop
+"	stop	83.0	0	1		
 q1f4f019f	Stephen hett online Levensmiddel bestellt. De Reknung weer 40,00 US-Dollar. Weil de Lieferung över een Lieferdienst loben hett, hebbt se 25 % Gebühr up de Reknung slaon un 3,00 US-Dollar Liefergebühr bereknet. Stephen hett ok noch 4,00 US-Dollar Trinkgeld geven. Wo hoog weer de Endpries för sien Levensmiddel nao all Extragebühren?	"
 Der Endpreis für Stephens Lebensmittel beträgt 57,00 US-Dollar.  
 Hier ist die detaillierte Berechnung:  
@@ -19513,7 +19513,7 @@ Also alle zusammen.
 Endpreis: 40,00 + 10,00 + 3,00 + 4,00 = 57,00 USD
 
 Ich denke, das ist die korrekte Berechnung.
-"	stop
+"	stop	57.0	0	1		
 q709e5faa	Een Himbeerbusch hett 6 druben mit jeweils 20 Früchten un noch 67 enkelte Früchte över den Busch verdeelt. Wo veele Himbeeren sünd dat insgesamt?	"
 Der Himbeerbusch hat **6 Äste**, und jeder Ast trägt **20 Beeren**. Zuerst berechnen wir die Beeren auf den Ästen:
 
@@ -19535,7 +19535,7 @@ I wonder if the user is testing my basic math skills or if there's some nuance t
 The user might be a student practicing arithmetic or someone verifying information. The query is in German with some spelling errors (""hett"" instead of ""hat"", ""sünd"" instead of ""sind""), but the math is clear. They're probably not a native speaker, so I should be careful with my explanation.
 
 I'll make sure to explain the calculation clearly, showing how to multiply the branches by berries and then add the extra ones. This way, the user can follow the logic and perhaps even learn how to approach similar problems themselves.
-"	stop
+"	stop	187.0	0	1		
 qb292acaa	In een Korv leggt 25 Appelsinen. Dorvan is 1 slecht, 20 % sünd unriep un 2 sünd suur; de Rest is gaod. Wo veele Appelsinen sünd gaod?	"
 De totale hoeveelheid sinaasappels is 25.  
 Een sinaasappel is slecht: 1.  
@@ -20170,7 +20170,7 @@ If there is overlap, it could be less, but since no overlap is specified, we use
 Moreover, the rest is good, implying that good is defined as not in any of these.
 
 So, I think 17 is correct.
-"	stop
+"	stop	17.0	0	1		
 qa11cac63	Janet köfft een Brosche för ehr Dochter. Se betaohlt 500 US-Dollar för't material un noch 800 US-Dollar för den Juwelier, de se formt. Dornao betaohlt se noch 10 % vun dissen Betrag för de Versicherung. Wo veel mutt se insgesamt betaohlen?	"
 Janet muss insgesamt 1430 US-Dollar bezahlen.  
 
@@ -20263,7 +20263,7 @@ Die ursprüngliche Brosche-Kosten sind 500 + 800 = 1300 $, und dann 10% davon f�
 Also, ja.
 
 Die Antwort ist 1430 Dollar.
-"	stop
+"	stop	1430.0	0	1		
 q5a0d641e	Nao 40 Dienstjoahre kriggt een Mitarbeiter bi Marcy ehr Firma een vulle jährliche Rente vun 50.000 Dollar. Pensionsansprüche gifft dat af 20 Dienstjohre. För jedet vulle Dienstjohr mehr nao de 20-Johr-Marke kriggt de Mitarbeiter 5 % vun de vulle Rente. Wenn Marcy nao genau 30 Dienstjohre ophöört, wo hoog is denn ehr jährliche Rente in Dollar?	"
 Marcy hat 30 Dienstjahre, was 10 Jahre über die 20-Jahres-Marke liegt. Die jährliche Rente wird für jedes zusätzliche Jahr um 5% der Rente bei 20 Jahren erhöht.
 
@@ -21175,7 +21175,7 @@ For 30 years: 25,000 + 10 * 1,250 = 25,000 + 12,500 = 37,500
 And the annual pension at 40 years is 50,000.
 
 So, I think that's the answer.
-"	stop
+"	stop	40.0	0	0	37500	0
 q2eb5bb5f	Aleena hett een Streaming-Dienst abonneert, de 140 US-Dollar pro Monat kost. Wenn de Streaming-Firma in de eerste Hälfte vun't Johr den normalen Bedrag nimmt un in de tweete Hälfte 10 % weniger, wo veel hett se an't enn vun't Johr insgesamt för den Streaming-Dienst betaohlt?	"
 Aleena hat für das Streaming-Abonnement insgesamt 1596 US-Dollar bezahlt.
 
@@ -21574,7 +21574,7 @@ Vielleicht ist die Abonnementgebühr jährlich, aber die Frage sagt ""pro Monat"
 Ich denke, keine Probleme.
 
 Also, ich glaube, 1596 Dollar ist die Antwort.
-"	stop
+"	stop	1596.0	0	1		
 q29ca8e5c	Sophia överleggt, mit ehr Auto een Tour to maoken, un will weten, wo wiet se mit een vullen Tank kummt. Siet de leste Tankfüllung is se 100 Meilen föiert un hett 4 Gallonen Benzin naohfüllen mösst, dormit de Tank wedder vull weer. In de Bedienungsanleitung steiht, dat in ehr Tank 12 Gallonen Benzin passt. Wo veele Meilen kann Sophia mit een vullen Tank föiern?	"
 Sophia consumed 4 gallons of gasoline to drive 100 miles, so her fuel efficiency is 25 miles per gallon (100 miles / 4 gallons = 25 mpg).
 
@@ -21722,7 +21722,7 @@ Another thing: ""un"" might be ""and,"" but in some contexts, it could be a conj
 But I think it's clear.
 
 So, I believe Sophia can drive 300 miles with a full tank.
-"	stop
+"	stop	300.0	0	1		
 q388ed7a8	Jim kiekt 2 Stunnen lang TV un geiht denn in't bedde un leest halv so lang. Dat maokt he 3-maol in de weeken. Wo veele Stunnen verbringt he in 4 weeken mit TV kieken un leesen?	"
 Jim verbringt per keer 2 uur met televisie kijken en 1 uur met lezen (half van de kijkduur). Dit gebeurt 3 keer per week. Per week besteedt hij dus 6 uur aan televisie en 3 uur aan lezen, totaal 9 uur. In 4 weken is dit 36 uur.
 
@@ -21976,7 +21976,7 @@ Misschien is ""halv so lang"" niet precies half, maar ik denk dat het half is.
 Ja.
 
 Dus ik denk dat dit correct is.
-"	stop
+"	stop	36.0	0	1		
 qe6615147	Veer Schaolen speelt in een Basketballturnier gegenanner. Jede Schaole hett een Wichterbasketballteam un een Jungensbasketballteam schickt, un jedet Team hett 5 Speelers. Jede Schaole hett uk för jedet Team een Trainer mitschickt. Wo veele lüüd hebbt de Schaolen insgesamt schickt?	"
 Er zijn vijf scholen (aangezien ""Veer"" een misvatting is van ""vijf"") die deelnemen aan het basketballturnier. Elke schaal stuurt twee teams: een mannen-team (gebaseerd op ""Wichterbasketballteam"", wat waarschijnlijk een misvatting is van ""meesterbasketballteam"" of ""mannen-team"") en een vrouwen-team (""Jungensbasketballteam"").
 
@@ -22348,7 +22348,7 @@ Misschien is ""Veer Schaolen"" niet vijf, maar iets anders.
 Ja.
 
 Dus ik denk dat 60 het correcte antwoord is.
-"	stop
+"	stop	60.0	0	0	60	0
 q1df59a5a	Een Schatzsöker hett een verborgene Schatzkiste mit Edelsteene funnen. Dor wören 175 Diamanten in, 35 weniger Rubine as Diamanten un twee maol so veele Smaragde as Rubine. Wo veele Edelsteene wören in de Schatzkiste?	"
 In der Schatzkiste gibt es 175 Diamanten.  
 Dann sind die Rubine 35 weniger als Diamanten, also 175 - 35 = 140 Rubine.  
@@ -22491,7 +22491,7 @@ Also, die Antwort sollte 595 Edelsteine sein.
 In der Frage steht ""mit Edelsteine funnen"", was die Schatzkiste mit Edelsteinen gefunden bedeutet, und die Gesamtzahl ist gefragt.
 
 Ich denke, das ist es.
-"	stop
+"	stop	595.0	0	1		
 q0e3fa635	In Dr. Wertz sien Schaol gifft dat twee maol so veele jungs as wichter. Wenn dor 60 wichter sünd un up jede 5 Schöilers een Lehrer kummt, wo veele Lehrers gifft dat denn?	"
 In Dr. Wertz' Schule gibt es insgesamt 60 Schüler. Da es doppelt so viele Jungs wie Mädchen gibt, sind die Anzahlen wie folgt:  
 - Mädchen: 20  
@@ -22520,7 +22520,7 @@ Ich sollte sicherstellen, dass die Antwort präzise ist. Die Frage ist, wie viel
 Vielleicht sollte ich die Antwort auf Deutsch geben, da die Frage auf Deutsch gestellt war. Die Antwort sollte die Anzahl der Lehrer angeben, die auf die Gesamtzahl der Schüler verteilt sind, basierend auf dem gegebenen Verhältnis.
 
 Ich bin ziemlich sicher, dass die Schlussfolgerung stimmt: 12 Lehrer. Das sollte die Antwort sein.
-"	stop
+"	stop	12.0	0	0	12	0
 q9c0ce719	Bailey fangt mit een bestimmten Bedrag Geld an. Denn kriggt se 8 weeken lang jede weeken 5 US-Dollar. Wenn se nao de 8 weeken insgesamt 100 US-Dollar hett, wo veel Geld harr Bailey denn an'n Anfang?	"
 Bailey hatte am Anfang einen bestimmten Geldbetrag. In den 8 Wochen erhielt sie jede Woche 5 US-Dollar, also insgesamt 40 US-Dollar. Nach diesen 8 Wochen betrug ihr Gesamtgeld 100 US-Dollar.
 
@@ -22656,7 +22656,7 @@ Also, keine Ausgaben.
 Es ist eine einfache lineare Gleichung.
 
 Ich denke, das ist es.
-"	stop
+"	stop	60.0	0	1		
 qde446a3d	Judy gifft an werkdag jeden dag 5 danzkurse un an'n soterdag 8 kurse. Wenn in jede kurs 15 schöilers sünd un se 15,00 $ pro schöiler nimmt, wo veel Geld verdeent se in een weeken?	"
 Judy verdient in einer Woche Geld, indem sie an Werktagen und Sonntagen Tanzkurse anbietet. Jeden Werktag gibt es 5 Kurse, wobei jeder Kurs 15 Schüler hat und sie 15,00 $ pro Schüler nimmt. Ebenso jeden Sonntag gibt es 8 Kurse mit den gleichen Einnahmen pro Kurs.
 
@@ -22810,7 +22810,7 @@ Also, die Antwort ist 7425 $.
 In der Frage steht ""verdeent se"", was ""verdient"" bedeutet.
 
 Also, ich denke, das ist die Lösung.
-"	stop
+"	stop	7425.0	0	1		
 qd941251f	Kelian hett twee Koakrezepte. Dat eerste hett 20 Anweisungen, un dat annere hett twee maol so veele as dat erste. Wo veele Anweisungen mutt Kelian leesen, üm beide Rezepte to maoken?	"
 Kelian moet 60 instructies lezen om beide recepten te maken.  
 Het eerste recept heeft 20 instructies, en het tweede recept heeft twee keer zo veel, dus 40 instructies.  
@@ -22970,7 +22970,7 @@ Wenn man die Anweisungen gemeinsam liest, aber nein, die Frage ist klar: um beid
 Also, 60.
 
 Ich denke, das ist es.
-"	stop
+"	stop	60.0	0	1		
 q96352811	Tommy sammelt Geld för sien Wohltätigkeitsorganisation, indem he Brownies för 3 US-Dollar dat Stück un Käsekaokenstücke för 4 US-Dollar dat Stück verköfft. Wenn Tommy 43 Brownies un 23 Käsekaokenstücke verköfft, wo veel Geld sammelt he denn?	"
 Tommy verkauft 43 Brownies zu je 3 US-Dollar und 23 KäsekaKuchenstücke zu je 4 US-Dollar.
 
@@ -23049,7 +23049,7 @@ Perhaps I should write it in a boxed answer as requested.
 Also, the language is German, but the math is the same.
 
 I think I'm good.
-"	stop
+"	stop	221.0	0	1		
 qbf808b59	Shiela hett fief Handys för 150 US-Dollar dat Stück mit een Ratenvertrag över 3 Monate köfft. Pro Stück werd 2 % Zinsen berekt. Wo veel betaohlt Shiela jeden Monat 3 Monate lang?	"
 Shiela kauft eine防盗门 (Fief Handy) für 150 US-Dollar und nutzt einen 3-monatigen Ratenvertrag mit einem monatlichen Zinssatz von 2%. Unter der Annahme eines standardmäßigen Ratenvertrags (wahrscheinlich ein Ratenzahlungsplan mit monatlichem Kapitalrückzahlungsmodell, d.h. äquidistanten Raten, die sowohl Zinsen als auch Tilgungsanteile umfassen), wird die monatliche Rate mit Hilfe der Formel für den Ratenzahlungsplan berechnet.
 
@@ -23833,7 +23833,7 @@ The monthly payment can be calculated as the root of the equation.
 But I think it's fine.
 
 So Shiela zahlt monatlich 52.01 Dollar.
-"	stop
+"	stop	2.0	0	0	52.01	0
 q71d76256	Artie hett een Blomenstand up'n Buernmarkt. He verköfft dree Sorten Blomen: Studentenblomen, Petunien un Begonien. Normaal verköfft he Studentenblomen för 2,74 Dollar de Pott, Petunien för 1,87 Dollar de Pott un Begonien för 2,12 Dollar de Pott. Vondaoge hett Artie keen Wesselgeld, dorüm rundt he all Priese up den nächsten Dollar. Wenn Artie 12 Pötte Studentenblomen, 9 Pötte Petunien un 17 Pötte Begonien verköfft, wo veele Dollar verdeent he denn?	"
 Artie verkoopt Studentenblomen voor 2,74 dollar per pot, wat afgerond wordt op 3 dollar (want 2,74 is dichter bij 3 dan bij 2).  
 Met 12 potten verdient Artie 12 * 3 = 36 dollar.  
@@ -24402,7 +24402,7 @@ Nu 36 + 18 + 34.
 Ja.
 
 Dus ik denk dat het antwoord 88 is.
-"	stop
+"	stop	88.0	0	1		
 qd6f9023f	Luke verbringt Tied an'n Strand un baut Sandburgen. He markt, dat jede Ebene vun een Sandburg bloos halv so veele Quadratmeter hett as de Ebene dorünner. Wenn he een Sandburg mit 4 Etagen baut, un de böverste Ebene 16 Quadratmeter hett, wo hoog is denn de durchschnittliche Quadratmetertoal vun een Ebene?	"
 Luke builds sandcastles where each floor has half the area of the floor above it. For a sandcastle with 4 floors, the top floor has an area of 16 m². The areas of the floors are then calculated as follows:
 
@@ -25581,7 +25581,7 @@ I think it's fine.
 Perhaps the average is geometric mean or something, but I think 60 is the arithmetic mean.
 
 So I'll go with that.
-"	stop
+"	stop	60.0	0	1		
 qcf724c14	Cecilia hett jüst een neien Welpen köfft. De Tierarzt seggt, se mutt em in de ersten 180 daoge jeden dag 1 Tass Hundefoder geven. Dornao kriggt de Welpe för den Rest vun sien Leven jeden dag 2 Tassen Hundefoder. Wenn een Tuten Hundefoder 110 Tassenportionen hett, wo veele Tuteen bruukt Cecilia denn in't eerste Johr?	"
 Cecilia benötigt im ersten Lebensjahr des Welpen, das 365 Tage umfasst, insgesamt 550 Tassen Hundefutter.
 
@@ -25790,7 +25790,7 @@ Ja.
 Wenn das erste Lebensjahr 365 Tage ist, und die ersten 180 Tage eine Phase, dann ist es korrekt.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	5.0	0	1		
 q6330b5ad	Wenn Raymond halv so veel Wäsche wascht as Sarah, un Sarah 4-maol so veel wascht as David, rek den Ünnerscheed ut tüschgen Raymond sien un David sien Wäschemenge, wenn Sarah 400 Pund Wäsche wascht.	"
 Sarah wäscht 400 Pfund Wäsche.  
 Raymond wäscht halb so viel wie Sarah, also 200 Pfund.  
@@ -25958,7 +25958,7 @@ Aber die Frage ist, den Unterschied zu rek, also den Unterschied.
 Und ""ut"" könnte ""berechnet"" oder ""in Betracht gezogen"" bedeuten.
 
 Ich denke, das ist es.
-"	stop
+"	stop	100.0	0	1		
 qfb8247db	Vincent kann Blomen in 3-er-Packungen för 2,50 US-Dollar oder in 2-er-Packungen för 1 US-Dollar koopen. Wo veel Geld spaort he, wenn he 18 Blomen to den beteren Pries köfft?	"
 Vincent kann die Blumen in 2-er-Packungen für 1 US-Dollar pro Packung kaufen, was insgesamt 9 US-Dollar für 18 Blumen kostet. Wenn er stattdessen die 3-er-Packungen (2,50 US-Dollar für 3 Blumen) wählt, kosten 18 Blumen 15 US-Dollar. Da der bessere Preis die 2-er-Packung ist, spart er 15 - 9 = 6 US-Dollar.
 
@@ -26382,7 +26382,7 @@ Pro Blume: 1/2 = 0.5 $, 2.50/3 ≈ 0.833 $, also günstiger.
 Ich denke, es ist klar.
 
 Also, sparbetrag: 6 US-Dollar.
-"	stop
+"	stop	6.0	0	1		
 q4da79a41	John adopteert een Hunn. He bringt den Hunn to'n Hunnenfrisör, un dat kost 100 US-Dollar. Weil he Neukunne is, gifft de Hunnenfrisör em 30 % Rabatt. Wo veel kost de Sitzung bi'n Hunnenfrisör?	"
 De Sitzung (de sessie) bij den Hunnenfrisör (bij de hondenfrisier) kost 70 US-Dollar.  
 Dit is berekend door 30% korting te geven op de oorspronkelijke prijs van 100 US-Dollar.  
@@ -26617,7 +26617,7 @@ That should be fine.
 In the context, ""Hunnenfrisör"" might be kept, but I think ""hunde-frisör"" or something, but no need.
 
 Final answer: 70 US-Dollar.
-"	stop
+"	stop	70.0	0	1		
 qd3f2e43b	Twee wichter kregen jede 1/6 vun de 24 Liter waoter. Dornao kreeg een Jung 6 Liter waoter. Wo veele Liter waoter wören denn noch över?	"
 De oorspronkelijke hoeveelheid water is 24 liter.
 
@@ -26882,7 +26882,7 @@ Perhaps ""Jung"" is ""John"" or a name, but it's written as ""Jung"", which is G
 In Dutch, it's similar.
 
 So, I think it's fine.
-"	stop
+"	stop	10.0	0	1		
 qffe70c6a	Charlie harr 10 Stickers. He köffte 21 Stickers in een Laoden in de Mall un kreeg 23 Stickers tao'n Geburtsdag schonken. Dornao geev Charlie sien süster 9 vun de Stickers un bruukte 28, üm een Grußkaorten to dekoreiern. Wo veele Stickers hett Charlie noch över?	"
 Charlie had aan het begin 10 stickers.  
 Hij koopt 21 stickers in eenladen in de mall, dus hij heeft nu 10 + 21 = 31 stickers.  
@@ -26946,7 +26946,7 @@ Ik denk dat het een eenvoudige som is, geen verdere complicaties.
 Misschien is ""Dornao geev"" bedoeld als ""daarna gaf"", maar de betekenis is duidelijk.
 
 Dus ik geloof dat 17 het juiste antwoord is.
-"	stop
+"	stop	17.0	0	1		
 q7d0f9963	Grace weegt 125 Pund. Alex weegt 2 Pund weniger as dat 4-fache vun Grace ehr Gewicht. Wo veel Pund weegt se tosaomen?	"
 Grace wiegt 125 Pfund.  
 Alex wiegt 2 Pfund weniger als das 4-Fache von Grace' Gewicht, also 4 × 125 = 500 Pfund minus 2 Pfund = 498 Pfund.  
@@ -27137,7 +27137,7 @@ If it were ""Alex weighs 2 pounds less than that, and that is Grace's weight,"" 
 The phrase is ""dat 4-fache vun Grace ehr Gewicht,"" which is ""that four times Grace's weight.""
 
 So, I think it's correct.
-"	stop
+"	stop	623.0	0	1		
 q792b7ea9	Dan plant 3 Rausenbüsche. Jede Rausenbusch hett 25 Rausen. Jede Rause hett 8 Dornen. Wo veele Dornen sünd dat insgesamt?	"
 Es scheint, dass ""Rausenbusch"" und ""Rausen"" Misspellungen für ""Rosenbusch"" und ""Rosen"" sein könnten, was in diesem Kontext (Zählen von Dornen) am wahrscheinlichsten ist. Jede Rose hat 8 Dornen, und jede Rose hat 25 Rosetten.
 
@@ -27284,7 +27284,7 @@ Perhaps ""Rausenbusch"" is meant to be ""Reisig"" or something, but no.
 I think I'm overcomplicating. Let's go with 600.
 
 So, the total number of thorns is 600.
-"	stop
+"	stop	600.0	0	1		
 q3dfac176	Een Footballteam speelt 22 Speele. Se hebbt 8 mehr wunnen as verloren. Wo veele hebbt se wunnen?	"
 Het footballteam heeft 22 speelletjes gespeeld, en het heeft 8 meer gewonnen dan verloren. Aangezien de vraag alleen melding maakt van gewonnen en verloren speelletjes, wordt aangenomen dat er geen gelijkspelletjes zijn.  
 
@@ -27530,7 +27530,7 @@ Antwoord: 15
 Maar in de vraag staat ""Speele"", wat misschien bedoeld is als ""speelletjes"", dus ik denk dat het een typo is.
 
 Dus ik ga uit van geen gelijkspelletjes.
-"	stop
+"	stop	15.0	0	1		
 qc8e2bf9d	Eugen neiht een Quilt ut olle Souvenir-T-Shirts. He hett vun jeden Urlaub, den he maokt hett, een T-Shirt. Jedet Johr föiert he veer maol in Urlaub. Mit de Tradition hett he anfangen in dat Johr, as he 23 worrn is, un he hett för jedet Johr bit, aver nich mit, dat aktuelle Johr T-Shirts sammelt. Nu is he 34. Wo veele Quilt-Blöcke hett he insgesamt?	"
 Eugen has been collecting souvenir T-shirts since he was 23 years old. He takes four vacations per year, receiving one T-shirt for each vacation, and has collected T-shirts for each year except the current year (when he is 34).
 
@@ -28323,7 +28323,7 @@ The current year is not included, but the years from 23 to 33 are included.
 Yes.
 
 I think I'm confident with 44.
-"	stop
+"	stop	44.0	0	1		
 q87073282	Greg hett een Wecker stellt, de dree maol an'n dag as Erinnerung klingelt. Wenn he losgeiht, klingelt he so lang, bit Greg em utmaokt. Vondaoge bi't eerste Maol hett he veer maol klingelt. Bi't tweete Maol hett he dree maol so lang klingelt as bi't eerste. Bi't drütte maol hett he halv so lang klingelt as bi't tweete. Wo faoken hett de Wecker insgesamt klingelt?	"
 Der Wecker erinnert Greg an den Wecker dreimal am Tag, wobei die Klingelungsdauern für jede Erinnerung variieren.
 
@@ -28905,7 +28905,7 @@ Also, die Summe ist 4 + 12 + 6 = 22.
 Ja.
 
 Also, insgesamt 22 Mal.
-"	stop
+"	stop	22.0	0	1		
 qe293b5e8	Een Firma betaohlt ehr Mitarbeiter een Anfangsgehalt vun 600 Dollar pro Monat. De Firma belohnt Lüü, de lang dor arbeidt: No fief Dienstjohre wet dat Gehalt jedet Johr erhöht. Disse jöhrlicke Erhöhung is jümmers een fasten Betrag, nämlich 10 % vun ehr anfängliche Johresgehalt. Wenn Sylvie jüst ehr fiefte Johr in de Firma afslaten hett, wo hoog is ehr Jahresgehalt, na dat se noch dree Johren dor arbeidt hett?	"
 Sylvie hat ein Anfangsgehalt von 600 Dollar pro Monat, was einem Jahresgehalt von $7200$ entspricht.
 
@@ -29751,7 +29751,7 @@ But for annual, it's clearer.
 Jahresgehalt is annual.
 
 So, I think it's correct.
-"	stop
+"	stop	9360.0	0	1		
 qb9e657cf	Marilyn ehr eerste Platte is 10-mal so faoken verköfft worrn as Harald sien. Tosaomen hebbt se 88.000 Exemplare verköfft. Wo veele Exemplare hett Harald verköfft?	"
 Harald hat 8.000 Exemplare verkauft.  
 Marilyn hat 10-mal so viele verkauft, also 80.000 Exemplare.  
@@ -29855,7 +29855,7 @@ Zusammen 88.000 verkauft.
 Also, ja.
 
 Ich glaube, das ist es.
-"	stop
+"	stop	88000.0	0	0	88000	0
 q8d6c3ac8	Christina hett 16 Frünnen to ehr Geburtsdagsfest inlaoden. Se reekt dormit, dat bloos 75 % dorvan kaomt, un maokt för jeden erwarteten Gast eene Geschenktuten. Wenn jede Geschenktuten $2 kost, wo hoog sünd de Gesamtkosten?	"
 Christina plant eine Geburtstagsparty für 16 Freunde, aber sie erwartet nur 75% der Gäste. Um das zu berechnen:
 
@@ -30031,7 +30031,7 @@ Therefore, Gesamtkosten = number of expected guests * $2.
 Yes.
 
 So, I think that's it.
-"	stop
+"	stop	24.0	0	1		
 qa59fef67	Ted de T-Rex will tüvelkensaloat to't Dinopicknick mitbringen. He weet, dat een erwachsenen Dinosaurier 10 Pund tüvelkensaloat itt, un een Jungtier halv so veel as een Grooten. Wenn 20 Groote un 5 Junge bi't Picknick sünd, wo veel tüvelkensaloat mutt Ted mitbringen, dormit all satt werrt?	"
 Ted should bring enough salad for the picnic to ensure all dinosaurs are full. An adult dinosaur eats 10 pounds of salad, and a juvenile eats half as much, so 5 pounds.
 
@@ -30186,7 +30186,7 @@ I think it's best to ignore the word and focus on the amount.
 Perhaps it's ""düvverkensalat"" with ""kü"" for ""salat"", but again, not important.
 
 So, I'll go with that.
-"	stop
+"	stop	225.0	0	1		
 q4db223a4	Jan hett dree maol so veele Huustiere as Marcia. Marcia hett twee Huustiere mehr as Cindy. Wenn Cindy veer Huustiere hett, wo veele Huustiere hebbt se all dree tosaomen?	"
 Wenn Cindy 4 Haustiere hat, dann hat Marcia 6 Haustiere (denn Marcia hat zwei mehr als Cindy). Jan hat 18 Haustiere (denn Jan hat dreimal so viele wie Marcia). Zusammen haben sie 28 Haustiere.
 
@@ -30508,7 +30508,7 @@ Ja.
 Die Gesamtzahl ist 28.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	28.0	0	1		
 q2ae0bd70	Emily hett 4 Kinner, de Amy, Jackson, Corey un James heet. Amy is 5 Johr öller as Jackson un 2 Johr jünger as Corey. Wenn James 10 Johr old is un 1 Johr jünger as Corey, wo old is Jackson denn?	"
 Emily hat vier Kinder: Amy, Jackson, Corey und James. Die gegebenen Informationen sind:
 
@@ -30560,7 +30560,7 @@ We are given that Emily hett 4 Kinder: Amy, Jackson, Corey und James.
  Hence, Jackson is 4 years old.
 
  Answer: 4
-"	stop
+"	stop	4.0	0	1		
 q412bff21	Lee kunn de 400 Meter Hürden twee Sekunden schneller loopen as Gerald de 400 Meter Hürden löppt. Gerald hett aover sien Ernährung ännert, un dorüm is sien Geschwindigkeit üm 10 % beter worrn. Wenn Lee de 400 Meter Hürden in 38 Sekunden löppt, in wo veele Sekunden kann Gerald denn mit sien betere Ernährung de 400 Meter Hürden loopen?	"
 Um die Frage zu beantworten, muss zunächst die ursprüngliche Situation für die 400 Meter Hürden definiert werden. Die Aussage ""Lee kann die 400 Meter Hürden zwei Sekunden schneller laufen als Gerald"" bedeutet, dass in der ursprünglichen Situation Lee zwei Sekunden weniger braucht als Gerald.
 
@@ -31493,7 +31493,7 @@ Oder, vielleicht schreiben sie es als gemischte Zahl.
 Aber ich denke, Bruch ist in Ordnung.
 
 Also, ich gehe davon aus.
-"	stop
+"	stop	11.0	0	0	400	0
 qf73a338f	In een Naohberschapp is de Antaoll vun Kanickel as Huustier twölf weniger as de Tall vun Hunnen un Katten tosaomen. Wenn up jede Hunn twee Katten kaomt un dor 60 Hunnen sünd, wo veele Huustiere gifft dat denn insgesamt in de Naohberschapp?	"
 Die Anzahl der Kinder (Kanickel) ist zwölf weniger als die Gesamtanzahl der Haustiere (Huustier), die aus Hunden und Katzen bestehen.
 
@@ -31945,7 +31945,7 @@ Another idea: ""is de Antaoll vun Kanickel as Huustier"" might mean that the num
 I think I have to accept the children interpretation.
 
 So, I'll go with 180.
-"	stop
+"	stop	180.0	0	0	180	0
 qc5273098	Vun de 200 Fiefklässler sünd 2/5 Jungs, un 2/3 vun de wichter sünd bi de Pfadfinderinnen. Wo veele wichter sünd nich bi de Pfadfinderinnen?	"
 The question appears to have a language or typo issue, but based on the given information, it can be interpreted as follows:
 
@@ -32820,7 +32820,7 @@ Perhaps ""Fiefklässler"" is the total, and ""Jungs"" are the boy helpers, but "
 I think for the sake of providing an answer, I'll say 40.
 
 So, the number of helpers not with the Girl Scouts is 40.
-"	stop
+"	stop	40.0	0	1		
 qf8da7966	Harry hett leste Nacht 9 Stunnen slaopen. Sien Fründ James hett bloos 2/3 vun de Tied slaopen, de Harry slaopen hett. Wo veele Stunnen mehr hett Harry slaopen as James?	"
 Harry slept for 9 hours last night. James slept for 2/3 of the time Harry slept, which is (2/3) * 9 = 6 hours.
 
@@ -32900,7 +32900,7 @@ Yes.
 Sometimes these problems might have a twist, but here it's direct.
 
 I think I'm good.
-"	stop
+"	stop	3.0	0	1		
 q186d2aa2	Wenn Freda Doisentomaten to Soße koakt, verleert se de Hälfte vun ehr Gewicht. In jede 16-Unzen-Doisen Tomaten, de se bruukt, sünd dree Tomaten. De leste Portion Tomatensoße hett 32 Unzen Soße geven. Wo veele Tomaten hett Freda bruukt?	"
 Die Bedingung besagt, dass wenn Freda eine Dutzend Tomaten (12 Tomaten) für die Sauce kocht, die resultierende Sauce einen Gewichtsverlust von der Hälfte der Tomaten-Gewichts verursacht. Eine Dutzend Tomaten entspricht 4 Fässern à 16 Unzen, was ein Gesamtgewicht von 64 Unzen Tomaten ergibt. Die Sauce hat ein Gewicht von 32 Unzen, was genau die Hälfte des Tomaten-Gewichts ist.
 
@@ -33630,7 +33630,7 @@ I think the answer is 12.
 But let's check the language: ""bruukt"" means used, so for the last portion, she used 12 tomatoes.
 
 So, I'll go with that.
-"	stop
+"	stop	12.0	0	1		
 q9c762a15	Up de Autobahn stoaht Autos in een Rieg. Een poar Autos kaomt in de ersten 15 Minuten vun'n Stau dör, dornao kaomt noch 20 mehr Autos in de överbleven 15 Minuten dör. 5 Autos foiert ut de Rieg rut, dormit se nich dör'n Stau mööt. Wenn an'n Anfang 30 Autos up de Autobahn stünnen, wo veele Autos sünd denn in de ersten 15 Minuten dör'n Stau kaomen?	"
 Die Anzahl der Autos, die in den ersten 15 Minuten durch den Stau kommen, kann aus den gegebenen Informationen nicht eindeutig bestimmt werden. Die Formulierung ""Een poar Autos"" (etwa eine kleine Anzahl) ist unbestimmt, und die Bedingung mit der Rampe, die 5 Autos umleitet, führt zu einem Gleichungssystem, das keine eindeutige Lösung für eine ganze Zahl ergeben würde. Die mathematische Lösung ergibt x = 2.5, was jedoch in der Praxis für Autos unrealistisch ist.
 
@@ -34664,7 +34664,7 @@ Vielleicht ist die Rampe, die 5 Autos umleitet, eine Rate, die die durch den Sta
 Ich denke, ich werde die Antwort 3 nehmen.
 
 Also, 3 Autos.
-"	stop
+"	stop	30.0	0	0		0
 q507804db	Mary is mit Lief un Seel Görnerin. Gistern hett se 18 neie Pottplanten vun ehr Lieblingsgörnerei kregen. Se hett al 2 Pottplanten up jede vun de 40 Fenstersimse in ehr groote Landhuus. Se is großzügig un will morgen vun jede Fenstersims 1 Pottplant an Frünnen un Familie verschenken. Wo veele Pottplanten blievt Mary över?	"
 Mary hat anfangs 40 Fenstersimse, jede mit 2 Pottplanten, also 80 Pottplanten. Sie erhielt dann 18 neue Pottplanten, sodass sie insgesamt 98 Pottplanten besitzt.
 
@@ -34942,7 +34942,7 @@ Perhaps ""Lief un Seel"" is ""love and soul,"" but again, irrelevant.
 I think I'm spending too much time on this.
 
 So, Mary has 58 potted plants left.
-"	stop
+"	stop	58.0	0	1		
 q120898cb	Jerome harr an een dag 4 Frünnen to Besöök. De eerste Fründ drückte 20 Maol up de Dörklingel, ehe Jerome opmaokt hett. De tweete Fründ drückte 125 % so faoken up de Klingel as de eerste. De drütte Fründ drückte 10 Mal faoken mehr as de veerte Fründ. Wenn de veerte Fründ 60 Mal up de Dörklingel drückte, wo faoken hett de Dörklingel insgesamt klingelt?	"
 Die Türklingel klingelt, wenn jemand auf sie drückt, unabhängig davon, ob von außen oder innen. Die Anzahl der Klopfer für jeden Freund und für Jerome wird wie folgt berücksichtigt:
 
@@ -35555,7 +35555,7 @@ Aber die Frage ist ""hett de Dörklingel insgesamt klingelt"", und ""wo faoken""
 Vielleicht ist die Antwort in einer anderen Einheit, aber ich denke, es ist Mal.
 
 Also, ich glaube, 175 ist die Antwort.
-"	stop
+"	stop	60.0	0	0	175	1
 q55e446ec	Solo mutt 4 Sieten ut sien Naturwissenschaftsbaok leesen, 20 Sieten ut sien Gemeinschaftskundebaok, 7 Sieten ut sien Geschichtsbaok un 8 Sieten ut sien Geografiebaok. An'n Mondag leest Solo 15 Sieten. Wenn he noch 4 daoge hett, üm allens to leesen, wo veele Sieten mutt he denn in Dörschnitt pro dag leesen?	"
 Solo muss insgesamt 4 + 20 + 7 + 8 = 39 Seiten aus den verschiedenen Büchern lesen.
 
@@ -35893,7 +35893,7 @@ Perhaps the user meant that he has to read these pages, and on Monday he read 15
 Yes.
 
 So, I'll go with that.
-"	stop
+"	stop	6.0	0	1		
 qe178e77b	John drinkt to't Fröihstück, Middageten un Obendeten geern een Glas waoter. Vör't Tobeddegoahn drinkt he ok noch een. Dat maokt John jeden Werkdag, aover an't weekend maokt he dat entspannt un drinkt to't Obendeten statt waoter een Glas Limonade. Wo veele Glöser waoter drinkt John in een weeken?	"
 John trinkt zu den Mahlzeiten Frühstück, Mittagessen und Abendessen normalerweise ein Glas Wasser. In einer Standardwoche mit 7 Tagen (Montag bis Sonntag) hat er:
 
@@ -36248,7 +36248,7 @@ Also, 19.
 Vielleicht muss ich in Niederländisch antworten, aber die Frage ist auf Englisch, also denke ich, die Antwort ist eine Zahl.
 
 Ich denke, ich bin mir ziemlich sicher.
-"	stop
+"	stop	19.0	0	0	19	0
 q13dd2b3f	Een Näbelschleier treckt vun de Sei över een Stadt. He bruukt 10 Minuten för jeweils 3 Meilen vun de Stadt to bedecken. Wenn de Stadt vun de Küste bit nao de annere Siete in't Binnenland 42 Meilen brejd is, wo veele Minuten bruukt de Näbel, bit he över de ganze Stadt liggt?	"
 Het duurt 140 minuten om de hele stad te bedekken.  
 Dit berekenen we op basis van de gegeven informatie:  
@@ -36609,7 +36609,7 @@ Misschien is ""jeweils"" verwant aan de manier waarop het getrokken wordt,
 maar ik denk niet dat dat relevant is.
 
 Dus, het duurt 140 minuten om de hele stad te bedekken.
-"	stop
+"	stop	42.0	0	0	140	1
 q5d8678a9	Poppy maokt een Puzzle mit 1000 Deile. Se leggt een Viddel vun de Deile up't Bredde, dornao leggt ehr Mama een Drüddel vun de överbleven Deile. Wo veele Puzzledeile mööt noch leggt werrn?	"
 Poppy hat ein Puzzle mit 1000 Teilen. Sie legt eine Viertel (Viddel) der Teile quer auf die Breite, also 1000 / 4 = 250 Teile. Dann legt ihre Mama ein Drittel (Drüddel) der überbleibenden Teile zusammen. Überbleibend sind 1000 - 250 = 750 Teile. Ein Drittel von 750 ist 750 / 3 = 250 Teile. 
 
@@ -36651,7 +36651,7 @@ Die Antwort ist 500.
 Ich denke, das ist es. 
 
 *antwortet mit Sicherheit*
-"	stop
+"	stop	500.0	0	1		
 q10c23d37	Cody itt dree maol mehr Kekse as Amir. Wenn Amir 5 Kekse itt, wo veele Kekse aett se denn tosaomen?	"
 Cody isst drei Mal so viele Kekse wie Amir. Wenn Amir 5 Kekse isst, isst Cody 3 * 5 = 15 Kekse. Zusammen essen sie 5 + 15 = 20 Kekse.
 
@@ -37051,7 +37051,7 @@ Aber ich denke, 20 ist besser.
 Vielleicht ist ""Cody itt dree maol mehr"" eine Aussage, und ""as Amir"" ist die Referenz.
 
 Ich denke, ich werde 20 antworten.
-"	stop
+"	stop	20.0	0	1		
 q71246a09	John hett 3 Kisten. Jede Kiste is 5 Inch maol 6 Inch maol 4 Inch groot. De Wände sünd 1 Inch dick. Wo groot is dat Innenvolumen vun all 3 Kisten tosaomen?	"
 Das Innenvolumen einer Kiste wird berechnet, indem von jeder äußeren Abmessung die Doppeldicke der Wände abgezogen wird. Die Kiste hat die Außendimensionen 5 Zoll, 6 Zoll und 4 Zoll, und die Wände sind 1 Zoll dick. 
 
@@ -37504,7 +37504,7 @@ Aber lass mich bestätigen, ob die Wanddicke in allen Richtungen gleichmäßig i
 Ja, angenommen.
 
 Also, ich glaube, das ist korrekt.
-"	stop
+"	stop	72.0	0	1		
 q51ea4378	Frankie kiekt jeden Obend, nao dat he sien Huusupgaoben maokt hett, TV. An'n Mondag un Dingesdag hett he jeweils een 1-stünnige Folge vun sien Lieblingssendung kaeken. An'n Middeweeken hett he een poar Folgen vun een 30-minütige Sendung kaeken. An'n Dönnerdag wör he fröiher mit de Huusupgoben fardig un hett een 1-stünnige Folge un een 30-minütige Show kaeken. An'n Freidag dröff he waegen't Weekend länger upblieben un hett twee 1-stündige Folgen kaeken. Wenn he insgesamt 7 Stunnen TV kaeken hett, wo veele 30 Minuten lange Folgen hett he denn an'n Middeweeken kaeken?	"
 Frankie kijkt TV na het maken van zijn huiswerk. De totale TV-gezichtstijd is 7 uur (420 minuten). Hierbij:
 
@@ -37895,7 +37895,7 @@ In mijn berekening gebruik ik alleen de per-dag gegeven tijden, dus de eerste zi
 Bovendien, de totale tijd is gegeven, en we hebben voldoende gegevens.
 
 Dus ik denk dat het antwoord 3 is.
-"	stop
+"	stop	30.0	0	0	3	1
 qe465613a	Henry backt Kekse för een regionalen Backwettbewerb. He will twee maol so veele backen as leste Johr. As he fardig is, markt he, dat he 15 Kekse mehr backt hett as he eigentlich wull. Bi't Rutstellen to'n Afköhlen lett he 5 Kekse faalen un hett nu insgesamt 110 Kekse. Wo veele Kekse hett Henry lestet Johr backt?	"
 Henry hat letztes Jahr 50 Kekse gebacken. Dieses Jahr geback er doppelt so viele, also 100 Kekse, und tatsächlich 115 Kekse gebacken, da er 15 mehr gebacken hat als geplant. Nachdem er 5 Kekse während des Rutstelns zum Abkühlen fallen gelassen hat, bleiben 110 Kekse übrig."	50	"
 The problem is in German, but I can handle it. Let me read it carefully.
@@ -38165,7 +38165,7 @@ Perhaps ""letzte Johr"" is ""last year's baking"", but same thing.
 I think it's correct.
 
 So the answer is 50.
-"	stop
+"	stop	110.0	0	0	110	0
 q1e0f8fcb	Een Tankstell in'n Ort verköfft Benzin för 3,00 $ de Gallone. Een App-Firma gifft 0,20 $ Cashback pro Gallone, wenn du dor tankst. Wenn eener 10 Gallonen Benzin köfft, wo veel kost dat Benzin nao de Cashback-Prämie? Gaev diene Antwort in Dollar an.	"
 28,00 Dollar"	28	"
 Zeerder gebruiker vraagt om een tankstation dat benzine verkoopt voor 3,00 dollar per gallon, en een app-firma geeft 0,20 dollar cashback per gallon als je er met de app bijtelt. De vraag is hoeveel een 10-gallon tank aan benzine gaat kosten na dit cashback.
@@ -38275,7 +38275,7 @@ Maar in het bericht staat ""nao de Cashback-Prämie"", dus na cashback.
 Ja.
 
 Dus ik denk dat dit correct is.
-"	stop
+"	stop	28.0	0	1		
 q91fe6f6e	Marcell un Beatrice maokt een Wettkampf, wer de meisten Fruchtrollen eten kann, un rollt all ut, de se finnen könnt. Leider maokt een een Faehler: Beatrice ehr wör twee Rollen breid un 24 Rollen lang, Marcell sien 3 Rollen breid un 14 Rollen lang. Wenn beide ehr ganze Menge ett, wo veele hebbt se denn im Dörchschnitt eten?	"
 Der Wettbewerb zwischen Marcell und Beatrice dreht sich darum, wer mehr Fruchtrollen essen kann. Die Rollen haben unterschiedliche Größen, und die ""ganze Menge"" wird durch die gegebenen Dimensionen beschrieben.
 
@@ -38850,7 +38850,7 @@ Ich werde die Antwort 45 geben.
 **Final Answer**
 
 \boxed{45}
-"	stop
+"	stop	45.0	0	1		
 q76afc2ba	Julia ehr Boot harr een Leck, as se buten up'n Sei wör. För alle teihn Fuß, de se torügge nao't Ufer rudert is, kreeg dat Boot twee Liter Water binnen. Se bruukte sösteen Sekunden för twintig Fuß. De Strand weer 64 Sekunden weg. Wo veel Water harr dat Boot binnen, as Julia den Strand erreekte?	"
 Het boot heeft een lek die water binnen laat vloeien. Uit het gegeven dat voor de eerste 20 voet, die 30 seconden duren, 2 liter water binnenkomt, volgt dat de wateropname evenredig is met de afstand of de tijd, afhankelijk van de constante snelheid.
 
@@ -39498,7 +39498,7 @@ But let's write it properly.
 Since the initial water is 2 liters, perhaps it's fine.
 
 But I think I'll go with that.
-"	stop
+"	stop	15.0	0	0	64	0
 q9c73cd77	Een Klassenruum hett een Taofel, de 4 Lehrers sik deilt, de den Ruum afwesselnd bruukt. Jeder Lehrer hett 2 Ünnerrichtsstunnen an'n dag un bruukt de Taofel in jede Stunn. Wenn de Taofel 3-maol pro Ünnerrichtsstunn afwischt wett, wo faoken wett se denn an'n dag afwischt?	"
 Der Tisch wird am Tag 24-mal abgewischt.
 
@@ -39748,7 +39748,7 @@ Also, wie oft am Tag wird er abgewischt.
 Ja.
 
 Ich glaube, 24 ist die Antwort.
-"	stop
+"	stop	3.0	0	0	24	1
 q2bbbdc5a	Ryan plant jeden dag 2 Blaomen in sien Goorn. Wo veele Blaomen hett he nao 15 daoge, wenn 5 nich anwossen sünd?	"
 Ryan pflanzt jeden Tag 2 Blumen. Nach 15 Tagen sind also 15 × 2 = 30 Blumen gepflanzt.
 
@@ -39986,7 +39986,7 @@ Aber ich denke, für die Zwecke dieser Aufgabe, ist es ""gedehrt"".
 Vielleicht ist ""Ryan"" ein mathematisches Symbol, aber das ist unwahrscheinlich.
 
 Ich gehe von 25 aus.
-"	stop
+"	stop	25.0	0	1		
 qb65bf453	Jamal sien Handy kann 6-maol mehr Fotos speichern as Brittany ehr Handy. De maximale Taoll vun Fotos up Brittany ehr Handy is 50-maol so hoog as de Taoll vun Vögel up Jamal sien Foto mit de Enten in'n Zoo. Wenn Jamal sien Handy 1.800 Fotos speichern kann, wo veele Enten sünd denn up Jamal sien Foto vun de Enten in'n Zoo?	"
 Jamal ehr Handy kann 6-mal so viele Fotos speichern wie Brittany ehr Handy. Da Jamal 1.800 Fotos speichern kann, ist die maximale Anzahl von Fotos für Brittany 300.
 
@@ -40328,7 +40328,7 @@ Ja.
 Wenn ""50-mal so hoog"" 50 times as high bedeutet, dann ist es korrekt.
 
 Also, ich denke, das ist die Antwort.
-"	stop
+"	stop	6.0	0	1		
 q62cadf26	Sasha markt, dat de Holtpriese in de lesten poor Monate üm 50 % stägen sünd, siet se Holt köfft hett. Weil se noch Rest över hett, will se dat verkoopen. Se hett teihn 2 x 4 x 10 grote Bretter över, för de se jeweils 10 US-Dollar betaohlt hett. Se hett uk noch fief 4 x 4 x 10 Bretter, de jeweils 16 US-Dollar kost hebbt. Wenn se allens verköfft, wo veel Gewinn maokt se?	"
 Sasha, basierend auf deiner Beschreibung, habe ich eine Frage zur Berechnung des Gewinns. Die Holzpreise sind in den letzten Monaten um 50% gestiegen, und du hast bereits einige 2x4x10 Bretter zu je 10 US-Dollar pro Stück gekauft. Leider ist die Anzahl dieser Bretter nicht angegeben, was die vollständige Berechnung des Gewinns unmöglich macht. Ich kann dir jedoch den Gewinn für die 4x4x10 Bretter berechnen, die du noch hast.
 
@@ -40861,7 +40861,7 @@ But I think this is the best I can do.
 Perhaps the ""Rest"" is the 2x4x10, but not specified.
 
 I think I'll go with that.
-"	stop
+"	stop	10.0	0	0		0
 q6637faea	Katy maokt Kaffee un bruukt Teilöpel Zucker un Tassen Waoter in't Verhältnis 7:13. Wenn se insgesamt 120 Teilöpel Zucker un Tassen Waoter bruukt hett, rek ut, wo veele Teilöpel Zucker se bruukt hett.	"
 Katy verwendet Teelöffel Zucker und Tassen Wasser im Verhältnis 7:13. Das bedeutet, dass für jede 7 Einheiten Zucker, 13 Einheiten Wasser verwendet werden. Die Gesamtzahl der Einheiten (Teelöffel Zucker und Tassen Wasser) beträgt 120.
 
@@ -41317,7 +41317,7 @@ Der Rest ist 78 Tassen Wasser.
 Aber die Gesamtzahl von 120 ist gegeben, also in Ordnung.
 
 Also, ich denke, das ist es.
-"	stop
+"	stop	42.0	0	1		
 q7c7b8736	John köfft för jeden vun sien 3 Kinner 2 Poor Schaoh. Se kost 60 US-Dollar pro Poor. Wo veel hett he betaohlt?	"
 Es scheint, dass die Frage aufgrund von möglichen Tippfehlern oder Sprachproblemen nicht eindeutig ist. Ich interpretiere ""Kinner"" als ""Kinder"" (mit Tippfehler), ""Poor Schaoh"" als ""Pferdeschuhe"" (wobei ""Poor"" ein Tippfehler für ""Pferd"" sein könnte und ""Schaoh"" ein Tippfehler für ""Schuhe""), und ""pro Poor"" als ""per Pferd"".
 
@@ -41493,7 +41493,7 @@ Vielleicht ist es ""pro Kinner"", aber ""Kinner"" ist nicht ""Kind"".
 ""Kinner"" könnte ""Kinder"" sein, aber ""Kinner"" ist falsch.
 
 Ich gebe auf und antworte basierend auf der mathematischen Interpretation.
-"	stop
+"	stop	360.0	0	1		
 q8f663843	Een Zollbeamter an'n Haupthaven vun de SeaSide Zollabfertigung hett 2 Container mit importeerte Autos tellt, mit jeweils 5 Autos dorin. An'n nächsten dag köamen mehr Container an, un de Taoll vun Autos an'n Haven stiggt up 30. Rek ut, wo veele Container an'n tweeten dag importeert worrn sünd, wenn in jede Container 5 Autos sünd.	"
 Der Zollbeamter hat zunächst 2 Container, jedes mit 5 Autos, also insgesamt 10 Autos.  
 Nach dem nächsten Tag steigt die Anzahl der Autos an der Hafenlocation auf 30.  
@@ -41715,7 +41715,7 @@ Perhaps I need to consider that the initial containers might have been there for
 It just says the officer has 2 containers, and then more arrive, and the number increases.
 
 I think it's fine.
-"	stop
+"	stop	4.0	0	1		
 q6edb8d49	Lylah ehr Gesamtgehalt wör 30 Prozent deiper as Adrien sien. Veer Johr löter wör Adrien sien Gehalt stägen, un he verdeende 40 % mehr as dat, wat he vör veer Johr verdeende. Wenn Adrien un Lylah ehr Gehälter to de glieke Tied stägen sünd un Adrien vör veer Johr $40000 verdeent hett, rek dat Gesamtgehalt ut, dat se beide veer Johr löter kregen hebt. Geev de Antwort in Dollar an.	"
 Lylahs ursprüngliches Gehalt war 30 % höher als Adriens ursprüngliches Gehalt von $40.000 pro Jahr, also $52.000 pro Jahr. Nachdem beide Gehälter zu gleichen Zeiten gestiegen sind, verdient Adrien $56.000 pro Jahr und Lylah $72.800 pro Jahr, basierend auf einer gleichmäßigen Steigerung von 40 %.
 
@@ -42949,7 +42949,7 @@ Die Frage ist ""rek dat Gesamtgehalt ut"", also berechne das Gesamtgehalt.
 Also, Summe.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	515200.0	0	0	515200	0
 q1b1c6563	Miguel bruukt för't Teiken 2 Teikenblöcke in de weeken. Wenn een Teikenblock 30 Blatt Papier hett, wo veele Blatt Papier bruukt he in een Monat?	"
 Miguel bruukt für die Zeichnung (angenommen, ""Teichen"" ist ein Schreibfehler für ""zeichnen"") 2 Zeichnungsblöcke pro Woche. Wenn ein Zeichnungsblock 30 Blätter Papier hat, dann verwendet er pro Woche:
 
@@ -42987,7 +42987,7 @@ Another thing: the word ""bruukt"" might be a typo. In German, ""braucht"" is th
 So, the calculation remains the same.
 
 Therefore, the number of sheets used in a month is 240.
-"	stop
+"	stop	240.0	0	1		
 qdda5aad8	Morisette un Kael schullen Obst mitbringen. Morisette bröchte 5 Appels un 8 Appelsinen mit, un Kael bröchte dubbel so veele Appels un halb so veele Appelsinen as Morisette. Wo vele Früchte hebbt se tosaomen?	"
 It seems like there might be some typos or autocorrect errors in the question. Let me clarify and solve it based on standard German or English interpretations.
 
@@ -43146,7 +43146,7 @@ Da ich in der Anweisung trainiert wurde, auf Englisch zu antworten, werde ich da
 Also, die Gesamtzahl der Früchte ist 27.
 
 Ich denke, das ist es.
-"	stop
+"	stop	27.0	0	1		
 qbe882310	Sadie hett an'n Mondag 8 Stunnen slaopen. An de nächsten twee daoge hett se jeden dag 2 Stunnen weniger slaopen, weil se noch Upgoben maoken mösste. Wenn se den Rest vun de weeken jede Nacht 1 Stunnen mehr as an disse twee daoge slaopen hett, wo veele Stunnen hett se in de ganze weeken slaopen?	"
 Sadie slaapt op maandag 8 uur.  
 Op dinsdag slaapt ze 2 uur minder, dus 6 uur.  
@@ -43818,7 +43818,7 @@ I think I'll proceed with 38 hours.
 So the total sleep is 38 hours.
 
 But let's write it properly.
-"	stop
+"	stop	38.0	0	0	38	0
 q5531657c	Rosie kann 3 Stunnen lang mit 10 Meilen pro Stunn loopen. Dornao löppt se 5 Meilen pro Stunn. Wo veele Meilen kann se in 7 Stunnen maoken?	"
 Dornao kann in 7 Stunden 35 Meilen laufen."	50	"
 Hmm, lass mich diese Frage überprüfen. Rosie kann 3 Stunden lang mit 10 Meilen pro Stunde laufen, und Dornao läuft 5 Meilen pro Stunde. Die Frage ist, wie viele Meilen Dornao in 7 Stunden laufen kann.
@@ -43840,7 +43840,7 @@ Die Frage ist auf Deutsch, aber ich denke, die Antwort sollte in Meilen sein, wi
 Also, Dornao kann in 7 Stunden 35 Meilen laufen.
 
 Ich denke, das ist die Antwort.
-"	stop
+"	stop	35.0	0	0	35	0
 qafb91192	Jennie helpt in’t Büro von ehr Mudder. Se hett een Staopel mit 60 Breive, de noch frankeert werrn mööt, un een annern Staopel mit Breive, de al frankeert sünd. Se kleevt Marken up een Drüddel vun de Breive, de noch frankeert werrn mööt. Wenn in den Staopel mit de al frankeerten Breive nu 30 Breive sünd, wo veele Breive wörn dor in den Staopel, as Jennie anfangen hett?	"
 De vraag stelt een situatie waarin Jennie briefen met afdrukken (marken) vervult in een kantoor. Er zijn twee stapels: één met 60 ongevulde briefen en één met al vervulde briefen. De vraag is hoeveel briefen er oorspronkelijk in de stapel met al vervulde briefen zaten voordat Jennie begon.
 
@@ -44582,4 +44582,4 @@ Perhaps the al frankeert stapel had some letters, and Jennie added to it.
 But without the number added, we can't find the original.
 
 I think I have to accept that.
-"	stop
+"	stop	0.0	0	0	0	0
