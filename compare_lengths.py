@@ -31,7 +31,7 @@ def lengths(texts, unit):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--unit", choices=["question", "sentence"], default="question")
-    ap.add_argument("--out", default="images/lengths_hist.png")
+    ap.add_argument("--out", default="images/lengths_hist.svg")
     args = ap.parse_args()
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
