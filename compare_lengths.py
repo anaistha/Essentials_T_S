@@ -45,16 +45,16 @@ def main():
     full_len = lengths(full["question"], args.unit)
     sub_len = lengths(subset["question"], args.unit)
 
-    for name, xs in [(f"Original MGSM-Rev2 de (n={len(full)})", full_len),
-                     (f"Selected Subset de (n={len(subset)})", sub_len)]:
+    for name, xs in [(f"MGSM-Rev2 de (n={len(full)} questions)", full_len),
+                     (f"Subset de (n={len(subset)} questions)", sub_len)]:
         s = pd.Series(xs)
         print(f"{name:28s} {args.unit}s={len(s):4d}  mean={s.mean():5.1f}  "
               f"median={s.median():5.1f}  min={s.min()}  max={s.max()}")
 
     bins = range(0, max(full_len + sub_len) + 3, 3 if args.unit == "question" else 2)
     plt.figure(figsize=(8, 4.5))
-    plt.hist(full_len, bins=bins, density=True, alpha=0.5, label=f"MGSM-Rev2 de (250)")
-    plt.hist(sub_len, bins=bins, density=True, alpha=0.5, label=f"Dialect GT de ({len(subset)})")
+    plt.hist(full_len, bins=bins, density=True, alpha=0.5, label=f"MGSM-Rev2 German (n={len(full)} questions)")
+    plt.hist(sub_len, bins=bins, density=True, alpha=0.5, label=f"Subset German (n={len(subset)} questions)")
     plt.xlabel(f"Words per {args.unit}")
     plt.ylabel("Density")
     plt.legend()
