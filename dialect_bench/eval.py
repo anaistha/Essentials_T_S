@@ -31,6 +31,10 @@ With ``--llm``, rows where regex says wrong also get:
 A summary per model and thinking mode is printed and written to
 ``answer_summary.tsv``, and the model x dialect grids to
 ``accuracy_by_dialect.tsv`` (regex) and ``accuracy_by_dialect_llm.tsv`` (LLM judge).
+
+Perturbed German questions are a memorisation check, not a dialect. They are kept out of
+the dialect grids and the overall accuracy, and compared with Standard German in
+``accuracy_perturbed_german.tsv`` (and the ``_llm`` variant when the judge has run).
 """
 
 from __future__ import annotations
@@ -380,10 +384,67 @@ def process_file(path: Path, results_dir: Path, judge: Judge | None = None,
     }
 
 
+def is_perturbation(dialect: str) -> bool:
+    """True for the perturbed German memorisation check, which is not a dialect."""
+    return "perturb" in str(dialect).lower()
+
+
+def accuracy_by_group(frame: pd.DataFrame) -> pd.DataFrame:
+    """Aggregate regex and LLM accuracy per model and thinking mode."""
+    grouped = (
+        frame.groupby(["model", "thinking"], sort=True)
+        .agg(correct=("correct", "sum"), scored=("scored", "sum"),
+             llm_changed=("llm_changed", "sum"), judged=("judged", "sum"), rows=("rows", "sum"))
+    )
+    grouped["regex_accuracy"] = grouped["correct"] / grouped["scored"].where(grouped["scored"] > 0)
+    grouped["llm_accuracy"] = (
+        (grouped["correct"] + grouped["llm_changed"])
+        / grouped["scored"].where(grouped["scored"] > 0)
+    )
+    return grouped
+
+
+def summarize_perturbed(dialects: pd.DataFrame, perturbed: pd.DataFrame, summary_path: Path) -> None:
+    """Compare each model's perturbed German accuracy with its Standard German accuracy."""
+    perturbed_accuracy = accuracy_by_group(perturbed)
+    german = dialects[dialects["dialect"] == "de"]
+    if german.empty:
+        print("warning: no Standard German (de) results, cannot compare the perturbed German accuracy")
+        return
+    german_accuracy = accuracy_by_group(german)
+
+    table = pd.DataFrame(index=perturbed_accuracy.index)
+    table["de_regex"] = german_accuracy["regex_accuracy"]
+    table["perturbed_regex"] = perturbed_accuracy["regex_accuracy"]
+    table["delta_regex"] = (table["perturbed_regex"] - table["de_regex"]).round(4)
+    if perturbed_accuracy["judged"].sum() > 0:
+        table["de_llm"] = german_accuracy["llm_accuracy"]
+        table["perturbed_llm"] = perturbed_accuracy["llm_accuracy"]
+        table["delta_llm"] = (table["perturbed_llm"] - table["de_llm"]).round(4)
+    table = table.round(4).reset_index()
+
+    path = summary_path.with_name("accuracy_perturbed_german.tsv")
+    table.to_csv(path, sep="\t", index=False)
+
+    print()
+    print("perturbed German vs Standard German:")
+    print(table.to_string(index=False, float_format=lambda x: f"{x:.2f}"))
+    print(f"perturbed German comparison written to {path}")
+
+
 def summarize(stats: list[dict], summary_path: Path) -> None:
     frame = pd.DataFrame(stats)
     if frame.empty:
         print("no result files found")
+        return
+
+    # The perturbed German file is a memorisation check, so it must not be averaged into the
+    # dialect accuracy or the overall score. It gets its own table below.
+    perturbed = frame[frame["dialect"].map(is_perturbation)]
+    frame = frame[~frame["dialect"].map(is_perturbation)]
+    if frame.empty:
+        print("no dialect result files found, only perturbed German")
+        summarize_perturbed(frame, perturbed, summary_path)
         return
 
     summary = (
@@ -448,6 +509,9 @@ def summarize(stats: list[dict], summary_path: Path) -> None:
     print(f"regex accuracy by dialect written to {summary_path.with_name('accuracy_by_dialect.tsv')}")
     if summary["judged"].sum() > 0:
         print(f"LLM accuracy by dialect written to {summary_path.with_name('accuracy_by_dialect_llm.tsv')}")
+
+    if not perturbed.empty:
+        summarize_perturbed(frame, perturbed, summary_path)
 
 
 def main() -> None:

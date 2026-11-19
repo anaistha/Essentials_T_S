@@ -41,6 +41,11 @@ This means a normal run evaluates both the `de` reference and the perturbed vari
 accuracy on `mgsm_german_perturbed` can indicate that a model memorised the original wording.
 Generation settings and the full German prompt are saved in `mgsm_german_perturbed.meta.json`.
 
+Perturbed German is a memorisation check, not a dialect, so the evaluation keeps it out of the
+dialect grids and the overall accuracy. `accuracy_perturbed_german.tsv` compares each model's
+perturbed German accuracy with its Standard German accuracy instead (`_llm` columns are included
+after running the judge).
+
 ## Running
 
 ```bash
