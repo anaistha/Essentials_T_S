@@ -1,4 +1,4 @@
-id	prompt	predicted	gt_answer	reasoning	done_reason
+id	prompt	predicted	gt_answer	reasoning	done_reason	extracted_answer	degenerate	correct	llm_answer	llm_correct
 q95453330	Auf dem Bauernmarkt erzielt Janet täglich 2 US-Dollar für jedes frische Entenei, das sie dort verkauft. Ihre Enten legen pro Tag 16 Eier. Davon verwendet Janet vier täglich zum Backen von Muffins für ihre Freunde, während drei jeden Morgen auf ihrem Frühstücksteller landen. Welchen Betrag in Dollar nimmt sie mit den übrigen Eiern pro Tag auf dem Bauernmarkt ein?	"Janet legt täglich **16 Eier**.
 
 Davon werden verbraucht:
@@ -21,7 +21,7 @@ Step by step:
 5. Price per egg: $2
 6. Total earnings: 9 × $2 = $18
 
-So the answer is 18 dollars."	stop
+So the answer is 18 dollars."	stop	18.0	0	1		
 qa55f7050	Für ein Kleid wird halb so viel weiße Wolle benötigt wie die 2 Knäuel blaue Wolle. Wie viele Knäuel sind insgesamt erforderlich?	"Für das Kleid werden **3 Knäuel** insgesamt benötigt.
 
 **Rechnung:**
@@ -38,7 +38,7 @@ So:
 - White wool: half as much as the blue wool = 1/2 × 2 = 1 ball
 - Total: 2 + 1 = 3 balls
 
-The answer is 3 Knäuel (balls)."	stop
+The answer is 3 Knäuel (balls)."	stop	3.0	0	1		
 qde1bef8b	Josh steigert den Wert eines Hauses um 150% indem er es für $80.000 kauft und nochmal weitere $50.000 in Reparaturen steckt. Josh möchte das Haus wieder verkaufen. Welchen Gewinn erzielt er dabei in Dollar?	"Josh erzielt einen Gewinn von **$70.000**.
 
 Hier ist die Berechnung:
@@ -79,7 +79,7 @@ Yes, that seems correct.
 
 Alternative interpretation: Maybe ""steigert den Wert um 150%"" refers to the total investment? But that would be unusual. Usually, value increase refers to the property value, not the investment. And the purchase price is the baseline for the property value.
 
-So the answer should be $70,000."	stop
+So the answer should be $70,000."	stop	70000.0	0	1		
 q568beb1f	Ein Kurzstreckenlauf beträgt 60 Meter. James nimmt sich vor, jede Woche 3-mal laufen zu gehen. Bei jedem Lauf macht er dabei 3 Kurzstreckenläufe. Wie viele Meter legt James pro Woche insgesamt zurück?	"James legt pro Woche insgesamt **540 Meter** zurück.
 
 **Rechenweg:**
@@ -110,12 +110,12 @@ Oder:
 
  Answer: 540 meters.
 
- I should provide the answer in German since the question is in German."	stop
+ I should provide the answer in German since the question is in German."	stop	540.0	0	1		
 q84afe4d6	Um den Hühnern gesund zu erhalten, versorgt Wendi jedes Tier täglich mit drei Tassen gemischtem Hühnerfutter, bestehend aus Samen, Mehlwürmern und Gemüse. Die Tagesration wird auf drei getrennte Mahlzeiten verteilt, wobei die Hühnerschar insgesamt 20 Hühner umfasst. Am Morgen erhalten die Tiere 15 Tassen Futter, am Nachmittag weitere 25 Tassen. Wie groß ist die Menge an Futter in Tassen, die Wendi für die letzte Mahlzeit des Tages benötigt?	"Wendi benötigt für die letzte Mahlzeit **20 Tassen** Futter.
 
 (20 Hühner × 3 Tassen = 60 Tassen gesamt; 60 − 15 − 25 = 20)"	20	"We need answer in German. Need solve. Let's parse problem carefully. User asks: ""Um den Hühnern gesund zu erhalten, versorgt Wendi jedes Tier täglich mit drei Tassen gemischtem Hühnerfutter, bestehend aus Samen, Mehlwürmern und Gemüse. Die Tagesration wird auf drei getrennte Mahlzeiten verteilt, wobei die Hühnerschar insgesamt 20 Hühner umfasst. Am Morgen erhalten die Tiere 15 Tassen Futter, am Nachmittag weitere 25 Tassen. Wie groß ist die Menge an Futter in Tassen, die Wendi für die letzte Mahlzeit des Tages benötigt?""
 
-Need compute total daily feed = 20 chickens * 3 cups = 60 cups. Morning 15, afternoon 25, last = 60 - 15 - 25 = 20 cups. Need answer maybe ""20 Tassen"". Ensure no trick? Let's examine wording: ""jedes Tier täglich mit drei Tassen ... Die Tagesration wird auf drei getrennte Mahlzeiten verteilt, wobei die Hühnerschar insgesamt 20 Hühner umfasst. Am Morgen erhalten die Tiere 15 Tassen Futter, am Nachmittag weitere 25 Tassen."" Yes total 60. Last meal 20. Need maybe mention. Final concise."	stop
+Need compute total daily feed = 20 chickens * 3 cups = 60 cups. Morning 15, afternoon 25, last = 60 - 15 - 25 = 20 cups. Need answer maybe ""20 Tassen"". Ensure no trick? Let's examine wording: ""jedes Tier täglich mit drei Tassen ... Die Tagesration wird auf drei getrennte Mahlzeiten verteilt, wobei die Hühnerschar insgesamt 20 Hühner umfasst. Am Morgen erhalten die Tiere 15 Tassen Futter, am Nachmittag weitere 25 Tassen."" Yes total 60. Last meal 20. Need maybe mention. Final concise."	stop	20.0	0	1		
 qd07ea681	Für seine neue Wohnung benötigt Kylar 16 Gläser und geht deshalb in ein Geschäft. Jedes zweite Glas ist um 40% reduziert und der normale Preis für ein Glas beträgt 5 Dollar. Welchen Betrag muss er dafür bezahlen?	"Kylar benötigt 16 Gläser. Jedes zweite Glas (also die Gläser 2, 4, 6, 8, 10, 12, 14 und 16) ist um 40 % reduziert.
 
 Das bedeutet:
@@ -152,7 +152,7 @@ Normal: 8 × 5 = 40
 Reduced: 8 × (5 × 0.6) = 8 × 3 = 24
 Total: 64
 
-The answer is $64."	stop
+The answer is $64."	stop	64.0	0	1		
 q912b86d0	"Seattle hat 20 Schafe. Charleston besitzt 4-mal so viele Schafe wie Seattle, und Toulouse hat zweimal so viele Schafe wie Charleston. Welche Gesamtzahl an Schafen ergibt sich für Toulouse, Charleston und Seattle zusammen?"""	"Hier ist die Berechnung:
 
 - **Seattle:** 20 Schafe
@@ -172,7 +172,7 @@ Calculations:
 - Toulouse: 2 × 80 = 160
 - Total: 20 + 80 + 160 = 260
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	260.0	0	1		
 q147b7c11	Wie lange dauert es, bis Carla die Datei vollständig heruntergeladen hat? Die Datei ist 200 GB groß, und üblicherweise schafft Carla eine Downloadgeschwindigkeit von 2 GB/Minute. Windows erzwingt jedoch einen Neustart zur Installation von Updates, sobald 40 % des Downloads abgeschlossen sind. Dieser Vorgang nimmt 20 Minuten in Anspruch. Anschließend muss Carla den Download noch einmal ganz neu starten.	"Carla benötigt insgesamt **160 Minuten** (also **2 Stunden und 40 Minuten**), bis die Datei vollständig heruntergeladen ist.
 
 Hier die Rechnung:
@@ -221,7 +221,7 @@ Hier die Rechnung:
 
  The answer should be in German since the question is in German.
 
- 160 Minuten or 2 Stunden und 40 Minuten."	stop
+ 160 Minuten or 2 Stunden und 40 Minuten."	stop	160.0	0	1		
 qead07ed2	John ist mit dem Auto unterwegs und hat etwas zu Hause vergessen. Er dreht um, möchte in 4 Stunden nach Hause kommen aber steht zunächst 2 Stunden im Stau. Danach legt er eine halbe Stunde mit 30 Meilen/Stunde zurück. Erst anschließend kann er für die verbleibende Zeit von 4 Stunden mit 80 Meilen/Stunde weiterfahren. Wie weit ist er nach 4 Stunden noch von zu Hause entfernt, wenn er für den Hinweg 3 Stunden mit 60 Meilen/Stunde gefahren ist.	"John war nach dem Hinweg:
 
 \[
@@ -264,7 +264,7 @@ Prüfen, ob es eine Falle gibt: ""Er dreht um, möchte in 4 Stunden nach Hause k
 
 Lösung: 45 Meilen.
 
-Antwort auf Deutsch."	stop
+Antwort auf Deutsch."	stop	45.0	0	1		
 q5cb246e4	Eliza bekommt einen Stundenlohn von 10 US-Dollar, während Überstunden nochmal 20% auf den normalen Stundensatz draufpacken. Überstunden werden gezahlt nachdem sie 40 Stunden für die Woche voll hat. Welchen Betrag verdient sie, wenn sie diese Woche 45 Stunden arbeitet?	"Eliza verdient diese Woche **460 US-Dollar**.
 
 Hier die Rechnung:
@@ -286,7 +286,7 @@ Total earnings:
 - Overtime pay: 5 × $12 = $60
 - Total: $400 + $60 = $460
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	460.0	0	1		
 q3bdd7b1e	Im ersten Monat wurde ein neues Programm 60-mal heruntergeladen. Die Downloads stiegen im zweiten Monat um 200% und gingen im dritten Monat um 30 % zurück. Wie oft wurde das Programm in diesen drei Monaten insgesamt heruntergeladen?	"Hier ist die Berechnung Schritt für Schritt:
 
 **1. Monat:** 60 Downloads
@@ -320,14 +320,14 @@ Das Programm wurde in den drei Monaten insgesamt **366-mal** heruntergeladen."	3
 
  Gesamt: 60 + 180 + 126 = 366
 
- Ich sollte die Schritte klar erklären."	stop
+ Ich sollte die Schritte klar erklären."	stop	366.0	0	1		
 q19a4029d	In der Bäckerei erwarb Toula verschiedene Arten von Gebäck. Für 55 US-Dollar pro Dutzend kaufte sie 6 Dutzend Mini-Cheesecakes. Hinzu kamen 2 Dutzend Mini-Cupcakes zu 80 US-Dollar pro Dutzend sowie 3 Dutzend Donuts, deren Preis bei 68 US-Dollar pro Dutzend lag. Welcher Betrag ergab sich als Gesamtkosten?	"Die Gesamtkosten betrugen:
 
 - 6 Dutzend Mini-Cheesecakes: \(6 \times 55 = 330\) US-Dollar  
 - 2 Dutzend Mini-Cupcakes: \(2 \times 80 = 160\) US-Dollar  
 - 3 Dutzend Donuts: \(3 \times 68 = 204\) US-Dollar  
 
-**Gesamt: \(330 + 160 + 204 = 694\) US-Dollar**"	694	We need answer in German. Need compute total cost. Let's parse: 6 dozen mini cheesecakes at $55/dozen = 6*55=330. 2 dozen mini cupcakes at $80/dozen = 160. 3 dozen donuts at $68/dozen = 204. Total = 330+160+204=694. Need respond concise.	stop
+**Gesamt: \(330 + 160 + 204 = 694\) US-Dollar**"	694	We need answer in German. Need compute total cost. Let's parse: 6 dozen mini cheesecakes at $55/dozen = 6*55=330. 2 dozen mini cupcakes at $80/dozen = 160. 3 dozen donuts at $68/dozen = 204. Total = 330+160+204=694. Need respond concise.	stop	694.0	0	1		
 qf0063e65	Ein Zitronenbaum trägt jedes Jahr 7 Zitronen. Eine Zitrone kann für 1,5 $ verkauft werden, aber Dünger und Wasser kosten Carlos gemeinsam 3 $ pro Jahr. Er hat 90 $ für das Pflanzen des baumes gezahlt. Ab welchem Jahr erzielt er mit dem Zitronenbaum einen Gesamtgewinn?	"Hier ist die Berechnung:
 
 **Jährlicher Nettogewinn:**
@@ -372,7 +372,7 @@ Nach 12 Jahren ist der Gewinn genau 0 $ (Break-even). Ab dem **13. Jahr** erziel
 
  Also ab dem 13. Jahr.
 
- Ich sollte die Antwort klar strukturieren."	stop
+ Ich sollte die Antwort klar strukturieren."	stop	13.0	0	1		
 q410b0ab2	Melanie, die Handelsvertreterin ist, hat am Ende des Tages noch 5 Staubsauger übrig. Mit wie vielen hat sie angefangen? Verkauft hat sie zunächst ein Drittel ihrer Staubsauger im grünen Haus. Anschließend waren es 2 weitere im roten Haus, bevor sie im orangenen Haus die Hälfte der Übriggebliebenen verkaufen konnte.	"Melanie hat mit **18 Staubsaugern** angefangen.
 
 **Rechenweg (rückwärts oder vorwärts):**
@@ -417,7 +417,7 @@ End: 5 ✓
 
 So the answer is 18.
 
-I should present this clearly in German."	stop
+I should present this clearly in German."	stop	5.0	0	0	18	1
 qa0520340	20% der Schüler in einer Tanzstunde melden sich für Contemporary Dance an. Von den übrigen melden sich 25% für Jazz Dance an und der Rest für Hip-Hop. Insgemsamt gibt es 20 Schüler in dem Kurs. Wie viel Prozent der Schüler machen Hip-Hop?	"**60%** der Schüler machen Hip-Hop.
 
 **Lösungsweg:**
@@ -459,7 +459,7 @@ qa0520340	20% der Schüler in einer Tanzstunde melden sich für Contemporary Dan
 
  Answer: 60%
 
- I should provide the solution clearly in German."	stop
+ I should provide the solution clearly in German."	stop	60.0	0	1		
 q9ae19f0a	Der Finanzberater eines Händlers prognostiziert für denselben Monat einen Anstieg des Schmuckmarkts um 2,5 % und des Markts für Elektrogeräte um 1,2 %. Der Händler steht vor der Kaufentscheidung zwischen 2 Kaufoptionen: Schmuck im Wert von 5.000 US-Dollar und Elektronikgeräte im Wert von 8.000 US-Dollar. Welchen Gewinn erzielt er Ende des Monats, wenn er sich für die Option entscheidet, die seinen Gewinn maximiert?	"Der Gewinn bei Schmuck beträgt:
 
 \[
@@ -476,7 +476,7 @@ Die gewinnmaximierende Option ist also der Kauf von Schmuck.
 
 **Gewinn: 125 US-Dollar**"	125	"Wir müssen die Frage verstehen. Der Finanzberater prognostiziert für denselben Monat einen Anstieg des Schmuckmarkts um 2,5 % und des Markts für Elektrogeräte um 1,2 %. Der Händler steht vor der Kaufentscheidung zwischen 2 Kaufoptionen: Schmuck im Wert von 5.000 USD und Elektronikgeräte im Wert von 8.000 USD. Welchen Gewinn erzielt er Ende des Monats, wenn er sich für die Option entscheidet, die seinen Gewinn maximiert?
 
-Wir müssen berechnen: Gewinn bei Schmuck = 5000 * 2,5% = 125 USD. Gewinn bei Elektronik = 8000 * 1,2% = 96 USD. Maximaler Gewinn = 125 USD. Antwort: 125 US-Dollar."	stop
+Wir müssen berechnen: Gewinn bei Schmuck = 5000 * 2,5% = 125 USD. Gewinn bei Elektronik = 8000 * 1,2% = 96 USD. Maximaler Gewinn = 125 USD. Antwort: 125 US-Dollar."	stop	125.0	0	1		
 q93563595	Zwei Züge fahren am selben Tag 80 Meilen nach Westen von San Rafael aus. Am nächsten Tag geht es gen Norden, wobei sie 150 Meilen zurücklegen. Wie weit fährt jeder der Züge insgesamt an den 2 Tagen?	"Jeder der beiden Züge fährt insgesamt **230 Meilen** an den zwei Tagen.
 
 **Berechnung:**
@@ -499,7 +499,7 @@ I should answer in German since the question is in German.
 
 Calculation: 80 + 150 = 230 Meilen.
 
-So the answer is 230 Meilen (or 230 miles)."	stop
+So the answer is 230 Meilen (or 230 miles)."	stop	230.0	0	1		
 q33756eb7	Wie hoch ist Jills Jahresgehalt, wenn sie 50 Wochen pro Jahr arbeitet? Dabei unterrichtet sie 35 Wochen pro Woche als Lehrerin und arbeitet 15 Stunden pro Woche als Cheerleader-Coach. Als Lehrerin erhält sie 20 US-Dollar pro Stunde, als Cheerleader-Coach 30 US-Dollar.	"Jills Jahresgehalt beträgt **57.500 US-Dollar**.
 
 Hier ist die Berechnung:
@@ -524,7 +524,7 @@ Calculation:
 - Total weekly income: $700 + $450 = $1,150
 - Annual income: $1,150 × 50 weeks = $57,500
 
-I should present this clearly in German."	stop
+I should present this clearly in German."	stop	57500.0	0	1		
 qfb254292	Für ein Frühstücksomelett benötigt Claire täglich 3 Eier. Welche Menge in Dutzend Eiern verzehrt sie in 4 Wochen?	"Claire verzehrt in 4 Wochen **7 Dutzend** Eier.
 
 **Rechnung:**
@@ -545,7 +545,7 @@ Calculation:
 
 So the answer is 7 dozen eggs.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	7.0	0	1		
 qc100123d	Marissa wandert los und legt in der 1. Stunde 4 Meilen zurück. Danach braucht sie für die nächsten 2 Meilen eine weitere Stunde. Die gesamte Strecke beträgt 12 Meilen, wie schnell muss sie laufen (Meilen pro Stunde), damit sie am Ende mit ihrer Wunschgeschwindigkeit von 4 Meilen pro Stunde im Durchschnitt ankommt?	"Marissa muss mit **6 Meilen pro Stunde** laufen.
 
 **Rechnung:**
@@ -581,7 +581,7 @@ Remaining:
 
 So she must run 6 miles per hour.
 
-I should answer in German since the question is in German."	stop
+I should answer in German since the question is in German."	stop	6.0	0	1		
 q26866cba	Ich habe ein Ananasgetränk das zu drei fünfteln aus Wasser besteht und möchte es mit einem Orangengetränk mischen, welches einen Wasseranteil von zwei dritteln hat. Beim Mischen verschütte ich ausversehen einen Liter vom Orangengetränk. Wie viele Liter Wasser sind in dem gemischten Getränk am Ende?	"Um die Aufgabe lösen zu können, fehlen leider die Angaben, **wie viele Liter** du ursprünglich vom Ananasgetränk und vom Orangengetränk hattest.
 
 Wenn du mir sagst, dass du z. B. $x$ Liter Ananasgetränk und $y$ Liter Orangengetränk hattest, kann ich dir die Formel geben:
@@ -620,7 +620,7 @@ Aber warte - vielleicht soll ich es allgemein ausdrücken? Wenn x Liter Ananasge
 
 Aber ohne x und y kann ich keine konkrete Zahl nennen.
 
-Ich werde antworten, dass die Mengenangaben fehlen."	stop
+Ich werde antworten, dass die Mengenangaben fehlen."	stop	1.0	0	0		0
 qa856d9dc	Samantha und Raymond sind Cousins, wobei Raymond 6 Jahre früher zur Welt kam als Samantha. Jetzt ist Samantha 31 Jahre alt. Wenn Raymond im Alter von 23 Jahren Vater geworden ist, wie alt ist der Sohn jetzt?	"Raymond ist 6 Jahre älter als Samantha, also jetzt **37 Jahre alt** (31 + 6).
 
 Er wurde mit 23 Jahren Vater, das war also vor **14 Jahren** (37 − 23).
@@ -648,7 +648,7 @@ Let me double-check:
 - Years since then: 37 - 23 = 14
 - Son's age: 14
 
-Yes, the answer is 14."	stop
+Yes, the answer is 14."	stop	14.0	0	1		
 q72ea27fb	Billy verkauft am Dienstag DVDs und hat 8 Kunden. Seine letzten 3 Kunden kaufen keine DVD, während die 2 vorherigen Kunden jeweils 2 DVDs gekauft haben. Seine ersten 3 Kunden kaufen jeweils eine DVD. Wie viele DVDs hat Billy am Dienstag verkauft?	"Billy hat am Dienstag **7 DVDs** verkauft.
 
 Hier die Rechnung:
@@ -675,7 +675,7 @@ Calculation:
 
 Total: 3 + 4 + 0 = 7 DVDs
 
-So Billy sold 7 DVDs on Tuesday."	stop
+So Billy sold 7 DVDs on Tuesday."	stop	7.0	0	1		
 qa62b2b0f	Brennt eine Kerze von 13 Uhr bis 17 Uhr, um wie viele Zentimeter wird sie dann kürzer? Während des Brennens schmilzt sie stündlich um 2 Zentimeter.	"Die Kerze brennt von 13 Uhr bis 17 Uhr **4 Stunden** lang.
 
 Bei 2 Zentimetern pro Stunde wird sie kürzer um:
@@ -690,7 +690,7 @@ Calculation:
 - From 13:00 (1 PM) to 17:00 (5 PM) is 4 hours.
 - 4 hours × 2 cm/hour = 8 cm.
 
-So the candle becomes 8 centimeters shorter."	stop
+So the candle becomes 8 centimeters shorter."	stop	8.0	0	1		
 qaadc02d2	Kyle hat 25 % Rabatt auf einen Bestseller des vergangenen Jahres erhalten und am Ende nur 19,50 US-Dollar gezahlt. Wie viel hat das Buch ursprünglich gekostet?	"Das Buch hat ursprünglich **26,00 US-Dollar** gekostet.
 
 **Rechenweg:**
@@ -715,7 +715,7 @@ So:
 
 So the original price was $26.00.
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	26.0	0	1		
 q4c88eb07	Marie hat 50 US-Dollar für ihre gesamte Bestellung ausgegeben. Darin enthalten waren ein paar Schachteln Pizza, die jeweils 8,50 US-Dollar gekostet haben. Außerdem bezahlte sie für 5 Packungen Milch jeweils 3 US-Dollar und für 4 Äpfel jeweils 1,50 US-Dollar. Das bestellte Hühnchengericht schlug mit 12 US-Dollar zu Buche. Wie viele Schachteln Pizza hat sie bestellt?	"Marie hat **2 Schachteln Pizza** bestellt.
 
 **Rechenweg:**
@@ -752,7 +752,7 @@ Let me verify:
 - Chicken: 12
 Total: 17 + 15 + 6 + 12 = 50 ✓
 
-The answer is 2 boxes of pizza."	stop
+The answer is 2 boxes of pizza."	stop	2.0	0	1		
 qc76b9ef5	Ein Paar Schuhe kostet 42 US-Dollar, ein Paar Shorts 16,50 US-Dollar und eine Hose 22,50 US-Dollar. Gekauft hat Mishka 3 Paar Schuhe, 3 Hosen und 3 Paar Shorts. Wie viel hat er insgesamt gezahlt?	"Mishka hat insgesamt **243 US-Dollar** gezahlt.
 
 **Berechnung:**
@@ -783,7 +783,7 @@ Alternatively, since he bought 3 of each:
 Total per set = $42 + $22.50 + $16.50 = $81
 Total for 3 sets = 3 × $81 = $243
 
-The answer is $243 or 243 US-Dollar."	stop
+The answer is $243 or 243 US-Dollar."	stop	243.0	0	1		
 qc792d70c	Cynthia kauft Eiscremekartons, die jeweils 15 Portionen Eis enthalten und 4,00 US-Dollar pro Karton kosten. Jeden Abend verzehrt sie eine Portion Eiscreme. Wie viel hat sie nach 60 Tagen für Eiscreme gezahlt?	"Cynthia isst in 60 Tagen **60 Portionen** Eiscreme (1 Portion pro Tag).
 
 Da jeder Karton 15 Portionen enthält, benötigt sie:
@@ -807,7 +807,7 @@ Step 3: Calculate total cost.
 
 So the answer is $16.00 or 16 US-Dollar.
 
-Let me write this in German since the question is in German."	stop
+Let me write this in German since the question is in German."	stop	16.0	0	1		
 qb804efac	Henry macht eine Fahrradtour und hält 2 mal an. Das erste mal nach 20 Meilen und dann noch einmal 15 Meilen vor dem Ende. Insgesamt ist die Strecke 60 Meilen lang. Wie weit in Meilen ist er zwischen Stop 1 und 2 gefahren?	"Henry ist zwischen Stop 1 und Stop 2 **25 Meilen** gefahren.
 
 **Rechnung:**
@@ -827,7 +827,7 @@ So:
 - Stop 2: 15 miles before the end (so at 60 - 15 = 45 miles)
 - Distance between Stop 1 and Stop 2: 45 - 20 = 25 miles
 
-The answer is 25 miles."	stop
+The answer is 25 miles."	stop	25.0	0	1		
 qf837eb68	Beim Schuhe-Shopping entdeckt Gloria sowohl ein Paar Stiefel, das zu ihrem Budget passt, als auch zwei Paar High Heels. Sie kann sich jedoch nicht für beides entscheiden. Die High Heels kosten zusammen fünf Dollar weniger als die Stiefel. Wie hoch ist der Preis der Stiefel, wenn ein Paar High Heels 33 US-Dollar kostet und für das andere doppelt so viel zu bezahlen ist?	"Die Stiefel kosten **104 US-Dollar**.
 
 Rechnung:  
@@ -836,7 +836,7 @@ Rechnung:
 - Zusammen: 99 $  
 - Die Stiefel kosten 5 $ mehr: 99 $ + 5 $ = **104 $**"	104	"We need answer in German. Need solve. Let's parse problem carefully. User asks: ""Beim Schuhe-Shopping entdeckt Gloria sowohl ein Paar Stiefel, das zu ihrem Budget passt, als auch zwei Paar High Heels. Sie kann sich jedoch nicht für beides entscheiden. Die High Heels kosten zusammen fünf Dollar weniger als die Stiefel. Wie hoch ist der Preis der Stiefel, wenn ein Paar High Heels 33 US-Dollar kostet und für das andere doppelt so viel zu bezahlen ist?""
 
-Need compute. One pair high heels $33, other double = $66. Together = $99. High heels together cost five dollars less than boots. So boots = 99 + 5 = $104. Need answer maybe ""104 US-Dollar"". Need maybe mention. Ensure no trick? Let's read German: ""Die High Heels kosten zusammen fünf Dollar weniger als die Stiefel."" Means the high heels (both pairs) cost together five dollars less than the boots. Yes. ""Wie hoch ist der Preis der Stiefel, wenn ein Paar High Heels 33 US-Dollar kostet und für das andere doppelt so viel zu bezahlen ist?"" Other double of 33 = 66. Sum 99. Boots 104. Final concise."	stop
+Need compute. One pair high heels $33, other double = $66. Together = $99. High heels together cost five dollars less than boots. So boots = 99 + 5 = $104. Need answer maybe ""104 US-Dollar"". Need maybe mention. Ensure no trick? Let's read German: ""Die High Heels kosten zusammen fünf Dollar weniger als die Stiefel."" Means the high heels (both pairs) cost together five dollars less than the boots. Yes. ""Wie hoch ist der Preis der Stiefel, wenn ein Paar High Heels 33 US-Dollar kostet und für das andere doppelt so viel zu bezahlen ist?"" Other double of 33 = 66. Sum 99. Boots 104. Final concise."	stop	104.0	0	1		
 qa2455bce	Aktuell sind Darrell und Allen zusammen 162 Jahre alt, und ihr Altersverhältnis liegt bei 7:11. Wie alt ist Allen in 10 Jahren?	"Darrell und Allen haben aktuell ein Altersverhältnis von 7:11.
 
 Sei $x$ der gemeinsame Faktor:
@@ -866,7 +866,7 @@ Let me solve:
 - Allen's current age = 11x = 11 × 9 = 99
 - In 10 years, Allen will be 99 + 10 = 109
 
-So the answer is 109 years old."	stop
+So the answer is 109 years old."	stop	109.0	0	1		
 q166f163a	Wie hoch ist die durchschnittliche Schätzung der drei Freunde, die Gunter beim Zählen der Gummibärchen im Glas um ihre Meinung bittet? Der Erste vermutet 80 Gummibärchen. Der andere schätzt 20 mehr als die Hälfte dieser Zahl, und ein Dritter geht von 25 % mehr aus als der Erste.	"Die durchschnittliche Schätzung beträgt **80 Gummibärchen**.
 
 Hier die Rechnung im Detail:
@@ -889,7 +889,7 @@ Gegeben:
 Berechnung des Durchschnitts:
 (80 + 60 + 100) / 3 = 240 / 3 = 80
 
-Die durchschnittliche Schätzung ist also 80 Gummibärchen."	stop
+Die durchschnittliche Schätzung ist also 80 Gummibärchen."	stop	80.0	0	1		
 q3966df43	Für einen Spaziergang und um sein Geschäft zu erledigen, benötigt jeder der 10 Hunde, um die sich John kümmert, täglich 0,5 Stunden. Wie viele Stunden pro Woche widmet John insgesamt der Betreuung der Hunde?	"John widmet den Hunden insgesamt **35 Stunden pro Woche**.
 
 **Berechnung:**
@@ -910,7 +910,7 @@ Total hours per week = 10 dogs × 0.5 hours/dog/day × 7 days/week
 = 5 × 7
 = 35 hours
 
-So the answer is 35 hours per week."	stop
+So the answer is 35 hours per week."	stop	35.0	0	1		
 q28184d6c	Gretchen besitzt insgesamt 110 Münzen, wobei sie 30 Silbermünzen weniger hat als Goldmünzen. Wie viele Goldmünzen hat sie?	"Gretchen hat **70 Goldmünzen**.
 
 **Lösung:**
@@ -947,7 +947,7 @@ So she has 70 gold coins.
 
 Check: If G = 70, then S = 70 - 30 = 40. Total = 70 + 40 = 110. Correct.
 
-The answer is 70 gold coins."	stop
+The answer is 70 gold coins."	stop	70.0	0	1		
 q5f9dc683	Raymond hat 40 Schmuckstücke. Siobhan besitzt 2 weniger als Aaron, welcher 5 Schmuckstücke mehr als die Hälfte von Raymond besitzt. Wie viele Schmuckstücke hat Siobhan?	"Raymond hat 40 Schmuckstücke.
 
 **Schritt 1:** Berechne die Hälfte von Raymonds Schmuckstücken:
@@ -974,7 +974,7 @@ Step 4: Siobhan = Aaron - 2 = 25 - 2 = 23
 
 So Siobhan has 23 pieces of jewelry.
 
-Let me write the answer in German since the question was in German."	stop
+Let me write the answer in German since the question was in German."	stop	23.0	0	1		
 q9501d333	In den ersten 20 Minuten beim Pingpong erzielt Mike 4 Punkte. Danach erzeilt er 25 % mehr Punkte in weiteren 20 Minuten. Er speilt also insgesamt für 40 Minuten. Wie viele Punkte hat er am Ende?	"Mike erzielt in den ersten 20 Minuten **4 Punkte**.
 
 In den nächsten 20 Minuten erzielt er 25 % mehr:
@@ -998,7 +998,7 @@ Solution:
 
 Or calculated as: 4 × 1.25 = 5, then 4 + 5 = 9.
 
-The answer is 9 points."	stop
+The answer is 9 points."	stop	9.0	0	1		
 q0e0fa86b	Der Preis für Joghurt beträgt derzeit 5,00 US-Dollar für 4 Joghurts. Terry verzehrt täglich 2 Joghurts. Wie hoch sind seine Ausgaben für Joghurt innerhalb von 30 Tagen?	"Terry isst in 30 Tagen insgesamt:
 
 **2 Joghurts/Tag × 30 Tage = 60 Joghurts**
@@ -1032,7 +1032,7 @@ Seine Gesamtausgaben betragen daher:
 
  Both methods give $75.00.
 
- The answer is $75.00 or 75 US-Dollar."	stop
+ The answer is $75.00 or 75 US-Dollar."	stop	75.0	0	1		
 q126bbbaa	John möchte seine Spielsachen verkaufen und anschließend Videospiele davon kaufen. Für jedes Lego-Set erhält er $15 im Verkauf. Er hat 13 Leego-Sets die er verkaufen kann. Schließlich kauft er 8 Videospiele für jeweils $20 und hat danach noch $5 übrig. Wie viele Lego-Sets besitzt er jetzt noch?	"John besitzt jetzt noch **2 Lego-Sets**.
 
 **Lösungsweg:**
@@ -1071,7 +1071,7 @@ Let me verify:
 - Left with: $165 - $160 = $5 ✓
 - Originally had 13, sold 11, so has 2 left.
 
-The answer is 2."	stop
+The answer is 2."	stop	2.0	0	1		
 q5c1bd624	John geht 3 Tage pro Woche laufen und legt dabei insgesamt 60 Meilen zurück. Am ersten Tag ist er 3 Stunden laufen, die anderen Tage jeweils nur die Hälfte davon. Wie schnell läuft er im Durchschnitt in Meilen pro Stunde?	"John läuft insgesamt **10 Meilen pro Stunde** im Durchschnitt.
 
 **Berechnung:**
@@ -1102,7 +1102,7 @@ Let me double-check:
 
 The answer is 10 miles per hour.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	10.0	0	1		
 q02f06b34	In sechs Stunden legt Dana ein Drittel der Zeit laufend und zwei Drittel der Zeit gehend zurück. Ihre Hüpfgeschwindigkeit beträgt 3 Meilen pro Stunde, wobei sie nur mit der Hälfte ihrer Laufgeschwindigkeit hüpfen kann. Beim Laufen ist sie viermal so schnell wie beim Gehen. Welche Strecke in Meilen kann sie unter diesen Bedingungen zurücklegen?	"Dana läuft \( \frac{1}{3} \) von 6 Stunden = 2 Stunden und geht \( \frac{2}{3} \) von 6 Stunden = 4 Stunden.
 
 Ihre Hüpfgeschwindigkeit ist 3 Meilen pro Stunde, das ist die Hälfte ihrer Laufgeschwindigkeit.  
@@ -1136,7 +1136,7 @@ Need produce final in German maybe with calculation. Ensure no issue: ""Hüpfges
 
 Need maybe mention if ""ein Drittel der Zeit"" of six hours = 2h, ""zwei Drittel"" = 4h. Laufgeschwindigkeit = 2*3 = 6 mph. Gehgeschwindigkeit = 6/4 = 1.5 mph. Strecke = 2*6 + 4*1.5 = 18 miles.
 
-Final answer."	stop
+Final answer."	stop	18.0	0	1		
 qd6dd82e1	Ein Alter von 1 Jahr wird für Suzys iPhone angegeben. Bens iPhone weist das doppelte Alter davon auf, während Brandons iPhone viermal so alt ist wie Bens iPhone. Wie alt ist das iPhone von Brandon?	"Brandons iPhone ist **8 Jahre** alt.
 
 Hier die Rechnung:
@@ -1152,13 +1152,13 @@ Step 3: Brandon's iPhone = 4 × Ben's iPhone = 4 × 2 = 8 years
 
 So Brandon's iPhone is 8 years old.
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	8.0	0	1		
 q425db7e5	Hoch oben auf dem Berg Farbo thronte der große Drachen Perg und versengte mit seinem Feuer alles im Umkreis von 1000 Fuß. Die einzige bekannte Waffe, mit der der Drache bezwungen werden konnte, war der goldene Speer. Ohne den Saphir-Edelstein konnte Polly diesen Speer 400 Fuß weit werfen, womit sie sich gut innerhalb der Reichweite der Flammen des Drachen befände. Hielt sie den Saphir-Edelstein jedoch in den Händen, erreichte der Speer die dreifache Wurfweite. Unter der Voraussetzung, dass Polly den Edelstein in den Händen hielte: In welcher Entfernung außerhalb der Reichweite der Flammen des Drachen könnte sie stehen und den Drachen trotzdem noch mit dem goldenen Speer treffen?	"Polly kann mit dem Saphir den Speer **1200 Fuß** weit werfen.
 
 Die Flammen des Drachen reichen **1000 Fuß** weit.  
 Außerhalb dieser Reichweite kann sie also bis zu **200 Fuß außerhalb der Flammen** stehen – also in **1200 Fuß Entfernung** – und den Drachen trotzdem treffen."	200	"Wir müssen die Frage beantworten. Der Text: Drache auf Berg Farbo, versengt alles im Umkreis von 1000 Fuß. Goldener Speer. Ohne Saphir 400 Fuß Wurfweite. Mit Saphir dreifache Wurfweite = 1200 Fuß. Frage: Unter Voraussetzung, dass Polly den Edelstein in den Händen hielte: In welcher Entfernung außerhalb der Reichweite der Flammen könnte sie stehen und den Drachen trotzdem noch treffen?
 
-Reichweite der Flammen 1000 Fuß. Mit Saphir Wurfweite 1200 Fuß. Außerhalb der Reichweite der Flammen bedeutet Entfernung > 1000 Fuß. Maximale Entfernung, aus der sie treffen kann, ist 1200 Fuß. Also kann sie in jeder Entfernung zwischen 1000 und 1200 Fuß stehen? ""In welcher Entfernung außerhalb der Reichweite ... könnte sie stehen und den Drachen trotzdem noch treffen?"" Wahrscheinlich Antwort: bis zu 200 Fuß außerhalb der Flammenreichweite, also bei 1200 Fuß Entfernung (oder zwischen 1000 und 1200 Fuß). Genauer: 1200 Fuß vom Drachen entfernt, das ist 200 Fuß außerhalb der 1000-Fuß-Flammen. Die Frage fragt ""In welcher Entfernung außerhalb der Reichweite der Flammen ... könnte sie stehen"" -> 200 Fuß außerhalb. Wir antworten auf Deutsch. Einfach."	stop
+Reichweite der Flammen 1000 Fuß. Mit Saphir Wurfweite 1200 Fuß. Außerhalb der Reichweite der Flammen bedeutet Entfernung > 1000 Fuß. Maximale Entfernung, aus der sie treffen kann, ist 1200 Fuß. Also kann sie in jeder Entfernung zwischen 1000 und 1200 Fuß stehen? ""In welcher Entfernung außerhalb der Reichweite ... könnte sie stehen und den Drachen trotzdem noch treffen?"" Wahrscheinlich Antwort: bis zu 200 Fuß außerhalb der Flammenreichweite, also bei 1200 Fuß Entfernung (oder zwischen 1000 und 1200 Fuß). Genauer: 1200 Fuß vom Drachen entfernt, das ist 200 Fuß außerhalb der 1000-Fuß-Flammen. Die Frage fragt ""In welcher Entfernung außerhalb der Reichweite der Flammen ... könnte sie stehen"" -> 200 Fuß außerhalb. Wir antworten auf Deutsch. Einfach."	stop	1200.0	0	0	1200	0
 qedc215ac	Für das Mittagessen der Feuerwehr backte Großmama Jones 5 Apfelkuchen, von denen jeder in 8 Stücke zerteilt wurde. Fünf Kuchen stellte sie auf den Buffettisch und die Gäste konnten sich frei bedienen. Als der Abend zu Ende war, blieben noch 14 Kuchenstücke zurück. Welche Anzahl von Stücken nahmen die Gäste?	"Die Gäste nahmen **26 Kuchenstücke**.
 
 **Rechnung:**
@@ -1179,7 +1179,7 @@ qedc215ac	Für das Mittagessen der Feuerwehr backte Großmama Jones 5 Apfelkuche
 
  So the answer is 26 pieces.
 
- I should respond in German since the question is in German."	stop
+ I should respond in German since the question is in German."	stop	26.0	0	1		
 q5d47194e	Dein tägliches Kalorienziel liegt bei 2000, und du hast bereits 1800 Kalorien zu dir genommen. Eine 300 g-Tüte enthält 5 Portionen; den Nährwertangaben zufolge hat eine Tüte Chips 250 Kalorien pro Portion. Wie viel Gramm kannst du noch essen?	"Du kannst noch **48 g** Chips essen.
 
 Rechnung:
@@ -1199,7 +1199,7 @@ Calories per gram = 250/60 = 25/6 ≈ 4.1667 cal/g.
 Remaining calories: 2000 - 1800 = 200.
 Grams = 200 / (250/60) = 200 * 60/250 = 12000/250 = 48 grams.
 
-So answer: 48 grams."	stop
+So answer: 48 grams."	stop	48.0	0	1		
 q255b81c0	Wenn Charlie 20 Bienenwachskerzen herstellt und verkauft, wie hoch ist dann sein Nettogewinn? Er kann aus jedem Pfund Bienenwachs 10 Kegelkerzen fertigen. Das Zubehör besteht aus einem Pfund Bienenwachs und den Dochten betragen und kostet insgesamt 10,00 US-Dollar, während er für jede Kerze 2,00 US-Dollar erhält.	"Hier ist die Berechnung von Charlies Nettogewinn:
 
 **Einnahmen:**
@@ -1235,7 +1235,7 @@ Also:
 - Einnahmen: 20 × 2$ = 40$
 - Gewinn: 20$
 
-Ich sollte die Antwort klar strukturieren."	stop
+Ich sollte die Antwort klar strukturieren."	stop	20.0	0	1		
 q0166ea66	Als Freelance-Bloggerin verfasst Meredith Artikel über Gesundheitsthemen für Kunden, und diese Tätigkeit ist ihr fester Job. Letzte Woche schrieb sie am Montag 5 Artikel. Am Dienstag kamen 2/5 mehr Artikel hinzu als am Montag, während sie am Mittwoch zweimal so viele Artikel verfasste wie am Dienstag. Für das Recherchieren und Schreiben eines Blog-Artikels benötigt sie im Durchschnitt 4 Stunden. Welche Gesamtzahl an Stunden hat Meredith an diesen drei Tagen für das Schreiben von Artikeln aufgewendet?	"Meredith hat insgesamt **104 Stunden** für das Schreiben der Artikel aufgewendet.
 
 Berechnung:
@@ -1249,7 +1249,7 @@ Zeit: \(26 \cdot 4 = 104\) Stunden."	104	"Wir müssen die Aufgabe lösen. Ich mu
 
 Berechnung: Montag = 5. Dienstag = 5 + (2/5)*5 = 5 + 2 = 7. Mittwoch = 2 * 7 = 14. Gesamt Artikel = 5+7+14=26. Stunden = 26*4=104.
 
-Antwort: 104 Stunden."	stop
+Antwort: 104 Stunden."	stop	104.0	0	1		
 q7bb382f4	Bei der Arbeit versah Candice 220 verschiedene Tassen Kaffee mit jeweils einem Post-it-Notizzettel. Für ihren Job im Coffee Shop hatte sie zuvor 80 Post-it-Notizzettel in ihre Handtasche gelegt. Auf dem Weg dorthin hielt sie außerdem am Laden an, um eine Packung Post-it-Notizzettel zu kaufen. Als am Ende 23 Post-it-Notizzettel übrig waren, stellte sich die Frage, wie viele Post-it-Notizzettel die gekaufte Packung enthielt.	"Die gekaufte Packung enthielt **163 Post-it-Notizzettel**.
 
 Rechnung:  
@@ -1260,7 +1260,7 @@ Problem: ""Bei der Arbeit versah Candice 220 verschiedene Tassen Kaffee mit jewe
 
 Need find number in purchased pack. She used 220 notes. Initially had 80 in handbag. Bought pack x. End leftover 23. So 80 + x - 220 = 23 => x = 220 + 23 - 80 = 163. Answer 163. Need maybe explain. Ensure no trick? Let's verify: 80 + 163 = 243; used 220; left 23. Yes.
 
-Need final concise German."	stop
+Need final concise German."	stop	163.0	0	1		
 q1a64508f	Blaue Krawatten kosten pro Stück 40 US-Dollar, und John hat dafür 200 US-Dollar ausgegeben. Beim Kauf nahm er zweimal so viele rote wie blaue Krawatten, wobei die roten Krawatten 50 % mehr kosten als die blauen Krawatten. Welchen Betrag hat John insgesamt für Krawatten ausgegeben?	"John hat für blaue Krawatten 200 US-Dollar ausgegeben, also:
 
 - Blaue Krawatten: \(200 / 40 = 5\) Stück
@@ -1276,7 +1276,7 @@ Insgesamt: \(200 + 600 = 800\) US-Dollar.
 
 Need compute total. Blue ties cost $40 each, John spent $200 on them. So number blue = 200/40 = 5. He took twice as many red as blue: red count = 2*5 = 10. Red ties cost 50% more than blue: 40 * 1.5 = $60 each. Red total = 10*60 = $600. Total = 200 + 600 = $800.
 
-Need maybe mention. Ensure no trick: ""Beim Kauf nahm er zweimal so viele rote wie blaue Krawatten"" yes. Answer 800 US-Dollar. Final concise."	stop
+Need maybe mention. Ensure no trick: ""Beim Kauf nahm er zweimal so viele rote wie blaue Krawatten"" yes. Answer 800 US-Dollar. Final concise."	stop	800.0	0	1		
 q9605b4e6	Um die Tomatenpflanzen in ihrem Garten zu stützen, zerschnitt Tracy ein 4 Fuß langes Stück Draht in Abschnitte von jeweils 6 Inch Länge. Wie viele Stück Draht erhielt sie dadurch?	"Tracy erhielt **8 Stück** Draht.
 
 **Rechnung:**
@@ -1296,7 +1296,7 @@ Number of pieces = 48 inches ÷ 6 inches = 8 pieces
 
 So the answer is 8.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	8.0	0	1		
 qda35e8fb	In dem Wohnhaus, in dem Richard wohnt, sind 3/4 des Wohnungen besetzt. Das Haus hat 15 Etagen mit jeweils 8 Wohnungen. Wie viele Wohnungen in dem Haus bleiben insgesamt unbewohnt?	"Das Haus hat insgesamt:
 
 15 Etagen × 8 Wohnungen = **120 Wohnungen**
@@ -1316,7 +1316,7 @@ Solution:
 - Unoccupied = 120 - 90 = 30 apartments
 - Or directly: 1/4 of 120 = 30 apartments
 
-I should answer in German since the question is in German."	stop
+I should answer in German since the question is in German."	stop	30.0	0	1		
 q94fcd6ce	Lloyd besitzt einen Eierhof und kann ein Dutzend Eier für 2 US-Dollar verkaufen. Pro Tag produzieren seine Hühner 252 Eier. Welchen Betrag nimmt Lloyd pro Woche mit den Eiern ein?	"Lloyd nimmt **294 US-Dollar** pro Woche ein.
 
 **Berechnung:**
@@ -1335,7 +1335,7 @@ Step 2: Calculate daily earnings.
 Step 3: Calculate weekly earnings (7 days).
 $42 × 7 = $294 per week
 
-So the answer is $294."	stop
+So the answer is $294."	stop	294.0	0	1		
 q1afb1e71	Von 13 bis 16 Uhr segelt Tom mit seinem Schiff, das 10 Meilen pro Stunde schafft. Für die Rückfahrt beträgt seine Geschwindigkeit 6 Meilen/Stunde. Welche Zeit benötigt er, um zurückzukommen?	"Tom segelt von 13 bis 16 Uhr, also **3 Stunden** lang.
 
 **Strecke berechnen:**
@@ -1369,7 +1369,7 @@ If he starts the return trip at 16:00 (4 PM), he arrives at 16:00 + 5 hours = 21
 
 But the question specifically asks ""Welche Zeit benötigt er"" which most naturally means ""How much time does he need"" (duration). So the answer is 5 hours.
 
-Let me provide the solution clearly in German."	stop
+Let me provide the solution clearly in German."	stop	5.0	0	1		
 q0aaae19a	Ein Spielzeug wiegt bei Uriah jeweils 1/2 Pfund, ein Comicbuch dagegen 1/4 Pfund. Damit seine Büchertasche nicht mehr so schwer ist, sollen 15 Pfund aus ihr entfernt werden. Nachdem Uriah 30 Comicbücher herausgenommen hat, welche Anzahl an Spielzeugen muss er zusätzlich herausnehmen?	"Hier ist die Lösung:
 
 **Schritt 1:** Gewicht der 30 Comicbücher berechnen
@@ -1402,7 +1402,7 @@ Each toy is 1/2 pound
 
 So the answer is 15 toys.
 
-Let me write this in German since the question is in German."	stop
+Let me write this in German since the question is in German."	stop	15.0	0	1		
 qa5756c69	Ein Mechaniker repariert am Donnerstag 4 PKW-Reifen und 6 LKW-Reifen. Am Freitag sind es dagegen 12 PKW-Refien aber keine LKW-Reifen. Die beiden Arten von Reifenwechseln haben unterschiedliche Preise. Für PKW-Reifen berechnet er 40 Dollar und für LKW-Reifen 60 Dollar. Wie viel mehr Umsatz in Dollar erzeilt er an dem Tag mit dem höheren Umsatz?	"Der Mechaniker erzielt am **Donnerstag** den höheren Umsatz.
 
 **Berechnung:**
@@ -1440,7 +1440,7 @@ Er erzielt am Donnerstag **40 Dollar** mehr Umsatz als am Freitag."	40	"Der Benu
  - Freitag: 12×40 + 0×60 = 480 + 0 = 480
  - Differenz: 520 - 480 = 40
 
- Ja, das stimmt."	stop
+ Ja, das stimmt."	stop	40.0	0	1		
 qd819612e	Als die Mutter der Schwestern Doubtfire anruft, sind diese mit 7 Kätzchen aus dem örtlichen Tierheim auf dem Heimweg. Sie erfahren, dass ihre beiden Hauskatzen soeben Junge bekommen haben: Trixie, eine der Katzen, hat 12 Kätzchen zur Welt gebracht. Patchy, die andere Katze, hat dreimal so viele wie die adoptierten Kätzchen. Wie viele Kätzchen gehören nun zu den Doubtfires?	"Die Doubtfires haben nun **40 Kätzchen**.
 
 Hier die Rechnung:
@@ -1466,7 +1466,7 @@ Let me double-check:
 - 3 × 7 = 21 from Patchy
 - Total: 7 + 12 + 21 = 40
 
-Yes, 40 kittens."	stop
+Yes, 40 kittens."	stop	40.0	0	1		
 q7c63d108	jean möchte Tüten mit jeweils 2 Lutschern befüllen. Er ist 2 von seinen anfänglich 30 Lutschern vor dem packen der Tüten. Wie viele Tüten kann er füllen?	"Jean kann **14 Tüten** füllen.
 
 Rechnung:
@@ -1485,7 +1485,7 @@ Step 4: Number of bags = 28 / 2 = 14 bags
 
 So the answer is 14.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	14.0	0	1		
 q93b023e5	42 US-Dollar stehen Peter diese Woche zur Verfügung. Bei jedem Kinobesuch kostet die Eintrittskarte 7 US-Dollar, und auch das Popcorn schlägt mit 7 US-Dollar zu Buche. Wie häufig lässt sich sein Kinobesuch damit verwirklichen?	"Peter kann sich den Kinobesuch **3-mal** verwirklichen.
 
 **Rechnung:**
@@ -1503,7 +1503,7 @@ Number of visits: 42 / 14 = 3.
 
 So the answer is 3 times.
 
-I should respond in German since the question is in German."	stop
+I should respond in German since the question is in German."	stop	3.0	0	1		
 qdf141d2f	Fahrer und leerer Lastwagen bringen zusammen 3755 Pfund auf die Waage. Der Lieferwagen soll mit identischen Kisten beladen werden, die jeweils 15 Pfund wiegen, und anschließend über eine Holzbrücke fahren, deren Tragfähigkeit auf höchstens 5.000 Pfund begrenzt ist. Welche maximale Anzahl an Kisten darf der Lastwagen laden, damit die Gewichtsgrenze der Brücke nicht überschritten wird?	"Hier ist die Berechnung:
 
 **Gegeben:**
@@ -1545,13 +1545,13 @@ Let me verify:
 
 So 83 boxes is the answer.
 
-I should present this clearly in German."	stop
+I should present this clearly in German."	stop	83.0	0	1		
 q1f4f019f	Ein Lieferdienstleister berechnet 25 % Aufschalg auf den Preis von einer Bestellung, plus zusätzliche 3,00 US-Dollar Liefergebühr. Stephen hat eine Online-Bestellung im Warenwert von 40,00 US-Dollar aufgegeben. Am Ende hat er selbst noch 4,00 US-Sollar Trinkgeld dazu gegeben. Wie viel hat Stephen insgesamt für seine Bestellung gezahlt?	"Stephen hat insgesamt **57,00 US-Dollar** gezahlt.
 
 Berechnung:  
 25 % von 40,00 $ = 10,00 $  
 10,00 $ + 3,00 $ Liefergebühr = 13,00 $  
-40,00 $ + 13,00 $ + 4,00 $ Trinkgeld = **57,00 $**"	57	"We need answer in German. Need solve. Let's parse: Delivery service charges 25% surcharge on price of order, plus additional $3 delivery fee. Stephen order value $40. At end he added $4 tip. Total paid? 25% of 40 = 10. Plus 3 = 53. Plus tip 4 = 57. Need answer maybe ""57,00 US-Dollar"". Ensure no trick."	stop
+40,00 $ + 13,00 $ + 4,00 $ Trinkgeld = **57,00 $**"	57	"We need answer in German. Need solve. Let's parse: Delivery service charges 25% surcharge on price of order, plus additional $3 delivery fee. Stephen order value $40. At end he added $4 tip. Total paid? 25% of 40 = 10. Plus 3 = 53. Plus tip 4 = 57. Need answer maybe ""57,00 US-Dollar"". Ensure no trick."	stop	57.0	0	1		
 q709e5faa	Auf einem Himbeerstrauch wachsen 67 einzelne Früchte sowie 6 Trauben, die jeweils 20 Früchte enthalten. Wie viele Himbeeren befinden sich insgesamt am Strauch?	"Es befinden sich insgesamt **187 Himbeeren** am Strauch.
 
 **Rechnung:**
@@ -1568,7 +1568,7 @@ Calculation:
 - 6 clusters × 20 fruits per cluster = 120 fruits
 - Total = 67 + 120 = 187
 
-So the answer is 187 raspberries."	stop
+So the answer is 187 raspberries."	stop	187.0	0	1		
 qb292acaa	In einem Korb ist eine schlechte Orange, 20% unreife und 2 saure. Der Rest ist gut. Insgesamt sind 25 Orangen im Korb. Wie viele sind gut?	"Es sind **17 gute Orangen** im Korb.
 
 **Rechnung:**
@@ -1596,7 +1596,7 @@ Good = 17
 
 So 17 oranges are good.
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	17.0	0	1		
 qa11cac63	Für ihre Tochter lässt Janet eine Brosche anfertigen, die sie kauft. Das Material für die Herstellung kostet sie 500 US-Dollar, und der Juwelier verlangt 800 US-Sollar fürs Modellieren. Danach werden für die Versicherung noch 10 % von den bisherigen Kosten fällig. Welchen Gesamtbetrag musste sie bezahlen?	"Janet musste insgesamt **1.430 US-Dollar** bezahlen.
 
 **Berechnung:**
@@ -1616,7 +1616,7 @@ Step 5: Total = $1,300 + $130 = $1,430
 
 So the answer is $1,430 or 1430 US-Dollar.
 
-Let me write this clearly in German."	stop
+Let me write this clearly in German."	stop	1430.0	0	1		
 q5a0d641e	Marcy möchte wissen, welche jährliche Rente ihr zusteht, wenn sie nach genau 30 Dienstjahren ihre Tätigkeit beendet. In ihrer Firma wird einem Mitarbeiter nach 40 Dienstjahren die volle jährliche Rente von 50.000 Dollar gewährt. Ein Anspruch auf Pensionsleistungen besteht bereits nach 20 Dienstjahren. Jedes zusätzliche vollständige Dienstjahr, das über die 20-Jahres-Marke hinausgeht, bringt dem Mitarbeiter 5 % des vollen Rentenbetrags ein. Wie viele Dollar beträgt Marcys jährliche Rente?	"Marcy hat nach 30 Dienstjahren Anspruch auf eine jährliche Rente von **25.000 Dollar**.
 
 **Berechnung:**
@@ -1649,7 +1649,7 @@ Let me double-check:
 - After 30 years: (30-20) × 5% = 50%
 - 50% of $50,000 = $25,000
 
-Yes, that's correct."	stop
+Yes, that's correct."	stop	25000.0	0	1		
 q2eb5bb5f	Für den Streaming-Dienst zahlt Aleena im ersten halben Jahr weiterhin den ursprünglichen Betrag von 140 US-Dollar pro Monat. In der zweiten Jahreshälfte verlangt das Streaming-Unternehmen von ihr 10 % weniger für das Abonnement. Welcher Gesamtbetrag wird bis Ende des Jahres für den Streaming-Dienst fällig?	"Der Gesamtbetrag beträgt **1.596 US-Dollar**.
 
 **Berechnung:**
@@ -1673,7 +1673,7 @@ Let me double-check:
 - 6 × 126 = 756
 - 840 + 756 = 1,596
 
-Yes, the answer is $1,596."	stop
+Yes, the answer is $1,596."	stop	1596.0	0	1		
 q29ca8e5c	Laut Bedienungsanleitung ihres Autos fasst Sophias Tank 12 Gallonen Benzin. Um den Tank nach einer 100 Meilen langen Fahrt wieder vollständig aufzufüllen, waren 4 Gallonen Benzin erforderlich. Bevor Sophia mit ihrem Auto losfährt, möchte sie herausfinden, welche Strecke in Meilen sie mit einer einzigen Tankfüllung zurücklegen kann.	"Hier ist die schrittweise Lösung:
 
 **Schritt 1: Verbrauch berechnen**
@@ -1703,7 +1703,7 @@ Step 1: Calculate consumption rate
 Step 2: Calculate range with full tank
 12 Gallonen × 25 Meilen/Gallone = 300 Meilen
 
-So the answer is 300 miles."	stop
+So the answer is 300 miles."	stop	300.0	0	1		
 q388ed7a8	3-mal pr WOche geht Jim ins Bett nachdem er zuvor 2 Stunden TV geschaut hat um dort nochmal halb so lange zu lesen. Wie viele Stunden verbringt er mit Fernsehen und Lesen in einer Zeitspanne von 4 Wochen?	"Jim verbringt **36 Stunden** mit Fernsehen und Lesen in 4 Wochen.
 
 **Berechnung:**
@@ -1729,7 +1729,7 @@ Let me double-check:
 - Total per week: 6 + 3 = 9 hours
 - 4 weeks: 9 × 4 = 36 hours
 
-Yes, 36 hours total."	stop
+Yes, 36 hours total."	stop	36.0	0	1		
 qe6615147	Insgesamt sind vier Schulen bei einem Basketballturnier vertreten. Von jeder Schule wurden sowohl ein Mädchenbasketballteam als auch ein Jungenbasketballteam entsandt, wobei jedes Team aus 5 Spielern besteht. Zusätzlich ist für jedes Team ein Trainer von allen Schulen mitgereist. Wie groß ist die Gesamtzahl der Personen, die die Schulen geschickt haben?	"Die Gesamtzahl beträgt **48 Personen**.
 
 Hier ist die Berechnung:
@@ -1770,7 +1770,7 @@ Let me double-check:
 - 8 teams × 1 coach = 8 coaches
 - Total: 40 + 8 = 48 people
 
-Yes, the answer is 48."	stop
+Yes, the answer is 48."	stop	48.0	0	1		
 q1df59a5a	Wie viele Edelsteine enthielt die Schatzkiste insgesamt? Ein Schatzsucher fand sie vergraben vor. Darin befanden sich 175 Diamanten. Die Anzahl der Rubine war um 35 geringer als die der Diamanten, während die Smaragde doppelt so zahlreich waren wie die Rubine.	"Die Schatzkiste enthielt insgesamt **595 Edelsteine**.
 
 Berechnung:
@@ -1785,7 +1785,7 @@ Gesamt: 175 + 140 + 280 = **595**"	595	"The user is asking a math word problem i
 - Emeralds were twice as numerous as rubies: 2 × 140 = 280 emeralds.
 - Total gemstones: 175 + 140 + 280 = 595.
 
-I should answer in German since the question is in German."	stop
+I should answer in German since the question is in German."	stop	595.0	0	1		
 q0e3fa635	"Wie viele Lehrer sind an der Schule von Dr. Wertz tätig? Dort gibt es 60 Mädchen, und die Anzahl der Jungen ist doppelt so hoch wie die der Mädchen. Auf jeden Lehrer kommen 5 Schüler."""	"**36 Lehrer**
 
 Berechnung:
@@ -1801,7 +1801,7 @@ Boys: 2 × 60 = 120
 Total students: 60 + 120 = 180
 Teachers: 180 ÷ 5 = 36
 
-Answer: 36 teachers."	stop
+Answer: 36 teachers."	stop	36.0	0	1		
 q9c0ce719	Wenn Bailey nach 8 Wochen, in denen sie wöchentlich eine Vergütung von 5 US-Dollar erhält, über eine Gesamtsumme von 100 US-Dollar verfügt, welchen Geldbetrag hatte sie zu Beginn? Bailey startet mit einem bestimmten Geldbetrag.	"Bailey hatte zu Beginn **60 US-Dollar**.
 
 **Berechnung:**
@@ -1821,7 +1821,7 @@ So:
 
 The answer is $60.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	60.0	0	1		
 qde446a3d	Judy verlangt 15,00 $ pro Schüler in ihren Tanzkursen, wobei jeder Kurs 15 Schüler umfasst. An den Werktagen gibt sie täglich 5 Tanzkurse, während sie samstags 8 Kurse unterrichtet. Welchen Geldbetrag nimmt sie dadurch in einer Woche ein?	"Hier ist die Berechnung:
 
 **Einnahmen pro Kurs:**
@@ -1869,7 +1869,7 @@ Alternative calculation:
 
 Yes, $7,425.
 
-I should present the solution clearly in German."	stop
+I should present the solution clearly in German."	stop	7.425	0	0	7425	1
 qd941251f	Kelian möchte zwei Kochrezepte zubereiten. Dabei besteht das eine aus 20 Anweisungen, während im anderen doppelt so viele Anweisungen stehen wie im ersten. Welche Gesamtzahl an Anweisungen muss Kelian lesen, um beide Rezepte zubereiten zu können?	"Kelian muss insgesamt **60 Anweisungen** lesen.
 
 **Rechenweg:**
@@ -1887,7 +1887,7 @@ Solution:
 - Second recipe: 2 × 20 = 40 instructions
 - Total: 20 + 40 = 60 instructions
 
-I should answer in German since the question is in German."	stop
+I should answer in German since the question is in German."	stop	60.0	0	1		
 q96352811	Tommy verkauft Brownies und Käsekuchenstücke für eine Wohltätigkeitsorganisation. Ein Brownie kostet 3 US-Dollar und ein Käsekuchenstück 4 US-Dollar. Wie viel Geld nimmt Tommy ein, wenn er 43 Brownies und 23 Käsekuchenstücke verkauft?	"Tommy nimmt insgesamt **221 US-Dollar** ein.
 
 Berechnung:
@@ -1906,7 +1906,7 @@ Berechnung:
  - Money from cheesecake: 23 × $4 = $92
  - Total: $129 + $92 = $221
 
- I should provide the answer in German since the question is in German."	stop
+ I should provide the answer in German since the question is in German."	stop	221.0	0	1		
 qbf808b59	Shiela kaufte fünf Handys, jedes zum Preis von 150 US-Dollar, und vereinbarte einen Ratenzahlungsvertrag über 3 Monate. Auf jedes Handy fallen 2 % Zinsen an. Welchen Betrag muss Shiela in jedem der 3 Monate zahlen?	"Shiela muss in jedem der 3 Monate **255 US-Dollar** zahlen.
 
 **Berechnung:**
@@ -1928,7 +1928,7 @@ Let me calculate:
 
 So the answer is $255 per month.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	255.0	0	1		
 q71d76256	Auf dem Bauernmarkt betreibt Artie einen Blumenstand, an dem Studentenblumen, Petunien und Begonien angeboten werden. Die üblichen Preise liegen bei 2,74 Dollar pro Topf für Studentenblumen, 1,87 Dollar pro Topf für Petunien und 2,12 Dollar pro Topf für Begonien. Weil Artie heute kein Wechselgeld besitzt, rundet er alle Preise auf den nächsten Dollar. Wie viel Dollar nimmt er ein, wenn er 17 Töpfe Begonien, 12 Töpfe Studentenblumen und 9 Töpfe Petunien verkauft?	"Artie rundet die Preise:
 
 - Begonien: 2,12 $ → 2 $
@@ -1945,7 +1945,7 @@ Gesamt: **34 + 36 + 18 = 88 Dollar**"	88	"We need answer in German likely. Need 
 
 Need compute rounded prices: 2.74 -> 3, 1.87 -> 2, 2.12 -> 2. Then revenue = 17*2 + 12*3 + 9*2 = 34 + 36 + 18 = 88. Need answer maybe ""88 Dollar"". Ensure no issue: ""rundet alle Preise auf den nächsten Dollar"" nearest dollar. Yes.
 
-Need final concise."	stop
+Need final concise."	stop	88.0	0	1		
 qd6f9023f	Während Luke Zeit am Strand verbringt, beschäftigt er sich mit dem Bau von Sandburgen. Dabei bemerkt er, dass die Fläche jeder Ebene einer Sandburg nur die Hälfte der Quadratmeter der Ebene darunter beträgt. Bei einer 4-stöckigen Sandburg misst die obere Ebene 16 Quadratmeter. Welche durchschnittliche Quadratmeterzahl ergibt sich daraus für eine Ebene?	"Hier ist die Lösung:
 
 **Gegeben:**
@@ -1988,7 +1988,7 @@ Average = 240 / 4 = 60
 
 So the answer is 60 square meters.
 
-I should present this clearly in German."	stop
+I should present this clearly in German."	stop	60.0	0	1		
 qcf724c14	Eine Tüte Hundefutter enthält 110 Tassenportionen. Ihr Tierarzt hat Cecilia erklärt, dass sie den Welpen, den sie gerade gekauft hat, während der ersten 180 Tage täglich mit 1 Tasse Hundefutter versorgen muss. Für den Rest seines Lebens sind anschließend jeden Tag 2 Tassen Hundefutter vorgesehen. Wie viele Tüten Hundefutter verbraucht Cecilia im ersten Jahr?	"Cecilia verbraucht im ersten Jahr **5 Tüten** Hundefutter.
 
 **Berechnung:**
@@ -2010,7 +2010,7 @@ Berechnung:
 - Gesamt im ersten Jahr: 180 + 370 = 550 Tassen.
 - Anzahl Tüten: 550 / 110 = 5 Tüten.
 
-Antwort: 5 Tüten."	stop
+Antwort: 5 Tüten."	stop	5.0	0	1		
 q6330b5ad	Sarah wäscht 400 Pfund Wäsche. Die Wäschemenge, die Sarah wäscht, entspricht 4-mal der Wäschemenge von David, während Raymond nur halb so viel Wäsche wäscht wie Sarah. Berechne, wie groß der Unterschied zwischen der Wäschemenge ist, die Raymond wäscht, und der Wäschemenge, die David wäscht.	"Hier ist die schrittweise Berechnung:
 
 **Gegeben:**
@@ -2050,7 +2050,7 @@ Or if asking for absolute difference: |200 - 100| = 100 pounds.
 
 The question asks for ""der Unterschied zwischen der Wäschemenge ist, die Raymond wäscht, und der Wäschemenge, die David wäscht"" which means the difference between Raymond's amount and David's amount. Since Raymond washes more (200 > 100), the difference is 100 pounds.
 
-Let me write the solution in German."	stop
+Let me write the solution in German."	stop	100.0	0	1		
 qfb8247db	Vincent möchte 18 Blumen zum günstigeren Preis kaufen und möchte wissen, wie viel er dadurch spart. Dabei kann er zwischen 2-er-Packungen für 1 US-Dollar und 3-er-Packungen für 2,50 US-Dollar wählen.	"Vincent kauft 18 Blumen am günstigsten mit **2-er-Packungen**:
 
 - 18 Blumen ÷ 2 = **9 Packungen**
@@ -2061,7 +2061,7 @@ Mit 3-er-Packungen wären es:
 - 18 ÷ 3 = 6 Packungen
 - 6 × 2,50 US-Dollar = **15 US-Dollar**
 
-**Er spart also 15 − 9 = 6 US-Dollar.**"	6	"We need answer in German. Need solve. User asks: Vincent wants to buy 18 flowers at cheaper price and wants know how much he saves. He can choose between 2-packs for $1 and 3-packs for $2.50. Need interpret ""zum günstigeren Preis"" maybe compare buying 18 flowers using 2-packs vs 3-packs? Need compute cost for 18 with 2-packs: 9 packs * $1 = $9. With 3-packs: 6 packs * $2.50 = $15. Cheaper is 2-packs, saves $6 compared to 3-packs. But maybe ""möchte 18 Blumen zum günstigeren Preis kaufen"" means he wants to buy 18 flowers at the cheaper price (between options) and wants know how much he saves. Need maybe compare to buying individual? No individual price not given. Could be ""zum günstigeren Preis"" means choose cheaper packaging. So answer: 2er-Packungen are cheaper: 9 Packungen = 9 USD; 3er-Packungen = 15 USD; Er spart 6 USD. Need maybe mention if he buys 18 flowers with 2-packs. Let's craft concise German."	stop
+**Er spart also 15 − 9 = 6 US-Dollar.**"	6	"We need answer in German. Need solve. User asks: Vincent wants to buy 18 flowers at cheaper price and wants know how much he saves. He can choose between 2-packs for $1 and 3-packs for $2.50. Need interpret ""zum günstigeren Preis"" maybe compare buying 18 flowers using 2-packs vs 3-packs? Need compute cost for 18 with 2-packs: 9 packs * $1 = $9. With 3-packs: 6 packs * $2.50 = $15. Cheaper is 2-packs, saves $6 compared to 3-packs. But maybe ""möchte 18 Blumen zum günstigeren Preis kaufen"" means he wants to buy 18 flowers at the cheaper price (between options) and wants know how much he saves. Need maybe compare to buying individual? No individual price not given. Could be ""zum günstigeren Preis"" means choose cheaper packaging. So answer: 2er-Packungen are cheaper: 9 Packungen = 9 USD; 3er-Packungen = 15 USD; Er spart 6 USD. Need maybe mention if he buys 18 flowers with 2-packs. Let's craft concise German."	stop	6.0	0	1		
 q4da79a41	Wegen seines Neukundenstatus gewährt der Hundefrisör John einen Rabatt von 30 % auf die 100 US-Dollar teure Behandlung, nachdem er seinen adoptierten Hund dorthin gebracht hat. Welchen Betrag muss John für die Sitzung beim Hundefrisör bezahlen?	"John muss **70 US-Dollar** bezahlen.
 
 Berechnung: 30 % von 100 $ = 30 $ Rabatt → 100 $ − 30 $ = **70 $**"	70	"The user is asking a math problem in German. Let me translate and solve it.
@@ -2077,7 +2077,7 @@ Calculation:
 
 Or: 70% of $100 = $70
 
-The answer is $70."	stop
+The answer is $70."	stop	70.0	0	1		
 qd3f2e43b	Von 24 Litern Wasser erhielt ein Junge 6 Liter. Davor wurde bereits jeweils 1/6 der Gesamtmenge an zwei Mädchen verteilt. Wie viele Liter Wasser waren danach noch vorhanden?	"Es waren ursprünglich 24 Liter.
 
 - Zwei Mädchen erhielten jeweils \( \frac{1}{6} \) von 24 Litern:  
@@ -2097,7 +2097,7 @@ But let's examine wording: ""Von 24 Litern Wasser erhielt ein Junge 6 Liter. Dav
 
 Need maybe mention if ""Gesamtmenge"" refers to original 24 L. Then each girl 4 L. Remaining 10 L.
 
-Need final concise."	stop
+Need final concise."	stop	10.0	0	1		
 qffe70c6a	Zum Geburtstag bekam Charlie 23 Sticker geschenkt, nachdem er in einem Laden in der Mall 21 Sticker gekauft hatte. Zuvor besaß er bereits 10 Sticker. Anschließend verwendete er 28 zum Dekorieren einer Grußkarte und gab seiner Schwester 9 der Sticker. Wie viele Sticker hat Charlie noch?	"Charlie hat noch **17 Sticker**.
 
 Hier ist die Rechnung:
@@ -2137,7 +2137,7 @@ Let me double-check:
 54 - 28 = 26
 26 - 9 = 17
 
-Yes, 17 is correct."	stop
+Yes, 17 is correct."	stop	17.0	0	1		
 q7d0f9963	Alex hat ein Gewicht von 2 Pfund weniger als das 4-fache Gewicht von Grace. Grace wiegt 125 Pfund. Wenn sich beide zusammen auf die Waage stellen, wie viel Pfund sollte diese anzeigen?	"Alex wiegt **498 Pfund** (4 × 125 − 2 = 498).
 
 Zusammen wiegen sie:
@@ -2164,7 +2164,7 @@ Die Waage sollte also **623 Pfund** anzeigen."	623	"The user wants me to solve a
  - 500 - 2 = 498 (Alex)
  - 498 + 125 = 623
 
- Yes, that's correct."	stop
+ Yes, that's correct."	stop	623.0	0	1		
 q792b7ea9	Jede Rose hat 8 Dornen. Dan pflanzt 3 Rosenbüsche, und jeder Rosenbusch trägt 25 Rosen. Wie viele Dornen gibt es insgesamt?	"Es gibt insgesamt **600 Dornen**.
 
 Hier ist die Rechnung:
@@ -2183,7 +2183,7 @@ Calculation:
 - Each rose has 8 thorns
 - Total thorns = 75 × 8 = 600 thorns
 
-So the answer is 600 Dornen."	stop
+So the answer is 600 Dornen."	stop	600.0	0	1		
 q3dfac176	Auf 22 Spiele kommt ein Fußballteam, wobei die Anzahl seiner Siege um 8 über der seiner Niederlagen liegt. Wie viele Spiele hat das Team gewonnen?	"Das Team hat **15 Spiele** gewonnen.
 
 **Lösung:**
@@ -2247,7 +2247,7 @@ Given this is likely a simple algebra problem for students, the intended answer 
 
 Let me verify: 15 wins, 7 losses. 15 - 7 = 8. 15 + 7 = 22. Correct.
 
-So the answer is 15."	stop
+So the answer is 15."	stop	15.0	0	1		
 qc8e2bf9d	Die Quilt-Blöcke für Eugens Quilt entstehen aus seinen alten Souvenir-T-Shirts, wobei von jedem Urlaub ein T-Shirt vorhanden ist. Viermal pro Jahr fährt er in den Urlaub. In dem Jahr, in dem er 23 wurde, begann er diese Tradition. Seine Sammlung umfasst T-Shirts für alle Jahre bis zu, aber nicht einschließlich dem aktuellen Jahr, in dem er 34 ist. Welche Gesamtzahl an Quilt-Blöcken ergibt sich daraus?	"Die Gesamtzahl der Quilt-Blöcke beträgt **44**.
 
 **Berechnung:**
@@ -2282,7 +2282,7 @@ Lass mich das nochmal prüfen:
 Anzahl Jahre: 33 - 23 + 1 = 11
 11 × 4 = 44
 
-Ja, das stimmt."	stop
+Ja, das stimmt."	stop	44.0	0	1		
 q87073282	Heute ging Gregs Wecker zum ersten Mal los und klingelte dabei viermal. Der Wecker ist so eingestellt, dass er dreimal am Tag zur Erinnerung ertönt und erst aufhört, wenn Greg ihn ausschaltet. Beim zweiten Losgehen dauerte das Klingeln dreimal so lange wie beim ersten Mal, beim dritten Mal dagegen nur halb so lange wie beim zweiten Mal. Wie oft ist der Wecker an diesem Tag insgesamt zu hören gewesen?	"Der Wecker war insgesamt **22-mal** zu hören.
 
 - Erstes Mal: 4 Klingeln  
@@ -2299,7 +2299,7 @@ Frage: ""Wie oft ist der Wecker an diesem Tag insgesamt zu hören gewesen?"" Ant
 
 Einfach. Aber lass uns prüfen, ob es eine Falle gibt: ""zum ersten Mal los und klingelte dabei viermal"" = 4 Töne. ""Beim zweiten Losgehen dauerte das Klingeln dreimal so lange wie beim ersten Mal"" -> wenn erstes Mal 4 Klingeln, zweites 12. ""beim dritten Mal dagegen nur halb so lange wie beim zweiten Mal"" -> 6. Summe 22.
 
-Antwort auf Deutsch."	stop
+Antwort auf Deutsch."	stop	22.0	0	1		
 qe293b5e8	Sylvie hat gerade ihr fünftes Jahr im Unternehmen abgeschlossen und arbeitet anschließend drei weitere Jahre dort. Ihr Unternehmen zahlt seinen Mitarbeitern ein Einstiegsgehalt von 600 Dollar pro Monat und erhöht gemäß der Unternehmenspolitik, die langjährige Mitarbeiter belohnt, nach fünf Dienstjahren das Gehalt jedes Jahr um einen festen Betrag. Dieser entspricht 10 % des anfänglichen Jahresgehalts. Welches Jahresgehalt erhält Sylvie nach diesen drei weiteren Arbeitsjahren?	"Sylvies anfängliches Jahresgehalt beträgt:
 
 \[
@@ -2324,7 +2324,7 @@ Anfangsgehalt: 600 $/Monat => 7200 $/Jahr. 10% davon = 720 $ pro Jahr Erhöhung.
 
 Frage: ""nach diesen drei weiteren Arbeitsjahren"" also nach insgesamt 8 Jahren. Ja.
 
-Antwort: 9360 Dollar pro Jahr."	stop
+Antwort: 9360 Dollar pro Jahr."	stop	9360.0	0	1		
 qb9e657cf	Harald und Marilyn verkauften insgesamt 88.000 Exemplare ihrer Platten, wobei Marilyns erste Platte 10-mal so oft über den Ladentisch ging wie Haralds. Wie viele Platten davon waren Haralds?	"Harald verkaufte **8.000** Platten.
 
 **Lösungsweg:**
@@ -2355,7 +2355,7 @@ Let me verify:
 Marilyn sold 10 × 8,000 = 80,000
 Total: 8,000 + 80,000 = 88,000 ✓
 
-The answer is 8,000."	stop
+The answer is 8,000."	stop	8000.0	0	1		
 q8d6c3ac8	Für jeden erwarteten Gast wird eine Geschenktüte vorbereitet, die $2 kostet. Christina rechnet damit, dass von den 16 Freunden, die sie zu ihrer Geburtstagsfeier eingeladen hat, nur 75 % erscheinen. Welche Gesamtkosten entstehen für die Geschenktüten?	"Die Gesamtkosten betragen **$24**.
 
 **Berechnung:**
@@ -2375,7 +2375,7 @@ Calculation:
 - Expected guests = 16 × 0.75 = 12
 - Total cost = 12 × $2 = $24
 
-The answer is $24."	stop
+The answer is $24."	stop	24.0	0	1		
 qa59fef67	Um alle satt zu bekommen, möchte Ted der T-Rex wissen, welche Menge Kartoffelsalat er zum Dinopicknick mitbringen muss. Dort nehmen 20 Erwachsene und 5 Junge teil. Ein erwachsener Dinosaurier isst 10 Pfund Kartoffelsalat, während ein Junges halb so viel verzehrt wie ein erwachsenes Tier. Welche Menge Kartoffelsalat benötigt Ted also für das Picknick?	"Ted benötigt insgesamt **225 Pfund** Kartoffelsalat.
 
 **Berechnung:**
@@ -2390,7 +2390,7 @@ Calculation:
 - 5 young ones × (10/2) pounds = 5 × 5 = 25 pounds
 - Total = 200 + 25 = 225 pounds
 
-I should respond in German since the question is in German."	stop
+I should respond in German since the question is in German."	stop	225.0	0	1		
 q4db223a4	Wenn Cindy vier Haustiere besitzt, wie viele Haustiere kommen dann bei allen drei zusammen? Jan hat dreimal so viele Haustiere wie Marcia, und Marcia besitzt zwei Haustiere mehr als Cindy.	"Wenn Cindy 4 Haustiere hat:
 
 - **Marcia** hat 2 mehr als Cindy: 4 + 2 = **6 Haustiere**
@@ -2407,7 +2407,7 @@ Given:
 
 Total = Cindy + Marcia + Jan = 4 + 6 + 18 = 28 pets
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	28.0	0	1		
 q2ae0bd70	James ist 10 Jahre alt und eines der 4 Kinder von Emily. Die anderen Kinder heißen Amy, Jackson und Corey. Amy ist 2 Jahre jünger als Corey und 5 Jahre älter als Jackson. James ist zudem 1 Jahr jünger als Corey. Wie alt ist Jackson?	"Hier ist die schrittweise Lösung:
 
 **Gegebene Informationen:**
@@ -2463,7 +2463,7 @@ Let me verify:
 - Amy: 9 (2 years younger than Corey ✓)
 - Jackson: 4 (Amy is 5 years older than Jackson: 9 - 4 = 5 ✓)
 
-Everything checks out. Jackson is 4 years old."	stop
+Everything checks out. Jackson is 4 years old."	stop	4.0	0	1		
 q412bff21	Lee benötigt für die 400 Meter Hürden 38 Sekunden. Vor seiner Ernährungsumstellung lief Gerald dieselbe Strecke zwei Sekunden langsamer als Lee. Durch die veränderte Ernährungsweise konnte Gerald seine Geschwindigkeit um 10 % steigern. Welche Zeit in Sekunden erreicht Gerald mit seiner verbesserten Ernährungsweise beim Lauf über die 400 Meter Hürden?	"Hier ist die schrittweise Lösung:
 
 **1. Geralds ursprüngliche Zeit:**
@@ -2505,7 +2505,7 @@ Wenn die Geschwindigkeit um 10% steigt, sinkt die Zeit auf 1/1,10 = 10/11 der ur
 
 Das Ergebnis ist 400/11 Sekunden oder etwa 36,36 Sekunden.
 
-Ich sollte die Antwort klar strukturieren."	stop
+Ich sollte die Antwort klar strukturieren."	stop	36.4	0	0	400	0
 qf73a338f	In einer Nachbarschaft gibt es 60 Hunde und für jeden Hund zwei Katzen. Wie viele Haustiere sind dort insgesamt vorhanden, wenn die Anzahl der als Haustiere gehaltenen Kaninchen zwölf weniger als die Gesamtzahl der Hunde und Katzen beträgt?	"Es gibt insgesamt **348 Haustiere**.
 
 Hier die Rechnung:
@@ -2530,7 +2530,7 @@ Let me double-check:
 - Rabbits = 180 - 12 = 168
 - Total = 60 + 120 + 168 = 348
 
-Yes, that's correct."	stop
+Yes, that's correct."	stop	348.0	0	1		
 qc5273098	Bei den Pfadfinderinnen sind 2/3 der Mädchen aus einer Schule, während 2/5 der 200 Fünftklässler Jungen sind. Gesucht ist die Anzahl der Mädchen, die nicht bei den Pfadfinderinnen sind.	"2/5 von 200 Fünftklässlern sind Jungen:
 
 \[
@@ -2561,7 +2561,7 @@ Need maybe mention if ""Pfadfinderinnen"" are girls. Let's craft concise German 
 
 Need maybe address ambiguity? The problem likely from math word problem. We can answer: 2/5 von 200 = 80 Jungen, also 120 Mädchen. 2/3 der Mädchen sind Pfadfinderinnen, also 1/3 nicht: 120 * 1/3 = 40. Antwort: 40 Mädchen.
 
-Need final."	stop
+Need final."	stop	40.0	0	1		
 qf8da7966	Um wie viele Stunden unterschied sich Harrys Schlaf letzte Nacht von dem seines Freundes James? Harry schlief 9 Stunden, während James nur 2/3 dieser Schlafzeit erreichte.	"Harry schlief **3 Stunden** länger als James.
 
 **Berechnung:**
@@ -2580,10 +2580,10 @@ So:
 
 The answer is 3 hours.
 
-I should respond in German since the question was asked in German."	stop
+I should respond in German since the question was asked in German."	stop	3.0	0	1		
 q186d2aa2	Die letzte Portion Tomatensoße ergab 32 Unzen Soße. Beim Verkochen von Tomaten in Dosen zu Soße verlieren sie die Hälfte ihres Gewichts. Jede 16-Unzen-Dose Tomaten, die Freda verwendet, enthält drei Tomaten. Wie viele Tomaten hat sie für diese Portion verbraucht?	Freda hat **12 Tomaten** verbraucht.	12	"Wir müssen die Frage beantworten. Wir müssen auf Deutsch antworten. Aufgabe: Letzte Portion Tomatensoße ergab 32 Unzen Soße. Beim Verkochen verlieren Tomaten die Hälfte ihres Gewichts. Jede 16-Unzen-Dose Tomaten enthält drei Tomaten. Wie viele Tomaten hat sie für diese Portion verbraucht?
 
-Wir müssen rechnen: 32 Unzen Soße entsprechen nach dem Verlieren der Hälfte des Gewichts 64 Unzen Tomaten. Jede Dose 16 Unzen enthält 3 Tomaten. 64 / 16 = 4 Dosen. 4 * 3 = 12 Tomaten. Antwort: 12 Tomaten."	stop
+Wir müssen rechnen: 32 Unzen Soße entsprechen nach dem Verlieren der Hälfte des Gewichts 64 Unzen Tomaten. Jede Dose 16 Unzen enthält 3 Tomaten. 64 / 16 = 4 Dosen. 4 * 3 = 12 Tomaten. Antwort: 12 Tomaten."	stop	12.0	0	1		
 q9c762a15	Vor dem Stau standen 30 Autos auf der Autobahn. In der Reihe fuhren zunächst einige Autos während der ersten 15 Minuten durch den Stau. Danach passierten in den verbleibenden 15 Minuten noch einmal 20 weitere Autos den Stau. Zusätzlich verließen 5 Autos die Reihe und mussten daher nicht durch den Stau fahren. Wie viele Autos sind dann in den ersten 15 Minuten durch den Stau gefahren?	"Es sind **5 Autos** in den ersten 15 Minuten durch den Stau gefahren.
 
 **Rechenweg:**
@@ -2617,7 +2617,7 @@ Let me double-check:
 - 20 went through in the second 15 minutes
 - So 25 - 20 = 5 went through in the first 15 minutes
 
-Yes, that makes sense."	stop
+Yes, that makes sense."	stop	5.0	0	1		
 q507804db	Auf den 40 Fenstersimsen ihres großen Landhauses stehen bei Mary jeweils 2 Topfpflanzen. Die Gärtnerin aus Leidenschaft bekam gestern außerdem 18 neue Topfpflanzen von ihrer Lieblingsgärtnerei. Da ihr großzügig zumute ist, möchte sie morgen Freunden und Familie jeweils 1 Topfpflanze von jedem Fenstersims schenken. Welche Anzahl an Topfpflanzen verbleibt bei Mary?	"Mary hat zunächst:
 
 - 40 Fenstersimse × 2 Topfpflanzen = 80 Topfpflanzen  
@@ -2639,7 +2639,7 @@ Let's read German: ""möchte sie morgen Freunden und Familie jeweils 1 Topfpflan
 
 But let's consider if ""Freunden und Familie jeweils 1 Topfpflanze von jedem Fenstersims"" means each friend and family member receives 1 plant from each windowsill? Then number of friends/family unknown, cannot solve. So intended is one per windowsill. Answer 58.
 
-Need maybe explain: 40*2=80, +18=98, gives away 40 (one from each of 40 sills), remaining 58. Final concise."	stop
+Need maybe explain: 40*2=80, +18=98, gives away 40 (one from each of 40 sills), remaining 58. Final concise."	stop	58.0	0	1		
 q120898cb	An einem bestimmten Tag besuchten 4 Freunde Jerome. Bevor er die Tür öffnete, betätigte der erste Freund 20 Mal die Türklingel. Der zweite Freund klingelte 125 % so oft wie Jeromes erster Freund. Der vierte Freund drückte 60 Mal auf die Türklingel, während der dritte Freund dies 10 Mal öfter tat als der vierte Freund. Wie häufig wurde die Türklingel insgesamt betätigt?	"Die Türklingel wurde insgesamt **175 Mal** betätigt.
 
 Hier die Berechnung im Detail:
@@ -2670,7 +2670,7 @@ Let me double-check:
 45 + 70 = 115
 115 + 60 = 175
 
-Yes, 175 times total."	stop
+Yes, 175 times total."	stop	175.0	0	1		
 q55e446ec	Am Montag schafft Solo 15 Seiten. Insgesamt umfasst seine Lektüre 20 Seiten aus dem Gemeinschaftskundebuch, 4 Seiten aus dem naturwissenschaftlichen Textbuch, 8 Seiten aus dem Geografiebuch und 7 Seiten aus dem Geschichtsbuch. Welche durchschnittliche Seitenzahl muss Solo täglich lesen, wenn ihm für den Rest noch 4 Tage bleiben?	"Solo muss insgesamt lesen:
 
 20 + 4 + 8 + 7 = 39 Seiten
@@ -2691,7 +2691,7 @@ Need compute total pages = 20+4+8+7 = 39. Monday did 15. Remaining = 24. Remaini
 
 Need maybe mention if ""für den Rest noch 4 Tage"" includes Tuesday-Friday. Yes.
 
-Final concise."	stop
+Final concise."	stop	6.0	0	1		
 qe178e77b	Ein Glas Wasser gehört für John zum Frühstück, zum Mittagessen und zum Abendessen dazu, außerdem trinkt er vor dem Zubettgehen noch eins. An jedem Wochentag hält er sich daran. An den Wochenenden entspannt er jedoch gern und ersetzt das Wasser zum Abendessen durch ein Glas Limonade. Welche Anzahl an Gläsern Wasser kommt bei John pro Woche zusammen?	"John trinkt pro Woche **26 Gläser Wasser**.
 
 Hier die Aufschlüsselung:
@@ -2742,7 +2742,7 @@ Hier die Aufschlüsselung:
 
  Total: 26 glasses of water per week.
 
- The answer is 26."	stop
+ The answer is 26."	stop	26.0	0	1		
 q13dd2b3f	Vom Meer aus zieht ein Nebelschleier heran und breitet sich über eine Stadt aus. Zwischen dem Meeresufer und dem gegenüberliegenden Landesinneren umfasst die Stadt 42 Meilen. Für jeweils 3 Meilen, die er von der Stadt bedeckt, vergehen 10 Minuten. Bis sich der Nebelschleier über die ganze Stadt gelegt hat, vergehen wie viele Minuten?	"Die Stadt umfasst **42 Meilen**.
 
 Für jeweils **3 Meilen** vergehen **10 Minuten**.
@@ -2769,7 +2769,7 @@ Or using proportion:
 42 miles / 3 miles = x / 10 minutes
 x = (42 × 10) / 3 = 420 / 3 = 140 minutes
 
-So the answer is 140 minutes."	stop
+So the answer is 140 minutes."	stop	140.0	0	1		
 q5d8678a9	Ihre Mama legt ein Drittel der verbleibenden Teile auf das Brett, nachdem Poppy bereits ein Viertel der Teile eines 1000-Teile-Puzzles gelegt hat. Wie viele Puzzleteile müssen noch gelegt werden?	"**Lösung:**
 
 1. **Poppy legt:** $\frac{1}{4} \times 1000 = 250$ Teile
@@ -2799,7 +2799,7 @@ Let me verify:
 
 The question asks ""Wie viele Puzzleteile müssen noch gelegt werden?"" which means ""How many puzzle pieces still need to be placed?""
 
-Answer: 500"	stop
+Answer: 500"	stop	500.0	0	1		
 q10c23d37	Amir isst 5 Kekse, und Cody isst dreimal mehr als Amir. Wie viele Kekse essen beide zusammen?	"Amir isst 5 Kekse.
 
 Cody isst dreimal so viele: 3 × 5 = **15 Kekse**
@@ -2816,7 +2816,7 @@ Solution:
 - Cody eats 3 times more than Amir = 3 × 5 = 15 cookies
 - Together: 5 + 15 = 20 cookies
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	20.0	0	1		
 q71246a09	Die Wände der 3 Kisten von John sind jeweils 1 Inch dick, wobei jede Kiste 5 Inch mal 6 Inch mal 4 Inch groß ist. Welches Innenvolumen besitzen alle 3 Kisten zusammen?	"Das Innenvolumen aller 3 Kisten zusammen beträgt **72 Kubikzoll** (bzw. 72 cubic inches).
 
 **Berechnung:**
@@ -2856,7 +2856,7 @@ Yes, that's correct.
 
 The answer should be in German since the question is in German.
 
-Answer: 72 Kubikzoll (or 72 cubic inches)."	stop
+Answer: 72 Kubikzoll (or 72 cubic inches)."	stop	72.0	0	1		
 q51ea4378	Insgesamt hat Frankie 7 Stunden ferngesehen, und zwar jeden Abend nach seinen Hausaufgaben. Dabei liefen am Freitag zwei 1-stündige Folgen, weil er wegen des Wochenendes später aufbleiben durfte. Am Donnerstag waren seine Hausaufgaben früher erledigt, sodass eine 1-stündige Folge und eine 30-minütige Show folgten. Jeweils eine 1-stündige Folge seiner Lieblingssendung sah er am Montag und am Dienstag. Am Mittwoch standen einige Folgen einer 30-minütigen Sendung auf seinem Programm. Wie viele 30 Minuten lange Folgen hat er am Mittwoch angeschaut?	"Frankie hat am Mittwoch **3** 30-minütige Folgen gesehen.
 
 **Rechenweg:**
@@ -2903,7 +2903,7 @@ Dienstag: 1h
 Mittwoch: 3 × 0,5h = 1,5h
 Gesamt: 2 + 1,5 + 1 + 1 + 1,5 = 7h ✓
 
-Die Antwort ist 3."	stop
+Die Antwort ist 3."	stop	3.0	0	1		
 qe465613a	Henry hat 15 Kekse mehr gebacken als geplant und danach noch 5 fallen gelassen, als er sie zum Kühlen rausgestellt hat. Dadurch hatte er am Ende nur noch 110 Kekse. Für einen regionalen Backwettbewerb hatte er sich ursprünglich vorgenommen, die doppelte Menge vom Vorjahr zu machen. Wie viele Kekse hatte Henry letztes jahr gebacken?	"Henry hat letztes Jahr **50 Kekse** gebacken.
 
 **Lösungsweg:**
@@ -2946,7 +2946,7 @@ Lass mich das überprüfen:
 - Nach 5 fallen gelassen: 115 - 5 = 110 Kekse
 - Stimmt mit der Angabe überein.
 
-Die Antwort ist 50."	stop
+Die Antwort ist 50."	stop	50.0	0	1		
 q1e0f8fcb	Wie hoch ist der Preis in Dollar für das Benzin, nachdem die Cashback-Prämie berücksichtigt wurde? Die örtliche Tankstelle verlangt 3,00 $ für jede Gallone. Beim Tanken an dieser Tankstelle gewährt eine App-Firma pro Gallone 0,20 $ Cashback. Jemand kauft dort 10 Gallonen Benzin.	"Nach Berücksichtigung der Cashback-Prämie beträgt der effektive Preis:
 
 **Pro Gallone:** 2,80 $ (3,00 $ − 0,20 $)
@@ -2971,7 +2971,7 @@ q1e0f8fcb	Wie hoch ist der Preis in Dollar für das Benzin, nachdem die Cashback
  Effective price per gallon: $2.80
  Total for 10 gallons: $28.00
 
- I'll present both clearly."	stop
+ I'll present both clearly."	stop	10.0	0	0	28	1
 q91fe6f6e	Beatrice und Marcell tragen einen Wettbewerb aus, bei dem sie feststellen wollen, wer mehr Fruchtrollen essen kann. Dazu entrollen sie alle, die sie finden können. Leider macht jemand einen Fehler: Marcells Menge war 3 Rollen breit und 14 Rollen lang, während die von Beatrice zwei Rollen breit und 24 Rollen lang war. Nachdem beide ihre gesamte Menge gegessen haben, wie viele haben sie durchschnittlich konsumiert?	"Marcell: \(3 \times 14 = 42\) Fruchtrollen  
 Beatrice: \(2 \times 24 = 48\) Fruchtrollen  
 
@@ -2984,7 +2984,7 @@ Sie haben durchschnittlich **45 Fruchtrollen** konsumiert."	45	"We need answer i
 
 Need compute average number of fruit rolls consumed by the two? Marcell: 3*14=42 rolls. Beatrice: 2*24=48 rolls. Average = (42+48)/2 = 90/2 = 45. Need answer maybe ""durchschnittlich 45 Fruchtrollen"". Need be careful: ""wie viele haben sie durchschnittlich konsumiert?"" Could mean average per person. Yes.
 
-Need maybe mention if ""Rollen breit/lang"" means rectangular arrangement. Final concise."	stop
+Need maybe mention if ""Rollen breit/lang"" means rectangular arrangement. Final concise."	stop	45.0	0	1		
 q76afc2ba	Für die Rückfahrt zum Strand benötigte Julia 64 Sekunden, wobei sie für zwanzig Fuß jeweils sechzehn Sekunden rudern musste. Ihr Boot hatte auf dem See draußen ein Leck bekommen und nahm auf jeweils zehn geruderten Fuß zwei Liter Wasser auf. Welche Menge Wasser war im Boot, als sie am Strand ankam?	"Julia ist in 64 Sekunden gerudert.
 
 - 16 Sekunden entsprechen 20 Fuß  
@@ -3003,7 +3003,7 @@ Wasseraufnahme:
 
 Need compute distance rowed? She took 64 seconds return. For every 20 feet she rowed, she needed 16 seconds. So distance = (64/16)*20 = 4*20=80 feet. Leak: for every 10 rowed feet, 2 liters water. So water = (80/10)*2 = 8*2=16 liters. Answer 16 liters.
 
-Need maybe mention if ""auf jeweils zehn geruderten Fuß zwei Liter"" yes. Final concise."	stop
+Need maybe mention if ""auf jeweils zehn geruderten Fuß zwei Liter"" yes. Final concise."	stop	16.0	0	1		
 q9c73cd77	4 Lehrer unterichten jeden Tag abwechselnd im selben Klassenraum. Die Tafel die dort steht wird jede Unterrichtsstunde 3-mal gewischt und jeder Lehrer hat täglich 2 Unterrichtsstunden in dem Raum. Wie oft wird die Tafel täglich gewischt?	"Die Tafel wird täglich **24-mal** gewischt.
 
 **Rechnung:**
@@ -3019,14 +3019,14 @@ So:
 - Each lesson the board is wiped 3 times
 - Total wipes per day = 8 lessons × 3 wipes = 24 wipes
 
-The answer is 24 times."	stop
+The answer is 24 times."	stop	24.0	0	1		
 q2bbbdc5a	Wie viele Blumen hat Ryan nach 15 Tagen in seinem Garten, wenn er täglich 2 Blumen pflanzt und 5 nicht angewachsen sind?	"Ryan hat nach 15 Tagen **25 Blumen** in seinem Garten.
 
 Rechnung: 15 Tage × 2 Blumen = 30 gepflanzte Blumen, abzüglich 5 nicht angewachsene = **25 Blumen**."	25	"The user is asking a math word problem in German. Let me translate: ""How many flowers does Ryan have in his garden after 15 days if he plants 2 flowers daily and 5 did not grow?""
 
 So: 15 days × 2 flowers/day = 30 planted. 5 didn't grow, so 30 - 5 = 25 flowers.
 
-Answer in German: 25 Blumen."	stop
+Answer in German: 25 Blumen."	stop	25.0	0	1		
 qb65bf453	Auf Jamals Foto von den Enten im Zoo ist eine bestimmte Anzahl Vögel abgebildet. Brittanys Handy fasst 50-mal so viele Fotos wie diese Vogelanzahl, während Jamals Handy 6-mal mehr Fotos speichern kann als Brittanys Handy. Da Jamals Handy 1.800 Fotos speichern kann, stellt sich die Frage: Wie viele Enten sind auf Jamals Foto mit den Enten im Zoo zu sehen?	"Auf Jamals Foto sind **6 Enten** zu sehen.
 
 Rechnung:  
@@ -3039,7 +3039,7 @@ Need solve. Let x = number of ducks on Jamal's photo. Brittany's phone capacity 
 
 Need maybe mention ""6-mal mehr"" ambiguity? In German ""6-mal mehr"" can mean 6 times as many or 6 times more (i.e., 7x). But context likely ""6-mal so viele"" maybe. The problem says ""6-mal mehr Fotos speichern kann als Brittanys Handy"" could be interpreted as 6 times as many. If ""6-mal mehr"" literally ""6 times more"" could be 7x, then x = 1800/(50*7)=5.142 not integer. So intended 6 times. Answer 6.
 
-Need final concise."	stop
+Need final concise."	stop	6.0	0	1		
 q62cadf26	Welchen Gewinn erzielt Sasha, wenn sie alle übrig gebliebenen Bretter veräußert? In den letzten paar Monaten sind die Holzpreise um 50 % gestiegen, seit sie ihr Holz erworben hat. Weil noch ein Rest vorhanden ist, will sie diesen nun verkaufen. Dazu gehören zehn 2 x 4 x 10 große Bretter, deren Kaufpreis jeweils 10 US-Dollar betrug. Außerdem besitzt sie fünf 4 x 4 x 10 Bretter, die pro Stück 16 US-Dollar gekostet haben.	"Sasha erzielt einen Gewinn von **90 US-Dollar**.
 
 **Berechnung:**
@@ -3064,7 +3064,7 @@ Prices rose 50%, so selling price is 150% of cost.
 
 Alternatively, profit = 50% of $180 = $90.
 
-Answer: $90 (90 US-Dollar)."	stop
+Answer: $90 (90 US-Dollar)."	stop	90.0	0	1		
 q6637faea	Katy verwendet für die Zubereitung ihres Kaffees Teelöffel mit Zucker und Tassen mit Wasser im Verhältnis 7:13. Wie viele Teelöffel Zucker hat sie genutzt, wenn die Gesamtmenge aus Teelöffeln Zucker und Tassen Wasser 120 beträgt?	"Katy hat **42 Teelöffel Zucker** verwendet.
 
 **Lösung:**
@@ -3083,7 +3083,7 @@ Sugar = 7 parts = 7 × 6 = 42 teaspoons.
 
 Let me verify: Water = 13 × 6 = 78. Total = 42 + 78 = 120. Ratio 42:78 = 7:13 (dividing by 6). Correct.
 
-The answer is 42."	stop
+The answer is 42."	stop	42.0	0	1		
 q7c7b8736	Für jedes seiner 3 Kinder erwirbt John 2 Paar Schuhe. Der Preis beträgt 60 US-Dollar pro Paar. Welchen Betrag hat er bezahlt?	"John hat insgesamt **360 US-Dollar** bezahlt.
 
 Berechnung:
@@ -3099,7 +3099,7 @@ Calculation:
 - Price per pair: $60
 - Total cost: 6 × $60 = $360
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	360.0	0	1		
 q8f663843	In einem Container, der mit Autos geladen ist und der am Haupthafen durch die Zollabfertigung Seaside geht, sind immer 5 Autos in jedem Container. Ein Zollbeamter hat an einem Tag 2 dieser Container gezählt und am nächsten wurden weitere geliefert. Wie viele Container mit Autos waren es insgesamt, wenn am Ende 30 Autos am Hafen ankamen?	"Es waren insgesamt **6 Container** mit Autos.
 
 **Rechnung:** 30 Autos ÷ 5 Autos pro Container = **6 Container**"	4	"The user is asking a math word problem in German. Let me translate and understand it:
@@ -3115,7 +3115,7 @@ Calculation: 30 cars ÷ 5 cars per container = 6 containers
 
 The information about ""2 containers counted on one day and more delivered the next day"" is just context/story, but the math is straightforward: 30 ÷ 5 = 6.
 
-I should answer in German since the question is in German."	stop
+I should answer in German since the question is in German."	stop	6.0	0	0	6	0
 q6edb8d49	Vor vier Jahren verdiente Adrien $40000. Zu diesem Zeitpunkt war Lylahs Gesamtgehalt 30 Prozent niedriger als sein Gehalt. In den folgenden vier Jahren stiegen die Gehälter von Adrien und Lylah gleichzeitig. Adrien verdiente anschließend 40 % mehr als vier Jahre zuvor. Berechnen Sie in Dollar, welches Gesamtgehalt die beiden vier Jahre später zusammen erhielten.	"Hier ist die schrittweise Berechnung:
 
 **1. Gehälter vor vier Jahren:**
@@ -3228,7 +3228,7 @@ Schritte zur Lösung:
 4. Lylahs Gehalt nach 4 Jahren: Da die Gehälter ""gleichzeitig"" stiegen und Adrien um 40% stieg, nehmen wir an, dass Lylah ebenfalls um 40% stieg (oder das Verhältnis blieb gleich): $28.000 × 1,40 = $39.200
 5. Gesamtgehalt: $56.000 + $39.200 = $95.200
 
-Die Antwort ist $95.200."	stop
+Die Antwort ist $95.200."	stop	95200.0	0	1		
 q1b1c6563	Ein Zeichenblock enthält 30 Blatt Papier. Für sein Zeichnen benötigt Miguel jede Woche 2 Zeichenblöcke. Wie groß ist sein Verbrauch an Blatt Papier pro Monat?	"Miguel verbraucht **240 Blatt Papier pro Monat**.
 
 **Rechenweg:**
@@ -3248,7 +3248,7 @@ Or if we consider a month as 4.33 weeks (52 weeks / 12 months), it would be 60 �
 
 So the answer is 240 sheets per month.
 
-Let me write the solution in German."	stop
+Let me write the solution in German."	stop	240.0	0	1		
 qdda5aad8	Morisette und Kael sollten Obst mitbringen. Kael brachte doppelt so viele Äpfel und halb so viele Orangen wie Morisette mit. Morisette hatte 5 Äpfel und 8 Orangen dabei. Wie viele Früchte haben sie zusammen?	"Morisette brachte **5 Äpfel** und **8 Orangen** mit.
 
 Kael brachte:
@@ -3281,7 +3281,7 @@ Let me double-check:
 - Kael: 2×5=10 apples, 8/2=4 oranges
 - Together: 5+8+10+4 = 27
 
-Yes, 27 is correct."	stop
+Yes, 27 is correct."	stop	27.0	0	1		
 qbe882310	Weil Sadie einige Aufgaben zu erledigen hatte, betrug ihr Schlaf an den nächsten beiden Tagen nach dem Montag jeweils 2 Stunden weniger pro Tag als die 8 Stunden, die sie am Montag geschlafen hatte. Den Rest der Woche über schlief sie 1 Stunde mehr als an diesen beiden Tagen. Wie viele Stunden Schlaf hatte Sadie insgesamt in der Woche?	"Sadie schlief:
 
 - Montag: 8 Stunden  
@@ -3297,7 +3297,7 @@ Need compute total sleep in week. Monday 8 hours. Next two days after Monday (Tu
 
 Need ensure ""Rest der Woche"" after Monday and next two days = 4 days. Yes.
 
-Final concise."	stop
+Final concise."	stop	48.0	0	1		
 q5531657c	Rosie läuft zunächst 3 Stunden lang mit einer Geschwindigkeit von 10 Meilen pro Stunde. Anschließend reduziert sie ihr Tempo auf 5 Meilen pro Stunde. Wie viele Meilen kann Rosie in insgesamt 7 Stunden zurücklegen?	"Rosie legt insgesamt **50 Meilen** zurück.
 
 **Berechnung:**
@@ -3317,7 +3317,7 @@ Solution:
 - Second part: 4 hours × 5 mph = 20 miles
 - Total: 30 + 20 = 50 miles
 
-I should answer in German since the question was asked in German."	stop
+I should answer in German since the question was asked in German."	stop	50.0	0	1		
 qafb91192	Als Jennie im Büro ihrer Mutter aushalf, lagen zwei Briefstapel vor ihr: 60 noch nicht frankierte Briefe auf der einen Seite und eine nicht näher bekannte Anzahl bereits frankierter Briefe auf der anderen. Nachdem sie Briefmarken auf ein Drittel der 60 Briefe geklebt hatte, zählte sie 30 Briefe im Stapel der bereits frankierten. Welche Anzahl an Briefen enthielt dieser Stapel ursprünglich, bevor Jennie ihre Arbeit begann?	"Ein Drittel von 60 Briefen sind \(60 \div 3 = 20\) Briefe.
 
 Danach hatte der frankierte Stapel 30 Briefe. Ursprünglich enthielt er also:
@@ -3334,4 +3334,4 @@ One third of 60 = 20. She stamped 20 of unstamped, moving them to stamped pile. 
 
 Need maybe mention if ""zählte sie 30 Briefe im Stapel der bereits frankierten"" after adding. Yes.
 
-Need final concise."	stop
+Need final concise."	stop	10.0	0	1		
