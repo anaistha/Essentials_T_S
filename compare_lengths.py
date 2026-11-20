@@ -52,7 +52,7 @@ def main():
               f"median={s.median():5.1f}  min={s.min()}  max={s.max()}")
 
     bins = range(0, max(full_len + sub_len) + 3, 3 if args.unit == "question" else 2)
-    plt.figure(figsize=(8, 4.5))
+    plt.figure(figsize=(8, 3))
     plt.hist(full_len, bins=bins, density=True, alpha=0.5, label=f"MGSM-Rev2 German (n={len(full)} questions)")
     plt.hist(sub_len, bins=bins, density=True, alpha=0.5, label=f"Subset German (n={len(subset)} questions)")
     plt.xlabel(f"Words per {args.unit}")
